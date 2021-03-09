@@ -1,0 +1,10 @@
+..
+    This file is part of SER-347 Documentation.
+    Copyright 2020, Gilberto Queiroz and Thales Körting.
+
+
+Considerações Finais
+====================
+
+
+Após completar esse curso, uma forma de melhorar seus fundamentos em linguagens de programação é dedicar algum tempo à leitura de livros tradicionais da Ciência da Computação. :cite:t:`sebesta:2016` apresenta os principais conceitos que fundamentam a teoria e projeto das linguagens de programação. Esses conceitos são importantes não só para você fazer um melhor uso da linguagem que já domina - aumentando sua  capacidade de expressar idéias nessa linguagem, mas também para facilitar o aprendizado de outras linguagens.

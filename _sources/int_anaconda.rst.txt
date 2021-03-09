@@ -1,0 +1,21 @@
+..
+    This file is part of SER-347 Documentation.
+    Copyright 2020, Gilberto Queiroz and Thales Körting.
+
+
+Introdução ao Ambiente Anaconda
+===============================
+
+
+.. toctree::
+    :maxdepth: 2
+    :titlesonly:
+
+    ./int_anaconda/introducao
+    ./int_anaconda/gerenciando_ambientes
+    ./int_anaconda/consideracoes
+    ./int_anaconda/referencias
+
+
+
+

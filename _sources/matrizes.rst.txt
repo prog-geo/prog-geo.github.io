@@ -1,0 +1,18 @@
+..
+    This file is part of SER-347 Documentation.
+    Copyright 2020, Gilberto Queiroz and Thales Körting.
+
+
+Matrizes
+========
+
+
+De acordo com o site `NumPy <https://numpy.org/>`_, ``NumPy`` is the fundamental package for scientific computing with Python. It contains (among other things):
+
+* a powerful N-dimensional array object
+* sophisticated (broadcasting) functions
+* tools for integrating C/C++ and Fortran code
+* useful linear algebra, Fourier transform, and random number capabilities
+* Besides its obvious scientific uses, NumPy can also be used as an efficient multi-dimensional container of generic data (...)
+
+Veja agora o seguinte `jupyter notebook sobre NumPy <https://github.com/ser-347/ipynb/blob/master/numpy.ipynb>`_

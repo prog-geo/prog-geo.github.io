@@ -1,0 +1,88 @@
+..
+    This file is part of SER-347 Documentation.
+    Copyright 2020, Gilberto Queiroz and Thales Körting.
+
+
+Os Comandos ``break`` e ``continue``
+------------------------------------
+
+
+Slides da Aula
+++++++++++++++
+
+
+`Introdução à Programação com a Linguagem Python: os comandos break e continue <https://1drv.ms/b/s!AtoTP-MfEUEDgtcRUIf2KOaRV1GKNg?e=KLZ7jc>`_.
+
+
+O comando ``break``
++++++++++++++++++++
+
+
+O comando ``break`` é usado para ajudar no controle do fluxo de execução dentro de um laço. A declaração ``break`` faz com que a execução do laço seja interrompida independentemente do teste condicional do laço. Ou seja, o comando ``break`` irá finalizar a execução do laço redirecionando a execução do programa para o próximo comando após o laço.
+
+
+Para ilustrar o uso desse comando, vamos apresentar um exemplo em que o laço do tipo ``for`` é interrompido antes do final da travessia por todos os elementos do intervalo definido:
+
+
+.. code-block:: python
+    :linenos:
+    :caption: for_break.py
+
+    num = 0
+
+    for num in range(10):
+        if num == 5:
+            break    # interrompe o laço
+
+        print('Número: ' + str(num))
+
+    print('Fora do Laço')
+
+
+Em um laço do tipo ``while`` podemos usar também o comando ``break``:
+
+
+.. code-block:: python
+    :linenos:
+    :caption: while_break.py
+
+    num = 0
+
+    while num < 10:
+        if num == 5:
+            break    # interrompe o laço
+
+        print('Número: ' + str(num))
+
+        num = num + 1
+
+    print('Fora do Laço')
+
+
+O comando ``continue``
+++++++++++++++++++++++
+
+
+O comando ``continue`` funciona de maneira similar ao comando ``break``. Porém, ao invés de finalizar a execução do laço, o comando ``continue`` finaliza a iteração corrente. Desta forma, todo comando após a declaração ``continue`` não será executado. Ou seja, o comando irá redirecionar o fluxo do programa fazendo com que a próxima iteração do laço seja executada.
+
+
+Veja o exemplo abaixo:
+
+
+.. code-block:: python
+    :linenos:
+    :caption: exemplo_continue.py
+
+    #
+    # Dado um intervalo fornecido pelo usuário,
+    # escreva na tela todos os números pares dentro do intervalo.
+    #
+
+    menor = int(input("Digite o menor valor do intervalo:"))
+    maior = int(input("Digite o maior valor do intervalo:"))
+
+    for x in range(menor, maior + 1):
+        if(x % 2):
+            continue
+
+        print(x)

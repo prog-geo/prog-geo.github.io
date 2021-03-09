@@ -1,0 +1,16 @@
+..
+    This file is part of SER-347 Documentation.
+    Copyright 2020, Gilberto Queiroz and Thales Körting.
+
+
+Strings, Operações com Strings e Formatação de Strings
+------------------------------------------------------
+
+
+Slides da Aula
+++++++++++++++
+
+
+`Introdução à Programação com a Linguagem Python: Strings, Operações com Strings e Formatação de Strings <https://1drv.ms/b/s!AtoTP-MfEUEDgtYEeb8UBIW9gDTjJA?e=mxq7tg>`_.
+
+

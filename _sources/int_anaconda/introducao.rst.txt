@@ -1,0 +1,20 @@
+..
+    This file is part of SER-347 Documentation.
+    Copyright 2020, Gilberto Queiroz and Thales Körting.
+
+
+Introdução
+----------
+
+.. image:: https://upload.wikimedia.org/wikipedia/en/c/cd/Anaconda_Logo.png
+    :target: https://anaconda.org
+    :alt: Anaconda Homepage
+    :height: 75
+    :align: right
+    :name: anaconda:logo
+
+
+A distribuição do Python conhecida como `Anaconda <https://anaconda.org/>`_ é uma das distribuições mais difundidas na área de Data Science. A ``Anaconda`` disponibiliza além do interpretador ``Python``, todo o ecossistema de computação interativa do `IPython/Jupyter <https://ipython.org>`_, o ambiente integrado de desenvolvimento `Spyder <https://github.com/spyder-ide/spyder>`_ e um poderoso gerenciador de pacotes e ambientes virtuais chamado `Conda <https://conda.io/docs/user-guide/index.html>`_, além de outras ferramentas analíticas e suporte para as linguagens `R <https://www.r-project.org/>`_ e `Julia <https://julialang.org/>`_.
+
+
+Essa parte do curso tem como objetivo apresentar em detalhes a distribuição da ``Anaconda``, em especial, como utilizar o ``Conda`` para criação de novos ambientes de trabalho do Python e gerenciamento de pacotes desses ambientes. É pressuposto que o aluno já possua o ambiente do Anaconda devidamente instalado em seu sistema, além de ter acesso a Internet para poder experimentar os comandos que serão vistos nessa aula.

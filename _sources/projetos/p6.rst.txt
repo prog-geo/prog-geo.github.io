@@ -1,0 +1,41 @@
+..
+    This file is part of SER-347 Documentation.
+    Copyright 2020, Gilberto Queiroz and Thales Körting.
+
+
+Projeto 6
+---------
+
+
+Preparação de uma máscara de nuvens composta a partir de diversos métodos (`Sen2Cor <https://step.esa.int/main/third-party-plugins-2/sen2cor/>`_, `Maja <https://labo.obs-mip.fr/multitemp/maccs-how-it-works/>`_, `fmask <http://www.pythonfmask.org/>`_, etc.). O usuário do sistema pode escolher diferentes maneiras de fazer a composição: ``maioria``, ``intersecção``, ``união``, etc. Apresentar uma estatística básica com o sumário de cada método aplicado.
+
+
+Considerando uma lista de arquivos e alguns parâmetros, este projeto envolve a criação de uma ferramenta para linha comando do tipo:
+
+
+.. code-block:: shell
+
+    cloud-mask-compose --input (1 ou mais arquivos?) --methods "Sen2Cor, Maja, FMask" --strategy "majority" --output mask-file.tiff
+
+
+**Integrantes:**
+
+- Felipe Nincao Begliomini
+
+- Flávia Domingos Pacheco
+
+- Gabriel Lucas Xavier da Silva
+
+
+**Repositório:** https://github.com/ser-347/cloud-mask-compose
+
+
+**Considerações:**
+
+- Como resultado, apresentar: (a) um pacote Python com a ferramenta de composição das máscaras de nuvem; (b) sua documentação; (c) ``Jupyter Notebook`` apresentando as estatísticas de um experimento.
+
+- Os produtos de código desenvolvidos deverão ser licenciados de acordo com os modelos de software livre ``MIT`` ou ``Apache``,  e disponibilizados em um repositório na organização `SER-347 <https://github.com/ser-347>`_.
+
+- Os produtos de dados (amostras) deverão ser disponibilizados de acordo com o modelo ``Creative Commons``.
+
+- Produzir um relatório no formato do ``SBSR``.

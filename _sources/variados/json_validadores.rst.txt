@@ -1,0 +1,37 @@
+..
+    This file is part of SER-347 Documentation.
+    Copyright 2020, Gilberto Queiroz and Thales Körting.
+
+
+Validadores de Documentos JSON
+++++++++++++++++++++++++++++++
+
+
+Existe na Internet vários aplicativos *online* que possibilitam validar a estrutura de um documento ``JSON``, isto é, permite sabermos se o documento respeita a sintaxe (ou notação) ``JSON``.
+
+
+Um bom aplicativo é o `JSONLint - The JSON Validator <https://jsonlint.com/>`_. Acesse o endereço desse aplicativo e verifique os erros no fragmento abaixo::
+
+    {
+        "nome": Gilberto,
+
+        "sobrenome": 'Queiroz',
+
+        "idade": 30,
+
+        "pesquisador": true,
+
+        "pais": [ "Gilberto Queiroz", "Telma Queiroz" ]
+
+        "endereco": {
+            "rua": "Av. dos Astronautas",
+            "numero": 1758,
+            "bairro": "Jardim da Granja",
+            "cidade": "São José dos Campos",
+            "uf": "SP",
+            "cep": "12227-010"
+        }
+    }
+
+
+**Exercício:** Tente corrigir o fragmento acima para que ele se torne um documento válido ``JSON``.

@@ -1,0 +1,200 @@
+..
+    This file is part of SER-347 Documentation.
+    Copyright 2020, Gilberto Queiroz and Thales Körting.
+
+
+Solução - Lista de Exercícios 05
+--------------------------------
+
+
+**Exercício 01**. Com base no ``Exercício 01 da Lista 04``, crie uma função chamada ``get_year(modis_name)``, que receba como parâmetro uma string contendo um nome de arquivo ``MODIS``, verifique se o tamanho da string está correto, e retorne o ano da aquisição da imagem. Por exemplo, ``get_year("MOD09A1.A2006001.h08v05.005.2006012234657.hdf")`` deve retornar ``2006``.
+
+
+.. code-block:: python
+    :linenos:
+    :caption: get_year.py
+
+    def get_year(modis_name):
+        if len(modis_name) != 45:
+           return None
+
+        return modis_name[9:13]
+
+    print(get_year("MOD09A1.A2006001.h08v05.005.2006012234657.hdf"))
+    print(get_year("MOD09A1.A2015001.h08v05.006.2015113045801.hdf"))
+
+
+**Exercício 02**. Com base no ``Exercício 01 da Lista 04``, e nos slides da aula ``Visão Geral do Curso``, crie uma função chamada ``in_brazil(modis_name)``, que receba como parâmetro uma string contendo um nome de arquivo ``MODIS``, e retorne ``True`` se a imagem possuir alguma área contida no Brasil, ou ``False`` caso contrário.
+
+
+.. code-block:: python
+    :linenos:
+    :caption: in_brazil.py
+
+    def in_brazil(modis_name):
+      brazilian_locations = ( "h10v08", "h11v08", "h12v08", "h13v08", "h14v08", \
+                              "h10v09", "h11v09", "h12v09", "h13v09", "h14v09", \
+                              "h10v10", "h11v10", "h12v10", "h13v10", "h14v10", \
+                              "h12v11", "h13v11", "h14v11", "h12v12", "h13v12")
+
+      location = modis_name[17:23]
+      if location in brazilian_locations:
+        return True
+      else:
+        return False
+
+    print(in_brazil("MOD09A1.A2006001.h08v05.005.2006012234657.hdf"))
+    print(in_brazil("MOD09A1.A2006001.h08v05.005.2006012234657.hdf"))
+
+
+**Exercício 03**. Refaça o ``Exercício 01 da Lista 03``, criando funções para cada série numérica (Lucas, Pell, Triangular, Square e Pentagonal).
+
+
+.. code-block:: python
+    :linenos:
+    :caption: series.py
+
+    def lucas (q):
+      print('Lucas')
+      # dá para definir termos iniciais antes da repetição
+      n_menos_2 = 2
+      print(n_menos_2)
+      if q >= 1:
+        n_menos_1 = 1
+        print(n_menos_1)
+        n = 2
+        # começamos a repetição do termo dependente
+        while n <= q:
+          lucas = n_menos_1 + n_menos_2
+          print(lucas)
+          n = n + 1
+          n_menos_2 = n_menos_1
+          n_menos_1 = lucas
+
+    def pell(q):
+      print('Pell')
+      # dá para definir termos iniciais antes da repetição
+      n_menos_2 = 0
+      print(n_menos_2)
+      if q >= 1:
+        n_menos_1 = 1
+        print(n_menos_1)
+        n = 2
+        # começamos a repetição do termo dependente
+        while n <= q:
+          pell = 2 * n_menos_1 + n_menos_2
+          print(pell)
+          n = n + 1
+          n_menos_2 = n_menos_1
+          n_menos_1 = pell
+
+    def triangular(q):
+      print('Triangular')
+      n = 0
+      while n <= q:
+        print( int(n * (n + 1) / 2) )
+        n = n + 1
+
+    def square(q):
+      print('Square')
+      n = 0
+      while n <= q:
+        print(n * n)
+        n = n + 1
+
+    def pentagonal(q):
+      n = 0
+      while n <= q:
+        print( int((3 * n * n - n) / 2) )
+        n = n + 1
+
+    q = int(input('Digite a quantidade de termos: '))
+    if q >= 0:
+      lucas(q)
+      pell(q)
+      triangular(q)
+      square(q)
+      pentagonal(q)
+    else:
+      print('Quantidade de termos inválida')
+
+
+**Exercício 04**. Refaça o ``Exercício 09 da Lista 02``, criando uma função chamada ``interceptam(r, s)`` que receba como parâmetros dois pares de coordenadas ``x``, ``y`` dos dois segmentos de reta ``r`` e ``s``, e retorne ``True`` quando os segmentos se interceptam, e ``False`` caso contrário.
+
+
+.. code-block:: python
+    :linenos:
+    :caption: interceptam.py
+
+    def interceptam(r, s):
+      # r = ((x1, y1), (x2, y2))
+      x1 = r[0][0]
+      y1 = r[0][1]
+      x2 = r[1][0]
+      y2 = r[1][1]
+      # s = ((x3, y3), (x4, y4))
+      x3 = s[0][0]
+      y3 = s[0][1]
+      x4 = s[1][0]
+      y4 = s[1][1]
+
+      # Posição de P3 em relação a P1 e P2
+      s123 = (y2 - y1) * (x3 - x1) - (x2 - x1) * (y3 - y1)
+
+      # Posição de P4 em relação a P1 e P2
+      s124 = (y2 - y1) * (x4 - x1) - (x2 - x1) * (y4 - y1)
+
+      if (s123 == 0.0) and (s124 == 0.0):   # Trata-se de segmentos colineares?
+          if x1 == x2: # se s1 é vertical => s2 também é vertical!
+            result = (min(y1, y2) <= max(y3, y4)) and (min(y3, y4) <= max(y1, y2))
+          else:        # os segmentos não são verticais
+            result = (min(x1, x2) <= max(x3, x4)) and (min(x3, x4) <= max(x1, x2))
+
+      else:  # os segmentos não são colineares
+          # Posição de P1 em relação a P3 e P4
+          s341 = (y4 - y3) * (x1 - x3) - (x4 - x3) * (y1 - y3)
+
+          # Posição de P2 em relação a P3 e P4
+          s342 = (y4 - y3) * (x2 - x3) - (x4 - x3) * (y2 - y3)
+
+          # os segmentos só irão se interceptar se os sinais forem todos opostos
+          result = ((s123 * s124) <= 0.0) and ((s341 * s342) <= 0.0)
+
+      return result
+
+    x1 = float( input("x1: ") )
+    y1 = float( input("y1: ") )
+
+    x2 = float( input("x2: ") )
+    y2 = float( input("y2: ") )
+    r = ((x1, y1), (x2, y2))
+
+    x3 = float( input("x3: ") )
+    y3 = float( input("y3: ") )
+
+    x4 = float( input("x4: ") )
+    y4 = float( input("y4: ") )
+    s = ((x3, y3), (x4, y4))
+
+    print(interceptam(r, s))
+
+
+**Exercício 05**. Com base no ``Exercício 03 da Lista 01``, crie duas funções, ``NDWI(Xgreen, Xnir)`` e ``NDVI(Xred, Xnir)`` que recebam os valores indicados e retornem os índices ``NDWI`` e ``NDVI``, respectivamente.
+
+
+.. code-block:: python
+    :linenos:
+    :caption: indices.py
+
+    def NDWI(Xgreen, Xnir):
+      return (Xgreen - Xnir) / (Xgreen + Xnir)
+
+    def NDVI(Xred, Xnir):
+      return (Xnir - Xred) / (Xnir + Xred)
+
+    green = float(input('green: '))
+    nir = float(input('nir: '))
+    red = float(input('red: '))
+
+    print("NDWI: {}".format(NDWI(green, nir)))
+    print("NDVI: {}".format(NDVI(red, nir)))

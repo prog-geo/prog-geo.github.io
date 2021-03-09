@@ -1,0 +1,40 @@
+..
+    This file is part of SER-347 Documentation.
+    Copyright 2020, Gilberto Queiroz and Thales Körting.
+
+
+Clonando um Ambiente Virtual
+****************************
+
+Uma forma de criar um novo ambiente é por meio de uma cópia exata de um existente. O comando ``conda create`` aceita o argumento ``--clone`` para essa finalidade, como mostrado abaixo, onde o ambiente ``neogeo`` será criado como uma cópia exata do ambiente existente ``geospatial``:
+
+.. code-block:: shell
+
+    conda create --clone geospatial --name neogeo
+
+
+Como pode ser visto na saída do comando abaixo, o novo ambiente ``neogeo``` foi criado:
+
+.. code-block:: shell
+
+    conda info --envs
+
+
+Saída::
+
+    # conda environments:
+    #
+    base                     D:\Users\gribeiro\Anaconda3
+    geospatial            *  D:\Users\gribeiro\Anaconda3\envs\geospatial
+    neogeo                   D:\Users\gribeiro\Anaconda3\envs\neogeo
+    ser347                   D:\Users\gribeiro\Anaconda3\envs\ser347
+    ```
+
+
+.. note::
+
+    Apague o ambiente criado, ``neogeo``, para seguir as instruções da próxima seção:
+
+    .. code-block::
+
+        conda remove --name neogeo --all

@@ -1,0 +1,40 @@
+..
+    This file is part of SER-347 Documentation.
+    Copyright 2020, Gilberto Queiroz and Thales Körting.
+
+
+Projeto 4
+---------
+
+
+Desenvolver um gerador de ``Modelo Linear de Mistura`` para uma série temporal, dado um conjunto de pontos de amostra preexistente. Considerando uma lista de arquivos e alguns parâmetros, este projeto envolve a criação de uma ferramenta para linha comando do tipo:
+
+
+.. code-block:: shell
+
+    lmm-cli --samples arq.json --b1 b1.tiff --b2 b2.tiff --b3 b3.tif --output-dir "dir" --randomize-samples
+
+
+**Integrantes:**
+
+- Marionei Fomaca de Sousa Junior
+
+- Philipe Souza Simões
+
+- Tânia Beatriz Hoffmann
+
+
+**Repositório:** https://github.com/ser-347/mlm
+
+
+**Considerações:**
+
+- Como resultado, apresentar um pacote Python com a ferramenta de geração do modelo linear de mistura bem como sua documentação.
+
+- Produzir um ou mais ``Jupyter Notebooks`` mostrando o uso da ferramenta e os resultados alcançados.
+
+- Os produtos de código desenvolvidos deverão ser licenciados de acordo com os modelos de software livre ``MIT`` ou ``Apache``,  e disponibilizados em um repositório na organização `SER-347 <https://github.com/ser-347>`_.
+
+- Os produtos de dados (amostras) deverão ser disponibilizados de acordo com o modelo ``Creative Commons``.
+
+- Produzir um relatório no formato do ``SBSR``.

@@ -1,0 +1,33 @@
+..
+    This file is part of SER-347 Documentation.
+    Copyright 2020, Gilberto Queiroz and Thales Körting.
+
+
+Projeto 5
+---------
+
+
+Análise de uma máscara de nuvens no tempo. Observar os resultados do `fmask <http://www.pythonfmask.org/>`_ aplicado em uma série temporal, a quantidade de vezes que um pixel foi classificado como nuvem em uma série temporal. Apresentar estatísticas da visibilidade de cada pixel no tempo.
+
+
+**Integrantes:**
+
+- Anielli Rosane de Souza
+
+- Elton Vicente Escobar Silva
+
+- Maria Lucia Ferreira Barbosa
+
+
+**Repositório:** https://github.com/ser-347/fmask-ame
+
+
+**Considerações:**
+
+- Como resultado, apresentar: (a) um pacote Python com a ferramenta de análise das máscaras de nuvem; (b) sua documentação; (c) ``Jupyter Notebook`` apresentando as estatísticas de um experimento.
+
+- Os produtos de código desenvolvidos deverão ser licenciados de acordo com os modelos de software livre ``MIT`` ou ``Apache``,  e disponibilizados em um repositório na organização `SER-347 <https://github.com/ser-347>`_.
+
+- Os produtos de dados (amostras) deverão ser disponibilizados de acordo com o modelo ``Creative Commons``.
+
+- Produzir um relatório no formato do ``SBSR``.

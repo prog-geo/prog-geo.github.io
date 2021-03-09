@@ -1,0 +1,15 @@
+..
+    This file is part of SER-347 Documentation.
+    Copyright 2020, Gilberto Queiroz and Thales Körting.
+
+
+Tópicos Variados
+================
+
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+
+    ./variados/json
+    ./variados/geojson
+    ./variados/git_github

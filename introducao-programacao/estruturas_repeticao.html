@@ -1,0 +1,622 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="pt-BR" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>2.4. Estruturas de Repetição &mdash; SER-347/CAP-419</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/table_styling.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/ser-347.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+    <link rel="canonical" href="https://ser-347.github.io/introducao-programacao/estruturas_repeticao.html" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Buscar" href="../search.html" />
+    <link rel="next" title="2.5. Strings, Operações com Strings e Formatação de Strings" href="strings.html" />
+    <link rel="prev" title="2.3. Tipo Lógico, Operadores Lógicos, Operadores Relacionais, Expressões Lógicas e Estruturas Condicionais" href="tipo_logico.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SER-347/CAP-419
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Pesquisar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introdução à Programação com Dados Geoespaciais</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Visão Geral do Curso:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../visao-geral.html">Visao Geral do Curso</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aulas:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../instalacao.html">1. Instalando e Configurando o Ambiente de Programação</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../introducao-programacao.html">2. Introdução à Programação com a Linguagem Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introducao.html">2.1. Introdução</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tipos_dados.html">2.2. Objetos, Tipos de Dados, Operadores, Expressões, Tipos Numéricos, Variáveis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tipo_logico.html">2.3. Tipo Lógico, Operadores Lógicos, Operadores Relacionais, Expressões Lógicas e Estruturas Condicionais</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.4. Estruturas de Repetição</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#slides-da-aula">2.4.1. Slides da Aula</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#trechos-de-codigo">2.4.2. Trechos de Código</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="strings.html">2.5. Strings, Operações com Strings e Formatação de Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sequencias.html">2.6. Sequências (Strings, Tuplas e Listas)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lacos_for_seq.html">2.7. Laços do tipo for e Sequências</a></li>
+<li class="toctree-l2"><a class="reference internal" href="break_continue.html">2.8. Os Comandos <code class="docutils literal notranslate"><span class="pre">break</span></code> e <code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dicionarios.html">2.9. Dicionários</a></li>
+<li class="toctree-l2"><a class="reference internal" href="funcoes.html">2.10. Funções</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../int_anaconda.html">3. Introdução ao Ambiente Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../int_jupyter_notebooks.html">4. IPython e Jupyter Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matrizes.html">5. Matrizes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualizacao.html">6. Visualização de Dados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../imagens.html">7. Imagens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tipos_geometricos.html">8. Tipos e Operações Espaciais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vetorial.html">9. Manipulação de Dados Vetoriais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variados.html">10. Tópicos Variados</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Considerações Finais</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../consideracoes-finais.html">Considerações Finais</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Referências Bibliográficas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../referencias.html">Referências Bibliográficas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Listas de Exercícios:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../listas.html#solucoes-das-listas">Soluções das Listas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Lista de Projetos:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../projetos.html">Lista dos Projetos Finais do Curso</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Informações Gerais:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sites.html">Sobre o Site do Curso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contato.html">Contato</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../licenca.html">Licença</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SER-347/CAP-419</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../introducao-programacao.html"><span class="section-number">2. </span>Introdução à Programação com a Linguagem Python</a> &raquo;</li>
+        
+      <li><span class="section-number">2.4. </span>Estruturas de Repetição</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="strings.html" class="btn btn-neutral float-right" title="2.5. Strings, Operações com Strings e Formatação de Strings" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="tipo_logico.html" class="btn btn-neutral float-left" title="2.3. Tipo Lógico, Operadores Lógicos, Operadores Relacionais, Expressões Lógicas e Estruturas Condicionais" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="estruturas-de-repeticao">
+<h1><span class="section-number">2.4. </span>Estruturas de Repetição<a class="headerlink" href="#estruturas-de-repeticao" title="Link permanente para este título">¶</a></h1>
+<div class="section" id="slides-da-aula">
+<h2><span class="section-number">2.4.1. </span>Slides da Aula<a class="headerlink" href="#slides-da-aula" title="Link permanente para este título">¶</a></h2>
+<p><a class="reference external" href="https://1drv.ms/b/s!AtoTP-MfEUEDgtROyKkDZsMy5GZwyw?e=4BU6Eh">Introdução à Programação com a Linguagem Python: Estruturas de Repetição</a>.</p>
+</div>
+<div class="section" id="trechos-de-codigo">
+<h2><span class="section-number">2.4.2. </span>Trechos de Código<a class="headerlink" href="#trechos-de-codigo" title="Link permanente para este título">¶</a></h2>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 2.14 - </span><span class="caption-text">O que é um range?</span><a class="headerlink" href="#id1" title="Link Permanente para esse código">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 2.15 - </span><span class="caption-text">Escreva um programa para escrever os números de <code class="docutils literal notranslate"><span class="pre">1</span></code> a <code class="docutils literal notranslate"><span class="pre">5</span></code> na tela.</span><a class="headerlink" href="#id2" title="Link Permanente para esse código">¶</a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 2.16 - </span><span class="caption-text">Escreva um programa para escrever os números de <code class="docutils literal notranslate"><span class="pre">1</span></code> a <code class="docutils literal notranslate"><span class="pre">100</span></code> na tela.</span><a class="headerlink" href="#id3" title="Link Permanente para esse código">¶</a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 2.17 - </span><span class="caption-text">Escrever um programa para computar o somatório dos números de <code class="docutils literal notranslate"><span class="pre">1</span></code> a <code class="docutils literal notranslate"><span class="pre">5</span></code>.</span><a class="headerlink" href="#id4" title="Link Permanente para esse código">¶</a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">soma</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+    <span class="n">soma</span> <span class="o">=</span> <span class="n">soma</span> <span class="o">+</span> <span class="n">i</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;soma: </span><span class="si">{</span><span class="n">soma</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 2.18 - </span><span class="caption-text">Escrever um programa para converter a tabela abaixo de temperaturas em graus <code class="docutils literal notranslate"><span class="pre">Fahrenheit</span></code> na equivalente na escala <code class="docutils literal notranslate"><span class="pre">Celsius</span></code>.</span><a class="headerlink" href="#id5" title="Link Permanente para esse código">¶</a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">fahr</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">320</span><span class="p">,</span> <span class="mi">20</span><span class="p">):</span>
+    <span class="n">celsius</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">*</span> <span class="p">(</span><span class="n">fahr</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">/</span> <span class="mi">9</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">fahr</span><span class="p">,</span> <span class="n">celsius</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 2.19 - </span><span class="caption-text">Escrever um programa para computar o somatório dos números de <code class="docutils literal notranslate"><span class="pre">1</span></code> a <code class="docutils literal notranslate"><span class="pre">5</span></code> usando laços do tipo <code class="docutils literal notranslate"><span class="pre">while</span></code>.</span><a class="headerlink" href="#id6" title="Link Permanente para esse código">¶</a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">soma</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="n">soma</span> <span class="o">=</span> <span class="n">soma</span> <span class="o">+</span> <span class="n">i</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">soma</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Soma Final:&quot;</span><span class="p">,</span> <span class="n">soma</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valor final de i:&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 2.20 - </span><span class="caption-text">Escrever um programa para converter uma tabela de temperaturas em graus <code class="docutils literal notranslate"><span class="pre">Fahrenheit</span></code> na equivalente na escala <code class="docutils literal notranslate"><span class="pre">Celsius</span></code>, usando um laço do tipo <code class="docutils literal notranslate"><span class="pre">while</span></code>.</span><a class="headerlink" href="#id7" title="Link Permanente para esse código">¶</a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">t_min</span> <span class="o">=</span> <span class="mi">0</span>     <span class="c1"># temperatura mínima</span>
+<span class="n">t_max</span> <span class="o">=</span> <span class="mi">300</span>   <span class="c1"># temperatra máxima</span>
+<span class="n">delta_t</span> <span class="o">=</span> <span class="mi">20</span>  <span class="c1"># delta de temperatura a cada passo</span>
+
+<span class="n">fahr</span> <span class="o">=</span> <span class="n">t_min</span>  <span class="c1"># temperatura Fahrenheit inicial</span>
+
+<span class="k">while</span> <span class="n">fahr</span> <span class="o">&lt;=</span> <span class="n">t_max</span><span class="p">:</span>
+    <span class="n">celsius</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">*</span> <span class="p">(</span><span class="n">fahr</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">/</span> <span class="mi">9</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">fahr</span><span class="p">,</span> <span class="n">celsius</span><span class="p">)</span>
+
+    <span class="n">fahr</span> <span class="o">=</span> <span class="n">fahr</span> <span class="o">+</span> <span class="n">delta_t</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 2.21 - </span><span class="caption-text">Computar o fatorial de um número no intervalo de <code class="docutils literal notranslate"><span class="pre">1</span></code> a <code class="docutils literal notranslate"><span class="pre">10</span></code>.</span><a class="headerlink" href="#id8" title="Link Permanente para esse código">¶</a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span> <span class="s2">&quot;Digite um número no intervalo [1, 10]: &quot;</span> <span class="p">)</span> <span class="p">)</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">):</span>
+
+    <span class="n">fat</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">fat</span> <span class="o">=</span> <span class="n">fat</span> <span class="o">*</span> <span class="n">n</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;fatorial:&quot;</span><span class="p">,</span> <span class="n">fat</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Número fora do intervalo [1, 10].&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rode o programa novamente!&quot;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 2.22 - </span><span class="caption-text">Computar a sequência de Fibonacci.</span><a class="headerlink" href="#id9" title="Link Permanente para esse código">¶</a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span> <span class="s2">&quot;Digite um número &gt; 1: &quot;</span> <span class="p">)</span> <span class="p">)</span>
+
+<span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="n">exit</span><span class="p">(</span><span class="s2">&quot;Entre com um número &gt; 1.&quot;</span><span class="p">)</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+
+<span class="n">i</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">:</span>
+    <span class="n">proximo</span> <span class="o">=</span> <span class="n">b</span> <span class="o">+</span> <span class="n">a</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">proximo</span><span class="p">)</span>
+
+    <span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">proximo</span>
+
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fim!&quot;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 2.23 - </span><span class="caption-text">Calculo de potência.</span><a class="headerlink" href="#id10" title="Link Permanente para esse código">¶</a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span> <span class="s2">&quot;Digite um número: &quot;</span> <span class="p">)</span> <span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span> <span class="s2">&quot;Digite um número: &quot;</span> <span class="p">)</span> <span class="p">)</span>
+
+<span class="n">pot</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">while</span> <span class="n">y</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="n">pot</span> <span class="o">=</span> <span class="n">pot</span> <span class="o">*</span> <span class="n">x</span>
+
+    <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;XY:&quot;</span><span class="p">,</span> <span class="n">pot</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id11">
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 2.24 - </span><span class="caption-text">Número primo.</span><a class="headerlink" href="#id11" title="Link Permanente para esse código">¶</a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite um número: &quot;</span><span class="p">))</span>
+
+<span class="n">primo</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="n">i</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">primo</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">break</span>
+
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="k">if</span> <span class="n">primo</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="s2">&quot;é primo!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="s2">&quot;não é primo!&quot;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id12">
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 2.25 - </span><span class="caption-text">Número primo (solução 2).</span><a class="headerlink" href="#id12" title="Link Permanente para esse código">¶</a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite um número: &quot;</span><span class="p">))</span>
+
+<span class="n">i</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="s2">&quot;não é primo!&quot;</span><span class="p">)</span>
+        <span class="k">break</span>
+
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="s2">&quot;é primo!&quot;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id13">
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 2.26 - </span><span class="caption-text">Tabuada.</span><a class="headerlink" href="#id13" title="Link Permanente para esse código">¶</a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tabuada:&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+
+    <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="k">while</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="n">i</span> <span class="o">*</span> <span class="n">j</span><span class="p">)</span>
+
+        <span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="strings.html" class="btn btn-neutral float-right" title="2.5. Strings, Operações com Strings e Formatação de Strings" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="tipo_logico.html" class="btn btn-neutral float-left" title="2.3. Tipo Lógico, Operadores Lógicos, Operadores Relacionais, Expressões Lógicas e Estruturas Condicionais" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-165908761-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

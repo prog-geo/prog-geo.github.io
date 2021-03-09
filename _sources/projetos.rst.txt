@@ -1,0 +1,22 @@
+..
+    This file is part of SER-347 Documentation.
+    Copyright 2020, Gilberto Queiroz and Thales Körting.
+
+
+Lista dos Projetos Finais do Curso
+==================================
+
+
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+
+    ./projetos/p1
+    ./projetos/p2
+    ./projetos/p3
+    ./projetos/p4
+    ./projetos/p5
+    ./projetos/p6
+    ./projetos/p7
+    ./projetos/p8
+    ./projetos/p9

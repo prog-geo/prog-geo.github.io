@@ -1,0 +1,14 @@
+..
+    This file is part of SER-347 Documentation.
+    Copyright 2020, Gilberto Queiroz and Thales Körting.
+
+
+Removendo um Pacote
+*******************
+
+
+Para remover um pacote, podemos usar o comando ``conda remove`` ou seu alias ``conda uninstall``, como mostrado abaixo:
+
+.. code-block:: shell
+
+    conda uninstall gdal

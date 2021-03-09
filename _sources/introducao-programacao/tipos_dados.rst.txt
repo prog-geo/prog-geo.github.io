@@ -1,0 +1,37 @@
+..
+    This file is part of SER-347 Documentation.
+    Copyright 2020, Gilberto Queiroz and Thales Körting.
+
+
+Objetos, Tipos de Dados, Operadores, Expressões, Tipos Numéricos, Variáveis
+---------------------------------------------------------------------------
+
+
+Slides da Aula
+++++++++++++++
+
+
+`Introdução à Programação com a Linguagem Python: Objetos, Tipos de Dados, Operadores, Expressões, Tipos Numéricos, Variáveis <https://1drv.ms/b/s!AtoTP-MfEUEDgtMjatnbYBsALr7mcA?e=aBL6Yj>`_.
+
+
+Trechos de Código
++++++++++++++++++
+
+
+.. code-block:: python
+    :linenos:
+    :caption: ndvi.py
+
+    # definir valores de NIR e Red
+    NIR = 0.5
+    Red = 0.3
+
+    # mostrar dados de entrada na tela
+    print("NIR:", NIR)
+    print("Red:", Red)
+
+    # calcular NDVI
+    NDVI = (NIR - Red) / (NIR + Red)
+
+    # mostrar resultado na tela
+    print("NDVI:", NDVI)

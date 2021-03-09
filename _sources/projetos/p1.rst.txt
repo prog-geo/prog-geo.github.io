@@ -1,0 +1,36 @@
+..
+    This file is part of SER-347 Documentation.
+    Copyright 2020, Gilberto Queiroz and Thales Körting.
+
+
+Projeto 1
+---------
+
+
+Usando um serviço de consulta a séries temporais de sensoriamento remoto, como o `WTSS <https://github.com/brazil-data-cube/wtss.py/blob/master/examples/wtss.ipynb>`_, coletar várias séries temporais e calcular métricas (através do pacote Python `stmetrics <https://stmetrics.readthedocs.io/>`_ por exemplo). Baseado em análises empíricas, verificar qual conjunto de métricas pode servir para mapear séries temporais com comportamento temporal equivalente a alvos de água.
+
+
+Para facilitar a organização, utilizar as áreas de interesse disponíveis no projeto `Brazil Data Cube <http://brazildatacube.org/>`_ com dados dos satélites disponíveis (``CBERS-4``, ``Landsat-8``, ``Sentinel-2``).
+
+
+**Integrantes:**
+
+- Deborah Lopes Correia Lima
+
+- Rejane de Souza Paulino
+
+
+**Repositório:** https://github.com/ser-347/stmetrics
+
+
+**Considerações:**
+
+- Como resultado, apresentar um código organizado com funções e documentação.
+
+- Produzir um ou mais ``Jupyter Notebooks`` para apresentar o código desenvolvido bem como os resultados do trabalho.
+
+- Os produtos de código desenvolvidos deverão ser licenciados de acordo com os modelos de software livre ``MIT`` ou ``Apache``,  e disponibilizados em um repositório na organização `SER-347 <https://github.com/ser-347>`_.
+
+- Os produtos de dados gerados deverão ser disponibilizados de acordo com o modelo ``Creative Commons``.
+
+- Produzir um relatório no formato do ``SBSR``.

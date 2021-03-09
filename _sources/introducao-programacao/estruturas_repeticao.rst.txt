@@ -1,0 +1,231 @@
+..
+    This file is part of SER-347 Documentation.
+    Copyright 2020, Gilberto Queiroz and Thales Körting.
+
+
+Estruturas de Repetição
+-----------------------
+
+
+Slides da Aula
+++++++++++++++
+
+
+`Introdução à Programação com a Linguagem Python: Estruturas de Repetição <https://1drv.ms/b/s!AtoTP-MfEUEDgtROyKkDZsMy5GZwyw?e=4BU6Eh>`_.
+
+
+Trechos de Código
++++++++++++++++++
+
+
+.. code-block:: python
+    :caption: O que é um range?
+
+    list(range(1, 5))
+
+
+.. code-block:: python
+    :linenos:
+    :caption: Escreva um programa para escrever os números de ``1`` a ``5`` na tela.
+
+    print(1)
+    print(2)
+    print(3)
+    print(4)
+    print(5)
+
+
+.. code-block:: python
+    :linenos:
+    :caption: Escreva um programa para escrever os números de ``1`` a ``100`` na tela.
+
+    for i in range(1, 101):
+        print(i)
+
+
+.. code-block:: python
+    :linenos:
+    :caption: Escrever um programa para computar o somatório dos números de ``1`` a ``5``.
+
+    soma = 0
+
+    for i in range(1, 6):
+        soma = soma + i
+
+    print(f"soma: {soma}")
+
+
+.. code-block:: python
+    :linenos:
+    :caption: Escrever um programa para converter a tabela abaixo de temperaturas em graus ``Fahrenheit`` na equivalente na escala ``Celsius``.
+
+    for fahr in range(0, 320, 20):
+        celsius = 5 * (fahr - 32) / 9
+
+        print(fahr, celsius)
+
+
+.. code-block:: python
+    :linenos:
+    :caption: Escrever um programa para computar o somatório dos números de ``1`` a ``5`` usando laços do tipo ``while``.
+
+    i = 1
+    soma = 0
+
+    while i <= 5:
+        soma = soma + i
+        print(i, soma)
+        i = i + 1
+
+    print("Soma Final:", soma)
+    print("Valor final de i:", i)
+
+
+.. code-block:: python
+    :linenos:
+    :caption: Escrever um programa para converter uma tabela de temperaturas em graus ``Fahrenheit`` na equivalente na escala ``Celsius``, usando um laço do tipo ``while``.
+
+    t_min = 0     # temperatura mínima
+    t_max = 300   # temperatra máxima
+    delta_t = 20  # delta de temperatura a cada passo
+
+    fahr = t_min  # temperatura Fahrenheit inicial
+
+    while fahr <= t_max:
+        celsius = 5 * (fahr - 32) / 9
+
+        print(fahr, celsius)
+
+        fahr = fahr + delta_t
+
+
+.. code-block:: python
+    :linenos:
+    :caption: Computar o fatorial de um número no intervalo de ``1`` a ``10``.
+
+    n = int( input( "Digite um número no intervalo [1, 10]: " ) )
+
+    if (n >= 1) and (n <= 10):
+
+        fat = 1
+        while n > 1:
+            fat = fat * n
+            n = n - 1
+
+        print("fatorial:", fat)
+
+    else:
+        print("Número fora do intervalo [1, 10].")
+        print("Rode o programa novamente!")
+
+
+.. code-block:: python
+    :linenos:
+    :caption: Computar a sequência de Fibonacci.
+
+    n = int( input( "Digite um número > 1: " ) )
+
+    if n <= 1:
+        exit("Entre com um número > 1.")
+
+    a = 0
+    print(a)
+
+    b = 1
+    print(b)
+
+    i = 2
+
+    while i <= n:
+        proximo = b + a
+
+        print(proximo)
+
+        a = b
+        b = proximo
+
+        i = i + 1
+
+    print("Fim!")
+
+
+.. code-block:: python
+    :linenos:
+    :caption: Calculo de potência.
+
+    x = int( input( "Digite um número: " ) )
+    y = int( input( "Digite um número: " ) )
+
+    pot = 1
+
+    while y >= 1:
+        pot = pot * x
+
+        y = y - 1
+
+    print("XY:", pot)
+
+
+.. code-block:: python
+    :linenos:
+    :caption: Número primo.
+
+    n = int(input("Digite um número: "))
+
+    primo = True
+
+    i = 2
+
+    while i < n:
+
+        if (n % i) == 0:
+            primo = False
+            break
+
+        i = i + 1
+
+    if primo:
+        print(n, "é primo!")
+    else:
+        print(n, "não é primo!")
+
+
+.. code-block:: python
+    :linenos:
+    :caption: Número primo (solução 2).
+
+    n = int(input("Digite um número: "))
+
+    i = 2
+
+    while i < n:
+
+        if (n % i) == 0:
+            print(n, "não é primo!")
+            break
+
+        i = i + 1
+
+    else:
+        print(n, "é primo!")
+
+
+.. code-block:: python
+    :linenos:
+    :caption: Tabuada.
+
+    i = 1
+
+    while i <= 10:
+        print("Tabuada:", i)
+
+        j = 1
+
+        while j <= 10:
+            print(i, "x", j, "=", i * j)
+
+            j = j + 1
+
+        i = i + 1
+
+        print("")

@@ -1,0 +1,270 @@
+..
+    This file is part of SER-347 Documentation.
+    Copyright 2020, Gilberto Queiroz and Thales Körting.
+
+
+Matriz de 9-intersecções Estendida Dimensionalmente
+***************************************************
+
+
+Os relacionamentos espaciais são definidos com base no paradigma da **Matriz de 9-Intersecções Estendida Dimensionalmente** (``DE-9IM``) proposto por Clementini et al. (1993). A abordagem básica desse método consiste em comparar dois objetos geométricos através de testes com a intersecção entre seus interiores, fronteiras e exteriores. Desta forma, podemos construir uma matrix :math:`3 \times 3` como a mostrada abaixo:
+
+
+.. table:: Matriz de 9-Intersecções Estendida Dimensionalmente.
+    :widths: 25 25 25 25
+    :width: 640
+    :align: center
+    :name: tipos-geometricos:de-9im
+
+    +---------------------+-----------------------------+-----------------------------+-----------------------------+
+    |                     | :math:`Interior(B)`         | :math:`Fronteira(B)`        | :math:`Exterior(B)`         |
+    +=====================+=============================+=============================+=============================+
+    | :math:`Interior(A)` + :math:`dim(I(A) \cap I(B))` + :math:`dim(I(A) \cap F(B))` + :math:`dim(I(A) \cap E(B))` |
+    +---------------------+-----------------------------+-----------------------------+-----------------------------+
+    | :math:`Fonteira(A)` + :math:`dim(F(A) \cap I(B))` + :math:`dim(F(A) \cap F(B))` + :math:`dim(F(A) \cap E(B))` |
+    +---------------------+-----------------------------+-----------------------------+-----------------------------+
+    | :math:`Exterior(A)` + :math:`dim(E(A) \cap I(B))` + :math:`dim(E(A) \cap F(B))` + :math:`dim(E(A) \cap E(B))` |
+    +---------------------+-----------------------------+-----------------------------+-----------------------------+
+
+
+Na matriz acima (:numref:`Tabela %s <tipos-geometricos:de-9im>`), :math:`I(A)`, :math:`F(A)` e :math:`E(A)` referem-se, respectivamente, ao interior, fronteira  e exterior do objeto :math:`A`. De maneira análoga, :math:`I(B)`, :math:`F(B)` e :math:`E(B)` referem-se, respectivamente, ao interior, fronteira  e exterior do objeto :math:`B`.
+
+
+A dimensionalidade máxima dos objetos resultantes da intersecção dos componentes avaliados, :math:`dim(x)`, pode ser:
+
+- :math:`\emptyset`: Caso os componentes não tenham intersecção. Adotaremos o valor :math:`-1` para este caso.
+
+- :math:`0`: Se a intersecção dos componentes resulta em um ponto.
+
+- :math:`1`: Se a intersecção dos componentes resulta em alguma curva.
+
+- :math:`2`: Se a intersecção dos componentes resulta em alguma superfície. Adotaremos também os termos **Área** ou **Região** como sinônimos.
+
+
+A :numref:`Tabela %s <tipos-geometricos:comp-tipos>` ilustra cada um dos componentes dos tipos de objetos geométricos definidos na OGC-SFS.
+
+
+.. |ogc-geom-topo-point| image:: ../img/tipos-geometricos/ogc-geom-topo-point.png
+
+
+.. |ogc-geom-topo-multipoint| image:: ../img/tipos-geometricos/ogc-geom-topo-multipoint.png
+
+
+.. |ogc-geom-topo-line| image:: ../img/tipos-geometricos/ogc-geom-topo-line.png
+
+
+.. |ogc-geom-topo-ring| image:: ../img/tipos-geometricos/ogc-geom-topo-ring.png
+
+
+.. |ogc-geom-topo-multiline| image:: ../img/tipos-geometricos/ogc-geom-topo-multiline.png
+
+
+.. |ogc-geom-topo-multiline2| image:: ../img/tipos-geometricos/ogc-geom-topo-multiline2.png
+
+
+.. |ogc-geom-topo-poly| image:: ../img/tipos-geometricos/ogc-geom-topo-poly.png
+
+
+.. |ogc-geom-topo-multipoly| image:: ../img/tipos-geometricos/ogc-geom-topo-multipoly.png
+
+
+.. |ogc-geom-topo-geomcoll| image:: ../img/tipos-geometricos/ogc-geom-topo-geomcoll.png
+
+
+.. table:: Interior, fronteira e exterior dos diversos tipos geométricos.
+    :widths: 33 33 33
+    :width: 640
+    :align: center
+    :name: tipos-geometricos:comp-tipos
+
+    +-----------------------+----------------------------+-----------------------------+
+    | ( a ) I e E Ponto     | ( b ) I e E Coleção Pontos | ( c ) I, F e E Curva Aberta |
+    +=======================+============================+=============================+
+    | |ogc-geom-topo-point| | |ogc-geom-topo-multipoint| | |ogc-geom-topo-line|        |
+    +-----------------------+----------------------------+-----------------------------+
+
+
+.. table::
+    :widths: 33 33 33
+    :width: 640
+    :align: center
+
+    +---------------------------+-----------------------------------+--------------------------------+
+    | ( d ) I e E Curva Fechada | ( e ) I, F e E Col. Curv. Abertas | ( f ) I e E Col. Curv. Abertas |
+    +===========================+===================================+================================+
+    | |ogc-geom-topo-ring|      | |ogc-geom-topo-multiline|         | |ogc-geom-topo-multiline2|     |
+    +---------------------------+-----------------------------------+--------------------------------+
+
+
+.. table::
+    :widths: 33 33 33
+    :width: 640
+    :align: center
+
+    +-------------------------+----------------------------------+------------------------------+
+    | ( g ) I, F e E Polígono | ( h ) I, F e E Coleção Polígonos | ( i ) I, F e E Coleção Geom. |
+    +=========================+==================================+==============================+
+    | |ogc-geom-topo-poly|    | |ogc-geom-topo-multipoly|        | |ogc-geom-topo-geomcoll|     |
+    +-------------------------+----------------------------------+------------------------------+
+
+
+A fronteira de um objeto geométrico é formada por um conjunto de objetos geométricos de uma dimensão abaixo do objeto em questão.
+
+
+Assim, a fronteira de um objeto do tipo ponto (``Point``) é o conjunto vazio (:math:`\emptyset`), uma vez que um ponto é um objeto :math:`0`-dimensional (dimensão topológica). Observe na :numref:`Tabela %sa <tipos-geometricos:comp-tipos>` que no caso de um ponto, temos apenas a definição de seu interior, destacado em azul escuro, e seu exterior, representado pela região em vermelho. Portanto, o interior de um ponto é um objeto :math:`0`-dimensional e seu exterior, um objeto :math:`2`-dimensional.
+
+
+Um objeto geométrico do tipo ``MultiPoint``, que também é :math:`0`-dimensional, tem sua fronteira definida como o conjunto vazio (:math:`\emptyset`). O interior é formado pelos próprios pontos da coleção, destacados em azul escuro na :numref:`Tabela %sb <tipos-geometricos:comp-tipos>`, e o exterior é região destacada em vermelho nessa tabela.
+
+
+A fronteira de uma curva aberta (``Curve``) consiste nos pontos inicial e final dessa curva. A :numref:`Tabela %sc <tipos-geometricos:comp-tipos>` mostra uma exemplo de curva aberta, onde os pontos destacados em verde formam a fronteira dessa curva. Portanto, a fronteira de uma curva aberta é um conjunto de objetos geométricos :math:`0`-dimensional. O interior de uma curva aberta é formado pelos infinitos pontos de sua imagem, exceto os pontos da fronteira. Na :numref:`Tabela %sc <tipos-geometricos:comp-tipos>`, a linha em azul escuro corresponde ao interior da curva, que é um objeto geométrico :math:`1`-dimensional. O exterior da curva é representado pela região em vermelho que não contém os pontos da fronteira e do interior da curva.
+
+
+A fronteira de uma curva fechada (``Curve``) é o conjunto vazio (:math:`\emptyset`). A :numref:`Tabela %sd <tipos-geometricos:comp-tipos>` mostra um exemplo de curva fechada. Nessa tabela, podemos observar que o interior é formado por todos os pontos da curva, incluindo os pontos inicial e final, formando um objeto geométrico :math:`1`-dimensional. O exterior de uma curva fechada é uma região, um objeto :math:`2`-dimensional, destacado em vermelho nessa tabela.
+
+
+A fronteira de uma coleção de curvas (``MultiCurve``) consiste nos pontos na fronteira de um número ímpar de elementos da curva. A :numref:`Tabela %se <tipos-geometricos:comp-tipos>` mostra um exemplo de coleção de curvas abertas. Repare que os pontos destacados em verde formam a fronteira dessa curva, enquanto os pontos sobre as imagens das linhas, destacados em azul escuro, forma seus interiores e seu exterior é destacado pela região em vermelho. A :numref:`Tabela %sf <tipos-geometricos:comp-tipos>` ilustra a regra de que os pontos da fronteira devem pertencer a um número ímpar de elementos da curva.
+
+
+Uma coleção de curvas (``MultiCurve``) é dita fechada se todos os seus elementos são fechados, consequentemente, a fronteira de uma coleção de curvas fechadas é o conjunto vazio (:math:`\emptyset`).
+
+
+A fronteira de um polígono (``Polygon``) consiste no seu conjunto de anéis (``LinearRing``). A :numref:`Tabela %sg <tipos-geometricos:comp-tipos>` ilustra esse caso. Repare que o exterior de um polígono com buraco é desconectado.
+
+
+A fronteira de uma coleção de polígonos (``MultiPolygon``) consiste no conjunto de anéis (``LinearRing``) de seus polígonos (``Polygon``) (:numref:`Tabela %sh <tipos-geometricos:comp-tipos>`).
+
+
+A fronteira de um conjunto de objetos geométricos heterogêneos (``GeometryCollection``) cujo os interiores dos seus elementos são disjuntos, consiste nos objetos geométricos das fronteiras desses elementos obedecendo à regra de que os pontos devem pertencer a um número ímpar de elementos (:numref:`Tabela %si <tipos-geometricos:comp-tipos>`).
+
+
+Vamos considerar os objetos geométricos apresentados na :numref:`Figura %s <tipos-geometricos:rel-a-b>`. Podemos estabelecer o seguinte:
+
+- :math:`I(A)`: área mostrada em azul claro.
+
+- :math:`F(A)`: formada por um único anel (externo), em azul escuro.
+
+- :math:`E(A)`: é definido como toda a região do espaço que não compreenda a fronteira e o interior de :math:`A`.
+
+
+De maneira análoga:
+
+- :math:`I(B)`: área mostrada em laranja claro.
+
+- :math:`F(B)`: formada por um único anel (externo), em laranja escuro.
+
+- :math:`E(B)`: é definido como toda a região do espaço que não compreenda a fronteira e o interior de :math:`B`.
+
+
+.. figure:: ../img/tipos-geometricos/ogc-de9im.png
+    :alt: Relacionamento Espacial entre objetos A e B
+    :height: 200
+    :figclass: align-center
+    :name: tipos-geometricos:rel-a-b
+
+    Configuração espacial de dois objetos geométricos :math:`A` e :math:`B`.
+
+
+O relacionamento espacial definido por :math:`A` e :math:`B` segundo a matriz de intersecções é a seguinte:
+
+
+.. table:: ``DE-9IM`` - :math:`A` e :math:`B`.
+    :widths: 25 25 25 25
+    :width: 640
+    :align: center
+    :name: tipos-geometricos:rel-a-b-mat
+
+    +---------------------+---------------------+----------------------+---------------------+
+    |                     | :math:`Interior(B)` | :math:`Fronteira(B)` | :math:`Exterior(B)` |
+    +=====================+=====================+======================+=====================+
+    | :math:`Interior(A)` + :math:`2`           + :math:`1`            + :math:`2`           |
+    +---------------------+---------------------+----------------------+---------------------+
+    | :math:`Fonteira(A)` + :math:`1`           + :math:`0`            + :math:`1`           |
+    +---------------------+---------------------+----------------------+---------------------+
+    | :math:`Exterior(A)` + :math:`2`           + :math:`1`            + :math:`2`           |
+    +---------------------+---------------------+----------------------+---------------------+
+
+
+A matriz acima foi definida considerando:
+
+- Os interiores de :math:`A` e :math:`B` são regiões, isto é, objetos :math:`2`-dimensional. A intersecção desses dois componentes forma uma nova região, a área em vermelho na :numref:`Tabela %sa <tipos-geometricos:i-f-e>`, que também é um objeto :math:`2`-dimensional. Logo, a :math:`dim(I(A) \cap I(B)) = 2`.
+
+- A fronteira de :math:`B` é formada por um anel (laranja), um objeto :math:`1`-dimensional. A intersecção entre :math:`I(A)` e a :math:`F(B)` forma uma linha, destacada em vermelho na :numref:`Tabela %sb <tipos-geometricos:i-f-e>`, que é um objeto :math:`1`-dimensional.  Logo, a :math:`dim(I(A) \cap F(B)) = 1`.
+
+- O exterior de :math:`B` é uma região. A intersecção do :math:`I(A)` e o :math:`E(B)` forma a área destacada em vermelho da :numref:`Tabela %sc <tipos-geometricos:i-f-e>`. Logo, a :math:`dim(I(A) \cap E(B)) = 2`.
+
+- A fronteira de :math:`A` é formada por um anel (azul). A intersecção entre :math:`F(A)` e o :math:`I(B)` forma uma linha, destacada em vermelho na :numref:`Tabela %sd <tipos-geometricos:i-f-e>`, que é um objeto :math:`1`-dimensional.  Logo, a :math:`dim(F(A) \cap I(B)) = 1`.
+
+- A intersecção entre as fronteiras de :math:`A` e :math:`B` são os pontos mostrados em vermelho na :numref:`Tabela %se <tipos-geometricos:i-f-e>`. Como um ponto é um objeto :math:`0`-dimensional, a :math:`dim(F(A) \cap F(B)) = 0`.
+
+- A intersecção entre a fronteira de :math:`A` e o exterior de :math:`B` forma a linha mostrada na :numref:`Tabela %sf <tipos-geometricos:i-f-e>`. Logo, a :math:`dim(F(A) \cap E(B)) = 1`.
+
+- A intersecção entre exterior de :math:`A` e interior de :math:`B` forma uma área (:numref:`Tabela %sg <tipos-geometricos:i-f-e>`). Logo, a :math:`dim(E(A) \cap I(B)) = 2`.
+
+- A intersecção entre exterior de :math:`A` e fronteira de :math:`B` forma a linha mostrada na :numref:`Tabela %sh <tipos-geometricos:i-f-e>`. Logo, a :math:`dim(E(A) \cap F(B)) = 1`.
+
+- A interseção entre os exteriores de :math:`A` e :math:`B` formam uma área (:numref:`Tabela %si <tipos-geometricos:i-f-e>`). Logo, a :math:`dim(E(A) \cap E(B)) = 2`.
+
+
+.. |ogc-de9im-ia-ib| image:: ../img/tipos-geometricos/ogc-de9im-ia-ib.png
+
+
+.. |ogc-de9im-ia-fb| image:: ../img/tipos-geometricos/ogc-de9im-ia-fb.png
+
+
+.. |ogc-de9im-ia-eb| image:: ../img/tipos-geometricos/ogc-de9im-ia-eb.png
+
+
+.. |ogc-de9im-fa-ib| image:: ../img/tipos-geometricos/ogc-de9im-fa-ib.png
+
+
+.. |ogc-de9im-fa-fb| image:: ../img/tipos-geometricos/ogc-de9im-fa-fb.png
+
+
+.. |ogc-de9im-fa-eb| image:: ../img/tipos-geometricos/ogc-de9im-fa-eb.png
+
+
+.. |ogc-de9im-ea-ib| image:: ../img/tipos-geometricos/ogc-de9im-ea-ib.png
+
+
+.. |ogc-de9im-ea-fb| image:: ../img/tipos-geometricos/ogc-de9im-ea-fb.png
+
+
+.. |ogc-de9im-ea-eb| image:: ../img/tipos-geometricos/ogc-de9im-ea-eb.png
+
+
+.. table:: Intersecção entre os componentes dos objetos :math:`A` e :math:`B`.
+    :widths: 33 33 33
+    :width: 640
+    :align: center
+    :name: tipos-geometricos:i-f-e
+
+    +------------------------------+------------------------------+------------------------------+
+    | ( a ) :math:`I(A) \cap I(B)` | ( b ) :math:`I(A) \cap F(B)` | ( c ) :math:`I(A) \cap E(B)` |
+    +==============================+==============================+==============================+
+    | |ogc-de9im-ia-ib|            | |ogc-de9im-ia-fb|            | |ogc-de9im-ia-eb|            |
+    +------------------------------+------------------------------+------------------------------+
+
+
+.. table::
+    :widths: 33 33 33
+    :width: 640
+    :align: center
+
+    +------------------------------+------------------------------+------------------------------+
+    | ( d ) :math:`F(A) \cap I(B)` | ( e ) :math:`F(A) \cap F(B)` | ( f ) :math:`F(A) \cap E(B)` |
+    +==============================+==============================+==============================+
+    | |ogc-de9im-fa-ib|            | |ogc-de9im-fa-fb|            | |ogc-de9im-fa-eb|            |
+    +------------------------------+------------------------------+------------------------------+
+
+
+.. table::
+    :widths: 33 33 33
+    :width: 640
+    :align: center
+
+    +------------------------------+------------------------------+------------------------------+
+    | ( d ) :math:`E(A) \cap I(B)` | ( e ) :math:`E(A) \cap F(B)` | ( f ) :math:`E(A) \cap E(B)` |
+    +==============================+==============================+==============================+
+    | |ogc-de9im-ea-ib|            | |ogc-de9im-ea-fb|            | |ogc-de9im-ea-eb|            |
+    +------------------------------+------------------------------+------------------------------+

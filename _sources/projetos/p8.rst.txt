@@ -1,0 +1,34 @@
+..
+    This file is part of SER-347 Documentation.
+    Copyright 2020, Gilberto Queiroz and Thales Körting.
+
+
+Projeto 8
+---------
+
+
+Análise do produto *risco de fogo* com base nas *ocorrências de focos de incêndio na vegetação*: considerar o acerto do risco por Estado, Região, Bioma e Sazonalidade. Basear a análise no artigo `Um ambiente para análise exploratória de grandes volumes de dados geoespaciais: explorando risco de fogo e focos de queimadas <http://urlib.net/8JMKD3MGPDW34P/3QCRA6L>`_.
+
+
+Os dados para este projeto deverão ser obtidos no Programa Queimadas do INPE.
+
+
+**Integrantes:**
+
+- Bruno Vargas Adorno
+
+- Gabriel Máximo da Silva
+
+
+**Repositório:** https://github.com/ser-347/risco-de-fogo
+
+
+**Considerações:**
+
+- Como resultado, apresentar um código organizado com funções e documentação.
+
+- Os produtos de código desenvolvidos deverão ser licenciados de acordo com os modelos de software livre ``MIT`` ou ``Apache``,  e disponibilizados em um repositório na organização `SER-347 <https://github.com/ser-347>`_.
+
+- Os produtos de dados (amostras) deverão ser disponibilizados de acordo com o modelo ``Creative Commons``.
+
+- Produzir um relatório no formato do ``SBSR``.

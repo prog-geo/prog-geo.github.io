@@ -1,0 +1,28 @@
+..
+    This file is part of SER-347 Documentation.
+    Copyright 2020, Gilberto Queiroz and Thales Körting.
+
+
+Relacionamentos Espaciais
+-------------------------
+
+
+Entre as operações definidas na ``OGC-SFS``, existe um conjunto que merece uma atenção especial: os **operadores topológicos**. Esses operadores são extensivamente utilizados na construção de consultas espaciais envolvendo o relacionamento espacial entre objetos geográficos.
+
+
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+
+    ./rel_espaciais_matriz
+    ./rel_espaciais_relate
+    ./rel_espaciais_nomeados
+
+
+
+
+
+
+
+
+

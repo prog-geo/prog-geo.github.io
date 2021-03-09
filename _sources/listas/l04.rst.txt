@@ -1,0 +1,166 @@
+..
+    This file is part of SER-347 Documentation.
+    Copyright 2020, Gilberto Queiroz and Thales Körting.
+
+
+Solução - Lista de Exercícios 04
+--------------------------------
+
+
+**Solução do exercício 01:**
+
+
+.. code-block:: python
+    :linenos:
+    :caption: modis.py
+
+    # exemplo 1 "MOD09A1.A2006001.h08v05.005.2006012234657.hdf"
+    # exemplo 2 "MOD09A1.A2006001.h08v05.006.2015113045801.hdf"
+    nome_do_arquivo = input("Digite o nome do arquivo MODIS: ")
+
+    product = nome_do_arquivo[0:7]
+    if product[0:3] == "MOD":
+      satellite = "Terra"
+    else:
+      satellite = "unknown"
+    year_of_acquisition = nome_do_arquivo[9:13]
+    julian_day = nome_do_arquivo[13:16]
+    horizontal_tile = nome_do_arquivo[18:20]
+    vertical_tile = nome_do_arquivo[21:23]
+    collection = nome_do_arquivo[24:27]
+    year_of_production = nome_do_arquivo[28:32]
+    julian_day_of_production = nome_do_arquivo[32:35]
+    production_hour = nome_do_arquivo[35:37]
+    production_minute = nome_do_arquivo[37:39]
+    production_second = nome_do_arquivo[39:41]
+    data_format = nome_do_arquivo[42:45]
+
+    print ("Satellite...............: " + satellite)
+    print ("Product.................: " + product)
+    print ("Year of Acquisition.....: " + year_of_acquisition)
+    print ("Julian Day..............: " + julian_day)
+    print ("Horizontal Tile.........: " + horizontal_tile)
+    print ("Vertical Tile...........: " + vertical_tile)
+    print ("Collection..............: " + collection)
+    print ("Year of Production......: " + year_of_production)
+    print ("Julian Day of Production: " + julian_day_of_production)
+    print ("Production Hour.........: " + production_hour)
+    print ("Production Minute.......: " + production_minute)
+    print ("Production Second.......: " + production_second)
+    print ("Data Format.............: " + data_format)
+
+
+**Solução do exercício 02:**
+
+
+.. code-block:: python
+    :linenos:
+    :caption: senha.py
+
+    senha = input("digite a senha: ")
+
+    # uma senha forte possui caracteres maiusculos
+    tem_maiusculos = False
+    for caractere in senha:
+      if caractere.isupper():
+        tem_maiusculos = True
+        break
+
+    # uma senha forte possui caracteres minusculos
+    tem_minusculos = False
+    for caractere in senha:
+      if caractere.islower():
+        tem_minusculos = True
+        break
+
+    # uma senha forte possui pelo menos 8 caracteres
+    tem_pelo_menos_8 = False
+    if len(senha) >= 8:
+      tem_pelo_menos_8 = True
+
+    if tem_maiusculos and tem_minusculos and tem_pelo_menos_8:
+      print ("senha forte")
+    else:
+      print ("senha fraca")
+
+
+**Solução do exercício 03:**
+
+
+.. code-block:: python
+    :linenos:
+    :caption: strings.py
+
+    # "Gilberto" -> "++Gilberto++"
+    print("Gilberto".center(12, "+"))
+    # "sensoriamento remoto" -> "Sensoriamento remoto"
+    print("sensoriamento remoto".capitalize())
+    # "sensoriamento remoto" -> "Sensoriamento Remoto"
+    print("sensoriamento remoto".title())
+    # "GilberTo" -> "gilberto"
+    print("GilberTo".lower())
+    # "Gilberto" -> "Gilberto**"
+    print("Gilberto".ljust(10, "*"))
+    # "Gilberto" -> "**Gilberto"
+    print("Gilberto".rjust(10, "*"))
+    # " Gilberto" -> "Gilberto"
+    print(" Gilberto".lstrip())
+    # "ser347@dpi.inpe.br" -> ("ser347", "@", "dpi.inpe.br")
+    print("ser347@dpi.inpe.br".partition("@"))
+    # "CBERS_4_PAN5M_20180308" -> ['CBERS', '4', 'PAN5M', '20180308']
+    print("CBERS_4_PAN5M_20180308".split("_"))
+    # "Gilberto@@@" -> "Gilberto"
+    print("Gilberto@@@".rstrip("@"))
+    # "@@Gilberto@@@" -> "Gilberto"
+    print("@@Gilberto@@@".strip("@"))
+
+
+**Solução do exercício 04:**
+
+
+.. code-block:: python
+    :linenos:
+    :caption: palavra_palindromo.py
+
+    palavras = ("ana", "arara", "anilina", "asa", "mussum", "osso", "reviver", "salas",
+    "ralar ", "madam", "rotor", "level", "civic")
+
+    for palavra in palavras:
+        # guardar palavra original
+        palavra_original = palavra
+        # transformar caracteres em minusculos
+        palavra = palavra.lower()
+        # remover espacos
+        palavra = palavra.replace(" ", "")
+        # testar se a string e igual lendo pelos dois sentidos
+        if palavra == palavra[::-1]:
+            print (palavra_original + " e palindromo")
+        else:
+            print (palavra_original + " nao e palindromo")
+
+
+**Solução do exercício 05:**
+
+
+.. code-block:: python
+    :linenos:
+    :caption: frase_palindromo.py
+
+    # frases com exemplos de palindromos
+    frases = ("Never odd or even", "ROMA TIBI SUBITO MOTIBUS IBIT AMOR", "Socorram-me, subi no onibus em Marrocos!")
+    # lista de caracteres para desconsiderar (opcional)
+    caracteres_a_remover = (" ", ",", ".", "!", "-")
+
+    for frase in frases:
+        # guardar palavra original
+        frase_original = frase
+        # transformar caracteres em minusculos
+        frase = frase.lower()
+        # remover caracteres indesejados
+        for caractere in caracteres_a_remover:
+            frase = frase.replace(caractere, "")
+        # testar se a string e igual lendo pelos dois sentidos
+        if frase == frase[::-1]:
+            print (frase_original + " e palindromo")
+        else:
+            print (frase_original + " nao e palindromo")

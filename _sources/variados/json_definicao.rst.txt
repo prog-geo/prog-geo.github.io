@@ -1,0 +1,120 @@
+..
+    This file is part of SER-347 Documentation.
+    Copyright 2020, Gilberto Queiroz and Thales Körting.
+
+
+O que é um documento JSON?
+++++++++++++++++++++++++++
+
+
+``JSON`` é a abreviação de **J**\ ava **S**\ cript **O**\ bject **N**\ otation. Trata-se de um formato de dados que ficou muito popular nas aplicações Web, principalmente entre as APIs de serviços, pela facilidade de estruturar dados para intercâmbio entre as aplicações. Conforme veremos nas seções seguintes, um documento ``JSON`` é de fácil leitura e escrita, possibilitando as aplicações manipularem dados codificados neste formato.​
+
+
+O documento apresentado abaixo, obtido através do serviço ``Google Elevation API``, ilustra a notação empregada em documentos ``JSON``:
+
+
+.. code-block:: json
+
+    {
+        "results": [
+            {
+                "elevation": 18.1,
+
+                "location": {
+                    "lat": 30.0,
+                    "lng": -73.0
+                },
+
+                "resolution": 76.0
+            }
+        ],
+
+        "status": "OK"
+    }
+
+
+Esse documento se parece muito com um dicionário na linguagem de programação ``Python``, onde temos um par de chaves (``{`` e ``}``) delimitando os pares de chave-valor do dicionário. Os pares de chave-valor, por sua vez, correspondem a: strings e arrays; strings e novos objeto (ou dicionarios); string e valores numéricos; string e valores textuais.
+
+
+Um documento ``JSON`` contém um valor que pode ser representado por um dos seguintes tipos: ``object``, ``array``, ``number``, ``string``, ``true``, ``false``, ou ``null``. Cada um desses valores possui uma notação específica.
+
+
+O tipo ``number`` representa valores numéricos, não diferenciando entre valores inteiros e número em ponto-flutuante:
+
+
+.. code-block:: json
+
+    1234
+
+
+.. code-block:: json
+
+    8.9
+
+
+O tipo ``string`` é usado para representação de valores textuais, sendo delimitado por aspas duplas (``"``), suportando caracteres `Unicode <https://en.wikipedia.org/wiki/Unicode>`_ e seqências de escape utilizando o caractere ``\``:
+
+
+.. code-block:: json
+
+    "Uma string deve\n aparecer entre aspas duplas"
+
+
+Os valores ``true`` e ``false``, associados ao tipo lógico são escritos da seguinte forma:
+
+
+
+.. code-block:: json
+
+    true
+
+
+.. code-block:: json
+
+    false
+
+O tipo ``array`` permite representar uma sequência de valores, inclusive de tipos diferentes. Utiliza-se um par de colchetes (``[`` e ``]``) como delimitador dos elementos pertencentes à sequencia, sendo os elementos separados por vírgula (``,``):
+
+
+.. code-block:: json
+
+    ["Gilberto", "Queiroz", 30, true ]
+
+
+O tipo ``object`` é representado por um conjunto de pares ``chave-valor``, delimitados por um par de chaves (``{`` e ``}``):
+
+
+.. code-block:: json
+
+    {
+        "nome": "Gilberto",
+
+        "sobrenome": "Queiroz",
+
+        "idade": 30,
+
+        "pesquisador": true,
+
+        "pais": [ "Gilberto Queiroz", "Telma Queiroz" ],
+
+        "endereco": {
+            "rua": "Av. dos Astronautas",
+            "numero": 1758,
+            "bairro": "Jardim da Granja",
+            "cidade": "São José dos Campos",
+            "uf": "SP",
+            "cep": "12227-010"
+        }
+    }
+
+
+Repare que o tipo ``object`` permite estruturar dados que possuam certa complexidade. No exemplo acima, a chave ``endereco`` corresponde a um valor que também é um objeto, e a chave ``pais`` corresponde a uma sequência de valores do tipo ``string``.
+
+
+Referências
+***********
+
+
+- `JSON.org <https://www.json.org/json-en.html>`_. Douglas Crockford. Acesso: 12 de Maio de 2020.
+
+- `Standard ECMA-404. The JSON Data Interchange Syntax <http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf>`_. 2a Edição, Dezembro de 2017.

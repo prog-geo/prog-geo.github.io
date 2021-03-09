@@ -1,0 +1,57 @@
+..
+    This file is part of SER-347 Documentation.
+    Copyright 2020, Gilberto Queiroz and Thales Körting.
+
+
+Funções
+-------
+
+
+Slides da Aula
+++++++++++++++
+
+
+`Introdução à Programação com a Linguagem Python: Funções <https://1drv.ms/b/s!AtoTP-MfEUEDgtcRUIf2KOaRV1GKNg?e=KLZ7jc>`_.
+
+
+Jupyter Notebook
+++++++++++++++++
+
+
+Consulte também o Jupyter Notebook desta aula: `Funções <https://github.com/ser-347/ipynb/blob/master/funcoes.ipynb>`_.
+
+
+Trechos de Código
++++++++++++++++++
+
+
+.. code-block:: python
+    :linenos:
+    :caption: Função para computar o fatorial de um número inteiro positivo.
+
+    def Fatorial(num):
+        produto = 1
+
+        while(num > 0):
+            produto = produto * num
+
+            num = num - 1
+
+        return produto
+
+
+.. code-block:: python
+    :linenos:
+    :caption: Função para computar a distância euclidiana.
+
+    import math
+
+    def Distancia(x1, y1, x2, y2):
+        dx = x2 - x1
+        dy = y2 - y1
+
+        d2 = dx**2 + dy**2
+
+        d = math.sqrt(d2)
+
+        return d

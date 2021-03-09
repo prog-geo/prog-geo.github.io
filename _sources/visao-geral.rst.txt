@@ -1,0 +1,23 @@
+..
+    This file is part of SER-347 Documentation.
+    Copyright 2020, Gilberto Queiroz and Thales Körting.
+
+
+.. _visao_geral:
+
+Visao Geral do Curso
+====================
+
+
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+
+    ./visao-geral/docentes
+    ./visao-geral/monitoria
+    ./visao-geral/porque-programar
+    ./visao-geral/organizacao-curso
+    ./visao-geral/ferramentas
+    ./visao-geral/bibliografia
+    ./visao-geral/discentes
+    ./visao-geral/cronograma

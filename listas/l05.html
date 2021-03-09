@@ -1,0 +1,605 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="pt-BR" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Solução - Lista de Exercícios 05 &mdash; SER-347/CAP-419</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/table_styling.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/ser-347.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+    <link rel="canonical" href="https://ser-347.github.io/listas/l05.html" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Buscar" href="../search.html" />
+    <link rel="next" title="Solução - Lista de Exercícios Especial" href="lespecial.html" />
+    <link rel="prev" title="Solução - Lista de Exercícios 04" href="l04.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SER-347/CAP-419
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Pesquisar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introdução à Programação com Dados Geoespaciais</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Visão Geral do Curso:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../visao-geral.html">Visao Geral do Curso</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aulas:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../instalacao.html">1. Instalando e Configurando o Ambiente de Programação</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introducao-programacao.html">2. Introdução à Programação com a Linguagem Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../int_anaconda.html">3. Introdução ao Ambiente Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../int_jupyter_notebooks.html">4. IPython e Jupyter Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matrizes.html">5. Matrizes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualizacao.html">6. Visualização de Dados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../imagens.html">7. Imagens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tipos_geometricos.html">8. Tipos e Operações Espaciais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vetorial.html">9. Manipulação de Dados Vetoriais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variados.html">10. Tópicos Variados</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Considerações Finais</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../consideracoes-finais.html">Considerações Finais</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Referências Bibliográficas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../referencias.html">Referências Bibliográficas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Listas de Exercícios:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../listas.html#solucoes-das-listas">Soluções das Listas</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="l01.html">Solução - Lista de Exercícios 01</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l02.html">Solução - Lista de Exercícios 02</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l03.html">Solução - Lista de Exercícios 03</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l04.html">Solução - Lista de Exercícios 04</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Solução - Lista de Exercícios 05</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lespecial.html">Solução - Lista de Exercícios Especial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l06.html">Solução - Lista de Exercícios 06</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Lista de Projetos:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../projetos.html">Lista dos Projetos Finais do Curso</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Informações Gerais:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sites.html">Sobre o Site do Curso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contato.html">Contato</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../licenca.html">Licença</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SER-347/CAP-419</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../listas.html">Listas de Exercícios</a> &raquo;</li>
+        
+      <li>Solução - Lista de Exercícios 05</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="lespecial.html" class="btn btn-neutral float-right" title="Solução - Lista de Exercícios Especial" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="l04.html" class="btn btn-neutral float-left" title="Solução - Lista de Exercícios 04" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="solucao-lista-de-exercicios-05">
+<h1>Solução - Lista de Exercícios 05<a class="headerlink" href="#solucao-lista-de-exercicios-05" title="Link permanente para este título">¶</a></h1>
+<p><strong>Exercício 01</strong>. Com base no <code class="docutils literal notranslate"><span class="pre">Exercício</span> <span class="pre">01</span> <span class="pre">da</span> <span class="pre">Lista</span> <span class="pre">04</span></code>, crie uma função chamada <code class="docutils literal notranslate"><span class="pre">get_year(modis_name)</span></code>, que receba como parâmetro uma string contendo um nome de arquivo <code class="docutils literal notranslate"><span class="pre">MODIS</span></code>, verifique se o tamanho da string está correto, e retorne o ano da aquisição da imagem. Por exemplo, <code class="docutils literal notranslate"><span class="pre">get_year(&quot;MOD09A1.A2006001.h08v05.005.2006012234657.hdf&quot;)</span></code> deve retornar <code class="docutils literal notranslate"><span class="pre">2006</span></code>.</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 19 - </span><span class="caption-text">get_year.py</span><a class="headerlink" href="#id1" title="Link Permanente para esse código">¶</a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_year</span><span class="p">(</span><span class="n">modis_name</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">modis_name</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">45</span><span class="p">:</span>
+       <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="k">return</span> <span class="n">modis_name</span><span class="p">[</span><span class="mi">9</span><span class="p">:</span><span class="mi">13</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">get_year</span><span class="p">(</span><span class="s2">&quot;MOD09A1.A2006001.h08v05.005.2006012234657.hdf&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">get_year</span><span class="p">(</span><span class="s2">&quot;MOD09A1.A2015001.h08v05.006.2015113045801.hdf&quot;</span><span class="p">))</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p><strong>Exercício 02</strong>. Com base no <code class="docutils literal notranslate"><span class="pre">Exercício</span> <span class="pre">01</span> <span class="pre">da</span> <span class="pre">Lista</span> <span class="pre">04</span></code>, e nos slides da aula <code class="docutils literal notranslate"><span class="pre">Visão</span> <span class="pre">Geral</span> <span class="pre">do</span> <span class="pre">Curso</span></code>, crie uma função chamada <code class="docutils literal notranslate"><span class="pre">in_brazil(modis_name)</span></code>, que receba como parâmetro uma string contendo um nome de arquivo <code class="docutils literal notranslate"><span class="pre">MODIS</span></code>, e retorne <code class="docutils literal notranslate"><span class="pre">True</span></code> se a imagem possuir alguma área contida no Brasil, ou <code class="docutils literal notranslate"><span class="pre">False</span></code> caso contrário.</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 20 - </span><span class="caption-text">in_brazil.py</span><a class="headerlink" href="#id2" title="Link Permanente para esse código">¶</a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">in_brazil</span><span class="p">(</span><span class="n">modis_name</span><span class="p">):</span>
+  <span class="n">brazilian_locations</span> <span class="o">=</span> <span class="p">(</span> <span class="s2">&quot;h10v08&quot;</span><span class="p">,</span> <span class="s2">&quot;h11v08&quot;</span><span class="p">,</span> <span class="s2">&quot;h12v08&quot;</span><span class="p">,</span> <span class="s2">&quot;h13v08&quot;</span><span class="p">,</span> <span class="s2">&quot;h14v08&quot;</span><span class="p">,</span> \
+                          <span class="s2">&quot;h10v09&quot;</span><span class="p">,</span> <span class="s2">&quot;h11v09&quot;</span><span class="p">,</span> <span class="s2">&quot;h12v09&quot;</span><span class="p">,</span> <span class="s2">&quot;h13v09&quot;</span><span class="p">,</span> <span class="s2">&quot;h14v09&quot;</span><span class="p">,</span> \
+                          <span class="s2">&quot;h10v10&quot;</span><span class="p">,</span> <span class="s2">&quot;h11v10&quot;</span><span class="p">,</span> <span class="s2">&quot;h12v10&quot;</span><span class="p">,</span> <span class="s2">&quot;h13v10&quot;</span><span class="p">,</span> <span class="s2">&quot;h14v10&quot;</span><span class="p">,</span> \
+                          <span class="s2">&quot;h12v11&quot;</span><span class="p">,</span> <span class="s2">&quot;h13v11&quot;</span><span class="p">,</span> <span class="s2">&quot;h14v11&quot;</span><span class="p">,</span> <span class="s2">&quot;h12v12&quot;</span><span class="p">,</span> <span class="s2">&quot;h13v12&quot;</span><span class="p">)</span>
+
+  <span class="n">location</span> <span class="o">=</span> <span class="n">modis_name</span><span class="p">[</span><span class="mi">17</span><span class="p">:</span><span class="mi">23</span><span class="p">]</span>
+  <span class="k">if</span> <span class="n">location</span> <span class="ow">in</span> <span class="n">brazilian_locations</span><span class="p">:</span>
+    <span class="k">return</span> <span class="kc">True</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">return</span> <span class="kc">False</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">in_brazil</span><span class="p">(</span><span class="s2">&quot;MOD09A1.A2006001.h08v05.005.2006012234657.hdf&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">in_brazil</span><span class="p">(</span><span class="s2">&quot;MOD09A1.A2006001.h08v05.005.2006012234657.hdf&quot;</span><span class="p">))</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p><strong>Exercício 03</strong>. Refaça o <code class="docutils literal notranslate"><span class="pre">Exercício</span> <span class="pre">01</span> <span class="pre">da</span> <span class="pre">Lista</span> <span class="pre">03</span></code>, criando funções para cada série numérica (Lucas, Pell, Triangular, Square e Pentagonal).</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 21 - </span><span class="caption-text">series.py</span><a class="headerlink" href="#id3" title="Link Permanente para esse código">¶</a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lucas</span> <span class="p">(</span><span class="n">q</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Lucas&#39;</span><span class="p">)</span>
+  <span class="c1"># dá para definir termos iniciais antes da repetição</span>
+  <span class="n">n_menos_2</span> <span class="o">=</span> <span class="mi">2</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">n_menos_2</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">q</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="n">n_menos_1</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n_menos_1</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="c1"># começamos a repetição do termo dependente</span>
+    <span class="k">while</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="n">q</span><span class="p">:</span>
+      <span class="n">lucas</span> <span class="o">=</span> <span class="n">n_menos_1</span> <span class="o">+</span> <span class="n">n_menos_2</span>
+      <span class="nb">print</span><span class="p">(</span><span class="n">lucas</span><span class="p">)</span>
+      <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+      <span class="n">n_menos_2</span> <span class="o">=</span> <span class="n">n_menos_1</span>
+      <span class="n">n_menos_1</span> <span class="o">=</span> <span class="n">lucas</span>
+
+<span class="k">def</span> <span class="nf">pell</span><span class="p">(</span><span class="n">q</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Pell&#39;</span><span class="p">)</span>
+  <span class="c1"># dá para definir termos iniciais antes da repetição</span>
+  <span class="n">n_menos_2</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">n_menos_2</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">q</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="n">n_menos_1</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n_menos_1</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="c1"># começamos a repetição do termo dependente</span>
+    <span class="k">while</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="n">q</span><span class="p">:</span>
+      <span class="n">pell</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">n_menos_1</span> <span class="o">+</span> <span class="n">n_menos_2</span>
+      <span class="nb">print</span><span class="p">(</span><span class="n">pell</span><span class="p">)</span>
+      <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+      <span class="n">n_menos_2</span> <span class="o">=</span> <span class="n">n_menos_1</span>
+      <span class="n">n_menos_1</span> <span class="o">=</span> <span class="n">pell</span>
+
+<span class="k">def</span> <span class="nf">triangular</span><span class="p">(</span><span class="n">q</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Triangular&#39;</span><span class="p">)</span>
+  <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="k">while</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="n">q</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="nb">int</span><span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">q</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Square&#39;</span><span class="p">)</span>
+  <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="k">while</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="n">q</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="n">n</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="k">def</span> <span class="nf">pentagonal</span><span class="p">(</span><span class="n">q</span><span class="p">):</span>
+  <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="k">while</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="n">q</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span> <span class="nb">int</span><span class="p">((</span><span class="mi">3</span> <span class="o">*</span> <span class="n">n</span> <span class="o">*</span> <span class="n">n</span> <span class="o">-</span> <span class="n">n</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="n">q</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Digite a quantidade de termos: &#39;</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">q</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+  <span class="n">lucas</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+  <span class="n">pell</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+  <span class="n">triangular</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+  <span class="n">square</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+  <span class="n">pentagonal</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Quantidade de termos inválida&#39;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p><strong>Exercício 04</strong>. Refaça o <code class="docutils literal notranslate"><span class="pre">Exercício</span> <span class="pre">09</span> <span class="pre">da</span> <span class="pre">Lista</span> <span class="pre">02</span></code>, criando uma função chamada <code class="docutils literal notranslate"><span class="pre">interceptam(r,</span> <span class="pre">s)</span></code> que receba como parâmetros dois pares de coordenadas <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> dos dois segmentos de reta <code class="docutils literal notranslate"><span class="pre">r</span></code> e <code class="docutils literal notranslate"><span class="pre">s</span></code>, e retorne <code class="docutils literal notranslate"><span class="pre">True</span></code> quando os segmentos se interceptam, e <code class="docutils literal notranslate"><span class="pre">False</span></code> caso contrário.</p>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 22 - </span><span class="caption-text">interceptam.py</span><a class="headerlink" href="#id4" title="Link Permanente para esse código">¶</a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">interceptam</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+  <span class="c1"># r = ((x1, y1), (x2, y2))</span>
+  <span class="n">x1</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+  <span class="n">y1</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+  <span class="n">x2</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+  <span class="n">y2</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+  <span class="c1"># s = ((x3, y3), (x4, y4))</span>
+  <span class="n">x3</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+  <span class="n">y3</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+  <span class="n">x4</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+  <span class="n">y4</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+
+  <span class="c1"># Posição de P3 em relação a P1 e P2</span>
+  <span class="n">s123</span> <span class="o">=</span> <span class="p">(</span><span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x3</span> <span class="o">-</span> <span class="n">x1</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">x2</span> <span class="o">-</span> <span class="n">x1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">y3</span> <span class="o">-</span> <span class="n">y1</span><span class="p">)</span>
+
+  <span class="c1"># Posição de P4 em relação a P1 e P2</span>
+  <span class="n">s124</span> <span class="o">=</span> <span class="p">(</span><span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x4</span> <span class="o">-</span> <span class="n">x1</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">x2</span> <span class="o">-</span> <span class="n">x1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">y4</span> <span class="o">-</span> <span class="n">y1</span><span class="p">)</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">s123</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">s124</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">):</span>   <span class="c1"># Trata-se de segmentos colineares?</span>
+      <span class="k">if</span> <span class="n">x1</span> <span class="o">==</span> <span class="n">x2</span><span class="p">:</span> <span class="c1"># se s1 é vertical =&gt; s2 também é vertical!</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span> <span class="n">y2</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="nb">max</span><span class="p">(</span><span class="n">y3</span><span class="p">,</span> <span class="n">y4</span><span class="p">))</span> <span class="ow">and</span> <span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">y3</span><span class="p">,</span> <span class="n">y4</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="nb">max</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span> <span class="n">y2</span><span class="p">))</span>
+      <span class="k">else</span><span class="p">:</span>        <span class="c1"># os segmentos não são verticais</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="nb">max</span><span class="p">(</span><span class="n">x3</span><span class="p">,</span> <span class="n">x4</span><span class="p">))</span> <span class="ow">and</span> <span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">x3</span><span class="p">,</span> <span class="n">x4</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="nb">max</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">))</span>
+
+  <span class="k">else</span><span class="p">:</span>  <span class="c1"># os segmentos não são colineares</span>
+      <span class="c1"># Posição de P1 em relação a P3 e P4</span>
+      <span class="n">s341</span> <span class="o">=</span> <span class="p">(</span><span class="n">y4</span> <span class="o">-</span> <span class="n">y3</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x1</span> <span class="o">-</span> <span class="n">x3</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">x4</span> <span class="o">-</span> <span class="n">x3</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">y1</span> <span class="o">-</span> <span class="n">y3</span><span class="p">)</span>
+
+      <span class="c1"># Posição de P2 em relação a P3 e P4</span>
+      <span class="n">s342</span> <span class="o">=</span> <span class="p">(</span><span class="n">y4</span> <span class="o">-</span> <span class="n">y3</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x2</span> <span class="o">-</span> <span class="n">x3</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">x4</span> <span class="o">-</span> <span class="n">x3</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">y2</span> <span class="o">-</span> <span class="n">y3</span><span class="p">)</span>
+
+      <span class="c1"># os segmentos só irão se interceptar se os sinais forem todos opostos</span>
+      <span class="n">result</span> <span class="o">=</span> <span class="p">((</span><span class="n">s123</span> <span class="o">*</span> <span class="n">s124</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mf">0.0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">((</span><span class="n">s341</span> <span class="o">*</span> <span class="n">s342</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mf">0.0</span><span class="p">)</span>
+
+  <span class="k">return</span> <span class="n">result</span>
+
+<span class="n">x1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;x1: &quot;</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;y1: &quot;</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="n">x2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;x2: &quot;</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;y2: &quot;</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="p">((</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">),</span> <span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">))</span>
+
+<span class="n">x3</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;x3: &quot;</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">y3</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;y3: &quot;</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="n">x4</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;x4: &quot;</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">y4</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;y4: &quot;</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="p">((</span><span class="n">x3</span><span class="p">,</span> <span class="n">y3</span><span class="p">),</span> <span class="p">(</span><span class="n">x4</span><span class="p">,</span> <span class="n">y4</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">interceptam</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">s</span><span class="p">))</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p><strong>Exercício 05</strong>. Com base no <code class="docutils literal notranslate"><span class="pre">Exercício</span> <span class="pre">03</span> <span class="pre">da</span> <span class="pre">Lista</span> <span class="pre">01</span></code>, crie duas funções, <code class="docutils literal notranslate"><span class="pre">NDWI(Xgreen,</span> <span class="pre">Xnir)</span></code> e <code class="docutils literal notranslate"><span class="pre">NDVI(Xred,</span> <span class="pre">Xnir)</span></code> que recebam os valores indicados e retornem os índices <code class="docutils literal notranslate"><span class="pre">NDWI</span></code> e <code class="docutils literal notranslate"><span class="pre">NDVI</span></code>, respectivamente.</p>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 23 - </span><span class="caption-text">indices.py</span><a class="headerlink" href="#id5" title="Link Permanente para esse código">¶</a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">NDWI</span><span class="p">(</span><span class="n">Xgreen</span><span class="p">,</span> <span class="n">Xnir</span><span class="p">):</span>
+  <span class="k">return</span> <span class="p">(</span><span class="n">Xgreen</span> <span class="o">-</span> <span class="n">Xnir</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">Xgreen</span> <span class="o">+</span> <span class="n">Xnir</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">NDVI</span><span class="p">(</span><span class="n">Xred</span><span class="p">,</span> <span class="n">Xnir</span><span class="p">):</span>
+  <span class="k">return</span> <span class="p">(</span><span class="n">Xnir</span> <span class="o">-</span> <span class="n">Xred</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">Xnir</span> <span class="o">+</span> <span class="n">Xred</span><span class="p">)</span>
+
+<span class="n">green</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;green: &#39;</span><span class="p">))</span>
+<span class="n">nir</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;nir: &#39;</span><span class="p">))</span>
+<span class="n">red</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;red: &#39;</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NDWI: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">NDWI</span><span class="p">(</span><span class="n">green</span><span class="p">,</span> <span class="n">nir</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NDVI: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">NDVI</span><span class="p">(</span><span class="n">red</span><span class="p">,</span> <span class="n">nir</span><span class="p">)))</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="lespecial.html" class="btn btn-neutral float-right" title="Solução - Lista de Exercícios Especial" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="l04.html" class="btn btn-neutral float-left" title="Solução - Lista de Exercícios 04" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-165908761-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

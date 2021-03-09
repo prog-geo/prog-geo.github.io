@@ -1,0 +1,19 @@
+..
+    This file is part of SER-347 Documentation.
+    Copyright 2020, Gilberto Queiroz and Thales Körting.
+
+
+Considerações Finais
+--------------------
+
+
+Quando você escrever *scripts* com a ``GDAL/OGR``, principalmente, que manipulem diversos arquivos e camadas, lembre-se de fazer a limpeza explícita dos objetos através dos comandos ``del ds`` ou ``del layer``, para garantir que os recursos usados sejam devolvidos.
+
+
+O *binding* da ``GDAL/OGR`` não permite usarmos a estratégia do comando composto ``with`` pois ele não implementa inicialização/finalização de recursos.
+
+
+A ``Fiona`` pode ser usada com o comando composto ``with``.
+
+
+Uma ferramenta útil para análise de dados em ``Python`` é o ``GeoPandas``, que será tópico de discussão da nossa próxima aula.

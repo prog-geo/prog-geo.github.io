@@ -1,0 +1,423 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="pt-BR" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>2.7. Laços do tipo for e Sequências &mdash; SER-347/CAP-419</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/table_styling.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/ser-347.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+    <link rel="canonical" href="https://ser-347.github.io/introducao-programacao/lacos_for_seq.html" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Buscar" href="../search.html" />
+    <link rel="next" title="2.8. Os Comandos break e continue" href="break_continue.html" />
+    <link rel="prev" title="2.6. Sequências (Strings, Tuplas e Listas)" href="sequencias.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SER-347/CAP-419
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Pesquisar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introdução à Programação com Dados Geoespaciais</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Visão Geral do Curso:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../visao-geral.html">Visao Geral do Curso</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aulas:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../instalacao.html">1. Instalando e Configurando o Ambiente de Programação</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../introducao-programacao.html">2. Introdução à Programação com a Linguagem Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introducao.html">2.1. Introdução</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tipos_dados.html">2.2. Objetos, Tipos de Dados, Operadores, Expressões, Tipos Numéricos, Variáveis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tipo_logico.html">2.3. Tipo Lógico, Operadores Lógicos, Operadores Relacionais, Expressões Lógicas e Estruturas Condicionais</a></li>
+<li class="toctree-l2"><a class="reference internal" href="estruturas_repeticao.html">2.4. Estruturas de Repetição</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings.html">2.5. Strings, Operações com Strings e Formatação de Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sequencias.html">2.6. Sequências (Strings, Tuplas e Listas)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.7. Laços do tipo for e Sequências</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#slides-da-aula">2.7.1. Slides da Aula</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#trechos-de-codigo">2.7.2. Trechos de Código</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exercicios">2.7.3. Exercícios</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="break_continue.html">2.8. Os Comandos <code class="docutils literal notranslate"><span class="pre">break</span></code> e <code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dicionarios.html">2.9. Dicionários</a></li>
+<li class="toctree-l2"><a class="reference internal" href="funcoes.html">2.10. Funções</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../int_anaconda.html">3. Introdução ao Ambiente Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../int_jupyter_notebooks.html">4. IPython e Jupyter Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matrizes.html">5. Matrizes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualizacao.html">6. Visualização de Dados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../imagens.html">7. Imagens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tipos_geometricos.html">8. Tipos e Operações Espaciais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vetorial.html">9. Manipulação de Dados Vetoriais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variados.html">10. Tópicos Variados</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Considerações Finais</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../consideracoes-finais.html">Considerações Finais</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Referências Bibliográficas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../referencias.html">Referências Bibliográficas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Listas de Exercícios:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../listas.html#solucoes-das-listas">Soluções das Listas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Lista de Projetos:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../projetos.html">Lista dos Projetos Finais do Curso</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Informações Gerais:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sites.html">Sobre o Site do Curso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contato.html">Contato</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../licenca.html">Licença</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SER-347/CAP-419</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../introducao-programacao.html"><span class="section-number">2. </span>Introdução à Programação com a Linguagem Python</a> &raquo;</li>
+        
+      <li><span class="section-number">2.7. </span>Laços do tipo for e Sequências</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="break_continue.html" class="btn btn-neutral float-right" title="2.8. Os Comandos break e continue" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="sequencias.html" class="btn btn-neutral float-left" title="2.6. Sequências (Strings, Tuplas e Listas)" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="lacos-do-tipo-for-e-sequencias">
+<h1><span class="section-number">2.7. </span>Laços do tipo for e Sequências<a class="headerlink" href="#lacos-do-tipo-for-e-sequencias" title="Link permanente para este título">¶</a></h1>
+<div class="section" id="slides-da-aula">
+<h2><span class="section-number">2.7.1. </span>Slides da Aula<a class="headerlink" href="#slides-da-aula" title="Link permanente para este título">¶</a></h2>
+<p><a class="reference external" href="https://1drv.ms/b/s!AtoTP-MfEUEDgtcRUIf2KOaRV1GKNg?e=KLZ7jc">Introdução à Programação com a Linguagem Python: Laços for e Sequências</a>.</p>
+</div>
+<div class="section" id="trechos-de-codigo">
+<h2><span class="section-number">2.7.2. </span>Trechos de Código<a class="headerlink" href="#trechos-de-codigo" title="Link permanente para este título">¶</a></h2>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 2.27 - </span><span class="caption-text">Iterando pelos caracteres de uma string.</span><a class="headerlink" href="#id1" title="Link Permanente para esse código">¶</a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">nome</span> <span class="o">=</span> <span class="s2">&quot;Gilberto Ribeiro&quot;</span>
+
+<span class="k">for</span> <span class="n">letra</span> <span class="ow">in</span> <span class="n">nome</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">letra</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 2.28 - </span><span class="caption-text">Iterando pelos itens de uma lista.</span><a class="headerlink" href="#id2" title="Link Permanente para esse código">¶</a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">cidades</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;São Paulo&quot;</span><span class="p">,</span> <span class="s2">&quot;Rio de Janeiro&quot;</span><span class="p">,</span> <span class="s2">&quot;Belo Horizonte&quot;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">cidade</span> <span class="ow">in</span> <span class="n">cidades</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nome: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cidade</span><span class="p">))</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 2.29 - </span><span class="caption-text">Iterando no intervalo de valores <code class="docutils literal notranslate"><span class="pre">[7,</span> <span class="pre">17)</span></code>.</span><a class="headerlink" href="#id3" title="Link Permanente para esse código">¶</a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">17</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 2.30 - </span><span class="caption-text">Usando a função <code class="docutils literal notranslate"><span class="pre">enumerate</span></code>.</span><a class="headerlink" href="#id4" title="Link Permanente para esse código">¶</a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">cidades</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;São Paulo&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;Rio de Janeiro&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;Belo Horizonte&quot;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">cidade</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">cidades</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">cidade</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 2.31 - </span><span class="caption-text">Atravessando duas listas.</span><a class="headerlink" href="#id5" title="Link Permanente para esse código">¶</a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Conversão de F -&gt; C&quot;</span><span class="p">)</span>
+
+<span class="n">fahr</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">100</span> <span class="p">]</span>
+
+<span class="n">celsius</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">5</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">32</span><span class="p">)</span><span class="o">/</span><span class="mi">9</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">fahr</span> <span class="p">]</span>
+
+<span class="k">for</span> <span class="n">f</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">fahr</span><span class="p">,</span> <span class="n">celsius</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fim!&quot;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 2.32 - </span><span class="caption-text">Atravessando três listas.</span><a class="headerlink" href="#id6" title="Link Permanente para esse código">¶</a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Conversão de F -&gt; C -&gt; K&quot;</span><span class="p">)</span>
+
+<span class="n">fahr</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">100</span> <span class="p">]</span>
+
+<span class="n">celsius</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">5</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">32</span><span class="p">)</span><span class="o">/</span><span class="mi">9</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">fahr</span> <span class="p">]</span>
+
+<span class="n">kelvin</span> <span class="o">=</span> <span class="p">[</span> <span class="n">x</span><span class="o">+</span><span class="mi">273</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">celsius</span> <span class="p">]</span>
+
+<span class="k">for</span> <span class="n">f</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">fahr</span><span class="p">,</span> <span class="n">celsius</span><span class="p">,</span> <span class="n">kelvin</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fim!&quot;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="exercicios">
+<h2><span class="section-number">2.7.3. </span>Exercícios<a class="headerlink" href="#exercicios" title="Link permanente para este título">¶</a></h2>
+<p><strong>1.</strong> Considere a seguinte lista:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">89</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>Faça um programa em <code class="docutils literal notranslate"><span class="pre">Python</span></code> que realize a soma dessa lista e escreva o valor da soma.</p>
+<p><strong>2.</strong> Considere a série temporal mostrada abaixo, extraída de dados do sensor <code class="docutils literal notranslate"><span class="pre">MODIS</span></code>, produto <cite>MOD13Q1</cite> <cite>, para a localização ``(-54,-12)`</cite> para o período de <code class="docutils literal notranslate"><span class="pre">01/01/2015</span></code> a <code class="docutils literal notranslate"><span class="pre">19/12/2015</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">red_values</span> <span class="o">=</span> <span class="p">(</span> <span class="mi">168</span><span class="p">,</span> <span class="mi">398</span><span class="p">,</span> <span class="mi">451</span><span class="p">,</span> <span class="mi">337</span><span class="p">,</span> <span class="mi">186</span><span class="p">,</span> <span class="mi">232</span><span class="p">,</span> <span class="mi">262</span><span class="p">,</span> <span class="mi">349</span><span class="p">,</span> <span class="mi">189</span><span class="p">,</span> <span class="mi">204</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">207</span><span class="p">,</span> <span class="mi">239</span><span class="p">,</span> <span class="mi">259</span><span class="p">,</span> <span class="mi">258</span><span class="p">,</span> <span class="mi">242</span><span class="p">,</span> <span class="mi">331</span><span class="p">,</span> <span class="mi">251</span><span class="p">,</span> <span class="mi">323</span><span class="p">,</span> <span class="mi">106</span><span class="p">,</span> <span class="mi">1055</span><span class="p">,</span> <span class="mi">170</span> <span class="p">)</span>
+
+<span class="n">nir_values</span> <span class="o">=</span> <span class="p">(</span> <span class="mi">2346</span><span class="p">,</span> <span class="mi">4431</span><span class="p">,</span> <span class="mi">4638</span><span class="p">,</span> <span class="mi">4286</span><span class="p">,</span> <span class="mi">2752</span><span class="p">,</span> <span class="mi">3521</span><span class="p">,</span> <span class="mi">2928</span><span class="p">,</span> <span class="mi">3087</span><span class="p">,</span> <span class="mi">2702</span><span class="p">,</span> <span class="mi">2685</span><span class="p">,</span> <span class="mi">2702</span><span class="p">,</span> <span class="mi">2865</span><span class="p">,</span> <span class="mi">2835</span><span class="p">,</span> <span class="mi">2955</span><span class="p">,</span> <span class="mi">3019</span><span class="p">,</span> <span class="mi">3391</span><span class="p">,</span> <span class="mi">2986</span><span class="p">,</span> <span class="mi">4042</span><span class="p">,</span> <span class="mi">3050</span><span class="p">,</span> <span class="mi">3617</span><span class="p">,</span> <span class="mi">2478</span><span class="p">,</span> <span class="mi">3361</span><span class="p">,</span> <span class="mi">2613</span> <span class="p">)</span>
+
+<span class="n">timeline</span> <span class="o">=</span> <span class="p">(</span> <span class="s2">&quot;2015-01-01&quot;</span><span class="p">,</span> <span class="s2">&quot;2015-01-17&quot;</span><span class="p">,</span> <span class="s2">&quot;2015-02-02&quot;</span><span class="p">,</span> <span class="s2">&quot;2015-02-18&quot;</span><span class="p">,</span> <span class="s2">&quot;2015-03-06&quot;</span><span class="p">,</span> <span class="s2">&quot;2015-03-22&quot;</span><span class="p">,</span> <span class="s2">&quot;2015-04-07&quot;</span><span class="p">,</span> <span class="s2">&quot;2015-04-23&quot;</span><span class="p">,</span> <span class="s2">&quot;2015-05-09&quot;</span><span class="p">,</span> <span class="s2">&quot;2015-05-25&quot;</span><span class="p">,</span> <span class="s2">&quot;2015-06-10&quot;</span><span class="p">,</span> <span class="s2">&quot;2015-06-26&quot;</span><span class="p">,</span> <span class="s2">&quot;2015-07-12&quot;</span><span class="p">,</span> <span class="s2">&quot;2015-07-28&quot;</span><span class="p">,</span> <span class="s2">&quot;2015-08-13&quot;</span><span class="p">,</span> <span class="s2">&quot;2015-08-29&quot;</span><span class="p">,</span> <span class="s2">&quot;2015-09-14&quot;</span><span class="p">,</span> <span class="s2">&quot;2015-09-30&quot;</span><span class="p">,</span> <span class="s2">&quot;2015-10-16&quot;</span><span class="p">,</span> <span class="s2">&quot;2015-11-01&quot;</span><span class="p">,</span> <span class="s2">&quot;2015-11-17&quot;</span><span class="p">,</span> <span class="s2">&quot;2015-12-03&quot;</span><span class="p">,</span> <span class="s2">&quot;2015-12-19&quot;</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>Faça um programa que:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Crie a série temporal do <code class="docutils literal notranslate"><span class="pre">NDVI</span></code>.</p></li>
+<li><p>Calcule a média do <code class="docutils literal notranslate"><span class="pre">NDVI</span></code> dessa série temporal.</p></li>
+<li><p>Obtenha o maior e menor valores de <code class="docutils literal notranslate"><span class="pre">NDVI</span></code> e escreva a data em que eles ocorrem.</p></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="break_continue.html" class="btn btn-neutral float-right" title="2.8. Os Comandos break e continue" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="sequencias.html" class="btn btn-neutral float-left" title="2.6. Sequências (Strings, Tuplas e Listas)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-165908761-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+..
+    This file is part of SER-347 Documentation.
+    Copyright 2020, Gilberto Queiroz and Thales Körting.
+
+
+Usando um Arquivo de Especificação
+**********************************
+
+
+Outra forma de criar um novo ambiente é através de um arquivo contendo todas as especificações de um ambiente. Para ilustrar esse caso, vamos criar este arquivo a partir da espcificação do ambiente `geospatial`. Para salvar a especificação dele em um arquivo texto, podemos fazer:
+
+
+.. code-block:: shell
+
+    conda list --explicit > geospatial-env.txt
+
+
+O comando acima assume que o ambiente ate o ``geospatial``  e ele irá produzir um arquivo contendo a especificação do ambiente ``geospatial``, como mostrado abaixo:
+
+
+.. literalinclude:: ../txt/geospatial-env.txt
+
+
+A partir desse arquivo de especificação (``geospatial-env.txt``), podemos criar um novo ambiente chamado ``neogeo`` através do comando ``conda create`` com a opção ``--file``, como mostrado abaixo:
+
+
+.. code-block:: shell
+
+    conda create --name neogeo --file geospatial-env.txt
+
+
+Como pode ser visto na saída do comando abaixo, o novo ambiente ``neogeo`` foi criado:
+
+
+.. code-block:: shell
+
+    conda info --envs
+
+
+Saída::
+
+    # conda environments:
+    #
+    base                     D:\Users\gribeiro\Anaconda3
+    geospatial            *  D:\Users\gribeiro\Anaconda3\envs\geospatial
+    neogeo                   D:\Users\gribeiro\Anaconda3\envs\neogeo
+    ser347                   D:\Users\gribeiro\Anaconda3\envs\ser347
+
+
+Um arquivo de especificação pode ainda ser usado para instalar pacotes em um ambiente existente:
+
+
+.. code-block:: shell
+
+    conda install --name cap394 --file geospatial-env.txt
+
+
+
+.. note::
+
+    Apague os ambientes criados, ``neogeo`` e ``cap394``, para seguir as instruções da próxima seção:
+
+    .. code-block::
+
+        conda remove --name neogeo --all
+
+        conda remove --name cap394 --all
+
+
+.. note::
+
+    Um arquivo de especificação pode não funcionar em plataformas diferentes da usada em sua criação devido a indisponibilidade de versões específicas de bibliotecas.

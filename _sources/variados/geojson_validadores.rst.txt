@@ -1,0 +1,13 @@
+..
+    This file is part of SER-347 Documentation.
+    Copyright 2020, Gilberto Queiroz and Thales Körting.
+
+
+Validadores de Documentos GeoJSON
++++++++++++++++++++++++++++++++++
+
+
+Existe na Internet vários aplicativos *online* que possibilitam validar a estrutura de um documento ``GeoJSON``, isto é, permite sabermos se o documento respeita a sintaxe (ou notação) ``GeoJSON``.
+
+
+Um bom aplicativo é o `GeoJSONLint <http://geojsonlint.com//>`_. Acesse o endereço desse aplicativo e verifique os documentos apresentados na seção anterior.

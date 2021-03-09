@@ -1,0 +1,347 @@
+..
+    This file is part of SER-347 Documentation.
+    Copyright 2020, Gilberto Queiroz and Thales Körting.
+
+
+Canais
+++++++
+
+
+Os pacotes gerenciados pelo ``conda`` são baixados a partir do que chamamos de ``canais remotos`` (``remote channels``). Um canal é um diretório acessível através de uma URL e que contém pacotes que podem ser gerenciados pelo ``conda``. A :numref:`Figura %s <anaconda:default:channel>` mostra a organização de um desses canais, no caso, o que usamos para instalação do pacote ``GDAL`` no ambiente ``geospatial``.
+
+
+.. figure:: ../img/int-anaconda/channel-anaconda.png
+    :alt: Canal de Instalçaão de Pacotes
+    :width: 640
+    :figclass: align-center
+    :name: anaconda:default:channel
+
+    Canal usado para instalação do pacote GDAL no ambiente ``geospatial``.
+
+
+Na instalação da Anaconda, alguns canais são registrados para uso pelo aplicativo ``conda``, como os canais com prefixo https://repo.anaconda.com/pkgs e http://repo.continuum.io/pkgs, que são identificados como ``defaults``. No site `Anaconda Cloud <https://anaconda.org/>`_ (:numref:`Figura %s <anaconda:cloud>`), podemos procurar os pacotes através de uma interface gráfica web, que inclusive ajuda a descobrir os canais onde esses pacotes encontram-se disponíveis. Como exemplo, procure pelo pacote ``folium``, você verá que este pacote encontra-se disponível em vários canais, como o ``conda-forge`` e o ``ioos``.
+
+
+.. figure:: ../img/int-anaconda/anaconda-cloud.png
+    :alt: Canal de Instalçaão de Pacotes
+    :width: 640
+    :figclass: align-center
+    :name: anaconda:cloud
+
+    Anaconda Cloud - acesso a pacotes, canais, e outros recursos.
+
+
+Adicionando um Novo Canal
+*************************
+
+
+No início da `Seção 2 <#gerenciando-ambientes-e-pacotes-com-o-conda>`_, utilizamos o comando ``conda info`` para obter algumas informações do nosso ambiente atual e da instalação da ``Anaconda``. Recorrendo a esse comando novamente, podemos observar que parte de sua saída apresenta os canais que são utilizados para busca dos pacotes:
+
+
+.. code-block:: shell
+
+    conda info
+
+
+Saída::
+
+     active environment : geospatial
+    active env location : D:\Users\gribeiro\Anaconda3\envs\geospatial
+            shell level : 2
+       user config file : C:\Users\gribeiro\.condarc
+ populated config files : C:\Users\gribeiro\.condarc
+          conda version : 4.5.1
+    conda-build version : 3.4.1
+         python version : 3.6.4.final.0
+       base environment : D:\Users\gribeiro\Anaconda3  (writable)
+           channel URLs : https://repo.anaconda.com/pkgs/main/win-64
+                          https://repo.anaconda.com/pkgs/main/noarch
+                          https://repo.anaconda.com/pkgs/free/win-64
+                          https://repo.anaconda.com/pkgs/free/noarch
+                          https://repo.anaconda.com/pkgs/r/win-64
+                          https://repo.anaconda.com/pkgs/r/noarch
+                          https://repo.anaconda.com/pkgs/pro/win-64
+                          https://repo.anaconda.com/pkgs/pro/noarch
+                          https://repo.anaconda.com/pkgs/msys2/win-64
+                          https://repo.anaconda.com/pkgs/msys2/noarch
+                    ...
+
+
+Primeiramente, vamos ativar o ambiente ``neogeo``, onde iremos instalar o pacote ``folium``:
+
+.. code-block:: shell
+
+    conda activate neogeo
+
+
+Agora, vamos fazer uma pesquisa usando o comando ``conda search`` pelo pacote ``folium``:
+
+
+.. code-block:: shell
+
+    conda search folium
+
+
+Saída::
+
+    Loading channels: done
+
+    PackagesNotFoundError: The following packages are not available from current channels:
+
+      - folium
+
+    Current channels:
+
+      - https://repo.anaconda.com/pkgs/main/win-64
+      - https://repo.anaconda.com/pkgs/main/noarch
+      - https://repo.anaconda.com/pkgs/free/win-64
+      - https://repo.anaconda.com/pkgs/free/noarch
+      - https://repo.anaconda.com/pkgs/r/win-64
+      - https://repo.anaconda.com/pkgs/r/noarch
+      - https://repo.anaconda.com/pkgs/pro/win-64
+      - https://repo.anaconda.com/pkgs/pro/noarch
+      - https://repo.anaconda.com/pkgs/msys2/win-64
+      - https://repo.anaconda.com/pkgs/msys2/noarch
+
+    To search for alternate channels that may provide the conda package you're
+    looking for, navigate to
+
+        https://anaconda.org
+
+    and use the search bar at the top of the page.
+
+
+Como pode ser visto na saída acima, o pacote ``folium`` não se encontra na listagem dos canais padrões (``defaults``).
+
+
+Podemos adicionar novos canais de duas formas. A primeira, é alterando o arquivo ``.condarc``, como será discutido na próxima seção. A outra forma consiste em utilizar o comando ``conda config`` para adicionar um canal à sua lista de canais de busca de pacotes.
+
+
+Como vimos no site de `Busca de Pacotes da Anaconda Cloud <https://anaconda.org/search?q=folium>`_, o pacote ``folium`` encontra-se disponível no canal ``conda-forge``. Para adicionar o ``conda-forge`` à nossa lista de canais de busca de pacotes, podemos fazer:
+
+
+.. code-block:: shell
+
+    conda config --append channels conda-forge
+
+
+Se fizermos novamente a busca desse pacote:
+
+
+.. code-block:: shell
+
+    conda search folium
+
+
+Saída::
+
+    Loading channels: done
+    # Name                  Version           Build  Channel
+    folium                    0.2.0          py27_0  conda-forge
+    folium                    0.2.0          py34_0  conda-forge
+    folium                    0.2.0          py35_0  conda-forge
+    ...
+    folium                    0.4.0          py27_0  conda-forge
+    folium                    0.4.0          py35_0  conda-forge
+    folium                    0.4.0          py36_0  conda-forge
+    folium                    0.4.0            py_1  conda-forge
+    folium                    0.5.0            py_0  conda-forge
+
+
+Podemos ver na saída acima que agora, o pacote ``folium`` é encontrado e que está disponível pelo canal ``conda-forge``.
+
+
+Para instalar esse pacote, podemos fazer:
+
+
+.. code-block:: shell
+
+    conda install folium
+
+
+Saída::
+
+    Solving environment: done
+
+    ## Package Plan ##
+
+      environment location: D:\Users\gribeiro\Anaconda3\envs\neogeo
+
+      added / updated specs:
+        - folium
+
+
+    The following packages will be downloaded:
+
+        package                    |            build
+        ---------------------------|-----------------
+        altair-1.2.1               |             py_0          86 KB  conda-forge
+        notebook-5.3.1             |           py36_2         6.7 MB
+        branca-0.2.0               |             py_1          20 KB  conda-forge
+        ...
+
+
+    The following NEW packages will be INSTALLED:
+
+        alabaster:                0.7.10-py36hcd07829_0
+        altair:                   1.2.1-py_0            conda-forge
+        asn1crypto:               0.24.0-py36_0
+        babel:                    2.5.3-py36_0
+        backcall:                 0.1.0-py36_0
+        bleach:                   2.1.3-py36_0
+        branca:                   0.2.0-py_1            conda-forge
+        ...
+         win_inet_pton:            1.0.1-py36he67d7fd_1
+
+    Proceed ([y]/n)?
+
+
+    Downloading and Extracting Packages
+    ...
+
+    done
+
+
+O comando acima, ``conda config --append``, adiciona o canal ``conda-forge`` com menor prioridade, uma vez que este canal é instalado no final da nossa lista de canais.
+
+
+Para adicionar um canal com maior prioridade que os demais, no início da lista, podemos fazer:
+
+
+.. code-block:: shell
+
+    conda config --add channels conda-forge
+
+
+ou
+
+
+.. code-block:: shell
+
+    conda config --prepend channels conda-forge
+
+
+Saída::
+
+
+    Warning: 'conda-forge' already in 'channels' list, moving to the top
+
+
+Instalando um Pacote Disponível em Vários Canais
+************************************************
+
+Diferentes canais podem conter os mesmos pacotes, ou seja, podemos ter colisões ou conflitos na hora de tentar instalar um pacote que existe em diversos canais.
+
+
+Como exemplo, veja que o pacote ``notebook`` encontra-se disponível tanto no canal padrão quanto no ``conda-forge``:
+
+
+.. code-block:: shell
+
+    conda search notebook
+
+
+Saída::
+
+    Loading channels: done
+    # Name                  Version           Build  Channel
+    notebook                  4.0.1          py27_0  pkgs/free
+    ...
+    notebook                  4.1.0          py27_0  conda-forge
+    notebook                  4.1.0          py27_0  pkgs/free
+    ...
+    notebook                  5.4.1          py36_0  conda-forge
+    notebook                  5.4.1          py36_0  pkgs/main
+
+
+Como no final da seção anterior inserimos o canal ``conda-forge`` com maior prioridade, o comando abaixo irá instalar o pacote ``notebook`` a partir desse canal:
+
+
+.. code-block:: shell
+
+    conda install notebook
+
+
+Saída::
+
+    Solving environment: done
+
+    ## Package Plan ##
+
+      environment location: D:\Users\gribeiro\Anaconda3\envs\neogeo
+
+      added / updated specs:
+        - notebook
+
+
+    The following packages will be downloaded:
+
+        package                    |            build
+        ---------------------------|-----------------
+        winpty-0.4.3               |           vc14_2         126 KB  conda-forge
+        pywinpty-0.5               |           py36_2          74 KB  conda-forge
+        terminado-0.8.1            |           py36_0          21 KB  conda-forge
+        notebook-5.4.1             |           py36_0         6.7 MB  conda-forge
+        ------------------------------------------------------------
+                                               Total:         6.9 MB
+
+    The following NEW packages will be INSTALLED:
+
+        m2w64-gcc-libgfortran:   5.3.0-6
+        m2w64-gcc-libs:          5.3.0-7
+        m2w64-gcc-libs-core:     5.3.0-7
+        m2w64-gmp:               6.1.0-2
+        m2w64-libwinpthread-git: 5.0.0.4634.697f757-2
+        msys2-conda-epoch:       20160418-1
+        pywinpty:                0.5-py36_2           conda-forge
+        terminado:               0.8.1-py36_0         conda-forge
+        winpty:                  0.4.3-vc14_2         conda-forge [vc14]
+
+    The following packages will be UPDATED:
+
+        notebook:                5.3.1-py36_2                     --> 5.4.1-py36_0 conda-forge
+
+    Proceed ([y]/n)?
+
+
+Para instalar um pacote a partir de um canal específico, utilize a opção ``-c nome-canal``, como mostrado abaixo:
+
+
+.. code-block::
+
+    conda install -c conda-forge notebook
+
+
+.. note::
+
+    Alguns repositórios no Anaconda Cloud podem ser privados.
+
+
+Removendo um Canal Registrado
+*****************************
+
+
+.. code-block:: shell
+
+    conda config --remove channels conda-forge
+
+
+O arquivo ``.condarc``
+**********************
+
+
+O aplicativo ``conda`` utiliza as configurações contidas no arquivo ``.condarc``, que no Microsft Windows 10 fica localizado na pasta de usuário, como mostrado abaixo::
+
+    C:\Users\gribeiro\.condarc
+
+
+Este arquivo possui uma estrutura como a mostrada abaixo::
+
+    channels:
+      - defaults
+      - conda-forge
+    ssl_verify: true
+
+
+
+Nesse arquivo, a seção ``channels`` contém a lista dos canais que podem ser utilizados para busca dos pacotes.

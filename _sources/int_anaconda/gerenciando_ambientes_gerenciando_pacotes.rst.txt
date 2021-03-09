@@ -1,0 +1,16 @@
+..
+    This file is part of SER-347 Documentation.
+    Copyright 2020, Gilberto Queiroz and Thales Körting.
+
+
+Gerenciando os Pacotes de um Ambiente
++++++++++++++++++++++++++++++++++++++
+
+
+.. toctree::
+    :maxdepth: 2
+    :titlesonly:
+
+    ./gerenciando_ambientes_gerenciando_pacotes_instalacao
+    ./gerenciando_ambientes_gerenciando_pacotes_atualizacao
+    ./gerenciando_ambientes_gerenciando_pacotes_remocao

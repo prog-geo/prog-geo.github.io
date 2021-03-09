@@ -1,0 +1,86 @@
+..
+    This file is part of SER-347 Documentation.
+    Copyright 2020, Gilberto Queiroz and Thales Körting.
+
+
+Inicializando o Jupyter Notebook
+++++++++++++++++++++++++++++++++
+
+
+Para inicializar o servidor ``Jupyter Notebook``, você pode digitar na linha de comando do seu sistema operacional o seguinte comando:
+
+
+.. code-block:: shell
+
+    jupyter notebook
+
+
+Na :numref:`Figura %s <jupyter:notebook:01>`, mostramos como esse comando pode ser executado no terminal do sistema operacional.
+
+
+.. figure:: ../img/ipython-jupyter/jupyter-notebook-01.png
+    :alt: Inicializando o Jupyter Notebook
+    :width: 640
+    :figclass: align-center
+    :name: jupyter:notebook:01
+
+    Inicializando o Jupyter Notebook.
+
+
+O comando acima irá escrever algumas informações na tela do terminal do sistema operacional, conforme mostrado na :numref:`Figura %s <jupyter:notebook:02>`.
+
+.. figure:: ../img/ipython-jupyter/jupyter-notebook-02.png
+    :alt: Jupyter Notebook em inicialização
+    :width: 640
+    :figclass: align-center
+    :name: jupyter:notebook:02
+
+    Jupyter Notebook em inicialização.
+
+
+Ao final da inicialização do Jupyter Notebook, será aberto o navegador associado à URL da aplicação web (*Notebook Dashboard*), que por padrão fica configurada no endereço: http://127.0.0.1:8888 (ou http://localhost:8888), conforme mostrado na :numref:`Figura %s <jupyter:notebook:03>`.
+
+
+.. figure:: ../img/ipython-jupyter/jupyter-notebook-03.png
+    :alt: Aplicação Web Jupyter Notebook
+    :width: 640
+    :figclass: align-center
+    :name: jupyter:notebook:03
+
+    Aplicação Web Jupyter Notebook: *Notebook Dashboard*.
+
+
+Note na :numref:`Figura %s <jupyter:notebook:03>` que a pasta de onde executamos o comando ``jupyter notebook`` se torna a raiz do sistema de arquivos na qual podemos navegar na aplicação exibida. Nessa janela podemos observar a existência de duas pastas (``exemplos`` e ``img``) e um arquivo (``ipython-e-jupyter-notebooks.ipynb``). Para os arquivos com extensão ``.ipynb``, como o notebook ``ipython-e-jupyter-notebooks.ipynb``, é mostrado sua última execução, que neste caso ocorreu a "4 horas atrás". Se o notebook estivesse em execução, seu nome seria destacado com um ícone verde e a palavra ``Running`` como mostrado na :numref:`Figura %s <jupyter:notebook:05>`.
+
+
+.. figure:: ../img/ipython-jupyter/jupyter-notebook-05.png
+    :alt: Jupyter Notebook em execução
+    :width: 640
+    :figclass: align-center
+    :name: jupyter:notebook:05
+
+    Aplicação Web indicando que um notebook encontra-se em execução.
+
+
+Na janela principal do *Notebook Dashboard* ou, simplesmente Jupyter, podemos criar um novo notebook pressionando o botão ``New`` e escolhendo o tipo de documento que desejamos criar. Vamos escolher a opção ``Python 3`` (:numref:`Figura %s <jupyter:notebook:04>`).
+
+
+.. figure:: ../img/ipython-jupyter/jupyter-notebook-04.png
+    :alt: Criando um novo Jupyter Notebook
+    :width: 640
+    :figclass: align-center
+    :name: jupyter:notebook:04
+
+    Criando um novo Jupyter Notebook.
+
+
+Uma nova aba do navegador será aberta como mostrado na :numref:`Figura %s <jupyter:notebook:06>`.
+
+
+.. figure:: ../img/ipython-jupyter/jupyter-notebook-06.png
+    :alt: Novo Jupyter Notebook
+    :width: 640
+    :figclass: align-center
+    :name: jupyter:notebook:06
+
+    Novo Jupyter Notebook.

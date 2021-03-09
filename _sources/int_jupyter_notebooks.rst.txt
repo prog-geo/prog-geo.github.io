@@ -1,0 +1,24 @@
+..
+    This file is part of SER-347 Documentation.
+    Copyright 2020, Gilberto Queiroz and Thales Körting.
+
+
+IPython e Jupyter Notebooks
+===========================
+
+
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+
+    ./ipython_jupyter/introducao
+    ./ipython_jupyter/ipython
+    ./ipython_jupyter/numeracao_e_s
+    ./ipython_jupyter/jupyter
+    ./ipython_jupyter/comandos_magicos
+    ./ipython_jupyter/kernel
+    ./ipython_jupyter/r
+    ./ipython_jupyter/widgets
+    ./ipython_jupyter/consideracoes
+    ./ipython_jupyter/referencias
+

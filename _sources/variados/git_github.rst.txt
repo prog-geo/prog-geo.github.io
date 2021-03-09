@@ -1,0 +1,19 @@
+..
+    This file is part of SER-347 Documentation.
+    Copyright 2020, Gilberto Queiroz and Thales Körting.
+
+
+git e GitHub
+------------
+
+
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+
+    ./git_definicao
+    ./github_definicao
+    ./git_comandos
+
+
+

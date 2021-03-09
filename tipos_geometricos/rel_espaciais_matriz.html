@@ -1,0 +1,529 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="pt-BR" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>8.3.1. Matriz de 9-intersecções Estendida Dimensionalmente &mdash; SER-347/CAP-419</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/table_styling.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/ser-347.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+    <link rel="canonical" href="https://ser-347.github.io/tipos_geometricos/rel_espaciais_matriz.html" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Buscar" href="../search.html" />
+    <link rel="next" title="8.3.2. Operador Relate" href="rel_espaciais_relate.html" />
+    <link rel="prev" title="8.3. Relacionamentos Espaciais" href="rel_espaciais.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SER-347/CAP-419
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Pesquisar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introdução à Programação com Dados Geoespaciais</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Visão Geral do Curso:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../visao-geral.html">Visao Geral do Curso</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aulas:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../instalacao.html">1. Instalando e Configurando o Ambiente de Programação</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introducao-programacao.html">2. Introdução à Programação com a Linguagem Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../int_anaconda.html">3. Introdução ao Ambiente Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../int_jupyter_notebooks.html">4. IPython e Jupyter Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matrizes.html">5. Matrizes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualizacao.html">6. Visualização de Dados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../imagens.html">7. Imagens</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../tipos_geometricos.html">8. Tipos e Operações Espaciais</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introducao.html">8.1. Introdução</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ogcsfs.html">8.2. Tipos Geométricos</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="rel_espaciais.html">8.3. Relacionamentos Espaciais</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">8.3.1. Matriz de 9-intersecções Estendida Dimensionalmente</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rel_espaciais_relate.html">8.3.2. Operador <code class="docutils literal notranslate"><span class="pre">Relate</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="rel_espaciais_nomeados.html">8.3.3. Relacionamentos Espaciais Nomeados</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="python.html">8.4. Tipos Geométricos em Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shapely.html">8.5. A Biblioteca Shapely</a></li>
+<li class="toctree-l2"><a class="reference internal" href="consideracoes.html">8.6. Considerações Finais</a></li>
+<li class="toctree-l2"><a class="reference internal" href="referencias.html">8.7. Referências Bibliográficas</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../vetorial.html">9. Manipulação de Dados Vetoriais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variados.html">10. Tópicos Variados</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Considerações Finais</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../consideracoes-finais.html">Considerações Finais</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Referências Bibliográficas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../referencias.html">Referências Bibliográficas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Listas de Exercícios:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../listas.html#solucoes-das-listas">Soluções das Listas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Lista de Projetos:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../projetos.html">Lista dos Projetos Finais do Curso</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Informações Gerais:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sites.html">Sobre o Site do Curso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contato.html">Contato</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../licenca.html">Licença</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SER-347/CAP-419</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../tipos_geometricos.html"><span class="section-number">8. </span>Tipos e Operações Espaciais</a> &raquo;</li>
+        
+          <li><a href="rel_espaciais.html"><span class="section-number">8.3. </span>Relacionamentos Espaciais</a> &raquo;</li>
+        
+      <li><span class="section-number">8.3.1. </span>Matriz de 9-intersecções Estendida Dimensionalmente</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="rel_espaciais_relate.html" class="btn btn-neutral float-right" title="8.3.2. Operador Relate" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="rel_espaciais.html" class="btn btn-neutral float-left" title="8.3. Relacionamentos Espaciais" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="matriz-de-9-interseccoes-estendida-dimensionalmente">
+<h1><span class="section-number">8.3.1. </span>Matriz de 9-intersecções Estendida Dimensionalmente<a class="headerlink" href="#matriz-de-9-interseccoes-estendida-dimensionalmente" title="Link permanente para este título">¶</a></h1>
+<p>Os relacionamentos espaciais são definidos com base no paradigma da <strong>Matriz de 9-Intersecções Estendida Dimensionalmente</strong> (<code class="docutils literal notranslate"><span class="pre">DE-9IM</span></code>) proposto por Clementini et al. (1993). A abordagem básica desse método consiste em comparar dois objetos geométricos através de testes com a intersecção entre seus interiores, fronteiras e exteriores. Desta forma, podemos construir uma matrix <span class="math notranslate nohighlight">\(3 \times 3\)</span> como a mostrada abaixo:</p>
+<table class="colwidths-given styled-table docutils align-center" id="tipos-geometricos-de-9im" style="width: 640">
+<caption><span class="caption-number">Tabela 8.3 - </span><span class="caption-text">Matriz de 9-Intersecções Estendida Dimensionalmente.</span><a class="headerlink" href="#tipos-geometricos-de-9im" title="Link Permanente para essa tabela">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="left-align head"></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Interior(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(dim(I(A) \cap I(B))\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(dim(I(A) \cap F(B))\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(dim(I(A) \cap E(B))\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Fonteira(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(dim(F(A) \cap I(B))\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(dim(F(A) \cap F(B))\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(dim(F(A) \cap E(B))\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Exterior(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(dim(E(A) \cap I(B))\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(dim(E(A) \cap F(B))\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(dim(E(A) \cap E(B))\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+</tbody>
+</table>
+<p>Na matriz acima (<a class="reference internal" href="#tipos-geometricos-de-9im"><span class="std std-numref">Tabela 8.3</span></a>), <span class="math notranslate nohighlight">\(I(A)\)</span>, <span class="math notranslate nohighlight">\(F(A)\)</span> e <span class="math notranslate nohighlight">\(E(A)\)</span> referem-se, respectivamente, ao interior, fronteira  e exterior do objeto <span class="math notranslate nohighlight">\(A\)</span>. De maneira análoga, <span class="math notranslate nohighlight">\(I(B)\)</span>, <span class="math notranslate nohighlight">\(F(B)\)</span> e <span class="math notranslate nohighlight">\(E(B)\)</span> referem-se, respectivamente, ao interior, fronteira  e exterior do objeto <span class="math notranslate nohighlight">\(B\)</span>.</p>
+<p>A dimensionalidade máxima dos objetos resultantes da intersecção dos componentes avaliados, <span class="math notranslate nohighlight">\(dim(x)\)</span>, pode ser:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\emptyset\)</span>: Caso os componentes não tenham intersecção. Adotaremos o valor <span class="math notranslate nohighlight">\(-1\)</span> para este caso.</p></li>
+<li><p><span class="math notranslate nohighlight">\(0\)</span>: Se a intersecção dos componentes resulta em um ponto.</p></li>
+<li><p><span class="math notranslate nohighlight">\(1\)</span>: Se a intersecção dos componentes resulta em alguma curva.</p></li>
+<li><p><span class="math notranslate nohighlight">\(2\)</span>: Se a intersecção dos componentes resulta em alguma superfície. Adotaremos também os termos <strong>Área</strong> ou <strong>Região</strong> como sinônimos.</p></li>
+</ul>
+<p>A <a class="reference internal" href="#tipos-geometricos-comp-tipos"><span class="std std-numref">Tabela 8.4</span></a> ilustra cada um dos componentes dos tipos de objetos geométricos definidos na OGC-SFS.</p>
+<table class="colwidths-given styled-table docutils align-center" id="tipos-geometricos-comp-tipos" style="width: 640">
+<caption><span class="caption-number">Tabela 8.4 - </span><span class="caption-text">Interior, fronteira e exterior dos diversos tipos geométricos.</span><a class="headerlink" href="#tipos-geometricos-comp-tipos" title="Link Permanente para essa tabela">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="left-align head"><p>( a ) I e E Ponto</p></th>
+<th class="left-align head"><p>( b ) I e E Coleção Pontos</p></th>
+<th class="left-align head"><p>( c ) I, F e E Curva Aberta</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="left-align"><p><img alt="ogc-geom-topo-point" src="../_images/ogc-geom-topo-point.png" /></p></td>
+<td class="left-align"><p><img alt="ogc-geom-topo-multipoint" src="../_images/ogc-geom-topo-multipoint.png" /></p></td>
+<td class="left-align"><p><img alt="ogc-geom-topo-line" src="../_images/ogc-geom-topo-line.png" /></p></td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-given styled-table docutils align-center" style="width: 640">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="left-align head"><p>( d ) I e E Curva Fechada</p></th>
+<th class="left-align head"><p>( e ) I, F e E Col. Curv. Abertas</p></th>
+<th class="left-align head"><p>( f ) I e E Col. Curv. Abertas</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="left-align"><p><img alt="ogc-geom-topo-ring" src="../_images/ogc-geom-topo-ring.png" /></p></td>
+<td class="left-align"><p><img alt="ogc-geom-topo-multiline" src="../_images/ogc-geom-topo-multiline.png" /></p></td>
+<td class="left-align"><p><img alt="ogc-geom-topo-multiline2" src="../_images/ogc-geom-topo-multiline2.png" /></p></td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-given styled-table docutils align-center" style="width: 640">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="left-align head"><p>( g ) I, F e E Polígono</p></th>
+<th class="left-align head"><p>( h ) I, F e E Coleção Polígonos</p></th>
+<th class="left-align head"><p>( i ) I, F e E Coleção Geom.</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="left-align"><p><img alt="ogc-geom-topo-poly" src="../_images/ogc-geom-topo-poly.png" /></p></td>
+<td class="left-align"><p><img alt="ogc-geom-topo-multipoly" src="../_images/ogc-geom-topo-multipoly.png" /></p></td>
+<td class="left-align"><p><img alt="ogc-geom-topo-geomcoll" src="../_images/ogc-geom-topo-geomcoll.png" /></p></td>
+</tr>
+</tbody>
+</table>
+<p>A fronteira de um objeto geométrico é formada por um conjunto de objetos geométricos de uma dimensão abaixo do objeto em questão.</p>
+<p>Assim, a fronteira de um objeto do tipo ponto (<code class="docutils literal notranslate"><span class="pre">Point</span></code>) é o conjunto vazio (<span class="math notranslate nohighlight">\(\emptyset\)</span>), uma vez que um ponto é um objeto <span class="math notranslate nohighlight">\(0\)</span>-dimensional (dimensão topológica). Observe na <a class="reference internal" href="#tipos-geometricos-comp-tipos"><span class="std std-numref">Tabela 8.4a</span></a> que no caso de um ponto, temos apenas a definição de seu interior, destacado em azul escuro, e seu exterior, representado pela região em vermelho. Portanto, o interior de um ponto é um objeto <span class="math notranslate nohighlight">\(0\)</span>-dimensional e seu exterior, um objeto <span class="math notranslate nohighlight">\(2\)</span>-dimensional.</p>
+<p>Um objeto geométrico do tipo <code class="docutils literal notranslate"><span class="pre">MultiPoint</span></code>, que também é <span class="math notranslate nohighlight">\(0\)</span>-dimensional, tem sua fronteira definida como o conjunto vazio (<span class="math notranslate nohighlight">\(\emptyset\)</span>). O interior é formado pelos próprios pontos da coleção, destacados em azul escuro na <a class="reference internal" href="#tipos-geometricos-comp-tipos"><span class="std std-numref">Tabela 8.4b</span></a>, e o exterior é região destacada em vermelho nessa tabela.</p>
+<p>A fronteira de uma curva aberta (<code class="docutils literal notranslate"><span class="pre">Curve</span></code>) consiste nos pontos inicial e final dessa curva. A <a class="reference internal" href="#tipos-geometricos-comp-tipos"><span class="std std-numref">Tabela 8.4c</span></a> mostra uma exemplo de curva aberta, onde os pontos destacados em verde formam a fronteira dessa curva. Portanto, a fronteira de uma curva aberta é um conjunto de objetos geométricos <span class="math notranslate nohighlight">\(0\)</span>-dimensional. O interior de uma curva aberta é formado pelos infinitos pontos de sua imagem, exceto os pontos da fronteira. Na <a class="reference internal" href="#tipos-geometricos-comp-tipos"><span class="std std-numref">Tabela 8.4c</span></a>, a linha em azul escuro corresponde ao interior da curva, que é um objeto geométrico <span class="math notranslate nohighlight">\(1\)</span>-dimensional. O exterior da curva é representado pela região em vermelho que não contém os pontos da fronteira e do interior da curva.</p>
+<p>A fronteira de uma curva fechada (<code class="docutils literal notranslate"><span class="pre">Curve</span></code>) é o conjunto vazio (<span class="math notranslate nohighlight">\(\emptyset\)</span>). A <a class="reference internal" href="#tipos-geometricos-comp-tipos"><span class="std std-numref">Tabela 8.4d</span></a> mostra um exemplo de curva fechada. Nessa tabela, podemos observar que o interior é formado por todos os pontos da curva, incluindo os pontos inicial e final, formando um objeto geométrico <span class="math notranslate nohighlight">\(1\)</span>-dimensional. O exterior de uma curva fechada é uma região, um objeto <span class="math notranslate nohighlight">\(2\)</span>-dimensional, destacado em vermelho nessa tabela.</p>
+<p>A fronteira de uma coleção de curvas (<code class="docutils literal notranslate"><span class="pre">MultiCurve</span></code>) consiste nos pontos na fronteira de um número ímpar de elementos da curva. A <a class="reference internal" href="#tipos-geometricos-comp-tipos"><span class="std std-numref">Tabela 8.4e</span></a> mostra um exemplo de coleção de curvas abertas. Repare que os pontos destacados em verde formam a fronteira dessa curva, enquanto os pontos sobre as imagens das linhas, destacados em azul escuro, forma seus interiores e seu exterior é destacado pela região em vermelho. A <a class="reference internal" href="#tipos-geometricos-comp-tipos"><span class="std std-numref">Tabela 8.4f</span></a> ilustra a regra de que os pontos da fronteira devem pertencer a um número ímpar de elementos da curva.</p>
+<p>Uma coleção de curvas (<code class="docutils literal notranslate"><span class="pre">MultiCurve</span></code>) é dita fechada se todos os seus elementos são fechados, consequentemente, a fronteira de uma coleção de curvas fechadas é o conjunto vazio (<span class="math notranslate nohighlight">\(\emptyset\)</span>).</p>
+<p>A fronteira de um polígono (<code class="docutils literal notranslate"><span class="pre">Polygon</span></code>) consiste no seu conjunto de anéis (<code class="docutils literal notranslate"><span class="pre">LinearRing</span></code>). A <a class="reference internal" href="#tipos-geometricos-comp-tipos"><span class="std std-numref">Tabela 8.4g</span></a> ilustra esse caso. Repare que o exterior de um polígono com buraco é desconectado.</p>
+<p>A fronteira de uma coleção de polígonos (<code class="docutils literal notranslate"><span class="pre">MultiPolygon</span></code>) consiste no conjunto de anéis (<code class="docutils literal notranslate"><span class="pre">LinearRing</span></code>) de seus polígonos (<code class="docutils literal notranslate"><span class="pre">Polygon</span></code>) (<a class="reference internal" href="#tipos-geometricos-comp-tipos"><span class="std std-numref">Tabela 8.4h</span></a>).</p>
+<p>A fronteira de um conjunto de objetos geométricos heterogêneos (<code class="docutils literal notranslate"><span class="pre">GeometryCollection</span></code>) cujo os interiores dos seus elementos são disjuntos, consiste nos objetos geométricos das fronteiras desses elementos obedecendo à regra de que os pontos devem pertencer a um número ímpar de elementos (<a class="reference internal" href="#tipos-geometricos-comp-tipos"><span class="std std-numref">Tabela 8.4i</span></a>).</p>
+<p>Vamos considerar os objetos geométricos apresentados na <a class="reference internal" href="#tipos-geometricos-rel-a-b"><span class="std std-numref">Figura 8.2</span></a>. Podemos estabelecer o seguinte:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(I(A)\)</span>: área mostrada em azul claro.</p></li>
+<li><p><span class="math notranslate nohighlight">\(F(A)\)</span>: formada por um único anel (externo), em azul escuro.</p></li>
+<li><p><span class="math notranslate nohighlight">\(E(A)\)</span>: é definido como toda a região do espaço que não compreenda a fronteira e o interior de <span class="math notranslate nohighlight">\(A\)</span>.</p></li>
+</ul>
+<p>De maneira análoga:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(I(B)\)</span>: área mostrada em laranja claro.</p></li>
+<li><p><span class="math notranslate nohighlight">\(F(B)\)</span>: formada por um único anel (externo), em laranja escuro.</p></li>
+<li><p><span class="math notranslate nohighlight">\(E(B)\)</span>: é definido como toda a região do espaço que não compreenda a fronteira e o interior de <span class="math notranslate nohighlight">\(B\)</span>.</p></li>
+</ul>
+<div class="align-center figure align-default" id="tipos-geometricos-rel-a-b">
+<a class="reference internal image-reference" href="../_images/ogc-de9im.png"><img alt="Relacionamento Espacial entre objetos A e B" src="../_images/ogc-de9im.png" style="height: 200px;" /></a>
+<p class="caption"><span class="caption-number">Figura 8.2 - </span><span class="caption-text">Configuração espacial de dois objetos geométricos <span class="math notranslate nohighlight">\(A\)</span> e <span class="math notranslate nohighlight">\(B\)</span>.</span><a class="headerlink" href="#tipos-geometricos-rel-a-b" title="Link Permanente para essa imagem">¶</a></p>
+</div>
+<p>O relacionamento espacial definido por <span class="math notranslate nohighlight">\(A\)</span> e <span class="math notranslate nohighlight">\(B\)</span> segundo a matriz de intersecções é a seguinte:</p>
+<table class="colwidths-given styled-table docutils align-center" id="tipos-geometricos-rel-a-b-mat" style="width: 640">
+<caption><span class="caption-number">Tabela 8.5 - </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">DE-9IM</span></code> - <span class="math notranslate nohighlight">\(A\)</span> e <span class="math notranslate nohighlight">\(B\)</span>.</span><a class="headerlink" href="#tipos-geometricos-rel-a-b-mat" title="Link Permanente para essa tabela">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="left-align head"></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Interior(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(2\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(2\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Fonteira(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Exterior(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(2\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(2\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+</tbody>
+</table>
+<p>A matriz acima foi definida considerando:</p>
+<ul class="simple">
+<li><p>Os interiores de <span class="math notranslate nohighlight">\(A\)</span> e <span class="math notranslate nohighlight">\(B\)</span> são regiões, isto é, objetos <span class="math notranslate nohighlight">\(2\)</span>-dimensional. A intersecção desses dois componentes forma uma nova região, a área em vermelho na <a class="reference internal" href="#tipos-geometricos-i-f-e"><span class="std std-numref">Tabela 8.6a</span></a>, que também é um objeto <span class="math notranslate nohighlight">\(2\)</span>-dimensional. Logo, a <span class="math notranslate nohighlight">\(dim(I(A) \cap I(B)) = 2\)</span>.</p></li>
+<li><p>A fronteira de <span class="math notranslate nohighlight">\(B\)</span> é formada por um anel (laranja), um objeto <span class="math notranslate nohighlight">\(1\)</span>-dimensional. A intersecção entre <span class="math notranslate nohighlight">\(I(A)\)</span> e a <span class="math notranslate nohighlight">\(F(B)\)</span> forma uma linha, destacada em vermelho na <a class="reference internal" href="#tipos-geometricos-i-f-e"><span class="std std-numref">Tabela 8.6b</span></a>, que é um objeto <span class="math notranslate nohighlight">\(1\)</span>-dimensional.  Logo, a <span class="math notranslate nohighlight">\(dim(I(A) \cap F(B)) = 1\)</span>.</p></li>
+<li><p>O exterior de <span class="math notranslate nohighlight">\(B\)</span> é uma região. A intersecção do <span class="math notranslate nohighlight">\(I(A)\)</span> e o <span class="math notranslate nohighlight">\(E(B)\)</span> forma a área destacada em vermelho da <a class="reference internal" href="#tipos-geometricos-i-f-e"><span class="std std-numref">Tabela 8.6c</span></a>. Logo, a <span class="math notranslate nohighlight">\(dim(I(A) \cap E(B)) = 2\)</span>.</p></li>
+<li><p>A fronteira de <span class="math notranslate nohighlight">\(A\)</span> é formada por um anel (azul). A intersecção entre <span class="math notranslate nohighlight">\(F(A)\)</span> e o <span class="math notranslate nohighlight">\(I(B)\)</span> forma uma linha, destacada em vermelho na <a class="reference internal" href="#tipos-geometricos-i-f-e"><span class="std std-numref">Tabela 8.6d</span></a>, que é um objeto <span class="math notranslate nohighlight">\(1\)</span>-dimensional.  Logo, a <span class="math notranslate nohighlight">\(dim(F(A) \cap I(B)) = 1\)</span>.</p></li>
+<li><p>A intersecção entre as fronteiras de <span class="math notranslate nohighlight">\(A\)</span> e <span class="math notranslate nohighlight">\(B\)</span> são os pontos mostrados em vermelho na <a class="reference internal" href="#tipos-geometricos-i-f-e"><span class="std std-numref">Tabela 8.6e</span></a>. Como um ponto é um objeto <span class="math notranslate nohighlight">\(0\)</span>-dimensional, a <span class="math notranslate nohighlight">\(dim(F(A) \cap F(B)) = 0\)</span>.</p></li>
+<li><p>A intersecção entre a fronteira de <span class="math notranslate nohighlight">\(A\)</span> e o exterior de <span class="math notranslate nohighlight">\(B\)</span> forma a linha mostrada na <a class="reference internal" href="#tipos-geometricos-i-f-e"><span class="std std-numref">Tabela 8.6f</span></a>. Logo, a <span class="math notranslate nohighlight">\(dim(F(A) \cap E(B)) = 1\)</span>.</p></li>
+<li><p>A intersecção entre exterior de <span class="math notranslate nohighlight">\(A\)</span> e interior de <span class="math notranslate nohighlight">\(B\)</span> forma uma área (<a class="reference internal" href="#tipos-geometricos-i-f-e"><span class="std std-numref">Tabela 8.6g</span></a>). Logo, a <span class="math notranslate nohighlight">\(dim(E(A) \cap I(B)) = 2\)</span>.</p></li>
+<li><p>A intersecção entre exterior de <span class="math notranslate nohighlight">\(A\)</span> e fronteira de <span class="math notranslate nohighlight">\(B\)</span> forma a linha mostrada na <a class="reference internal" href="#tipos-geometricos-i-f-e"><span class="std std-numref">Tabela 8.6h</span></a>. Logo, a <span class="math notranslate nohighlight">\(dim(E(A) \cap F(B)) = 1\)</span>.</p></li>
+<li><p>A interseção entre os exteriores de <span class="math notranslate nohighlight">\(A\)</span> e <span class="math notranslate nohighlight">\(B\)</span> formam uma área (<a class="reference internal" href="#tipos-geometricos-i-f-e"><span class="std std-numref">Tabela 8.6i</span></a>). Logo, a <span class="math notranslate nohighlight">\(dim(E(A) \cap E(B)) = 2\)</span>.</p></li>
+</ul>
+<table class="colwidths-given styled-table docutils align-center" id="tipos-geometricos-i-f-e" style="width: 640">
+<caption><span class="caption-number">Tabela 8.6 - </span><span class="caption-text">Intersecção entre os componentes dos objetos <span class="math notranslate nohighlight">\(A\)</span> e <span class="math notranslate nohighlight">\(B\)</span>.</span><a class="headerlink" href="#tipos-geometricos-i-f-e" title="Link Permanente para essa tabela">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="left-align head"><p>( a ) <span class="math notranslate nohighlight">\(I(A) \cap I(B)\)</span></p></th>
+<th class="left-align head"><p>( b ) <span class="math notranslate nohighlight">\(I(A) \cap F(B)\)</span></p></th>
+<th class="left-align head"><p>( c ) <span class="math notranslate nohighlight">\(I(A) \cap E(B)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="left-align"><p><img alt="ogc-de9im-ia-ib" src="../_images/ogc-de9im-ia-ib.png" /></p></td>
+<td class="left-align"><p><img alt="ogc-de9im-ia-fb" src="../_images/ogc-de9im-ia-fb.png" /></p></td>
+<td class="left-align"><p><img alt="ogc-de9im-ia-eb" src="../_images/ogc-de9im-ia-eb.png" /></p></td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-given styled-table docutils align-center" style="width: 640">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="left-align head"><p>( d ) <span class="math notranslate nohighlight">\(F(A) \cap I(B)\)</span></p></th>
+<th class="left-align head"><p>( e ) <span class="math notranslate nohighlight">\(F(A) \cap F(B)\)</span></p></th>
+<th class="left-align head"><p>( f ) <span class="math notranslate nohighlight">\(F(A) \cap E(B)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="left-align"><p><img alt="ogc-de9im-fa-ib" src="../_images/ogc-de9im-fa-ib.png" /></p></td>
+<td class="left-align"><p><img alt="ogc-de9im-fa-fb" src="../_images/ogc-de9im-fa-fb.png" /></p></td>
+<td class="left-align"><p><img alt="ogc-de9im-fa-eb" src="../_images/ogc-de9im-fa-eb.png" /></p></td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-given styled-table docutils align-center" style="width: 640">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="left-align head"><p>( d ) <span class="math notranslate nohighlight">\(E(A) \cap I(B)\)</span></p></th>
+<th class="left-align head"><p>( e ) <span class="math notranslate nohighlight">\(E(A) \cap F(B)\)</span></p></th>
+<th class="left-align head"><p>( f ) <span class="math notranslate nohighlight">\(E(A) \cap E(B)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="left-align"><p><img alt="ogc-de9im-ea-ib" src="../_images/ogc-de9im-ea-ib.png" /></p></td>
+<td class="left-align"><p><img alt="ogc-de9im-ea-fb" src="../_images/ogc-de9im-ea-fb.png" /></p></td>
+<td class="left-align"><p><img alt="ogc-de9im-ea-eb" src="../_images/ogc-de9im-ea-eb.png" /></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="rel_espaciais_relate.html" class="btn btn-neutral float-right" title="8.3.2. Operador Relate" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="rel_espaciais.html" class="btn btn-neutral float-left" title="8.3. Relacionamentos Espaciais" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-165908761-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

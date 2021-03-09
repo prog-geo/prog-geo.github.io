@@ -1,0 +1,546 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="pt-BR" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>3.2.6. Canais &mdash; SER-347/CAP-419</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/table_styling.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/ser-347.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+    <link rel="canonical" href="https://ser-347.github.io/int_anaconda/gerenciando_ambientes_canais.html" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Buscar" href="../search.html" />
+    <link rel="next" title="3.2.7. Conflitos" href="gerenciando_ambientes_conflitos.html" />
+    <link rel="prev" title="3.2.5.3. Compartilhando a Definição de um Ambiente" href="gerenciando_ambientes_criando_copias_yml.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SER-347/CAP-419
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Pesquisar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introdução à Programação com Dados Geoespaciais</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Visão Geral do Curso:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../visao-geral.html">Visao Geral do Curso</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aulas:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../instalacao.html">1. Instalando e Configurando o Ambiente de Programação</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introducao-programacao.html">2. Introdução à Programação com a Linguagem Python</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../int_anaconda.html">3. Introdução ao Ambiente Anaconda</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introducao.html">3.1. Introdução</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="gerenciando_ambientes.html">3.2. Gerenciando Ambientes e Pacotes com o <code class="docutils literal notranslate"><span class="pre">Conda</span></code></a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="gerenciando_ambientes_introd.html">3.2.1. O aplicativo <code class="docutils literal notranslate"><span class="pre">conda</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gerenciando_ambientes_criando_ambientes.html">3.2.2. Criando um Novo Ambiente</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gerenciando_ambientes_gerenciando_pacotes.html">3.2.3. Gerenciando os Pacotes de um Ambiente</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gerenciando_ambientes_removendo_ambiente.html">3.2.4. Removendo um Ambiente Virtual</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gerenciando_ambientes_criando_copias.html">3.2.5. Criando Cópias de um Ambiente</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">3.2.6. Canais</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gerenciando_ambientes_conflitos.html">3.2.7. Conflitos</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="consideracoes.html">3.3. Considerações Finais</a></li>
+<li class="toctree-l2"><a class="reference internal" href="referencias.html">3.4. Referências</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../int_jupyter_notebooks.html">4. IPython e Jupyter Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matrizes.html">5. Matrizes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualizacao.html">6. Visualização de Dados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../imagens.html">7. Imagens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tipos_geometricos.html">8. Tipos e Operações Espaciais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vetorial.html">9. Manipulação de Dados Vetoriais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variados.html">10. Tópicos Variados</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Considerações Finais</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../consideracoes-finais.html">Considerações Finais</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Referências Bibliográficas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../referencias.html">Referências Bibliográficas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Listas de Exercícios:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../listas.html#solucoes-das-listas">Soluções das Listas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Lista de Projetos:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../projetos.html">Lista dos Projetos Finais do Curso</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Informações Gerais:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sites.html">Sobre o Site do Curso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contato.html">Contato</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../licenca.html">Licença</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SER-347/CAP-419</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../int_anaconda.html"><span class="section-number">3. </span>Introdução ao Ambiente Anaconda</a> &raquo;</li>
+        
+          <li><a href="gerenciando_ambientes.html"><span class="section-number">3.2. </span>Gerenciando Ambientes e Pacotes com o <code class="docutils literal notranslate"><span class="pre">Conda</span></code></a> &raquo;</li>
+        
+      <li><span class="section-number">3.2.6. </span>Canais</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="gerenciando_ambientes_conflitos.html" class="btn btn-neutral float-right" title="3.2.7. Conflitos" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="gerenciando_ambientes_criando_copias_yml.html" class="btn btn-neutral float-left" title="3.2.5.3. Compartilhando a Definição de um Ambiente" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="canais">
+<h1><span class="section-number">3.2.6. </span>Canais<a class="headerlink" href="#canais" title="Link permanente para este título">¶</a></h1>
+<p>Os pacotes gerenciados pelo <code class="docutils literal notranslate"><span class="pre">conda</span></code> são baixados a partir do que chamamos de <code class="docutils literal notranslate"><span class="pre">canais</span> <span class="pre">remotos</span></code> (<code class="docutils literal notranslate"><span class="pre">remote</span> <span class="pre">channels</span></code>). Um canal é um diretório acessível através de uma URL e que contém pacotes que podem ser gerenciados pelo <code class="docutils literal notranslate"><span class="pre">conda</span></code>. A <a class="reference internal" href="#anaconda-default-channel"><span class="std std-numref">Figura 3.4</span></a> mostra a organização de um desses canais, no caso, o que usamos para instalação do pacote <code class="docutils literal notranslate"><span class="pre">GDAL</span></code> no ambiente <code class="docutils literal notranslate"><span class="pre">geospatial</span></code>.</p>
+<div class="align-center figure align-default" id="anaconda-default-channel">
+<a class="reference internal image-reference" href="../_images/channel-anaconda.png"><img alt="Canal de Instalçaão de Pacotes" src="../_images/channel-anaconda.png" style="width: 640px;" /></a>
+<p class="caption"><span class="caption-number">Figura 3.4 - </span><span class="caption-text">Canal usado para instalação do pacote GDAL no ambiente <code class="docutils literal notranslate"><span class="pre">geospatial</span></code>.</span><a class="headerlink" href="#anaconda-default-channel" title="Link Permanente para essa imagem">¶</a></p>
+</div>
+<p>Na instalação da Anaconda, alguns canais são registrados para uso pelo aplicativo <code class="docutils literal notranslate"><span class="pre">conda</span></code>, como os canais com prefixo <a class="reference external" href="https://repo.anaconda.com/pkgs">https://repo.anaconda.com/pkgs</a> e <a class="reference external" href="http://repo.continuum.io/pkgs">http://repo.continuum.io/pkgs</a>, que são identificados como <code class="docutils literal notranslate"><span class="pre">defaults</span></code>. No site <a class="reference external" href="https://anaconda.org/">Anaconda Cloud</a> (<a class="reference internal" href="#id1"><span class="std std-numref">Figura 3.5</span></a>), podemos procurar os pacotes através de uma interface gráfica web, que inclusive ajuda a descobrir os canais onde esses pacotes encontram-se disponíveis. Como exemplo, procure pelo pacote <code class="docutils literal notranslate"><span class="pre">folium</span></code>, você verá que este pacote encontra-se disponível em vários canais, como o <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> e o <code class="docutils literal notranslate"><span class="pre">ioos</span></code>.</p>
+<div class="align-center figure align-default" id="id1">
+<a class="reference internal image-reference" href="../_images/anaconda-cloud.png"><img alt="Canal de Instalçaão de Pacotes" src="../_images/anaconda-cloud.png" style="width: 640px;" /></a>
+<p class="caption"><span class="caption-number">Figura 3.5 - </span><span class="caption-text">Anaconda Cloud - acesso a pacotes, canais, e outros recursos.</span><a class="headerlink" href="#id1" title="Link Permanente para essa imagem">¶</a></p>
+</div>
+<div class="section" id="adicionando-um-novo-canal">
+<h2><span class="section-number">3.2.6.1. </span>Adicionando um Novo Canal<a class="headerlink" href="#adicionando-um-novo-canal" title="Link permanente para este título">¶</a></h2>
+<p>No início da <a class="reference external" href="#gerenciando-ambientes-e-pacotes-com-o-conda">Seção 2</a>, utilizamos o comando <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">info</span></code> para obter algumas informações do nosso ambiente atual e da instalação da <code class="docutils literal notranslate"><span class="pre">Anaconda</span></code>. Recorrendo a esse comando novamente, podemos observar que parte de sua saída apresenta os canais que são utilizados para busca dos pacotes:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda info
+</pre></div>
+</div>
+<p>Saída:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">active</span> <span class="n">environment</span> <span class="p">:</span> <span class="n">geospatial</span>
+   <span class="n">active</span> <span class="n">env</span> <span class="n">location</span> <span class="p">:</span> <span class="n">D</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">gribeiro</span>\<span class="n">Anaconda3</span>\<span class="n">envs</span>\<span class="n">geospatial</span>
+           <span class="n">shell</span> <span class="n">level</span> <span class="p">:</span> <span class="mi">2</span>
+      <span class="n">user</span> <span class="n">config</span> <span class="n">file</span> <span class="p">:</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">gribeiro</span>\<span class="o">.</span><span class="n">condarc</span>
+<span class="n">populated</span> <span class="n">config</span> <span class="n">files</span> <span class="p">:</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">gribeiro</span>\<span class="o">.</span><span class="n">condarc</span>
+         <span class="n">conda</span> <span class="n">version</span> <span class="p">:</span> <span class="mf">4.5</span><span class="o">.</span><span class="mi">1</span>
+   <span class="n">conda</span><span class="o">-</span><span class="n">build</span> <span class="n">version</span> <span class="p">:</span> <span class="mf">3.4</span><span class="o">.</span><span class="mi">1</span>
+        <span class="n">python</span> <span class="n">version</span> <span class="p">:</span> <span class="mf">3.6</span><span class="o">.</span><span class="mf">4.</span><span class="n">final</span><span class="o">.</span><span class="mi">0</span>
+      <span class="n">base</span> <span class="n">environment</span> <span class="p">:</span> <span class="n">D</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">gribeiro</span>\<span class="n">Anaconda3</span>  <span class="p">(</span><span class="n">writable</span><span class="p">)</span>
+          <span class="n">channel</span> <span class="n">URLs</span> <span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pkgs</span><span class="o">/</span><span class="n">main</span><span class="o">/</span><span class="n">win</span><span class="o">-</span><span class="mi">64</span>
+                         <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pkgs</span><span class="o">/</span><span class="n">main</span><span class="o">/</span><span class="n">noarch</span>
+                         <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pkgs</span><span class="o">/</span><span class="n">free</span><span class="o">/</span><span class="n">win</span><span class="o">-</span><span class="mi">64</span>
+                         <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pkgs</span><span class="o">/</span><span class="n">free</span><span class="o">/</span><span class="n">noarch</span>
+                         <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pkgs</span><span class="o">/</span><span class="n">r</span><span class="o">/</span><span class="n">win</span><span class="o">-</span><span class="mi">64</span>
+                         <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pkgs</span><span class="o">/</span><span class="n">r</span><span class="o">/</span><span class="n">noarch</span>
+                         <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pkgs</span><span class="o">/</span><span class="n">pro</span><span class="o">/</span><span class="n">win</span><span class="o">-</span><span class="mi">64</span>
+                         <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pkgs</span><span class="o">/</span><span class="n">pro</span><span class="o">/</span><span class="n">noarch</span>
+                         <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pkgs</span><span class="o">/</span><span class="n">msys2</span><span class="o">/</span><span class="n">win</span><span class="o">-</span><span class="mi">64</span>
+                         <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pkgs</span><span class="o">/</span><span class="n">msys2</span><span class="o">/</span><span class="n">noarch</span>
+                   <span class="o">...</span>
+</pre></div>
+</div>
+<p>Primeiramente, vamos ativar o ambiente <code class="docutils literal notranslate"><span class="pre">neogeo</span></code>, onde iremos instalar o pacote <code class="docutils literal notranslate"><span class="pre">folium</span></code>:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda activate neogeo
+</pre></div>
+</div>
+<p>Agora, vamos fazer uma pesquisa usando o comando <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">search</span></code> pelo pacote <code class="docutils literal notranslate"><span class="pre">folium</span></code>:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda search folium
+</pre></div>
+</div>
+<p>Saída:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Loading</span> <span class="n">channels</span><span class="p">:</span> <span class="n">done</span>
+
+<span class="n">PackagesNotFoundError</span><span class="p">:</span> <span class="n">The</span> <span class="n">following</span> <span class="n">packages</span> <span class="n">are</span> <span class="ow">not</span> <span class="n">available</span> <span class="kn">from</span> <span class="nn">current</span> <span class="n">channels</span><span class="p">:</span>
+
+  <span class="o">-</span> <span class="n">folium</span>
+
+<span class="n">Current</span> <span class="n">channels</span><span class="p">:</span>
+
+  <span class="o">-</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pkgs</span><span class="o">/</span><span class="n">main</span><span class="o">/</span><span class="n">win</span><span class="o">-</span><span class="mi">64</span>
+  <span class="o">-</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pkgs</span><span class="o">/</span><span class="n">main</span><span class="o">/</span><span class="n">noarch</span>
+  <span class="o">-</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pkgs</span><span class="o">/</span><span class="n">free</span><span class="o">/</span><span class="n">win</span><span class="o">-</span><span class="mi">64</span>
+  <span class="o">-</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pkgs</span><span class="o">/</span><span class="n">free</span><span class="o">/</span><span class="n">noarch</span>
+  <span class="o">-</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pkgs</span><span class="o">/</span><span class="n">r</span><span class="o">/</span><span class="n">win</span><span class="o">-</span><span class="mi">64</span>
+  <span class="o">-</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pkgs</span><span class="o">/</span><span class="n">r</span><span class="o">/</span><span class="n">noarch</span>
+  <span class="o">-</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pkgs</span><span class="o">/</span><span class="n">pro</span><span class="o">/</span><span class="n">win</span><span class="o">-</span><span class="mi">64</span>
+  <span class="o">-</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pkgs</span><span class="o">/</span><span class="n">pro</span><span class="o">/</span><span class="n">noarch</span>
+  <span class="o">-</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pkgs</span><span class="o">/</span><span class="n">msys2</span><span class="o">/</span><span class="n">win</span><span class="o">-</span><span class="mi">64</span>
+  <span class="o">-</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pkgs</span><span class="o">/</span><span class="n">msys2</span><span class="o">/</span><span class="n">noarch</span>
+
+<span class="n">To</span> <span class="n">search</span> <span class="k">for</span> <span class="n">alternate</span> <span class="n">channels</span> <span class="n">that</span> <span class="n">may</span> <span class="n">provide</span> <span class="n">the</span> <span class="n">conda</span> <span class="n">package</span> <span class="n">you</span><span class="s1">&#39;re</span>
+<span class="n">looking</span> <span class="k">for</span><span class="p">,</span> <span class="n">navigate</span> <span class="n">to</span>
+
+    <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">anaconda</span><span class="o">.</span><span class="n">org</span>
+
+<span class="ow">and</span> <span class="n">use</span> <span class="n">the</span> <span class="n">search</span> <span class="n">bar</span> <span class="n">at</span> <span class="n">the</span> <span class="n">top</span> <span class="n">of</span> <span class="n">the</span> <span class="n">page</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Como pode ser visto na saída acima, o pacote <code class="docutils literal notranslate"><span class="pre">folium</span></code> não se encontra na listagem dos canais padrões (<code class="docutils literal notranslate"><span class="pre">defaults</span></code>).</p>
+<p>Podemos adicionar novos canais de duas formas. A primeira, é alterando o arquivo <code class="docutils literal notranslate"><span class="pre">.condarc</span></code>, como será discutido na próxima seção. A outra forma consiste em utilizar o comando <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">config</span></code> para adicionar um canal à sua lista de canais de busca de pacotes.</p>
+<p>Como vimos no site de <a class="reference external" href="https://anaconda.org/search?q=folium">Busca de Pacotes da Anaconda Cloud</a>, o pacote <code class="docutils literal notranslate"><span class="pre">folium</span></code> encontra-se disponível no canal <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code>. Para adicionar o <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> à nossa lista de canais de busca de pacotes, podemos fazer:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda config --append channels conda-forge
+</pre></div>
+</div>
+<p>Se fizermos novamente a busca desse pacote:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda search folium
+</pre></div>
+</div>
+<p>Saída:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Loading</span> <span class="n">channels</span><span class="p">:</span> <span class="n">done</span>
+<span class="c1"># Name                  Version           Build  Channel</span>
+<span class="n">folium</span>                    <span class="mf">0.2</span><span class="o">.</span><span class="mi">0</span>          <span class="n">py27_0</span>  <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
+<span class="n">folium</span>                    <span class="mf">0.2</span><span class="o">.</span><span class="mi">0</span>          <span class="n">py34_0</span>  <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
+<span class="n">folium</span>                    <span class="mf">0.2</span><span class="o">.</span><span class="mi">0</span>          <span class="n">py35_0</span>  <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
+<span class="o">...</span>
+<span class="n">folium</span>                    <span class="mf">0.4</span><span class="o">.</span><span class="mi">0</span>          <span class="n">py27_0</span>  <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
+<span class="n">folium</span>                    <span class="mf">0.4</span><span class="o">.</span><span class="mi">0</span>          <span class="n">py35_0</span>  <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
+<span class="n">folium</span>                    <span class="mf">0.4</span><span class="o">.</span><span class="mi">0</span>          <span class="n">py36_0</span>  <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
+<span class="n">folium</span>                    <span class="mf">0.4</span><span class="o">.</span><span class="mi">0</span>            <span class="n">py_1</span>  <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
+<span class="n">folium</span>                    <span class="mf">0.5</span><span class="o">.</span><span class="mi">0</span>            <span class="n">py_0</span>  <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
+</pre></div>
+</div>
+<p>Podemos ver na saída acima que agora, o pacote <code class="docutils literal notranslate"><span class="pre">folium</span></code> é encontrado e que está disponível pelo canal <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code>.</p>
+<p>Para instalar esse pacote, podemos fazer:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda install folium
+</pre></div>
+</div>
+<p>Saída:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Solving environment: done
+
+## Package Plan ##
+
+  environment location: D:\Users\gribeiro\Anaconda3\envs\neogeo
+
+  added / updated specs:
+    - folium
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    altair-1.2.1               |             py_0          86 KB  conda-forge
+    notebook-5.3.1             |           py36_2         6.7 MB
+    branca-0.2.0               |             py_1          20 KB  conda-forge
+    ...
+
+
+The following NEW packages will be INSTALLED:
+
+    alabaster:                0.7.10-py36hcd07829_0
+    altair:                   1.2.1-py_0            conda-forge
+    asn1crypto:               0.24.0-py36_0
+    babel:                    2.5.3-py36_0
+    backcall:                 0.1.0-py36_0
+    bleach:                   2.1.3-py36_0
+    branca:                   0.2.0-py_1            conda-forge
+    ...
+     win_inet_pton:            1.0.1-py36he67d7fd_1
+
+Proceed ([y]/n)?
+
+
+Downloading and Extracting Packages
+...
+
+done
+</pre></div>
+</div>
+<p>O comando acima, <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">config</span> <span class="pre">--append</span></code>, adiciona o canal <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> com menor prioridade, uma vez que este canal é instalado no final da nossa lista de canais.</p>
+<p>Para adicionar um canal com maior prioridade que os demais, no início da lista, podemos fazer:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda config --add channels conda-forge
+</pre></div>
+</div>
+<p>ou</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda config --prepend channels conda-forge
+</pre></div>
+</div>
+<p>Saída:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ne">Warning</span><span class="p">:</span> <span class="s1">&#39;conda-forge&#39;</span> <span class="n">already</span> <span class="ow">in</span> <span class="s1">&#39;channels&#39;</span> <span class="nb">list</span><span class="p">,</span> <span class="n">moving</span> <span class="n">to</span> <span class="n">the</span> <span class="n">top</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="instalando-um-pacote-disponivel-em-varios-canais">
+<h2><span class="section-number">3.2.6.2. </span>Instalando um Pacote Disponível em Vários Canais<a class="headerlink" href="#instalando-um-pacote-disponivel-em-varios-canais" title="Link permanente para este título">¶</a></h2>
+<p>Diferentes canais podem conter os mesmos pacotes, ou seja, podemos ter colisões ou conflitos na hora de tentar instalar um pacote que existe em diversos canais.</p>
+<p>Como exemplo, veja que o pacote <code class="docutils literal notranslate"><span class="pre">notebook</span></code> encontra-se disponível tanto no canal padrão quanto no <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code>:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda search notebook
+</pre></div>
+</div>
+<p>Saída:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Loading</span> <span class="n">channels</span><span class="p">:</span> <span class="n">done</span>
+<span class="c1"># Name                  Version           Build  Channel</span>
+<span class="n">notebook</span>                  <span class="mf">4.0</span><span class="o">.</span><span class="mi">1</span>          <span class="n">py27_0</span>  <span class="n">pkgs</span><span class="o">/</span><span class="n">free</span>
+<span class="o">...</span>
+<span class="n">notebook</span>                  <span class="mf">4.1</span><span class="o">.</span><span class="mi">0</span>          <span class="n">py27_0</span>  <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
+<span class="n">notebook</span>                  <span class="mf">4.1</span><span class="o">.</span><span class="mi">0</span>          <span class="n">py27_0</span>  <span class="n">pkgs</span><span class="o">/</span><span class="n">free</span>
+<span class="o">...</span>
+<span class="n">notebook</span>                  <span class="mf">5.4</span><span class="o">.</span><span class="mi">1</span>          <span class="n">py36_0</span>  <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
+<span class="n">notebook</span>                  <span class="mf">5.4</span><span class="o">.</span><span class="mi">1</span>          <span class="n">py36_0</span>  <span class="n">pkgs</span><span class="o">/</span><span class="n">main</span>
+</pre></div>
+</div>
+<p>Como no final da seção anterior inserimos o canal <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> com maior prioridade, o comando abaixo irá instalar o pacote <code class="docutils literal notranslate"><span class="pre">notebook</span></code> a partir desse canal:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda install notebook
+</pre></div>
+</div>
+<p>Saída:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Solving environment: done
+
+## Package Plan ##
+
+  environment location: D:\Users\gribeiro\Anaconda3\envs\neogeo
+
+  added / updated specs:
+    - notebook
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    winpty-0.4.3               |           vc14_2         126 KB  conda-forge
+    pywinpty-0.5               |           py36_2          74 KB  conda-forge
+    terminado-0.8.1            |           py36_0          21 KB  conda-forge
+    notebook-5.4.1             |           py36_0         6.7 MB  conda-forge
+    ------------------------------------------------------------
+                                           Total:         6.9 MB
+
+The following NEW packages will be INSTALLED:
+
+    m2w64-gcc-libgfortran:   5.3.0-6
+    m2w64-gcc-libs:          5.3.0-7
+    m2w64-gcc-libs-core:     5.3.0-7
+    m2w64-gmp:               6.1.0-2
+    m2w64-libwinpthread-git: 5.0.0.4634.697f757-2
+    msys2-conda-epoch:       20160418-1
+    pywinpty:                0.5-py36_2           conda-forge
+    terminado:               0.8.1-py36_0         conda-forge
+    winpty:                  0.4.3-vc14_2         conda-forge [vc14]
+
+The following packages will be UPDATED:
+
+    notebook:                5.3.1-py36_2                     --&gt; 5.4.1-py36_0 conda-forge
+
+Proceed ([y]/n)?
+</pre></div>
+</div>
+<p>Para instalar um pacote a partir de um canal específico, utilize a opção <code class="docutils literal notranslate"><span class="pre">-c</span> <span class="pre">nome-canal</span></code>, como mostrado abaixo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">notebook</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Alguns repositórios no Anaconda Cloud podem ser privados.</p>
+</div>
+</div>
+<div class="section" id="removendo-um-canal-registrado">
+<h2><span class="section-number">3.2.6.3. </span>Removendo um Canal Registrado<a class="headerlink" href="#removendo-um-canal-registrado" title="Link permanente para este título">¶</a></h2>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda config --remove channels conda-forge
+</pre></div>
+</div>
+</div>
+<div class="section" id="o-arquivo-condarc">
+<h2><span class="section-number">3.2.6.4. </span>O arquivo <code class="docutils literal notranslate"><span class="pre">.condarc</span></code><a class="headerlink" href="#o-arquivo-condarc" title="Link permanente para este título">¶</a></h2>
+<p>O aplicativo <code class="docutils literal notranslate"><span class="pre">conda</span></code> utiliza as configurações contidas no arquivo <code class="docutils literal notranslate"><span class="pre">.condarc</span></code>, que no Microsft Windows 10 fica localizado na pasta de usuário, como mostrado abaixo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">gribeiro</span>\<span class="o">.</span><span class="n">condarc</span>
+</pre></div>
+</div>
+<p>Este arquivo possui uma estrutura como a mostrada abaixo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">channels</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">defaults</span>
+  <span class="o">-</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
+<span class="n">ssl_verify</span><span class="p">:</span> <span class="n">true</span>
+</pre></div>
+</div>
+<p>Nesse arquivo, a seção <code class="docutils literal notranslate"><span class="pre">channels</span></code> contém a lista dos canais que podem ser utilizados para busca dos pacotes.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="gerenciando_ambientes_conflitos.html" class="btn btn-neutral float-right" title="3.2.7. Conflitos" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="gerenciando_ambientes_criando_copias_yml.html" class="btn btn-neutral float-left" title="3.2.5.3. Compartilhando a Definição de um Ambiente" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-165908761-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+..
+    This file is part of SER-347 Documentation.
+    Copyright 2020, Gilberto Queiroz and Thales Körting.
+
+
+Projeto 3
+---------
+
+
+Desenvolver uma ferramenta para geração de índices espectrais. Considerando uma lista de arquivos e alguns parâmetros, este projeto envolve a criação de uma ferramenta para linha comando do tipo:
+
+
+.. code-block:: shell
+
+    spectral --index ndvi --red red.tif --nir nir.tif --output ndvi.tif --verbose
+
+    spectral --index all --red red.tif --green green.tif --blue blue.tif --nir nir.tif ...  --output-dir --suffix "_all"
+
+
+**Integrantes:**
+
+- Guilherme Pereira Cambre Añon
+
+- Renan Moreira Covre
+
+
+**Repositório:** https://github.com/ser-347/spectral
+
+
+**Considerações:**
+
+- Como resultado, apresentar um pacote Python com a ferramenta de geração dos índices bem como sua documentação.
+
+- Produzir um ou mais ``Jupyter Notebooks`` mostrando os índices disponíveis, equações e sensores para os quais os índices podem ser calculados.
+
+- Os produtos de código desenvolvidos deverão ser licenciados de acordo com os modelos de software livre ``MIT`` ou ``Apache``,  e disponibilizados em um repositório na organização `SER-347 <https://github.com/ser-347>`_.
+
+- Produzir um relatório no formato do ``SBSR``.

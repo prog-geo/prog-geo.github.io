@@ -1,0 +1,38 @@
+..
+    This file is part of SER-347 Documentation.
+    Copyright 2020, Gilberto Queiroz and Thales Körting.
+
+
+Projeto 2
+---------
+
+
+Utilizando um conjunto de imagens ``CBERS-4``, descobrir quais imagens são da mesma região, e aplicar um algoritmo simples de detecção de mudanças, por exemplo (:math:`img_2 - img_1`). Quando houver uma quantidade de mudanças superior a um dado limiar (informado pelo analista), apresentar um alerta na região encontrada.
+
+
+Para realizar este trabalho, utilize o catálogo de coleções de imagens do projeto `Brazil Data Cube <http://brazildatacube.org/>`_. Um exemplo de uso de uma biblioteca ``Python`` para consulta e download das imagens contidas nesse catálogo pode ser vista em `Python Client Library for STAC <https://github.com/brazil-data-cube/stac.py>`_ e no Jupyter Notebook `stac.ipynb <https://github.com/brazil-data-cube/stac.py/blob/master/examples/stac.ipynb>`_.
+
+
+**Integrantes:**
+
+- Tehrrie Caroline Konig Ferraz Pacheco
+
+- Vinicius P Borges Pereira
+
+
+**Repositório:** https://github.com/ser-347/cbers4
+
+
+**Considerações:**
+
+- Como resultado, apresentar um código organizado com funções e documentação.
+
+- Os produtos de código desenvolvidos deverão ser licenciados de acordo com os modelos de software livre ``MIT`` ou ``Apache``,  e disponibilizados em um repositório na organização `SER-347 <https://github.com/ser-347>`_.
+
+- Os produtos de dados gerados deverão ser disponibilizados de acordo com o modelo ``Creative Commons``.
+
+- Produzir um ou mais ``Jupyter Notebooks`` para apresentar o código desenvolvido bem como os resultados do trabalho.
+
+- Produzir um relatório no formato do ``SBSR``.
+
+- Espera-se que o trabalho possa ser reprodutível.

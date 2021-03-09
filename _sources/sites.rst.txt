@@ -1,0 +1,23 @@
+..
+    This file is part of SER-347 Documentation.
+    Copyright 2020, Gilberto Queiroz and Thales Körting.
+
+
+Sobre o Site do Curso
+=====================
+
+
+* Repositório de Jupyter Notebooks do Curso: https://github.com/ser-347/ipynb
+
+
+* Organização do Curso no GitHub: https://github.com/ser-347
+
+
+* Página Principal do Curso: https://ser-347.github.io
+
+
+* Lista de Discussão: **TODO: incluir imagem com o endereço**
+
+
+* e-mail de contato do curso: **TODO: incluir imagem com o endereço**
+
