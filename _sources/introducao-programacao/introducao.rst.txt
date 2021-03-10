@@ -56,7 +56,9 @@ Para verificar esse algoritmo, vamos tomar como valores de :math:`p` e :math:`q`
     +---------------------------------------------------------------------------------------+
     | Usando nosso algoritmo novamente, temos agora que computar o :math:`MDC(4,1)`.        |
     +---------------------------------------------------------------------------------------+
-    | Verificamos agora se o valor de :math:`q` é maior do que :math:`0`.                   |
+    | Agora, :math:`p` vale :math:`4` e :math:`q` vale :math:`1`.                           |
+    +---------------------------------------------------------------------------------------+
+    | Verificamos agora se o valor de :math:`q` é igual a :math:`0`.                        |
     |                                                                                       |
     |                                                                                       |
     | Neste caso, como o valor de :math:`q` é :math:`1`, vamos à próxima instrução.         |
