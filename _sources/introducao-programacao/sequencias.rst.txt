@@ -4,13 +4,4 @@
 
 
 Sequências (Strings, Tuplas e Listas)
--------------------------------------
-
-
-Slides da Aula
-++++++++++++++
-
-
-`Introdução à Programação com a Linguagem Python: Sequências <https://1drv.ms/b/s!AtoTP-MfEUEDgtZhuG53sXzeY_EuQQ?e=dTMjej>`_.
-
-
+=====================================

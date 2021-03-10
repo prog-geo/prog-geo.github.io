@@ -615,19 +615,6 @@ Fazendo um pull-request
 TO BE DONE!
 
 
-Exercícios
-**********
-
-
-**Exercício 01.** Siga os seguintes usuários do GitHub: `gilberto-queiroz <https://github.com/gilberto-queiroz>`_, `gqueiroz <https://github.com/gqueiroz>`_ e `tkorting <https://github.com/tkorting>`_.
-
-
-**Exercício 02.** Acesse o repositório https://github.com/ser-347/ipynb e marque com uma estrela esse repositório para poder monitorá-lo.
-
-
-**Exercício 03.** Crie um repositório com alguns arquivos de código fonte da lista de exercícios 06 e envie o link desse repositório para os professores da disciplina, com um resumo da sequência de comandos ``git`` utilizados.
-
-
 Referências
 ***********
 

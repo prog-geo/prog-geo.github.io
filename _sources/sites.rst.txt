@@ -7,17 +7,17 @@ Sobre o Site do Curso
 =====================
 
 
-* Repositório de Jupyter Notebooks do Curso: https://github.com/ser-347/ipynb
+* Repositório de Jupyter Notebooks do Curso: https://github.com/prog-geo/ipynb
 
 
-* Organização do Curso no GitHub: https://github.com/ser-347
+* Organização do Curso no GitHub: https://github.com/prog-geo
 
 
-* Página Principal do Curso: https://ser-347.github.io
+* Página Principal do Curso: https://prog-geo.github.io
 
 
-* Lista de Discussão: **TODO: incluir imagem com o endereço**
+* Lista de Discussão: **TODO**
 
 
-* e-mail de contato do curso: **TODO: incluir imagem com o endereço**
+* e-mail de contato do curso: **TODO**
 

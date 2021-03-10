@@ -3,90 +3,24 @@
     Copyright 2020, Gilberto Queiroz and Thales Körting.
 
 
-Solução - Lista de Exercícios 01
---------------------------------
+Lista de Exercícios 01
+======================
 
 
-.. code-block:: python
-    :linenos:
-    :caption: l01-ex-03.py
-
-    # definir valores de NIR e Red
-    Xgreen = float( input( "Xgreen: " ) )
-    Xnir = float( input( "Xnir: " ) )
-    Xred = float( input( "Xred: " ) )
-
-    # calculando NDWI
-    NDWI = (Xgreen - Xnir) / (Xgreen + Xnir)
-
-    # mostrar resultado na tela
-    print("NDWI:", NDWI)
-
-    # calculando NDVI
-    NDVI = (Xnir - Xred) / (Xnir + Xred)
-
-    # mostrar resultado na tela
-    print("NDVI:", NDVI)
+**Exercício 01.** Leia o material da seção :ref:`git e GitHub <git_github>`.
 
 
-.. code-block:: python
-    :linenos:
-    :caption: l01-ex-04.py
-
-    """ Distância de Haversine
-
-    Este programa realiza a computação da distância de
-    Haversine entre duas localizações geográficas.
-
-    Se você quiser testar este programa, utilize as
-    seguintes coordendas:
-      * Localização de Ouro Preto:
-        - longitude: -43.50
-        - latitude: -20.38
-
-      * São José dos Campos
-          - longitude: -45.88
-          - latitude: -23.17
-
-    A distância entre Ouro Perto e São José dos Campos deve
-    ser de aproximadamente: 395.758 km
-    """
-    import math
+**Exercício 02.** Siga os seguintes usuários do GitHub: `gilberto-queiroz <https://github.com/gilberto-queiroz>`_, `gqueiroz <https://github.com/gqueiroz>`_ e `tkorting <https://github.com/tkorting>`_.
 
 
-    long1 = float( input( "Longitude do Ponto 1: " ) )
-    lat1 = float( input( "Latitude do Ponto 1: " ) )
+**Exercício 03.** Acesse o repositório https://github.com/prog-geo/ipynb e marque com uma estrela esse repositório para poder monitorá-lo.
 
-    long2 = float( input( "Longitude do Ponto 2: " ) )
-    lat2 = float( input( "Latitude do Ponto 2: " ) )
 
-    # Raio da Terra: 6371km
-    raio_terra = 6371
+**Exercício 04.** Crie um repositório com alguns arquivos texto e envie o link desse repositório para os professores da disciplina, com um resumo da sequência de comandos ``git`` utilizados.
 
-    # Covertendo de graus-decimal para radianos
-    fi1 = math.radians(lat1)
-    fi2 = math.radians(lat2)
 
-    lambda1 = math.radians(long1)
-    lambda2 = math.radians(long2)
+**Exercício 05.** Faça a leitura do seguinte artigo:
 
-    # Pré-computando alguns valores da fórmula de Haversine
-    delta_fi = fi2 - fi1
-    delta_lambda = lambda2 - lambda1
+    J. Hunter, F. Pérez and B. Granger, "Python: An Ecosystem for Scientific Computing" in Computing in Science & Engineering, vol. 13, no. 02, pp. 13-21, 2011. doi: 10.1109/MCSE.2010.119. :cite:`perez:2011`
 
-    sin2_fi = math.sin(delta_fi / 2.0) ** 2
 
-    sin2_lambda = math.sin(delta_lambda / 2.0) ** 2
-
-    # Computando a distância de Haversine
-    distancia = 2.0 * raio_terra * \
-                math.asin( \
-                    math.sqrt( \
-                        sin2_fi + \
-                            math.cos(fi1) * math.cos(fi2) \
-                                * sin2_lambda
-                    )
-                )
-
-    # Escreve na saída padrão a distância computada
-    print(distancia)

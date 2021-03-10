@@ -3,6 +3,8 @@
     Copyright 2020, Gilberto Queiroz and Thales Körting.
 
 
+.. _git_github:
+
 git e GitHub
 ------------
 

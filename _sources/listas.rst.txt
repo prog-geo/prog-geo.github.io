@@ -7,35 +7,12 @@ Listas de Exercícios
 ====================
 
 
-Ler => :cite:`perez:2011`
-
-
-- `Lista de Exercícios 01 <https://1drv.ms/b/s!AtoTP-MfEUEDgtp31tjLn0kV3YYrIw?e=VZHbhL>`_ (**Prazo para entrega:** 24/03/2020 – 22:00)
-
-- `Lista de Exercícios 02 <https://1drv.ms/b/s!AtoTP-MfEUEDgtp1sI7HMafDj5zMEg?e=nTZ02N>`_ (**Prazo para entrega:** 31/03/2020 – 22:00)
-
-- `Lista de Exercícios 03 <https://1drv.ms/b/s!AtoTP-MfEUEDgtp2jCwP8Ijf4RaBUg?e=ecZ0do>`_ (**Prazo para entrega:** 07/04/2020 – 22:00)
-
-- `Lista de Exercícios 04 <https://1drv.ms/b/s!AtoTP-MfEUEDgtp4eyC5TP6Xn6qRAQ?e=gOEA2q>`_ (**Prazo para entrega:** 15/04/2020 – 22:00)
-
-- `Lista de Exercícios 05 <https://1drv.ms/b/s!AtoTP-MfEUEDgtp6ghUIh98hH36Efw?e=nnBiXq>`_ (**Prazo para entrega:** 18/04/2020 – 22:00)
-
-- `Lista de Exercícios 06 <https://1drv.ms/b/s!AtoTP-MfEUEDgtsrEZBG8REsGY3t6Q?e=9mLulV>`_ (**Prazo para entrega:** 11/05/2020 – 22:00)
-
-- `Lista Especial <https://1drv.ms/b/s!AtoTP-MfEUEDgtp52gVbVcY-zLZVxw?e=cAaKf0>`_ (**Prazo para entrega:** 22/04/2020 – 10:00)
-
-
-Soluções das Listas
-===================
-
 .. toctree::
     :maxdepth: 1
     :titlesonly:
 
     ./listas/l01
-    ./listas/l02
-    ./listas/l03
-    ./listas/l04
-    ./listas/l05
-    ./listas/lespecial
-    ./listas/l06
+
+
+
+

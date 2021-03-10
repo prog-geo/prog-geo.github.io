@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Solução - Lista de Exercícios 01 &mdash; SER-347/CAP-419</title>
+  <title>Lista de Exercícios 01 &mdash; SER-347/CAP-419</title>
   
 
   
@@ -48,7 +48,7 @@
     
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Buscar" href="../search.html" />
-    <link rel="next" title="Solução - Lista de Exercícios 02" href="l02.html" />
+    <link rel="next" title="Lista dos Projetos Finais do Curso" href="../projetos.html" />
     <link rel="prev" title="Listas de Exercícios" href="../listas.html" /> 
 </head>
 
@@ -127,15 +127,8 @@
 </ul>
 <p class="caption"><span class="caption-text">Listas de Exercícios:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../listas.html#solucoes-das-listas">Soluções das Listas</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Solução - Lista de Exercícios 01</a></li>
-<li class="toctree-l2"><a class="reference internal" href="l02.html">Solução - Lista de Exercícios 02</a></li>
-<li class="toctree-l2"><a class="reference internal" href="l03.html">Solução - Lista de Exercícios 03</a></li>
-<li class="toctree-l2"><a class="reference internal" href="l04.html">Solução - Lista de Exercícios 04</a></li>
-<li class="toctree-l2"><a class="reference internal" href="l05.html">Solução - Lista de Exercícios 05</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lespecial.html">Solução - Lista de Exercícios Especial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="l06.html">Solução - Lista de Exercícios 06</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../listas.html">Listas de Exercícios</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lista de Exercícios 01</a></li>
 </ul>
 </li>
 </ul>
@@ -198,7 +191,7 @@
         
           <li><a href="../listas.html">Listas de Exercícios</a> &raquo;</li>
         
-      <li>Solução - Lista de Exercícios 01</li>
+      <li>Lista de Exercícios 01</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -212,7 +205,7 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="l02.html" class="btn btn-neutral float-right" title="Solução - Lista de Exercícios 02" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../projetos.html" class="btn btn-neutral float-right" title="Lista dos Projetos Finais do Curso" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
       
       
         <a href="../listas.html" class="btn btn-neutral float-left" title="Listas de Exercícios" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
@@ -224,162 +217,18 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="solucao-lista-de-exercicios-01">
-<h1>Solução - Lista de Exercícios 01<a class="headerlink" href="#solucao-lista-de-exercicios-01" title="Link permanente para este título">¶</a></h1>
-<div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-number">Trecho de Código 1 - </span><span class="caption-text">l01-ex-03.py</span><a class="headerlink" href="#id1" title="Link Permanente para esse código">¶</a></div>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># definir valores de NIR e Red</span>
-<span class="n">Xgreen</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span> <span class="s2">&quot;Xgreen: &quot;</span> <span class="p">)</span> <span class="p">)</span>
-<span class="n">Xnir</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span> <span class="s2">&quot;Xnir: &quot;</span> <span class="p">)</span> <span class="p">)</span>
-<span class="n">Xred</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span> <span class="s2">&quot;Xred: &quot;</span> <span class="p">)</span> <span class="p">)</span>
-
-<span class="c1"># calculando NDWI</span>
-<span class="n">NDWI</span> <span class="o">=</span> <span class="p">(</span><span class="n">Xgreen</span> <span class="o">-</span> <span class="n">Xnir</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">Xgreen</span> <span class="o">+</span> <span class="n">Xnir</span><span class="p">)</span>
-
-<span class="c1"># mostrar resultado na tela</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NDWI:&quot;</span><span class="p">,</span> <span class="n">NDWI</span><span class="p">)</span>
-
-<span class="c1"># calculando NDVI</span>
-<span class="n">NDVI</span> <span class="o">=</span> <span class="p">(</span><span class="n">Xnir</span> <span class="o">-</span> <span class="n">Xred</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">Xnir</span> <span class="o">+</span> <span class="n">Xred</span><span class="p">)</span>
-
-<span class="c1"># mostrar resultado na tela</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NDVI:&quot;</span><span class="p">,</span> <span class="n">NDVI</span><span class="p">)</span>
-</pre></div>
-</td></tr></table></div>
-</div>
-<div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-number">Trecho de Código 2 - </span><span class="caption-text">l01-ex-04.py</span><a class="headerlink" href="#id2" title="Link Permanente para esse código">¶</a></div>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span>
-<span class="normal">51</span>
-<span class="normal">52</span>
-<span class="normal">53</span>
-<span class="normal">54</span>
-<span class="normal">55</span>
-<span class="normal">56</span>
-<span class="normal">57</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; Distância de Haversine</span>
-
-<span class="sd">Este programa realiza a computação da distância de</span>
-<span class="sd">Haversine entre duas localizações geográficas.</span>
-
-<span class="sd">Se você quiser testar este programa, utilize as</span>
-<span class="sd">seguintes coordendas:</span>
-<span class="sd">  * Localização de Ouro Preto:</span>
-<span class="sd">    - longitude: -43.50</span>
-<span class="sd">    - latitude: -20.38</span>
-
-<span class="sd">  * São José dos Campos</span>
-<span class="sd">      - longitude: -45.88</span>
-<span class="sd">      - latitude: -23.17</span>
-
-<span class="sd">A distância entre Ouro Perto e São José dos Campos deve</span>
-<span class="sd">ser de aproximadamente: 395.758 km</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="kn">import</span> <span class="nn">math</span>
-
-
-<span class="n">long1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span> <span class="s2">&quot;Longitude do Ponto 1: &quot;</span> <span class="p">)</span> <span class="p">)</span>
-<span class="n">lat1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span> <span class="s2">&quot;Latitude do Ponto 1: &quot;</span> <span class="p">)</span> <span class="p">)</span>
-
-<span class="n">long2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span> <span class="s2">&quot;Longitude do Ponto 2: &quot;</span> <span class="p">)</span> <span class="p">)</span>
-<span class="n">lat2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span> <span class="s2">&quot;Latitude do Ponto 2: &quot;</span> <span class="p">)</span> <span class="p">)</span>
-
-<span class="c1"># Raio da Terra: 6371km</span>
-<span class="n">raio_terra</span> <span class="o">=</span> <span class="mi">6371</span>
-
-<span class="c1"># Covertendo de graus-decimal para radianos</span>
-<span class="n">fi1</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">lat1</span><span class="p">)</span>
-<span class="n">fi2</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">lat2</span><span class="p">)</span>
-
-<span class="n">lambda1</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">long1</span><span class="p">)</span>
-<span class="n">lambda2</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">long2</span><span class="p">)</span>
-
-<span class="c1"># Pré-computando alguns valores da fórmula de Haversine</span>
-<span class="n">delta_fi</span> <span class="o">=</span> <span class="n">fi2</span> <span class="o">-</span> <span class="n">fi1</span>
-<span class="n">delta_lambda</span> <span class="o">=</span> <span class="n">lambda2</span> <span class="o">-</span> <span class="n">lambda1</span>
-
-<span class="n">sin2_fi</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">delta_fi</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
-
-<span class="n">sin2_lambda</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">delta_lambda</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
-
-<span class="c1"># Computando a distância de Haversine</span>
-<span class="n">distancia</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">raio_terra</span> <span class="o">*</span> \
-            <span class="n">math</span><span class="o">.</span><span class="n">asin</span><span class="p">(</span> \
-                <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> \
-                    <span class="n">sin2_fi</span> <span class="o">+</span> \
-                        <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">fi1</span><span class="p">)</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">fi2</span><span class="p">)</span> \
-                            <span class="o">*</span> <span class="n">sin2_lambda</span>
-                <span class="p">)</span>
-            <span class="p">)</span>
-
-<span class="c1"># Escreve na saída padrão a distância computada</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">distancia</span><span class="p">)</span>
-</pre></div>
-</td></tr></table></div>
-</div>
+  <div class="section" id="lista-de-exercicios-01">
+<h1>Lista de Exercícios 01<a class="headerlink" href="#lista-de-exercicios-01" title="Link permanente para este título">¶</a></h1>
+<p><strong>Exercício 01.</strong> Leia o material da seção <a class="reference internal" href="../variados/git_github.html#git-github"><span class="std std-ref">git e GitHub</span></a>.</p>
+<p><strong>Exercício 02.</strong> Siga os seguintes usuários do GitHub: <a class="reference external" href="https://github.com/gilberto-queiroz">gilberto-queiroz</a>, <a class="reference external" href="https://github.com/gqueiroz">gqueiroz</a> e <a class="reference external" href="https://github.com/tkorting">tkorting</a>.</p>
+<p><strong>Exercício 03.</strong> Acesse o repositório <a class="reference external" href="https://github.com/prog-geo/ipynb">https://github.com/prog-geo/ipynb</a> e marque com uma estrela esse repositório para poder monitorá-lo.</p>
+<p><strong>Exercício 04.</strong> Crie um repositório com alguns arquivos texto e envie o link desse repositório para os professores da disciplina, com um resumo da sequência de comandos <code class="docutils literal notranslate"><span class="pre">git</span></code> utilizados.</p>
+<p><strong>Exercício 05.</strong> Faça a leitura do seguinte artigo:</p>
+<blockquote>
+<div><ol class="upperalpha simple" start="10">
+<li><p>Hunter, F. Pérez and B. Granger, “Python: An Ecosystem for Scientific Computing” in Computing in Science &amp; Engineering, vol. 13, no. 02, pp. 13-21, 2011. doi: 10.1109/MCSE.2010.119. <span id="id1">[<a class="reference internal" href="../referencias.html#id19">20</a>]</span></p></li>
+</ol>
+</div></blockquote>
 </div>
 
 
@@ -388,7 +237,7 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="l02.html" class="btn btn-neutral float-right" title="Solução - Lista de Exercícios 02" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../projetos.html" class="btn btn-neutral float-right" title="Lista dos Projetos Finais do Curso" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="../listas.html" class="btn btn-neutral float-left" title="Listas de Exercícios" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
     </div>
 

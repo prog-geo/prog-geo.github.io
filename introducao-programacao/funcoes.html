@@ -117,12 +117,7 @@
 <li class="toctree-l2"><a class="reference internal" href="lacos_for_seq.html">2.7. Laços do tipo for e Sequências</a></li>
 <li class="toctree-l2"><a class="reference internal" href="break_continue.html">2.8. Os Comandos <code class="docutils literal notranslate"><span class="pre">break</span></code> e <code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="dicionarios.html">2.9. Dicionários</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2.10. Funções</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#slides-da-aula">2.10.1. Slides da Aula</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#jupyter-notebook">2.10.2. Jupyter Notebook</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#trechos-de-codigo">2.10.3. Trechos de Código</a></li>
-</ul>
-</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.10. Funções</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../int_anaconda.html">3. Introdução ao Ambiente Anaconda</a></li>
@@ -145,7 +140,6 @@
 <p class="caption"><span class="caption-text">Listas de Exercícios:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../listas.html#solucoes-das-listas">Soluções das Listas</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
@@ -234,65 +228,6 @@
             
   <div class="section" id="funcoes">
 <h1><span class="section-number">2.10. </span>Funções<a class="headerlink" href="#funcoes" title="Link permanente para este título">¶</a></h1>
-<div class="section" id="slides-da-aula">
-<h2><span class="section-number">2.10.1. </span>Slides da Aula<a class="headerlink" href="#slides-da-aula" title="Link permanente para este título">¶</a></h2>
-<p><a class="reference external" href="https://1drv.ms/b/s!AtoTP-MfEUEDgtcRUIf2KOaRV1GKNg?e=KLZ7jc">Introdução à Programação com a Linguagem Python: Funções</a>.</p>
-</div>
-<div class="section" id="jupyter-notebook">
-<h2><span class="section-number">2.10.2. </span>Jupyter Notebook<a class="headerlink" href="#jupyter-notebook" title="Link permanente para este título">¶</a></h2>
-<p>Consulte também o Jupyter Notebook desta aula: <a class="reference external" href="https://github.com/ser-347/ipynb/blob/master/funcoes.ipynb">Funções</a>.</p>
-</div>
-<div class="section" id="trechos-de-codigo">
-<h2><span class="section-number">2.10.3. </span>Trechos de Código<a class="headerlink" href="#trechos-de-codigo" title="Link permanente para este título">¶</a></h2>
-<div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-number">Trecho de Código 2.38 - </span><span class="caption-text">Função para computar o fatorial de um número inteiro positivo.</span><a class="headerlink" href="#id2" title="Link Permanente para esse código">¶</a></div>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Fatorial</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
-    <span class="n">produto</span> <span class="o">=</span> <span class="mi">1</span>
-
-    <span class="k">while</span><span class="p">(</span><span class="n">num</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
-        <span class="n">produto</span> <span class="o">=</span> <span class="n">produto</span> <span class="o">*</span> <span class="n">num</span>
-
-        <span class="n">num</span> <span class="o">=</span> <span class="n">num</span> <span class="o">-</span> <span class="mi">1</span>
-
-    <span class="k">return</span> <span class="n">produto</span>
-</pre></div>
-</td></tr></table></div>
-</div>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-number">Trecho de Código 2.39 - </span><span class="caption-text">Função para computar a distância euclidiana.</span><a class="headerlink" href="#id3" title="Link Permanente para esse código">¶</a></div>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
-
-<span class="k">def</span> <span class="nf">Distancia</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">):</span>
-    <span class="n">dx</span> <span class="o">=</span> <span class="n">x2</span> <span class="o">-</span> <span class="n">x1</span>
-    <span class="n">dy</span> <span class="o">=</span> <span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span>
-
-    <span class="n">d2</span> <span class="o">=</span> <span class="n">dx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">dy</span><span class="o">**</span><span class="mi">2</span>
-
-    <span class="n">d</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">d2</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">d</span>
-</pre></div>
-</td></tr></table></div>
-</div>
-</div>
 </div>
 
 

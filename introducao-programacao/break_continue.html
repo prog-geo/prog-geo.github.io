@@ -115,12 +115,7 @@
 <li class="toctree-l2"><a class="reference internal" href="strings.html">2.5. Strings, Operações com Strings e Formatação de Strings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sequencias.html">2.6. Sequências (Strings, Tuplas e Listas)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lacos_for_seq.html">2.7. Laços do tipo for e Sequências</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2.8. Os Comandos <code class="docutils literal notranslate"><span class="pre">break</span></code> e <code class="docutils literal notranslate"><span class="pre">continue</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#slides-da-aula">2.8.1. Slides da Aula</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#o-comando-break">2.8.2. O comando <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#o-comando-continue">2.8.3. O comando <code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
-</ul>
-</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.8. Os Comandos <code class="docutils literal notranslate"><span class="pre">break</span></code> e <code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="dicionarios.html">2.9. Dicionários</a></li>
 <li class="toctree-l2"><a class="reference internal" href="funcoes.html">2.10. Funções</a></li>
 </ul>
@@ -145,7 +140,6 @@
 <p class="caption"><span class="caption-text">Listas de Exercícios:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../listas.html#solucoes-das-listas">Soluções das Listas</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
@@ -234,99 +228,6 @@
             
   <div class="section" id="os-comandos-break-e-continue">
 <h1><span class="section-number">2.8. </span>Os Comandos <code class="docutils literal notranslate"><span class="pre">break</span></code> e <code class="docutils literal notranslate"><span class="pre">continue</span></code><a class="headerlink" href="#os-comandos-break-e-continue" title="Link permanente para este título">¶</a></h1>
-<div class="section" id="slides-da-aula">
-<h2><span class="section-number">2.8.1. </span>Slides da Aula<a class="headerlink" href="#slides-da-aula" title="Link permanente para este título">¶</a></h2>
-<p><a class="reference external" href="https://1drv.ms/b/s!AtoTP-MfEUEDgtcRUIf2KOaRV1GKNg?e=KLZ7jc">Introdução à Programação com a Linguagem Python: os comandos break e continue</a>.</p>
-</div>
-<div class="section" id="o-comando-break">
-<h2><span class="section-number">2.8.2. </span>O comando <code class="docutils literal notranslate"><span class="pre">break</span></code><a class="headerlink" href="#o-comando-break" title="Link permanente para este título">¶</a></h2>
-<p>O comando <code class="docutils literal notranslate"><span class="pre">break</span></code> é usado para ajudar no controle do fluxo de execução dentro de um laço. A declaração <code class="docutils literal notranslate"><span class="pre">break</span></code> faz com que a execução do laço seja interrompida independentemente do teste condicional do laço. Ou seja, o comando <code class="docutils literal notranslate"><span class="pre">break</span></code> irá finalizar a execução do laço redirecionando a execução do programa para o próximo comando após o laço.</p>
-<p>Para ilustrar o uso desse comando, vamos apresentar um exemplo em que o laço do tipo <code class="docutils literal notranslate"><span class="pre">for</span></code> é interrompido antes do final da travessia por todos os elementos do intervalo definido:</p>
-<div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-number">Trecho de Código 2.33 - </span><span class="caption-text">for_break.py</span><a class="headerlink" href="#id1" title="Link Permanente para esse código">¶</a></div>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
-        <span class="k">break</span>    <span class="c1"># interrompe o laço</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Número: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">num</span><span class="p">))</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Fora do Laço&#39;</span><span class="p">)</span>
-</pre></div>
-</td></tr></table></div>
-</div>
-<p>Em um laço do tipo <code class="docutils literal notranslate"><span class="pre">while</span></code> podemos usar também o comando <code class="docutils literal notranslate"><span class="pre">break</span></code>:</p>
-<div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-number">Trecho de Código 2.34 - </span><span class="caption-text">while_break.py</span><a class="headerlink" href="#id2" title="Link Permanente para esse código">¶</a></div>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="k">while</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
-        <span class="k">break</span>    <span class="c1"># interrompe o laço</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Número: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">num</span><span class="p">))</span>
-
-    <span class="n">num</span> <span class="o">=</span> <span class="n">num</span> <span class="o">+</span> <span class="mi">1</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Fora do Laço&#39;</span><span class="p">)</span>
-</pre></div>
-</td></tr></table></div>
-</div>
-</div>
-<div class="section" id="o-comando-continue">
-<h2><span class="section-number">2.8.3. </span>O comando <code class="docutils literal notranslate"><span class="pre">continue</span></code><a class="headerlink" href="#o-comando-continue" title="Link permanente para este título">¶</a></h2>
-<p>O comando <code class="docutils literal notranslate"><span class="pre">continue</span></code> funciona de maneira similar ao comando <code class="docutils literal notranslate"><span class="pre">break</span></code>. Porém, ao invés de finalizar a execução do laço, o comando <code class="docutils literal notranslate"><span class="pre">continue</span></code> finaliza a iteração corrente. Desta forma, todo comando após a declaração <code class="docutils literal notranslate"><span class="pre">continue</span></code> não será executado. Ou seja, o comando irá redirecionar o fluxo do programa fazendo com que a próxima iteração do laço seja executada.</p>
-<p>Veja o exemplo abaixo:</p>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-number">Trecho de Código 2.35 - </span><span class="caption-text">exemplo_continue.py</span><a class="headerlink" href="#id3" title="Link Permanente para esse código">¶</a></div>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#</span>
-<span class="c1"># Dado um intervalo fornecido pelo usuário,</span>
-<span class="c1"># escreva na tela todos os números pares dentro do intervalo.</span>
-<span class="c1">#</span>
-
-<span class="n">menor</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite o menor valor do intervalo:&quot;</span><span class="p">))</span>
-<span class="n">maior</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite o maior valor do intervalo:&quot;</span><span class="p">))</span>
-
-<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">menor</span><span class="p">,</span> <span class="n">maior</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-    <span class="k">if</span><span class="p">(</span><span class="n">x</span> <span class="o">%</span> <span class="mi">2</span><span class="p">):</span>
-        <span class="k">continue</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</td></tr></table></div>
-</div>
-</div>
 </div>
 
 
