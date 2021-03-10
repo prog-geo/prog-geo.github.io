@@ -1,0 +1,15 @@
+..
+    This file is part of SER-347 Documentation.
+    Copyright 2020, Gilberto Queiroz and Thales Körting.
+
+
+Atualizando um Pacote
+*********************
+
+
+Podemos também utilizar o conda para atualizar um pacote em nosso ambiente de trabalho corrente. Para isso, podemos usar o comando ``conda update``, como no exemplo abaixo:
+
+
+.. code-block:: shell
+
+    conda update gdal

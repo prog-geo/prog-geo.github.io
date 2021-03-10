@@ -1,0 +1,360 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="pt-BR" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>1.1. Anaconda &mdash; SER-347/CAP-419</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/table_styling.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/ser-347.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+    <link rel="canonical" href="https://ser-347.github.io/instalacao/anaconda.html" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Buscar" href="../search.html" />
+    <link rel="next" title="1.2. PyCharm" href="pycharm.html" />
+    <link rel="prev" title="1. Instalando e Configurando o Ambiente de Programação" href="../instalacao.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SER-347/CAP-419
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Pesquisar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introdução à Programação com Dados Geoespaciais</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Visão Geral do Curso:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../visao-geral.html">Visao Geral do Curso</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aulas:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../instalacao.html">1. Instalando e Configurando o Ambiente de Programação</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1.1. Anaconda</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#linux">1.1.1. Linux</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pycharm.html">1.2. PyCharm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docker.html">1.3. Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jupyterlab.html">1.4. Instalação do JupyterLab através do Docker</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../introducao-programacao.html">2. Introdução à Programação com a Linguagem Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../int_anaconda.html">3. Introdução ao Ambiente Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../int_jupyter_notebooks.html">4. IPython e Jupyter Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matrizes.html">5. Matrizes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualizacao.html">6. Visualização de Dados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../imagens.html">7. Imagens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tipos_geometricos.html">8. Tipos e Operações Espaciais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vetorial.html">9. Manipulação de Dados Vetoriais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variados.html">10. Tópicos Variados</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Considerações Finais</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../consideracoes-finais.html">Considerações Finais</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Referências Bibliográficas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../referencias.html">Referências Bibliográficas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Listas de Exercícios:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Lista de Projetos:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../projetos.html">Lista dos Projetos Finais do Curso</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Informações Gerais:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sites.html">Sobre o Site do Curso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contato.html">Contato</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../licenca.html">Licença</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SER-347/CAP-419</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../instalacao.html"><span class="section-number">1. </span>Instalando e Configurando o Ambiente de Programação</a> &raquo;</li>
+        
+      <li><span class="section-number">1.1. </span>Anaconda</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="pycharm.html" class="btn btn-neutral float-right" title="1.2. PyCharm" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="../instalacao.html" class="btn btn-neutral float-left" title="1. Instalando e Configurando o Ambiente de Programação" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="anaconda">
+<span id="instalacao-anaconda"></span><h1><span class="section-number">1.1. </span>Anaconda<a class="headerlink" href="#anaconda" title="Link permanente para este título">¶</a></h1>
+<div class="section" id="linux">
+<h2><span class="section-number">1.1.1. </span>Linux<a class="headerlink" href="#linux" title="Link permanente para este título">¶</a></h2>
+<p><strong>1.</strong> Faça o download da versão <a class="reference external" href="https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh">Anaconda3-2020.11</a>.</p>
+<p><strong>2.</strong> Verifique a integridade do arquivo baixado:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;cf2ff493f11eaad5d09ce2b4feaa5ea90db5174303d5b3fe030e16d29aeef7de Anaconda3-2020.11-Linux-x86_64.sh&quot;</span> <span class="o">|</span> <span class="n">sha256sum</span> <span class="o">--</span><span class="n">check</span>
+</pre></div>
+</div>
+<p>O comando acima deve produzir algo como:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Anaconda3</span><span class="o">-</span><span class="mf">2020.11</span><span class="o">-</span><span class="n">Linux</span><span class="o">-</span><span class="n">x86_64</span><span class="o">.</span><span class="n">sh</span><span class="p">:</span> <span class="n">OK</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>O valor <code class="docutils literal notranslate"><span class="pre">f2ff493f11eaad5d09ce2b4feaa5ea90db5174303d5b3fe030e16d29aeef7de</span></code> é um código gerado por meio de um algoritmo <em>hash</em> de criptografia, <code class="docutils literal notranslate"><span class="pre">SHA-256</span></code>, aplicado ao arquivo original disponível no site da Anaconda. Este código pode ser obtido na seguinte página: <a class="reference external" href="https://docs.anaconda.com/anaconda/install/hashes/Anaconda3-2020.11-Linux-x86_64.sh-hash/">Hashes for Anaconda3-2020.11-Linux-x86_64.sh</a>.</p>
+</div>
+<p><strong>3.</strong> No terminal do Linux, inicie o instalador através do comando abaixo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bash</span> <span class="o">~/</span><span class="n">Downloads</span><span class="o">/</span><span class="n">Anaconda3</span><span class="o">-</span><span class="mf">2020.11</span><span class="o">-</span><span class="n">Linux</span><span class="o">-</span><span class="n">x86_64</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p>O comando acima irá fazer algumas perguntas. Colocamos abaixo algumas sugestôes, que você deverá substituir como desejado:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Do you accept the license terms? [yes|no]
+[no] &gt;&gt;&gt; yes
+
+Anaconda3 will now be installed into this location:
+/home/gribeiro/anaconda3
+
+  - Press ENTER to confirm the location
+  - Press CTRL-C to abort the installation
+  - Or specify a different location below
+
+[/home/gribeiro/anaconda3] &gt;&gt;&gt;
+PREFIX=/home/gribeiro/anaconda3
+Unpacking payload ...
+
+...
+
+Do you wish the installer to initialize Anaconda3
+by running conda init? [yes|no]
+[no] &gt;&gt;&gt; yes
+</pre></div>
+</div>
+<p>Ao final, uma mensagem como a mostrada abaixo será apresentada:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>==&gt; For changes to take effect, close and re-open your current shell. &lt;==
+
+If you&#39;d prefer that conda&#39;s base environment not be activated on startup,
+   set the auto_activate_base parameter to false:
+
+conda config --set auto_activate_base false
+
+Thank you for installing Anaconda3!
+
+===========================================================================
+</pre></div>
+</div>
+<p>Para testar a instalação, abra um novo terminal e digite o comando abaixo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span>
+</pre></div>
+</div>
+<p>O prompt do seu sistema deverá ser alterado para algo como:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(base) gribeiro@enghaw-2021:~$
+</pre></div>
+</div>
+<p>Apenas como um teste, tente listar os ambientes disponíveis no seu sistema:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">info</span> <span class="o">--</span><span class="n">envs</span>
+</pre></div>
+</div>
+<p>Algo semelhante ao exibido abaixo deverá ser apresentado:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># conda environments:</span>
+<span class="c1">#</span>
+<span class="n">base</span>                  <span class="o">*</span>  <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">gribeiro</span><span class="o">/</span><span class="n">anaconda3</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Para maiores detalhes sobre o processo de instalação no Linux, consulte a seção <a class="reference external" href="https://docs.anaconda.com/anaconda/install/linux/">Installing on Linux</a>, no manual da Anaconda.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="pycharm.html" class="btn btn-neutral float-right" title="1.2. PyCharm" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../instalacao.html" class="btn btn-neutral float-left" title="1. Instalando e Configurando o Ambiente de Programação" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-165908761-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

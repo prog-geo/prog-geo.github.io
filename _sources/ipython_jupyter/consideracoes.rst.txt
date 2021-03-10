@@ -1,0 +1,24 @@
+..
+    This file is part of SER-347 Documentation.
+    Copyright 2020, Gilberto Queiroz and Thales Körting.
+
+
+Considerações Finais
+--------------------
+
+O ``IPython`` foi inicialmente criado por Fernando Pérez, como uma forma de suprir a necessidade dos cientistas de realizarem rapidamente a exploração de algoritmos, análise e visualização de dados, atividades importantes na rotina diária do trabalho científico. Para uma discussão aprodundada da motivação e do projeto ``IPython``, consulte Pérez e Granger (2007).
+
+
+Os comandos mágicos podem ser estendidos, isto é, podemos criar nosso próprios comando e registrá-los no sistema do ``IPython``.
+
+
+Através de comandos mágicos é possível integrarmos facilmente códigos em ``Python`` e ``R``. Para maiores detalhes sobre esse assunto, veja o seguinte ``Jupyter Notebook``: `The cell magics in Python <http://nbviewer.ipython.org/urls/raw.github.com/ipython/ipython/1.x/examples/notebooks/Cell%20Magics.ipynb>`_.
+
+
+Existe uma grande galeria de ``Jupyter Notebooks`` disponível para estudo. Consulte `este site <https://github.com/jupyter/jupyter/wiki/a-gallery-of-interesting-jupyter-notebooks>`_ para obter uma lista.
+
+
+Existe um ambiente mais moderno do ``Jupyter`` chamado ``Jupyter Lab``. Falaremos sobre ele mais adiante no curso.
+
+
+Nas próximas aulas iremos utilizar ``Jupyter Notebook`` para explorar alguns pacotes de Data Science, como ``NumPy``, ``Matplotlib`` e ``Pandas``, bem como a parte geoespacial através da ``GDAL`` e ``GeoPandas``. Também usaremos esse recurso para mostrar como aproveitar as ferramentas livres para controle de versionamento e compartilhar seu trabalho no ``GitHub``.

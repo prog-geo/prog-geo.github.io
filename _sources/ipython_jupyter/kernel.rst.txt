@@ -1,0 +1,180 @@
+..
+    This file is part of SER-347 Documentation.
+    Copyright 2020, Gilberto Queiroz and Thales Körting.
+
+
+Kernel
+------
+
+
+O código contido em um notebook é executado por um mecanismo chamado ``kernel``. Por padrão, quando instalamos a distribuição ``Anaconda`` com uma determinada versão do ``Python``, como o ``Python 3``, na lista de criação de novos notebooks, na janela principal da interface web (ou *Notebook Dashboard*), é apresentada a opção ``Python 3`` (:numref:`Figura %s <jupyter:kernel:python>`). Isto significa que existe um ``kernel`` para execução dos códigos de notebooks usando a linguagem ``Python``.
+
+
+.. figure:: ../img/ipython-jupyter/kernel-python-3.png
+    :alt: Opções de kernel para execução das células de um novo notebook
+    :width: 640
+    :figclass: align-center
+    :name: jupyter:kernel:python
+
+    Opções de ``kernel`` para execução das células de um novo notebook.
+
+
+Esse ``kernel`` padrão encontra-se associado ao ambiente ``base`` (ou ``root``), o que significa que os notebooks criados por esta opção poderão utilizar todos os pacotes disponíveis nesse ambiente.
+
+
+Quando você cria um novo ambiente virtual com a ``Anaconda``, este ambiente não aparece automaticamente na lista dos possíveis tipos de notebooks a serem criados. Se usar o comando de gerenciamento das especificações de ``kernel``, ``jupyter kernelspec``, você verá que seu ambiente não se encontra na lista dos ambientes suportados pelos ``kernels`` do ``Jupyter``:
+
+
+.. code-block:: shell
+
+    jupyter kernelspec list
+
+
+O comando acima irá produzir uma saída semelhante à mostrada abaixo::
+
+    Available kernels:
+      python3       /home/gribeiro/Programs/anaconda3/envs/neogeo/share/jupyter/kernels/python3
+
+
+Para registrar um ambiente criado pelo ``conda`` como um ``kernel`` disponível aos notebooks e, consequentemente, você possa utilizar os pacotes instalados nesse ambiente, é necessário registrar esse ambiente virtual como um ``kernel`` válido. Isto pode ser feito, ativando o ambiente virtual desejado e então instalando o pacote ``ipykernel`` nesse ambiente e, em seguida, rodando um comando ``ipykernel`` como mostrado abaixo. Faremos isso no caso do ambiente ``geospatial`` criado anteriormente:
+
+
+.. code-block:: shell
+
+    conda activate geospatial
+
+    conda install ipykernel
+
+    python -m ipykernel install --user \
+           --name geospatial --display-name "Python (Geospatial)"
+
+
+O último comando acima irá produzir uma saída semelhante à mostrada abaixo::
+
+    Installed kernelspec geospatial in /home/gribeiro/.local/share/jupyter/kernels/geospatial
+
+
+.. note::
+
+    Nesse diretório será criado um arquivo denominado ``kernel.json``, com o seguinte conteúdo:
+
+    .. code-block:: js
+
+        {
+            "argv": [
+                "/home/gribeiro/Programs/anaconda3/envs/geospatial/bin/python",
+                "-m",
+                "ipykernel_launcher",
+                "-f",
+                "{connection_file}"
+            ],
+            "display_name": "Python (Geospatial)",
+            "language": "python"
+        }
+
+
+Se você listar novamente os ``kernels`` instalados, verá que existe um relacionado ao ambiente ``geospatial``:
+
+
+.. code-block:: shell
+
+    jupyter kernelspec list
+
+
+Saída::
+
+    Available kernels:
+      geospatial    /home/gribeiro/.local/share/jupyter/kernels/geospatial
+      python3       /home/gribeiro/Programs/anaconda3/envs/neogeo/share/jupyter/kernels/python3
+
+
+Se você atualizar a janela do seu navegador onde se encontra o *Notebook Dashboard*, você deverá ver o nome ``Python (Geospatial)`` listado nas opções de criação de um novo notebook (:numref:`Figura %s <jupyter:kernel:geospatial>`). Isto significa que agora temos um ``kernel`` associado ao ambiente ```geospatial`` que poderá ser usado nos notebooks. Logo, todos os pacotes disponíveis nesse ambiente poderão ser usados dentro dos notebooks associados a ele.
+
+
+.. figure:: ../img/ipython-jupyter/kernel-geospatial.png
+    :alt: Nova opção de kernel
+    :width: 640
+    :figclass: align-center
+    :name: jupyter:kernel:geospatial
+
+    Nova opção de ``kernel`` para execução das células de um novo notebook: ``Python (Geospatial)``.
+
+
+.. note::
+
+    Você pode instalar nos seus ambientes todo o suporte a ``Jupyter Notebook``. Isto significa instalar o pacote ``jupyter`` através do ``conda`` no ambiente ativo:
+
+
+    .. code-block:: shell
+
+        conda activate geospatial
+
+
+        conda install jupyter
+
+
+    O comando acima, instala os pacotes ``notebook`` e ``ipykernel``, necessários para execução do comando acima de registro de um ambiente virtual como um novo ``kernel``.
+
+
+Removendo um Kernel
++++++++++++++++++++
+
+
+Para saber o caminho de todos os kernels registrados, use o seguinte comando:
+
+
+.. code-block:: shell
+
+    jupyter kernelspec list
+
+
+Saída::
+
+    Available kernels:
+      geospatial    /home/gribeiro/.local/share/jupyter/kernels/geospatial
+      python3       /home/gribeiro/Programs/anaconda3/envs/neogeo/share/jupyter/kernels/python3
+
+
+Para remover um kernel basta apagar o diretório dele ou fazer:
+
+
+.. code-block:: shell
+
+    jupyter kernelspec uninstall geospatial
+
+
+Registrando um Ambiente Virtual Automaticamente como um Novo Kernel
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+Outra opção para registrar todos os ambientes como ``kernels`` consiste na instalação do pacote ``nb_conda_kernels``:
+
+
+.. code-block:: shell
+
+    conda activate geospatial
+
+    conda install nb_conda_kernels
+
+    jupyter notebook
+
+
+Repare na janela do seu navegador, que após reinicializar o seu ambiente ``jupyter notebook``, a aplicação *Notebook Dashboard* irá apresentar não somente o kernel rotulado como ``Python 3``, como também ``Python [conda env:geospatial]`` e ``Python [conda env:root]``, conforma mostrado na :numref:`Figura %s <jupyter:nb_conda_kernels>`.
+
+
+.. figure:: ../img/ipython-jupyter/nb_conda_kernels.png
+    :alt: Kernels registrados automaticamente
+    :width: 640
+    :figclass: align-center
+    :name: jupyter:nb_conda_kernels
+
+    Opções de ``kernel`` registrados automaticamente pelo pacote ``nb_conda_kernels``.
+
+
+.. note::
+
+    Para maiores informações sobre ``nb_conda_kernels``, consulte:
+
+    - `Conda environments not showing up in Jupyter Notebook <https://stackoverflow.com/questions/39604271/conda-environments-not-showing-up-in-jupyter-notebook>`_.
+
+    - `nb_conda_kernels <https://github.com/Anaconda-Platform/nb_conda_kernels#installation>`_.

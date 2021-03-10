@@ -1,0 +1,411 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="pt-BR" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>3.2.1. O aplicativo conda &mdash; SER-347/CAP-419</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/table_styling.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/ser-347.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+    <link rel="canonical" href="https://ser-347.github.io/int_anaconda/gerenciando_ambientes_introd.html" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Buscar" href="../search.html" />
+    <link rel="next" title="3.2.2. Criando um Novo Ambiente" href="gerenciando_ambientes_criando_ambientes.html" />
+    <link rel="prev" title="3.2. Gerenciando Ambientes e Pacotes com o Conda" href="gerenciando_ambientes.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SER-347/CAP-419
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Pesquisar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introdução à Programação com Dados Geoespaciais</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Visão Geral do Curso:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../visao-geral.html">Visao Geral do Curso</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aulas:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../instalacao.html">1. Instalando e Configurando o Ambiente de Programação</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introducao-programacao.html">2. Introdução à Programação com a Linguagem Python</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../int_anaconda.html">3. Introdução ao Ambiente Anaconda</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introducao.html">3.1. Introdução</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="gerenciando_ambientes.html">3.2. Gerenciando Ambientes e Pacotes com o <code class="docutils literal notranslate"><span class="pre">Conda</span></code></a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">3.2.1. O aplicativo <code class="docutils literal notranslate"><span class="pre">conda</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="gerenciando_ambientes_criando_ambientes.html">3.2.2. Criando um Novo Ambiente</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gerenciando_ambientes_gerenciando_pacotes.html">3.2.3. Gerenciando os Pacotes de um Ambiente</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gerenciando_ambientes_removendo_ambiente.html">3.2.4. Removendo um Ambiente Virtual</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gerenciando_ambientes_criando_copias.html">3.2.5. Criando Cópias de um Ambiente</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gerenciando_ambientes_canais.html">3.2.6. Canais</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gerenciando_ambientes_conflitos.html">3.2.7. Conflitos</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="consideracoes.html">3.3. Considerações Finais</a></li>
+<li class="toctree-l2"><a class="reference internal" href="referencias.html">3.4. Referências</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../int_jupyter_notebooks.html">4. IPython e Jupyter Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matrizes.html">5. Matrizes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualizacao.html">6. Visualização de Dados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../imagens.html">7. Imagens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tipos_geometricos.html">8. Tipos e Operações Espaciais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vetorial.html">9. Manipulação de Dados Vetoriais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variados.html">10. Tópicos Variados</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Considerações Finais</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../consideracoes-finais.html">Considerações Finais</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Referências Bibliográficas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../referencias.html">Referências Bibliográficas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Listas de Exercícios:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Lista de Projetos:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../projetos.html">Lista dos Projetos Finais do Curso</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Informações Gerais:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sites.html">Sobre o Site do Curso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contato.html">Contato</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../licenca.html">Licença</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SER-347/CAP-419</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../int_anaconda.html"><span class="section-number">3. </span>Introdução ao Ambiente Anaconda</a> &raquo;</li>
+        
+          <li><a href="gerenciando_ambientes.html"><span class="section-number">3.2. </span>Gerenciando Ambientes e Pacotes com o <code class="docutils literal notranslate"><span class="pre">Conda</span></code></a> &raquo;</li>
+        
+      <li><span class="section-number">3.2.1. </span>O aplicativo <code class="docutils literal notranslate"><span class="pre">conda</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="gerenciando_ambientes_criando_ambientes.html" class="btn btn-neutral float-right" title="3.2.2. Criando um Novo Ambiente" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="gerenciando_ambientes.html" class="btn btn-neutral float-left" title="3.2. Gerenciando Ambientes e Pacotes com o Conda" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="o-aplicativo-conda">
+<h1><span class="section-number">3.2.1. </span>O aplicativo <code class="docutils literal notranslate"><span class="pre">conda</span></code><a class="headerlink" href="#o-aplicativo-conda" title="Link permanente para este título">¶</a></h1>
+<p>O <code class="docutils literal notranslate"><span class="pre">conda</span></code> é um programa em linha de comando que permite consultar os pacotes instalados pela sua distribuição da <code class="docutils literal notranslate"><span class="pre">Anaconda</span></code>, bem como obter a versão desses pacotes. Através dele é possível também realizar a instalação de novos pacotes ou atualizar para uma versão específica. Como os pacotes geralmente possuem diversas versões, o <code class="docutils literal notranslate"><span class="pre">conda</span></code> facilita a criação de um ambiente de trabalho contendo as bibliotecas na versão desejada.</p>
+<p>Outro papel importante do <code class="docutils literal notranslate"><span class="pre">conda</span></code>, justamente pela diversidade de versões das bibliotecas e versões da linguagem <code class="docutils literal notranslate"><span class="pre">Python</span></code>, é a criação de novos ambientes de trabalhos, chamados de <code class="docutils literal notranslate"><span class="pre">env</span></code> ou <code class="docutils literal notranslate"><span class="pre">environment</span></code> ou <code class="docutils literal notranslate"><span class="pre">vitual-environemnt</span></code>. Esses ambientes permitem a criação de áreas de trabalho completamente isoladas umas das outras, cada uma contendo sua versão da linguagem <code class="docutils literal notranslate"><span class="pre">Python</span></code> bem como versões específicas de bibliotecas.</p>
+<p>O aplicativo <a class="reference external" href="https://conda.io/docs/user-guide/index.html">conda</a> pode ser usado de duas formas, através de uma interface gráfica web chamada <a class="reference external" href="https://docs.anaconda.com/anaconda/navigator/getting-started">Anaconda Navigator</a> (<a class="reference internal" href="#id1"><span class="std std-numref">Figura 3.1</span></a>) ou no <a class="reference external" href="https://conda.io/docs/user-guide/getting-started.html">terminal do seu sistema operacional</a>.</p>
+<div class="align-center figure align-default" id="id1">
+<a class="reference internal image-reference" href="../_images/anaconda-navigator-janela-principal.png"><img alt="Interface web do Anaconda Navigator" src="../_images/anaconda-navigator-janela-principal.png" style="width: 640px;" /></a>
+<p class="caption"><span class="caption-number">Figura 3.1 - </span><span class="caption-text">Interface web do <code class="docutils literal notranslate"><span class="pre">Anaconda</span> <span class="pre">Navigator</span></code>.</span><a class="headerlink" href="#id1" title="Link Permanente para essa imagem">¶</a></p>
+</div>
+<p>Nesta seção, iremos utilizar o <code class="docutils literal notranslate"><span class="pre">conda</span></code> no terminal de comandos. No <code class="docutils literal notranslate"><span class="pre">Microsoft</span> <span class="pre">Windows</span> <span class="pre">10</span></code>, podemos abrir o terminal chamado <code class="docutils literal notranslate"><span class="pre">Anaconda</span> <span class="pre">Prompt</span> <span class="pre">for</span> <span class="pre">Windows</span></code>, que econtra-se acessível a partir do <code class="docutils literal notranslate"><span class="pre">botão</span> <span class="pre">iniciar</span></code> na opção <code class="docutils literal notranslate"><span class="pre">Anaconda</span> <span class="pre">3</span></code>, conforme mostrado na (<a class="reference internal" href="#anaconda-prompt"><span class="std std-numref">Figura 3.2</span></a>).</p>
+<div class="align-center figure align-default" id="anaconda-prompt">
+<a class="reference internal image-reference" href="../_images/anaconda-prompt.png"><img alt="Acesso ao Anaconda Prompt no Microsoft Windows 10" src="../_images/anaconda-prompt.png" style="height: 600px;" /></a>
+<p class="caption"><span class="caption-number">Figura 3.2 - </span><span class="caption-text">Acesso ao Anaconda Prompt no <code class="docutils literal notranslate"><span class="pre">Microsoft</span> <span class="pre">Windows</span> <span class="pre">10</span></code>.</span><a class="headerlink" href="#anaconda-prompt" title="Link Permanente para essa imagem">¶</a></p>
+</div>
+<p>Ao selecionar a opção <code class="docutils literal notranslate"><span class="pre">Anaconda</span> <span class="pre">Prompt</span></code>, uma janela como a da <a class="reference internal" href="#anaconda-ambiente-base"><span class="std std-numref">Figura 3.3</span></a> é aberta.</p>
+<div class="align-center figure align-default" id="anaconda-ambiente-base">
+<a class="reference internal image-reference" href="../_images/ambiente-base.png"><img alt="Terminal de comandos do Windows" src="../_images/ambiente-base.png" style="width: 640px;" /></a>
+<p class="caption"><span class="caption-number">Figura 3.3 - </span><span class="caption-text">Terminal de comandos do <code class="docutils literal notranslate"><span class="pre">Windows</span></code>.</span><a class="headerlink" href="#anaconda-ambiente-base" title="Link Permanente para essa imagem">¶</a></p>
+</div>
+<p>Repare nessa figura que toda instalação da <code class="docutils literal notranslate"><span class="pre">Anaconda</span></code> possui um ambiente de trabalho padrão chamado de <code class="docutils literal notranslate"><span class="pre">base</span></code> ou <code class="docutils literal notranslate"><span class="pre">root</span></code>. Quando ativo, o nome desse ambiente é refletido no <code class="docutils literal notranslate"><span class="pre">prompt</span></code> do terminal do seu sistema operacional, como mostrado na <a class="reference internal" href="#anaconda-ambiente-base"><span class="std std-numref">Figura 3.3</span></a> pelo texto <code class="docutils literal notranslate"><span class="pre">(base)</span></code> à frente de <code class="docutils literal notranslate"><span class="pre">C:\Users\gribeiro&gt;</span></code>. Essa é a forma de indicar que o ambiente <code class="docutils literal notranslate"><span class="pre">base</span></code> encontra-se ativo.</p>
+<p>Para obter informações sobre o seu ambiente de trabalho atual, utilize o comando mostrado abaixo:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda info
+</pre></div>
+</div>
+<p>Este comando irá produzir uma saída similiar à mostrada a seguir:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">base</span><span class="p">)</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">gribeiro</span><span class="o">&gt;</span><span class="n">conda</span> <span class="n">info</span>
+
+     <span class="n">active</span> <span class="n">environment</span> <span class="p">:</span> <span class="n">base</span>
+    <span class="n">active</span> <span class="n">env</span> <span class="n">location</span> <span class="p">:</span> <span class="n">D</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">gribeiro</span>\<span class="n">Anaconda3</span>
+            <span class="n">shell</span> <span class="n">level</span> <span class="p">:</span> <span class="mi">1</span>
+       <span class="n">user</span> <span class="n">config</span> <span class="n">file</span> <span class="p">:</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">gribeiro</span>\<span class="o">.</span><span class="n">condarc</span>
+ <span class="n">populated</span> <span class="n">config</span> <span class="n">files</span> <span class="p">:</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">gribeiro</span>\<span class="o">.</span><span class="n">condarc</span>
+          <span class="n">conda</span> <span class="n">version</span> <span class="p">:</span> <span class="mf">4.5</span><span class="o">.</span><span class="mi">1</span>
+    <span class="n">conda</span><span class="o">-</span><span class="n">build</span> <span class="n">version</span> <span class="p">:</span> <span class="mf">3.4</span><span class="o">.</span><span class="mi">1</span>
+         <span class="n">python</span> <span class="n">version</span> <span class="p">:</span> <span class="mf">3.6</span><span class="o">.</span><span class="mf">4.</span><span class="n">final</span><span class="o">.</span><span class="mi">0</span>
+       <span class="n">base</span> <span class="n">environment</span> <span class="p">:</span> <span class="n">D</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">gribeiro</span>\<span class="n">Anaconda3</span>  <span class="p">(</span><span class="n">writable</span><span class="p">)</span>
+           <span class="n">channel</span> <span class="n">URLs</span> <span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pkgs</span><span class="o">/</span><span class="n">main</span><span class="o">/</span><span class="n">win</span><span class="o">-</span><span class="mi">64</span>
+                          <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pkgs</span><span class="o">/</span><span class="n">main</span><span class="o">/</span><span class="n">noarch</span>
+                          <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pkgs</span><span class="o">/</span><span class="n">free</span><span class="o">/</span><span class="n">win</span><span class="o">-</span><span class="mi">64</span>
+                          <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pkgs</span><span class="o">/</span><span class="n">free</span><span class="o">/</span><span class="n">noarch</span>
+                          <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pkgs</span><span class="o">/</span><span class="n">r</span><span class="o">/</span><span class="n">win</span><span class="o">-</span><span class="mi">64</span>
+                          <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pkgs</span><span class="o">/</span><span class="n">r</span><span class="o">/</span><span class="n">noarch</span>
+                          <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pkgs</span><span class="o">/</span><span class="n">pro</span><span class="o">/</span><span class="n">win</span><span class="o">-</span><span class="mi">64</span>
+                          <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pkgs</span><span class="o">/</span><span class="n">pro</span><span class="o">/</span><span class="n">noarch</span>
+                          <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pkgs</span><span class="o">/</span><span class="n">msys2</span><span class="o">/</span><span class="n">win</span><span class="o">-</span><span class="mi">64</span>
+                          <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pkgs</span><span class="o">/</span><span class="n">msys2</span><span class="o">/</span><span class="n">noarch</span>
+          <span class="n">package</span> <span class="n">cache</span> <span class="p">:</span> <span class="n">D</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">gribeiro</span>\<span class="n">Anaconda3</span>\<span class="n">pkgs</span>
+                          <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">gribeiro</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">conda</span>\<span class="n">conda</span>\<span class="n">pkgs</span>
+       <span class="n">envs</span> <span class="n">directories</span> <span class="p">:</span> <span class="n">D</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">gribeiro</span>\<span class="n">Anaconda3</span>\<span class="n">envs</span>
+                          <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">gribeiro</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">conda</span>\<span class="n">conda</span>\<span class="n">envs</span>
+                          <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">gribeiro</span>\<span class="o">.</span><span class="n">conda</span>\<span class="n">envs</span>
+               <span class="n">platform</span> <span class="p">:</span> <span class="n">win</span><span class="o">-</span><span class="mi">64</span>
+             <span class="n">user</span><span class="o">-</span><span class="n">agent</span> <span class="p">:</span> <span class="n">conda</span><span class="o">/</span><span class="mf">4.5</span><span class="o">.</span><span class="mi">1</span> <span class="n">requests</span><span class="o">/</span><span class="mf">2.18</span><span class="o">.</span><span class="mi">4</span> <span class="n">CPython</span><span class="o">/</span><span class="mf">3.6</span><span class="o">.</span><span class="mi">4</span> <span class="n">Windows</span><span class="o">/</span><span class="mi">10</span> <span class="n">Windows</span><span class="o">/</span><span class="mf">10.0</span><span class="o">.</span><span class="mi">16299</span>
+          <span class="n">administrator</span> <span class="p">:</span> <span class="kc">False</span>
+             <span class="n">netrc</span> <span class="n">file</span> <span class="p">:</span> <span class="kc">None</span>
+           <span class="n">offline</span> <span class="n">mode</span> <span class="p">:</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<p>A saída desse comando revela algumas informações sobre o ambiente ativo, que é o <code class="docutils literal notranslate"><span class="pre">base</span></code>, localizado na raiz da instalação da <code class="docutils literal notranslate"><span class="pre">Anaconda</span></code> (<code class="docutils literal notranslate"><span class="pre">D:\Users\gribeiro\Anaconda3</span></code>). Além disso, a versão do <code class="docutils literal notranslate"><span class="pre">conda</span></code> é a <code class="docutils literal notranslate"><span class="pre">4.5.1</span></code> e o <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3.6.4</span></code>.</p>
+<p>A pasta base da instalação da <code class="docutils literal notranslate"><span class="pre">Anaconda</span></code> no meu sistema encontra-se em <code class="docutils literal notranslate"><span class="pre">D:\Users\gribeiro\Anaconda3</span></code>. Esta pasta contém uma estrutura contendo os subdiretórios <code class="docutils literal notranslate"><span class="pre">envs</span></code> e <code class="docutils literal notranslate"><span class="pre">pkgs</span></code>, usados pelo <code class="docutils literal notranslate"><span class="pre">conda</span></code> para gerenciamento dos ambientes e pacotes, respectivamente. O <code class="docutils literal notranslate"><span class="pre">envs</span></code> é um subdiretório que contém os ambientes criados pelo aplicativo <code class="docutils literal notranslate"><span class="pre">conda</span></code>. Na saída produzida pelo comando abaixo, podemos observar a existência de um ambiente chamado <code class="docutils literal notranslate"><span class="pre">ser347</span></code>.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>dir D:<span class="se">\U</span>sers<span class="se">\g</span>ribeiro<span class="se">\A</span>naconda3<span class="se">\e</span>nvs
+</pre></div>
+</div>
+<p>Este comando irá produzir uma saída similiar à mostrada a seguir:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">O</span> <span class="n">volume</span> <span class="n">na</span> <span class="n">unidade</span> <span class="n">D</span> <span class="n">é</span> <span class="n">DATA</span>
+ <span class="n">O</span> <span class="n">Número</span> <span class="n">de</span> <span class="n">Série</span> <span class="n">do</span> <span class="n">Volume</span> <span class="n">é</span> <span class="n">FA49</span><span class="o">-</span><span class="mi">2</span><span class="n">D1E</span>
+
+ <span class="n">Pasta</span> <span class="n">de</span> <span class="n">D</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">gribeiro</span>\<span class="n">Anaconda3</span>\<span class="n">envs</span>
+
+<span class="mi">21</span><span class="o">/</span><span class="mi">04</span><span class="o">/</span><span class="mi">2018</span>  <span class="mi">17</span><span class="p">:</span><span class="mi">37</span>    <span class="o">&lt;</span><span class="n">DIR</span><span class="o">&gt;</span>          <span class="o">.</span>
+<span class="mi">21</span><span class="o">/</span><span class="mi">04</span><span class="o">/</span><span class="mi">2018</span>  <span class="mi">17</span><span class="p">:</span><span class="mi">37</span>    <span class="o">&lt;</span><span class="n">DIR</span><span class="o">&gt;</span>          <span class="o">..</span>
+<span class="mi">08</span><span class="o">/</span><span class="mi">04</span><span class="o">/</span><span class="mi">2018</span>  <span class="mi">10</span><span class="p">:</span><span class="mi">49</span>    <span class="o">&lt;</span><span class="n">DIR</span><span class="o">&gt;</span>          <span class="n">ser347</span>
+               <span class="mi">0</span> <span class="n">arquivo</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>              <span class="mi">0</span> <span class="nb">bytes</span>
+               <span class="mi">3</span> <span class="n">pasta</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>   <span class="mf">314.206</span><span class="o">.</span><span class="mf">470.144</span> <span class="nb">bytes</span> <span class="n">disponíveis</span>
+</pre></div>
+</div>
+<p>O diretório <code class="docutils literal notranslate"><span class="pre">pkgs</span></code> contém os pacotes baixados em seu sistema. Por padrão, os pacotes são baixados no formato compactado <code class="docutils literal notranslate"><span class="pre">bzip</span></code> (<code class="docutils literal notranslate"><span class="pre">tar.bz2</span></code>), sendo descompactados em subdiretórios contendo o nome base do pacote, conforme mostrado na saída do comando abaixo. Esses diretórios são devidamente ligados aos ambientes criados pelo <code class="docutils literal notranslate"><span class="pre">conda</span></code> de acordo com os pacotes escolhidos para instalação nesses ambientes.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>dir D:<span class="se">\U</span>sers<span class="se">\g</span>ribeiro<span class="se">\A</span>naconda3<span class="se">\p</span>kgs
+</pre></div>
+</div>
+<p>Este comando irá produzir uma saída similiar à mostrada a seguir:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">O</span> <span class="n">volume</span> <span class="n">na</span> <span class="n">unidade</span> <span class="n">D</span> <span class="n">é</span> <span class="n">DATA</span>
+ <span class="n">O</span> <span class="n">Número</span> <span class="n">de</span> <span class="n">Série</span> <span class="n">do</span> <span class="n">Volume</span> <span class="n">é</span> <span class="n">FA49</span><span class="o">-</span><span class="mi">2</span><span class="n">D1E</span>
+
+ <span class="n">Pasta</span> <span class="n">de</span> <span class="n">D</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">gribeiro</span>\<span class="n">Anaconda3</span>\<span class="n">pkgs</span>
+
+<span class="mi">21</span><span class="o">/</span><span class="mi">04</span><span class="o">/</span><span class="mi">2018</span>  <span class="mi">16</span><span class="p">:</span><span class="mi">55</span>    <span class="o">&lt;</span><span class="n">DIR</span><span class="o">&gt;</span>          <span class="o">.</span>
+<span class="mi">21</span><span class="o">/</span><span class="mi">04</span><span class="o">/</span><span class="mi">2018</span>  <span class="mi">16</span><span class="p">:</span><span class="mi">55</span>    <span class="o">&lt;</span><span class="n">DIR</span><span class="o">&gt;</span>          <span class="o">..</span>
+<span class="mi">13</span><span class="o">/</span><span class="mi">02</span><span class="o">/</span><span class="mi">2018</span>  <span class="mi">10</span><span class="p">:</span><span class="mi">58</span>             <span class="mf">2.285</span> <span class="o">.</span><span class="n">cio</span><span class="o">-</span><span class="n">config</span><span class="o">.</span><span class="n">py</span>
+<span class="mi">13</span><span class="o">/</span><span class="mi">02</span><span class="o">/</span><span class="mi">2018</span>  <span class="mi">10</span><span class="p">:</span><span class="mi">58</span>            <span class="mf">68.163</span> <span class="o">.</span><span class="n">install</span><span class="o">.</span><span class="n">py</span>
+<span class="mi">21</span><span class="o">/</span><span class="mi">04</span><span class="o">/</span><span class="mi">2018</span>  <span class="mi">17</span><span class="p">:</span><span class="mi">37</span>    <span class="o">&lt;</span><span class="n">DIR</span><span class="o">&gt;</span>          <span class="o">.</span><span class="n">trash</span>
+<span class="mi">18</span><span class="o">/</span><span class="mi">02</span><span class="o">/</span><span class="mi">2018</span>  <span class="mi">10</span><span class="p">:</span><span class="mi">59</span>    <span class="o">&lt;</span><span class="n">DIR</span><span class="o">&gt;</span>          <span class="n">alabaster</span><span class="o">-</span><span class="mf">0.7</span><span class="o">.</span><span class="mi">10</span><span class="o">-</span><span class="n">py36hcd07829_0</span>
+<span class="mi">01</span><span class="o">/</span><span class="mi">02</span><span class="o">/</span><span class="mi">2018</span>  <span class="mi">04</span><span class="p">:</span><span class="mi">23</span>            <span class="mf">15.016</span> <span class="n">alabaster</span><span class="o">-</span><span class="mf">0.7</span><span class="o">.</span><span class="mi">10</span><span class="o">-</span><span class="n">py36hcd07829_0</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">bz2</span>
+<span class="mi">18</span><span class="o">/</span><span class="mi">02</span><span class="o">/</span><span class="mi">2018</span>  <span class="mi">11</span><span class="p">:</span><span class="mi">04</span>    <span class="o">&lt;</span><span class="n">DIR</span><span class="o">&gt;</span>          <span class="n">anaconda</span><span class="o">-</span><span class="mf">5.1</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="n">py36_2</span>
+<span class="mi">13</span><span class="o">/</span><span class="mi">02</span><span class="o">/</span><span class="mi">2018</span>  <span class="mi">09</span><span class="p">:</span><span class="mi">22</span>            <span class="mf">12.366</span> <span class="n">anaconda</span><span class="o">-</span><span class="mf">5.1</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="n">py36_2</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">bz2</span>
+<span class="o">...</span>
+<span class="mi">18</span><span class="o">/</span><span class="mi">02</span><span class="o">/</span><span class="mi">2018</span>  <span class="mi">11</span><span class="p">:</span><span class="mi">00</span>    <span class="o">&lt;</span><span class="n">DIR</span><span class="o">&gt;</span>          <span class="n">numpy</span><span class="o">-</span><span class="mf">1.14</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="n">py36h4a99626_1</span>
+<span class="mi">08</span><span class="o">/</span><span class="mi">02</span><span class="o">/</span><span class="mi">2018</span>  <span class="mi">15</span><span class="p">:</span><span class="mi">56</span>         <span class="mf">3.862</span><span class="o">.</span><span class="mi">228</span> <span class="n">numpy</span><span class="o">-</span><span class="mf">1.14</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="n">py36h4a99626_1</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">bz2</span>
+<span class="mi">08</span><span class="o">/</span><span class="mi">04</span><span class="o">/</span><span class="mi">2018</span>  <span class="mi">10</span><span class="p">:</span><span class="mi">43</span>    <span class="o">&lt;</span><span class="n">DIR</span><span class="o">&gt;</span>          <span class="n">numpy</span><span class="o">-</span><span class="mf">1.14</span><span class="o">.</span><span class="mi">2</span><span class="o">-</span><span class="n">py36h5c71026_1</span>
+<span class="mi">08</span><span class="o">/</span><span class="mi">04</span><span class="o">/</span><span class="mi">2018</span>  <span class="mi">10</span><span class="p">:</span><span class="mi">43</span>         <span class="mf">3.908</span><span class="o">.</span><span class="mi">551</span> <span class="n">numpy</span><span class="o">-</span><span class="mf">1.14</span><span class="o">.</span><span class="mi">2</span><span class="o">-</span><span class="n">py36h5c71026_1</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">bz2</span>
+<span class="o">...</span>
+<span class="mi">14</span><span class="o">/</span><span class="mi">03</span><span class="o">/</span><span class="mi">2018</span>  <span class="mi">09</span><span class="p">:</span><span class="mi">40</span>    <span class="o">&lt;</span><span class="n">DIR</span><span class="o">&gt;</span>          <span class="n">python</span><span class="o">-</span><span class="mf">3.6</span><span class="o">.</span><span class="mi">4</span><span class="o">-</span><span class="n">h0c2934d_3</span>
+<span class="mi">14</span><span class="o">/</span><span class="mi">03</span><span class="o">/</span><span class="mi">2018</span>  <span class="mi">09</span><span class="p">:</span><span class="mi">40</span>        <span class="mf">22.405</span><span class="o">.</span><span class="mi">576</span> <span class="n">python</span><span class="o">-</span><span class="mf">3.6</span><span class="o">.</span><span class="mi">4</span><span class="o">-</span><span class="n">h0c2934d_3</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">bz2</span>
+<span class="mi">18</span><span class="o">/</span><span class="mi">02</span><span class="o">/</span><span class="mi">2018</span>  <span class="mi">10</span><span class="p">:</span><span class="mi">58</span>    <span class="o">&lt;</span><span class="n">DIR</span><span class="o">&gt;</span>          <span class="n">python</span><span class="o">-</span><span class="mf">3.6</span><span class="o">.</span><span class="mi">4</span><span class="o">-</span><span class="n">h6538335_1</span>
+<span class="mi">01</span><span class="o">/</span><span class="mi">02</span><span class="o">/</span><span class="mi">2018</span>  <span class="mi">04</span><span class="p">:</span><span class="mi">23</span>        <span class="mf">22.402</span><span class="o">.</span><span class="mi">648</span> <span class="n">python</span><span class="o">-</span><span class="mf">3.6</span><span class="o">.</span><span class="mi">4</span><span class="o">-</span><span class="n">h6538335_1</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">bz2</span>
+<span class="mi">07</span><span class="o">/</span><span class="mi">04</span><span class="o">/</span><span class="mi">2018</span>  <span class="mi">20</span><span class="p">:</span><span class="mi">27</span>    <span class="o">&lt;</span><span class="n">DIR</span><span class="o">&gt;</span>          <span class="n">python</span><span class="o">-</span><span class="mf">3.6</span><span class="o">.</span><span class="mi">5</span><span class="o">-</span><span class="n">h0c2934d_0</span>
+<span class="mi">07</span><span class="o">/</span><span class="mi">04</span><span class="o">/</span><span class="mi">2018</span>  <span class="mi">20</span><span class="p">:</span><span class="mi">27</span>        <span class="mf">22.646</span><span class="o">.</span><span class="mi">508</span> <span class="n">python</span><span class="o">-</span><span class="mf">3.6</span><span class="o">.</span><span class="mi">5</span><span class="o">-</span><span class="n">h0c2934d_0</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">bz2</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>O aplicativo <code class="docutils literal notranslate"><span class="pre">conda</span></code> aceita diversas opções na linha de comando. Vamos começar consultando sua versão:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda --version
+</pre></div>
+</div>
+<p>Esse comando irá produzir uma saída similiar à mostrada a seguir:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="mf">4.5</span><span class="o">.</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>Uma boa prática consiste em manter o <code class="docutils literal notranslate"><span class="pre">conda</span></code> sempre atualizado. Para isso podemos usar o comando abaixo:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda update conda
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="gerenciando_ambientes_criando_ambientes.html" class="btn btn-neutral float-right" title="3.2.2. Criando um Novo Ambiente" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="gerenciando_ambientes.html" class="btn btn-neutral float-left" title="3.2. Gerenciando Ambientes e Pacotes com o Conda" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-165908761-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

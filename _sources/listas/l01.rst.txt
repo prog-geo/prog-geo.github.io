@@ -1,0 +1,26 @@
+..
+    This file is part of SER-347 Documentation.
+    Copyright 2020, Gilberto Queiroz and Thales Körting.
+
+
+Lista de Exercícios 01
+======================
+
+
+**Exercício 01.** Leia o material da seção :ref:`git e GitHub <git_github>`.
+
+
+**Exercício 02.** Siga os seguintes usuários do GitHub: `gilberto-queiroz <https://github.com/gilberto-queiroz>`_, `gqueiroz <https://github.com/gqueiroz>`_ e `tkorting <https://github.com/tkorting>`_.
+
+
+**Exercício 03.** Acesse o repositório https://github.com/prog-geo/ipynb e marque com uma estrela esse repositório para poder monitorá-lo.
+
+
+**Exercício 04.** Crie um repositório com alguns arquivos texto e envie o link desse repositório para os professores da disciplina, com um resumo da sequência de comandos ``git`` utilizados.
+
+
+**Exercício 05.** Faça a leitura do seguinte artigo:
+
+    J. Hunter, F. Pérez and B. Granger, "Python: An Ecosystem for Scientific Computing" in Computing in Science & Engineering, vol. 13, no. 02, pp. 13-21, 2011. doi: 10.1109/MCSE.2010.119. :cite:`perez:2011`
+
+

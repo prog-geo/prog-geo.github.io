@@ -1,0 +1,57 @@
+..
+    This file is part of SER-347 Documentation.
+    Copyright 2020, Gilberto Queiroz and Thales Körting.
+
+
+Visualização de Dados
+=====================
+
+
+Em ``Python``, existem diversos pacotes para visualização de dados. A `Matplotlib <https://matplotlib.org>`_ é uma das bibliotecas ``Python`` mais poderosas para essa finalidade. Trata-se de uma biblioteca multiplataforma (*cross-platform*), capaz de construir visualizações de alta qualidade gráfica, inclusive para inclusão em artigos científicos, e pode ser usada de diversas formas.
+
+
+A ``Matplotlib`` também é chamada abreviadamente de ``mpl``, sendo seu código fonte disponível no `GitHub <https://github.com/matplotlib/matplotlib>`_. A página oficial do projeto encontra-se no endereço https://matplotlib.org, onde é possível encontrar uma ampla documentação, além de uma `grande galeria de visualizações <https://matplotlib.org/gallery/index.html>`_ produzidas com a ``mpl`` que pode servir de base para a construção de novas.
+
+
+Esta aula apresenta uma introdução à visualização de dados com a ``Matplotlib`` através da apresentação de pequenos exemplos que ilustram algumas das capacidades dessa biblioteca. Estruturamos as notas de aula em três partes:
+
+
+- A `Parte I <https://github.com/ser-347/ipynb/blob/master/matplotlib-parte-1.ipynb>`_ apresenta como construir alguns tipos de visualizações sem aprofundar em todos os detalhes da ``Matplotlib``. Ao final dela esperamos que você seja capaz de construir os tipos mais básicos de gráficos.
+
+
+- A `Parte II <https://github.com/ser-347/ipynb/blob/master/matplotlib-parte-2.ipynb>`_ discute como utilizar a ``Matplotlib`` de forma interativa e não-interativa, bem como as estratégias para uso em outros ambientes além de ``Jupyter Notebooks``, como o uso do terminal interativo do ``Python``, o ``IPython`` e a ``IDE PyCharm``.
+
+
+- A `Parte III <https://github.com/ser-347/ipynb/blob/master/matplotlib-parte-3.ipynb>`_ apresenta em detalhes os principais conceitos da ``Matplotlib`` e como usá-los para construir gráficos compostos de várias plotagens.
+
+
+Ao término da leitura das notas de aula, vamos utilizar um serviço de séries temporais de imagens de sensoriamento remoto para criar um gŕafico como o mostrado na :numref:`Figura %s <visualizacao:ts:chart>` abaixo:
+
+
+.. figure:: ./img/visualizacao/mod13q1-ts.png
+    :alt: Gráfico com a série temporal do produto MOD13Q1
+    :width: 640
+    :figclass: align-center
+    :name: visualizacao:ts:chart
+
+    Gráfico com a série temporal do produto ``MOD13Q1``.
+
+
+O serviço que utilizaremos é chamado de **W**\ eb **T**\ ime **S**\ eries **S**\ ervice ou, abreviadamente, **WTSS**. Trata-se de um serviço leve para manipulação de séries temporais de imagens de sensoriamento remoto. Data uma localização e um intervalo de tempo você poderá recuperar a série temporal associada à essa localização como uma lista de valores numéricos em Python.
+
+
+No WTSS, uma ``coverage`` é uma matriz tridimensional associada a sistemas de referência espacial e temporal (:numref:`Figura %s <visualizacao:coverage>`).
+
+
+.. figure:: ./img/visualizacao/image-time-series.png
+    :alt: Série Temporal de Imagens
+    :width: 640
+    :figclass: align-center
+    :name: visualizacao:coverage
+
+    Série temporal de imagens de sensoriamento remoto.
+
+
+Siga as instruções do seguinte ``Jupyter Notebook``: `Access and Visualization of Time Series with WTSS <https://github.com/brazil-data-cube/wtss.py/blob/master/examples/wtss.ipynb>`_.
+
+

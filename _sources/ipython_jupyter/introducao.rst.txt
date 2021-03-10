@@ -1,0 +1,19 @@
+..
+    This file is part of SER-347 Documentation.
+    Copyright 2020, Gilberto Queiroz and Thales Körting.
+
+
+Introdução
+----------
+
+
+O `IPython <https://ipython.org/>`_ é um ambiente projetado para `Computação Interativa <https://en.wikipedia.org/wiki/Interactive_computing>`_. Originalmente foi criado para a linguagem ``Python``, mas atualmente suporta diversas outras linguagens de programação, notoriamente, `R <https://github.com/IRkernel/IRkernel>`_ e `Julia <https://github.com/JuliaLang/IJulia.jl>`_.
+
+
+Basicamente, o ``IPython`` fornece um terminal interativo com capacidade de destacar símbolos da linguagem Python, possui recursos avançados de auto-completar (*tab completion*) que inclui introspecção do objeto em questão para determinar atributos e métodos, manutenção do histórico de comandos, capacidade de execução de comandos do sistema operacional integrados com a linguagem, além de forte suporte para visualização interativa e computação distribuída e paralela.
+
+
+Junto com a tecnologia conhecida como `Jupyter Notebooks <http://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html>`_, oferece uma forma poderosa de construir documentos envolvendo texto livre, textos formatados em ``Markdown``, com uso de ``HTML`` e expressões matemáticas em ``LaTeX``, elementos gráficos resultantes de plotagem de figuras dentro da própria página (*inline*), além de diversos outros tipos de mídias.
+
+
+Essa parte do curso tem como objetivo apresentar em detalhes a tecnologia conhecida como ``IPython`` e ``Jupyter Notebooks``, em especial, como utilizar essa tecnologia para criação de documentos científicos que possam ser facilmente reproduzidos e modificados. Para isso, é pressuposto que o aluno já possua o ambiente do ``Anaconda`` devidamente instalado em seu sistema.

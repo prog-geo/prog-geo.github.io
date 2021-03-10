@@ -1,0 +1,11 @@
+..
+    This file is part of SER-347 Documentation.
+    Copyright 2020, Gilberto Queiroz and Thales Körting.
+
+
+Referências Bibliográficas
+==========================
+
+
+.. bibliography::
+    :cited:

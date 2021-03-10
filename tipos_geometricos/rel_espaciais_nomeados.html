@@ -1,0 +1,1053 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="pt-BR" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>8.3.3. Relacionamentos Espaciais Nomeados &mdash; SER-347/CAP-419</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/table_styling.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/ser-347.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+    <link rel="canonical" href="https://ser-347.github.io/tipos_geometricos/rel_espaciais_nomeados.html" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Buscar" href="../search.html" />
+    <link rel="next" title="8.4. Tipos Geométricos em Python" href="python.html" />
+    <link rel="prev" title="8.3.2. Operador Relate" href="rel_espaciais_relate.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SER-347/CAP-419
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Pesquisar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introdução à Programação com Dados Geoespaciais</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Visão Geral do Curso:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../visao-geral.html">Visao Geral do Curso</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aulas:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../instalacao.html">1. Instalando e Configurando o Ambiente de Programação</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introducao-programacao.html">2. Introdução à Programação com a Linguagem Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../int_anaconda.html">3. Introdução ao Ambiente Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../int_jupyter_notebooks.html">4. IPython e Jupyter Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matrizes.html">5. Matrizes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualizacao.html">6. Visualização de Dados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../imagens.html">7. Imagens</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../tipos_geometricos.html">8. Tipos e Operações Espaciais</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introducao.html">8.1. Introdução</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ogcsfs.html">8.2. Tipos Geométricos</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="rel_espaciais.html">8.3. Relacionamentos Espaciais</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="rel_espaciais_matriz.html">8.3.1. Matriz de 9-intersecções Estendida Dimensionalmente</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rel_espaciais_relate.html">8.3.2. Operador <code class="docutils literal notranslate"><span class="pre">Relate</span></code></a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">8.3.3. Relacionamentos Espaciais Nomeados</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="python.html">8.4. Tipos Geométricos em Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shapely.html">8.5. A Biblioteca Shapely</a></li>
+<li class="toctree-l2"><a class="reference internal" href="consideracoes.html">8.6. Considerações Finais</a></li>
+<li class="toctree-l2"><a class="reference internal" href="referencias.html">8.7. Referências Bibliográficas</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../vetorial.html">9. Manipulação de Dados Vetoriais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variados.html">10. Tópicos Variados</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Considerações Finais</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../consideracoes-finais.html">Considerações Finais</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Referências Bibliográficas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../referencias.html">Referências Bibliográficas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Listas de Exercícios:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Lista de Projetos:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../projetos.html">Lista dos Projetos Finais do Curso</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Informações Gerais:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sites.html">Sobre o Site do Curso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contato.html">Contato</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../licenca.html">Licença</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SER-347/CAP-419</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../tipos_geometricos.html"><span class="section-number">8. </span>Tipos e Operações Espaciais</a> &raquo;</li>
+        
+          <li><a href="rel_espaciais.html"><span class="section-number">8.3. </span>Relacionamentos Espaciais</a> &raquo;</li>
+        
+      <li><span class="section-number">8.3.3. </span>Relacionamentos Espaciais Nomeados</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="python.html" class="btn btn-neutral float-right" title="8.4. Tipos Geométricos em Python" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="rel_espaciais_relate.html" class="btn btn-neutral float-left" title="8.3.2. Operador Relate" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="relacionamentos-espaciais-nomeados">
+<h1><span class="section-number">8.3.3. </span>Relacionamentos Espaciais Nomeados<a class="headerlink" href="#relacionamentos-espaciais-nomeados" title="Link permanente para este título">¶</a></h1>
+<p>Para facilitar a construção de predicados topológicos nas consultas espaciais existe um conjunto de 8 operadores com nomes bem definidos que são baseados na sobrecarga de alguns padrões da matriz de intersecções. Os operadores nomeados são: <code class="docutils literal notranslate"><span class="pre">Equals</span></code>, <code class="docutils literal notranslate"><span class="pre">Disjoint</span></code>, <code class="docutils literal notranslate"><span class="pre">Intersects</span></code>, <code class="docutils literal notranslate"><span class="pre">Touches</span></code>, <code class="docutils literal notranslate"><span class="pre">Crosses</span></code>, <code class="docutils literal notranslate"><span class="pre">Within</span></code>, <code class="docutils literal notranslate"><span class="pre">Contains</span></code>, e <code class="docutils literal notranslate"><span class="pre">Overlaps</span></code>. Esses operadores comparam pares de geometrias e são definidos utilizando os seguintes valores para as células da matriz de intersecções:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: indica que <span class="math notranslate nohighlight">\(dim(x) \in \{0, 1, 2\}\)</span>, ou seja, <span class="math notranslate nohighlight">\(x \neq \emptyset\)</span>. Em outras palavras, o resultado da intersecção é um objeto <span class="math notranslate nohighlight">\(x\)</span> que pode ser qualquer elemento geométrico (ponto, curva ou superfície).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">F</span></code>: indica que <span class="math notranslate nohighlight">\(dim(x) = \emptyset\)</span>, ou seja, <span class="math notranslate nohighlight">\(x = \emptyset\)</span>. Em outras palavras, o resultado da intersecção é um conjunto vazio. Adotaremos que <span class="math notranslate nohighlight">\(dim(x) = \emptyset \implies dim(x) = -1\)</span>, de maneira que usaremos <span class="math notranslate nohighlight">\(-1\)</span> quando necessário para indicar que a intersecção é vazia.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*</span></code>: indica que <span class="math notranslate nohighlight">\(dim(x) \in \{-1, 0, 1, 2\}\)</span>, ou seja, não importa se há ou não intersecção.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>:  indica que <span class="math notranslate nohighlight">\(dim(x) = 0\)</span>, ou seja, que a dimensão máxima do elemento geométrico resultante da intersecção é zero, isto é, um ponto.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code>:  indica que <span class="math notranslate nohighlight">\(dim(x) = 1\)</span>, ou seja, que a dimensão máxima do elemento geométrico resultante da intersecção é uma curva.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2</span></code>:  indica que <span class="math notranslate nohighlight">\(dim(x) = 2\)</span>, ou seja, que a dimensão máxima do elemento geométrico resultante da intersecção é uma superfície (ou área).</p></li>
+</ul>
+<p>Além disso, em alguns casos diferenciamos os padrões pelos tipos de objetos testados. Usamos a seguinte nomenclatura para os tipos de objetos:</p>
+<ul class="simple">
+<li><p>Pontuais ou <code class="docutils literal notranslate"><span class="pre">P</span></code>: pontos e coleções homogêneas de pontos.</p></li>
+<li><p>Curvas ou <code class="docutils literal notranslate"><span class="pre">L</span></code>: linhas, anéis, ou coleções homogêneas de linhas.</p></li>
+<li><p>Superfícies ou <code class="docutils literal notranslate"><span class="pre">A</span></code>: polígonos ou coleções homogêneas de polígonos.</p></li>
+</ul>
+<div class="section" id="equals-geometry-geometry-rightarrow-bool">
+<h2><span class="section-number">8.3.3.1. </span><span class="math notranslate nohighlight">\(Equals(Geometry, Geometry) \rightarrow bool\)</span><a class="headerlink" href="#equals-geometry-geometry-rightarrow-bool" title="Link permanente para este título">¶</a></h2>
+<p>Retorna verdadeiro (<code class="docutils literal notranslate"><span class="pre">True</span></code>) se as duas geometrias são espacialmente iguais. Neste caso, a matriz de intersecção para as duas geometrias deve satisfazer o seguinte padrão:</p>
+<table class="colwidths-given styled-table docutils align-center" id="tipos-geometricos-de9im-equals" style="width: 640">
+<caption><span class="caption-number">Tabela 8.7 - </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">DE-9IM</span></code> - <span class="math notranslate nohighlight">\(Equals(Geometry, Geometry) \rightarrow bool\)</span>.</span><a class="headerlink" href="#tipos-geometricos-de9im-equals" title="Link Permanente para essa tabela">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="left-align head"></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Interior(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(T\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(F\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(F\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Fonteira(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(F\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(T\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(F\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Exterior(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(F\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(F\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(T\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+</tbody>
+</table>
+<p>Pela matriz acima, o relacionamento <code class="docutils literal notranslate"><span class="pre">Equals</span></code> garante que os interiores das duas geometrias tenham intesecção e que os interiores e fronteiras de um objeto não tenha intersecção com o exterior do outro.</p>
+<p>A <a class="reference internal" href="#tipos-geometricos-equals"><span class="std std-numref">Tabela 8.8</span></a> apresenta alguns pares de objetos que satisfazem o relacionamento espacial <code class="docutils literal notranslate"><span class="pre">Equals</span></code>, de acordo com o padrão mostrado acima:</p>
+<table class="colwidths-given styled-table docutils align-center" id="tipos-geometricos-equals" style="width: 640">
+<caption><span class="caption-number">Tabela 8.8 - </span><span class="caption-text"><span class="math notranslate nohighlight">\(A\)</span> e <span class="math notranslate nohighlight">\(B\)</span> são geometrias espacialmente iguais.</span><a class="headerlink" href="#tipos-geometricos-equals" title="Link Permanente para essa tabela">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="left-align head"><p>( a )</p></th>
+<th class="left-align head"><p>( b )</p></th>
+<th class="left-align head"><p>( c )</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="left-align"><p><img alt="op-equals-1" src="../_images/op-equals-1.png" /></p></td>
+<td class="left-align"><p><img alt="op-equals-2" src="../_images/op-equals-2.png" /></p></td>
+<td class="left-align"><p><img alt="op-equals-3" src="../_images/op-equals-3.png" /></p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Aviso</p>
+<p>No caso dos pares de geometrias serem curvas/curvas ou superfícies/superfícies, mesmo que o número de pontos desses objetos sejam diferentes, o relacionamento <code class="docutils literal notranslate"><span class="pre">Equals</span></code> pode ser verdadeiro.</p>
+</div>
+</div>
+<div class="section" id="disjoint-geometry-geometry-rightarrow-bool">
+<h2><span class="section-number">8.3.3.2. </span><span class="math notranslate nohighlight">\(Disjoint(Geometry, Geometry) \rightarrow bool\)</span><a class="headerlink" href="#disjoint-geometry-geometry-rightarrow-bool" title="Link permanente para este título">¶</a></h2>
+<p>Retorna verdadeiro (<code class="docutils literal notranslate"><span class="pre">True</span></code>) se as duas geometrias não possuem qualquer tipo de interação espacial, isto é, se os interiores e fronteiras não possuem qualquer intersecção, exceto com os exteriores. Neste caso, a matriz de intersecção para as duas geometrias deve satisfazer o seguinte padrão:</p>
+<table class="colwidths-given styled-table docutils align-center" id="tipos-geometricos-de9im-disjoint" style="width: 640">
+<caption><span class="caption-number">Tabela 8.9 - </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">DE-9IM</span></code> - <span class="math notranslate nohighlight">\(Disjoint(Geometry, Geometry) \rightarrow bool\)</span>.</span><a class="headerlink" href="#tipos-geometricos-de9im-disjoint" title="Link Permanente para essa tabela">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="left-align head"></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Interior(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(F\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(F\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Fonteira(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(F\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(F\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Exterior(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+</tbody>
+</table>
+<p>A matriz acima define que no relacionamento <code class="docutils literal notranslate"><span class="pre">Disjoint</span></code> nem a fronteira, nem o interior de um objeto possui intersecção com a fronteira ou interior do outro objeto.</p>
+<p>A <a class="reference internal" href="#tipos-geometricos-disjoint"><span class="std std-numref">Tabela 8.10</span></a> apresenta alguns pares de objetos que satisfazem o relacionamento espacial <cite>Disjoint</cite>, de acordo com o padrão mostrado acima:</p>
+<table class="colwidths-given styled-table docutils align-center" id="tipos-geometricos-disjoint" style="width: 640">
+<caption><span class="caption-number">Tabela 8.10 - </span><span class="caption-text"><span class="math notranslate nohighlight">\(A\)</span> e <span class="math notranslate nohighlight">\(B\)</span> são geometrias espacialmente disjuntas.</span><a class="headerlink" href="#tipos-geometricos-disjoint" title="Link Permanente para essa tabela">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="left-align head"><p>( a )</p></th>
+<th class="left-align head"><p>( b )</p></th>
+<th class="left-align head"><p>( c )</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="left-align"><p><img alt="op-disjoint-1" src="../_images/op-disjoint-1.png" /></p></td>
+<td class="left-align"><p><img alt="op-disjoint-2" src="../_images/op-disjoint-2.png" /></p></td>
+<td class="left-align"><p><img alt="op-disjoint-3" src="../_images/op-disjoint-3.png" /></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="touches-geometry-geometry-rightarrow-bool">
+<h2><span class="section-number">8.3.3.3. </span><span class="math notranslate nohighlight">\(Touches(Geometry, Geometry) \rightarrow Bool\)</span><a class="headerlink" href="#touches-geometry-geometry-rightarrow-bool" title="Link permanente para este título">¶</a></h2>
+<p>Retorna verdadeiro (<code class="docutils literal notranslate"><span class="pre">True</span></code>) se as duas geometrias se tocam. Este relacionamento espacial é definido para os casos onde os pares de objetos geométricos correspondem a <code class="docutils literal notranslate"><span class="pre">A/A</span></code>, <code class="docutils literal notranslate"><span class="pre">L/L</span></code>, <code class="docutils literal notranslate"><span class="pre">L/A</span></code>, <code class="docutils literal notranslate"><span class="pre">P/A</span></code> e <code class="docutils literal notranslate"><span class="pre">P/L</span></code>. Este relacionamento não se aplica no caso dos objetos serem do tipo <code class="docutils literal notranslate"><span class="pre">P/P</span></code>.</p>
+<p>Se os pares de objetos satisfizerem um dos três padrões mostrados abaixo, dizemos que a geometria <span class="math notranslate nohighlight">\(A\)</span> toca a geometria <span class="math notranslate nohighlight">\(B\)</span>:</p>
+<table class="colwidths-given styled-table docutils align-center" id="tipos-geometricos-de9im-touches1" style="width: 640">
+<caption><span class="caption-number">Tabela 8.11 - </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">DE-9IM</span></code> - <span class="math notranslate nohighlight">\(Touches(Geometry, Geometry) \rightarrow bool\)</span>.</span><a class="headerlink" href="#tipos-geometricos-de9im-touches1" title="Link Permanente para essa tabela">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="left-align head"></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Interior(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(F\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(T\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Fonteira(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Exterior(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+</tbody>
+</table>
+<table class="colwidths-given styled-table docutils align-center" id="tipos-geometricos-de9im-touches2" style="width: 640">
+<caption><span class="caption-number">Tabela 8.12 - </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">DE-9IM</span></code> - <span class="math notranslate nohighlight">\(Touches(Geometry, Geometry) \rightarrow bool\)</span>.</span><a class="headerlink" href="#tipos-geometricos-de9im-touches2" title="Link Permanente para essa tabela">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="left-align head"></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Interior(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(F\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Fonteira(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(T\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Exterior(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+</tbody>
+</table>
+<table class="colwidths-given styled-table docutils align-center" id="tipos-geometricos-de9im-touches3" style="width: 640">
+<caption><span class="caption-number">Tabela 8.13 - </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">DE-9IM</span></code> - <span class="math notranslate nohighlight">\(Touches(Geometry, Geometry) \rightarrow bool\)</span>.</span><a class="headerlink" href="#tipos-geometricos-de9im-touches3" title="Link Permanente para essa tabela">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="left-align head"></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Interior(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(F\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Fonteira(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(T\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Exterior(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+</tbody>
+</table>
+<p>Os três padrões acima estabelecem que os objetos não podem ter intersecção entre seus interiores, mas podem ter intersecção entre as fronteiras ou entre a fronteira de um e o interior do outro.</p>
+<p>A <a class="reference internal" href="#tipos-geometricos-touches"><span class="std std-numref">Tabela 8.14</span></a> apresenta alguns pares de objetos que satisfazem o relacionamento espacial <cite>Touches</cite>, de acordo com os padrões mostrados acima:</p>
+<table class="colwidths-given styled-table docutils align-center" id="tipos-geometricos-touches" style="width: 640">
+<caption><span class="caption-number">Tabela 8.14 - </span><span class="caption-text"><span class="math notranslate nohighlight">\(A\)</span> e <span class="math notranslate nohighlight">\(B\)</span> são geometrias que se tocam.</span><a class="headerlink" href="#tipos-geometricos-touches" title="Link Permanente para essa tabela">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="left-align head"><p>( a )</p></th>
+<th class="left-align head"><p>( b )</p></th>
+<th class="left-align head"><p>( c )</p></th>
+<th class="left-align head"><p>( d )</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="left-align"><p><img alt="op-touch-1" src="../_images/op-touch-1.png" /></p></td>
+<td class="left-align"><p><img alt="op-touch-2" src="../_images/op-touch-2.png" /></p></td>
+<td class="left-align"><p><img alt="op-touch-3" src="../_images/op-touch-3.png" /></p></td>
+<td class="left-align"><p><img alt="op-touch-4" src="../_images/op-touch-4.png" /></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="crosses-geometry-geometry-rightarrow-bool">
+<h2><span class="section-number">8.3.3.4. </span><span class="math notranslate nohighlight">\(Crosses(Geometry, Geometry) \rightarrow bool\)</span><a class="headerlink" href="#crosses-geometry-geometry-rightarrow-bool" title="Link permanente para este título">¶</a></h2>
+<p>Retorna verdadeiro (<code class="docutils literal notranslate"><span class="pre">True</span></code>) se a primeira geometria cruza a segunda. Este relacionamento espacial é definido para os casos <code class="docutils literal notranslate"><span class="pre">P/L</span></code>, <code class="docutils literal notranslate"><span class="pre">P/A</span></code>, <code class="docutils literal notranslate"><span class="pre">L/L</span></code> e <code class="docutils literal notranslate"><span class="pre">L/A</span></code>.</p>
+<p>O resultado da intersecção entre duas geometrias deve gerar uma outra de dimensão um nível menor do que a maior dimensão das geometrias envolvidas e os interiores devem ter intersecção.</p>
+<p>Nos casos <code class="docutils literal notranslate"><span class="pre">P/L</span></code>, <code class="docutils literal notranslate"><span class="pre">P/A</span></code>, ou <code class="docutils literal notranslate"><span class="pre">L/A</span></code>:</p>
+<table class="colwidths-given styled-table docutils align-center" id="tipos-geometricos-de9im-crosses1" style="width: 640">
+<caption><span class="caption-number">Tabela 8.15 - </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">DE-9IM</span></code> - <span class="math notranslate nohighlight">\(Crosses(Geometry, Geometry) \rightarrow bool\)</span>.</span><a class="headerlink" href="#tipos-geometricos-de9im-crosses1" title="Link Permanente para essa tabela">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="left-align head"></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Interior(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(T\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(T\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Fonteira(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Exterior(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+</tbody>
+</table>
+<p>No caso <code class="docutils literal notranslate"><span class="pre">L/L</span></code>:</p>
+<table class="colwidths-given styled-table docutils align-center" id="tipos-geometricos-de9im-crosses2" style="width: 640">
+<caption><span class="caption-number">Tabela 8.16 - </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">DE-9IM</span></code> - <span class="math notranslate nohighlight">\(Crosses(Geometry, Geometry) \rightarrow bool\)</span>.</span><a class="headerlink" href="#tipos-geometricos-de9im-crosses2" title="Link Permanente para essa tabela">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="left-align head"></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Interior(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Fonteira(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Exterior(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+</tbody>
+</table>
+<p>A <a class="reference internal" href="#tipos-geometricos-crosses"><span class="std std-numref">Tabela 8.17</span></a> apresenta alguns pares de objetos que satisfazem o relacionamento espacial <cite>Crosses</cite>, de acordo com os padrões mostrados acima:</p>
+<table class="colwidths-given styled-table docutils align-center" id="tipos-geometricos-crosses" style="width: 640">
+<caption><span class="caption-number">Tabela 8.17 - </span><span class="caption-text"><span class="math notranslate nohighlight">\(A\)</span> e <span class="math notranslate nohighlight">\(B\)</span> são geometrias que se cruzam.</span><a class="headerlink" href="#tipos-geometricos-crosses" title="Link Permanente para essa tabela">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="left-align head"><p>( a )</p></th>
+<th class="left-align head"><p>( b )</p></th>
+<th class="left-align head"><p>( c )</p></th>
+<th class="left-align head"><p>( d )</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="left-align"><p><img alt="op-cross-1" src="../_images/op-cross-1.png" /></p></td>
+<td class="left-align"><p><img alt="op-cross-2" src="../_images/op-cross-2.png" /></p></td>
+<td class="left-align"><p><img alt="op-cross-3" src="../_images/op-cross-3.png" /></p></td>
+<td class="left-align"><p><img alt="op-cross-4" src="../_images/op-cross-4.png" /></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="within-geometry-geometry-rightarrow-bool">
+<h2><span class="section-number">8.3.3.5. </span><span class="math notranslate nohighlight">\(Within(Geometry, Geometry) \rightarrow bool\)</span><a class="headerlink" href="#within-geometry-geometry-rightarrow-bool" title="Link permanente para este título">¶</a></h2>
+<p>Retorna verdadeiro (<code class="docutils literal notranslate"><span class="pre">True</span></code>) se a primeira geometria está dentro da segunda e se elas não são iguais.</p>
+<p>O padrão da matriz para este relacionamento espacial é o seguinte:</p>
+<table class="colwidths-given styled-table docutils align-center" id="tipos-geometricos-de9im-within" style="width: 640">
+<caption><span class="caption-number">Tabela 8.18 - </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">DE-9IM</span></code> - <span class="math notranslate nohighlight">\(Within(Geometry, Geometry) \rightarrow bool\)</span>.</span><a class="headerlink" href="#tipos-geometricos-de9im-within" title="Link Permanente para essa tabela">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="left-align head"></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Interior(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(T\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(F\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Fonteira(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(F\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Exterior(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+</tbody>
+</table>
+<p>A matriz acima define que o predicado <code class="docutils literal notranslate"><span class="pre">Within</span></code> retorna <code class="docutils literal notranslate"><span class="pre">True</span></code> quando os interiores das duas geometrias possuem intersecção e quando o interior e a fronteira do objeto A não têm intersecção com o exterior de B. O uso do padrão <code class="docutils literal notranslate"><span class="pre">*</span></code> nas demais células indica que nenhuma outra condição importa para determinar este relacionamento.</p>
+<p>A <a class="reference internal" href="#tipos-geometricos-within"><span class="std std-numref">Tabela 8.19</span></a> apresenta alguns pares de objetos que satisfazem o relacionamento espacial <code class="docutils literal notranslate"><span class="pre">Within</span></code>, de acordo com os padrões mostrados acima:</p>
+<table class="colwidths-given styled-table docutils align-center" id="tipos-geometricos-within" style="width: 640">
+<caption><span class="caption-number">Tabela 8.19 - </span><span class="caption-text">A geometria <span class="math notranslate nohighlight">\(A\)</span> está dentro da geometria <span class="math notranslate nohighlight">\(B\)</span>.</span><a class="headerlink" href="#tipos-geometricos-within" title="Link Permanente para essa tabela">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="left-align head"><p>( a )</p></th>
+<th class="left-align head"><p>( b )</p></th>
+<th class="left-align head"><p>( c )</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="left-align"><p><img alt="op-within-1" src="../_images/op-within-1.png" /></p></td>
+<td class="left-align"><p><img alt="op-within-2" src="../_images/op-within-2.png" /></p></td>
+<td class="left-align"><p><img alt="op-within-3" src="../_images/op-within-3.png" /></p></td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-given styled-table docutils align-center" style="width: 640">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="left-align head"><p>( d )</p></th>
+<th class="left-align head"><p>( e )</p></th>
+<th class="left-align head"><p>( f )</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="left-align"><p><img alt="op-within-4" src="../_images/op-within-4.png" /></p></td>
+<td class="left-align"><p><img alt="op-within-5" src="../_images/op-within-5.png" /></p></td>
+<td class="left-align"><p><img alt="op-within-6" src="../_images/op-within-6.png" /></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="contains-geometrya-geometryb-rightarrow-bool">
+<h2><span class="section-number">8.3.3.6. </span><span class="math notranslate nohighlight">\(Contains(GeometryA, GeometryB) \rightarrow bool\)</span><a class="headerlink" href="#contains-geometrya-geometryb-rightarrow-bool" title="Link permanente para este título">¶</a></h2>
+<p>Retorna verdadeiro (<code class="docutils literal notranslate"><span class="pre">True</span></code>) se a primeira geometria contém a segunda e se elas não são iguais. Este relacionamento espacial é o inverso de <code class="docutils literal notranslate"><span class="pre">Within</span></code>, de maneira que temos:</p>
+<p><span class="math notranslate nohighlight">\(Contains(A, B) \iff Within(B, A)\)</span></p>
+<p>A matriz de intersecções do predicado <code class="docutils literal notranslate"><span class="pre">Contains</span></code> é a seguinte:</p>
+<table class="colwidths-given styled-table docutils align-center" id="tipos-geometricos-de9im-contains" style="width: 640">
+<caption><span class="caption-number">Tabela 8.20 - </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">DE-9IM</span></code> - <span class="math notranslate nohighlight">\(Contains(Geometry, Geometry) \rightarrow bool\)</span>.</span><a class="headerlink" href="#tipos-geometricos-de9im-contains" title="Link Permanente para essa tabela">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="left-align head"></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Interior(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(T\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Fonteira(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Exterior(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(F\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(F\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+</tbody>
+</table>
+<p>Na matriz acima podemos observar que os interiores das duas geometrias devem ter intersecção e que a fronteira e interior da segunda (<code class="docutils literal notranslate"><span class="pre">B</span></code>) não pode ter intersecção com o exterior da primeira (<code class="docutils literal notranslate"><span class="pre">A</span></code>).</p>
+</div>
+<div class="section" id="overlaps-geometry-geometry-rightarrow-bool">
+<h2><span class="section-number">8.3.3.7. </span><span class="math notranslate nohighlight">\(Overlaps(Geometry, Geometry) \rightarrow bool\)</span><a class="headerlink" href="#overlaps-geometry-geometry-rightarrow-bool" title="Link permanente para este título">¶</a></h2>
+<p>Retorna verdadeiro (<code class="docutils literal notranslate"><span class="pre">True</span></code>) se a primeira geometria sobrepõe a segunda. Este relacionamento espacial é definido para os casos <code class="docutils literal notranslate"><span class="pre">A/A</span></code>, <code class="docutils literal notranslate"><span class="pre">L/L</span></code> e <code class="docutils literal notranslate"><span class="pre">P/P</span></code>. Em outras palavras, este relacionamento só é válido para geometrias de mesma dimensão e se a intersecção entre elas resultar em um objeto de mesma dimensão.</p>
+<p>No caso <code class="docutils literal notranslate"><span class="pre">P/P</span></code> ou <code class="docutils literal notranslate"><span class="pre">A/A</span></code>, o predicado <code class="docutils literal notranslate"><span class="pre">Overlap</span></code> retorna <code class="docutils literal notranslate"><span class="pre">True</span></code> se os interiores das duas geometria possuem intersecção e se o interior de uma faz intersecção com o exterior da outra e vice-versa. Este relacionamento é definido através do seguinte padrão:</p>
+<table class="colwidths-given styled-table docutils align-center" id="tipos-geometricos-de9im-overlaps1" style="width: 640">
+<caption><span class="caption-number">Tabela 8.21 - </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">DE-9IM</span></code> - <span class="math notranslate nohighlight">\(Overlaps(Geometry, Geometry) \rightarrow bool\)</span>.</span><a class="headerlink" href="#tipos-geometricos-de9im-overlaps1" title="Link Permanente para essa tabela">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="left-align head"></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Interior(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(T\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(T\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Fonteira(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Exterior(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(T\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+</tbody>
+</table>
+<p>No caso <code class="docutils literal notranslate"><span class="pre">L/L</span></code>, a intersecção deve resultar em um objeto <span class="math notranslate nohighlight">\(1\)</span>-dimensional. Assim, temos o seguinte padrão de matriz:</p>
+<table class="colwidths-given styled-table docutils align-center" id="tipos-geometricos-de9im-overlaps2" style="width: 640">
+<caption><span class="caption-number">Tabela 8.22 - </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">DE-9IM</span></code> - <span class="math notranslate nohighlight">\(Overlaps(Geometry, Geometry) \rightarrow bool\)</span>.</span><a class="headerlink" href="#tipos-geometricos-de9im-overlaps2" title="Link Permanente para essa tabela">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="left-align head"></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Interior(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(T\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Fonteira(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Exterior(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(T\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+</tbody>
+</table>
+<p>A <cite>Figura 11</cite> apresenta alguns pares de objetos que satisfazem o relacionamento espacial <cite>Overlaps</cite>, de acordo com os padrões mostrados acima:</p>
+<table class="colwidths-given styled-table docutils align-center" id="tipos-geometricos-overlaps" style="width: 640">
+<caption><span class="caption-number">Tabela 8.23 - </span><span class="caption-text">A geometria <span class="math notranslate nohighlight">\(A\)</span> sobrepõe a geometria <span class="math notranslate nohighlight">\(B\)</span>.</span><a class="headerlink" href="#tipos-geometricos-overlaps" title="Link Permanente para essa tabela">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="left-align head"><p>( a )</p></th>
+<th class="left-align head"><p>( b )</p></th>
+<th class="left-align head"><p>( c )</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="left-align"><p><img alt="op-overlap-1" src="../_images/op-overlap-1.png" /></p></td>
+<td class="left-align"><p><img alt="op-overlap-2" src="../_images/op-overlap-2.png" /></p></td>
+<td class="left-align"><p><img alt="op-overlap-3" src="../_images/op-overlap-3.png" /></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="intersects-geometry-geometry-rightarrow-bool">
+<h2><span class="section-number">8.3.3.8. </span><span class="math notranslate nohighlight">\(Intersects(Geometry, Geometry) \rightarrow bool\)</span><a class="headerlink" href="#intersects-geometry-geometry-rightarrow-bool" title="Link permanente para este título">¶</a></h2>
+<p>Retorna verdadeiro (<code class="docutils literal notranslate"><span class="pre">True</span></code>) se as duas geometrias tiverem algum tipo de interação espacial, isto é, se os interiores e fronteiras tiverem qualquer intersecção. Este relacionamento espacial é definido como sendo a negação do relacionamento <code class="docutils literal notranslate"><span class="pre">Disjoint</span></code>:</p>
+<p><span class="math notranslate nohighlight">\(Intersects(A, B) \iff \neg Disjoint(A, B)\)</span></p>
+<p>Na verdade esse relacionamento diz que as geometrias <span class="math notranslate nohighlight">\(A\)</span> e <span class="math notranslate nohighlight">\(B\)</span> podem se tocar, ou cruzar, ou sobrepor, ou uma estar contida uma na outra, ou serem iguais. Define-se este relacionamento para facilitar a escrita de expressões com predicados espaciais.</p>
+<p>Portanto, o predicado <code class="docutils literal notranslate"><span class="pre">Intersects</span></code> retorna <code class="docutils literal notranslate"><span class="pre">True</span></code> se os interiores das duas geometrias se intersectam:</p>
+<table class="colwidths-given styled-table docutils align-center" id="tipos-geometricos-de9im-intersects1" style="width: 640">
+<caption><span class="caption-number">Tabela 8.24 - </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">DE-9IM</span></code> - <span class="math notranslate nohighlight">\(Intersects(Geometry, Geometry) \rightarrow bool\)</span>.</span><a class="headerlink" href="#tipos-geometricos-de9im-intersects1" title="Link Permanente para essa tabela">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="left-align head"></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Interior(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(T\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Fonteira(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Exterior(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+</tbody>
+</table>
+<p>Se as fronteiras das duas geometrias se intersectam:</p>
+<table class="colwidths-given styled-table docutils align-center" id="tipos-geometricos-de9im-intersects2" style="width: 640">
+<caption><span class="caption-number">Tabela 8.25 - </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">DE-9IM</span></code> - <span class="math notranslate nohighlight">\(Intersects(Geometry, Geometry) \rightarrow bool\)</span>.</span><a class="headerlink" href="#tipos-geometricos-de9im-intersects2" title="Link Permanente para essa tabela">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="left-align head"></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Interior(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Fonteira(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(T\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Exterior(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+</tbody>
+</table>
+<p>Se o interior da primeira intersecta a fronteira da segunda:</p>
+<table class="colwidths-given styled-table docutils align-center" id="tipos-geometricos-de9im-intersects3" style="width: 640">
+<caption><span class="caption-number">Tabela 8.26 - </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">DE-9IM</span></code> - <span class="math notranslate nohighlight">\(Intersects(Geometry, Geometry) \rightarrow bool\)</span>.</span><a class="headerlink" href="#tipos-geometricos-de9im-intersects3" title="Link Permanente para essa tabela">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="left-align head"></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Interior(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(T\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Fonteira(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Exterior(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+</tbody>
+</table>
+<p>Ou se a fronteira da primeira intersecta o interior da segunda:</p>
+<table class="colwidths-given styled-table docutils align-center" id="tipos-geometricos-de9im-intersects4" style="width: 640">
+<caption><span class="caption-number">Tabela 8.27 - </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">DE-9IM</span></code> - <span class="math notranslate nohighlight">\(Intersects(Geometry, Geometry) \rightarrow bool\)</span>.</span><a class="headerlink" href="#tipos-geometricos-de9im-intersects4" title="Link Permanente para essa tabela">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="left-align head"></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
+<th class="left-align head"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Interior(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Fonteira(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(T\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(Exterior(A)\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+<td class="left-align" rowspan="2"><p><span class="math notranslate nohighlight">\(*\)</span></p></td>
+</tr>
+<tr class="row-odd"></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="python.html" class="btn btn-neutral float-right" title="8.4. Tipos Geométricos em Python" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="rel_espaciais_relate.html" class="btn btn-neutral float-left" title="8.3.2. Operador Relate" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-165908761-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

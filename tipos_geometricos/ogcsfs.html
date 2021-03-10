@@ -1,0 +1,362 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="pt-BR" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>8.2. Tipos Geométricos &mdash; SER-347/CAP-419</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/table_styling.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/ser-347.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+    <link rel="canonical" href="https://ser-347.github.io/tipos_geometricos/ogcsfs.html" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Buscar" href="../search.html" />
+    <link rel="next" title="8.3. Relacionamentos Espaciais" href="rel_espaciais.html" />
+    <link rel="prev" title="8.1. Introdução" href="introducao.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SER-347/CAP-419
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Pesquisar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introdução à Programação com Dados Geoespaciais</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Visão Geral do Curso:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../visao-geral.html">Visao Geral do Curso</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aulas:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../instalacao.html">1. Instalando e Configurando o Ambiente de Programação</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introducao-programacao.html">2. Introdução à Programação com a Linguagem Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../int_anaconda.html">3. Introdução ao Ambiente Anaconda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../int_jupyter_notebooks.html">4. IPython e Jupyter Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matrizes.html">5. Matrizes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualizacao.html">6. Visualização de Dados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../imagens.html">7. Imagens</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../tipos_geometricos.html">8. Tipos e Operações Espaciais</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introducao.html">8.1. Introdução</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">8.2. Tipos Geométricos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rel_espaciais.html">8.3. Relacionamentos Espaciais</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html">8.4. Tipos Geométricos em Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shapely.html">8.5. A Biblioteca Shapely</a></li>
+<li class="toctree-l2"><a class="reference internal" href="consideracoes.html">8.6. Considerações Finais</a></li>
+<li class="toctree-l2"><a class="reference internal" href="referencias.html">8.7. Referências Bibliográficas</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../vetorial.html">9. Manipulação de Dados Vetoriais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variados.html">10. Tópicos Variados</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Considerações Finais</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../consideracoes-finais.html">Considerações Finais</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Referências Bibliográficas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../referencias.html">Referências Bibliográficas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Listas de Exercícios:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Lista de Projetos:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../projetos.html">Lista dos Projetos Finais do Curso</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Informações Gerais:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sites.html">Sobre o Site do Curso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contato.html">Contato</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../licenca.html">Licença</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SER-347/CAP-419</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../tipos_geometricos.html"><span class="section-number">8. </span>Tipos e Operações Espaciais</a> &raquo;</li>
+        
+      <li><span class="section-number">8.2. </span>Tipos Geométricos</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="rel_espaciais.html" class="btn btn-neutral float-right" title="8.3. Relacionamentos Espaciais" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="introducao.html" class="btn btn-neutral float-left" title="8.1. Introdução" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tipos-geometricos">
+<h1><span class="section-number">8.2. </span>Tipos Geométricos<a class="headerlink" href="#tipos-geometricos" title="Link permanente para este título">¶</a></h1>
+<p>Atualmente, o modelo geométrico e as operações espaciais encontradas nos diversos sistemas geoespaciais são baseados na especificação conhecida por <strong>OGC Simple Feature</strong> (Herring, 2011). Essa especificação padroniza o nome e as definições dos tipos geométricos bem como a semântica das operações espaciais, em especial, os relacionamentos espaciais (ou topológicos). Iremos nos referir a essa especificação com a sigla <em>OGC-SFS</em>.</p>
+<p>A <a class="reference internal" href="#tipos-geometricos-ogc-sfs"><span class="std std-numref">Figura 8.1</span></a>, abaixo, apresenta o modelo geométrico definido na <em>OGC-SFS</em>.</p>
+<div class="align-center figure align-default" id="tipos-geometricos-ogc-sfs">
+<a class="reference internal image-reference" href="../_images/ogc-sfs.png"><img alt="Modelo Geométrico OGC Simple Features" src="../_images/ogc-sfs.png" style="width: 640px;" /></a>
+<p class="caption"><span class="caption-number">Figura 8.1 - </span><span class="caption-text">Diagrama de classes do modelo geométrico da <em>OGC Simple Feature</em>.
+<strong>Fonte:</strong> Adaptado de Herring (2011)</span><a class="headerlink" href="#tipos-geometricos-ogc-sfs" title="Link Permanente para essa imagem">¶</a></p>
+</div>
+<p>Como pode ser observado, são definidas classes para representações de objetos geométricos na forma de pontos, curvas, superfícies e coleções geométricas. Além disso, todos os tipos geométricos estão associados a um <strong>sistema de referência espacial</strong>, que é usado para descrever o sistema de coordenadas no qual o objeto geométrico encontra-se definido.</p>
+<p>Os objetos geométricos definidos por essa hierarquia de classes pode existir no espaço <span class="math notranslate nohighlight">\(R^2\)</span>, <span class="math notranslate nohighlight">\(R^3\)</span> ou <span class="math notranslate nohighlight">\(R^4\)</span>. Geometrias no <span class="math notranslate nohighlight">\(R^2\)</span> possuem pontos com valores de coordenadas em <span class="math notranslate nohighlight">\(x\)</span> e <span class="math notranslate nohighlight">\(y\)</span>. Geometrias no <span class="math notranslate nohighlight">\(R^3\)</span> possuem pontos com valores de coordenadas em <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span> e <span class="math notranslate nohighlight">\(z\)</span> ou <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span> e <span class="math notranslate nohighlight">\(m\)</span>. Geometrias no <span class="math notranslate nohighlight">\(R^4\)</span> possuem pontos com valores de coordenadas em <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, <span class="math notranslate nohighlight">\(z\)</span> e <span class="math notranslate nohighlight">\(m\)</span>. Em geral, a coordenada <span class="math notranslate nohighlight">\(m\)</span> representa algum tipo de medida.</p>
+<p>A <a class="reference internal" href="#tipos-geometricos-ogc-sfs-ilustrado"><span class="std std-numref">Tabela 8.2</span></a> ilustra graficamente objetos associados aos tipos geométricos representados pelas classes do diagrama da <a class="reference internal" href="#tipos-geometricos-ogc-sfs"><span class="std std-numref">Figura 8.1</span></a>.</p>
+<table class="colwidths-given styled-table docutils align-center" id="tipos-geometricos-ogc-sfs-ilustrado" style="width: 640">
+<caption><span class="caption-number">Tabela 8.2 - </span><span class="caption-text">Exemplos dos tipos geométricos da OGC-SFS.</span><a class="headerlink" href="#tipos-geometricos-ogc-sfs-ilustrado" title="Link Permanente para essa tabela">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="left-align head"><p>( a ) <code class="docutils literal notranslate"><span class="pre">Point</span></code></p></th>
+<th class="left-align head"><p>( b ) <code class="docutils literal notranslate"><span class="pre">LineString</span></code></p></th>
+<th class="left-align head"><p>( c ) <code class="docutils literal notranslate"><span class="pre">LinearRing</span></code></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="left-align" rowspan="2"><p><img alt="ogc-geom-point" src="../_images/ogc-geom-point.png" /></p></td>
+<td class="left-align" rowspan="2"><p><img alt="ogc-geom-linestring" src="../_images/ogc-geom-linestring.png" /></p></td>
+<td class="left-align" rowspan="2"><p><img alt="ogc-geom-linearring" src="../_images/ogc-geom-linearring.png" /></p></td>
+</tr>
+<tr class="row-odd"></tr>
+</tbody>
+</table>
+<table class="colwidths-given styled-table docutils align-center" style="width: 640">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="left-align head"><p>( d ) <code class="docutils literal notranslate"><span class="pre">Polygon</span></code></p></th>
+<th class="left-align head"><p>( e ) <code class="docutils literal notranslate"><span class="pre">Polygon</span></code> (com buracos)</p></th>
+<th class="left-align head"><p>( f ) <code class="docutils literal notranslate"><span class="pre">MultiPoint</span></code></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="left-align"><p><img alt="ogc-geom-polygon" src="../_images/ogc-geom-polygon.png" /></p></td>
+<td class="left-align"><p><img alt="ogc-geom-polygon-with-hole" src="../_images/ogc-geom-polygon-with-hole.png" /></p></td>
+<td class="left-align"><p><img alt="ogc-geom-multipoint" src="../_images/ogc-geom-multipoint.png" /></p></td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-given styled-table docutils align-center" style="width: 640">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="left-align head"><p>( g ) <code class="docutils literal notranslate"><span class="pre">MultiLineString</span></code></p></th>
+<th class="left-align head"><p>( h ) <code class="docutils literal notranslate"><span class="pre">MultiPolygon</span></code></p></th>
+<th class="left-align head"><p>( i ) <code class="docutils literal notranslate"><span class="pre">GeometryCollection</span></code></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="left-align"><p><img alt="ogc-geom-multilinestring" src="../_images/ogc-geom-multilinestring.png" /></p></td>
+<td class="left-align"><p><img alt="ogc-geom-multipolygon" src="../_images/ogc-geom-multipolygon.png" /></p></td>
+<td class="left-align"><p><img alt="ogc-geom-geometrycollection" src="../_images/ogc-geom-geometrycollection.png" /></p></td>
+</tr>
+</tbody>
+</table>
+<p>O tipo <code class="docutils literal notranslate"><span class="pre">Point</span></code> (<a class="reference internal" href="#tipos-geometricos-ogc-sfs"><span class="std std-numref">Figura 8.1</span></a> e <a class="reference internal" href="#tipos-geometricos-ogc-sfs-ilustrado"><span class="std std-numref">Tabela 8.2a</span></a>) representa pontos no espaço <span class="math notranslate nohighlight">\(R^2\)</span>, <span class="math notranslate nohighlight">\(R^3\)</span> ou <span class="math notranslate nohighlight">\(R^4\)</span>. Um ponto é um objeto geométrico <span class="math notranslate nohighlight">\(0\)</span>-dimensional (dimensão topológica), isto é, não possui comprimento, largura, altura, ou volume, representando uma única localização no sistema de coordenadas. A fronteira de um ponto é o conjunto vazio. Em geral, utilizamos esse tipo de geometria para representar atributos de feições associadas a ocorrências ou eventos, como incidência de crimes ou doenças.</p>
+<p>O tipo <code class="docutils literal notranslate"><span class="pre">Curve</span></code> (<a class="reference internal" href="#tipos-geometricos-ogc-sfs"><span class="std std-numref">Figura 8.1</span></a>) representa a imagem contínua de uma linha. Uma curva é um objeto geométrico <span class="math notranslate nohighlight">\(1\)</span>-dimensional (dimensão topológica), isto é, possui comprimento mas não possui largura, altura, ou volume. Em geral, utilizamos elementos geométricos das subclasses de <code class="docutils literal notranslate"><span class="pre">Curve</span></code> para representar entidades lineares tais como rodovias, linhas de transmissão de energia elétrica, dutos, arruamentos, entre outras. Uma curva pode conter coordenadas com <span class="math notranslate nohighlight">\(m\)</span> ou <span class="math notranslate nohighlight">\(z\)</span>.</p>
+<p>A subclasse <code class="docutils literal notranslate"><span class="pre">LineString</span></code> representa linhas com interpolação linear entre pontos consecutivos (<a class="reference internal" href="#tipos-geometricos-ogc-sfs"><span class="std std-numref">Figura 8.1</span></a> e <a class="reference internal" href="#tipos-geometricos-ogc-sfs-ilustrado"><span class="std std-numref">Tabela 8.2b</span></a>). A fronteira de uma <strong>linha aberta</strong> é definida como sendo os pontos extremos dessa linha. O primeiro ponto é chamado de <em>ponto inicial</em> (<em>start point</em>) e o último ponto da sequência, <em>ponto final</em> (<em>end point</em>).</p>
+<p>A subclasse <code class="docutils literal notranslate"><span class="pre">LinearRing</span></code> representa linhas fechadas, denominadas anéis, cujo ponto inicial e final são coincidentes (<a class="reference internal" href="#tipos-geometricos-ogc-sfs"><span class="std std-numref">Figura 8.1</span></a> e <a class="reference internal" href="#tipos-geometricos-ogc-sfs-ilustrado"><span class="std std-numref">Tabela 8.2c</span></a>). A fronteira de um anél é definida como o conjunto vazio. Essa classe é o bloco básico para construção de polígonos (classe <code class="docutils literal notranslate"><span class="pre">Polygon</span></code>).</p>
+<p>O tipo <code class="docutils literal notranslate"><span class="pre">Surface</span></code> representa objetos geométricos <span class="math notranslate nohighlight">\(2\)</span>-dimensionais (dimensão topológica), isto é, objetos que possuem área (largura e altura) mas não possuem volume. Esse tipo geométrico pode ser utilizado para representar entidades discretas como áreas de cultivo, unidades de conservação florestal, divisões territoriais, entre outras.</p>
+<p>A subclasse <code class="docutils literal notranslate"><span class="pre">Polygon</span></code> representa polígonos que podem ser formados por um anel externo e zero ou mais anéis internos (buracos ou ilhas). A <a class="reference internal" href="#tipos-geometricos-ogc-sfs-ilustrado"><span class="std std-numref">Tabela 8.2d</span></a> representa um polígono formado apenas por um anel, que é o anel externo. O polígono mostrado na <a class="reference internal" href="#tipos-geometricos-ogc-sfs-ilustrado"><span class="std std-numref">Tabela 8.2e</span></a> representa um polígono formado por um anel externo e um anel interno. A fronteira de um polígono é definida como sendo o conjunto de todos os anéis que o delimitam.</p>
+<p>O diagrama da <a class="reference internal" href="#tipos-geometricos-ogc-sfs"><span class="std std-numref">Figura 8.1</span></a> ainda contém classes que representam coleções de geometrias. As classes <code class="docutils literal notranslate"><span class="pre">MultiPoint</span></code>, <code class="docutils literal notranslate"><span class="pre">MultiLineString</span></code> e <code class="docutils literal notranslate"><span class="pre">MultiPolygon</span></code> representam, respectivamente, coleções homogêneas de pontos (<a class="reference internal" href="#tipos-geometricos-ogc-sfs-ilustrado"><span class="std std-numref">Tabela 8.2f</span></a>), linhas (<a class="reference internal" href="#tipos-geometricos-ogc-sfs-ilustrado"><span class="std std-numref">Tabela 8.2g</span></a>) e polígonos (<a class="reference internal" href="#tipos-geometricos-ogc-sfs-ilustrado"><span class="std std-numref">Tabela 8.2h</span></a>). A classe <code class="docutils literal notranslate"><span class="pre">GeometryCollection</span></code> representa coleções geométricas formadas por qualquer combinação de outros elementos geométricos, inclusive das coleções homogêneas. A coleção heterogênea mostrada na <a class="reference internal" href="#tipos-geometricos-ogc-sfs-ilustrado"><span class="std std-numref">Tabela 8.2i</span></a> é composta de um polígono, uma linha e um ponto.</p>
+<p>Em geral, o tipo <code class="docutils literal notranslate"><span class="pre">GeometryCollection</span></code> é introduzido nos sistemas para acomodar o resultado de operações espaciais complexas sobre os tipos de geometria elementares. Por exemplo, o resultado da operação de intersecção entre dois polígonos pode resultar em um conjunto de pontos, linhas e polígonos, de forma que é necessário um contêiner especial para acomodar esse resultado.</p>
+<p>O documento da <code class="docutils literal notranslate"><span class="pre">OGC-SFS</span></code> define também o conjunto de operações sobre os tipos geométricos do diagrama da <a class="reference internal" href="#tipos-geometricos-ogc-sfs"><span class="std std-numref">Figura 8.1</span></a>. A seção a seguir irá detalhar as operações que possibilitam determinar os relacionamentos espaciais entre objetos espaciais.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="rel_espaciais.html" class="btn btn-neutral float-right" title="8.3. Relacionamentos Espaciais" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="introducao.html" class="btn btn-neutral float-left" title="8.1. Introdução" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-165908761-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

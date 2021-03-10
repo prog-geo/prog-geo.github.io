@@ -1,0 +1,44 @@
+..
+    This file is part of SER-347 Documentation.
+    Copyright 2020, Gilberto Queiroz and Thales Körting.
+
+
+Operador ``Relate``
+*******************
+
+
+Em geral, os ambientes computacionais que dão suporte a ``OGC-SFS``, introduzem uma função chamada ``Relate`` que permite determinar a matriz de intersecções ou testar se dois objetos satisfazem um determinado padrão dessa matriz. Assim, tanto em ``Python`` quanto em ``C++``, ou ``Java``, ou em ``SQL``, é possível testar o relacionamento espacial entre dois objetos.
+
+
+O exemplo abaixo mostra como seria o uso dessa função para saber o relacionamento espacial entre dois polígonos hipotéticos:
+
+
+.. code-block:: python
+
+    A = Polygon(...)
+    B = Polygon(...)
+
+    M = Relate(A, B)
+
+
+Nesse caso, ``M`` é a matriz resultante do relacionamento espacial entre ``A`` e ``B``. Se ``A`` e ``B`` forem os polígonos mostrados na :numref:`Figura %s <tipos-geometricos:rel-a-b>`, teríamos ``M`` codificado como a seguinte ``string``: ``"212101212"``.
+
+
+O próximo exemplo mostra como seria a utlização da função ``Relate`` para saber se dois objetos ``A`` e ``B`` satisfazem um padrão específico da matriz de intersecções:
+
+
+.. code-block:: python
+
+    A = Polygon(...)
+    B = Polygon(...)
+
+    M = "212101212"
+
+    resultado = Relate(A, B, M)
+
+    print( resultado )
+
+
+Nesse caso, ``M`` é a matriz com o padrão que desejamos verificar se os objetos ``A`` e ``B`` satisfazem. Se ``A`` e ``B`` forem os polígonos mostrados na :numref:`Figura %s <tipos-geometricos:rel-a-b>`, essa função retorna o valor booleano ``True``.
+
+
