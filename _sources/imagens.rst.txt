@@ -5,29 +5,3 @@
 
 Imagens
 =======
-
-
-Para manipular imagens de sensoriamento remoto utilizando o Python, podemos citar as bibliotecas ``GDAL`` e ``rasterio``. GDAL é uma biblioteca para tradução de formatos de dados geográficos distribuída pela ``osgeo`` (*Open Source Geospatial Foundation* sob a licença X/MIT estilo *Open Source*. 
-
-GDAL significa *Geospatial Data Abstraction Library* (Biblioteca de Abstração de Dados Geoespaciais), e permite aos usuários manipular `142 formatos de arquivos raster e 84 formatos de arquivos vetoriais <a href=http://gdal.org/formats_list.html>`_.
-
-As aplicações que a utilizam acessam todos os formatos suportados pela biblioteca através de um único modelo de dados abstrato. A biblioteca GDAL também conta com uma variedade de programas utilitários de linha de comando para a tradução de formatos bem como uma série de outras funções. 
-
-
-Em geral, utiliza-se a biblioteca GDAL para acessar os dados e, no caso de imagens, para ter acesso aos valores dos pixels das bandas, a biblioteca proporciona métodos de geração de matrizes no formato ``numpy``. Estruturamos as notas de aula em três partes:
-
-
-- Na `Parte I <https://github.com/ser-347/ipynb/blob/master/gdal-parte-1.ipynb>`_ vamos aprender a carregar a biblioteca, entender os tipos de armazenamento de bandas mais usuais, explorar metadados das imagens, bem como aprender a acessar os pixels das imagens.
-
-
-- Na `Parte II <https://github.com/ser-347/ipynb/blob/master/gdal-parte-2.ipynb>`_ vamos realizar operações entre bandas, como por exemplo aritmética de bandas. Também vamos compreender como calcular o histograma de imagens.
-
-
-- A `Parte III <https://github.com/ser-347/ipynb/blob/master/gdal-parte-3.ipynb>`_ contém informações sobre como criar uma nova imagem, a partir de metadados de referência.
-
-
-Para mais informações:
-
-`Página principal da GDAL <http://www.gdal.org>`_
-
-`Documentação oficial para Python <http://gdal.org/python/>`_
