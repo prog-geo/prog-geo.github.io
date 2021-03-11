@@ -1,6 +1,6 @@
 ..
-    This file is part of SER-347 Documentation.
-    Copyright 2020, Gilberto Queiroz and Thales Körting.
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
 
 
 Introdução à Programação com Dados Geoespaciais
@@ -30,21 +30,14 @@ Na era do big data, os profissionais necessitam cada vez mais de conhecimentos e
 
     instalacao
     introducao-programacao
-    int_anaconda
-    int_jupyter_notebooks
-    matrizes
-    visualizacao
-    imagens
-    tipos_geometricos
-    vetorial
     variados
 
 
-.. toctree::
-    :maxdepth: 1
-    :caption: Considerações Finais
+.. .. toctree::
+     :maxdepth: 1
+     :caption: Considerações Finais
 
-    consideracoes-finais
+     .. consideracoes-finais
 
 
 .. toctree::
@@ -61,20 +54,20 @@ Na era do big data, os profissionais necessitam cada vez mais de conhecimentos e
     listas
 
 
-.. toctree::
+.. .. toctree::
     :maxdepth: 1
     :caption: Lista de Projetos:
 
-    projetos
+    .. projetos
 
 
-.. toctree::
+.. .. toctree::
     :maxdepth: 1
     :caption: Informações Gerais:
 
-    sites
-    contato
-    licenca
+    .. sites
+    .. contato
+    .. licenca
 
 
 Índices e Tabelas

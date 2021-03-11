@@ -1,10 +1,12 @@
 ..
-    This file is part of SER-347 Documentation.
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
     Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
 
 
 .. include:: ../def.rst
 
+
+.. _sec_visao_geral_porque_programar:
 
 Por que aprender a programar?
 =============================
@@ -126,7 +128,7 @@ Atualmente, existem ferramentas baseadas em código aberto projetadas para esse 
     Exemplo de um Jupyter Notebook.
 
 
-O código fonte dos componentes de software de uma pesquisa podem ser facilmente compartilhados através de plataformas gratuitas, especializadas no controle e versionamento de código fonte, como o `GitHub <https://github.com/>`_. O `GitHub <https://github.com/>`_ é uma plataforma de desenvolvimento que oferece aos desenvolvedores a possibilidade de hospedar repositórios de código versionados através do sistema `git <https://git-scm.com/>`_ e com uma interface web amigável. Além disso, oferece diversas ferramentas para o desenvolvimento colaborativo. Essas ferramentas vão desde o controle de atividades (`issues <https://guides.github.com/features/issues/>`_), áreas de rascunho de código (`gist <https://help.github.com/en/github/writing-on-github/creating-gists>`_), disponibilização de páginas web (`github pages <https://pages.github.com/>`_), `wikis <https://guides.github.com/features/wikis/>`_, até a interface com sistemas de integração contínua. Um bom exemplo de uso de repositórios do GitHub para compartilhamento de Jupyter Notebooks pode ser encontrado na `Galeria de Jupyter Notebooks do projeto Brazil Data Cube <https://github.com/brazil-data-cube/code-gallery>`_.
+O código fonte dos componentes de software de uma pesquisa podem ser facilmente compartilhados através de plataformas gratuitas, especializadas no controle e versionamento de código fonte, como o `GitHub <https://github.com/>`_. O `GitHub <https://github.com/>`_ é uma plataforma que oferece aos desenvolvedores a possibilidade de hospedar repositórios de código versionados através do sistema `git <https://git-scm.com/>`_ e com uma interface web amigável. Além disso, oferece diversas ferramentas para o desenvolvimento colaborativo. Essas ferramentas vão desde o controle de atividades (`issues <https://guides.github.com/features/issues/>`_), áreas de rascunho de código (`gist <https://help.github.com/en/github/writing-on-github/creating-gists>`_), disponibilização de páginas web (`github pages <https://pages.github.com/>`_), `wikis <https://guides.github.com/features/wikis/>`_, até a interface com sistemas de integração contínua. Um bom exemplo de uso de repositórios do GitHub para compartilhamento de Jupyter Notebooks pode ser encontrado na `Galeria de Jupyter Notebooks do projeto Brazil Data Cube <https://github.com/brazil-data-cube/code-gallery>`_.
 
 
 Neste curso, iremos discutir várias ferramentas que irão ajudar vocês nas práticas de Ciência Aberta. Esperamos que no futuro vocês consigam compartilhar suas pesquisas de maneira a facilitar a sua reprodutibilidade. Portanto, como mostrado na :numref:`Figura %s <visao-geral:fig:spectrum-reproducibility>`, esperamos contribuir para que cada vez mais as pesquisas desenvolvidas no INPE atendam os padrões denominados por Peng :cite:`peng:2011` de  **padrões de ouro**, com possibilidade de replicação completa.

@@ -1,21 +1,21 @@
 ..
-    This file is part of SER-347 Documentation.
-    Copyright 2020, Gilberto Queiroz and Thales Körting.
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
 
 
-.. _git_github:
+.. _sec_variados_git_github:
 
 git e GitHub
-------------
+============
 
 
 .. toctree::
     :maxdepth: 1
     :titlesonly:
 
-    ./git_definicao
-    ./github_definicao
-    ./git_comandos
+    ./git-github/git-definicao
+    ./git-github/github-definicao
+    ./git-github/git-comandos
 
 
 

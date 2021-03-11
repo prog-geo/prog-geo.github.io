@@ -1,9 +1,9 @@
 ..
-    This file is part of SER-347 Documentation.
-    Copyright 2020, Gilberto Queiroz and Thales Körting.
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
 
 
-.. _visao_geral:
+.. _cap_visao_geral:
 
 Visao Geral do Curso
 ====================

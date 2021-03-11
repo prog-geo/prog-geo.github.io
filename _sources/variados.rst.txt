@@ -1,7 +1,9 @@
 ..
-    This file is part of SER-347 Documentation.
-    Copyright 2020, Gilberto Queiroz and Thales Körting.
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
 
+
+.. _cap_variados:
 
 Tópicos Variados
 ================
@@ -10,6 +12,4 @@ Tópicos Variados
     :maxdepth: 1
     :titlesonly:
 
-    ./variados/json
-    ./variados/geojson
     ./variados/git_github

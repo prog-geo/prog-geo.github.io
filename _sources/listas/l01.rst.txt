@@ -1,26 +1,31 @@
 ..
-    This file is part of SER-347 Documentation.
-    Copyright 2020, Gilberto Queiroz and Thales Körting.
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
 
+
+.. _sec_listas_l01:
 
 Lista de Exercícios 01
 ======================
 
 
-**Exercício 01.** Leia o material da seção :ref:`git e GitHub <git_github>`.
+**Exercício 01.** O `GitHub <https://github.com/>`_ é uma plataforma que oferece a possibilidade de hospedar repositórios de código versionados através do sistema `git <https://git-scm.com/>`_, além de ferramentas para o desenvolvimento colaborativo. A :numref:`Seção %s <sec_variados_git_github>` apresenta uma visão geral desses sistemas. Siga as instruções dessa seção e crie sua conta no GitHub pois usaremos suas facilidades para hospedar o código desenvolvido ao longo do curso.
 
 
 **Exercício 02.** Siga os seguintes usuários do GitHub: `gilberto-queiroz <https://github.com/gilberto-queiroz>`_, `gqueiroz <https://github.com/gqueiroz>`_ e `tkorting <https://github.com/tkorting>`_.
 
 
-**Exercício 03.** Acesse o repositório https://github.com/prog-geo/ipynb e marque com uma estrela esse repositório para poder monitorá-lo.
+**Exercício 03.** Acesse o repositório https://github.com/prog-geo/ipynb e marque com uma estrela esse repositório para poder monitorá-lo. Neste repositório, os professores irão disponibilizar diversos Jupyter Notebooks de suporte ao curso.
 
 
-**Exercício 04.** Crie um repositório com alguns arquivos texto e envie o link desse repositório para os professores da disciplina, com um resumo da sequência de comandos ``git`` utilizados.
+**Exercício 04.** Crie um repositório experimental com alguns arquivos no formato texto e envie o endereço desse repositório para os professores da disciplina, com um resumo da sequência de comandos ``git`` utilizados no experimento.
 
 
-**Exercício 05.** Faça a leitura do seguinte artigo:
+**Exercício 05.** Faça a leitura dos seguintes artigos:
 
-    J. Hunter, F. Pérez and B. Granger, "Python: An Ecosystem for Scientific Computing" in Computing in Science & Engineering, vol. 13, no. 02, pp. 13-21, 2011. doi: 10.1109/MCSE.2010.119. :cite:`perez:2011`
+.. rst-class:: open
 
+- J. Hunter, F. Pérez and B. Granger. 2011. **Python: An Ecosystem for Scientific Computing**. *Computing in Science & Engineering*, vol. 13, no. 02, pp. 13-21. DOI: `10.1109/MCSE.2010.119 <https://doi.org/10.1109/MCSE.2010.119>`_. :cite:`perez:2011`
+
+- Carl Boettiger. 2015. An introduction to Docker for reproducible research. *SIGOPS Oper. Syst. Rev.* 49, 1 (January 2015), 71–79. DOI: `10.1145/2723872.2723882 <https://doi.org/10.1145/2723872.2723882>`_. :cite:`boettiger:2015`
 

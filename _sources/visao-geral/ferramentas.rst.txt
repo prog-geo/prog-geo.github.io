@@ -1,7 +1,9 @@
 ..
-    This file is part of SER-347 Documentation.
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
     Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
 
+
+.. _sec_visao_geral_ferramentas:
 
 Ferramentas
 ===========
@@ -37,7 +39,7 @@ Neste curso, recomendamos utilizar a distribuição Python da `Anaconda <https:/
 
 .. note::
 
-    As instruções de como instalar o pacote Anaconda encontram-se disponíveis :ref:`aqui <instalacao_anaconda>`.
+    As instruções de como instalar o pacote Anaconda encontram-se disponíveis :ref:`aqui <sec_instalacao_anaconda>`.
 
 
 IDE
@@ -114,7 +116,7 @@ Outra IDE gratuita e com diversos recursos é o `PyCharm <https://www.jetbrains.
 
 .. note::
 
-    As instruções de como instalar o Pycharm encontram-se disponíveis :ref:`aqui <instalacao_pycharm>`.
+    As instruções de como instalar o Pycharm encontram-se disponíveis :ref:`aqui <sec_instalacao_pycharm>`.
 
 .. note::
 
@@ -154,7 +156,7 @@ O Docker é uma tecnologia baseada em código aberto para criação de contêine
 
 .. note::
 
-    As instruções de como instalar o Docker encontram-se disponíveis :ref:`aqui <instalacao_docker>`.
+    As instruções de como instalar o Docker encontram-se disponíveis :ref:`aqui <sec_instalacao_docker>`.
 
 
 .. note::

@@ -1,10 +1,12 @@
 ..
-    This file is part of SER-347 Documentation.
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
     Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
 
 
 .. include:: ../def.rst
 
+
+.. _sec_visao_geral_monitoria:
 
 Monitoria
 =========
