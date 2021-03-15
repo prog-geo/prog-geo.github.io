@@ -38,7 +38,7 @@ Considere a seguinte expressão: :math:`5 * 2 + 3 / 4`. Qual o resultado dessa e
 
 - 3.25?
 
-    | ((5 * 2) + 3) / 4) → 3.25
+    | ((5 * 2) + 3) / 4 → 3.25
 
 - 10.75?
 
