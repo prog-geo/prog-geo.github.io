@@ -49,7 +49,7 @@
     
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Buscar" href="../search.html" />
-    <link rel="next" title="2.2. Objetos, Tipos de Dados, Operadores, Expressões, Tipos Numéricos, Variáveis" href="tipos_dados.html" />
+    <link rel="next" title="2.2. Tipos de Dados" href="tipos_dados.html" />
     <link rel="prev" title="2. Introdução à Programação com a Linguagem Python" href="../introducao-programacao.html" /> 
 </head>
 
@@ -115,18 +115,14 @@
 <li class="toctree-l3"><a class="reference internal" href="#a-linguagem-de-programacao-python">2.1.3. A Linguagem de Programação Python</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#o-primeiro-programa-em-python">2.1.4. O primeiro programa em Python</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#conversao-entre-escalas-de-temperatura-of-rightarrow-oc">2.1.5. Conversão entre Escalas de Temperatura: <span class="math notranslate nohighlight">\(^oF \, \rightarrow \, ^oC\)</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#consideracoes-finais">2.1.6. Considerações Finais</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="tipos_dados.html">2.2. Objetos, Tipos de Dados, Operadores, Expressões, Tipos Numéricos, Variáveis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tipo_logico.html">2.3. Tipo Lógico, Operadores Lógicos, Operadores Relacionais, Expressões Lógicas e Estruturas Condicionais</a></li>
-<li class="toctree-l2"><a class="reference internal" href="estruturas_repeticao.html">2.4. Estruturas de Repetição</a></li>
-<li class="toctree-l2"><a class="reference internal" href="strings.html">2.5. Strings, Operações com Strings e Formatação de Strings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sequencias.html">2.6. Sequências (Strings, Tuplas e Listas)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lacos_for_seq.html">2.7. Laços do tipo for e Sequências</a></li>
-<li class="toctree-l2"><a class="reference internal" href="break_continue.html">2.8. Os Comandos <code class="docutils literal notranslate"><span class="pre">break</span></code> e <code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="dicionarios.html">2.9. Dicionários</a></li>
-<li class="toctree-l2"><a class="reference internal" href="funcoes.html">2.10. Funções</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tipos_dados.html">2.2. Tipos de Dados</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tipos_numericos.html">2.3. Tipos Numéricos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressoes.html">2.4. Expressões</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chamada-funcoes.html">2.5. Chamada de Funções</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variaveis.html">2.6. Variáveis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comentarios.html">2.7. Comentários</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../variados.html">3. Tópicos Variados</a></li>
@@ -138,6 +134,10 @@
 <p class="caption"><span class="caption-text">Listas de Exercícios:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Informações Gerais:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../licenca.html">Licença</a></li>
 </ul>
 
             
@@ -202,7 +202,7 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="tipos_dados.html" class="btn btn-neutral float-right" title="2.2. Objetos, Tipos de Dados, Operadores, Expressões, Tipos Numéricos, Variáveis" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="tipos_dados.html" class="btn btn-neutral float-right" title="2.2. Tipos de Dados" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
       
       
         <a href="../introducao-programacao.html" class="btn btn-neutral float-left" title="2. Introdução à Programação com a Linguagem Python" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
@@ -215,7 +215,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="introducao">
-<h1><span class="section-number">2.1. </span>Introdução<a class="headerlink" href="#introducao" title="Link permanente para este título">¶</a></h1>
+<span id="sec-introducao-programacao-introducao"></span><h1><span class="section-number">2.1. </span>Introdução<a class="headerlink" href="#introducao" title="Link permanente para este título">¶</a></h1>
 <div class="epigrafe docutils container">
 <p>“Program construction consists of a sequence of refinement steps.” <br/> Niklaus Wirth <span id="id1">[<a class="reference internal" href="../referencias.html#id47">32</a>]</span></p>
 </div>
@@ -556,7 +556,7 @@ end Absmax
 <li><p>Instruções de controle do fluxo de execução do programa.</p></li>
 </ul>
 </li>
-<li><p>Nosso primeiro programa contém uma única instrução, que é chamada da função denominada <code class="docutils literal notranslate"><span class="pre">print</span></code>. Note que o nome dessa função encontra-se destacado em <em>marrom</em> no editor de texto do Google Colab. Isso indica que esse símbolo pertence à linguagem Python.</p></li>
+<li><p>Nosso primeiro programa contém uma única instrução, que é a chamada da função denominada <code class="docutils literal notranslate"><span class="pre">print</span></code>. Note que o nome dessa função encontra-se destacado em <em>marrom</em> no editor de texto do Google Colab. Isso indica que esse símbolo pertence à linguagem Python.</p></li>
 <li><p>Os parênteses que seguem após o nome da função delimitam a lista de argumentos ou valores para que a função realize sua computação.</p></li>
 <li><p>No caso do nosso programa, estamos passando um texto delimitado por aspas duplas, que é o texto que desejamos escrever na saída padrão do computador. A saída padrão, em geral, será a própria tela ou <em>display</em>.</p></li>
 </ul>
@@ -623,66 +623,6 @@ end Absmax
 <p>Repare no trecho de código acima que utilizamos a função denominada <code class="docutils literal notranslate"><span class="pre">int</span></code> para converter a sequência de caracteres retornada pela função <code class="docutils literal notranslate"><span class="pre">input</span></code> numa representação numérica do tipo inteiro.</p>
 </div>
 </div>
-<div class="section" id="consideracoes-finais">
-<h2><span class="section-number">2.1.6. </span>Considerações Finais<a class="headerlink" href="#consideracoes-finais" title="Link permanente para este título">¶</a></h2>
-<ul class="simple">
-<li><p>Nesta aula aprendemos o que é uma linguagem de programação de alto nível. A <a class="reference internal" href="#introd-prog-fig-lp-high-low"><span class="std std-numref">Figura 2.10</span></a> mostra a diferença entre uma linguagem de alto nível e uma linguagem de baixo nível.</p></li>
-</ul>
-<div class="align-center figure align-default" id="introd-prog-fig-lp-high-low">
-<a class="reference internal image-reference" href="../_images/alto-nivel-x-baixo-nivel.png"><img alt="Linguagens de Alto Nível x Linguagens de Baixo Nível" src="../_images/alto-nivel-x-baixo-nivel.png" style="width: 80%;" /></a>
-<p class="caption"><span class="caption-number">Figura 2.10 - </span><span class="caption-text">Linguagens de Alto Nível x Linguagens de Baixo Nível. <br/> <strong>Fonte:</strong> Schmalz <span id="id15">[<a class="reference internal" href="../referencias.html#id35">22</a>]</span>.</span><a class="headerlink" href="#introd-prog-fig-lp-high-low" title="Link Permanente para essa imagem">¶</a></p>
-</div>
-<ul class="open">
-<li><p>Utilizamos pela primeira vez um ambiente de computação interativa capaz de executar código em Python (Google Colab).</p></li>
-<li><p>Por convenção, programas Python possuem nomes com a extensão <code class="docutils literal notranslate"><span class="pre">.py</span></code>.</p></li>
-<li><p>Tivemos nosso primeiro contato com a criação de identificadores associados a objetos (valores string e números inteiros) e expressões (aritméticas) em Python.</p></li>
-<li><p>Python é uma linguagem de programação de alto nível e de propósito geral:</p>
-<blockquote>
-<div><ul class="open">
-<li><p>Suporta os paradigmas de programação Procedural e Orientada a Objetos.</p></li>
-<li><p>Possui algumas características/abstrações do paradigma funcional.</p></li>
-</ul>
-</div></blockquote>
-</li>
-<li><p>É muito comum escutarmos dizer que <em>“Python é uma linguagem de script”</em>:</p>
-<blockquote>
-<div><ul class="open">
-<li><p>Muitas pessoas usam o termo <em>script</em> ao invés de programa para se referir ao arquivo contendo código fonte em Python.</p></li>
-<li><p>Python também é muito usada para criação de <em>scripts</em> executados na  linha de comando (<em>shell</em>) para automação de tarefas como processamento de textos e execução de outros programas.</p></li>
-</ul>
-</div></blockquote>
-</li>
-</ul>
-<div class="historical-note admonition">
-<p class="admonition-title">Nota Histórica</p>
-<p>Ole-Johan Dahl e Kristen Nygaard (<a class="reference internal" href="#introd-prog-tbl-simula67"><span class="std std-numref">Tabela 2.5</span></a>) são considerados os pais da <strong>Programação Orientada a Objetos</strong> (POO). Nos anos 60, no Centro de Computação da Noruega, eles lideraram o desenvolvimento da família de linguagens de programação conhecida como <strong>SIMULA</strong>. A versão SIMULA 67 (1965-1968) introduziu uma nova abstração, a <strong>classe</strong> (<em>class</em>), como destacado no trecho do manual mostrado na <a class="reference internal" href="#introd-prog-tbl-simula67"><span class="std std-numref">Tabela 2.5</span></a>.</p>
-<table class="colwidths-given styled-table docutils align-center" id="introd-prog-tbl-simula67" style="width: 100%">
-<caption><span class="caption-number">Tabela 2.5 - </span><span class="caption-text">SIMULA 67. <br/> <strong>Fonte:</strong> Dahl et al. (1970) <span id="id16">[<a class="reference internal" href="../referencias.html#id7">6</a>]</span>.</span><a class="headerlink" href="#introd-prog-tbl-simula67" title="Link Permanente para essa tabela">¶</a></caption>
-<colgroup>
-<col style="width: 60%" />
-<col style="width: 40%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td class="center-align"><p><img alt="dahl-nygaard" src="../_images/dahl-nygaard.png" /></p>
-<p>Ole-Johan Dahl e Kristen Nygaard</p>
-</td>
-<td class="center-align"><p><img alt="simula-1" src="../_images/simula67-1.png" /></p></td>
-</tr>
-</tbody>
-</table>
-<table class="colwidths-given styled-table docutils align-center" style="width: 100%">
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td class="center-align"><p><img alt="simula-2" src="../_images/simula67-2.png" /></p></td>
-<td class="center-align"><p><img alt="simula-3" src="../_images/simula67-3.png" /></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
 </div>
 
 
@@ -691,7 +631,7 @@ end Absmax
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="tipos_dados.html" class="btn btn-neutral float-right" title="2.2. Objetos, Tipos de Dados, Operadores, Expressões, Tipos Numéricos, Variáveis" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="tipos_dados.html" class="btn btn-neutral float-right" title="2.2. Tipos de Dados" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="../introducao-programacao.html" class="btn btn-neutral float-left" title="2. Introdução à Programação com a Linguagem Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
     </div>
 

@@ -6,3 +6,7 @@
 .. |br| raw:: html
 
     <br/>
+
+
+.. role:: python(code)
+   :language: python

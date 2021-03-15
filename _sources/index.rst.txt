@@ -61,13 +61,11 @@ Na era do big data, os profissionais necessitam cada vez mais de conhecimentos e
     .. projetos
 
 
-.. .. toctree::
+.. toctree::
     :maxdepth: 1
     :caption: Informações Gerais:
 
-    .. sites
-    .. contato
-    .. licenca
+    licenca
 
 
 Índices e Tabelas

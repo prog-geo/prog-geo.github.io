@@ -6,6 +6,8 @@
 .. include:: ../def.rst
 
 
+.. _sec_introducao_programacao_introducao:
+
 Introdução
 ==========
 
@@ -425,7 +427,7 @@ Nesse primeiro programa, temos muitas coisas para discutir:
 
   - Instruções de controle do fluxo de execução do programa.
 
-- Nosso primeiro programa contém uma única instrução, que é chamada da função denominada ``print``. Note que o nome dessa função encontra-se destacado em *marrom* no editor de texto do Google Colab. Isso indica que esse símbolo pertence à linguagem Python.
+- Nosso primeiro programa contém uma única instrução, que é a chamada da função denominada ``print``. Note que o nome dessa função encontra-se destacado em *marrom* no editor de texto do Google Colab. Isso indica que esse símbolo pertence à linguagem Python.
 
 - Os parênteses que seguem após o nome da função delimitam a lista de argumentos ou valores para que a função realize sua computação.
 
@@ -511,90 +513,5 @@ Conversão entre Escalas de Temperatura: :math:`^oF \, \rightarrow \, ^oC`
 .. note::
 
     Repare no trecho de código acima que utilizamos a função denominada ``int`` para converter a sequência de caracteres retornada pela função ``input`` numa representação numérica do tipo inteiro.
-
-
-Considerações Finais
---------------------
-
-
-- Nesta aula aprendemos o que é uma linguagem de programação de alto nível. A :numref:`Figura %s <introd-prog:fig:lp-high-low>` mostra a diferença entre uma linguagem de alto nível e uma linguagem de baixo nível.
-
-
-.. figure:: ../img/introducao-programacao/alto-nivel-x-baixo-nivel.png
-    :alt: Linguagens de Alto Nível x Linguagens de Baixo Nível
-    :width: 80%
-    :figclass: align-center
-    :name: introd-prog:fig:lp-high-low
-
-    Linguagens de Alto Nível x Linguagens de Baixo Nível. |br| **Fonte:** Schmalz :cite:`schmalz:2021`.
-
-
-.. rst-class:: open
-
-- Utilizamos pela primeira vez um ambiente de computação interativa capaz de executar código em Python (Google Colab).
-
-- Por convenção, programas Python possuem nomes com a extensão ``.py``.
-
-- Tivemos nosso primeiro contato com a criação de identificadores associados a objetos (valores string e números inteiros) e expressões (aritméticas) em Python.
-
-- Python é uma linguagem de programação de alto nível e de propósito geral:
-
-    .. rst-class:: open
-
-    - Suporta os paradigmas de programação Procedural e Orientada a Objetos.
-
-    - Possui algumas características/abstrações do paradigma funcional.
-
-- É muito comum escutarmos dizer que *"Python é uma linguagem de script"*:
-
-    .. rst-class:: open
-
-    - Muitas pessoas usam o termo *script* ao invés de programa para se referir ao arquivo contendo código fonte em Python.
-
-    - Python também é muito usada para criação de *scripts* executados na  linha de comando (*shell*) para automação de tarefas como processamento de textos e execução de outros programas.
-
-
-.. admonition:: Nota Histórica
-    :class: historical-note
-
-    .. |simula-1| image:: ../img/introducao-programacao/simula67-1.png
-
-
-    .. |simula-2| image:: ../img/introducao-programacao/simula67-2.png
-
-
-    .. |simula-3| image:: ../img/introducao-programacao/simula67-3.png
-
-
-    .. |dahl-nygaard| image:: ../img/introducao-programacao/dahl-nygaard.png
-
-
-    Ole-Johan Dahl e Kristen Nygaard (:numref:`Tabela %s <introd-prog:tbl:simula67>`) são considerados os pais da **Programação Orientada a Objetos** (POO). Nos anos 60, no Centro de Computação da Noruega, eles lideraram o desenvolvimento da família de linguagens de programação conhecida como **SIMULA**. A versão SIMULA 67 (1965-1968) introduziu uma nova abstração, a **classe** (*class*), como destacado no trecho do manual mostrado na :numref:`Tabela %s <introd-prog:tbl:simula67>`.
-
-
-    .. table:: SIMULA 67. |br| **Fonte:** Dahl et al. (1970) :cite:`dahl:1970`.
-        :width: 100%
-        :widths: 60 40
-        :align: center
-        :column-alignment: center center
-        :name: introd-prog:tbl:simula67
-
-        +----------------------------------+------------+
-        | |dahl-nygaard|                   | |simula-1| |
-        |                                  |            |
-        | Ole-Johan Dahl e Kristen Nygaard |            |
-        +----------------------------------+------------+
-
-
-    .. table::
-        :width: 100%
-        :widths: 50 50
-        :align: center
-        :column-alignment: center center
-
-        +--------------+-------------+
-        | |simula-2|   | |simula-3|  |
-        +--------------+-------------+
-
 
 

@@ -67,11 +67,9 @@ Para escrever programas em alguma linguagem, é preciso conhecer um pouco de **l
 
     ./introducao-programacao/introducao
     ./introducao-programacao/tipos_dados
-    ./introducao-programacao/tipo_logico
-    ./introducao-programacao/estruturas_repeticao
-    ./introducao-programacao/strings
-    ./introducao-programacao/sequencias
-    ./introducao-programacao/lacos_for_seq
-    ./introducao-programacao/break_continue
-    ./introducao-programacao/dicionarios
-    ./introducao-programacao/funcoes
+    ./introducao-programacao/tipos_numericos
+    ./introducao-programacao/expressoes
+    ./introducao-programacao/chamada-funcoes
+    ./introducao-programacao/variaveis
+    ./introducao-programacao/comentarios
+

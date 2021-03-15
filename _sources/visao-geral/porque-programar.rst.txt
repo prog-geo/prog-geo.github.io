@@ -153,4 +153,22 @@ Neste curso, iremos discutir várias ferramentas que irão ajudar vocês nas pr�
     - **Replicação:** um estudo que chega às mesmas descobertas científicas de outro estudo, porém coletando novos dados (possivelmente com métodos diferentes) e aperfeiçoando as análises.
 
 
+.. note::
+
+    O `Grupo de Observação da Terra (GEO) <https://earthobservations.org/>`_ está desenvolvendo uma biblioteca digital para compartilhamento de aplicações baseada nas ideias e fundamentos de Ciância Aberta, conhecida por **GEO Knowledge Hub**. No vídeo abaixo, o time apresenta as ideias dessa biblioteca digital.
+
+    .. raw:: html
+
+        <iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/ZFXyU9FRtfc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+.. note::
+
+    Ainda sobre o **GEO Knowledge Hub**, o próximo vídeo apresenta uma das aplicações desenvolvida pelo time do projeto **Brazil Data Cube**, que será compartilhada nessa biblioteca digital.
+
+    .. raw:: html
+
+        <iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/DteS_1yTojw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 .. Este é um termo frequentemente definido como um conjunto de outros termos que envolvem movimentos a favor de remover as barreiras para o compartilhamento de recursos, resultados, métodos, ferramentas, dados, publicações, etc.

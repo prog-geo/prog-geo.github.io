@@ -1,0 +1,76 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../def.rst
+
+
+.. _sec_introducao_programacao_expressoes:
+
+Expressões
+==========
+
+
+Através da combinação das operações e operandos, podemos criar expressões, como as expressões matemáticas convencionais:
+
+
+.. figure:: ../img/introducao-programacao/expressao.png
+    :alt: Expressão
+    :figclass: align-center
+
+
+Uma expressão deve resultar em um valor de um certo tipo:
+
+
+.. figure:: ../img/introducao-programacao/expressao-explicacao.png
+    :alt: Expressão
+    :figclass: align-center
+
+
+Ordem de Avaliação de Expressões
+--------------------------------
+
+
+Considere a seguinte expressão: :math:`5 * 2 + 3 / 4`. Qual o resultado dessa expressão?
+
+.. rst-class:: open
+
+- 3.25?
+
+    | ((5 * 2) + 3) / 4 → 3.25
+
+- 10.75?
+
+    | (5 * 2) + (3 / 4) → 10.75
+
+- **Por quê?**
+
+
+Quando uma expressão contém mais de dois **operadores**, a ordem em que eles são avaliados é significativa. Por isso, existe uma convenção bem definida da **precedência de cada operador**. No caso das operações aritméticas, a prioridade é a seguinte:
+
+.. rst-class:: open
+
+- multiplicação, divisão, potenciação e resto da divisão;
+
+- adição e subtração.
+
+
+Assim como na matemática, podemos usar parênteses para controlar essa prioridade.
+
+
+Além das regras de precedência, temos também a ordem de aplicação. Vários operadores são **infixos**, isto é, temos um literal ou variável ou expressão, seguido do operador, seguido por outro literal ou variável ou expressão.
+
+
+Nas linguagens de programação, vários operadores possuem uma associatividade da esquerda para direita.
+
+
+.. note::
+
+    Também podemos usar a função ``type`` para descobrir o tipo de uma expressão:
+
+
+    .. code-block:: python
+
+        >>> type(5 * 2 + 3 / 4)
+        <class 'float'>

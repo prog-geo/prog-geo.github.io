@@ -13,3 +13,4 @@ Tópicos Variados
     :titlesonly:
 
     ./variados/git_github
+    ./variados/terminal-python
