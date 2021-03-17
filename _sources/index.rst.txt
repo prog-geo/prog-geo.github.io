@@ -68,6 +68,13 @@ Na era do big data, os profissionais necessitam cada vez mais de conhecimentos e
     licenca
 
 
+.. toctree::
+    :maxdepth: 1
+    :caption: Agradecimentos:
+
+    agradecimentos
+
+
 Índices e Tabelas
 =================
 

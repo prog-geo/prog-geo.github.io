@@ -70,7 +70,7 @@ Por que a Linguagem Python?
 
 - Linguagem simples de aprender e usar.
 
-- Por ser uma linguagem interpretada facilita seu uso por iniciantes na arte de programação.
+- Por ser uma linguagem interpretada, facilita seu uso por iniciantes na arte de programação.
 
 - Existe um grande número de bibliotecas disponíveis como software livre:
 

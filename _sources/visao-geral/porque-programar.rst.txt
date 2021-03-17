@@ -155,7 +155,7 @@ Neste curso, iremos discutir várias ferramentas que irão ajudar vocês nas pr�
 
 .. note::
 
-    O `Grupo de Observação da Terra (GEO) <https://earthobservations.org/>`_ está desenvolvendo uma biblioteca digital para compartilhamento de aplicações baseada nas ideias e fundamentos de Ciância Aberta, conhecida por **GEO Knowledge Hub**. No vídeo abaixo, o time apresenta as ideias dessa biblioteca digital.
+    O `Grupo de Observação da Terra (GEO) <https://earthobservations.org/>`_ está desenvolvendo uma biblioteca digital para compartilhamento de aplicações baseada nas ideias e fundamentos de Ciência Aberta, conhecida por **GEO Knowledge Hub**. No vídeo abaixo, o time apresenta as ideias dessa biblioteca digital.
 
     .. raw:: html
 

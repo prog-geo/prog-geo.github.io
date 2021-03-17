@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.7. Comentários &mdash; SER-347/CAP-419</title>
+  <title>2.9. Operadores Relacionais &mdash; SER-347/CAP-419</title>
   
 
   
@@ -27,7 +27,7 @@
   
 
   
-    <link rel="canonical" href="https://prog-geo.github.io/introducao-programacao/comentarios.html" />
+    <link rel="canonical" href="https://prog-geo.github.io/introducao-programacao/op-relacionais.html" />
 
   
   <!--[if lt IE 9]>
@@ -48,8 +48,8 @@
     
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Buscar" href="../search.html" />
-    <link rel="next" title="2.8. Tipo Lógico" href="tipo-logico.html" />
-    <link rel="prev" title="2.6. Variáveis" href="variaveis.html" /> 
+    <link rel="next" title="2.10. Expressões Lógicas" href="expressoes-logicas.html" />
+    <link rel="prev" title="2.8. Tipo Lógico" href="tipo-logico.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -114,9 +114,9 @@
 <li class="toctree-l2"><a class="reference internal" href="expressoes.html">2.4. Expressões</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chamada-funcoes.html">2.5. Chamada de Funções</a></li>
 <li class="toctree-l2"><a class="reference internal" href="variaveis.html">2.6. Variáveis</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2.7. Comentários</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comentarios.html">2.7. Comentários</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tipo-logico.html">2.8. Tipo Lógico</a></li>
-<li class="toctree-l2"><a class="reference internal" href="op-relacionais.html">2.9. Operadores Relacionais</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.9. Operadores Relacionais</a></li>
 <li class="toctree-l2"><a class="reference internal" href="expressoes-logicas.html">2.10. Expressões Lógicas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="estruturas-condicionais.html">2.11. Estruturas Condicionais</a></li>
 <li class="toctree-l2"><a class="reference internal" href="exemplos.html">2.12. Exemplos</a></li>
@@ -189,7 +189,7 @@
         
           <li><a href="../introducao-programacao.html"><span class="section-number">2. </span>Introdução à Programação com a Linguagem Python</a> &raquo;</li>
         
-      <li><span class="section-number">2.7. </span>Comentários</li>
+      <li><span class="section-number">2.9. </span>Operadores Relacionais</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -203,10 +203,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="tipo-logico.html" class="btn btn-neutral float-right" title="2.8. Tipo Lógico" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="expressoes-logicas.html" class="btn btn-neutral float-right" title="2.10. Expressões Lógicas" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
       
       
-        <a href="variaveis.html" class="btn btn-neutral float-left" title="2.6. Variáveis" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="tipo-logico.html" class="btn btn-neutral float-left" title="2.8. Tipo Lógico" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
       
   </div>
   
@@ -215,43 +215,93 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="comentarios">
-<span id="sec-introducao-programacao-comentarios"></span><h1><span class="section-number">2.7. </span>Comentários<a class="headerlink" href="#comentarios" title="Link permanente para este título">¶</a></h1>
-<p>Comentários são parte importante de qualquer programa, não sendo consideradas instruções a serem executadas. Servem apenas ao propósito de documentar o código fonte do programa.</p>
-<div class="admonition note">
-<p class="admonition-title">Nota</p>
-<p>Em Python, há uma notação especial para documentação de funções e classes. Discutiremos esse tópico mais adiante no curso, quando apresentarmos o conceito de <strong>funções</strong>.</p>
-</div>
-<p>O <a class="reference internal" href="#introd-prog-code-ndvi"><span class="std std-numref">Trecho de Código 2.6</span></a> mostra um exemplo de uso dos comentários para explicar as seções de um código que realiza o cálculo do NDVI:</p>
-<div class="literal-block-wrapper docutils container" id="introd-prog-code-ndvi">
-<div class="code-block-caption"><span class="caption-number">Trecho de Código 2.6 - </span><span class="caption-text">Calculando o NDVI.</span><a class="headerlink" href="#introd-prog-code-ndvi" title="Link Permanente para esse código">¶</a></div>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># definir valores de NIR e Red</span>
-<span class="n">NIR</span> <span class="o">=</span> <span class="mf">0.5</span>
-<span class="n">Red</span> <span class="o">=</span> <span class="mf">0.3</span>
-
-<span class="c1"># mostrar dados de entrada na tela</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NIR:&quot;</span><span class="p">,</span> <span class="n">NIR</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Red:&quot;</span><span class="p">,</span> <span class="n">Red</span><span class="p">)</span>
-
-<span class="c1"># calcular NDVI</span>
-<span class="n">NDVI</span> <span class="o">=</span> <span class="p">(</span><span class="n">NIR</span> <span class="o">-</span> <span class="n">Red</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">NIR</span> <span class="o">+</span> <span class="n">Red</span><span class="p">)</span>
-
-<span class="c1"># mostrar resultado na tela</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NDVI:&quot;</span><span class="p">,</span> <span class="n">NDVI</span><span class="p">)</span>
+  <div class="section" id="operadores-relacionais">
+<span id="sec-introducao-programacao-op-relacionais"></span><h1><span class="section-number">2.9. </span>Operadores Relacionais<a class="headerlink" href="#operadores-relacionais" title="Link permanente para este título">¶</a></h1>
+<p>Os <strong>operadores relacionais</strong> ou <strong>operadores de comparação</strong> permitem comparar dois valores e produzir um valor booleano como resultado. Esse tipo de operador, juntamente com os operadores lógicos, são essenciais nos <strong>comandos condicionais</strong> e nos <strong>testes condicionais dos laços de repetição</strong>. A <a class="reference internal" href="#introd-prog-tbl-op-relacionais"><span class="std std-numref">Tabela 2.10</span></a> apresenta a notação desses operadores e seus significados.</p>
+<table class="styled-table docutils align-center" id="introd-prog-tbl-op-relacionais">
+<caption><span class="caption-number">Tabela 2.10 - </span><span class="caption-text">Operadores relacionais.</span><a class="headerlink" href="#introd-prog-tbl-op-relacionais" title="Link Permanente para essa tabela">¶</a></caption>
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 28%" />
+<col style="width: 28%" />
+<col style="width: 18%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="center-align head"><p>Operador</p></th>
+<th class="center-align head"><p>Nome</p></th>
+<th class="center-align head"><p>Expressão</p></th>
+<th class="left-align head"><p>Valor</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="center-align" rowspan="2"><p><code class="docutils literal notranslate"><span class="pre">==</span></code></p></td>
+<td class="left-align" rowspan="2"><p>igual</p></td>
+<td class="center-align"><p>5 == 4</p></td>
+<td class="left-align"><p>False</p></td>
+</tr>
+<tr class="row-odd"><td class="center-align"><p>5 == 5</p></td>
+<td class="left-align"><p>True</p></td>
+</tr>
+<tr class="row-even"><td class="center-align" rowspan="2"><p><code class="docutils literal notranslate"><span class="pre">!=</span></code></p></td>
+<td class="left-align" rowspan="2"><p>diferente</p></td>
+<td class="center-align"><p>5 != 4</p></td>
+<td class="left-align"><p>True</p></td>
+</tr>
+<tr class="row-odd"><td class="center-align"><p>5 != 5</p></td>
+<td class="left-align"><p>False</p></td>
+</tr>
+<tr class="row-even"><td class="center-align" rowspan="2"><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code></p></td>
+<td class="left-align" rowspan="2"><p>menor que</p></td>
+<td class="center-align"><p>5 &lt; 5</p></td>
+<td class="left-align"><p>False</p></td>
+</tr>
+<tr class="row-odd"><td class="center-align"><p>4 &lt; 5</p></td>
+<td class="left-align"><p>True</p></td>
+</tr>
+<tr class="row-even"><td class="center-align" rowspan="2"><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code></p></td>
+<td class="left-align" rowspan="2"><p>menor ou
+igual a</p></td>
+<td class="center-align"><p>5 &lt;= 5</p></td>
+<td class="left-align"><p>True</p></td>
+</tr>
+<tr class="row-odd"><td class="center-align"><p>6 &lt;= 5</p></td>
+<td class="left-align"><p>False</p></td>
+</tr>
+<tr class="row-even"><td class="center-align" rowspan="2"><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p></td>
+<td class="left-align" rowspan="2"><p>maior que</p></td>
+<td class="center-align"><p>5 &gt; 4</p></td>
+<td class="left-align"><p>True</p></td>
+</tr>
+<tr class="row-odd"><td class="center-align"><p>4 &gt; 5</p></td>
+<td class="left-align"><p>False</p></td>
+</tr>
+<tr class="row-even"><td class="center-align" rowspan="2"><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code></p></td>
+<td class="left-align" rowspan="2"><p>maior ou
+igual a</p></td>
+<td class="center-align"><p>5 &gt;= 5</p></td>
+<td class="left-align"><p>True</p></td>
+</tr>
+<tr class="row-odd"><td class="center-align"><p>5 &gt;= 6</p></td>
+<td class="left-align"><p>False</p></td>
+</tr>
+</tbody>
+</table>
+<p>Exemplos:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">5</span> <span class="o">&gt;</span> <span class="mf">4.1</span>
+<span class="go">True</span>
 </pre></div>
-</td></tr></table></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;Land&quot;</span> <span class="o">&lt;</span> <span class="s2">&quot;Landsat&quot;</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;Land Cover&quot;</span> <span class="o">&gt;</span> <span class="s2">&quot;Landsat&quot;</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">5</span> <span class="o">!=</span> <span class="mf">4.1</span>
+<span class="go">True</span>
+</pre></div>
 </div>
 </div>
 
@@ -261,8 +311,8 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="tipo-logico.html" class="btn btn-neutral float-right" title="2.8. Tipo Lógico" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="variaveis.html" class="btn btn-neutral float-left" title="2.6. Variáveis" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="expressoes-logicas.html" class="btn btn-neutral float-right" title="2.10. Expressões Lógicas" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="tipo-logico.html" class="btn btn-neutral float-left" title="2.8. Tipo Lógico" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
     </div>
 
   <hr/>

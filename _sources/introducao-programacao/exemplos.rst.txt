@@ -1,0 +1,40 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../def.rst
+
+
+.. _sec_introducao_programacao_exemplos:
+
+Exemplos
+========
+
+
+**Exemplo 1.** Uma reta pode ser representada por uma equação geral da seguinte forma:
+
+
+.. math::
+    :label: introd-prog:math:equacao-reta
+
+    ax + by + c = 0
+
+
+Considere a reta com os seguintes coeficientes: :math:`a = 3`, :math:`b = -2` e :math:`c = -6` (:numref:`Figura %s <introd-prog:fig:eq-reta>`). Faça um programa que pergunte ao usuário os valores de um par de coordenadas :math:`(x,y)`, aplique a :eq:`introd-prog:math:equacao-reta` e verifique o resultado.
+
+
+.. figure:: ../img/introducao-programacao/eq-reta.png
+    :alt: Ilustração de uma reta com coeficientes: a = 3, b = -2 e c = -6
+    :width: 60%
+    :figclass: align-center
+    :name: introd-prog:fig:eq-reta
+
+    Ilustração de uma reta com coeficientes: :math:`a = 3`, :math:`b = -2` e :math:`c = -6`.
+
+
+-----
+
+
+**Exemplo 2.** Altere o programa da equação geral de uma reta para incluir um teste condicional que escreva na tela a mensagem "Sobre a Reta", caso o ponto informado esteja sobre a reta; caso o ponto encontre-se acima da reta, deverá ser escrita a mensagem "Acima da Reta"; e, caso o ponto encontra-se abaixo da reta, deverá ser escrita a mensagem "Abaixo da Reta".
+

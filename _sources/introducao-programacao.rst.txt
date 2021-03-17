@@ -66,10 +66,15 @@ Para escrever programas em alguma linguagem, é preciso conhecer um pouco de **l
     :caption: Tópicos
 
     ./introducao-programacao/introducao
-    ./introducao-programacao/tipos_dados
-    ./introducao-programacao/tipos_numericos
+    ./introducao-programacao/tipos-dados
+    ./introducao-programacao/tipos-numericos
     ./introducao-programacao/expressoes
     ./introducao-programacao/chamada-funcoes
     ./introducao-programacao/variaveis
     ./introducao-programacao/comentarios
+    ./introducao-programacao/tipo-logico.rst
+    ./introducao-programacao/op-relacionais.rst
+    ./introducao-programacao/expressoes-logicas.rst
+    ./introducao-programacao/estruturas-condicionais.rst
+    ./introducao-programacao/exemplos.rst
 

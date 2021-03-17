@@ -358,7 +358,7 @@ O primeiro programa em Python
 -----------------------------
 
 
-Vamos começar por uma tradição na computação que é a criação de um programa que escreve na saída padrâo, isto é, na tela do computador, a mensagem ``Olá Mundo!``. Para isso, vamos ao `Google Colab <https://colab.research.google.com/notebooks/intro.ipynb>`_.
+Vamos começar por uma tradição na computação que é a criação de um programa que escreve na saída padrão, isto é, na tela do computador, a mensagem ``Olá Mundo!``. Para isso, vamos ao `Google Colab <https://colab.research.google.com/notebooks/intro.ipynb>`_.
 
 
 .. figure:: ../img/introducao-programacao/google-colab.png

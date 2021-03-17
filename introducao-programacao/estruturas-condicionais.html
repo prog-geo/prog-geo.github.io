@@ -1,0 +1,410 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="pt-BR" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>2.11. Estruturas Condicionais &mdash; SER-347/CAP-419</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/table_styling.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/prog-geo.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+    <link rel="canonical" href="https://prog-geo.github.io/introducao-programacao/estruturas-condicionais.html" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Buscar" href="../search.html" />
+    <link rel="next" title="2.12. Exemplos" href="exemplos.html" />
+    <link rel="prev" title="2.10. Expressões Lógicas" href="expressoes-logicas.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SER-347/CAP-419
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Pesquisar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introdução à Programação com Dados Geoespaciais</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Visão Geral do Curso:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../visao-geral.html">Visao Geral do Curso</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aulas:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../instalacao.html">1. Instalando e Configurando o Ambiente de Programação</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../introducao-programacao.html">2. Introdução à Programação com a Linguagem Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introducao.html">2.1. Introdução</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tipos-dados.html">2.2. Tipos de Dados</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tipos-numericos.html">2.3. Tipos Numéricos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressoes.html">2.4. Expressões</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chamada-funcoes.html">2.5. Chamada de Funções</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variaveis.html">2.6. Variáveis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comentarios.html">2.7. Comentários</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tipo-logico.html">2.8. Tipo Lógico</a></li>
+<li class="toctree-l2"><a class="reference internal" href="op-relacionais.html">2.9. Operadores Relacionais</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressoes-logicas.html">2.10. Expressões Lógicas</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.11. Estruturas Condicionais</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#estrutura-condicional-simples">2.11.1. Estrutura Condicional Simples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#estrutura-condicional-composta">2.11.2. Estrutura Condicional Composta</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#comandos-condicionais-encadeados">2.11.3. Comandos Condicionais Encadeados</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exemplo">2.11.4. Exemplo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="exemplos.html">2.12. Exemplos</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../variados.html">3. Tópicos Variados</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Referências Bibliográficas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../referencias.html">Referências Bibliográficas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Listas de Exercícios:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Informações Gerais:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../licenca.html">Licença</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Agradecimentos:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../agradecimentos.html">Agradecimentos</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SER-347/CAP-419</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../introducao-programacao.html"><span class="section-number">2. </span>Introdução à Programação com a Linguagem Python</a> &raquo;</li>
+        
+      <li><span class="section-number">2.11. </span>Estruturas Condicionais</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="exemplos.html" class="btn btn-neutral float-right" title="2.12. Exemplos" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="expressoes-logicas.html" class="btn btn-neutral float-left" title="2.10. Expressões Lógicas" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="estruturas-condicionais">
+<span id="sec-introducao-programacao-estruturas-condicionais"></span><h1><span class="section-number">2.11. </span>Estruturas Condicionais<a class="headerlink" href="#estruturas-condicionais" title="Link permanente para este título">¶</a></h1>
+<p>As <strong>estruturas condicionais</strong> ou <strong>comandos condicionais</strong> permitem alterar a sequência de execução de um programa dependendo do resultado de uma <strong>expressão lógica</strong> (<a class="reference internal" href="#introd-prog-fig-estrutura-condiconal"><span class="std std-numref">Figura 2.11</span></a>).</p>
+<div class="align-center figure align-default" id="introd-prog-fig-estrutura-condiconal">
+<a class="reference internal image-reference" href="../_images/fluxograma-estrutura-condicional.png"><img alt="Estrutura condicional" src="../_images/fluxograma-estrutura-condicional.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Figura 2.11 - </span><span class="caption-text">Estrutura condicional.</span><a class="headerlink" href="#introd-prog-fig-estrutura-condiconal" title="Link Permanente para essa imagem">¶</a></p>
+</div>
+<p>Em Python, usamos as palavras reservadas <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code> e <code class="docutils literal notranslate"><span class="pre">elif</span></code> para estruturar blocos de comandos (ou instruções) que organizam o fluxo de nossos programas.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Muitas vezes chamamos o comando <code class="docutils literal notranslate"><span class="pre">if</span></code> de <strong>cláusula</strong> <code class="docutils literal notranslate"><span class="pre">if</span></code>.</p>
+</div>
+<div class="section" id="estrutura-condicional-simples">
+<h2><span class="section-number">2.11.1. </span>Estrutura Condicional Simples<a class="headerlink" href="#estrutura-condicional-simples" title="Link permanente para este título">¶</a></h2>
+<p>Podemos estruturar um bloco utilizando um único comando <code class="docutils literal notranslate"><span class="pre">if</span></code>, como mostrado no <a class="reference internal" href="#introd-prog-code-single-if"><span class="std std-numref">Trecho de Código 2.7</span></a>. Neste exemplo, o comando da linha 04 somente será executado se um valor de NDVI maior que 0.3 e menor que 0.8 for lido na linha 01. O teste condicional associado ao comando <code class="docutils literal notranslate"><span class="pre">if</span></code>, na linha 03, tem o papel de verificar se a expressão é verdadeira ou falsa. No caso de ela ser verdadeira, o fluxo do programa, na linha 03, é desviado para dentro do bloco de comandos definido pelo comando <code class="docutils literal notranslate"><span class="pre">if</span></code>, que nesse caso contém apenas o comando da linha 04, e depois o fluxo continua sua execução a partir da primeira linha fora do comando <code class="docutils literal notranslate"><span class="pre">if</span></code> (nesse caso a linha 06). Se a expessão condicional da linha 03 for avaliada como falsa, o fluxo é desviado diretamente para a linha 06, que é a primeira linha fora da estrutura do comando <code class="docutils literal notranslate"><span class="pre">if</span></code>. A <a class="reference internal" href="#introd-prog-fig-if-single"><span class="std std-numref">Figura 2.12</span></a> ilustra o fluxo de execução desse programa.</p>
+<div class="literal-block-wrapper docutils container" id="introd-prog-code-single-if">
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 2.7 - </span><span class="caption-text">Exemplo de uso de um comando condicional simples.</span><a class="headerlink" href="#introd-prog-code-single-if" title="Link Permanente para esse código">¶</a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">ndvi</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;NDVI: &quot;</span><span class="p">))</span>
+
+<span class="hll"><span class="k">if</span> <span class="p">(</span><span class="n">ndvi</span> <span class="o">&gt;</span> <span class="mf">0.3</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">ndvi</span> <span class="o">&lt;</span> <span class="mf">0.8</span><span class="p">):</span>
+</span><span class="hll">    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;vegetação densa!&quot;</span><span class="p">)</span>
+</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NDVI:&quot;</span><span class="p">,</span> <span class="n">ndvi</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Atente-se para a <strong>indentação</strong> das instruções dentro do bloco <code class="docutils literal notranslate"><span class="pre">if</span></code> e o término da linha com o caracter <code class="docutils literal notranslate"><span class="pre">:</span></code>.</p>
+</div>
+<div class="align-center figure align-default" id="introd-prog-fig-if-single">
+<a class="reference internal image-reference" href="../_images/if-single.png"><img alt="Estrutura condicional simples" src="../_images/if-single.png" style="width: 60%;" /></a>
+<p class="caption"><span class="caption-number">Figura 2.12 - </span><span class="caption-text">Estrutura condicional simples.</span><a class="headerlink" href="#introd-prog-fig-if-single" title="Link Permanente para essa imagem">¶</a></p>
+</div>
+</div>
+<div class="section" id="estrutura-condicional-composta">
+<h2><span class="section-number">2.11.2. </span>Estrutura Condicional Composta<a class="headerlink" href="#estrutura-condicional-composta" title="Link permanente para este título">¶</a></h2>
+<p>Neste caso, além da sequência de comandos a ser executada caso a expressão lógica seja avaliada como verdadeira, temos também um conjunto de instruções que pode ser executado caso ela seja avaliada como falsa. O <a class="reference internal" href="#introd-prog-code-compound-if"><span class="std std-numref">Trecho de Código 2.8</span></a> inclui a palavra-chave <code class="docutils literal notranslate"><span class="pre">else</span></code>, definindo um bloco de comandos que será executado caso a expressão lógica da linha 03 seja avaliada como falsa. A <a class="reference internal" href="#introd-prog-fig-if-compound"><span class="std std-numref">Figura 2.13</span></a> ilustra o fluxo de execução desse programa.</p>
+<div class="literal-block-wrapper docutils container" id="introd-prog-code-compound-if">
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 2.8 - </span><span class="caption-text">Exemplo de uso de um comando condicional composto.</span><a class="headerlink" href="#introd-prog-code-compound-if" title="Link Permanente para esse código">¶</a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">ndvi</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;NDVI: &quot;</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">ndvi</span> <span class="o">&gt;</span> <span class="mf">0.3</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">ndvi</span> <span class="o">&lt;</span> <span class="mf">0.8</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;vegetação densa!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;pouca vegetação!&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NDVI:&quot;</span><span class="p">,</span> <span class="n">ndvi</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Atente-se para a <strong>indentação</strong> das instruções dentro dos blocos <code class="docutils literal notranslate"><span class="pre">if</span></code> e <code class="docutils literal notranslate"><span class="pre">else</span></code>, bem como o término dessas linhas com o caracter <code class="docutils literal notranslate"><span class="pre">:</span></code>.</p>
+</div>
+<div class="align-center figure align-default" id="introd-prog-fig-if-compound">
+<a class="reference internal image-reference" href="../_images/if-compound.png"><img alt="Estrutura condicional composta" src="../_images/if-compound.png" style="width: 60%;" /></a>
+<p class="caption"><span class="caption-number">Figura 2.13 - </span><span class="caption-text">Estrutura condicional composta.</span><a class="headerlink" href="#introd-prog-fig-if-compound" title="Link Permanente para essa imagem">¶</a></p>
+</div>
+</div>
+<div class="section" id="comandos-condicionais-encadeados">
+<h2><span class="section-number">2.11.3. </span>Comandos Condicionais Encadeados<a class="headerlink" href="#comandos-condicionais-encadeados" title="Link permanente para este título">¶</a></h2>
+<p>Podemos utilizar a palavra-chave <code class="docutils literal notranslate"><span class="pre">elif</span></code> para encadear uma estrutura condicional. O <a class="reference internal" href="#introd-prog-code-chained-if"><span class="std std-numref">Trecho de Código 2.9</span></a> inclui a palavra-chave <code class="docutils literal notranslate"><span class="pre">elif</span></code> para definir um novo teste condicional caso o teste da linha 03 seja falso. Caso os testes das linhas 03 e 05 sejam falsos, o bloco delimitado pela instrução <code class="docutils literal notranslate"><span class="pre">else</span></code> será executado.</p>
+<div class="literal-block-wrapper docutils container" id="introd-prog-code-chained-if">
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 2.9 - </span><span class="caption-text">Exemplo de uso de um comando condicional encadeado.</span><a class="headerlink" href="#introd-prog-code-chained-if" title="Link Permanente para esse código">¶</a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">ndvi</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;NDVI: &quot;</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">ndvi</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">ndvi</span> <span class="o">&gt;</span> <span class="mf">1.0</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NDVI fora do intervalo!&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="p">(</span><span class="n">ndvi</span> <span class="o">&gt;</span> <span class="mf">0.3</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">ndvi</span> <span class="o">&lt;</span> <span class="mf">0.8</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;vegetação densa!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;pouca vegetação!&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NDVI:&quot;</span><span class="p">,</span> <span class="n">ndvi</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>As estruturas condicionais podem ser <strong>aninhadas</strong>, isto é, podem ser instruções dentro das cláusulas <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code> e <code class="docutils literal notranslate"><span class="pre">elif</span></code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>A <strong>seção de código</strong>, ou <strong>bloco de comandos</strong> dentro das cláusulas <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code> e <code class="docutils literal notranslate"><span class="pre">elif</span></code> podem conter diversas instruções.</p>
+</div>
+</div>
+<div class="section" id="exemplo">
+<h2><span class="section-number">2.11.4. </span>Exemplo<a class="headerlink" href="#exemplo" title="Link permanente para este título">¶</a></h2>
+<p><strong>Problema:</strong> Escreva um programa que pergunte ao usuário o valor de um ano qualquer e que o informe se o ano é ou não bissexto.</p>
+<p><strong>Solução:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ano</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ano: &quot;</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">ano</span> <span class="o">%</span> <span class="mi">400</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;É bissexto!&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">ano</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Não é bissexto!&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">ano</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;É bissexto!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Não é bissexto!&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fim!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Este problema foi introduzido na <a class="reference internal" href="expressoes-logicas.html#sec-introducao-programacao-expressoes-logicas"><span class="std std-numref">Seção 2.10</span></a>.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="exemplos.html" class="btn btn-neutral float-right" title="2.12. Exemplos" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="expressoes-logicas.html" class="btn btn-neutral float-left" title="2.10. Expressões Lógicas" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-165908761-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

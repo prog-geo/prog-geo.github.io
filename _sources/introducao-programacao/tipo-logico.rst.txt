@@ -1,0 +1,135 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../def.rst
+
+
+.. _sec_introducao_programacao_tipo_logico:
+
+Tipo Lógico
+===========
+
+
+``bool``
+--------
+
+
+O tipo ``bool`` é usado para representar valores **booleanos** ou **lógicos**. Este tipo possui apenas dois valores possíveis: ``True`` (verdadeiro) ou ``False`` (falso).
+
+
+.. note::
+
+    Podemos obter o tipo de um valor através da função ``type``:
+
+
+    .. code-block:: python
+
+        >>> type(True)
+        <type 'bool'>
+
+
+    .. code-block:: python
+
+        >>> type(False)
+        <type 'bool'>
+
+
+Operadores Lógicos
+------------------
+
+
+As operações usuais sobre os tipos booleanos são conhecidas como **operações lógicas**. Os principais operadores lógicos são:
+
+.. rst-class:: open
+
+- ``and``: o **e lógico** (conjunção) opera em dois valores (lógicos), também chamados de **proposições**, e produz o valor verdadeiro somente se os dois operandos são verdadeiros (:numref:`Tabela %s <introd-prog:tbl:op-logico-and>`).
+
+- ``or``: o **ou lógico** (disjunção) opera em dois valores (lógicos), também chamados de **proposições**, e produz o valor verdadeiro se pelo menos um de seus operandos for verdadeiro (:numref:`Tabela %s <introd-prog:tbl:op-logico-or>`).
+
+- ``not``: a negação opera em um único valor (lógico), também chamado de **proposição**, e produz o valor verdadeiro se o operando for falso, ou falso caso o operando seja verdadeiro (:numref:`Tabela %s <introd-prog:tbl:op-logico-not>`).
+
+
+.. table:: Tabela verdade do operador ``and``.
+    :width: 50%
+    :align: center
+    :header-alignment: center center center
+    :column-alignment: center left center
+    :name: introd-prog:tbl:op-logico-and
+
+    +-----------+-----------+--------------------+
+    | :math:`p` | :math:`q` | :math:`p \wedge q` |
+    +===========+===========+====================+
+    | True      | True      | True               |
+    +-----------+-----------+--------------------+
+    | True      | False     | False              |
+    +-----------+-----------+--------------------+
+    | False     | True      | False              |
+    +-----------+-----------+--------------------+
+    | False     | False     | False              |
+    +-----------+-----------+--------------------+
+
+
+.. table:: Tabela verdade do operador ``or``.
+    :width: 50%
+    :align: center
+    :header-alignment: center center center
+    :column-alignment: center left center
+    :name: introd-prog:tbl:op-logico-or
+
+    +-----------+-----------+------------------+
+    | :math:`p` | :math:`q` | :math:`p \vee q` |
+    +===========+===========+==================+
+    | True      | True      | True             |
+    +-----------+-----------+------------------+
+    | True      | False     | True             |
+    +-----------+-----------+------------------+
+    | False     | True      | True             |
+    +-----------+-----------+------------------+
+    | False     | False     | False            |
+    +-----------+-----------+------------------+
+
+
+.. table:: Tabela verdade do operador ``not``.
+    :width: 50%
+    :align: center
+    :header-alignment: center center center
+    :column-alignment: center left center
+    :name: introd-prog:tbl:op-logico-not
+
+    +-----------+----------------+
+    | :math:`p` | :math:`\neg p` |
+    +===========+================+
+    | True      | False          |
+    +-----------+----------------+
+    | False     | True           |
+    +-----------+----------------+
+
+
+Exemplos:
+
+
+.. code-block:: python
+
+    >>> print(False and True)
+
+
+.. code-block:: python
+
+    >>> print(False or True)
+
+
+.. code-block:: python
+
+    >>> print(not True)
+
+
+.. code-block:: python
+
+    >>> print(not False)
+
+
+.. note::
+
+    Os **valores e operadores lógicos** são essenciais nos **comandos condicionais** e nos **testes condicionais dos laços de repetição**.

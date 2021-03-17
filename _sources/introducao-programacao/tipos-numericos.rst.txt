@@ -1,0 +1,119 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../def.rst
+
+
+.. _sec_introducao_programacao_tipos_numericos:
+
+Tipos Numéricos
+===============
+
+
+``int``
+-------
+
+
+O tipo **int** é capaz de representar números inteiros. Em Python 3, esse tipo possui precisão "infinita".
+
+
+Exemplo de notação:
+
+
+.. code-block:: python
+
+    >>> 1003
+    1003
+
+    >>> 9223372036854775808
+    9223372036854775808
+
+
+``float``
+---------
+
+
+O tipo **float**, ou **ponto flutuante**, é capaz de representar números reais com uma certa precisão numérica (64-bits). Um número em ponto flutuante pode ser expresso da seguinte maneira:
+
+
+.. code-block:: python
+
+    >>> 5.1
+    5.1
+
+    >>> 5.
+    5.0
+
+    >>> 5.2e12
+    5200000000000.0
+
+
+Outros Tipos Numéricos
+----------------------
+
+.. rst-class:: open
+
+- **complex:** números complexos.
+
+- **fractions:** racionais.
+
+- **decimal:** números em ponto flutuante com precisão definida pelo usuário.
+
+
+Operações Aritméticas
+---------------------
+
+
+Para cada tipo de dado, existe um conjunto de operadores disponíveis. No caso das operações aritméticas, para os tipos numéricos, os símbolos utilizados são muito semelhantes aos que usamos na matemática (:numref:`Tabela %s <introd-prog:tbl:op-aritmeticas>`):
+
+
+.. table:: Operadores aritméticos básicos.
+    :align: center
+    :header-alignment: center left center center
+    :column-alignment: center left center center
+    :name: introd-prog:tbl:op-aritmeticas
+
+    +----------+------------------+------------------+-------+
+    | Operador | Nome             | Expressão        | Valor |
+    +==========+==================+==================+=======+
+    | ``+``    | soma             | :python:`5 + 8`  | 13    |
+    +----------+------------------+------------------+-------+
+    | ``-``    | subtração        | :python:`3 - 2`  | 1     |
+    +----------+------------------+------------------+-------+
+    | ``*``    | multiplicação    | :python:`3 * 4`  | 12    |
+    +----------+------------------+------------------+-------+
+    | ``/``    | divisão          | :python:`6 / 4`  | 1.5   |
+    +----------+------------------+------------------+-------+
+    | ``%``    | resto da divisão | :python:`6 % 4`  | 2     |
+    +----------+------------------+------------------+-------+
+    | ``**``   | potenciação      | :python:`2 ** 4` | 16    |
+    +----------+------------------+------------------+-------+
+
+
+Exemplos:
+
+
+.. code-block:: python
+
+    >>> 5 + 2       # adição
+    7
+
+    >>> 5 - 2       # subtração
+    3
+
+    >>> 5 * 2       # multiplicação
+    10
+
+    >>> 5 / 2       # divisão
+    2.5
+
+    >>> 5 // 2      # parte inteira da divisão
+    2
+
+    >>> 5 % 2       # resto da divisão
+    1
+
+    >>> 5 ** 2      # potenciação
+    25
