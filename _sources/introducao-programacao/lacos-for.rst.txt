@@ -3,5 +3,6 @@
     Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
 
 
-Sequências
-==========
+Laços do tipo for
+=================
+

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.4. Expressões &mdash; SER-347/CAP-419</title>
+  <title>2.19. Os Comandos break e continue &mdash; SER-347/CAP-419</title>
   
 
   
@@ -27,7 +27,7 @@
   
 
   
-    <link rel="canonical" href="https://prog-geo.github.io/introducao-programacao/expressoes.html" />
+    <link rel="canonical" href="https://prog-geo.github.io/introducao-programacao/break-continue.html" />
 
   
   <!--[if lt IE 9]>
@@ -42,15 +42,14 @@
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script src="../_static/translations.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Buscar" href="../search.html" />
-    <link rel="next" title="2.5. Chamada de Funções" href="chamada-funcoes.html" />
-    <link rel="prev" title="2.3. Tipos Numéricos" href="tipos-numericos.html" /> 
+    <link rel="next" title="2.20. Funções" href="funcoes.html" />
+    <link rel="prev" title="2.18. Laços do tipo for" href="lacos-for.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -112,10 +111,7 @@
 <li class="toctree-l2"><a class="reference internal" href="introducao.html">2.1. Introdução</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tipos-dados.html">2.2. Tipos de Dados</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tipos-numericos.html">2.3. Tipos Numéricos</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2.4. Expressões</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#ordem-de-avaliacao-de-expressoes">2.4.1. Ordem de Avaliação de Expressões</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="expressoes.html">2.4. Expressões</a></li>
 <li class="toctree-l2"><a class="reference internal" href="chamada-funcoes.html">2.5. Chamada de Funções</a></li>
 <li class="toctree-l2"><a class="reference internal" href="variaveis.html">2.6. Variáveis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="comentarios.html">2.7. Comentários</a></li>
@@ -130,7 +126,7 @@
 <li class="toctree-l2"><a class="reference internal" href="dicionarios.html">2.16. Dicionários</a></li>
 <li class="toctree-l2"><a class="reference internal" href="formatacao-strings.html">2.17. Formatação de Strings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lacos-for.html">2.18. Laços do tipo for</a></li>
-<li class="toctree-l2"><a class="reference internal" href="break-continue.html">2.19. Os Comandos <code class="docutils literal notranslate"><span class="pre">break</span></code> e <code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.19. Os Comandos <code class="docutils literal notranslate"><span class="pre">break</span></code> e <code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="funcoes.html">2.20. Funções</a></li>
 <li class="toctree-l2"><a class="reference internal" href="consideracoes.html">2.21. Considerações Finais</a></li>
 <li class="toctree-l2"><a class="reference internal" href="exemplos.html">2.22. Exemplos</a></li>
@@ -203,7 +199,7 @@
         
           <li><a href="../introducao-programacao.html"><span class="section-number">2. </span>Introdução à Programação com a Linguagem Python</a> &raquo;</li>
         
-      <li><span class="section-number">2.4. </span>Expressões</li>
+      <li><span class="section-number">2.19. </span>Os Comandos <code class="docutils literal notranslate"><span class="pre">break</span></code> e <code class="docutils literal notranslate"><span class="pre">continue</span></code></li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -217,10 +213,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="chamada-funcoes.html" class="btn btn-neutral float-right" title="2.5. Chamada de Funções" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="funcoes.html" class="btn btn-neutral float-right" title="2.20. Funções" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
       
       
-        <a href="tipos-numericos.html" class="btn btn-neutral float-left" title="2.3. Tipos Numéricos" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="lacos-for.html" class="btn btn-neutral float-left" title="2.18. Laços do tipo for" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
       
   </div>
   
@@ -229,53 +225,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="expressoes">
-<span id="sec-introducao-programacao-expressoes"></span><h1><span class="section-number">2.4. </span>Expressões<a class="headerlink" href="#expressoes" title="Link permanente para este título">¶</a></h1>
-<p>Através da combinação das operações e operandos, podemos criar expressões, como as expressões matemáticas convencionais:</p>
-<div class="align-center figure align-default">
-<img alt="Expressão" src="../_images/expressao.png" />
-</div>
-<p>Uma expressão deve resultar em um valor de um certo tipo:</p>
-<div class="align-center figure align-default">
-<img alt="Expressão" src="../_images/expressao-explicacao.png" />
-</div>
-<div class="section" id="ordem-de-avaliacao-de-expressoes">
-<h2><span class="section-number">2.4.1. </span>Ordem de Avaliação de Expressões<a class="headerlink" href="#ordem-de-avaliacao-de-expressoes" title="Link permanente para este título">¶</a></h2>
-<p>Considere a seguinte expressão: <span class="math notranslate nohighlight">\(5 * 2 + 3 / 4\)</span>. Qual o resultado dessa expressão?</p>
-<ul class="open">
-<li><p>3.25?</p>
-<blockquote>
-<div><div class="line-block">
-<div class="line">((5 * 2) + 3) / 4 → 3.25</div>
-</div>
-</div></blockquote>
-</li>
-<li><p>10.75?</p>
-<blockquote>
-<div><div class="line-block">
-<div class="line">(5 * 2) + (3 / 4) → 10.75</div>
-</div>
-</div></blockquote>
-</li>
-<li><p><strong>Por quê?</strong></p></li>
-</ul>
-<p>Quando uma expressão contém mais de dois <strong>operadores</strong>, a ordem em que eles são avaliados é significativa. Por isso, existe uma convenção bem definida da <strong>precedência de cada operador</strong>. No caso das operações aritméticas, a prioridade é a seguinte:</p>
-<ul class="open">
-<li><p>multiplicação, divisão, potenciação e resto da divisão;</p></li>
-<li><p>adição e subtração.</p></li>
-</ul>
-<p>Assim como na matemática, podemos usar parênteses para controlar essa prioridade.</p>
-<p>Além das regras de precedência, temos também a ordem de aplicação. Vários operadores são <strong>infixos</strong>, isto é, temos um literal ou variável ou expressão, seguido do operador, seguido por outro literal ou variável ou expressão.</p>
-<p>Nas linguagens de programação, vários operadores possuem uma associatividade da esquerda para direita.</p>
-<div class="admonition note">
-<p class="admonition-title">Nota</p>
-<p>Também podemos usar a função <code class="docutils literal notranslate"><span class="pre">type</span></code> para descobrir o tipo de uma expressão:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="mi">5</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">4</span><span class="p">)</span>
-<span class="go">&lt;class &#39;float&#39;&gt;</span>
-</pre></div>
-</div>
-</div>
-</div>
+  <div class="section" id="os-comandos-break-e-continue">
+<h1><span class="section-number">2.19. </span>Os Comandos <code class="docutils literal notranslate"><span class="pre">break</span></code> e <code class="docutils literal notranslate"><span class="pre">continue</span></code><a class="headerlink" href="#os-comandos-break-e-continue" title="Link permanente para este título">¶</a></h1>
 </div>
 
 
@@ -284,8 +235,8 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="chamada-funcoes.html" class="btn btn-neutral float-right" title="2.5. Chamada de Funções" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="tipos-numericos.html" class="btn btn-neutral float-left" title="2.3. Tipos Numéricos" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="funcoes.html" class="btn btn-neutral float-right" title="2.20. Funções" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="lacos-for.html" class="btn btn-neutral float-left" title="2.18. Laços do tipo for" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
     </div>
 
   <hr/>

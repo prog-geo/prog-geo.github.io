@@ -77,5 +77,14 @@ Para escrever programas em alguma linguagem, é preciso conhecer um pouco de **l
     ./introducao-programacao/expressoes-logicas.rst
     ./introducao-programacao/estruturas-condicionais.rst
     ./introducao-programacao/estruturas-repeticao.rst
+    ./introducao-programacao/strings.rst
+    ./introducao-programacao/keywords.rst
+    ./introducao-programacao/sequencias.rst
+    ./introducao-programacao/dicionarios.rst
+    ./introducao-programacao/formatacao-strings.rst
+    ./introducao-programacao/lacos-for.rst
+    ./introducao-programacao/break-continue.rst
+    ./introducao-programacao/funcoes.rst
+    ./introducao-programacao/consideracoes.rst
     ./introducao-programacao/exemplos.rst
 

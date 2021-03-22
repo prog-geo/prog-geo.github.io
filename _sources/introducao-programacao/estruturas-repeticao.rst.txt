@@ -14,7 +14,7 @@ Estruturas de Repetição
 
 .. _sec_introducao_programacao_estruturas_repeticao_problema_1:
 
-**Problema 1:** Escreva um programa para converter temperaturas da escala c para a escala Celsius. A coluna ``°F`` na :numref:`introd-prog:fig:tabela-temperaturas` contém a lista de valores a serem convertidos para a escala Celsius.
+**Problema 1:** Escreva um programa para converter temperaturas da escala Fahrenheit para a escala Celsius. A coluna ``°F`` na :numref:`introd-prog:fig:tabela-temperaturas` contém a lista de valores a serem convertidos para a escala Celsius.
 
 
 .. figure:: ../img/introducao-programacao/tabela-temperaturas.png

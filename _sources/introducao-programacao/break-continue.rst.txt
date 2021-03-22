@@ -3,5 +3,7 @@
     Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
 
 
-Sequências
-==========
+Os Comandos ``break`` e ``continue``
+====================================
+
+

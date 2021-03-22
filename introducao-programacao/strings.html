@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Strings, Operações com Strings e Formatação de Strings &mdash; SER-347/CAP-419</title>
+  <title>2.13. O Tipo String &mdash; SER-347/CAP-419</title>
   
 
   
@@ -42,12 +42,15 @@
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script src="../_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
     <link rel="index" title="Índice" href="../genindex.html" />
-    <link rel="search" title="Buscar" href="../search.html" /> 
+    <link rel="search" title="Buscar" href="../search.html" />
+    <link rel="next" title="2.14. Palavras-chave" href="keywords.html" />
+    <link rel="prev" title="2.12. Estruturas de Repetição" href="estruturas-repeticao.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -103,9 +106,37 @@
 <li class="toctree-l1"><a class="reference internal" href="../visao-geral.html">Visao Geral do Curso</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Aulas:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../instalacao.html">1. Instalando e Configurando o Ambiente de Programação</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../introducao-programacao.html">2. Introdução à Programação com a Linguagem Python</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../introducao-programacao.html">2. Introdução à Programação com a Linguagem Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introducao.html">2.1. Introdução</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tipos-dados.html">2.2. Tipos de Dados</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tipos-numericos.html">2.3. Tipos Numéricos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressoes.html">2.4. Expressões</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chamada-funcoes.html">2.5. Chamada de Funções</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variaveis.html">2.6. Variáveis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comentarios.html">2.7. Comentários</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tipo-logico.html">2.8. Tipo Lógico</a></li>
+<li class="toctree-l2"><a class="reference internal" href="op-relacionais.html">2.9. Operadores Relacionais</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressoes-logicas.html">2.10. Expressões Lógicas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="estruturas-condicionais.html">2.11. Estruturas Condicionais</a></li>
+<li class="toctree-l2"><a class="reference internal" href="estruturas-repeticao.html">2.12. Estruturas de Repetição</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.13. O Tipo String</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#operacoes-com-strings">2.13.1. Operações com Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#metodos-de-strings">2.13.2. Métodos de Strings</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="keywords.html">2.14. Palavras-chave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sequencias.html">2.15. Sequências</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dicionarios.html">2.16. Dicionários</a></li>
+<li class="toctree-l2"><a class="reference internal" href="formatacao-strings.html">2.17. Formatação de Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lacos-for.html">2.18. Laços do tipo for</a></li>
+<li class="toctree-l2"><a class="reference internal" href="break-continue.html">2.19. Os Comandos <code class="docutils literal notranslate"><span class="pre">break</span></code> e <code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="funcoes.html">2.20. Funções</a></li>
+<li class="toctree-l2"><a class="reference internal" href="consideracoes.html">2.21. Considerações Finais</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exemplos.html">2.22. Exemplos</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../variados.html">3. Tópicos Variados</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Referências Bibliográficas</span></p>
@@ -171,7 +202,9 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Strings, Operações com Strings e Formatação de Strings</li>
+          <li><a href="../introducao-programacao.html"><span class="section-number">2. </span>Introdução à Programação com a Linguagem Python</a> &raquo;</li>
+        
+      <li><span class="section-number">2.13. </span>O Tipo String</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -183,13 +216,404 @@
   </ul>
 
   
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="keywords.html" class="btn btn-neutral float-right" title="2.14. Palavras-chave" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="estruturas-repeticao.html" class="btn btn-neutral float-left" title="2.12. Estruturas de Repetição" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+      
+  </div>
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="strings-operacoes-com-strings-e-formatacao-de-strings">
-<h1>Strings, Operações com Strings e Formatação de Strings<a class="headerlink" href="#strings-operacoes-com-strings-e-formatacao-de-strings" title="Link permanente para este título">¶</a></h1>
+  <div class="section" id="o-tipo-string">
+<span id="sec-introducao-programacao-strings"></span><h1><span class="section-number">2.13. </span>O Tipo String<a class="headerlink" href="#o-tipo-string" title="Link permanente para este título">¶</a></h1>
+<p>O tipo <code class="docutils literal notranslate"><span class="pre">str</span></code> é capaz de representar uma <strong>sequência de caracteres</strong>, ou <strong>cadeia de caracteres</strong>, ou <strong>string</strong>.</p>
+<p>Uma <strong>string</strong> pode ser expressa entre <strong>aspas duplas</strong> ou entre <strong>aspas simples</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Introdução à Programação com Dados Geoespaciais&quot;</span><span class="p">)</span>
+<span class="go">Introdução à Programação com Dados Geoespaciais</span>
+</pre></div>
+</div>
+<p>ou:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Introdução à Programação com Dados Geoespaciais&#39;</span><span class="p">)</span>
+<span class="go">Introdução à Programação com Dados Geoespaciais</span>
+</pre></div>
+</div>
+<p>Para escrever <strong>literais string</strong> que expandem por <strong>múltiplas linhas</strong>, pode-se usar <strong>três aspas duplas</strong> ou <strong>três aspas simples</strong>, como mostrado no exemplo abaixo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Introdução</span>
+<span class="gp">... </span><span class="s2">à</span>
+<span class="gp">... </span><span class="s2">Programação</span>
+<span class="gp">... </span><span class="s2">com Dados Geoespaciais&quot;&quot;&quot;</span><span class="p">)</span>
+<span class="go">Introdução</span>
+<span class="go">à</span>
+<span class="go">Programação</span>
+<span class="go">com Dados Geoespaciais</span>
+</pre></div>
+</div>
+<p>Repare que todos os caracteres e mudanças de linha são incluídos como parte do literal:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Introdução</span>
+<span class="gp">... </span><span class="s2">         à</span>
+<span class="gp">... </span><span class="s2">         Programação</span>
+<span class="gp">... </span><span class="s2">         com Dados Geoespaciais&quot;&quot;&quot;</span><span class="p">)</span>
+<span class="go">Introdução</span>
+<span class="go">     à</span>
+<span class="go">     Programação</span>
+<span class="go">     com Dados Geoespaciais</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Em Python, apenas expressões entre parênteses (<code class="docutils literal notranslate"><span class="pre">([)</span></code>, <code class="docutils literal notranslate"><span class="pre">)</span></code>), colchetes (<code class="docutils literal notranslate"><span class="pre">[</span></code>, <code class="docutils literal notranslate"><span class="pre">]</span></code>) ou chaves (<code class="docutils literal notranslate"><span class="pre">{</span></code>, <code class="docutils literal notranslate"><span class="pre">}</span></code>) podem expandir por múltiplas linhas físicas sem utilizar barras invertidas (<code class="docutils literal notranslate"><span class="pre">\</span></code>). Por exemplo, se você abrir o terminal de comandos do Python e tentar dividir a expressão <code class="docutils literal notranslate"><span class="pre">10</span> <span class="pre">+</span> <span class="pre">20</span></code> em duas linhas, como na tentativa abaixo, um erro de sintaxe será gerado:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">10</span> <span class="o">+</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>
+    <span class="mi">10</span> <span class="o">+</span>
+       <span class="o">^</span>
+<span class="gr">SyntaxError</span>: <span class="n">invalid syntax</span>
+</pre></div>
+</div>
+<p>Se você quiser juntar duas ou mais linhas físicas em um único comando, terá que utilizar barras invertidas, como mostrado abaixo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">10</span> <span class="o">+</span> \
+<span class="gp">... </span><span class="mi">20</span>
+<span class="go">30</span>
+</pre></div>
+</div>
+<p>A mesma coisa pode ser feita com uma string, que pode ser escrita em múltiplas linhas sem o uso das três aspas, mas com as barras invertidas:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;Introdução </span><span class="se">\</span>
+<span class="gp">... </span><span class="s2">à </span><span class="se">\</span>
+<span class="gp">... </span><span class="s2">Programação </span><span class="se">\</span>
+<span class="gp">... </span><span class="s2">com Dados Geoespaciais&quot;</span>
+<span class="go">&#39;Introdução à Programação com Dados Geoespaciais&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="operacoes-com-strings">
+<h2><span class="section-number">2.13.1. </span>Operações com Strings<a class="headerlink" href="#operacoes-com-strings" title="Link permanente para este título">¶</a></h2>
+<div class="section" id="concatenacao-de-strings-s-t">
+<h3><span class="section-number">2.13.1.1. </span>Concatenação de Strings: <span class="math notranslate nohighlight">\(s + t\)</span><a class="headerlink" href="#concatenacao-de-strings-s-t" title="Link permanente para este título">¶</a></h3>
+<p>O <code class="docutils literal notranslate"><span class="pre">operador</span> <span class="pre">+</span></code> para strings possui uma interpretação diferente dos tipos numéricos, ele realiza a concatenação de duas strings:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;Programação&quot;</span> <span class="o">+</span> <span class="s2">&quot;Geoespacial&quot;</span>
+<span class="go">&#39;ProgramaçãoGeoespacial&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;Programação &quot;</span> <span class="o">+</span> <span class="s2">&quot;Geoespacial&quot;</span>
+<span class="go">&#39;Programação Geoespacial&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;Introdução &quot;</span> <span class="o">+</span> <span class="s2">&quot;Programação &quot;</span> <span class="o">+</span> <span class="s2">&quot;Geoespacial&quot;</span>
+<span class="go">&#39;Introdução Programação Geoespacial&#39;</span>
+</pre></div>
+</div>
+<p>Uma string é uma <strong>sequência imutável</strong> de caracteres. A <strong>concatenação de strings</strong> gera um novo objeto, isto é, uma nova string. Portanto, cuidado ao utilizar o <code class="docutils literal notranslate"><span class="pre">operador</span> <span class="pre">+</span></code> repetidamente pois ele pode gerar um <em>overhead</em> desnecessário no seu programa. Há outras opções para realizar operações semelhantes, como por exemplo, usando o operador <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html">str.join()</a> ou <a class="reference external" href="https://docs.python.org/3/library/io.html">io.StringIO</a>.</p>
+</div>
+<div class="section" id="repeticao-de-strings-n-s">
+<h3><span class="section-number">2.13.1.2. </span>Repetição de Strings: <span class="math notranslate nohighlight">\(n * s\)</span><a class="headerlink" href="#repeticao-de-strings-n-s" title="Link permanente para este título">¶</a></h3>
+<p>Quando aplicado a um número inteiro <span class="math notranslate nohighlight">\(n\)</span> e uma string <span class="math notranslate nohighlight">\(s\)</span>, o <code class="docutils literal notranslate"><span class="pre">operador</span> <span class="pre">*</span></code> funciona como se estivéssemos adicionando a string <span class="math notranslate nohighlight">\(s\)</span> a ela própria, <span class="math notranslate nohighlight">\(n\)</span> vezes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;Programação&quot;</span> <span class="o">*</span> <span class="mi">3</span>
+<span class="go">&#39;ProgramaçãoProgramaçãoProgramação&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">4</span> <span class="o">*</span> <span class="s2">&quot;Programação&quot;</span>
+<span class="go">&#39;ProgramaçãoProgramaçãoProgramaçãoProgramação&#39;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>A lógica é que assim como <span class="math notranslate nohighlight">\(3 * 2 = 2 + 2 + 2\)</span>, temos <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">*</span> <span class="pre">&quot;a&quot;</span> <span class="pre">=</span> <span class="pre">&quot;a&quot;</span> <span class="pre">+</span> <span class="pre">&quot;a&quot;</span> <span class="pre">+</span> <span class="pre">&quot;a&quot;</span></code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Para valores negativos, a expressão é equivalente a <span class="math notranslate nohighlight">\(0 * s\)</span>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="o">-</span><span class="mi">4</span> <span class="o">*</span> <span class="s2">&quot;Programação&quot;</span>
+<span class="go">&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="pertinencia-x-in-s">
+<span id="sec-introducao-programacao-strings-op-in"></span><h3><span class="section-number">2.13.1.3. </span>Pertinência: <span class="math notranslate nohighlight">\(x\)</span> <code class="docutils literal notranslate"><span class="pre">in</span></code> <span class="math notranslate nohighlight">\(s\)</span><a class="headerlink" href="#pertinencia-x-in-s" title="Link permanente para este título">¶</a></h3>
+<p><span class="math notranslate nohighlight">\(x\)</span> <code class="docutils literal notranslate"><span class="pre">in</span></code> <span class="math notranslate nohighlight">\(s\)</span>: retorna verdadeiro se a string <span class="math notranslate nohighlight">\(s\)</span> contém a sequência <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>Exemplos:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;i&quot;</span> <span class="ow">in</span> <span class="s2">&quot;imagem-cbers.tif&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;a&quot;</span> <span class="ow">in</span> <span class="s2">&quot;imagem-cbers.tif&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;cbers&quot;</span> <span class="ow">in</span> <span class="s2">&quot;imagem-cbers.tif&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;landsat&quot;</span> <span class="ow">in</span> <span class="s2">&quot;imagem-cbers.tif&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="impertinencia-x-not-in-s">
+<h3><span class="section-number">2.13.1.4. </span>Impertinência: <span class="math notranslate nohighlight">\(x\)</span> <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> <span class="math notranslate nohighlight">\(s\)</span><a class="headerlink" href="#impertinencia-x-not-in-s" title="Link permanente para este título">¶</a></h3>
+<p><span class="math notranslate nohighlight">\(x\)</span> <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> <span class="math notranslate nohighlight">\(s\)</span>: retorna falso se a string <span class="math notranslate nohighlight">\(s\)</span> contém a sequência <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>Exemplos:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;i&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="s2">&quot;imagem-cbers.tif&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;a&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="s2">&quot;imagem-cbers.tif&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;cbers&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="s2">&quot;imagem-cbers.tif&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;.tif&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="s2">&quot;imagem-cbers.tif&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="comprimento-da-cadeia-len-s">
+<h3><span class="section-number">2.13.1.5. </span>Comprimento da cadeia: <code class="docutils literal notranslate"><span class="pre">len(s)</span></code><a class="headerlink" href="#comprimento-da-cadeia-len-s" title="Link permanente para este título">¶</a></h3>
+<p>O operador <code class="docutils literal notranslate"><span class="pre">len(s)</span></code> retorna o número de caracteres (ou tamanho) da string <span class="math notranslate nohighlight">\(s\)</span>.</p>
+<p>Exemplos:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="s2">&quot;Programação Geoespacial&quot;</span><span class="p">)</span>
+<span class="go">23</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="indice-indexing-s-i">
+<h3><span class="section-number">2.13.1.6. </span>Índice (<em>indexing</em>): <code class="docutils literal notranslate"><span class="pre">s[i]</span></code><a class="headerlink" href="#indice-indexing-s-i" title="Link permanente para este título">¶</a></h3>
+<p>O <code class="docutils literal notranslate"><span class="pre">operador</span> <span class="pre">[]</span></code> retorna o <span class="math notranslate nohighlight">\(i\)</span>-th caractere da string <span class="math notranslate nohighlight">\(s\)</span>.</p>
+<p>Exemplos:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;Programação Geoespacial&quot;</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;Programação Geoespacial&quot;</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>O primeiro elemento de uma sequência possui índice <span class="math notranslate nohighlight">\(0\)</span>.</p>
+</div>
+<p>Números negativos são usados para indexar a partir do final da string:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;Programação Geoespacial&quot;</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;Programação Geoespacial&quot;</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Um índice fora do limite irá lançar uma <strong>exceção</strong> do tipo <code class="docutils literal notranslate"><span class="pre">IndexError</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;Programação Geoespacial&quot;</span><span class="p">[</span><span class="mi">23</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="slicing-s-i-j">
+<h3><span class="section-number">2.13.1.7. </span>Slicing: <code class="docutils literal notranslate"><span class="pre">s[i:j]</span></code><a class="headerlink" href="#slicing-s-i-j" title="Link permanente para este título">¶</a></h3>
+<p>O <code class="docutils literal notranslate"><span class="pre">operador</span> <span class="pre">[i:j]</span></code> extrai substrings de tamanho arbitrário.</p>
+<p>Exemplo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;imagem-landsat.tif&quot;</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Se o valor antes do “:” for omitido, subentende-se o valor <code class="docutils literal notranslate"><span class="pre">0</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;imagem-landsat.tif&quot;</span><span class="p">[:</span><span class="mi">6</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Se o valor após “:” for omitido, subentende-se o valor <code class="docutils literal notranslate"><span class="pre">len(s)</span></code>:</p>
+<blockquote>
+<div><p>“imagem-landsat.tif”[7:]</p>
+</div></blockquote>
+<p>Se omitirmos os valores de índices dos dois lados do sinal de “:”, retornamos uma cópia completa da string:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;imagem-landsat.tif&quot;</span><span class="p">[:]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>A lógica do intervalo aberto à direita é que seja possível fazer: <code class="docutils literal notranslate"><span class="pre">s[0:len(s)]</span></code>.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Dica</p>
+<p>O <strong>tipo string</strong> é apenas um dos <strong>tipos de sequência</strong> disponíveis em Python. Uma lista completa das operações relativas aos tipos sequência, pode ser consultada em <span id="id1">[<a class="reference internal" href="../referencias.html#id32">8</a>]</span>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="metodos-de-strings">
+<h2><span class="section-number">2.13.2. </span>Métodos de Strings<a class="headerlink" href="#metodos-de-strings" title="Link permanente para este título">¶</a></h2>
+<p>Diversas <strong>operações sobre o tipo string</strong> encontram-se na forma de <strong>métodos</strong>. Um <strong>método</strong> nada mais é do que uma notação especial para <strong>chamada de funções</strong>, onde a função irá operar sobre <strong>o próprio dado indicado na chamada</strong>.</p>
+<p>A sintaxe dessas operações, em geral, têm a seguite forma (<a class="reference internal" href="#introd-prog-fig-string-metodos"><span class="std std-numref">Figura 2.17</span></a>):</p>
+<div class="align-center figure align-default" id="introd-prog-fig-string-metodos">
+<a class="reference internal image-reference" href="../_images/string-metodos.png"><img alt="Chamada de um método" src="../_images/string-metodos.png" style="width: 60%;" /></a>
+<p class="caption"><span class="caption-number">Figura 2.17 - </span><span class="caption-text">Chamada de um método.</span><a class="headerlink" href="#introd-prog-fig-string-metodos" title="Link Permanente para essa imagem">¶</a></p>
+</div>
+<p>Onde:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">str</span></code>: literal string, ou nome de uma variável string ou alguma outra expressão que produza uma string.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.</span></code>: operador membro, que permite acessar atributos e métodos de um objeto.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">op</span></code>: nome de um método associado ao objeto.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">argumentos</span></code>: lista dos valores necessários à chamada do método.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Em <strong>orientação a objetos</strong>, esse processo de chamada de métodos costuma ser referido como <strong>invocação de um método</strong> ou <strong>comunicação com o objeto</strong>.</p>
+</div>
+<div class="section" id="s-find-sub-start-end">
+<h3><span class="section-number">2.13.2.1. </span><code class="docutils literal notranslate"><span class="pre">s.find(sub[,</span> <span class="pre">start[,</span> <span class="pre">end]])</span></code><a class="headerlink" href="#s-find-sub-start-end" title="Link permanente para este título">¶</a></h3>
+<p>Sintaxe:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">sub</span><span class="p">[,</span> <span class="n">start</span><span class="p">[,</span> <span class="n">end</span><span class="p">]])</span>
+</pre></div>
+</div>
+<ul class="open">
+<li><p><strong>Descrição:</strong> O método <code class="docutils literal notranslate"><span class="pre">find</span></code> procura a ocorrência da substring <code class="docutils literal notranslate"><span class="pre">sub</span></code> em <code class="docutils literal notranslate"><span class="pre">s</span></code>.</p></li>
+<li><p><strong>Parâmetros:</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sub</span></code>: Substring cuja ocorrência deseja-se ser localizada.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">start</span></code>: Parâmetro opicional que indica onde a busca deve começar dentro da string <code class="docutils literal notranslate"><span class="pre">s</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">end</span></code>: Parâmetro opicional que indica o limite (aberto) onde a busca deve terminar.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Retorno:</strong> Esse método retorna a posição do primeiro caractere na string <code class="docutils literal notranslate"><span class="pre">s</span></code> onde a ocorrência da substring <code class="docutils literal notranslate"><span class="pre">sub</span></code> é encontrada, ou <code class="docutils literal notranslate"><span class="pre">-1</span></code> caso não seja encontrada.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Atente-se para o fato de que os parâmetros <code class="docutils literal notranslate"><span class="pre">start</span></code> e <code class="docutils literal notranslate"><span class="pre">end</span></code> equivalem aos índices de uma operação de <em>slice</em> em strings (<code class="docutils literal notranslate"><span class="pre">[star:end]</span></code>) e, portanto, o limite definido por eles é fechado à esquerda e aberto à direita.</p>
+</div>
+<p>Exemplos:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;Programação Geoespacial&quot;</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;gra&quot;</span><span class="p">)</span>
+<span class="go">3</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;A grade de aulas&quot;</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;gra&quot;</span><span class="p">)</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;Landsat&quot;</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;gra&quot;</span><span class="p">)</span>
+<span class="go">-1</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Dica</p>
+<p>Se você não precisa saber a posição da substring, use o operador <code class="docutils literal notranslate"><span class="pre">in</span></code> (<a class="reference internal" href="#sec-introducao-programacao-strings-op-in"><span class="std std-numref">Seção 2.13.1.3</span></a>).</p>
+</div>
+</div>
+<div class="section" id="s-join-iterable">
+<h3><span class="section-number">2.13.2.2. </span><code class="docutils literal notranslate"><span class="pre">s.join(iterable)</span></code><a class="headerlink" href="#s-join-iterable" title="Link permanente para este título">¶</a></h3>
+<p>Sintaxe:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">iterable</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="open">
+<li><p><strong>Descrição:</strong> O método <code class="docutils literal notranslate"><span class="pre">join</span></code> retorna uma string formada pela concatenação de uma sequência de strings (<code class="docutils literal notranslate"><span class="pre">iterable</span></code>), usando como separador a string <code class="docutils literal notranslate"><span class="pre">s</span></code>.</p></li>
+<li><p><strong>Parâmetros:</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">iterable</span></code>: Um <strong>iterável</strong> é qualquer objeto que permita recuperar seus itens, ou membros, um de cada vez. Este pâmetro aceita iteráveis que produzam elementos do tipo string. Os <strong>tipos sequência</strong>, como string, listas e tuplas, são <strong>iteráveis</strong>. Assim, podemos utilizar como argumento, uma string, uma lista ou um tupla de strings.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Retorno:</strong>  Uma string representando a concatenação dos elementos do iterável, uilizando como separador a string <code class="docutils literal notranslate"><span class="pre">s</span></code>.</p></li>
+</ul>
+<p>Exemplos:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;-&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;Introdução&quot;</span><span class="p">,</span> <span class="s2">&quot;Programação&quot;</span><span class="p">,</span> <span class="s2">&quot;Geoespacial&quot;</span><span class="p">])</span>
+<span class="go">&#39;Introdução-Programação-Geoespacial&#39;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>A sequência de strings separadas por vírgula e delimitadas por <code class="docutils literal notranslate"><span class="pre">[</span></code> e <code class="docutils literal notranslate"><span class="pre">]</span></code> corresponde a uma lista de strings.</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;Introdução&quot;</span><span class="p">,</span> <span class="s2">&quot;Programação&quot;</span><span class="p">,</span> <span class="s2">&quot;Geoespacial&quot;</span><span class="p">])</span>
+<span class="go">&#39;Introdução Programação Geoespacial&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;Introdução&quot;</span><span class="p">,</span> <span class="s2">&quot;Programação&quot;</span><span class="p">,</span> <span class="s2">&quot;Geoespacial&quot;</span><span class="p">])</span>
+<span class="go">&#39;IntroduçãoProgramaçãoGeoespacial&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Introdução à Programação com Dados Geoespaciais&quot;</span><span class="p">)</span>
+<span class="go">&#39;I,n,t,r,o,d,u,ç,ã,o, ,à, ,P,r,o,g,r,a,m,a,ç,ã,o, ,c,o,m, ,D,a,d,o,s, ,G,e,o,e,s,p,a,c,i,a,i,s&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="s-split-sep-none-maxsplit-1">
+<h3><span class="section-number">2.13.2.3. </span><code class="docutils literal notranslate"><span class="pre">s.split(sep=None,</span> <span class="pre">maxsplit=-1)</span></code><a class="headerlink" href="#s-split-sep-none-maxsplit-1" title="Link permanente para este título">¶</a></h3>
+<p>Sintaxe:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">sep</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">maxsplit</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="open">
+<li><p><strong>Descrição:</strong> Quebra a string <code class="docutils literal notranslate"><span class="pre">s</span></code> em várias, utilizando o separador <code class="docutils literal notranslate"><span class="pre">sep</span></code>.</p></li>
+<li><p><strong>Parâmetros:</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sep</span></code>: String que define o separador usado para realizar o particionamento da string <code class="docutils literal notranslate"><span class="pre">s</span></code>. Trata-se de um parâmetro opicional. Se não for informado ou se usado um valor <code class="docutils literal notranslate"><span class="pre">None</span></code>, o caracter de espaço (<em>whitespace</em>)) é assumido como delimitador.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">maxsplit</span></code>: Este parâmetro opicional, pode ser usado para indica o número máximo de divisões a serem realizadas.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Retorno:</strong> Uma lista de palavras.</p></li>
+</ul>
+<p>Exemplo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;Introdução à Programação com Dados Geoespaciais&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="go">[&#39;Introdução&#39;, &#39;à&#39;, &#39;Programação&#39;, &#39;com&#39;, &#39;Dados&#39;, &#39;Geoespaciais&#39;]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>A sequência de strings separadas por vírgula e delimitadas por <code class="docutils literal notranslate"><span class="pre">[</span></code> e <code class="docutils literal notranslate"><span class="pre">]</span></code> corresponde a uma lista de strings.</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;Introdução;à;Programação;com;Dados;Geoespaciais&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
+<span class="go">[&#39;Introdução&#39;, &#39;à&#39;, &#39;Programação&#39;, &#39;com&#39;, &#39;Dados&#39;, &#39;Geoespaciais&#39;]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;1,2,,3,&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+<span class="go">[&#39;1&#39;, &#39;2&#39;, &#39;&#39;, &#39;3&#39;, &#39;&#39;]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="s-replace-old-new-count">
+<h3><span class="section-number">2.13.2.4. </span><code class="docutils literal notranslate"><span class="pre">s.replace(old,</span> <span class="pre">new[,</span> <span class="pre">count])</span></code><a class="headerlink" href="#s-replace-old-new-count" title="Link permanente para este título">¶</a></h3>
+<p>Sintaxe:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">old</span><span class="p">,</span> <span class="n">new</span><span class="p">[,</span> <span class="n">count</span><span class="p">])</span>
+</pre></div>
+</div>
+<ul class="open">
+<li><p><strong>Descrição:</strong> Retorna uma string onde toda a ocorrência da substring <code class="docutils literal notranslate"><span class="pre">old</span></code> em <code class="docutils literal notranslate"><span class="pre">s</span></code>, é substituída pela substring <code class="docutils literal notranslate"><span class="pre">new</span></code>.</p></li>
+<li><p><strong>Parâmetros:</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">old</span></code>: Substring a ser substituída em <code class="docutils literal notranslate"><span class="pre">s</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">new</span></code>: Substring a ser incluída no lugar da substring <code class="docutils literal notranslate"><span class="pre">old</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">count</span></code>: Este argumento opcional limita o número de substituições.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Retorno:</strong> Uma string.</p></li>
+</ul>
+<p>Exemplos:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;Introdução à Programação com Dados Geoespaciais&quot;</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;@&quot;</span><span class="p">)</span>
+<span class="go">&#39;Introdução à Progr@m@ção com D@dos Geoesp@ci@is&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;Introdução à Programação com Dados Geoespaciais&quot;</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;@&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="go">&#39;Introdução à Progr@m@ção com Dados Geoespaciais&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="outros-metodos-de-string">
+<h3><span class="section-number">2.13.2.5. </span>Outros Métodos de String<a class="headerlink" href="#outros-metodos-de-string" title="Link permanente para este título">¶</a></h3>
+<ul class="open">
+<li><p><code class="docutils literal notranslate"><span class="pre">s.isdigit()</span></code>: retorna <code class="docutils literal notranslate"><span class="pre">True</span></code> se todos os caracteres da string são dígitos, caso contrário, retorna <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">s.islower()</span></code>: retorna <code class="docutils literal notranslate"><span class="pre">True</span></code> se todos os caracteres são minúsculos e exista pelo menos uma letra, caso contrário, retorna <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">str.isupper()</span></code>: retorna <code class="docutils literal notranslate"><span class="pre">True</span></code> se todos os caracteres são maiúsculos e exista pelo menos uma letra, caso contrário, retorna <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">str.lower()</span></code>: retorna uma cópia da string com todos os caracteres em minúsculo.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">str.upper()</span></code>: retorna uma cópia da string com todos os caracteres em maiúsculo.</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Dica</p>
+<p>Para uma lista completa dos métodos de uma string, consulte <span id="id2">[<a class="reference internal" href="../referencias.html#id33">12</a>]</span>.</p>
+</div>
+</div>
+</div>
 </div>
 
 
@@ -197,6 +621,10 @@
            
           </div>
           <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="keywords.html" class="btn btn-neutral float-right" title="2.14. Palavras-chave" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="estruturas-repeticao.html" class="btn btn-neutral float-left" title="2.12. Estruturas de Repetição" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+    </div>
 
   <hr/>
 

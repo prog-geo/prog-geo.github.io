@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Funções &mdash; SER-347/CAP-419</title>
+  <title>2.20. Funções &mdash; SER-347/CAP-419</title>
   
 
   
@@ -47,7 +47,9 @@
 
     
     <link rel="index" title="Índice" href="../genindex.html" />
-    <link rel="search" title="Buscar" href="../search.html" /> 
+    <link rel="search" title="Buscar" href="../search.html" />
+    <link rel="next" title="2.21. Considerações Finais" href="consideracoes.html" />
+    <link rel="prev" title="2.19. Os Comandos break e continue" href="break-continue.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -103,9 +105,33 @@
 <li class="toctree-l1"><a class="reference internal" href="../visao-geral.html">Visao Geral do Curso</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Aulas:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../instalacao.html">1. Instalando e Configurando o Ambiente de Programação</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../introducao-programacao.html">2. Introdução à Programação com a Linguagem Python</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../introducao-programacao.html">2. Introdução à Programação com a Linguagem Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introducao.html">2.1. Introdução</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tipos-dados.html">2.2. Tipos de Dados</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tipos-numericos.html">2.3. Tipos Numéricos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressoes.html">2.4. Expressões</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chamada-funcoes.html">2.5. Chamada de Funções</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variaveis.html">2.6. Variáveis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comentarios.html">2.7. Comentários</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tipo-logico.html">2.8. Tipo Lógico</a></li>
+<li class="toctree-l2"><a class="reference internal" href="op-relacionais.html">2.9. Operadores Relacionais</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressoes-logicas.html">2.10. Expressões Lógicas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="estruturas-condicionais.html">2.11. Estruturas Condicionais</a></li>
+<li class="toctree-l2"><a class="reference internal" href="estruturas-repeticao.html">2.12. Estruturas de Repetição</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings.html">2.13. O Tipo String</a></li>
+<li class="toctree-l2"><a class="reference internal" href="keywords.html">2.14. Palavras-chave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sequencias.html">2.15. Sequências</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dicionarios.html">2.16. Dicionários</a></li>
+<li class="toctree-l2"><a class="reference internal" href="formatacao-strings.html">2.17. Formatação de Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lacos-for.html">2.18. Laços do tipo for</a></li>
+<li class="toctree-l2"><a class="reference internal" href="break-continue.html">2.19. Os Comandos <code class="docutils literal notranslate"><span class="pre">break</span></code> e <code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.20. Funções</a></li>
+<li class="toctree-l2"><a class="reference internal" href="consideracoes.html">2.21. Considerações Finais</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exemplos.html">2.22. Exemplos</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../variados.html">3. Tópicos Variados</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Referências Bibliográficas</span></p>
@@ -171,7 +197,9 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Funções</li>
+          <li><a href="../introducao-programacao.html"><span class="section-number">2. </span>Introdução à Programação com a Linguagem Python</a> &raquo;</li>
+        
+      <li><span class="section-number">2.20. </span>Funções</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -183,13 +211,22 @@
   </ul>
 
   
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="consideracoes.html" class="btn btn-neutral float-right" title="2.21. Considerações Finais" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="break-continue.html" class="btn btn-neutral float-left" title="2.19. Os Comandos break e continue" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+      
+  </div>
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
   <div class="section" id="funcoes">
-<h1>Funções<a class="headerlink" href="#funcoes" title="Link permanente para este título">¶</a></h1>
+<h1><span class="section-number">2.20. </span>Funções<a class="headerlink" href="#funcoes" title="Link permanente para este título">¶</a></h1>
 </div>
 
 
@@ -197,6 +234,10 @@
            
           </div>
           <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="consideracoes.html" class="btn btn-neutral float-right" title="2.21. Considerações Finais" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="break-continue.html" class="btn btn-neutral float-left" title="2.19. Os Comandos break e continue" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+    </div>
 
   <hr/>
 
