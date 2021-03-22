@@ -41,3 +41,9 @@ O :numref:`Trecho de Código %s <introd-prog:code:ndvi>` mostra um exemplo de us
 
     # mostrar resultado na tela
     print("NDVI:", NDVI)
+
+
+.. admonition:: Exemplos
+    :class: box-exemplos
+
+    Vamos fazer o exemplo :ref:`01 <sec_introducao_programacao_exemplos_ex01>`.

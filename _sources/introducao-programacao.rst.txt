@@ -76,5 +76,6 @@ Para escrever programas em alguma linguagem, é preciso conhecer um pouco de **l
     ./introducao-programacao/op-relacionais.rst
     ./introducao-programacao/expressoes-logicas.rst
     ./introducao-programacao/estruturas-condicionais.rst
+    ./introducao-programacao/estruturas-repeticao.rst
     ./introducao-programacao/exemplos.rst
 

@@ -17,7 +17,7 @@ As **estruturas condicionais** ou **comandos condicionais** permitem alterar a s
 
 .. figure:: ../img/introducao-programacao/fluxograma-estrutura-condicional.png
     :alt: Estrutura condicional
-    :width: 100%
+    :width: 80%
     :figclass: align-center
     :name: introd-prog:fig:estrutura-condiconal
 
@@ -166,3 +166,9 @@ Exemplo
 .. note::
 
     Este problema foi introduzido na :numref:`Seção %s <sec_introducao_programacao_expressoes_logicas>`.
+
+
+.. admonition:: Exemplos
+    :class: box-exemplos
+
+    Vamos fazer o exemplo :ref:`02 <sec_introducao_programacao_exemplos_ex02>`.

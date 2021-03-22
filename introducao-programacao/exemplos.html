@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.12. Exemplos &mdash; SER-347/CAP-419</title>
+  <title>2.13. Exemplos &mdash; SER-347/CAP-419</title>
   
 
   
@@ -50,7 +50,7 @@
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Buscar" href="../search.html" />
     <link rel="next" title="3. Tópicos Variados" href="../variados.html" />
-    <link rel="prev" title="2.11. Estruturas Condicionais" href="estruturas-condicionais.html" /> 
+    <link rel="prev" title="2.12. Estruturas de Repetição" href="estruturas-repeticao.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -120,7 +120,8 @@
 <li class="toctree-l2"><a class="reference internal" href="op-relacionais.html">2.9. Operadores Relacionais</a></li>
 <li class="toctree-l2"><a class="reference internal" href="expressoes-logicas.html">2.10. Expressões Lógicas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="estruturas-condicionais.html">2.11. Estruturas Condicionais</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2.12. Exemplos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="estruturas-repeticao.html">2.12. Estruturas de Repetição</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.13. Exemplos</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../variados.html">3. Tópicos Variados</a></li>
@@ -190,7 +191,7 @@
         
           <li><a href="../introducao-programacao.html"><span class="section-number">2. </span>Introdução à Programação com a Linguagem Python</a> &raquo;</li>
         
-      <li><span class="section-number">2.12. </span>Exemplos</li>
+      <li><span class="section-number">2.13. </span>Exemplos</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -207,7 +208,7 @@
         <a href="../variados.html" class="btn btn-neutral float-right" title="3. Tópicos Variados" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
       
       
-        <a href="estruturas-condicionais.html" class="btn btn-neutral float-left" title="2.11. Estruturas Condicionais" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="estruturas-repeticao.html" class="btn btn-neutral float-left" title="2.12. Estruturas de Repetição" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
       
   </div>
   
@@ -217,17 +218,64 @@
            <div itemprop="articleBody">
             
   <div class="section" id="exemplos">
-<span id="sec-introducao-programacao-exemplos"></span><h1><span class="section-number">2.12. </span>Exemplos<a class="headerlink" href="#exemplos" title="Link permanente para este título">¶</a></h1>
-<p><strong>Exemplo 1.</strong> Uma reta pode ser representada por uma equação geral da seguinte forma:</p>
+<span id="sec-introducao-programacao-exemplos"></span><h1><span class="section-number">2.13. </span>Exemplos<a class="headerlink" href="#exemplos" title="Link permanente para este título">¶</a></h1>
+<p id="sec-introducao-programacao-exemplos-ex01"><strong>Exemplo 01.</strong> Uma reta pode ser representada por uma equação geral da seguinte forma:</p>
 <div class="math notranslate nohighlight" id="equation-introd-prog-math-equacao-reta">
-<span class="eqno">(2.2)<a class="headerlink" href="#equation-introd-prog-math-equacao-reta" title="Permalink para essa equação">¶</a></span>\[ax + by + c = 0\]</div>
-<p>Considere a reta com os seguintes coeficientes: <span class="math notranslate nohighlight">\(a = 3\)</span>, <span class="math notranslate nohighlight">\(b = -2\)</span> e <span class="math notranslate nohighlight">\(c = -6\)</span> (<a class="reference internal" href="#introd-prog-fig-eq-reta"><span class="std std-numref">Figura 2.14</span></a>). Faça um programa que pergunte ao usuário os valores de um par de coordenadas <span class="math notranslate nohighlight">\((x,y)\)</span>, aplique a <a class="reference internal" href="#equation-introd-prog-math-equacao-reta">Equação 2.2</a> e verifique o resultado.</p>
+<span class="eqno">(2.3)<a class="headerlink" href="#equation-introd-prog-math-equacao-reta" title="Permalink para essa equação">¶</a></span>\[ax + by + c = 0\]</div>
+<p>Considere a reta com os seguintes coeficientes: <span class="math notranslate nohighlight">\(a = 3\)</span>, <span class="math notranslate nohighlight">\(b = -2\)</span> e <span class="math notranslate nohighlight">\(c = -6\)</span> (<a class="reference internal" href="#introd-prog-fig-eq-reta"><span class="std std-numref">Figura 2.17</span></a>). Faça um programa que pergunte ao usuário os valores de um par de coordenadas <span class="math notranslate nohighlight">\((x,y)\)</span>, aplique a <a class="reference internal" href="#equation-introd-prog-math-equacao-reta">Equação 2.3</a> e verifique o resultado.</p>
 <div class="align-center figure align-default" id="introd-prog-fig-eq-reta">
 <a class="reference internal image-reference" href="../_images/eq-reta.png"><img alt="Ilustração de uma reta com coeficientes: a = 3, b = -2 e c = -6" src="../_images/eq-reta.png" style="width: 60%;" /></a>
-<p class="caption"><span class="caption-number">Figura 2.14 - </span><span class="caption-text">Ilustração de uma reta com coeficientes: <span class="math notranslate nohighlight">\(a = 3\)</span>, <span class="math notranslate nohighlight">\(b = -2\)</span> e <span class="math notranslate nohighlight">\(c = -6\)</span>.</span><a class="headerlink" href="#introd-prog-fig-eq-reta" title="Link Permanente para essa imagem">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 2.17 - </span><span class="caption-text">Ilustração de uma reta com coeficientes: <span class="math notranslate nohighlight">\(a = 3\)</span>, <span class="math notranslate nohighlight">\(b = -2\)</span> e <span class="math notranslate nohighlight">\(c = -6\)</span>.</span><a class="headerlink" href="#introd-prog-fig-eq-reta" title="Link Permanente para essa imagem">¶</a></p>
+</div>
+<p><strong>Solução:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># coeficientes da equação geral da reta:</span>
+<span class="c1"># Ax + By + C = 0</span>
+<span class="n">A</span> <span class="o">=</span> <span class="mf">3.0</span>
+<span class="n">B</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.0</span>
+<span class="n">C</span> <span class="o">=</span> <span class="o">-</span><span class="mf">6.0</span>
+
+<span class="c1"># realiza a leitura das coordenadas de um ponto (x, y)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;x: &#39;</span><span class="p">))</span>   <span class="c1"># lê x</span>
+<span class="n">y</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;y: &#39;</span><span class="p">))</span>   <span class="c1"># lê y</span>
+
+<span class="c1"># se a equação resultar em 0.0,</span>
+<span class="c1"># significa que o ponto encontra-se sobre a reta</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">B</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="n">C</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Resultado da equação para o ponto (</span><span class="si">{0}</span><span class="s2">, </span><span class="si">{1}</span><span class="s2">): </span><span class="si">{2}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">r</span><span class="p">))</span>
+</pre></div>
 </div>
 <hr class="docutils" />
-<p><strong>Exemplo 2.</strong> Altere o programa da equação geral de uma reta para incluir um teste condicional que escreva na tela a mensagem “Sobre a Reta”, caso o ponto informado esteja sobre a reta; caso o ponto encontre-se acima da reta, deverá ser escrita a mensagem “Acima da Reta”; e, caso o ponto encontra-se abaixo da reta, deverá ser escrita a mensagem “Abaixo da Reta”.</p>
+<p id="sec-introducao-programacao-exemplos-ex02"><strong>Exemplo 02.</strong> Altere o programa da equação geral de uma reta para incluir um teste condicional que escreva na tela a mensagem “Sobre a Reta”, caso o ponto informado esteja sobre a reta; caso o ponto encontre-se acima da reta, deverá ser escrita a mensagem “Acima da Reta”; e, caso o ponto encontra-se abaixo da reta, deverá ser escrita a mensagem “Abaixo da Reta”.</p>
+<hr class="docutils" />
+<p id="sec-introducao-programacao-exemplos-ex03"><strong>Exemplo 03.</strong> Escreva um programa em Python que leia um número inteiro <span class="math notranslate nohighlight">\(n\)</span> entre <span class="math notranslate nohighlight">\(1\)</span> e <span class="math notranslate nohighlight">\(10\)</span> e compute o fatorial desse número. Lembre-se que o fatorial de um número <span class="math notranslate nohighlight">\(n\)</span> é definindo como:</p>
+<div class="math notranslate nohighlight" id="equation-introd-prog-math-fat-produtorio">
+<span class="eqno">(2.4)<a class="headerlink" href="#equation-introd-prog-math-fat-produtorio" title="Permalink para essa equação">¶</a></span>\[n! = \prod_{i=1}^{n} i\]</div>
+<p>ou,</p>
+<div class="math notranslate nohighlight" id="equation-introd-prog-math-fat-rel-recorrencia">
+<span class="eqno">(2.5)<a class="headerlink" href="#equation-introd-prog-math-fat-rel-recorrencia" title="Permalink para essa equação">¶</a></span>\[\begin{split}\begin{cases}
+fat(1) = 1, &amp; \text{se $n = 1$}\\
+fat(n) = n \times fat(n - 1), &amp; \text{se $n &gt; 1$}
+\end{cases}\end{split}\]</div>
+<hr class="docutils" />
+<p id="sec-introducao-programacao-exemplos-ex04"><strong>Exemplo 04.</strong> A sequência de Fibonacci é uma sequência de números inteiros, começando por <span class="math notranslate nohighlight">\(0\)</span> e <span class="math notranslate nohighlight">\(1\)</span>, onde cada termo subsequente corresponde a soma dos dois anteriores:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>A seguinte fórmula recursiva define esta sequência:</p>
+<div class="math notranslate nohighlight" id="equation-introd-prog-math-fib-rel-recorrencia">
+<span class="eqno">(2.6)<a class="headerlink" href="#equation-introd-prog-math-fib-rel-recorrencia" title="Permalink para essa equação">¶</a></span>\[\begin{split}\begin{cases}
+    F_n = F_{n-1} + F_{n-2} \\
+    F_1 = 1 \\
+    F_0 = 0
+\end{cases}\end{split}\]</div>
+<p>Faça um programa em Python que compute a sequência para um número <span class="math notranslate nohighlight">\(n\)</span> qualquer.</p>
+<hr class="docutils" />
+<p id="sec-introducao-programacao-exemplos-ex05"><strong>Exemplo 05.</strong> Escreva um programa em Python que leia dois números, <span class="math notranslate nohighlight">\(x\)</span> e <span class="math notranslate nohighlight">\(y\)</span>, e calcule a função potência <span class="math notranslate nohighlight">\(x^y\)</span>, sem utilizar o operador <code class="docutils literal notranslate"><span class="pre">**</span></code> de Python ou alguma função da biblioteca padrão.</p>
+<hr class="docutils" />
+<p id="sec-introducao-programacao-exemplos-ex06"><strong>Exemplo 06.</strong> Escreva um programa em Python que verifique se um número é primo ou não.</p>
+<hr class="docutils" />
+<p id="sec-introducao-programacao-exemplos-ex07"><strong>Exemplo 07.</strong> Escreva um programa em Python que gere a tabela de multiplicação dos números de <span class="math notranslate nohighlight">\(1\)</span> a <span class="math notranslate nohighlight">\(10\)</span>.</p>
 </div>
 
 
@@ -237,7 +285,7 @@
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="../variados.html" class="btn btn-neutral float-right" title="3. Tópicos Variados" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="estruturas-condicionais.html" class="btn btn-neutral float-left" title="2.11. Estruturas Condicionais" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="estruturas-repeticao.html" class="btn btn-neutral float-left" title="2.12. Estruturas de Repetição" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
     </div>
 
   <hr/>

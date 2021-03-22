@@ -82,3 +82,15 @@ div.historical-note.admonition {
 div.historical-note.admonition > p.admonition-title {
     background: #c09853; /*#468847;*/
 }
+
+
+/* Cor do quadro de exemplos. */
+div.box-exemplos.admonition {
+    background: #d9edf7;
+}
+
+div.box-exemplos.admonition > p.admonition-title {
+    background: #3a87ad;
+}
+
+

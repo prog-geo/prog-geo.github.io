@@ -370,7 +370,7 @@ Vamos começar por uma tradição na computação que é a criação de um progr
     **Google Colab**.
 
 
-Na janela do Colab (:numref:`Figura %s <introd-prog:google-colab>`), crie um novo documento, conhecido como Jupyter Notebook, selecionando o menu ``File`` e a opção ``New notebook``. Isso fará com que uma janela como a mostrada na :numref:`Figura %s <introd-prog:google-colab-new-notebook>` seja apresentada.
+Na janela do Colab (:numref:`Figura %s <introd-prog:google-colab>`), crie um novo documento, conhecido como Jupyter Notebook, selecionando o menu :guilabel:`File` e a opção :guilabel:`New notebook`. Isso fará com que uma janela como a mostrada na :numref:`Figura %s <introd-prog:google-colab-new-notebook>` seja apresentada.
 
 
 .. figure:: ../img/introducao-programacao/google-colab-new-notebook.png
@@ -449,7 +449,7 @@ Conversão entre Escalas de Temperatura: :math:`^oF \, \rightarrow \, ^oC`
     .. math::
         :label: Fahrenheit2Celsius
 
-        ^oC = \frac{5}{9} (^oF - 32)
+        ^oC = \frac{5 * (^oF - 32)}{9}
 
 
 **Solução:**
