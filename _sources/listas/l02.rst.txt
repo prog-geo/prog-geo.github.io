@@ -25,7 +25,7 @@ Lista de Exercícios 02
 
 - Você deverá entregar a lista através de um *pull-request* a ser realizado no repositório associado ao seu usuário na organização `prog-geo <https://github.com/prog-geo>`_. Esse *pull-request* deverá conter todos os arquivos da entrega.
 
-- **Prazo para entrega:** 19/03/2020 - 18:00
+- **Prazo para entrega:** 19/03/2021 - 18:00
 
 
 **Exercício 01.** Usando o terminal interativo do Python, use o comando ``type(objeto)`` e descubra o tipo de dados dos seguintes objetos::

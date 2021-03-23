@@ -1,0 +1,348 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="pt-BR" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Lista de Exercícios 03 &mdash; SER-347/CAP-419</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/table_styling.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/prog-geo.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+    <link rel="canonical" href="https://prog-geo.github.io/listas/l03.html" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Buscar" href="../search.html" />
+    <link rel="next" title="Licença" href="../licenca.html" />
+    <link rel="prev" title="Lista de Exercícios 02" href="l02.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SER-347/CAP-419
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Pesquisar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introdução à Programação com Dados Geoespaciais</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Visão Geral do Curso:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../visao-geral.html">Visao Geral do Curso</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aulas:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../instalacao.html">1. Instalando e Configurando o Ambiente de Programação</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introducao-programacao.html">2. Introdução à Programação com a Linguagem Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variados.html">3. Tópicos Variados</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Referências Bibliográficas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../referencias.html">Referências Bibliográficas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Listas de Exercícios:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../listas.html">Listas de Exercícios</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="l01.html">Lista de Exercícios 01</a></li>
+<li class="toctree-l2"><a class="reference internal" href="l02.html">Lista de Exercícios 02</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lista de Exercícios 03</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Informações Gerais:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../licenca.html">Licença</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Agradecimentos:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../agradecimentos.html">Agradecimentos</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SER-347/CAP-419</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../listas.html">Listas de Exercícios</a> &raquo;</li>
+        
+      <li>Lista de Exercícios 03</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="../licenca.html" class="btn btn-neutral float-right" title="Licença" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="l02.html" class="btn btn-neutral float-left" title="Lista de Exercícios 02" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="lista-de-exercicios-03">
+<span id="sec-listas-l03"></span><h1>Lista de Exercícios 03<a class="headerlink" href="#lista-de-exercicios-03" title="Link permanente para este título">¶</a></h1>
+<p><strong>Atenção:</strong></p>
+<ul class="open">
+<li><p>Os exercícios práticos devem ser desenvolvidos em Python. Escreva a documentação que achar pertinente dentro do próprio código fonte, que deverá utilizar a codificação de caracteres <code class="docutils literal notranslate"><span class="pre">UTF-8</span></code>.</p></li>
+<li><p>A solução de cada exercício deverá ser entregue em um único arquivo de código fonte na linguagem Python. Use arquivos com a extensão <code class="docutils literal notranslate"><span class="pre">.py</span></code> com a seguinte nomenclatura:</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">exercicio-<strong>numero</strong>.py.</div>
+<div class="line"><br /></div>
+<div class="line">Exemplo: <code class="docutils literal notranslate"><span class="pre">exercicio-01.py</span></code>.</div>
+<div class="line"><br /></div>
+<div class="line">Não use acentos ou caracteres especiais nos nomes dos arquivos.</div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Você deverá entregar a lista através de um <em>pull-request</em> a ser realizado no repositório associado ao seu usuário na organização <a class="reference external" href="https://github.com/prog-geo">prog-geo</a>. Esse <em>pull-request</em> deverá conter todos os arquivos da entrega.</p></li>
+<li><p><strong>Prazo para entrega:</strong> 28/03/2021 - 18:00</p></li>
+</ul>
+<p><strong>Exercício 01.</strong> Faça um programa em Python que leia três números reais e escreva o valor do maior e do menor deles. Para resolver este exercício, não utilizar as funções <code class="docutils literal notranslate"><span class="pre">min/max</span></code>.</p>
+<p><strong>Exercício 02.</strong> Escreva um programa em Python que leia o tamanho dos lados de um triângulo, avalie se esses valores realmente formam um triângulo, e em caso positivo, classifique o triângulo em isósceles, escaleno ou equilátero.</p>
+<p><strong>Exercício 03.</strong> Escreva um programa em Python que pergunte ao usuário um número entre 0 e 10, e diga se ele é ímpar ou par.</p>
+<p><strong>Exercício 04.</strong> Escreva um programa em Python que pergunte ao usuário um número qualquer (&gt; 0), e diga se ele é divisível apenas por 2, apenas por 3, por 2 e por 3, ou
+se não é divisível nem por 2 nem por 3.</p>
+<p><strong>Exercício 05.</strong> Faça um programa em Python que pergunte ao usuário qual a série que ele deseja calcular e em seguida imprima o nome da série escolhida. Veja o exemplo do que deve ser escrito na tela:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>0 Lucas
+1 Pell
+2 Triangular
+3 Square
+4 Pentagonal
+
+Qual série você deseja computar? 3
+
+Você escolheu computar a série &quot;Square&quot;!
+</pre></div>
+</div>
+<p><strong>Exercício 06.</strong> Faça um programa que pergunte ao usuário o seu conceito final em uma disciplina hipotética. Dependendo do conceito digitado, diga o que ele significa, como mostrado abaixo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="mf">1.</span> <span class="n">A</span><span class="o">+</span> <span class="n">Excepcional</span>
+ <span class="mf">2.</span> <span class="n">A</span>  <span class="n">Excelente</span>
+ <span class="mf">3.</span> <span class="n">A</span><span class="o">-</span> <span class="n">Excelente</span>
+ <span class="mf">4.</span> <span class="n">B</span><span class="o">+</span> <span class="n">Bom</span>
+ <span class="mf">5.</span> <span class="n">B</span>  <span class="n">Bom</span>
+ <span class="mf">6.</span> <span class="n">B</span><span class="o">-</span> <span class="n">Bom</span>
+ <span class="mf">7.</span> <span class="n">C</span><span class="o">+</span> <span class="n">Regular</span>
+ <span class="mf">8.</span> <span class="n">C</span>  <span class="n">Regular</span>
+ <span class="mf">9.</span> <span class="n">C</span><span class="o">-</span> <span class="n">Regular</span>
+<span class="mf">10.</span> <span class="n">D</span>  <span class="n">Reprovação</span>
+</pre></div>
+</div>
+<p><strong>Exercício 07.</strong> Escreva um programa em Python que simule uma calculadora com as 4 funções básicas (+, −, /, ∗). O programa deve pedir ao usuário para entrar com os operandos (números reais) e o tipo de operação, e a seguir escrever o resultado.</p>
+<p><strong>Exercício 08.</strong> Escreva um programa que calcule a menor distância entre um ponto e uma reta, possibilitando que o usuário entre com as informações de dois pontos pertencentes à reta, bem como o ponto para o qual deva ser
+avaliada a distância.</p>
+<p><strong>Dica:</strong> A menor distância entre um ponto <span class="math notranslate nohighlight">\(P\)</span> e uma reta <span class="math notranslate nohighlight">\(r\)</span> corresponde ao segmento de reta perpendicular à <span class="math notranslate nohighlight">\(r\)</span> que parte de <span class="math notranslate nohighlight">\(P\)</span> e chega a <span class="math notranslate nohighlight">\(r\)</span> (<a class="reference internal" href="#listas-fig-distancia-minima-ponto-reta"><span class="std std-numref">Figura 16</span></a>).</p>
+<blockquote>
+<div><div class="align-center figure align-default" id="listas-fig-distancia-minima-ponto-reta">
+<a class="reference internal image-reference" href="../_images/distancia-minima-ponto-reta.png"><img alt="Distância mínima entre um ponto e uma reta." src="../_images/distancia-minima-ponto-reta.png" style="width: 90%;" /></a>
+<p class="caption"><span class="caption-number">Figura 16 - </span><span class="caption-text">Distância mínima entre um ponto e uma reta.</span><a class="headerlink" href="#listas-fig-distancia-minima-ponto-reta" title="Link Permanente para essa imagem">¶</a></p>
+</div>
+</div></blockquote>
+<p>Uma forma de computar esta distância consiste na utilização da forma normal de Hessean para retas. Para uma reta <span class="math notranslate nohighlight">\(r\)</span> que passa pelos pontos <span class="math notranslate nohighlight">\(P_1=(x_1, y_1)\)</span> e <span class="math notranslate nohighlight">\(P_2=(x_2, y_2)\)</span>, temos a seguinte fórmula:</p>
+<blockquote>
+<div><div class="math notranslate nohighlight" id="equation-listas-l03-hessean">
+<span class="eqno">(4)<a class="headerlink" href="#equation-listas-l03-hessean" title="Permalink para essa equação">¶</a></span>\[h(x, y) = \frac{(y_2 - y_1) \times (x - x_1) - (x_2 - x_1) \times (y - y_1)}{\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}} = 0\]</div>
+<p>com: <span class="math notranslate nohighlight">\(\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2} &gt; 0\)</span>.</p>
+<p>A distância de <span class="math notranslate nohighlight">\(P=(x, y)\)</span> a <span class="math notranslate nohighlight">\(r\)</span> é dada por <span class="math notranslate nohighlight">\(|h(x, y)|\)</span>.</p>
+</div></blockquote>
+<p><strong>Fonte:</strong> Jurg Nievergelt e Klaus H. Hinrichs. Algorithms &amp; Data Structures with Applications to Graphics and Geometry. Prentice Hall, 1993. 350 pp.</p>
+<p><strong>Exercício 09.</strong> Escreva um programa em Python que avalie se dois segmentos de reta se interceptam ou não.</p>
+<p><strong>Dica:</strong> Sejam os segmentos de reta, <span class="math notranslate nohighlight">\(S=\overline{P_1P_2}\)</span> e <span class="math notranslate nohighlight">\(T=\overline{P_3P_4}\)</span> (<a class="reference internal" href="#listas-fig-intersecao-entre-segmentos-de-reta"><span class="std std-numref">Figura 17</span></a>). Para saber se esses dois segmentos se interceptam, basta avaliar se os pontos <span class="math notranslate nohighlight">\(P_1\)</span> e <span class="math notranslate nohighlight">\(P_2\)</span> de <span class="math notranslate nohighlight">\(S\)</span> encontram-se em lados opostos da reta que contém o segmento <span class="math notranslate nohighlight">\(T\)</span>, e se os pontos <span class="math notranslate nohighlight">\(P_3\)</span> e <span class="math notranslate nohighlight">\(P_4\)</span> de <span class="math notranslate nohighlight">\(T\)</span> estão em lados opostos da reta que contém o segmento <span class="math notranslate nohighlight">\(S\)</span>.</p>
+<blockquote>
+<div><div class="align-center figure align-default" id="listas-fig-intersecao-entre-segmentos-de-reta">
+<a class="reference internal image-reference" href="../_images/intersecao-entre-segmentos-de-reta.png"><img alt="Interseção entre segmentos de reta." src="../_images/intersecao-entre-segmentos-de-reta.png" style="width: 90%;" /></a>
+<p class="caption"><span class="caption-number">Figura 17 - </span><span class="caption-text">Interseção entre segmentos de reta.</span><a class="headerlink" href="#listas-fig-intersecao-entre-segmentos-de-reta" title="Link Permanente para essa imagem">¶</a></p>
+</div>
+</div></blockquote>
+<p>A equação de Hessean, mostrada no <em>Exercício 08</em>, pode ser usada na solução desse problema. Os pontos <span class="math notranslate nohighlight">\(P_1\)</span> e <span class="math notranslate nohighlight">\(P_2\)</span> encontram-se em lados opostos da reta que contém o segmento <span class="math notranslate nohighlight">\(T\)</span>, se <span class="math notranslate nohighlight">\(h(P_1) \times h(P_2) &lt; 0\)</span>. De maneira análoga, os pontos <span class="math notranslate nohighlight">\(P_3\)</span> e <span class="math notranslate nohighlight">\(P_4\)</span> encontram-se em lados opostos da reta que contém o segmento <span class="math notranslate nohighlight">\(S\)</span>, se <span class="math notranslate nohighlight">\(h(P_3) \times h(P_4) &lt; 0\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Nesta inequação, a avaliação do denominador da equação de Hessean se torna desnecessária.</p>
+</div>
+<p>Se <span class="math notranslate nohighlight">\(h(P_1) = 0\)</span> ou <span class="math notranslate nohighlight">\(h(P_2) = 0\)</span>, significa que um desses pontos encontra-se sobre a reta que contém <span class="math notranslate nohighlight">\(T\)</span>. No caso de <span class="math notranslate nohighlight">\(h(P_1) = 0 \land h(P_2) = 0\)</span>, os segmentos <span class="math notranslate nohighlight">\(S\)</span> e <span class="math notranslate nohighlight">\(T\)</span> são colineares e um simples teste de intervalo com os pontos extremos dos segmentos é o suficiente para dizer se há ou não interseção.</p>
+<p>Veja que não é pedido no exercício para que seja computado o ponto de interseção <span class="math notranslate nohighlight">\(I\)</span> mostrado na <a class="reference internal" href="#listas-fig-intersecao-entre-segmentos-de-reta"><span class="std std-numref">Figura 17</span></a>.</p>
+<p>Além disso, deve ser considerado que os segmentos <span class="math notranslate nohighlight">\(S\)</span> e <span class="math notranslate nohighlight">\(T\)</span> possuem interseção, se eles tiverem qualquer ponto em comum, incluindo as extremidades <span class="math notranslate nohighlight">\(P_1\)</span>, <span class="math notranslate nohighlight">\(P_2\)</span>, <span class="math notranslate nohighlight">\(P_3\)</span>, ou <span class="math notranslate nohighlight">\(P_4\)</span>.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../licenca.html" class="btn btn-neutral float-right" title="Licença" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="l02.html" class="btn btn-neutral float-left" title="Lista de Exercícios 02" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-165908761-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

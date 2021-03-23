@@ -53,7 +53,7 @@ Um **interpretador** é um programa capaz de executar outros programas. A forma 
         No macOS, abra um terminal de comandos e digite o comando ``python``, isto deverá abrir o terminal de comandos como mostrado na :numref:`Figura %s <variados:fig:mac-terminal-python>`.
 
 
-        .. figure:: ../img/variados/python-terminal.png
+        .. figure:: ../img/variados/python-terminal-mac.png
             :alt: Terminal interativo do Python
             :width: 90%
             :figclass: align-center

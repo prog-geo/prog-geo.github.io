@@ -1,0 +1,119 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _sec_listas_l03:
+
+Lista de Exercícios 03
+======================
+
+
+**Atenção:**
+
+.. rst-class:: open
+
+- Os exercícios práticos devem ser desenvolvidos em Python. Escreva a documentação que achar pertinente dentro do próprio código fonte, que deverá utilizar a codificação de caracteres ``UTF-8``.
+
+- A solução de cada exercício deverá ser entregue em um único arquivo de código fonte na linguagem Python. Use arquivos com a extensão ``.py`` com a seguinte nomenclatura:
+
+    | exercicio-**numero**.py.
+    |
+    | Exemplo: ``exercicio-01.py``.
+    |
+    | Não use acentos ou caracteres especiais nos nomes dos arquivos.
+
+- Você deverá entregar a lista através de um *pull-request* a ser realizado no repositório associado ao seu usuário na organização `prog-geo <https://github.com/prog-geo>`_. Esse *pull-request* deverá conter todos os arquivos da entrega.
+
+- **Prazo para entrega:** 28/03/2021 - 18:00
+
+
+**Exercício 01.** Faça um programa em Python que leia três números reais e escreva o valor do maior e do menor deles. Para resolver este exercício, não utilizar as funções ``min/max``.
+
+**Exercício 02.** Escreva um programa em Python que leia o tamanho dos lados de um triângulo, avalie se esses valores realmente formam um triângulo, e em caso positivo, classifique o triângulo em isósceles, escaleno ou equilátero.
+
+**Exercício 03.** Escreva um programa em Python que pergunte ao usuário um número entre 0 e 10, e diga se ele é ímpar ou par.
+
+**Exercício 04.** Escreva um programa em Python que pergunte ao usuário um número qualquer (> 0), e diga se ele é divisível apenas por 2, apenas por 3, por 2 e por 3, ou
+se não é divisível nem por 2 nem por 3.
+
+**Exercício 05.** Faça um programa em Python que pergunte ao usuário qual a série que ele deseja calcular e em seguida imprima o nome da série escolhida. Veja o exemplo do que deve ser escrito na tela::
+
+    0 Lucas
+    1 Pell
+    2 Triangular
+    3 Square
+    4 Pentagonal
+
+    Qual série você deseja computar? 3
+
+    Você escolheu computar a série "Square"!
+
+**Exercício 06.** Faça um programa que pergunte ao usuário o seu conceito final em uma disciplina hipotética. Dependendo do conceito digitado, diga o que ele significa, como mostrado abaixo::
+
+     1. A+ Excepcional
+     2. A  Excelente
+     3. A- Excelente
+     4. B+ Bom
+     5. B  Bom
+     6. B- Bom
+     7. C+ Regular
+     8. C  Regular
+     9. C- Regular
+    10. D  Reprovação
+
+
+**Exercício 07.** Escreva um programa em Python que simule uma calculadora com as 4 funções básicas (+, −, /, ∗). O programa deve pedir ao usuário para entrar com os operandos (números reais) e o tipo de operação, e a seguir escrever o resultado.
+
+**Exercício 08.** Escreva um programa que calcule a menor distância entre um ponto e uma reta, possibilitando que o usuário entre com as informações de dois pontos pertencentes à reta, bem como o ponto para o qual deva ser
+avaliada a distância.
+
+**Dica:** A menor distância entre um ponto :math:`P` e uma reta :math:`r` corresponde ao segmento de reta perpendicular à :math:`r` que parte de :math:`P` e chega a :math:`r` (:numref:`Figura %s <listas:fig:distancia-minima-ponto-reta>`).
+
+    .. figure:: ../img/listas/distancia-minima-ponto-reta.png
+        :alt:  Distância mínima entre um ponto e uma reta.
+        :width: 90%
+        :figclass: align-center
+        :name: listas:fig:distancia-minima-ponto-reta
+
+        Distância mínima entre um ponto e uma reta.
+
+Uma forma de computar esta distância consiste na utilização da forma normal de Hessean para retas. Para uma reta :math:`r` que passa pelos pontos :math:`P_1=(x_1, y_1)` e :math:`P_2=(x_2, y_2)`, temos a seguinte fórmula:
+
+    .. math::
+        :label: :listas:l03:hessean
+
+        h(x, y) = \frac{(y_2 - y_1) \times (x - x_1) - (x_2 - x_1) \times (y - y_1)}{\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}} = 0
+
+    com: :math:`\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2} > 0`.
+
+    A distância de :math:`P=(x, y)` a :math:`r` é dada por :math:`|h(x, y)|`.
+
+
+**Fonte:** Jurg Nievergelt e Klaus H. Hinrichs. Algorithms & Data Structures with Applications to Graphics and Geometry. Prentice Hall, 1993. 350 pp.
+
+
+**Exercício 09.** Escreva um programa em Python que avalie se dois segmentos de reta se interceptam ou não.
+
+**Dica:** Sejam os segmentos de reta, :math:`S=\overline{P_1P_2}` e :math:`T=\overline{P_3P_4}` (:numref:`Figura %s <listas:fig:intersecao-entre-segmentos-de-reta>`). Para saber se esses dois segmentos se interceptam, basta avaliar se os pontos :math:`P_1` e :math:`P_2` de :math:`S` encontram-se em lados opostos da reta que contém o segmento :math:`T`, e se os pontos :math:`P_3` e :math:`P_4` de :math:`T` estão em lados opostos da reta que contém o segmento :math:`S`.
+
+    .. figure:: ../img/listas/intersecao-entre-segmentos-de-reta.png
+        :alt:  Interseção entre segmentos de reta.
+        :width: 90%
+        :figclass: align-center
+        :name: listas:fig:intersecao-entre-segmentos-de-reta
+
+        Interseção entre segmentos de reta.
+
+
+A equação de Hessean, mostrada no *Exercício 08*, pode ser usada na solução desse problema. Os pontos :math:`P_1` e :math:`P_2` encontram-se em lados opostos da reta que contém o segmento :math:`T`, se :math:`h(P_1) \times h(P_2) < 0`. De maneira análoga, os pontos :math:`P_3` e :math:`P_4` encontram-se em lados opostos da reta que contém o segmento :math:`S`, se :math:`h(P_3) \times h(P_4) < 0`.
+
+.. note::
+    Nesta inequação, a avaliação do denominador da equação de Hessean se torna desnecessária.
+
+Se :math:`h(P_1) = 0` ou :math:`h(P_2) = 0`, significa que um desses pontos encontra-se sobre a reta que contém :math:`T`. No caso de :math:`h(P_1) = 0 \land h(P_2) = 0`, os segmentos :math:`S` e :math:`T` são colineares e um simples teste de intervalo com os pontos extremos dos segmentos é o suficiente para dizer se há ou não interseção.
+
+Veja que não é pedido no exercício para que seja computado o ponto de interseção :math:`I` mostrado na :numref:`Figura %s <listas:fig:intersecao-entre-segmentos-de-reta>`. 
+
+Além disso, deve ser considerado que os segmentos :math:`S` e :math:`T` possuem interseção, se eles tiverem qualquer ponto em comum, incluindo as extremidades :math:`P_1`, :math:`P_2`, :math:`P_3`, ou :math:`P_4`.
+
