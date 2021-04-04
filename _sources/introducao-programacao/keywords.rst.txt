@@ -6,7 +6,7 @@
 .. include:: ../def.rst
 
 
-.. _sec_introducao_programacao_formatacao_keywords:
+.. _sec_introducao_programacao_keywords:
 
 Palavras-chave
 ==============

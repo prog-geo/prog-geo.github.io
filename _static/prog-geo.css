@@ -93,4 +93,6 @@ div.box-exemplos.admonition > p.admonition-title {
     background: #3a87ad;
 }
 
-
+p.centered-paragraph {
+    text-align: center;
+}

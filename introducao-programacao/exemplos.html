@@ -231,10 +231,10 @@
 <p id="sec-introducao-programacao-exemplos-ex01"><strong>Exemplo 01.</strong> Uma reta pode ser representada por uma equação geral da seguinte forma:</p>
 <div class="math notranslate nohighlight" id="equation-introd-prog-math-equacao-reta">
 <span class="eqno">(2.3)<a class="headerlink" href="#equation-introd-prog-math-equacao-reta" title="Permalink para essa equação">¶</a></span>\[ax + by + c = 0\]</div>
-<p>Considere a reta com os seguintes coeficientes: <span class="math notranslate nohighlight">\(a = 3\)</span>, <span class="math notranslate nohighlight">\(b = -2\)</span> e <span class="math notranslate nohighlight">\(c = -6\)</span> (<a class="reference internal" href="#introd-prog-fig-eq-reta"><span class="std std-numref">Figura 2.18</span></a>). Faça um programa que pergunte ao usuário os valores de um par de coordenadas <span class="math notranslate nohighlight">\((x,y)\)</span>, aplique a <a class="reference internal" href="#equation-introd-prog-math-equacao-reta">Equação 2.3</a> e verifique o resultado.</p>
+<p>Considere a reta com os seguintes coeficientes: <span class="math notranslate nohighlight">\(a = 3\)</span>, <span class="math notranslate nohighlight">\(b = -2\)</span> e <span class="math notranslate nohighlight">\(c = -6\)</span> (<a class="reference internal" href="#introd-prog-fig-eq-reta"><span class="std std-numref">Figura 2.20</span></a>). Faça um programa que pergunte ao usuário os valores de um par de coordenadas <span class="math notranslate nohighlight">\((x,y)\)</span>, aplique a <a class="reference internal" href="#equation-introd-prog-math-equacao-reta">Equação 2.3</a> e verifique o resultado.</p>
 <div class="align-center figure align-default" id="introd-prog-fig-eq-reta">
 <a class="reference internal image-reference" href="../_images/eq-reta.png"><img alt="Ilustração de uma reta com coeficientes: a = 3, b = -2 e c = -6" src="../_images/eq-reta.png" style="width: 60%;" /></a>
-<p class="caption"><span class="caption-number">Figura 2.18 - </span><span class="caption-text">Ilustração de uma reta com coeficientes: <span class="math notranslate nohighlight">\(a = 3\)</span>, <span class="math notranslate nohighlight">\(b = -2\)</span> e <span class="math notranslate nohighlight">\(c = -6\)</span>.</span><a class="headerlink" href="#introd-prog-fig-eq-reta" title="Link Permanente para essa imagem">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 2.20 - </span><span class="caption-text">Ilustração de uma reta com coeficientes: <span class="math notranslate nohighlight">\(a = 3\)</span>, <span class="math notranslate nohighlight">\(b = -2\)</span> e <span class="math notranslate nohighlight">\(c = -6\)</span>.</span><a class="headerlink" href="#introd-prog-fig-eq-reta" title="Link Permanente para essa imagem">¶</a></p>
 </div>
 <p><strong>Solução:</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># coeficientes da equação geral da reta:</span>
@@ -405,6 +405,22 @@ fat(n) = n \times fat(n - 1), &amp; \text{se $n &gt; 1$}
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+<hr class="docutils" />
+<p id="sec-introducao-programacao-exemplos-ex08"><strong>Exemplo 08.</strong> Dada a lista de valores de NDVI:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">serie_ndvi</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.3</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Apresente as seguintes informações:</p>
+<ul class="simple">
+<li><p>Quantidade de valores inválidos (neste caso: <code class="docutils literal notranslate"><span class="pre">None</span></code>).</p></li>
+<li><p>Quantidade de valores válidos.</p></li>
+</ul>
+<hr class="docutils" />
+<p id="sec-introducao-programacao-exemplos-ex09"><strong>Exemplo 09.</strong> Uma imagem MODIS, em geral, armazena seus valores multiplicados por 10.000. Desta forma um valor 5.000 (inteiro) representa o valor real 0.5 (ponto flutuante) e ocupa menos espaço na memória. Dada uma lista de valores MODIS:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">serie_modis</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7000</span><span class="p">,</span> <span class="mi">6000</span><span class="p">,</span> <span class="mi">3000</span><span class="p">,</span> <span class="mi">3000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">5000</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">7500</span><span class="p">,</span> <span class="mi">3000</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Calcule e apresente a lista de valores reais (divididos por 10.000).</p>
 </div>
 
 

@@ -28,6 +28,9 @@ Lista de Exercícios 03
 - **Prazo para entrega:** 28/03/2021 - 18:00
 
 
+-----
+
+
 **Exercício 01.** Faça um programa em Python que leia três números reais e escreva o valor do maior e do menor deles. Para resolver este exercício, não utilizar as funções ``min/max``.
 
 
@@ -57,6 +60,9 @@ Lista de Exercícios 03
         print(n2)
     else:
         print(n3)
+
+
+-----
 
 
 **Exercício 02.** Escreva um programa em Python que leia o tamanho dos lados de um triângulo, avalie se esses valores realmente formam um triângulo, e em caso positivo, classifique o triângulo em isósceles, escaleno ou equilátero.
@@ -94,6 +100,9 @@ Lista de Exercícios 03
         print('Os lados não formam um triângulo: ', end='')
 
 
+-----
+
+
 **Exercício 03.** Escreva um programa em Python que pergunte ao usuário um número entre 0 e 10, e diga se ele é ímpar ou par.
 
 
@@ -111,6 +120,9 @@ Lista de Exercícios 03
             print('Número é ímpar:', num)
     else:
         print('Número fora do intervalo [0, 10]:', num)
+
+
+-----
 
 
 **Exercício 04.** Escreva um programa em Python que pergunte ao usuário um número qualquer (> 0), e diga se ele é divisível apenas por 2, apenas por 3, por 2 e por 3, ou
@@ -135,6 +147,9 @@ se não é divisível nem por 2 nem por 3.
             print(num, 'não é divisível por 2 ou 3')
     else:
         print('Você digitou um número menor ou igual a 0:', num)
+
+
+-----
 
 
 **Exercício 05.** Faça um programa em Python que pergunte ao usuário qual a série que ele deseja calcular e em seguida imprima o nome da série escolhida. Veja o exemplo do que deve ser escrito na tela::
@@ -180,6 +195,9 @@ se não é divisível nem por 2 nem por 3.
         print('Você escolheu uma opção inválida!')
 
 
+-----
+
+
 **Exercício 06.** Faça um programa que pergunte ao usuário o seu conceito final em uma disciplina hipotética. Dependendo do conceito digitado, diga o que ele significa, como mostrado abaixo::
 
      1. A+ Excepcional
@@ -215,6 +233,9 @@ se não é divisível nem por 2 nem por 3.
         print('Conceito inválido')
 
 
+-----
+
+
 **Exercício 07.** Escreva um programa em Python que simule uma calculadora com as 04 funções básicas (:math:`+`, :math:`−`, :math:`\div`, :math:`\times`). O programa deve pedir ao usuário para entrar com os operandos (números reais) e o tipo de operação, e a seguir escrever o resultado.
 
 
@@ -243,12 +264,16 @@ se não é divisível nem por 2 nem por 3.
     if resultado != None:
         print(operando_1, tipo_de_operacao, operando_2, '=', resultado)
 
+
+-----
+
+
 .. _lista_02_ex_08:
 
 **Exercício 08.** Escreva um programa que calcule a menor distância entre um ponto e uma reta, possibilitando que o usuário entre com as informações de dois pontos pertencentes à reta, bem como o ponto para o qual deva ser avaliada a distância.
 
 
-.. tip::
+.. note::
 
     A menor distância entre um ponto :math:`P` e uma reta :math:`r` corresponde ao segmento de reta perpendicular à :math:`r` que parte de :math:`P` e chega a :math:`r` (:numref:`Figura %s <listas:fig:distancia-minima-ponto-reta>`).
 
@@ -271,7 +296,11 @@ se não é divisível nem por 2 nem por 3.
 
     com: :math:`\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2} > 0`.
 
+
     A distância de :math:`P=(x, y)` a :math:`r` é dada por :math:`|h(x, y)|`.
+
+
+    .. rst-class:: centered-paragraph
 
     **Fonte:** Nievergelt and Hinrichs (1993) :cite:`nievergelt:1993`.
 
@@ -309,6 +338,9 @@ se não é divisível nem por 2 nem por 3.
         print('Distância:', h)
     else:
         print('Coordenadas inválidas!')
+
+
+-----
 
 
 **Exercício 09.** Escreva um programa em Python que avalie se dois segmentos de reta se interceptam ou não.

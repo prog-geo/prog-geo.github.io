@@ -159,6 +159,7 @@ A seguinte fórmula recursiva define esta sequência:
 
 Faça um programa em Python que compute a sequência para um número :math:`n` qualquer.
 
+
 **Solução:**
 
 
@@ -187,12 +188,14 @@ Faça um programa em Python que compute a sequência para um número :math:`n` q
 
         i = i + 1
 
+
 -----
 
 
 .. _sec_introducao_programacao_exemplos_ex05:
 
 **Exemplo 05.** Escreva um programa em Python que leia dois números, :math:`x` e :math:`y`, e calcule a função potência :math:`x^y`, sem utilizar o operador ``**`` de Python ou alguma função da biblioteca padrão.
+
 
 **Solução:**
 
@@ -212,12 +215,14 @@ Faça um programa em Python que compute a sequência para um número :math:`n` q
 
     print("X^Y:", pot)
 
+
 -----
 
 
 .. _sec_introducao_programacao_exemplos_ex06:
 
 **Exemplo 06.** Escreva um programa em Python que verifique se um número é primo ou não.
+
 
 **Solução:**
 
@@ -244,12 +249,14 @@ Faça um programa em Python que compute a sequência para um número :math:`n` q
     else:
         print(n, "não é primo!")
 
+
 -----
 
 
 .. _sec_introducao_programacao_exemplos_ex07:
 
 **Exemplo 07.** Escreva um programa em Python que gere a tabela de multiplicação dos números de :math:`1` a :math:`10`.
+
 
 **Solução:**
 
@@ -271,3 +278,32 @@ Faça um programa em Python que compute a sequência para um número :math:`n` q
         i = i + 1
 
         print("")
+
+
+-----
+
+
+.. _sec_introducao_programacao_exemplos_ex08:
+
+**Exemplo 08.** Dada a lista de valores de NDVI::
+
+    serie_ndvi = [0.3, -0.3, 0.2, None, 0.9, 0.8, 0.8, None, 0.2, 0.2]
+
+
+Apresente as seguintes informações:
+
+- Quantidade de valores inválidos (neste caso: ``None``).
+- Quantidade de valores válidos.
+
+
+-----
+
+
+.. _sec_introducao_programacao_exemplos_ex09:
+
+**Exemplo 09.** Uma imagem MODIS, em geral, armazena seus valores multiplicados por 10.000. Desta forma um valor 5.000 (inteiro) representa o valor real 0.5 (ponto flutuante) e ocupa menos espaço na memória. Dada uma lista de valores MODIS::
+
+    serie_modis = [7000, 6000, 3000, 3000, 10000, 2000, 5000, 500, 7500, 3000]
+
+
+Calcule e apresente a lista de valores reais (divididos por 10.000).

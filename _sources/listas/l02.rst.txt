@@ -28,6 +28,9 @@ Lista de Exercícios 02
 - **Prazo para entrega:** 19/03/2021 - 18:00
 
 
+-----
+
+
 **Exercício 01.** Usando o terminal interativo do Python, use o comando ``type(objeto)`` e descubra o tipo de dados dos seguintes objetos::
 
     1
@@ -43,7 +46,12 @@ Lista de Exercícios 02
     5 + 3j
 
 
-**Obs.:** Você deverá entregar um arquivo chamado ``exercicio-01.py`` com a sequência de comandos digitada no terminal interativo. Para cada comando, inclua na linha seguinte o seu resultado como um texto comentado.
+.. note::
+
+    Você deverá entregar um arquivo chamado ``exercicio-01.py`` com a sequência de comandos digitada no terminal interativo. Para cada comando, inclua na linha seguinte o seu resultado como um texto comentado.
+
+
+-----
 
 
 **Exercício 02.** Apresente o resultado das seguintes expressões::
@@ -83,11 +91,15 @@ Lista de Exercícios 02
     math.cos(math.pi / 4 )
 
 
-**Obs.:** Você deverá entregar um arquivo chamado ``exercicio-02.py`` com a sequência de comandos digitada no terminal interativo. Para cada comando, inclua na linha seguinte o seu resultado como um texto comentado.
+.. note::
+
+    Você deverá entregar um arquivo chamado ``exercicio-02.py`` com a sequência de comandos digitada no terminal interativo. Para cada comando, inclua na linha seguinte o seu resultado como um texto comentado.
+
+
+-----
 
 
 **Exercício 03.** Considere a equação dos seguintes índices espectrais:
-
 
 - NDWI:
 
@@ -138,6 +150,9 @@ De acordo com as equações acima, crie um programa que leia os valores de :math
 
     # mostrar resultado na tela
     print("NDVI:", NDVI)
+
+
+-----
 
 
 **Exercício 04.** Escreva um programa que pergunte ao usuário as coordenadas de latitude e longitude, em grau-decimal, de dois pontos quaisquer na esfera terrestre e que apresente a distância entre eles. Essa distância deverá ser calculada de acordo com a `fórmula de Haversine <https://en.wikipedia.org/wiki/Haversine\_formula>`_:
