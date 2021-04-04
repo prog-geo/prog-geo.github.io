@@ -139,7 +139,7 @@ Neste curso, iremos discutir várias ferramentas que irão ajudar vocês nas pr�
     :figclass: align-center
     :name: visao-geral:fig:spectrum-reproducibility
 
-    The spectrum of reproducibility. |br| **Fonte:** Peng. (2011) :cite:`peng:2011`.
+    The spectrum of reproducibility. |br| **Fonte:** Peng (2011) :cite:`peng:2011`.
 
 
 .. note::

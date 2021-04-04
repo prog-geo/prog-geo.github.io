@@ -65,7 +65,7 @@ Regra para Nomes de Variáveis
 -----------------------------
 
 
-Cada linguagem de programação possui suas regras para nomenclatura das variáveis, inclusive para dizer se há diferenças entre nomes de variáveis com letras maiúsculas e minúsculas. Em Python, os **identificadores** (ou **nomes**) de variáveis podem ser qualquer cadeia de caracteres formadas por letras, dígitos e *underscore*, desde que não comece com um dígito. Além disso, existe a distinção entre caracteres maiúsculos e minúsculos.
+Cada linguagem de programação possui suas regras para nomenclatura das variáveis, inclusive para dizer se há diferenças entre nomes de variáveis com letras maiúsculas e minúsculas. Em Python, os **identificadores** (ou **nomes**) de variáveis podem ser qualquer cadeia de caracteres formada por letras, dígitos e *underscore*, desde que não comece com um dígito. Além disso, existe a distinção entre caracteres maiúsculos e minúsculos.
 
 
 

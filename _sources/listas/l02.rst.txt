@@ -97,7 +97,12 @@ Lista de Exercícios 02
         NDWI = \frac{(X_{green} - X_{nir})}{(X_{green} + X_{nir})}
 
 
-    onde: :math:`X_{green}` refere-se à banda espectral da faixa do verde (banda 04 do MODIS) e :math:`X_{nir}` refere-se à banda do infravermelho próximo (banda 02 do MODIS).
+    onde: :math:`X_{green}` refere-se à banda espectral da faixa do verde e :math:`X_{nir}` refere-se à banda do infravermelho próximo.
+
+    .. note::
+
+        A equação acima pode ser encontrada em :cite:`mcfeeters:1996`.
+
 
 - NDVI:
 
@@ -107,13 +112,32 @@ Lista de Exercícios 02
         NDVI = \frac{(X_{nir} - X_{red})}{(X_{nir} + X_{red})}
 
 
-    onde: :math:`X_{red}` refere-se à banda espectral da faixa do vermelho (banda 01 do MODIS) e :math:`X_{nir}` refere-se à banda do infravermelho próximo (banda 02 do MODIS).
-
-
-**Fonte:** https://doi.org/10.1029/2008GL035772.
+    onde: :math:`X_{red}` refere-se à banda espectral da faixa do vermelho e :math:`X_{nir}` refere-se à banda do infravermelho próximo.
 
 
 De acordo com as equações acima, crie um programa que leia os valores de :math:`X_{green}`, :math:`X_{nir}` e :math:`X_{red}`, e imprima como resultados os valores de ``NDWI`` e ``NDVI``.
+
+
+**Solução:**
+
+
+.. code-block:: python
+
+    Xgreen = float( input( "Xgreen: " ) )
+    Xnir = float( input( "Xnir: " ) )
+    Xred = float( input( "Xred: " ) )
+
+    # calculando NDWI
+    NDWI = (Xgreen - Xnir) / (Xgreen + Xnir)
+
+    # mostrar resultado na tela
+    print("NDWI:", NDWI)
+
+    # calculando NDVI
+    NDVI = (Xnir - Xred) / (Xnir + Xred)
+
+    # mostrar resultado na tela
+    print("NDVI:", NDVI)
 
 
 **Exercício 04.** Escreva um programa que pergunte ao usuário as coordenadas de latitude e longitude, em grau-decimal, de dois pontos quaisquer na esfera terrestre e que apresente a distância entre eles. Essa distância deverá ser calculada de acordo com a `fórmula de Haversine <https://en.wikipedia.org/wiki/Haversine\_formula>`_:
@@ -134,4 +158,75 @@ onde:
 - :math:`\lambda_1` e :math:`\lambda_2`: longitude dos pontos em radianos.
 
 
-**Obs.:** Lembre-se que todas as funções trigonométricas e suas inversas, bem como funções para conversão entre graus e radianos encontram-se na `biblioteca matemática do Python <https://docs.python.org/3/library/math.html>`_.
+.. note::
+
+    Lembre-se que todas as funções trigonométricas e suas inversas, bem como funções para conversão entre graus e radianos encontram-se na `biblioteca matemática do Python <https://docs.python.org/3/library/math.html>`_.
+
+
+**Solução:**
+
+
+.. code-block:: python
+
+    """ Distância de Haversine
+
+    Este programa realiza a computação da distância de
+    Haversine entre duas localizações geográficas.
+
+    Se você quiser testar este programa, utilize as
+    seguintes coordendas:
+    * Localização de Ouro Preto:
+        - longitude: -43.50
+        - latitude: -20.38
+
+    * São José dos Campos
+        - longitude: -45.88
+        - latitude: -23.17
+
+    A distância entre Ouro Perto e São José dos Campos deve
+    ser de aproximadamente ``395.758 km``.
+    """
+    import math
+
+
+    long1 = float( input( "Longitude do Ponto 1: " ) )
+    lat1 = float( input( "Latitude do Ponto 1: " ) )
+
+    long2 = float( input( "Longitude do Ponto 2: " ) )
+    lat2 = float( input( "Latitude do Ponto 2: " ) )
+
+    # Raio da Terra: 6371km
+    raio_terra = 6371
+
+    # Covertendo de graus-decimal para radianos
+    fi1 = math.radians(lat1)
+    fi2 = math.radians(lat2)
+
+    lambda1 = math.radians(long1)
+    lambda2 = math.radians(long2)
+
+    # Pré-computando alguns valores da fórmula de Haversine
+    delta_fi = fi2 - fi1
+    delta_lambda = lambda2 - lambda1
+
+    sin2_fi = math.sin(delta_fi / 2.0) ** 2
+
+    sin2_lambda = math.sin(delta_lambda / 2.0) ** 2
+
+    # Computando a distância de Haversine
+    distancia = 2.0 * raio_terra * \
+                    math.asin( \
+                        math.sqrt( \
+                            sin2_fi + \
+                            math.cos(fi1) * math.cos(fi2) \
+                            * sin2_lambda
+                        )
+                    )
+
+    # Escreve na saída padrão a distância computada
+    print(distancia)
+
+
+.. note::
+
+    Mais adiante no curso iremos mostrar como estruturar o código acima em uma função, para que a seção de código que realiza a computação da distância possa ser reutilizada e melhor encapsulada em um programa.

@@ -204,12 +204,12 @@ Nesse tipo de laço, se a expressão lógica ou condição de repetição no in�
 
 
 .. figure:: ../img/introducao-programacao/laco-while.png
-    :alt: Fluxograma dos laços do tipo for
+    :alt: Fluxograma dos laços do tipo while
     :width: 50%
     :figclass: align-center
     :name: introd-prog:fig:laco-while
 
-    Fluxograma dos laços do tipo ``for``.
+    Fluxograma dos laços do tipo ``while``.
 
 
 A sintaxe básica deste comando é a seguine::

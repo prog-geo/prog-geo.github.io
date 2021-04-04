@@ -12,7 +12,7 @@ Chamada de Funções
 ==================
 
 
-Apenas com o conjunto de operações básicas seria muito difícil expressarmos nossos programas. Por isso, várias funcionalidades que iremos incluir na escrita dos nossos programas pressupõe a existência de algumas **funções** e **procedimentos** auxiliares, como as **funções matemáticas**.
+Apenas com o conjunto de operações básicas seria muito difícil expressarmos nossos programas. Por isso, várias funcionalidades que iremos incluir na escrita dos nossos programas pressupõem a existência de algumas **funções** e **procedimentos** auxiliares, como as **funções matemáticas**.
 
 
 Estas funcionalidades podem ser incluídas no nosso programa na forma de **chamada de uma função** (**function call**), que é uma forma de desviar o **fluxo de controle** do nosso programa para uma outra parte que irá realizar uma determinada computação e depois irá retornar o **fluxo de controle** ao ponto onde foi **chamada** (ou **invocada**).

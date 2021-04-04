@@ -5,7 +5,7 @@
 
 .. _cap_visao_geral:
 
-Visao Geral do Curso
+Visão Geral do Curso
 ====================
 
 
