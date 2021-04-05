@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.17. Formatação de Strings &mdash; SER-347/CAP-419</title>
+  <title>2.18. Formatação de Strings &mdash; SER-347/CAP-419</title>
   
 
   
@@ -48,8 +48,8 @@
     
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Buscar" href="../search.html" />
-    <link rel="next" title="2.18. Laços do tipo for" href="lacos-for.html" />
-    <link rel="prev" title="2.16. Dicionários" href="dicionarios.html" /> 
+    <link rel="next" title="2.19. Laços do tipo for" href="lacos-for.html" />
+    <link rel="prev" title="2.17. Conjuntos" href="set.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -124,18 +124,19 @@
 <li class="toctree-l2"><a class="reference internal" href="keywords.html">2.14. Palavras-chave</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sequencias.html">2.15. Sequências</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dicionarios.html">2.16. Dicionários</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2.17. Formatação de Strings</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#usando-o-operador">2.17.1. Usando o operador <code class="docutils literal notranslate"><span class="pre">%</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#usando-o-metodo-format">2.17.2. Usando o método <code class="docutils literal notranslate"><span class="pre">format</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#f-string">2.17.3. f-string</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#template-strings">2.17.4. Template strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="set.html">2.17. Conjuntos</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.18. Formatação de Strings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#usando-o-operador">2.18.1. Usando o operador <code class="docutils literal notranslate"><span class="pre">%</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#usando-o-metodo-format">2.18.2. Usando o método <code class="docutils literal notranslate"><span class="pre">format</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#f-string">2.18.3. f-string</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#template-strings">2.18.4. Template strings</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="lacos-for.html">2.18. Laços do tipo for</a></li>
-<li class="toctree-l2"><a class="reference internal" href="break-continue.html">2.19. Os Comandos <code class="docutils literal notranslate"><span class="pre">break</span></code> e <code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="funcoes.html">2.20. Funções</a></li>
-<li class="toctree-l2"><a class="reference internal" href="consideracoes.html">2.21. Considerações Finais</a></li>
-<li class="toctree-l2"><a class="reference internal" href="exemplos.html">2.22. Exemplos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lacos-for.html">2.19. Laços do tipo for</a></li>
+<li class="toctree-l2"><a class="reference internal" href="break-continue.html">2.20. Os Comandos <code class="docutils literal notranslate"><span class="pre">break</span></code> e <code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="funcoes.html">2.21. Funções</a></li>
+<li class="toctree-l2"><a class="reference internal" href="consideracoes.html">2.22. Considerações Finais</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exemplos.html">2.23. Exemplos</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../variados.html">3. Tópicos Variados</a></li>
@@ -205,7 +206,7 @@
         
           <li><a href="../introducao-programacao.html"><span class="section-number">2. </span>Introdução à Programação com a Linguagem Python</a> &raquo;</li>
         
-      <li><span class="section-number">2.17. </span>Formatação de Strings</li>
+      <li><span class="section-number">2.18. </span>Formatação de Strings</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -219,10 +220,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="lacos-for.html" class="btn btn-neutral float-right" title="2.18. Laços do tipo for" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="lacos-for.html" class="btn btn-neutral float-right" title="2.19. Laços do tipo for" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
       
       
-        <a href="dicionarios.html" class="btn btn-neutral float-left" title="2.16. Dicionários" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="set.html" class="btn btn-neutral float-left" title="2.17. Conjuntos" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
       
   </div>
   
@@ -232,9 +233,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="formatacao-de-strings">
-<span id="sec-introducao-programacao-formatacao-strings"></span><h1><span class="section-number">2.17. </span>Formatação de Strings<a class="headerlink" href="#formatacao-de-strings" title="Link permanente para este título">¶</a></h1>
+<span id="sec-introducao-programacao-formatacao-strings"></span><h1><span class="section-number">2.18. </span>Formatação de Strings<a class="headerlink" href="#formatacao-de-strings" title="Link permanente para este título">¶</a></h1>
 <div class="section" id="usando-o-operador">
-<span id="sec-introducao-programacao-formatacao-strings-operador-antigo"></span><h2><span class="section-number">2.17.1. </span>Usando o operador <code class="docutils literal notranslate"><span class="pre">%</span></code><a class="headerlink" href="#usando-o-operador" title="Link permanente para este título">¶</a></h2>
+<span id="sec-introducao-programacao-formatacao-strings-operador-antigo"></span><h2><span class="section-number">2.18.1. </span>Usando o operador <code class="docutils literal notranslate"><span class="pre">%</span></code><a class="headerlink" href="#usando-o-operador" title="Link permanente para este título">¶</a></h2>
 <p>Em Python podemos usar o operador <code class="docutils literal notranslate"><span class="pre">%</span></code> para realizar a formatação de strings. Nesse caso, chamamos esse operador de <strong>formatação de string</strong> ou <strong>operador de interpolação</strong>. Para compreender como ele funciona, vamos começar por um exemplo:</p>
 <div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
@@ -243,7 +244,7 @@
 <span class="go">&#39;Bem vindo a CAP-419/SER-347!&#39;</span>
 </pre></div>
 </td></tr></table></div>
-<p>A sequência <code class="docutils literal notranslate"><span class="pre">%s</span></code>, dentro da string na linha 03, possui uma interpretação especial, ela funciona como um marcador de posição (<em>placeholder</em>) que será substituída (ou interpolada ou expandida) pelo valor fornecido à direita do operador <code class="docutils literal notranslate"><span class="pre">%</span></code>. Existe uma regra bem definida de como construir as strings de formatação <span id="id1">[<a class="reference internal" href="../referencias.html#id38">15</a>]</span>. Algumas bem utilizadas são:</p>
+<p>A sequência <code class="docutils literal notranslate"><span class="pre">%s</span></code>, dentro da string na linha 03, possui uma interpretação especial, ela funciona como um marcador de posição (<em>placeholder</em>) que será substituída (ou interpolada ou expandida) pelo valor fornecido à direita do operador <code class="docutils literal notranslate"><span class="pre">%</span></code>. Existe uma regra bem definida de como construir as strings de formatação <span id="id1">[<a class="reference internal" href="../referencias.html#id39">17</a>]</span>. Algumas bem utilizadas são:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">%s</span></code>: substituição de strings.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">%d</span></code>: substituição de números inteiros.</p></li>
@@ -293,7 +294,7 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>Embora o operador <code class="docutils literal notranslate"><span class="pre">%</span></code>, para formatação de strings, tenha sido depreciado em favor do método <code class="docutils literal notranslate"><span class="pre">format</span></code> (<a class="reference internal" href="#sec-introducao-programacao-formatacao-strings-metodo-format"><span class="std std-numref">Seção 2.17.2</span></a>), é importante saber de sua existência pois muitos <em>scripts</em> e programas legados utilizam esta notação.</p>
+<p>Embora o operador <code class="docutils literal notranslate"><span class="pre">%</span></code>, para formatação de strings, tenha sido depreciado em favor do método <code class="docutils literal notranslate"><span class="pre">format</span></code> (<a class="reference internal" href="#sec-introducao-programacao-formatacao-strings-metodo-format"><span class="std std-numref">Seção 2.18.2</span></a>), é importante saber de sua existência pois muitos <em>scripts</em> e programas legados utilizam esta notação.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
@@ -301,7 +302,7 @@
 </div>
 </div>
 <div class="section" id="usando-o-metodo-format">
-<span id="sec-introducao-programacao-formatacao-strings-metodo-format"></span><h2><span class="section-number">2.17.2. </span>Usando o método <code class="docutils literal notranslate"><span class="pre">format</span></code><a class="headerlink" href="#usando-o-metodo-format" title="Link permanente para este título">¶</a></h2>
+<span id="sec-introducao-programacao-formatacao-strings-metodo-format"></span><h2><span class="section-number">2.18.2. </span>Usando o método <code class="docutils literal notranslate"><span class="pre">format</span></code><a class="headerlink" href="#usando-o-metodo-format" title="Link permanente para este título">¶</a></h2>
 <p>Sintaxe:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 </pre></div>
@@ -399,18 +400,18 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>A sintaxe de formatação do método <code class="docutils literal notranslate"><span class="pre">format</span></code> pode ser encontrada em <span id="id2">[<a class="reference internal" href="../referencias.html#id39">12</a>]</span>.</p>
+<p>A sintaxe de formatação do método <code class="docutils literal notranslate"><span class="pre">format</span></code> pode ser encontrada em <span id="id2">[<a class="reference internal" href="../referencias.html#id40">13</a>]</span>.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>Um bom guia que demonstra o uso do operador <code class="docutils literal notranslate"><span class="pre">%</span></code> e do método <code class="docutils literal notranslate"><span class="pre">format</span></code> pode ser encontrado em <span id="id3">[<a class="reference internal" href="../referencias.html#id28">34</a>]</span>.</p>
+<p>Um bom guia que demonstra o uso do operador <code class="docutils literal notranslate"><span class="pre">%</span></code> e do método <code class="docutils literal notranslate"><span class="pre">format</span></code> pode ser encontrado em <span id="id3">[<a class="reference internal" href="../referencias.html#id29">38</a>]</span>.</p>
 </div>
 </div>
 <div class="section" id="f-string">
-<h2><span class="section-number">2.17.3. </span>f-string<a class="headerlink" href="#f-string" title="Link permanente para este título">¶</a></h2>
+<h2><span class="section-number">2.18.3. </span>f-string<a class="headerlink" href="#f-string" title="Link permanente para este título">¶</a></h2>
 </div>
 <div class="section" id="template-strings">
-<h2><span class="section-number">2.17.4. </span>Template strings<a class="headerlink" href="#template-strings" title="Link permanente para este título">¶</a></h2>
+<h2><span class="section-number">2.18.4. </span>Template strings<a class="headerlink" href="#template-strings" title="Link permanente para este título">¶</a></h2>
 </div>
 </div>
 
@@ -420,8 +421,8 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="lacos-for.html" class="btn btn-neutral float-right" title="2.18. Laços do tipo for" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="dicionarios.html" class="btn btn-neutral float-left" title="2.16. Dicionários" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="lacos-for.html" class="btn btn-neutral float-right" title="2.19. Laços do tipo for" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="set.html" class="btn btn-neutral float-left" title="2.17. Conjuntos" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
     </div>
 
   <hr/>

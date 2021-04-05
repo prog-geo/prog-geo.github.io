@@ -263,7 +263,7 @@ Se o valor antes do ":" for omitido, subentende-se o valor ``0``::
     "imagem-landsat.tif"[:6]
 
 
-Se o valor após ":" for omitido, subentende-se o valor ``len(s)``:
+Se o valor após ":" for omitido, subentende-se o valor ``len(s)``::
 
     "imagem-landsat.tif"[7:]
 
