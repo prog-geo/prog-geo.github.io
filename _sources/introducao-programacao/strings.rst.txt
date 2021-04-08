@@ -334,8 +334,8 @@ Sintaxe::
 - **Parâmetros:**
 
     * ``sub``: Substring cuja ocorrência deseja-se ser localizada.
-    * ``start``: Parâmetro opicional que indica onde a busca deve começar dentro da string ``s``.
-    * ``end``: Parâmetro opicional que indica o limite (aberto) onde a busca deve terminar.
+    * ``start``: Parâmetro opcional que indica onde a busca deve começar dentro da string ``s``.
+    * ``end``: Parâmetro opcional que indica o limite (aberto) onde a busca deve terminar.
 
 - **Retorno:** Esse método retorna a posição do primeiro caractere na string ``s`` onde a ocorrência da substring ``sub`` é encontrada, ou ``-1`` caso não seja encontrada.
 
@@ -432,8 +432,8 @@ Sintaxe::
 
 - **Parâmetros:**
 
-    * ``sep``: String que define o separador usado para realizar o particionamento da string ``s``. Trata-se de um parâmetro opicional. Se não for informado ou se usado um valor ``None``, o caracter de espaço (*whitespace*)) é assumido como delimitador.
-    * ``maxsplit``: Este parâmetro opicional, pode ser usado para indica o número máximo de divisões a serem realizadas.
+    * ``sep``: String que define o separador usado para realizar o particionamento da string ``s``. Trata-se de um parâmetro opcional. Se não for informado ou se usado um valor ``None``, o caracter de espaço (*whitespace*)) é assumido como delimitador.
+    * ``maxsplit``: Este parâmetro opcional, pode ser usado para indicar o número máximo de divisões a serem realizadas.
 
 - **Retorno:** Uma lista de palavras.
 
