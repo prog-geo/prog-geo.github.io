@@ -126,7 +126,13 @@
 <li class="toctree-l2"><a class="reference internal" href="dicionarios.html">2.16. Dicionários</a></li>
 <li class="toctree-l2"><a class="reference internal" href="set.html">2.17. Conjuntos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="formatacao-strings.html">2.18. Formatação de Strings</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2.19. Laços do tipo for</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.19. Laços do tipo for</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#iterando-nos-elementos-de-um-sequencia">2.19.1. Iterando nos Elementos de um Sequencia</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#usando-a-funcao-enumerate">2.19.2. Usando a função <code class="docutils literal notranslate"><span class="pre">enumerate</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#atravessando-listas">2.19.3. Atravessando Listas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#iterando-em-dicionarios">2.19.4. Iterando em Dicionários</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="break-continue.html">2.20. Os Comandos <code class="docutils literal notranslate"><span class="pre">break</span></code> e <code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="funcoes.html">2.21. Funções</a></li>
 <li class="toctree-l2"><a class="reference internal" href="consideracoes.html">2.22. Considerações Finais</a></li>
@@ -228,6 +234,92 @@
             
   <div class="section" id="lacos-do-tipo-for">
 <h1><span class="section-number">2.19. </span>Laços do tipo for<a class="headerlink" href="#lacos-do-tipo-for" title="Link permanente para este título">¶</a></h1>
+<div class="section" id="iterando-nos-elementos-de-um-sequencia">
+<h2><span class="section-number">2.19.1. </span>Iterando nos Elementos de um Sequencia<a class="headerlink" href="#iterando-nos-elementos-de-um-sequencia" title="Link permanente para este título">¶</a></h2>
+<p>Strings:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nome</span> <span class="o">=</span> <span class="s2">&quot;Gilberto Ribeiro&quot;</span>
+
+<span class="k">for</span> <span class="n">letra</span> <span class="ow">in</span> <span class="n">nome</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">letra</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Listas:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cidades</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;São Paulo&quot;</span><span class="p">,</span> <span class="s2">&quot;Rio de Janeiro&quot;</span><span class="p">,</span> <span class="s2">&quot;Belo Horizonte&quot;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">cidade</span> <span class="ow">in</span> <span class="n">cidades</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nome:&quot;</span><span class="p">,</span> <span class="n">cidade</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Iteráveis:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">17</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="usando-a-funcao-enumerate">
+<h2><span class="section-number">2.19.2. </span>Usando a função <code class="docutils literal notranslate"><span class="pre">enumerate</span></code><a class="headerlink" href="#usando-a-funcao-enumerate" title="Link permanente para este título">¶</a></h2>
+<p>Exemplo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cidades</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;São Paulo&quot;</span><span class="p">,</span> <span class="s2">&quot;Rio de Janeiro&quot;</span><span class="p">,</span> <span class="s2">&quot;Belo Horizonte&quot;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">cidade</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">cidades</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">cidade</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="atravessando-listas">
+<h2><span class="section-number">2.19.3. </span>Atravessando Listas<a class="headerlink" href="#atravessando-listas" title="Link permanente para este título">¶</a></h2>
+<p>Atravessando duas Listas:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Conversão de F -&gt; C&quot;</span><span class="p">)</span>
+
+<span class="n">fahr</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">100</span> <span class="p">]</span>
+
+<span class="n">celsius</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">5</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">32</span><span class="p">)</span><span class="o">/</span><span class="mi">9</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">fahr</span> <span class="p">]</span>
+
+<span class="k">for</span> <span class="n">f</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">fahr</span><span class="p">,</span> <span class="n">celsius</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fim!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Atravessando três Listas:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Conversão de F -&gt; C -&gt; K&quot;</span><span class="p">)</span>
+
+<span class="n">fahr</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">100</span> <span class="p">]</span>
+
+<span class="n">celsius</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">5</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">32</span><span class="p">)</span><span class="o">/</span><span class="mi">9</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">fahr</span> <span class="p">]</span>
+
+<span class="n">kelvin</span> <span class="o">=</span> <span class="p">[</span> <span class="n">x</span><span class="o">+</span><span class="mi">273</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">celsius</span> <span class="p">]</span>
+
+<span class="k">for</span> <span class="n">f</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">fahr</span><span class="p">,</span> <span class="n">celsius</span><span class="p">,</span> <span class="n">kelvin</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fim!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="iterando-em-dicionarios">
+<h2><span class="section-number">2.19.4. </span>Iterando em Dicionários<a class="headerlink" href="#iterando-em-dicionarios" title="Link permanente para este título">¶</a></h2>
+<p>Exemplo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sao_paulo</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;São Paulo&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;woeid&quot;</span> <span class="p">:</span> <span class="mi">12582314</span><span class="p">,</span>
+    <span class="s2">&quot;bounding-box&quot;</span> <span class="p">:</span> <span class="p">((</span><span class="o">-</span><span class="mf">46.82</span><span class="p">,</span> <span class="o">-</span><span class="mf">24.00</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">46.36</span><span class="p">,</span> <span class="o">-</span><span class="mf">23.68</span><span class="p">)),</span>
+    <span class="s2">&quot;country&quot;</span> <span class="p">:</span> <span class="s2">&quot;Brazil&quot;</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">sjc</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;key: </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">; value: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Para mais informações em técnicas de como fazer a travessia ou usar laços com dicionários, consulte <span id="id1">[<a class="reference internal" href="../referencias.html#id48">15</a>]</span>.</p>
+</div>
+<div class="box-exemplos admonition">
+<p class="admonition-title">Exemplos</p>
+<p>Vamos fazer os exemplos <a class="reference internal" href="exemplos.html#sec-introducao-programacao-exemplos-ex10"><span class="std std-ref">10</span></a> e <a class="reference internal" href="exemplos.html#sec-introducao-programacao-exemplos-ex11"><span class="std std-ref">11</span></a>.</p>
+</div>
+</div>
 </div>
 
 
