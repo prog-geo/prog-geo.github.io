@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>7. Imagens &mdash; SER-347/CAP-419</title>
+  <title>Imagens - Processamento e Visualização &mdash; SER-347/CAP-419</title>
   
 
   
@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
   <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
   <link rel="stylesheet" href="_static/table_styling.css" type="text/css" />
-  <link rel="stylesheet" href="_static/ser-347.css" type="text/css" />
+  <link rel="stylesheet" href="_static/prog-geo.css" type="text/css" />
 
   
   
@@ -27,7 +27,7 @@
   
 
   
-    <link rel="canonical" href="https://ser-347.github.io/imagens.html" />
+    <link rel="canonical" href="https://prog-geo.github.io/imagens.html" />
 
   
   <!--[if lt IE 9]>
@@ -47,9 +47,7 @@
 
     
     <link rel="index" title="Índice" href="genindex.html" />
-    <link rel="search" title="Buscar" href="search.html" />
-    <link rel="next" title="8. Tipos e Operações Espaciais" href="tipos_geometricos.html" />
-    <link rel="prev" title="6. Visualização de Dados" href="visualizacao.html" /> 
+    <link rel="search" title="Buscar" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -102,24 +100,14 @@
 </ul>
 <p class="caption"><span class="caption-text">Visão Geral do Curso:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="visao-geral.html">Visao Geral do Curso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="visao-geral.html">Visão Geral do Curso</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Aulas:</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="instalacao.html">1. Instalando e Configurando o Ambiente de Programação</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introducao-programacao.html">2. Introdução à Programação com a Linguagem Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="int_anaconda.html">3. Introdução ao Ambiente Anaconda</a></li>
-<li class="toctree-l1"><a class="reference internal" href="int_jupyter_notebooks.html">4. IPython e Jupyter Notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="matrizes.html">5. Matrizes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="visualizacao.html">6. Visualização de Dados</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">7. Imagens</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tipos_geometricos.html">8. Tipos e Operações Espaciais</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vetorial.html">9. Manipulação de Dados Vetoriais</a></li>
-<li class="toctree-l1"><a class="reference internal" href="variados.html">10. Tópicos Variados</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Considerações Finais</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="consideracoes-finais.html">Considerações Finais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qgis.html">3. Programando com o QGIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variados.html">4. Tópicos Variados</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Referências Bibliográficas</span></p>
 <ul>
@@ -129,15 +117,13 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="listas.html">Listas de Exercícios</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Lista de Projetos:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="projetos.html">Lista dos Projetos Finais do Curso</a></li>
-</ul>
 <p class="caption"><span class="caption-text">Informações Gerais:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="sites.html">Sobre o Site do Curso</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contato.html">Contato</a></li>
 <li class="toctree-l1"><a class="reference internal" href="licenca.html">Licença</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Agradecimentos:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="agradecimentos.html">Agradecimentos</a></li>
 </ul>
 
             
@@ -186,7 +172,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li><span class="section-number">7. </span>Imagens</li>
+      <li>Imagens - Processamento e Visualização</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -198,22 +184,48 @@
   </ul>
 
   
-  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-      
-        <a href="tipos_geometricos.html" class="btn btn-neutral float-right" title="8. Tipos e Operações Espaciais" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-      
-      
-        <a href="visualizacao.html" class="btn btn-neutral float-left" title="6. Visualização de Dados" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
-      
-  </div>
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="imagens">
-<h1><span class="section-number">7. </span>Imagens<a class="headerlink" href="#imagens" title="Link permanente para este título">¶</a></h1>
+  <div class="section" id="imagens-processamento-e-visualizacao">
+<span id="cap-imagens"></span><h1>Imagens - Processamento e Visualização<a class="headerlink" href="#imagens-processamento-e-visualizacao" title="Link permanente para este título">¶</a></h1>
+<p>Para facilitar o entendimento sobre as propriedades da imagem, vamos ver de maneira simples como as imagens de Sensoriamento Remoto óptico são geradas.</p>
+<iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/eFW8tV38We0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<br/>
+<br/><p>Uma imagem (comumente chamada de <code class="docutils literal notranslate"><span class="pre">raster</span></code>) pode ser armazenada de diferentes formas, uma delas é através do armazenamento individual: um raster independente para cada banda. Neste caso, cada arquivo possui metadados (sistema de coordenadas, limites geográficos, dimensões), independentes.</p>
+<p>Veja por exemplo as imagens do CBERS-04A:</p>
+<ul class="simple">
+<li><p>CBERS_4A_WPM_20200612_200_139_L4_BAND1.tif (Banda 1 - azul)</p></li>
+<li><p>CBERS_4A_WPM_20200612_200_139_L4_BAND2.tif (Banda 2 - verde)</p></li>
+<li><p>CBERS_4A_WPM_20200612_200_139_L4_BAND3.tif (Banda 3 - vermelho)</p></li>
+</ul>
+<div class="align-center figure align-default" id="imagens-fig-um-raster-por-banda">
+<a class="reference internal image-reference" href="_images/um-raster-por-banda.png"><img alt="Um raster independente para cada banda" src="_images/um-raster-por-banda.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">Um raster independente para cada banda.</span><a class="headerlink" href="#imagens-fig-um-raster-por-banda" title="Link Permanente para essa imagem">¶</a></p>
+</div>
+<p>Outra maneira é armazenar diversas bandas no mesmo arquivo. Neste caso, o conjunto de metadados vale para todas as bandas. Por exemplo, é possível gerar um raster contendo as bandas 1, 2, 3 e 4 do CBERS-04A em um único arquivo GeoTIFF:</p>
+<ul class="simple">
+<li><p>CBERS_4A_WPM_20200612_200_139_L4_BANDS1234.tif</p></li>
+</ul>
+<div class="align-center figure align-default" id="imagens-fig-um-raster-com-muitas-bandas">
+<a class="reference internal image-reference" href="_images/um-raster-com-muitas-bandas.png"><img alt="Um arquivo com múltiplas bandas" src="_images/um-raster-com-muitas-bandas.png" style="width: 60%;" /></a>
+<p class="caption"><span class="caption-text">Um arquivo com múltiplas bandas.</span><a class="headerlink" href="#imagens-fig-um-raster-com-muitas-bandas" title="Link Permanente para essa imagem">¶</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>A associação de cores nas Figuras <code class="xref std std-numref docutils literal notranslate"><span class="pre">%s</span></code> e <code class="xref std std-numref docutils literal notranslate"><span class="pre">%s</span></code>  é apenas ilustrativa.</p>
+<p>Um raster pode ter qualquer número de bandas, desde que suportado pelo seu formato.</p>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Tópicos</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="imagens/gdal.html">GDAL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="imagens/numpy.html">NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="imagens/visualizacao.html">Visualização de Imagens</a></li>
+</ul>
+</div>
 </div>
 
 
@@ -221,10 +233,6 @@
            
           </div>
           <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="tipos_geometricos.html" class="btn btn-neutral float-right" title="8. Tipos e Operações Espaciais" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="visualizacao.html" class="btn btn-neutral float-left" title="6. Visualização de Dados" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
-    </div>
 
   <hr/>
 

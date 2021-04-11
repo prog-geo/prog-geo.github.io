@@ -1,0 +1,14 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _sec_variados_pacotes_pip:
+
+pip
+===
+
+
+pip (package manager)
+https://en.wikipedia.org/wiki/Pip_(package_manager)
+

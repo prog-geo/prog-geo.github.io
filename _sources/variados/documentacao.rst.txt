@@ -1,0 +1,25 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _sec_variados_documentacao_codigo:
+
+Documentação de Código
+======================
+
+
+.. literalinclude:: ../code/variados/modulos/haversine.py
+    :linenos:
+    :caption: Arquivo :download:`haversine.py <../code/variados/modulos/haversine.py>`.
+    :name: code:variados:doc:code:haversine
+
+
+
+Obtendo Ajuda
+-------------
+
+
+Veja resultado::
+
+    >>> help(haversine)

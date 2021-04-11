@@ -1,0 +1,320 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _sec_qgis_preparacao_ambiente:
+
+Preparação do Ambiente de Programação
+=====================================
+
+
+Esta seção irá mostrar como criar uma imagem Docker que permita lançar os aplicativos QGIS versão 3.16 e LiClipse versão 6.1.0 a partir de um único contêiner.
+
+
+.. warning::
+
+    Estamos considerando o uso do `Docker` em um sistema Linux.
+
+
+.. warning::
+
+    Antes de começar, verifique se você consegue executar o comando ``id``, que fornece informações sobre um determinado usuário do sistema operacional e seus grupos::
+
+        id
+
+
+    No caso da minha instalação Linux, meu usuário se chama ``gribeiro``, seu ``UID`` é ``1000``, e o grupo principal, ``gribeiro`` com ``GID`` ``1000``::
+
+        uid=1000(gribeiro) gid=1000(gribeiro) groups=1000(gribeiro),...
+
+
+    Os comandos abaixo irão utilizar este aplicativo em linha de comando para obter informações do seu usuário e então criar um usuário equivalente no sistema da imagem que iremos preparar.
+
+
+Criando a Imagem Docker ``cap-419/qgis``
+----------------------------------------
+
+
+Copie o arquivo `Dockerfile` mostrado abaixo (:numref:`Trecho de Código %s <qgis:code:dockerfile>`) para um diretório exclusivo, de onde realizaremos a construção da imagem `Docker`:
+
+
+.. literalinclude:: ../code/qgis/docker/Dockerfile
+    :linenos:
+    :caption: :download:`Dockerfile <../code/qgis/docker/Dockerfile>`.
+    :name: qgis:code:dockerfile
+
+
+Abra o terminal de comandos do seu sistema operacional e vá para o diretório onde colocou o arquivo acima. Neste diretório, execute o comando ``docker build`` para criar a imagem `Docker`, como indicado abaixo::
+
+    docker build --build-arg QGIS_USER_NAME=`id --name --user` \
+                 --build-arg QGIS_USER_ID=`id --user` \
+                 --build-arg QGIS_USER_GROUP=`id --name --group` \
+                 --build-arg QGIS_USER_GROUP_ID=`id --group` \
+                 -t cap-419/qgis:3.16 \
+                 --no-cache .
+
+
+.. note::
+
+    Para facilitar o gerenciamento do compartilhamento do sistema de arquivos entre o *host* e os contêiners criados a partir dessa imagem, iremos adicionar um usuário no sistema operacional da imagem com os mesmos nomes e valores do seu usuário e grupo principal. Caso você não tenha o aplicativo ``id``, forneça os valores manualmente.
+
+
+.. note::
+
+    Se preferir criar um usuário chamado ``qgis``, use apenas o comando::
+
+        docker build -t cap-419/qgis:3.16 --no-cache .
+
+
+O comando acima fará, inicialmente, com que algumas imagens e camadas bases, necessárias à criação da imagem ``cap-419/qgis``, sejam recuperadas do `Docker Hub <https://hub.docker.com/>`_. A :numref:`Figura %s <qgis:fig:docker-build-cap419-qgis-01>` mostra essa parte inicial do processo de construção da imagem ``cap-419/qgis``.
+
+
+.. figure:: ../img/qgis/docker-build-cap419-qgis-01.png
+    :alt: Construindo a imagem Docker chamada cap-419/qgis
+    :width: 100%
+    :figclass: align-center
+    :name: qgis:fig:docker-build-cap419-qgis-01
+
+    Construindo a imagem Docker chamada ``cap-419/qgis``.
+
+
+Assim que o *download* e extração dessas imagens e camadas bases terminarem, o processo de construção irá começar a executar os demais comandos contidos no `Dockerfile`, como mostrado na :numref:`Figura %s <qgis:fig:docker-build-cap419-qgis-02>`.
+
+
+.. figure:: ../img/qgis/docker-build-cap419-qgis-02.png
+    :alt: Etapas de construção da imagem cap-419/qgis
+    :width: 100%
+    :figclass: align-center
+    :name: qgis:fig:docker-build-cap419-qgis-02
+
+    Etapas de construção da imagem ``cap-419/qgis``.
+
+
+Após algum tempo realizando a construção da imagem, duas mensagens notificando o sucesso da operação deverão ser escritas no terminal, como mostrado na :numref:`Figura %s <qgis:fig:docker-build-cap419-qgis-03>`.
+
+
+.. figure:: ../img/qgis/docker-build-cap419-qgis-03.png
+    :alt: Finalização do processo de construção da imagem cap-419/qgis
+    :width: 100%
+    :figclass: align-center
+    :name: qgis:fig:docker-build-cap419-qgis-03
+
+    Finalização do processo de construção da imagem ``cap-419/qgis``.
+
+
+Consulte se a imagem criada aperece na lista das imagens disponíveis no seu sistema::
+
+    docker image ls
+
+
+Uma linha como a mostrada abaixo deverá ser apresentada::
+
+    REPOSITORY      TAG     IMAGE ID        CREATED           SIZE
+    cap-419/qgis    3.16    c9cde5f5350f    52 minutes ago    7.95GB
+
+
+Criando o Contêiner ``cap-419-qgis``
+------------------------------------
+
+
+.. warning::
+
+    Estamos supondo que seu usuário é capaz de criar contêiners sem a necessidade de utilizar ``sudo``.
+
+
+Uma vez criada a imagem ``cap-419/qgis:3.16``, é possível criar um contêiner que permita utilizar o `QGIS` e o `LiClipse`. Mas antes, vamos criar três diretórios que possam ser compartilhados como volumes entre o seu *host* e o novo contêiner que será criado mais adiante. Sugerimos criar os seguintes diretórios::
+
+    /home/gribeiro/CAP-419/QGIS-Plugins
+    /home/gribeiro/CAP-419/QGIS-Data
+    /home/gribeiro/CAP-419/LiClipse
+
+
+.. note::
+
+    Substitua o nome de usuário ``gribeiro`` pelo seu.
+
+
+O comando abaixo fará com que um contêiner chamado ``cap-419-qgis`` seja criado e colocado em execução em *background*::
+
+    docker run --detach \
+               --name cap-419-qgis \
+               --volume /tmp/.X11-unix:/tmp/.X11-unix \
+               --volume "/home/$(id --name --user)/CAP-419/QGIS-Plugins:/home/$(id --name --user)/.local/share/QGIS/QGIS3" \
+               --volume "/home/$(id --name --user)/CAP-419/QGIS-Data:/home/$(id --name --user)/Data" \
+               --volume "/home/$(id --name --user)/CAP-419/LiClipse:/home/$(id --name --user)/Documents/LiClipse" \
+               --env DISPLAY=unix$DISPLAY \
+               cap-419/qgis:3.16
+
+
+Esse comando pressupõe a existência dos três diretórios mencionados e que o usuário criado na imagem também tenha o mesmo nome do seu (do *host*). Caso você tenha optado por caminhos diferentes ou nome diferente de usuário, faça os devidos ajustes no comando acima antes de executá-lo.
+
+
+.. note::
+
+    Se você quiser apenas experimentar a criação de contêiners a partir da imagem criada, utilize o comando abaixo::
+
+        docker run --detach \
+                   --name cap-419-qgis \
+                   --volume /tmp/.X11-unix:/tmp/.X11-unix \
+                   --env DISPLAY=unix$DISPLAY \
+                   cap-419/qgis:3.16
+
+
+Após lançar o contêiner, verifique se ele encontra-se em execução::
+
+    docker container ls
+
+
+Um contêiner com o nome ``cap-419-qgis`` deverá ser apresentado na listagem, como mostrado abaixo::
+
+    CONTAINER ID   IMAGE               COMMAND            CREATED          STATUS         PORTS   NAMES
+    1f238541a174   cap-419/qgis:3.16   "sleep infinity"   13 seconds ago   Up 9 seconds           cap-419-qgis
+
+
+Inicializando o QGIS
+--------------------
+
+
+Uma vez que o contêiner ``cap-419-qgis`` esteja em execução, é possível abrir a interface do `QGIS` através do comando ``docker exec``, como mostrado abaixo::
+
+    docker exec -it -u `id --name --user` cap-419-qgis qgis
+
+
+Uma janela como a mostrada na :numref:`Figura %s <qgis:fig:docker-qgis-01>` será apresentada.
+
+.. figure:: ../img/qgis/docker-qgis-01.png
+    :alt: Janela de boas vindas ao QGIS
+    :width: 60%
+    :figclass: align-center
+    :name: qgis:fig:docker-qgis-01
+
+    Janela de boas vindas ao `QGIS`.
+
+
+Pressione o botão ``Let's get started!`` para abrir a janela principal do `QGIS` (:numref:`Figura %s <qgis:fig:docker-qgis-02>`).
+
+
+.. figure:: ../img/qgis/docker-qgis-02.png
+    :alt: Janela principal do QGIS
+    :width: 100%
+    :figclass: align-center
+    :name: qgis:fig:docker-qgis-02
+
+    Janela principal do `QGIS`.
+
+
+.. note::
+
+    Não feche seu terminal enquanto estiver usando o QGIS pois caso contrário ele será encerrado juntamente com o terminal.
+
+
+.. warning::
+
+    Não configure o ambiente do `QGIS` ainda pois iremos ver como fazer isso durante a aula.
+
+
+Inicializando o LiClipse
+------------------------
+
+
+Considerando que o contêiner ``cap-419-qgis`` esteja em execução, é possível abrir a interface do `LiClipse` através do comando ``docker exec``. Porém, como seu terminal original deve estar bloqueado com o comando da seção anterior, abra um novo terminal para executar esse comando, como mostrado abaixo::
+
+    docker exec -it -u `id --name --user` cap-419-qgis "/home/$(id --name --user)/liclipse/LiClipse"
+
+
+A primeira vez que o `LiClipse` é lançado, uma janela como a da :numref:`Figura %s <qgis:fig:docker-liclipse-01>` será apresentada. Indique o nome do *workspace* como mostrado (``QGIS-Plugin``) e pressione o botão ``Launch``.
+
+
+.. figure:: ../img/qgis/docker-liclipse-01.png
+    :alt: Escolha do diretório da área de trabalho (workspace).
+    :width: 60%
+    :figclass: align-center
+    :name: qgis:fig:docker-liclipse-01
+
+    Escolha do diretório da área de trabalho (*workspace*).
+
+
+Na janela seguinte (:numref:`Figura %s <qgis:fig:docker-liclipse-02>`), selecione o tema preferido.
+
+
+.. figure:: ../img/qgis/docker-liclipse-02.png
+    :alt: Escolha do tema do LiClipse.
+    :width: 60%
+    :figclass: align-center
+    :name: qgis:fig:docker-liclipse-02
+
+    Escolha do tema do `LiClipse`.
+
+
+Após alguns segundos, uma janela solicitando a reinicilização do `LiClipse` será apresentada (:numref:`Figura %s <qgis:fig:docker-liclipse-03>`). Pressione o botão ``Yes`` e aguarde o `LiClipse` reiniciar.
+
+
+.. figure:: ../img/qgis/docker-liclipse-03.png
+    :alt: Escolha do tema do LiClipse
+    :width: 100%
+    :figclass: align-center
+    :name: qgis:fig:docker-liclipse-03
+
+    Escolha do tema do LiClipse.
+
+
+Desta vez, o `LiClipse` ira solicitar a você a seleção da área de trabalho (:numref:`Figura %s <qgis:fig:docker-liclipse-04>`). Selecione a área de trabalho como indicado e lance o `LiClipse`, pressionando o botão ``Launch``.
+
+
+.. figure:: ../img/qgis/docker-liclipse-04.png
+    :alt: Selecionando a área de trabalho na inicialização do LiClipse
+    :width: 60%
+    :figclass: align-center
+    :name: qgis:fig:docker-liclipse-04
+
+    Selecionando a área de trabalho na inicialização do `LiClipse`.
+
+
+Finalmente, uma janela como a da :numref:`Figura %s <qgis:fig:docker-liclipse-05>` será apresentada.
+
+
+.. figure:: ../img/qgis/docker-liclipse-05.png
+    :alt: Janela principal do LiClipse
+    :width: 60%
+    :figclass: align-center
+    :name: qgis:fig:docker-liclipse-05
+
+    Janela principal do `LiClipse`.
+
+
+.. warning::
+
+    Não configure o ambiente do `LiClipse` ainda pois iremos ver como fazer isso durante a aula.
+
+
+.. note::
+
+    O `Dockerfile` mostrado nessa seção pode ser usado para construção de imagens com outras versões do QGIS. Se você quiser experimentar a versão 3.18 do QGIS, acrescente à opção ``--build-arg`` a versão correta da imagem do QGIS::
+
+        docker build --build-arg "BASE_IMAGE=qgis/qgis:release-3_18" \
+                     --build-arg QGIS_USER_NAME=`id --name --user` \
+                     --build-arg QGIS_USER_ID=`id --user` \
+                     --build-arg QGIS_USER_GROUP=`id --name --group` \
+                     --build-arg QGIS_USER_GROUP_ID=`id --group` \
+                     -t cap-419/qgis:3.18 \
+                     --no-cache .
+
+
+.. note::
+
+    Se quiser entrar no terminal do contêiner criado como usuário ``root``, faça::
+
+        docker exec -it cap-419-qgis bash
+
+
+.. note::
+
+    Se quiser entrar no terminal do contêiner criado com o usuário informado na criação da imagem, faça::
+
+        docker exec -it -u `id --name --user` cap-419-qgis bash
+
+
+.. note::
+
+    Se quiser conferir outras imagens base do QGIS, consulte o repositório `qgis/qgis <https://hub.docker.com/r/qgis/qgis>`_ no Docker Hub.

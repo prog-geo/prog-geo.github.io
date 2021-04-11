@@ -1,0 +1,396 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="pt-BR" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>NumPy &mdash; SER-347/CAP-419</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/table_styling.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/prog-geo.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+    <link rel="canonical" href="https://prog-geo.github.io/imagens/numpy.html" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Buscar" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SER-347/CAP-419
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Pesquisar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introdução à Programação com Dados Geoespaciais</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Visão Geral do Curso:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../visao-geral.html">Visão Geral do Curso</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aulas:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../instalacao.html">1. Instalando e Configurando o Ambiente de Programação</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introducao-programacao.html">2. Introdução à Programação com a Linguagem Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qgis.html">3. Programando com o QGIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variados.html">4. Tópicos Variados</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Referências Bibliográficas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../referencias.html">Referências Bibliográficas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Listas de Exercícios:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Informações Gerais:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../licenca.html">Licença</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Agradecimentos:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../agradecimentos.html">Agradecimentos</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SER-347/CAP-419</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>NumPy</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="numpy">
+<span id="sec-imagens-numpy"></span><h1>NumPy<a class="headerlink" href="#numpy" title="Link permanente para este título">¶</a></h1>
+<p>O principal objeto manipulado pela NumPy é o <em>homogeneous multidimensional array</em>:</p>
+<p>Uma tabela de elementos de mesmo tipo (em geral números) indexados por uma tupla de inteiros positivos.</p>
+<p>As dimensões são chamadas de <code class="docutils literal notranslate"><span class="pre">axes</span></code>.</p>
+<p>O número de <code class="docutils literal notranslate"><span class="pre">axes</span></code> é chamado de <code class="docutils literal notranslate"><span class="pre">rank</span></code>.</p>
+<p>Exemplos:</p>
+<blockquote>
+<div><p>um array <span class="math notranslate nohighlight">\([1, 2, 1]\)</span> tem <code class="docutils literal notranslate"><span class="pre">rank</span> <span class="pre">=</span> <span class="pre">1</span></code></p>
+<p>um array <span class="math notranslate nohighlight">\([[ 1.0, 0.0, 0.0], [0.0, 1.0, 2.0]]\)</span> tem <code class="docutils literal notranslate"><span class="pre">rank</span> <span class="pre">=</span> <span class="pre">2</span></code>: a primeira dimensão tem tamanho 2, a segunda dimensão tem tamanho 3</p>
+</div></blockquote>
+<p>A classe de array da NumPy é chamada <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> (<code class="docutils literal notranslate"><span class="pre">numpy.array</span></code>).</p>
+<p>Supondo um <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> contendo uma matriz de 30 linhas e 40 colunas, as seguintes propriedades, entre outras, estão disponíveis:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ndarray.ndim</span></code>: é o número de <code class="docutils literal notranslate"><span class="pre">axes</span></code> do array.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ndarray.shape</span></code>: é uma tupla de inteiros indicando o tamanho do array em cada dimensão, no exemplo acima <code class="docutils literal notranslate"><span class="pre">shape</span> <span class="pre">=</span> <span class="pre">(30,</span> <span class="pre">40)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ndarray.size</span></code>: é o total de elementos no array, no exemplo acima <code class="docutils literal notranslate"><span class="pre">size</span> <span class="pre">=</span> <span class="pre">1200</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ndarray.dtype</span></code>: é um objeto descrevendo o tipo dos elementos no array (por exemplo, <code class="docutils literal notranslate"><span class="pre">numpy.int32</span></code>, <code class="docutils literal notranslate"><span class="pre">numpy.int16</span></code>, <code class="docutils literal notranslate"><span class="pre">numpy.float64</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ndarray.itemsize</span></code>: é o tamanho em bytes de cada elemento no array (por exemplo, em um array de <code class="docutils literal notranslate"><span class="pre">float64</span></code>, <code class="docutils literal notranslate"><span class="pre">itemsize</span> <span class="pre">=</span> <span class="pre">8</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ndarray.data</span></code>: é um buffer contendo os elementos do array, geralmente não é usado dessa forma pois temos facilidades de indexação</p></li>
+</ul>
+<div class="section" id="carregando-a-numpy">
+<h2>Carregando a NumPy<a class="headerlink" href="#carregando-a-numpy" title="Link permanente para este título">¶</a></h2>
+<p>Para utilizar a NumPy devemos importar seu módulo, chamado <code class="docutils literal notranslate"><span class="pre">numpy</span></code>. Em geral, associamos esse módulo ao nome (ou apelido) <code class="docutils literal notranslate"><span class="pre">np</span></code> da seguinte forma:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+<p>E para saber a versão da biblioteca:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">__version__</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="criando-matrizes">
+<h2>Criando matrizes<a class="headerlink" href="#criando-matrizes" title="Link permanente para este título">¶</a></h2>
+<p>A NumPy fornece várias funções para criação das matrizes. Vamos começar utilizando a função arange, que permite criar um array a partir de um intervalo regular de valores:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>np.arange?
+</pre></div>
+</div>
+<p>Para criar um array unidimensional, isto é, um vetor com 15 elementos, fazemos:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">a</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Repare que a sequência é iniciada com o valor 1 e termina com o valor 15, uma vez que o limite final (16) não é incluído no intervalo de valores gerados.</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Vamos criar um segundo array denominado <code class="docutils literal notranslate"><span class="pre">b</span></code>, desta vez com a função array, que permite criar uma matriz a partir de uma sequência do Python:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>np.array?
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
+<span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="alterando-o-formato-de-uma-matriz">
+<h2>Alterando o formato de uma matriz<a class="headerlink" href="#alterando-o-formato-de-uma-matriz" title="Link permanente para este título">¶</a></h2>
+<p>Um array NumPy pode ser reestrutrado usando a operação <code class="docutils literal notranslate"><span class="pre">reshape</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>np.reshape?
+</pre></div>
+</div>
+<p>Para alterar o formato do array <code class="docutils literal notranslate"><span class="pre">a</span></code> para que ele se torne uma matriz <span class="math notranslate nohighlight">\(3 \times 5\)</span>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="informacoes-sobre-a-estrutura-de-uma-matriz">
+<h2>Informações sobre a Estrutura de uma matriz<a class="headerlink" href="#informacoes-sobre-a-estrutura-de-uma-matriz" title="Link permanente para este título">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;shape&#39;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ndim&#39;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;dtype&#39;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;itemsize&#39;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">itemsize</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;size&#39;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;type(a)&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;type(b)&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="operacoes-com-arrays">
+<h2>Operações com arrays<a class="headerlink" href="#operacoes-com-arrays" title="Link permanente para este título">¶</a></h2>
+<p>É possível realizar operações matemáticas com arrays. A NumPy permite que uma operação seja aplicada a todos os elementos, de uma só vez.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># vamos imprimir o resultado</span>
+<span class="c1"># da soma de todos os elementos</span>
+<span class="c1"># do array com a constante 10</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;matriz a + constante 10:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Veja que a matriz original não foi alterada, pois não fizemos nenhuma <strong>atribuição</strong>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;matriz original:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Podemos explorar outras operações aritméticas com constantes, e até com outras matrizes.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># o comando a seguir cria uma</span>
+<span class="c1"># matriz c com 0&#39;s, com o mesmo</span>
+<span class="c1"># tamanho da matriz a</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>O comando acima é muito útil em processamento de imagens, quando temos uma banda, e queremos criar uma cópia dessa banda, para realizar algum processamento. A nova matriz tem as mesmas propriedades da matriz da banda, porém todos os valores estão zerados.</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># podemos combinar os arrays no</span>
+<span class="c1"># processamento</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="mi">10</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># nesta operação, fazemos a divisão</span>
+<span class="c1"># elemento a elemento das matrizes,</span>
+<span class="c1"># por isso elas precisam ter o mesmo</span>
+<span class="c1"># shape</span>
+
+<span class="n">array_divisao</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">c</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">array_divisao</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># aqui temos o produto elemento por</span>
+<span class="c1"># elemento da matriz (e não o produto</span>
+<span class="c1"># matricial)</span>
+
+<span class="n">array_produto</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">c</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">array_produto</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># para fazer o produto matricial precisamos</span>
+<span class="c1"># garantir as propriedades matemáticas</span>
+<span class="c1"># (número de colunas da primeira matriz =</span>
+<span class="c1"># número de linhas da segunda matriz), por</span>
+<span class="c1"># isso fizemos o transpose da segunda matriz</span>
+
+<span class="n">array_produto_matricial</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">transpose</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">array_produto_matricial</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Uma banda de uma imagem é facilmente processada como um array NumPy. Desta forma, aproveitamos as funcionalidades desta biblioteca para realizar diversos tipos de processamentos com as bandas.</p>
+<p>Exemplos incluem a geração de índices espectrais, aplicação de contraste, fatiamento de bandas, entre outros.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-165908761-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

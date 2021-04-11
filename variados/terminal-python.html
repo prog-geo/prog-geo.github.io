@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>3.2. Terminal Interativo Python &mdash; SER-347/CAP-419</title>
+  <title>4.2. Terminal Interativo Python &mdash; SER-347/CAP-419</title>
   
 
   
@@ -49,8 +49,8 @@
     
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Buscar" href="../search.html" />
-    <link rel="next" title="Referências Bibliográficas" href="../referencias.html" />
-    <link rel="prev" title="3.1.3. Trabalhando com o git e o GitHub" href="git-github/git-comandos.html" /> 
+    <link rel="next" title="4.3. Módulos em Python" href="modulos.html" />
+    <link rel="prev" title="4.1.3. Trabalhando com o git e o GitHub" href="git-github/git-comandos.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -109,9 +109,13 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../instalacao.html">1. Instalando e Configurando o Ambiente de Programação</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introducao-programacao.html">2. Introdução à Programação com a Linguagem Python</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../variados.html">3. Tópicos Variados</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="git_github.html">3.1. git e GitHub</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">3.2. Terminal Interativo Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qgis.html">3. Programando com o QGIS</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../variados.html">4. Tópicos Variados</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="git_github.html">4.1. git e GitHub</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.2. Terminal Interativo Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modulos.html">4.3. Módulos em Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pacotes.html">4.4. Pacotes em Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="documentacao.html">4.5. Documentação de Código</a></li>
 </ul>
 </li>
 </ul>
@@ -178,9 +182,9 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../variados.html"><span class="section-number">3. </span>Tópicos Variados</a> &raquo;</li>
+          <li><a href="../variados.html"><span class="section-number">4. </span>Tópicos Variados</a> &raquo;</li>
         
-      <li><span class="section-number">3.2. </span>Terminal Interativo Python</li>
+      <li><span class="section-number">4.2. </span>Terminal Interativo Python</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -194,10 +198,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="../referencias.html" class="btn btn-neutral float-right" title="Referências Bibliográficas" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="modulos.html" class="btn btn-neutral float-right" title="4.3. Módulos em Python" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
       
       
-        <a href="git-github/git-comandos.html" class="btn btn-neutral float-left" title="3.1.3. Trabalhando com o git e o GitHub" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="git-github/git-comandos.html" class="btn btn-neutral float-left" title="4.1.3. Trabalhando com o git e o GitHub" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
       
   </div>
   
@@ -207,32 +211,32 @@
            <div itemprop="articleBody">
             
   <div class="section" id="terminal-interativo-python">
-<span id="sec-variados-terminal-python"></span><h1><span class="section-number">3.2. </span>Terminal Interativo Python<a class="headerlink" href="#terminal-interativo-python" title="Link permanente para este título">¶</a></h1>
-<p>Um <strong>interpretador</strong> é um programa capaz de executar outros programas. A forma mais simples de rodar programas escritos em Python é através do seu <strong>terminal interativo</strong> (<a class="reference internal" href="#variados-fig-python-terminal"><span class="std std-numref">Figura 3.13</span></a>).</p>
+<span id="sec-variados-terminal-python"></span><h1><span class="section-number">4.2. </span>Terminal Interativo Python<a class="headerlink" href="#terminal-interativo-python" title="Link permanente para este título">¶</a></h1>
+<p>Um <strong>interpretador</strong> é um programa capaz de executar outros programas. A forma mais simples de rodar programas escritos em Python é através do seu <strong>terminal interativo</strong> (<a class="reference internal" href="#variados-fig-python-terminal"><span class="std std-numref">Figura 4.13</span></a>).</p>
 <div class="align-center figure align-default" id="introd-prog-fig-python-terminal">
 <a class="reference internal image-reference" href="../_images/python-terminal.png"><img alt="Terminal interativo do Python" src="../_images/python-terminal.png" style="width: 90%;" /></a>
-<p class="caption"><span class="caption-number">Figura 3.9 - </span><span class="caption-text">Terminal interativo do Python.</span><a class="headerlink" href="#introd-prog-fig-python-terminal" title="Link Permanente para essa imagem">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 4.9 - </span><span class="caption-text">Terminal interativo do Python.</span><a class="headerlink" href="#introd-prog-fig-python-terminal" title="Link Permanente para essa imagem">¶</a></p>
 </div>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Microsoft Windows</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">macOS</button><button aria-controls="panel-0-0-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-2" name="0-2" role="tab" tabindex="-1">Linux</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><p>Para acessar o interpretador de comandos do Python na distribuição Anaconda, na barra de atalhos de programas do Windows, localize o grupo <code class="docutils literal notranslate"><span class="pre">Anaconda</span></code> e, em seguida, escolha a opção <code class="docutils literal notranslate"><span class="pre">Anaconda</span> <span class="pre">Prompt</span></code>, conforme <a class="reference internal" href="#variados-fig-win-atalho-prompt-anaconda"><span class="std std-numref">Figura 3.10</span></a>.</p>
+<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Microsoft Windows</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">macOS</button><button aria-controls="panel-0-0-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-2" name="0-2" role="tab" tabindex="-1">Linux</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><p>Para acessar o interpretador de comandos do Python na distribuição Anaconda, na barra de atalhos de programas do Windows, localize o grupo <code class="docutils literal notranslate"><span class="pre">Anaconda</span></code> e, em seguida, escolha a opção <code class="docutils literal notranslate"><span class="pre">Anaconda</span> <span class="pre">Prompt</span></code>, conforme <a class="reference internal" href="#variados-fig-win-atalho-prompt-anaconda"><span class="std std-numref">Figura 4.10</span></a>.</p>
 <div class="align-center figure align-default" id="variados-fig-win-atalho-prompt-anaconda">
 <a class="reference internal image-reference" href="../_images/win-atalho-prompt-anaconda.png"><img alt="Atalho para o prompt de comandos da Anaconda" src="../_images/win-atalho-prompt-anaconda.png" style="width: 50%;" /></a>
-<p class="caption"><span class="caption-number">Figura 3.10 - </span><span class="caption-text">Atalho para o prompt de comandos da Anaconda.</span><a class="headerlink" href="#variados-fig-win-atalho-prompt-anaconda" title="Link Permanente para essa imagem">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 4.10 - </span><span class="caption-text">Atalho para o prompt de comandos da Anaconda.</span><a class="headerlink" href="#variados-fig-win-atalho-prompt-anaconda" title="Link Permanente para essa imagem">¶</a></p>
 </div>
-<p>Na janela aberta, digite o comando <code class="docutils literal notranslate"><span class="pre">python</span></code>, conforme mostrado na <a class="reference internal" href="#variados-fig-win-prompt-anaconda"><span class="std std-numref">Figura 3.11</span></a>.</p>
+<p>Na janela aberta, digite o comando <code class="docutils literal notranslate"><span class="pre">python</span></code>, conforme mostrado na <a class="reference internal" href="#variados-fig-win-prompt-anaconda"><span class="std std-numref">Figura 4.11</span></a>.</p>
 <div class="align-center figure align-default" id="variados-fig-win-prompt-anaconda">
 <a class="reference internal image-reference" href="../_images/win-prompt-anaconda.png"><img alt="Terminal interativo do Python" src="../_images/win-prompt-anaconda.png" style="width: 90%;" /></a>
-<p class="caption"><span class="caption-number">Figura 3.11 - </span><span class="caption-text">Terminal interativo do Python.</span><a class="headerlink" href="#variados-fig-win-prompt-anaconda" title="Link Permanente para essa imagem">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 4.11 - </span><span class="caption-text">Terminal interativo do Python.</span><a class="headerlink" href="#variados-fig-win-prompt-anaconda" title="Link Permanente para essa imagem">¶</a></p>
 </div>
-</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><p>No macOS, abra um terminal de comandos e digite o comando <code class="docutils literal notranslate"><span class="pre">python</span></code>, isto deverá abrir o terminal de comandos como mostrado na <a class="reference internal" href="#variados-fig-mac-terminal-python"><span class="std std-numref">Figura 3.12</span></a>.</p>
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><p>No macOS, abra um terminal de comandos e digite o comando <code class="docutils literal notranslate"><span class="pre">python</span></code>, isto deverá abrir o terminal de comandos como mostrado na <a class="reference internal" href="#variados-fig-mac-terminal-python"><span class="std std-numref">Figura 4.12</span></a>.</p>
 <div class="align-center figure align-default" id="variados-fig-mac-terminal-python">
 <a class="reference internal image-reference" href="../_images/python-terminal-mac.png"><img alt="Terminal interativo do Python" src="../_images/python-terminal-mac.png" style="width: 90%;" /></a>
-<p class="caption"><span class="caption-number">Figura 3.12 - </span><span class="caption-text">Terminal interativo do Python.</span><a class="headerlink" href="#variados-fig-mac-terminal-python" title="Link Permanente para essa imagem">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 4.12 - </span><span class="caption-text">Terminal interativo do Python.</span><a class="headerlink" href="#variados-fig-mac-terminal-python" title="Link Permanente para essa imagem">¶</a></p>
 </div>
-</div><div aria-labelledby="tab-0-0-2" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-2" name="0-2" role="tabpanel" tabindex="0"><p>No Linux, abra um terminal de comandos e digite o comando <code class="docutils literal notranslate"><span class="pre">python</span></code> (ou <code class="docutils literal notranslate"><span class="pre">python3</span></code>), isto deverá abrir o terminal de comandos como mostrado na <a class="reference internal" href="#variados-fig-python-terminal"><span class="std std-numref">Figura 3.13</span></a></p>
+</div><div aria-labelledby="tab-0-0-2" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-2" name="0-2" role="tabpanel" tabindex="0"><p>No Linux, abra um terminal de comandos e digite o comando <code class="docutils literal notranslate"><span class="pre">python</span></code> (ou <code class="docutils literal notranslate"><span class="pre">python3</span></code>), isto deverá abrir o terminal de comandos como mostrado na <a class="reference internal" href="#variados-fig-python-terminal"><span class="std std-numref">Figura 4.13</span></a></p>
 <div class="align-center figure align-default" id="variados-fig-python-terminal">
 <a class="reference internal image-reference" href="../_images/python-terminal.png"><img alt="Terminal interativo do Python" src="../_images/python-terminal.png" style="width: 90%;" /></a>
-<p class="caption"><span class="caption-number">Figura 3.13 - </span><span class="caption-text">Terminal interativo do Python.</span><a class="headerlink" href="#variados-fig-python-terminal" title="Link Permanente para essa imagem">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 4.13 - </span><span class="caption-text">Terminal interativo do Python.</span><a class="headerlink" href="#variados-fig-python-terminal" title="Link Permanente para essa imagem">¶</a></p>
 </div>
 </div></div>
 </div>
@@ -243,8 +247,8 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="../referencias.html" class="btn btn-neutral float-right" title="Referências Bibliográficas" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="git-github/git-comandos.html" class="btn btn-neutral float-left" title="3.1.3. Trabalhando com o git e o GitHub" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="modulos.html" class="btn btn-neutral float-right" title="4.3. Módulos em Python" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="git-github/git-comandos.html" class="btn btn-neutral float-left" title="4.1.3. Trabalhando com o git e o GitHub" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
     </div>
 
   <hr/>

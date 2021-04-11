@@ -37,6 +37,7 @@ Na era do big data, os profissionais necessitam cada vez mais de conhecimentos e
 
     instalacao
     introducao-programacao
+    qgis
     variados
 
 

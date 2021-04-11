@@ -1,0 +1,412 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="pt-BR" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Visualização de Imagens &mdash; SER-347/CAP-419</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/table_styling.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/prog-geo.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+    <link rel="canonical" href="https://prog-geo.github.io/imagens/visualizacao.html" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Buscar" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SER-347/CAP-419
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Pesquisar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introdução à Programação com Dados Geoespaciais</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Visão Geral do Curso:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../visao-geral.html">Visão Geral do Curso</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aulas:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../instalacao.html">1. Instalando e Configurando o Ambiente de Programação</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introducao-programacao.html">2. Introdução à Programação com a Linguagem Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qgis.html">3. Programando com o QGIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variados.html">4. Tópicos Variados</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Referências Bibliográficas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../referencias.html">Referências Bibliográficas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Listas de Exercícios:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Informações Gerais:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../licenca.html">Licença</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Agradecimentos:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../agradecimentos.html">Agradecimentos</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SER-347/CAP-419</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Visualização de Imagens</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="visualizacao-de-imagens">
+<span id="sec-imagens-visualizacao"></span><h1>Visualização de Imagens<a class="headerlink" href="#visualizacao-de-imagens" title="Link permanente para este título">¶</a></h1>
+<p>Primeiramente, vamos criar os objetos que nos darão acesso aos elementos da imagem:</p>
+<p>dataset
+bandas individuais
+array de pixels (formato NumPy)</p>
+<p># importar bibliotecas
+from osgeo import gdal
+import numpy as np
+import matplotlib.pyplot as plt</p>
+<p># informar o uso de exceções
+gdal.UseExceptions()</p>
+<p># abrir o dataset da imagem RapidEye, com 5 bandas
+# (lembre-se de fazer o upload na aba de arquivos)
+dataset = gdal.Open(“crop_rapideye.tif”, gdal.GA_ReadOnly)</p>
+<p># obter os objetos com as informações das bandas
+banda1 = dataset.GetRasterBand(1) # banda blue
+banda2 = dataset.GetRasterBand(2) # banda green
+banda3 = dataset.GetRasterBand(3) # banda red
+banda4 = dataset.GetRasterBand(4) # banda red-edge
+banda5 = dataset.GetRasterBand(5) # banda nir</p>
+<p># imprimir informações de máximos/mínimos
+# valores dos pixels de cada banda
+print(banda1.ComputeRasterMinMax())
+print(banda2.ComputeRasterMinMax())
+print(banda3.ComputeRasterMinMax())
+print(banda4.ComputeRasterMinMax())
+print(banda5.ComputeRasterMinMax())</p>
+<p>Uma maneira muito utilizada para complementar a visualização das imagens é através do histograma. Ele apresenta de forma gráfica a distribuição dos pixels na imagem. A GDAL armazena esta informação em cada banda, e podemos acessar o histograma através da função GetHistogram.</p>
+<p># a função GetHistogram precisa de intervalos
+# mínimos e máximos de pixels para cada banda (min/max)
+# e também a informação de divisões do gráfico (buckets)
+plt.figure(figsize=(20, 5))
+plt.plot(banda1.GetHistogram(min=0, max=25000, buckets=100), ‘b’, label=’Banda 1 - Blue’)
+plt.plot(banda2.GetHistogram(min=0, max=25000, buckets=100), ‘g’, label=’Banda 2 - Green’)
+plt.plot(banda3.GetHistogram(min=0, max=25000, buckets=100), ‘r’, label=’Banda 3 - Red’)
+plt.plot(banda4.GetHistogram(min=0, max=25000, buckets=100), ‘orange’, label=’Banda 4 - Red-Edge’)
+plt.plot(banda5.GetHistogram(min=0, max=25000, buckets=100), ‘cyan’, label=’Banda 5 - NIR’)
+plt.grid()
+plt.legend()</p>
+<p>Figura do Histograma</p>
+<p># obter as matrizes de pixels de cada banda
+blue = banda1.ReadAsArray()
+green = banda2.ReadAsArray()
+red = banda3.ReadAsArray()
+rededge = banda4.ReadAsArray()
+nir = banda5.ReadAsArray()</p>
+<p># combinamos GDAL e Matplotlib para
+# visualizar as bandas individualmente
+plt.figure(figsize=(20, 5))
+plt.subplot(151)
+plt.imshow(blue, cmap=’gray’)
+plt.title(‘Banda 1 - Blue’)
+plt.subplot(152)
+plt.imshow(green, cmap=’gray’)
+plt.title(‘Banda 2 - Green’)
+plt.subplot(153)
+plt.imshow(red, cmap=’gray’)
+plt.title(‘Banda 3 - Red’)
+plt.subplot(154)
+plt.imshow(rededge, cmap=’gray’)
+plt.title(‘Banda 4 - Red-Edge’)
+plt.subplot(155)
+plt.imshow(nir, cmap=’gray’)
+plt.title(‘Banda 5 - NIR’)</p>
+<p>Podemos combinar a visualização de 2 bandas em um gráfico comumente chamado de scatterplot. Para isso precisamos transformar as bandas da nossa imagem (2 dimensões) em vetores (1 dimensão). Para isso podemos usar a função da NumPy chamada flatten.</p>
+<p># obter os vetores de 1 dimensão de cada banda
+vetor3 = red.flatten()
+vetor5 = nir.flatten()</p>
+<p># construir o gráfico com o scatterplot
+plt.figure(figsize=(10, 10))</p>
+<p>plt.scatter(vetor3, vetor5, marker=’.’)
+plt.xlabel(“Banda 3 - Red”)
+plt.ylabel(“Banda 5 - NIR”)
+plt.title(“Scatterplot das bandas 3 (Red) e 5 (NIR)”)
+plt.grid();</p>
+<p>Figura</p>
+<div class="section" id="composicao-colorida-e-contraste">
+<h2>Composição colorida e Contraste<a class="headerlink" href="#composicao-colorida-e-contraste" title="Link permanente para este título">¶</a></h2>
+<p>Para visualizar uma composição colorida, precisamos informar quais bandas serão utilizadas nas componentes RGB do gráfico:</p>
+<ul class="simple">
+<li><p>canal R (vermelho)</p></li>
+<li><p>canal G (verde)</p></li>
+<li><p>canal B (azul)</p></li>
+</ul>
+<p>Para isso, podemos criar uma matriz NumPy com 3 dimensões (linhas, colunas, bandas).</p>
+<p># definimos os números de linhas/colunas
+# a partir de alguma matriz da imagem original
+linhas = blue.shape[0]
+colunas = blue.shape[1]
+bandas = 3</p>
+<p># para criar uma visualização em cores
+# verdadeiras, podemos associar as bandas
+# do RapidEye 3 - Red, 2 - Green, 1 - Blue
+array_rgb = np.zeros((linhas, colunas, bandas))</p>
+<p># veja que, para visualizar corretamente,
+# precisaremos dividir as matrizes pelo
+# maior valor, para obtermos uma matriz
+# com valores normalizados entre 0.0 e 1.0
+array_rgb[:, :, 0] = red / red.max()
+array_rgb[:, :, 1] = green / green.max()
+array_rgb[:, :, 2] = blue / blue.max()</p>
+<p>plt.figure(figsize=(20, 5))
+plt.imshow(array_rgb)
+plt.title(‘Composição colorida verdadeira’);</p>
+<p>rapideye-cores-verdadeiras.png</p>
+<p>O contraste é uma técnica que melhora a visualização da imagem. Veja que neste caso, os números digitais da imagem podem ser alterados, e assim as propriedades dos elementos em relação a suas respostas espectrais ficam comprometidas.</p>
+<p>Atenção: Para realizar análises baseadas no comportamento espectral das imagens, técnicas de contraste devem ser evitadas.</p>
+<p>Uma maneira bem conhecida de aplicar o contraste é através das operações de gain (ganho) e offset (deslocamento). O gain é um valor constante que é multiplicado por todos os pixels das imagens. O offset é um valor constante que é somado a todos os pixels das imagens.</p>
+<p># lembrando que os valores em array_rgb
+# foram normalizados entre 0.0 e 1.0
+gain = 1.8
+offset = 0.2</p>
+<p># como no exemplo anterior criamos um
+# array_rgb, vamos alterar uma cópia deste
+# array com as operações de gain/offset
+# para não comprometer os dados originais
+array_rgb_gain = array_rgb.copy()
+array_rgb_gain[:, :, 0] <a href="#id1"><span class="problematic" id="id2">*</span></a>= gain
+array_rgb_gain[:, :, 1] <a href="#id3"><span class="problematic" id="id4">*</span></a>= gain
+array_rgb_gain[:, :, 2] <a href="#id5"><span class="problematic" id="id6">*</span></a>= gain</p>
+<p># podemos aplicar gain/offset ao mesmo tempo
+# e também sobre a(s) banda(s) que desejarmos
+# para entender os efeitos, vamos aplicar
+# cada um separadamente
+array_rgb_offset = array_rgb.copy()
+array_rgb_offset[:, :, 0] += offset
+array_rgb_offset[:, :, 1] += offset
+array_rgb_offset[:, :, 2] += offset</p>
+<p># apresentação dos resultados
+plt.figure(figsize=(20, 5))
+plt.subplot(131)
+plt.imshow(array_rgb)
+plt.title(f’Imagem original’);</p>
+<p>plt.subplot(132)
+plt.imshow(array_rgb_gain)
+plt.title(f’Imagem com aplicação de gain = {gain}’);</p>
+<p>plt.subplot(133)
+plt.imshow(array_rgb_offset)
+plt.title(f’Imagem com aplicação de offset = {offset}’);</p>
+<p>rapideye-offset.png</p>
+</div>
+<div class="section" id="metodos-simples-para-classificacao">
+<h2>Métodos simples para classificação<a class="headerlink" href="#metodos-simples-para-classificacao" title="Link permanente para este título">¶</a></h2>
+<p>Em diversos casos, a aplicação de limiares sobre índices espectrais produz rapidamente resultados de mapeamento de alvos.</p>
+<p># definição de algumas constantes
+delta = 0.0000000001
+limiar_NDWI = 0.0
+limiar_NDVI = 0.5</p>
+<p># vamos alterar o tipo de uma das matrizes
+# de bandas para float, para que os cálculos
+# dos índices fiquem adequados
+nir = nir.astype(float)</p>
+<p># cálculo das matrizes com os índices
+NDWI = (green - nir) / (green + nir + delta)
+NDVI = (nir - red) / (nir + red + delta)</p>
+<p># criação de classificações simples
+classificacao = np.zeros_like(NDWI)
+classificacao = np.where(NDWI &gt; limiar_NDWI, 1, np.where(NDVI &gt; limiar_NDVI, 2, 0))</p>
+<p>plt.figure(figsize=(20, 5))
+plt.imshow(classificacao)
+plt.colorbar()
+plt.title(‘Exemplo de classificação’);</p>
+<p>rapideye-classificacao-simples.png</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>A combinação das bibliotecas GDAL, NumPy e Matplotlib permite a criação de muitas ferramentas de análise de imagens. Conseguiremos também combinar essas análises com dados vetoriais e tabulares.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-165908761-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

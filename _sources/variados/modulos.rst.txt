@@ -1,0 +1,255 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _sec_variados_modulos:
+
+Módulos em Python
+=================
+
+
+Em Python, um arquivo contendo definições e comandos é chamado de **módulo** (*module*). O nome do arquivo, sem a extensão ``.py``, é usado para definir o nome do módulo. Vamos considerar um arquivo chamado ``haversine.py``, contendo uma função (``DistanciaHaversine``) como mostrado no :numref:`Trecho de Código %s <code:variados:module:haversine>`.
+
+
+.. literalinclude:: ../code/variados/modulos/haversine.py
+    :linenos:
+    :caption: Conteúdo do arquivo :download:`haversine.py <../code/variados/modulos/haversine.py>`.
+    :name: code:variados:module:haversine
+
+
+As definições em um módulo podem ser **importadas** por outros módulos. Uma das formas mais comuns de realizar esta operação é através do comando ``import`` :cite:`psf:2021:t`, que é uma palavra-chave da linguagem Python. Vamos salvar o arquivo :download:`haversine.py <../code/variados/modulos/haversine.py>`, mostrado no :numref:`Trecho de Código %s <code:variados:module:haversine>`, em um diretório chamado ``modulos``, obtendo uma estrutura de diretórios como mostrada abaixo::
+
+    modulos/
+        haversine.py
+
+
+Em seguida, de dentro do diretório ``modulos``, abra o interpretador de comandos do Python e importe esse módulo com o seguinte comando::
+
+    >>> import haversine
+
+
+O comando acima, que contém a primeira diretiva de importação do módulo ``harversine``, fará com que o Python procure pelo módulo e, caso encontre, crie um objeto do tipo ``module``, inicializando-o::
+
+    >>> type(haversine)
+    <class 'module'>
+
+
+Se o módulo não puder ser encontrado, uma exceção do tipo `ModuleNotFoundError <https://docs.python.org/3/library/exceptions.html#ModuleNotFoundError>`_ será lançada::
+
+    >>> import haversine_v2
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    ModuleNotFoundError: No module named 'haversine_v2'
+
+
+Voltando ao exemplo de importação do módulo ``haversine``, a forma como realizamos esta importação não inclui os nomes definidos no módulo ``haversine`` diretamente na tabela de símbolos corrente. Para acessar a função ``DistanciaHaversine``, é preciso incluir o nome do módulo e o nome da função, utilizando o caracter ``.`` separando esses nomes::
+
+    >>> haversine.DistanciaHaversine(0, 0, 0, 1)
+    111.19492664455873
+
+
+Todo módulo possui uma variável global chamada ``__name__`` que fornece o nome do módulo. Por exemplo, para o módulo definido no arquivo ``haversine.py``, essa variável possui o seguinte valor::
+
+    >>> haversine.__name__
+    'haversine'
+
+
+Podemos usar a função `dir <https://docs.python.org/3/library/functions.html#dir>`_ para inspecionar a lista de nomes definidos em um módulo::
+
+    >>> dir(haversine)
+    ['DistanciaHaversine', '__builtins__', '__cached__',
+     '__doc__', '__file__', '__loader__', '__name__', '__package__',
+     '__spec__', 'math', 'raio_terra']
+
+
+.. note::
+
+    Se o nome do módulo for omitido, a função ``dir`` retorna os nomes definidos na tabela de símbolos corrente::
+
+        >>> dir()
+        ['__annotations__', '__builtins__', '__doc__', '__loader__',
+         '__name__', '__package__', '__spec__', 'haversine']
+
+
+.. note::
+
+    A função ``dir`` não lista os nomes de funções e variáveis pré-definidas de Python. Para obter uma listagem dessas definições, é preciso utilizar o módulo especial chamado `builtins <https://docs.python.org/3/library/builtins.html#module-builtins>`_::
+
+        >>> import builtins
+        >>> dir(builtins)
+        ['ArithmeticError', 'AssertionError', 'AttributeError', 'BaseException',
+         ..., 'range', 'repr', 'reversed', 'round', 'set', 'setattr', 'slice',
+         'sorted', 'staticmethod', 'str', 'sum', 'super', 'tuple', 'type', 'vars', 'zip']
+
+
+Cada módulo possui sua própria tabela privada de símbolos, que é usada por todas as funções definidas no módulo. No entanto, podemos importar um nome definido em um outro módulo diretamente na tabela de símbolos do módulo de onde realizamos o comando de importação. Para compreender como isso funciona, feche o interpretador Python e o abra novamente para limpar todas definições carregadas anteriormente. Em seguida, execute o trecho de código abaixo::
+
+    >>> from haversine import raio_terra
+    >>> raio_terra
+    6371
+
+
+Como podemos verificar com o comando ``dir``, apenas o nome ``raio_terra`` foi incluído na tabela de símbolos de onde o interpretador executa seus comandos::
+
+    >>> dir()
+    ['__annotations__', '__builtins__', '__doc__', '__loader__',
+     '__name__', '__package__', '__spec__', 'raio_terra']
+
+
+Repare na saída do comando acima, que o nome do módulo ``haversine`` não é introduzido na tabela de símbolos local. Essa tabela contém apenas o nome ``raio_terra``.
+
+
+Para importar todos os nomes definidos em um módulo, é possível utilizar a seguinte estratégia::
+
+    >>> from haversine import *
+    >>> dir()
+    ['DistanciaHaversine', '__annotations__', '__builtins__', '__doc__',
+     '__loader__', '__name__', '__package__', '__spec__', 'math', 'raio_terra']
+
+
+.. note::
+
+    O comando acima irá importar todos os nomes definidos no módulo ``haversine``, exceto aqueles que começarem com o símbolo ``_`` (*underscore*).
+
+
+.. note::
+
+    Em geral, a boa prática de programação diz que não devemos usar a construção::
+
+        from module import *
+
+
+    Essa construção pode fazer com que muitos nomes sejam introduzidos na tabela de símbolos local (onde o comando está sendo executado) e, assim, apresentar conflitos com esses nomes.
+
+
+Também é possível definir um *alias* para o nome de um módulo sendo importado. Feche o interpretador Python e o abra novamente para limpar todas definições carregadas anteriormente. Em seguida, execute o comando abaixo::
+
+    >>> import haversine as hav
+    >>> hav.DistanciaHaversine(0, 0, 0, 1)
+
+
+Dessa forma, o módulo ``haversine`` fica disponível através do nome ``hav``.
+
+
+De maneira similar, podemos fazer com que os nomes definidos em um módulo sejam importados para serem usados com outro nome::
+
+    >>> from haversine import raio_terra as earth_radius
+    >>> earth_radius
+    6371
+
+
+.. note::
+
+    Veja que o nome associado à constante que define o valor do raio da Terra (``raio_terra``), se usado através do módulo ``hav``, precisará ser usado com o nome original::
+
+        >>> hav.raio_terra
+        6371
+
+
+    Se você tentar usar o *alias* junto ao nome do módulo, uma exceção será lançada::
+
+        >>> hav.earth_radius
+        Traceback (most recent call last):
+          File "<stdin>", line 1, in <module>
+        AttributeError: module 'haversine' has no attribute 'earth_radius'
+
+
+.. note::
+
+    Para recarregar um módulo, use a função ``reload`` da biblioteca ``importlib``::
+
+        >>> import importlib
+        >>> importlib.reload(haversine)
+
+
+Executando Módulos como Scripts
+-------------------------------
+
+
+Repare no :numref:`Trecho de Código %s <code:variados:module:haversine>`, com a definição do módulo ``haversine``, que incluímos uma construção ao final, linhas ``58-64``, como destacado abaixo:
+
+
+.. literalinclude:: ../code/variados/modulos/haversine.py
+    :linenos:
+    :lineno-start: 58
+    :lines: 58-64
+    :emphasize-lines: 1
+    :caption: Seção ``main`` - Arquivo :download:`haversine.py <../code/variados/modulos/haversine.py>`.
+    :name: code:variados:module:haversine:main
+
+
+O teste incluído na ``linha 58`` faz parte de um **idioma** em Python para permitir executar um módulo como um *script* comum. Quando o interpretador Python é invocado com o nome do arquivo do módulo::
+
+    python haversine.py 0 0 0 1
+
+
+obtemos o seguinte resultado::
+
+    111.19492664455873
+
+
+Nessa forma de execução, o código do módulo é executado, mas com a variável ``__name__`` contendo a string ``__main__``, ao invés do nome do módulo. Desta forma, a ``linha 58`` faz com que nosso módulo seja usado como um *script*.
+
+
+Por outro lado, se o módulo é importado::
+
+    >>> import haversine
+
+
+O código entre as ``linhas 59-64`` não é executado pois a variável ``__name__`` contém a string ``haversine`` (nome do módulo).
+
+
+Caminhos de Busca por Módulos
+-----------------------------
+
+
+Quando um módulo é importado, o Python realiza uma procura da seguinte forma:
+
+.. rst-class:: open
+
+- Primeiro, é verificado se existe um módulo pré-construído (*built-in*) com o nome informado.
+
+- Caso não exista um módulo pré-definido, um arquivo com o nome formado pelo nome do módulo e a extensão ``.py`` é procurado, numa lista de diretórios definida pela variável ``sys.path``::
+
+    >>> import sys
+    >>> sys.path
+    ['', '/usr/lib/python38.zip', ..., '/usr/lib/python3/dist-packages']
+
+
+A variável ``sys.path`` é inicializada com as seguintes localizações:
+
+.. rst-class:: open
+
+- O diretório com o *script* de entrada, ou o diretório de onde invocamos o interpretador.
+
+- Os diretórios definidos pela variável de ambiente `PYTHONPATH <https://docs.python.org/3/using/cmdline.html#envvar-PYTHONPATH>`_.
+
+- Alguns diretórios padrões, que são dependentes da instalação da distribuição Python.
+
+
+.. note::
+
+    Se você quiser saber o conteúdo da variável de ambiente ``PYTHONPATH``, use a função ``getenv`` da biblioteca ``os`` para consultar seu valor::
+
+        >>> import os
+        >>> os.getenv('PATH')
+        '/home/gribeiro/.nvm/versions/node/v14.16.0/bin:...:/snap/bin'
+
+
+.. note::
+
+    Para alterar a variável ``sys.path``, faça::
+
+        >>> import sys
+        >>> sys.path.append('/home/gribeiro/my-python-libs')
+
+
+.. warning::
+
+    O diretório de onde o interpretador Python é invocado ou onde se localiza o *script* em execução é incluído no primeiro lugar nesse sistema de busca. Desta forma, arquivos com o mesmo nome de bibliotecas instaladas no sistema, serão carregados ao invés dos módulos dessas bibliotecas.
+
+
+.. note::
+
+    Para mais informações sobre módulos em Python, consulte :cite:`psf:2021:t` e :cite:`psf:2021:u`.

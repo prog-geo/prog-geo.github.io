@@ -14,3 +14,6 @@ Tópicos Variados
 
     ./variados/git_github
     ./variados/terminal-python
+    ./variados/modulos
+    ./variados/pacotes
+    ./variados/documentacao
