@@ -3,7 +3,7 @@
 A fórmula de Haversine possibilita o cálculo de distâncias entre
 dois pontos em uma esfera a partir de suas latitudes e longitudes.
 
-Este módulo contém uma função chamada ``DistanciaHaversive``
+Este módulo contém uma função chamada ``DistanciaHaversine``
 que implementa esse cálculo.
 """
 
@@ -14,7 +14,7 @@ import math
 raio_terra = 6371
 
 
-def DistanciaHaversive(lat1, long1, lat2, long2):
+def DistanciaHaversine(lat1, long1, lat2, long2):
     """Computa a distância entre dois pontos na esfera.
 
     O cálculo de distância é baseado na fórmula de Haversine.
@@ -57,7 +57,7 @@ def DistanciaHaversive(lat1, long1, lat2, long2):
 
 if __name__ == "__main__":
     import sys
-    print(DistanciaHaversive(
+    print(DistanciaHaversine(
             float(sys.argv[1]), float(sys.argv[2]),
             float(sys.argv[3]), float(sys.argv[4])
           )

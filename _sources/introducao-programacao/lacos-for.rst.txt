@@ -7,7 +7,7 @@ Laços do tipo for
 =================
 
 
-Iterando nos Elementos de um Sequencia
+Iterando nos Elementos de um Sequência
 --------------------------------------
 
 
@@ -92,7 +92,7 @@ Exemplo::
         "country" : "Brazil"
     }
 
-    for key, value in sjc.items():
+    for key, value in sao_paulo.items():
         print(f"key: {key}; value: {value}")
 
 

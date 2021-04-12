@@ -379,6 +379,15 @@ CMD [&quot;sleep&quot;, &quot;infinity&quot;]
 <p class="admonition-title">Nota</p>
 <p>Substitua o nome de usuário <code class="docutils literal notranslate"><span class="pre">gribeiro</span></code> pelo seu.</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Para que o <em>display</em> do seu <em>host</em> possa ser usado pelos processos do contêiner que será criado, use o comando:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># permite que qualquer usuário se conecte ao servidor X do seu sistema.</span>
+<span class="n">xhost</span> <span class="o">+</span>
+</pre></div>
+</div>
+<p>Lembre-se de fazer isso antes do comando <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span></code> mostrado abaixo.</p>
+</div>
 <p>O comando abaixo fará com que um contêiner chamado <code class="docutils literal notranslate"><span class="pre">cap-419-qgis</span></code> seja criado e colocado em execução em <em>background</em>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>docker run --detach \
            --name cap-419-qgis \

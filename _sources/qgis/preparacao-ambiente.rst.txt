@@ -143,6 +143,17 @@ Uma vez criada a imagem ``cap-419/qgis:3.16``, é possível criar um contêiner 
     Substitua o nome de usuário ``gribeiro`` pelo seu.
 
 
+.. note::
+
+    Para que o *display* do seu *host* possa ser usado pelos processos do contêiner que será criado, use o comando::
+
+        # permite que qualquer usuário se conecte ao servidor X do seu sistema.
+        xhost +
+
+
+    Lembre-se de fazer isso antes do comando ``docker run`` mostrado abaixo.
+
+
 O comando abaixo fará com que um contêiner chamado ``cap-419-qgis`` seja criado e colocado em execução em *background*::
 
     docker run --detach \
