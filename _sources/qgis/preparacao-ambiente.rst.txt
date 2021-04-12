@@ -45,7 +45,15 @@ Copie o arquivo `Dockerfile` mostrado abaixo (:numref:`Trecho de Código %s <qgi
     :name: qgis:code:dockerfile
 
 
-Abra o terminal de comandos do seu sistema operacional e vá para o diretório onde colocou o arquivo acima. Neste diretório, execute o comando ``docker build`` para criar a imagem `Docker`, como indicado abaixo::
+Baixe a versão 6.1.0 do `LiClipse <https://www.liclipse.com/download.html>` e coloque na mesma pasta do arquivo ``Dokerfile``.
+
+
+.. note::
+
+    No *link* do LiClipse fornecido acima, há uma opção para baixar versões anteriores do LiClipse. Baixe o arquivo chamado ``liclipse_6.1.0_linux.gtk.x86_64.tar.gz``.
+
+
+Abra o terminal de comandos do seu sistema operacional e vá para o diretório onde colocou os arquivos acima. Neste diretório, execute o comando ``docker build`` para criar a imagem `Docker`, como indicado abaixo::
 
     docker build --build-arg QGIS_USER_NAME=`id --name --user` \
                  --build-arg QGIS_USER_ID=`id --user` \

@@ -272,13 +272,7 @@
 <span class="normal">35</span>
 <span class="normal">36</span>
 <span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>ARG BASE_IMAGE=qgis/qgis:release-3_16
+<span class="normal">38</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>ARG BASE_IMAGE=qgis/qgis:release-3_16
 FROM ${BASE_IMAGE}
 
 LABEL img.author=&quot;Gilberto Ribeiro de Queiroz e Thales Körting&quot; \
@@ -311,13 +305,7 @@ USER ${QGIS_USER_NAME}
 
 WORKDIR /home/${QGIS_USER_NAME}
 
-RUN mkdir Downloads &amp;&amp; \
-    cd Downloads &amp;&amp; \
-    wget -O liclipse_6.1.0_linux.gtk.x86_64.tar.gz \
-         https://download847.mediafire.com/wra0rm6lntng/kyxm0r9l91jl9h8/liclipse_6.1.0_linux.gtk.x86_64.tar.gz &amp;&amp; \
-    tar xzvf liclipse_6.1.0_linux.gtk.x86_64.tar.gz &amp;&amp; \
-    mv liclipse ~/ &amp;&amp; \
-    rm liclipse_6.1.0_linux.gtk.x86_64.tar.gz
+ADD liclipse_6.1.0_linux.gtk.x86_64.tar.gz /home/${QGIS_USER_NAME}/
 
 USER ${ROOT_USER}
 
@@ -325,7 +313,12 @@ CMD [&quot;sleep&quot;, &quot;infinity&quot;]
 </pre></div>
 </td></tr></table></div>
 </div>
-<p>Abra o terminal de comandos do seu sistema operacional e vá para o diretório onde colocou o arquivo acima. Neste diretório, execute o comando <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">build</span></code> para criar a imagem <cite>Docker</cite>, como indicado abaixo:</p>
+<p>Baixe a versão 6.1.0 do <cite>LiClipse &lt;https://www.liclipse.com/download.html&gt;</cite> e coloque na mesma pasta do arquivo <code class="docutils literal notranslate"><span class="pre">Dokerfile</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>No <em>link</em> do LiClipse fornecido acima, há uma opção para baixar versões anteriores do LiClipse. Baixe o arquivo chamado <code class="docutils literal notranslate"><span class="pre">liclipse_6.1.0_linux.gtk.x86_64.tar.gz</span></code>.</p>
+</div>
+<p>Abra o terminal de comandos do seu sistema operacional e vá para o diretório onde colocou os arquivos acima. Neste diretório, execute o comando <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">build</span></code> para criar a imagem <cite>Docker</cite>, como indicado abaixo:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>docker build --build-arg QGIS_USER_NAME=`id --name --user` \
              --build-arg QGIS_USER_ID=`id --user` \
              --build-arg QGIS_USER_GROUP=`id --name --group` \

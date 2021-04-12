@@ -31,13 +31,7 @@ USER ${QGIS_USER_NAME}
 
 WORKDIR /home/${QGIS_USER_NAME}
 
-RUN mkdir Downloads && \
-    cd Downloads && \
-    wget -O liclipse_6.1.0_linux.gtk.x86_64.tar.gz \
-         https://download847.mediafire.com/wra0rm6lntng/kyxm0r9l91jl9h8/liclipse_6.1.0_linux.gtk.x86_64.tar.gz && \
-    tar xzvf liclipse_6.1.0_linux.gtk.x86_64.tar.gz && \
-    mv liclipse ~/ && \
-    rm liclipse_6.1.0_linux.gtk.x86_64.tar.gz
+ADD liclipse_6.1.0_linux.gtk.x86_64.tar.gz /home/${QGIS_USER_NAME}/
 
 USER ${ROOT_USER}
 
