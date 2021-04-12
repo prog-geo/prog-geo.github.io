@@ -45,7 +45,7 @@ Copie o arquivo `Dockerfile` mostrado abaixo (:numref:`Trecho de Código %s <qgi
     :name: qgis:code:dockerfile
 
 
-Baixe a versão 6.1.0 do `LiClipse <https://www.liclipse.com/download.html>` e coloque na mesma pasta do arquivo ``Dokerfile``.
+Baixe a versão 6.1.0 do `LiClipse <https://www.liclipse.com/download.html>`_ e coloque na mesma pasta do arquivo ``Dokerfile``.
 
 
 .. note::
