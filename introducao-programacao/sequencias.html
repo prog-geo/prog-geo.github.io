@@ -135,9 +135,11 @@
 <li class="toctree-l2"><a class="reference internal" href="formatacao-strings.html">2.18. Formatação de Strings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lacos-for.html">2.19. Laços do tipo for</a></li>
 <li class="toctree-l2"><a class="reference internal" href="break-continue.html">2.20. Os Comandos <code class="docutils literal notranslate"><span class="pre">break</span></code> e <code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="funcoes.html">2.21. Funções</a></li>
-<li class="toctree-l2"><a class="reference internal" href="consideracoes.html">2.22. Considerações Finais</a></li>
-<li class="toctree-l2"><a class="reference internal" href="exemplos.html">2.23. Exemplos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comandos-compostos.html">2.21. Comandos Compostos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="funcoes.html">2.22. Funções</a></li>
+<li class="toctree-l2"><a class="reference internal" href="escopo.html">2.23. Escopo de Variáveis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="consideracoes.html">2.24. Considerações Finais</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exemplos.html">2.25. Exemplos</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../qgis.html">3. Programando com o QGIS</a></li>
@@ -249,7 +251,7 @@
 </ul>
 <p>Operações comuns com sequências:</p>
 <table class="styled-table docutils align-center" id="introd-prog-tbl-op-seq">
-<caption><span class="caption-number">Tabela 2.12 - </span><span class="caption-text">Operações com sequências. <br/> <strong>Fonte:</strong> The Python Standard Library <span id="id1">[<a class="reference internal" href="../referencias.html#id39">10</a>]</span>.</span><a class="headerlink" href="#introd-prog-tbl-op-seq" title="Link Permanente para essa tabela">¶</a></caption>
+<caption><span class="caption-number">Tabela 2.12 - </span><span class="caption-text">Operações com sequências. <br/> <strong>Fonte:</strong> The Python Standard Library <span id="id1">[<a class="reference internal" href="../referencias.html#id45">10</a>]</span>.</span><a class="headerlink" href="#introd-prog-tbl-op-seq" title="Link Permanente para essa tabela">¶</a></caption>
 <colgroup>
 <col style="width: 21%" />
 <col style="width: 79%" />
@@ -437,11 +439,11 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>O <strong>método</strong> <code class="docutils literal notranslate"><span class="pre">sort</span></code> não cria uma nova lista, ele realiza a alteração <em>in-place</em>. Para maiores informações sobre esse método, consulte <span id="id2">[<a class="reference internal" href="../referencias.html#id45">29</a>]</span>.</p>
+<p>O <strong>método</strong> <code class="docutils literal notranslate"><span class="pre">sort</span></code> não cria uma nova lista, ele realiza a alteração <em>in-place</em>. Para maiores informações sobre esse método, consulte <span id="id2">[<a class="reference internal" href="../referencias.html#id49">30</a>]</span>.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>Python oferece também uma <strong>função</strong> denominada <code class="docutils literal notranslate"><span class="pre">sorted</span></code> que permite criar uma lista ordenada a partir de uma sequência qualquer. A definição dessa função pode ser encontrada em <span id="id3">[<a class="reference internal" href="../referencias.html#id47">9</a>]</span>. Para criar uma nova lista de cidades “ordenada ao contrário”, faça:</p>
+<p>Python oferece também uma <strong>função</strong> denominada <code class="docutils literal notranslate"><span class="pre">sorted</span></code> que permite criar uma lista ordenada a partir de uma sequência qualquer. A definição dessa função pode ser encontrada em <span id="id3">[<a class="reference internal" href="../referencias.html#id51">9</a>]</span>. Para criar uma nova lista de cidades “ordenada ao contrário”, faça:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nova_lista</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">cidades</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">nova_lista</span><span class="p">)</span>
 <span class="go">[&#39;São Paulo&#39;, &#39;Rio de Janeiro&#39;, &#39;Ouro Preto&#39;, &#39;Belo Horizonte&#39;]</span>
@@ -482,7 +484,7 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>Para uma lista completa das operações sobre sequências mutáveis, consulte <span id="id5">[<a class="reference internal" href="../referencias.html#id46">18</a>]</span>.</p>
+<p>Para uma lista completa das operações sobre sequências mutáveis, consulte <span id="id5">[<a class="reference internal" href="../referencias.html#id50">19</a>]</span>.</p>
 </div>
 <div class="section" id="construindo-listas">
 <h3><span class="section-number">2.15.3.1. </span>Construindo Listas<a class="headerlink" href="#construindo-listas" title="Link permanente para este título">¶</a></h3>
@@ -603,7 +605,7 @@
 <p>Esta estratégia evita que todos os elementos tenham que ser materializados de uma única vez. Repare que a grande diferença na notação é o uso de parênteses (<code class="docutils literal notranslate"><span class="pre">(</span></code> e <code class="docutils literal notranslate"><span class="pre">)</span></code>) no lugar de colchetes (<code class="docutils literal notranslate"><span class="pre">[</span></code> e <code class="docutils literal notranslate"><span class="pre">]</span></code>).</p>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>Para mais detalhes sobre <em>List Comprehension</em> e <em>Generator Expressions</em>, consulte <span id="id6">[<a class="reference internal" href="../referencias.html#id48">12</a>]</span> e <span id="id7">[<a class="reference internal" href="../referencias.html#id16">32</a>]</span>.</p>
+<p>Para mais detalhes sobre <em>List Comprehension</em> e <em>Generator Expressions</em>, consulte <span id="id6">[<a class="reference internal" href="../referencias.html#id41">12</a>]</span> e <span id="id7">[<a class="reference internal" href="../referencias.html#id16">34</a>]</span>.</p>
 </div>
 </div>
 </div>

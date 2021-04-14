@@ -34,7 +34,7 @@ Os três tipos básicos de sequências são:
 Operações comuns com sequências:
 
 
-.. table:: Operações com sequências. |br| **Fonte:** The Python Standard Library :cite:`psf:2021:e`.
+.. table:: Operações com sequências. |br| **Fonte:** The Python Standard Library :cite:`psf:stdlib:2021:b`.
     :align: center
     :header-alignment: center center
     :column-alignment: left left
@@ -238,12 +238,12 @@ Como uma lista é uma **sequência mutável**, existem operações que permitem 
 
 .. note::
 
-    O **método** ``sort`` não cria uma nova lista, ele realiza a alteração *in-place*. Para maiores informações sobre esse método, consulte :cite:`psf:2021:k`.
+    O **método** ``sort`` não cria uma nova lista, ele realiza a alteração *in-place*. Para maiores informações sobre esse método, consulte :cite:`psf:stdlib:2021:f`.
 
 
 .. note::
 
-    Python oferece também uma **função** denominada ``sorted`` que permite criar uma lista ordenada a partir de uma sequência qualquer. A definição dessa função pode ser encontrada em :cite:`psf:2021:m`. Para criar uma nova lista de cidades "ordenada ao contrário", faça::
+    Python oferece também uma **função** denominada ``sorted`` que permite criar uma lista ordenada a partir de uma sequência qualquer. A definição dessa função pode ser encontrada em :cite:`psf:stdlib:2021:h`. Para criar uma nova lista de cidades "ordenada ao contrário", faça::
 
         >>> nova_lista = sorted(cidades, reverse=True)
         >>> print(nova_lista)
@@ -290,7 +290,7 @@ Para inverter a ordem dos elementos de uma lista, utilize o método ``reverse``:
 
 .. note::
 
-    Para uma lista completa das operações sobre sequências mutáveis, consulte :cite:`psf:2021:l`.
+    Para uma lista completa das operações sobre sequências mutáveis, consulte :cite:`psf:stdlib:2021:g`.
 
 
 Construindo Listas
@@ -420,4 +420,4 @@ Esta estratégia evita que todos os elementos tenham que ser materializados de u
 
 .. note::
 
-    Para mais detalhes sobre *List Comprehension* e *Generator Expressions*, consulte :cite:`psf:2021:n` e :cite:`kuchling:2021:a`.
+    Para mais detalhes sobre *List Comprehension* e *Generator Expressions*, consulte :cite:`psf:reference:2021:f` e :cite:`kuchling:2021:a`.

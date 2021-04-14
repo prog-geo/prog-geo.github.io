@@ -9,7 +9,7 @@
 .. _sec_introducao_programacao_expressoes_logicas:
 
 Expressões Lógicas
-------------------
+==================
 
 
 **Problema:** Escreva um programa que pergunte ao usuário o valor de um ano qualquer e que o informe se o ano é ou não bissexto.

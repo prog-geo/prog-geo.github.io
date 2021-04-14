@@ -29,7 +29,7 @@ Em Python podemos usar o operador ``%`` para realizar a formatação de strings.
     'Bem vindo a CAP-419/SER-347!'
 
 
-A sequência ``%s``, dentro da string na linha 03, possui uma interpretação especial, ela funciona como um marcador de posição (*placeholder*) que será substituída (ou interpolada ou expandida) pelo valor fornecido à direita do operador ``%``. Existe uma regra bem definida de como construir as strings de formatação :cite:`psf:2021:g`. Algumas bem utilizadas são:
+A sequência ``%s``, dentro da string na linha 03, possui uma interpretação especial, ela funciona como um marcador de posição (*placeholder*) que será substituída (ou interpolada ou expandida) pelo valor fornecido à direita do operador ``%``. Existe uma regra bem definida de como construir as strings de formatação :cite:`psf:stdlib:2021:d`. Algumas bem utilizadas são:
 
 - ``%s``: substituição de strings.
 
@@ -228,7 +228,7 @@ Ou, podemos utilizar argumentos nomeados (*named keyword argument*)::
 
 .. note::
 
-    A sintaxe de formatação do método ``format`` pode ser encontrada em :cite:`psf:2021:h`.
+    A sintaxe de formatação do método ``format`` pode ser encontrada em :cite:`psf:stdlib:2021:e`.
 
 
 .. note::
@@ -239,6 +239,10 @@ Ou, podemos utilizar argumentos nomeados (*named keyword argument*)::
 f-string
 --------
 
+
+.. note::
+
+    Veja :cite:`psf:reference:2021:d`.
 
 
 Template strings

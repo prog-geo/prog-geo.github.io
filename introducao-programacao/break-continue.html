@@ -48,7 +48,7 @@
     
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Buscar" href="../search.html" />
-    <link rel="next" title="2.21. Funções" href="funcoes.html" />
+    <link rel="next" title="2.21. Comandos Compostos" href="comandos-compostos.html" />
     <link rel="prev" title="2.19. Laços do tipo for" href="lacos-for.html" /> 
 </head>
 
@@ -132,9 +132,11 @@
 <li class="toctree-l3"><a class="reference internal" href="#desviando-a-sequencia-de-um-laco-continue">2.20.2. Desviando a sequência de um laço - <code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="funcoes.html">2.21. Funções</a></li>
-<li class="toctree-l2"><a class="reference internal" href="consideracoes.html">2.22. Considerações Finais</a></li>
-<li class="toctree-l2"><a class="reference internal" href="exemplos.html">2.23. Exemplos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comandos-compostos.html">2.21. Comandos Compostos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="funcoes.html">2.22. Funções</a></li>
+<li class="toctree-l2"><a class="reference internal" href="escopo.html">2.23. Escopo de Variáveis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="consideracoes.html">2.24. Considerações Finais</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exemplos.html">2.25. Exemplos</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../qgis.html">3. Programando com o QGIS</a></li>
@@ -219,7 +221,7 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="funcoes.html" class="btn btn-neutral float-right" title="2.21. Funções" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="comandos-compostos.html" class="btn btn-neutral float-right" title="2.21. Comandos Compostos" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
       
       
         <a href="lacos-for.html" class="btn btn-neutral float-left" title="2.19. Laços do tipo for" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
@@ -237,9 +239,7 @@
 <h2><span class="section-number">2.20.1. </span>Interrompendo um laço - <code class="docutils literal notranslate"><span class="pre">break</span></code><a class="headerlink" href="#interrompendo-um-laco-break" title="Link permanente para este título">¶</a></h2>
 <p>O comando <code class="docutils literal notranslate"><span class="pre">break</span></code> é usado para ajudar no controle do fluxo de execução dentro de um laço (<code class="docutils literal notranslate"><span class="pre">while</span></code> ou <code class="docutils literal notranslate"><span class="pre">for</span></code>). O comando <code class="docutils literal notranslate"><span class="pre">break</span></code> faz com que a execução do laço seja interrompida independentemente do teste condicional do laço <code class="docutils literal notranslate"><span class="pre">while</span></code> ou da existência de novos elementos para iteração no laço <code class="docutils literal notranslate"><span class="pre">for</span></code>. Ou seja, o comando <code class="docutils literal notranslate"><span class="pre">break</span></code> irá finalizar a execução do laço redirecionando a execução do programa para o próximo comando após o laço.</p>
 <p>Para ilustrar o uso desse comando, vamos apresentar um exemplo em que o laço do tipo <code class="docutils literal notranslate"><span class="pre">for</span></code> é interrompido antes do final da travessia por todos os elementos do intervalo definido:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
         <span class="k">break</span>    <span class="c1"># interrompe o laço</span>
 
@@ -299,7 +299,7 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="funcoes.html" class="btn btn-neutral float-right" title="2.21. Funções" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="comandos-compostos.html" class="btn btn-neutral float-right" title="2.21. Comandos Compostos" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="lacos-for.html" class="btn btn-neutral float-left" title="2.19. Laços do tipo for" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
     </div>
 

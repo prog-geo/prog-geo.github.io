@@ -280,7 +280,7 @@ Se omitirmos os valores de índices dos dois lados do sinal de ":", retornamos u
 
 .. tip::
 
-    O **tipo string** é apenas um dos **tipos de sequência** disponíveis em Python. Uma lista completa das operações relativas aos tipos sequência, pode ser consultada em :cite:`psf:2021:e`.
+    O **tipo string** é apenas um dos **tipos de sequência** disponíveis em Python. Uma lista completa das operações relativas aos tipos sequência, pode ser consultada em :cite:`psf:stdlib:2021:b`.
 
 
 Métodos de Strings
@@ -514,4 +514,4 @@ Outros Métodos de String
 
 .. tip::
 
-    Para uma lista completa dos métodos de uma string, consulte :cite:`psf:2021:f`.
+    Para uma lista completa dos métodos de uma string, consulte :cite:`psf:stdlib:2021:c`.

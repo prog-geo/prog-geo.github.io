@@ -23,9 +23,9 @@ Lista de Exercícios 05
     |
     | Não use acentos ou caracteres especiais nos nomes dos arquivos.
 
-- Você deverá entregar a lista através de um *pull-request* a ser realizado no repositório associado ao seu usuário na organização `prog-geo <https://github.com/prog-geo>`_. Esse *pull-request* deverá conter uma pasta com nome **Lista-04** contendo todos os arquivos da entrega.
+- Você deverá entregar a lista através de um *pull-request* a ser realizado no repositório associado ao seu usuário na organização `prog-geo <https://github.com/prog-geo>`_. Esse *pull-request* deverá conter uma pasta com nome **Lista-05** contendo todos os arquivos da entrega.
 
-- **Prazo para entrega:** 16/04/2021 - 18:00
+- **Prazo para entrega:** 18/04/2021 - 18:00
 
 
 .. warning::

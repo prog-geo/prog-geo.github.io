@@ -18,8 +18,6 @@ O comando ``break`` é usado para ajudar no controle do fluxo de execução dent
 
 Para ilustrar o uso desse comando, vamos apresentar um exemplo em que o laço do tipo ``for`` é interrompido antes do final da travessia por todos os elementos do intervalo definido::
 
-    num = 0
-
     for num in range(10):
         if num == 5:
             break    # interrompe o laço

@@ -9,7 +9,7 @@
 .. _sec_introducao_programacao_op_relacionais:
 
 Operadores Relacionais
-----------------------
+======================
 
 
 Os **operadores relacionais** ou **operadores de comparação** permitem comparar dois valores e produzir um valor booleano como resultado. Esse tipo de operador, juntamente com os operadores lógicos, são essenciais nos **comandos condicionais** e nos **testes condicionais dos laços de repetição**. A :numref:`Tabela %s <introd-prog:tbl:op-relacionais>` apresenta a notação desses operadores e seus significados.

@@ -18,7 +18,7 @@ Em Python, um arquivo contendo definições e comandos é chamado de **módulo**
     :name: code:variados:module:haversine
 
 
-As definições em um módulo podem ser **importadas** por outros módulos. Uma das formas mais comuns de realizar esta operação é através do comando ``import`` :cite:`psf:2021:t`, que é uma palavra-chave da linguagem Python. Vamos salvar o arquivo :download:`haversine.py <../code/variados/modulos/haversine.py>`, mostrado no :numref:`Trecho de Código %s <code:variados:module:haversine>`, em um diretório chamado ``modulos``, obtendo uma estrutura de diretórios como mostrada abaixo::
+As definições em um módulo podem ser **importadas** por outros módulos. Uma das formas mais comuns de realizar esta operação é através do comando ``import`` :cite:`psf:reference:2021:g`, que é uma palavra-chave da linguagem Python. Vamos salvar o arquivo :download:`haversine.py <../code/variados/modulos/haversine.py>`, mostrado no :numref:`Trecho de Código %s <code:variados:module:haversine>`, em um diretório chamado ``modulos``, obtendo uma estrutura de diretórios como mostrada abaixo::
 
     modulos/
         haversine.py
@@ -252,4 +252,4 @@ A variável ``sys.path`` é inicializada com as seguintes localizações:
 
 .. note::
 
-    Para mais informações sobre módulos em Python, consulte :cite:`psf:2021:t` e :cite:`psf:2021:u`.
+    Para mais informações sobre módulos em Python, consulte :cite:`psf:reference:2021:g` e :cite:`psf:tut:2021:d`.

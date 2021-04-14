@@ -15,7 +15,7 @@ Palavras-chave
 Os seguintes identificadores encontram-se definidos na linguagem Python como **palavras reservadas** ou **palavras-chave** da linguagem e, portanto, não podem ser usadas como identificadores em nossos programas (:numref:`Tabela %s <introd-prog:tbl:keywords>`):
 
 
-.. table:: Lista de palavras-chave da linguagem Python. |br| **Fonte:** The Python Language Reference :cite:`psf:2021:j`.
+.. table:: Lista de palavras-chave da linguagem Python. |br| **Fonte:** The Python Language Reference :cite:`psf:reference:2021:e`.
     :align: center
     :name: introd-prog:tbl:keywords
 

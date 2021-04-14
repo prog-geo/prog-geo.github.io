@@ -101,4 +101,4 @@ Exemplo::
 
 .. note::
 
-    Para mais detalhes sobre a estrutura ``set``, consulte :cite:`psf:2021:r` e :cite:`psf:2021:s`.
+    Para mais detalhes sobre a estrutura ``set``, consulte :cite:`psf:stdlib:2021:j` e :cite:`psf:tut:2021:c`.

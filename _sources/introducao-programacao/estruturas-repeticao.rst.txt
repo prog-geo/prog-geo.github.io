@@ -143,7 +143,7 @@ A sintaxe básica deste comando é a seguinte::
 
 .. tip::
 
-    Para saber a sintaxe completa do comando ``for``, consulte :cite:`psf:2021:d`.
+    Para saber a sintaxe completa do comando ``for``, consulte :cite:`psf:reference:2021:b`.
 
 
 .. _sec_introducao_programacao_estruturas_repeticao_problema_4:
@@ -221,6 +221,11 @@ A sintaxe básica deste comando é a seguine::
         instrução-n
 
 
+.. tip::
+
+    Para saber a sintaxe completa do comando ``while``, consulte :cite:`psf:reference:2021:c`.
+
+
 .. note::
 
     Em algumas linguagens, como C e C++, existem outros tipos de laços, como, por exemplo, comandos de repetição com expressão de interrupção ao final da primeira iteração (ex: ``do...while``).
@@ -279,7 +284,6 @@ A sintaxe básica deste comando é a seguine::
 .. tip::
 
     Um bom tutorial sobre laços pode ser encontrado em :cite:`pal:2021:a`. O site learningpython.org contém uma seção explicando o uso de laços ``for`` e ``while`` :cite:`learnpython:2021:a`.
-
 
 
 .. admonition:: Exemplos

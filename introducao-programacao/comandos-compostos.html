@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.9. Operadores Relacionais &mdash; SER-347/CAP-419</title>
+  <title>2.21. Comandos Compostos &mdash; SER-347/CAP-419</title>
   
 
   
@@ -27,7 +27,7 @@
   
 
   
-    <link rel="canonical" href="https://prog-geo.github.io/introducao-programacao/op-relacionais.html" />
+    <link rel="canonical" href="https://prog-geo.github.io/introducao-programacao/comandos-compostos.html" />
 
   
   <!--[if lt IE 9]>
@@ -48,8 +48,8 @@
     
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Buscar" href="../search.html" />
-    <link rel="next" title="2.10. Expressões Lógicas" href="expressoes-logicas.html" />
-    <link rel="prev" title="2.8. Tipo Lógico" href="tipo-logico.html" /> 
+    <link rel="next" title="2.22. Funções" href="funcoes.html" />
+    <link rel="prev" title="2.20. Os Comandos break e continue" href="break-continue.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -116,7 +116,7 @@
 <li class="toctree-l2"><a class="reference internal" href="variaveis.html">2.6. Variáveis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="comentarios.html">2.7. Comentários</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tipo-logico.html">2.8. Tipo Lógico</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2.9. Operadores Relacionais</a></li>
+<li class="toctree-l2"><a class="reference internal" href="op-relacionais.html">2.9. Operadores Relacionais</a></li>
 <li class="toctree-l2"><a class="reference internal" href="expressoes-logicas.html">2.10. Expressões Lógicas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="estruturas-condicionais.html">2.11. Estruturas Condicionais</a></li>
 <li class="toctree-l2"><a class="reference internal" href="estruturas-repeticao.html">2.12. Estruturas de Repetição</a></li>
@@ -128,7 +128,7 @@
 <li class="toctree-l2"><a class="reference internal" href="formatacao-strings.html">2.18. Formatação de Strings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lacos-for.html">2.19. Laços do tipo for</a></li>
 <li class="toctree-l2"><a class="reference internal" href="break-continue.html">2.20. Os Comandos <code class="docutils literal notranslate"><span class="pre">break</span></code> e <code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="comandos-compostos.html">2.21. Comandos Compostos</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.21. Comandos Compostos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="funcoes.html">2.22. Funções</a></li>
 <li class="toctree-l2"><a class="reference internal" href="escopo.html">2.23. Escopo de Variáveis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="consideracoes.html">2.24. Considerações Finais</a></li>
@@ -203,7 +203,7 @@
         
           <li><a href="../introducao-programacao.html"><span class="section-number">2. </span>Introdução à Programação com a Linguagem Python</a> &raquo;</li>
         
-      <li><span class="section-number">2.9. </span>Operadores Relacionais</li>
+      <li><span class="section-number">2.21. </span>Comandos Compostos</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -217,10 +217,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="expressoes-logicas.html" class="btn btn-neutral float-right" title="2.10. Expressões Lógicas" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="funcoes.html" class="btn btn-neutral float-right" title="2.22. Funções" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
       
       
-        <a href="tipo-logico.html" class="btn btn-neutral float-left" title="2.8. Tipo Lógico" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="break-continue.html" class="btn btn-neutral float-left" title="2.20. Os Comandos break e continue" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
       
   </div>
   
@@ -229,94 +229,17 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="operadores-relacionais">
-<span id="sec-introducao-programacao-op-relacionais"></span><h1><span class="section-number">2.9. </span>Operadores Relacionais<a class="headerlink" href="#operadores-relacionais" title="Link permanente para este título">¶</a></h1>
-<p>Os <strong>operadores relacionais</strong> ou <strong>operadores de comparação</strong> permitem comparar dois valores e produzir um valor booleano como resultado. Esse tipo de operador, juntamente com os operadores lógicos, são essenciais nos <strong>comandos condicionais</strong> e nos <strong>testes condicionais dos laços de repetição</strong>. A <a class="reference internal" href="#introd-prog-tbl-op-relacionais"><span class="std std-numref">Tabela 2.10</span></a> apresenta a notação desses operadores e seus significados.</p>
-<table class="styled-table docutils align-center" id="introd-prog-tbl-op-relacionais">
-<caption><span class="caption-number">Tabela 2.10 - </span><span class="caption-text">Operadores relacionais.</span><a class="headerlink" href="#introd-prog-tbl-op-relacionais" title="Link Permanente para essa tabela">¶</a></caption>
-<colgroup>
-<col style="width: 26%" />
-<col style="width: 28%" />
-<col style="width: 28%" />
-<col style="width: 18%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="center-align head"><p>Operador</p></th>
-<th class="center-align head"><p>Nome</p></th>
-<th class="center-align head"><p>Expressão</p></th>
-<th class="left-align head"><p>Valor</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="center-align" rowspan="2"><p><code class="docutils literal notranslate"><span class="pre">==</span></code></p></td>
-<td class="left-align" rowspan="2"><p>igual</p></td>
-<td class="center-align"><p>5 == 4</p></td>
-<td class="left-align"><p>False</p></td>
-</tr>
-<tr class="row-odd"><td class="center-align"><p>5 == 5</p></td>
-<td class="left-align"><p>True</p></td>
-</tr>
-<tr class="row-even"><td class="center-align" rowspan="2"><p><code class="docutils literal notranslate"><span class="pre">!=</span></code></p></td>
-<td class="left-align" rowspan="2"><p>diferente</p></td>
-<td class="center-align"><p>5 != 4</p></td>
-<td class="left-align"><p>True</p></td>
-</tr>
-<tr class="row-odd"><td class="center-align"><p>5 != 5</p></td>
-<td class="left-align"><p>False</p></td>
-</tr>
-<tr class="row-even"><td class="center-align" rowspan="2"><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code></p></td>
-<td class="left-align" rowspan="2"><p>menor que</p></td>
-<td class="center-align"><p>5 &lt; 5</p></td>
-<td class="left-align"><p>False</p></td>
-</tr>
-<tr class="row-odd"><td class="center-align"><p>4 &lt; 5</p></td>
-<td class="left-align"><p>True</p></td>
-</tr>
-<tr class="row-even"><td class="center-align" rowspan="2"><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code></p></td>
-<td class="left-align" rowspan="2"><p>menor ou
-igual a</p></td>
-<td class="center-align"><p>5 &lt;= 5</p></td>
-<td class="left-align"><p>True</p></td>
-</tr>
-<tr class="row-odd"><td class="center-align"><p>6 &lt;= 5</p></td>
-<td class="left-align"><p>False</p></td>
-</tr>
-<tr class="row-even"><td class="center-align" rowspan="2"><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p></td>
-<td class="left-align" rowspan="2"><p>maior que</p></td>
-<td class="center-align"><p>5 &gt; 4</p></td>
-<td class="left-align"><p>True</p></td>
-</tr>
-<tr class="row-odd"><td class="center-align"><p>4 &gt; 5</p></td>
-<td class="left-align"><p>False</p></td>
-</tr>
-<tr class="row-even"><td class="center-align" rowspan="2"><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code></p></td>
-<td class="left-align" rowspan="2"><p>maior ou
-igual a</p></td>
-<td class="center-align"><p>5 &gt;= 5</p></td>
-<td class="left-align"><p>True</p></td>
-</tr>
-<tr class="row-odd"><td class="center-align"><p>5 &gt;= 6</p></td>
-<td class="left-align"><p>False</p></td>
-</tr>
-</tbody>
-</table>
-<p>Exemplos:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">5</span> <span class="o">&gt;</span> <span class="mf">4.1</span>
-<span class="go">True</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;Land&quot;</span> <span class="o">&lt;</span> <span class="s2">&quot;Landsat&quot;</span>
-<span class="go">True</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;Land Cover&quot;</span> <span class="o">&gt;</span> <span class="s2">&quot;Landsat&quot;</span>
-<span class="go">False</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">5</span> <span class="o">!=</span> <span class="mf">4.1</span>
-<span class="go">True</span>
-</pre></div>
-</div>
+  <div class="section" id="comandos-compostos">
+<span id="sec-introducao-programacao-comandos-compostos"></span><h1><span class="section-number">2.21. </span>Comandos Compostos<a class="headerlink" href="#comandos-compostos" title="Link permanente para este título">¶</a></h1>
+<p>Toda linguagem de programação de alto nível possui alguns comandos que são <strong>compostos</strong>, isto é, comandos que contém grupos de outros comandos. Os comandos <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">while</span></code>, e <code class="docutils literal notranslate"><span class="pre">for</span></code>, vistos nas aulas anteriores, são exemplos de comandos compostos que permitem controlar o fluxo de execução de um outro grupo de comandos.</p>
+<p>Como vimos, um laço do tipo <code class="docutils literal notranslate"><span class="pre">while</span></code> pode conter um único comando ou uma sequência de diversos outros comandos, inclusive pode conter outros comandos do tipo <code class="docutils literal notranslate"><span class="pre">while</span></code> (chamamos isso de comandos <code class="docutils literal notranslate"><span class="pre">while</span></code> aninhados).</p>
+<p>Em Python, temos outros quatro tipos de comandos compostos, são eles:</p>
+<ul class="open">
+<li><p><code class="docutils literal notranslate"><span class="pre">try</span></code>: define um bloco de comandos onde é possível realizar <strong>tratamento de exceções</strong> durante a execução de comandos.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">with</span></code>: define um bloco de comandos que deva <strong>inicializar algum recurso</strong> no início da sua execução e ao final da sua execução tenha que <strong>finalizar (ou liberar) esses recursos</strong>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">def</span></code>: permite definir uma <strong>função</strong>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">class</span></code>: permite definir <strong>classes</strong>, isto é, novos tipos de dados.</p></li>
+</ul>
 </div>
 
 
@@ -325,8 +248,8 @@ igual a</p></td>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="expressoes-logicas.html" class="btn btn-neutral float-right" title="2.10. Expressões Lógicas" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="tipo-logico.html" class="btn btn-neutral float-left" title="2.8. Tipo Lógico" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="funcoes.html" class="btn btn-neutral float-right" title="2.22. Funções" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="break-continue.html" class="btn btn-neutral float-left" title="2.20. Os Comandos break e continue" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
     </div>
 
   <hr/>

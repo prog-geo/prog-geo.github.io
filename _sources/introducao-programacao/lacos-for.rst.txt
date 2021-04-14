@@ -103,7 +103,7 @@ Podemos iterar pelos pares *chave-valor* do dicionário associado ao identificad
 
 .. note::
 
-    Para mais informações em técnicas de como fazer a travessia ou usar laços com dicionários, consulte :cite:`psf:2021:p`.
+    Para mais informações em técnicas de como fazer a travessia ou usar laços com dicionários, consulte :cite:`psf:tut:2021:b`.
 
 
 .. admonition:: Exemplos

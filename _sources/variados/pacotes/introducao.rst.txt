@@ -309,4 +309,4 @@ Os **pacotes de espaço de nomes** formam o mecanismo da linguagem Python que po
 
 .. note::
 
-    Para mais informações sobre pacotes em Python, consulte :cite:`psf:2021:v` e :cite:`psf:2021:w`.
+    Para mais informações sobre pacotes em Python, consulte :cite:`psf:reference:2021:h` e :cite:`psf:tut:2021:e`.

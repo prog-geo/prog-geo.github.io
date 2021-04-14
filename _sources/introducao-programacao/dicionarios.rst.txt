@@ -196,4 +196,4 @@ Podemos criar dicionários utilizando a notação de *dict comprehensions*::
 
 .. note::
 
-    Para mais detalhes sobre a estrutura ``dict``, consulte :cite:`psf:2021:q` e :cite:`psf:2021:o`.
+    Para mais detalhes sobre a estrutura ``dict``, consulte :cite:`psf:stdlib:2021:i` e :cite:`psf:tut:2021:a`.

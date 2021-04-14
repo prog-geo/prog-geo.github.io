@@ -85,7 +85,9 @@ Para escrever programas em alguma linguagem, é preciso conhecer um pouco de **l
     ./introducao-programacao/formatacao-strings.rst
     ./introducao-programacao/lacos-for.rst
     ./introducao-programacao/break-continue.rst
+    ./introducao-programacao/comandos-compostos.rst
     ./introducao-programacao/funcoes.rst
+    ./introducao-programacao/escopo.rst
     ./introducao-programacao/consideracoes.rst
     ./introducao-programacao/exemplos.rst
 

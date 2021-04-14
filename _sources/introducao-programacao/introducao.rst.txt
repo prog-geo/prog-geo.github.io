@@ -318,10 +318,10 @@ A Linguagem de Programação Python
 A linguagem Python foi criada originalmente por Guido Van Rossum :cite:`rossum:1995`. Atualmente, seu desenvolvimento é coordenado através de uma fundação chamada `Python Software Foundation <https://www.python.org/psf-landing/>`_, sob uma licença de código aberto. Pode ser classificada como uma linguagem de *script*, orientada a objetos e interpretada. A implementação oficial encontra-se disponível para as plataformas computacionais mais comuns no site https://www.python.org/.
 
 
-O **core** desta linguagem, descrito em :cite:`psf:2021:a`, contém a gramática com as regras sintáticas e semânticas da linguagem, além das abstrações básicas tais como tipos de dados numéricos, sequências, dicionários, estruturas de repetição, comandos de decisão, funções, construtor de novos tipos (``class``), blocos para tratamento de exceções, entre outras abstrações.
+O **core** desta linguagem, descrito em :cite:`psf:reference:2021:a`, contém a gramática com as regras sintáticas e semânticas da linguagem, além das abstrações básicas tais como tipos de dados numéricos, sequências, dicionários, estruturas de repetição, comandos de decisão, funções, construtor de novos tipos (``class``), blocos para tratamento de exceções, entre outras abstrações.
 
 
-A **biblioteca padrão** (*standard library*), descrita em :cite:`psf:2021:b`, fornece inúmeros tipos de dados e funcionalidades, como tipos para manipulação de data e hora, manipulação de arquivos, comunicação em rede, entre outros.
+A **biblioteca padrão** (*standard library*), descrita em :cite:`psf:stdlib:2021:a`, fornece inúmeros tipos de dados e funcionalidades, como tipos para manipulação de data e hora, manipulação de arquivos, comunicação em rede, entre outros.
 
 
 Python apresenta as seguintes características:
