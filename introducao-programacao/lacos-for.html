@@ -42,6 +42,7 @@
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script src="../_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -234,24 +235,24 @@
            <div itemprop="articleBody">
             
   <div class="section" id="lacos-do-tipo-for">
-<h1><span class="section-number">2.19. </span>Laços do tipo for<a class="headerlink" href="#lacos-do-tipo-for" title="Link permanente para este título">¶</a></h1>
+<span id="sec-introducao-lacos-for"></span><h1><span class="section-number">2.19. </span>Laços do tipo for<a class="headerlink" href="#lacos-do-tipo-for" title="Link permanente para este título">¶</a></h1>
 <div class="section" id="iterando-nos-elementos-de-um-sequencia">
 <h2><span class="section-number">2.19.1. </span>Iterando nos Elementos de um Sequência<a class="headerlink" href="#iterando-nos-elementos-de-um-sequencia" title="Link permanente para este título">¶</a></h2>
-<p>Strings:</p>
+<p>Iterando pelos caracteres de uma string:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nome</span> <span class="o">=</span> <span class="s2">&quot;Gilberto Ribeiro&quot;</span>
 
 <span class="k">for</span> <span class="n">letra</span> <span class="ow">in</span> <span class="n">nome</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">letra</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Listas:</p>
+<p>Iterando pelos itens de uma lista:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cidades</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;São Paulo&quot;</span><span class="p">,</span> <span class="s2">&quot;Rio de Janeiro&quot;</span><span class="p">,</span> <span class="s2">&quot;Belo Horizonte&quot;</span><span class="p">]</span>
 
 <span class="k">for</span> <span class="n">cidade</span> <span class="ow">in</span> <span class="n">cidades</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nome:&quot;</span><span class="p">,</span> <span class="n">cidade</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Iteráveis:</p>
+<p>Iterando no intervalo de valores <span class="math notranslate nohighlight">\([7, 17)\)</span>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">17</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
 </pre></div>
@@ -259,8 +260,7 @@
 </div>
 <div class="section" id="usando-a-funcao-enumerate">
 <h2><span class="section-number">2.19.2. </span>Usando a função <code class="docutils literal notranslate"><span class="pre">enumerate</span></code><a class="headerlink" href="#usando-a-funcao-enumerate" title="Link permanente para este título">¶</a></h2>
-<p>Exemplo:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cidades</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;São Paulo&quot;</span><span class="p">,</span> <span class="s2">&quot;Rio de Janeiro&quot;</span><span class="p">,</span> <span class="s2">&quot;Belo Horizonte&quot;</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cidades</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;São Paulo&quot;</span><span class="p">,</span> <span class="s2">&quot;Rio de Janeiro&quot;</span><span class="p">,</span> <span class="s2">&quot;Belo Horizonte&quot;</span><span class="p">]</span>
 
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">cidade</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">cidades</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">cidade</span><span class="p">)</span>
@@ -300,15 +300,17 @@
 </div>
 <div class="section" id="iterando-em-dicionarios">
 <h2><span class="section-number">2.19.4. </span>Iterando em Dicionários<a class="headerlink" href="#iterando-em-dicionarios" title="Link permanente para este título">¶</a></h2>
-<p>Exemplo:</p>
+<p>Considere o seguinte dicionário:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sao_paulo</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;São Paulo&quot;</span><span class="p">,</span>
     <span class="s2">&quot;woeid&quot;</span> <span class="p">:</span> <span class="mi">12582314</span><span class="p">,</span>
     <span class="s2">&quot;bounding-box&quot;</span> <span class="p">:</span> <span class="p">((</span><span class="o">-</span><span class="mf">46.82</span><span class="p">,</span> <span class="o">-</span><span class="mf">24.00</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">46.36</span><span class="p">,</span> <span class="o">-</span><span class="mf">23.68</span><span class="p">)),</span>
     <span class="s2">&quot;country&quot;</span> <span class="p">:</span> <span class="s2">&quot;Brazil&quot;</span>
 <span class="p">}</span>
-
-<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">sao_paulo</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</pre></div>
+</div>
+<p>Podemos iterar pelos pares <em>chave-valor</em> do dicionário associado ao identificador <code class="docutils literal notranslate"><span class="pre">sao_paulo</span></code>, usando o método <code class="docutils literal notranslate"><span class="pre">items</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">sao_paulo</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;key: </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">; value: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>

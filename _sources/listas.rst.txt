@@ -17,6 +17,7 @@ Listas de Exercícios
     ./listas/l02
     ./listas/l03
     ./listas/l04
+    ./listas/l05
 
 
 

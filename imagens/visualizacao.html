@@ -192,80 +192,97 @@
   <div class="section" id="visualizacao-de-imagens">
 <span id="sec-imagens-visualizacao"></span><h1>Visualização de Imagens<a class="headerlink" href="#visualizacao-de-imagens" title="Link permanente para este título">¶</a></h1>
 <p>Primeiramente, vamos criar os objetos que nos darão acesso aos elementos da imagem:</p>
-<p>dataset
-bandas individuais
-array de pixels (formato NumPy)</p>
-<p># importar bibliotecas
-from osgeo import gdal
-import numpy as np
-import matplotlib.pyplot as plt</p>
-<p># informar o uso de exceções
-gdal.UseExceptions()</p>
-<p># abrir o dataset da imagem RapidEye, com 5 bandas
-# (lembre-se de fazer o upload na aba de arquivos)
-dataset = gdal.Open(“crop_rapideye.tif”, gdal.GA_ReadOnly)</p>
-<p># obter os objetos com as informações das bandas
-banda1 = dataset.GetRasterBand(1) # banda blue
-banda2 = dataset.GetRasterBand(2) # banda green
-banda3 = dataset.GetRasterBand(3) # banda red
-banda4 = dataset.GetRasterBand(4) # banda red-edge
-banda5 = dataset.GetRasterBand(5) # banda nir</p>
-<p># imprimir informações de máximos/mínimos
-# valores dos pixels de cada banda
-print(banda1.ComputeRasterMinMax())
-print(banda2.ComputeRasterMinMax())
-print(banda3.ComputeRasterMinMax())
-print(banda4.ComputeRasterMinMax())
-print(banda5.ComputeRasterMinMax())</p>
-<p>Uma maneira muito utilizada para complementar a visualização das imagens é através do histograma. Ele apresenta de forma gráfica a distribuição dos pixels na imagem. A GDAL armazena esta informação em cada banda, e podemos acessar o histograma através da função GetHistogram.</p>
-<p># a função GetHistogram precisa de intervalos
-# mínimos e máximos de pixels para cada banda (min/max)
-# e também a informação de divisões do gráfico (buckets)
-plt.figure(figsize=(20, 5))
-plt.plot(banda1.GetHistogram(min=0, max=25000, buckets=100), ‘b’, label=’Banda 1 - Blue’)
-plt.plot(banda2.GetHistogram(min=0, max=25000, buckets=100), ‘g’, label=’Banda 2 - Green’)
-plt.plot(banda3.GetHistogram(min=0, max=25000, buckets=100), ‘r’, label=’Banda 3 - Red’)
-plt.plot(banda4.GetHistogram(min=0, max=25000, buckets=100), ‘orange’, label=’Banda 4 - Red-Edge’)
-plt.plot(banda5.GetHistogram(min=0, max=25000, buckets=100), ‘cyan’, label=’Banda 5 - NIR’)
-plt.grid()
-plt.legend()</p>
-<p>Figura do Histograma</p>
-<p># obter as matrizes de pixels de cada banda
-blue = banda1.ReadAsArray()
-green = banda2.ReadAsArray()
-red = banda3.ReadAsArray()
-rededge = banda4.ReadAsArray()
-nir = banda5.ReadAsArray()</p>
-<p># combinamos GDAL e Matplotlib para
-# visualizar as bandas individualmente
-plt.figure(figsize=(20, 5))
-plt.subplot(151)
-plt.imshow(blue, cmap=’gray’)
-plt.title(‘Banda 1 - Blue’)
-plt.subplot(152)
-plt.imshow(green, cmap=’gray’)
-plt.title(‘Banda 2 - Green’)
-plt.subplot(153)
-plt.imshow(red, cmap=’gray’)
-plt.title(‘Banda 3 - Red’)
-plt.subplot(154)
-plt.imshow(rededge, cmap=’gray’)
-plt.title(‘Banda 4 - Red-Edge’)
-plt.subplot(155)
-plt.imshow(nir, cmap=’gray’)
-plt.title(‘Banda 5 - NIR’)</p>
-<p>Podemos combinar a visualização de 2 bandas em um gráfico comumente chamado de scatterplot. Para isso precisamos transformar as bandas da nossa imagem (2 dimensões) em vetores (1 dimensão). Para isso podemos usar a função da NumPy chamada flatten.</p>
-<p># obter os vetores de 1 dimensão de cada banda
-vetor3 = red.flatten()
-vetor5 = nir.flatten()</p>
-<p># construir o gráfico com o scatterplot
-plt.figure(figsize=(10, 10))</p>
-<p>plt.scatter(vetor3, vetor5, marker=’.’)
-plt.xlabel(“Banda 3 - Red”)
-plt.ylabel(“Banda 5 - NIR”)
-plt.title(“Scatterplot das bandas 3 (Red) e 5 (NIR)”)
-plt.grid();</p>
-<p>Figura</p>
+<ul class="simple">
+<li><p>dataset</p></li>
+<li><p>bandas individuais</p></li>
+<li><p>array de pixels (formato NumPy)</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># importar bibliotecas</span>
+<span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">gdal</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># informar o uso de exceções</span>
+<span class="n">gdal</span><span class="o">.</span><span class="n">UseExceptions</span><span class="p">()</span>
+
+<span class="c1"># abrir o dataset da imagem RapidEye, com 5 bandas</span>
+<span class="c1"># (lembre-se de fazer o upload na aba de arquivos)</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="s2">&quot;crop_rapideye.tif&quot;</span><span class="p">,</span> <span class="n">gdal</span><span class="o">.</span><span class="n">GA_ReadOnly</span><span class="p">)</span>
+
+<span class="c1"># obter os objetos com as informações das bandas</span>
+<span class="n">banda1</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># banda blue</span>
+<span class="n">banda2</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># banda green</span>
+<span class="n">banda3</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># banda red</span>
+<span class="n">banda4</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="c1"># banda red-edge</span>
+<span class="n">banda5</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># banda nir</span>
+
+<span class="c1"># imprimir informações de máximos/mínimos</span>
+<span class="c1"># valores dos pixels de cada banda</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">banda1</span><span class="o">.</span><span class="n">ComputeRasterMinMax</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">banda2</span><span class="o">.</span><span class="n">ComputeRasterMinMax</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">banda3</span><span class="o">.</span><span class="n">ComputeRasterMinMax</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">banda4</span><span class="o">.</span><span class="n">ComputeRasterMinMax</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">banda5</span><span class="o">.</span><span class="n">ComputeRasterMinMax</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Uma maneira muito utilizada para complementar a visualização das imagens é através do <code class="docutils literal notranslate"><span class="pre">histograma</span></code>. Ele apresenta, de forma gráfica, a distribuição dos pixels na imagem. A GDAL armazena esta informação em cada banda, e podemos acessar o histograma através da função <code class="docutils literal notranslate"><span class="pre">GetHistogram</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># a função GetHistogram precisa de intervalos</span>
+<span class="c1"># mínimos e máximos de pixels para cada banda (min/max)</span>
+<span class="c1"># e também a informação de divisões do gráfico (buckets)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">banda1</span><span class="o">.</span><span class="n">GetHistogram</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">25000</span><span class="p">,</span> <span class="n">buckets</span><span class="o">=</span><span class="mi">100</span><span class="p">),</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Banda 1 - Blue&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">banda2</span><span class="o">.</span><span class="n">GetHistogram</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">25000</span><span class="p">,</span> <span class="n">buckets</span><span class="o">=</span><span class="mi">100</span><span class="p">),</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Banda 2 - Green&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">banda3</span><span class="o">.</span><span class="n">GetHistogram</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">25000</span><span class="p">,</span> <span class="n">buckets</span><span class="o">=</span><span class="mi">100</span><span class="p">),</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Banda 3 - Red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">banda4</span><span class="o">.</span><span class="n">GetHistogram</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">25000</span><span class="p">,</span> <span class="n">buckets</span><span class="o">=</span><span class="mi">100</span><span class="p">),</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Banda 4 - Red-Edge&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">banda5</span><span class="o">.</span><span class="n">GetHistogram</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">25000</span><span class="p">,</span> <span class="n">buckets</span><span class="o">=</span><span class="mi">100</span><span class="p">),</span> <span class="s1">&#39;cyan&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Banda 5 - NIR&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Figura do Histograma histograma-5-canais.png</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># obter as matrizes de pixels de cada banda</span>
+<span class="n">blue</span> <span class="o">=</span> <span class="n">banda1</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()</span>
+<span class="n">green</span> <span class="o">=</span> <span class="n">banda2</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()</span>
+<span class="n">red</span> <span class="o">=</span> <span class="n">banda3</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()</span>
+<span class="n">rededge</span> <span class="o">=</span> <span class="n">banda4</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()</span>
+<span class="n">nir</span> <span class="o">=</span> <span class="n">banda5</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()</span>
+
+<span class="c1"># combinamos GDAL e Matplotlib para</span>
+<span class="c1"># visualizar as bandas individualmente</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">151</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">blue</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Banda 1 - Blue&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">152</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">green</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Banda 2 - Green&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">153</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">red</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Banda 3 - Red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">154</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">rededge</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Banda 4 - Red-Edge&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">155</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">nir</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Banda 5 - NIR&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Podemos combinar a visualização de 2 bandas em um gráfico comumente chamado de <code class="docutils literal notranslate"><span class="pre">scatterplot</span></code>. Para isso precisamos transformar as bandas da nossa imagem (2 dimensões) em vetores (1 dimensão). Para isso podemos usar a função da NumPy chamada <code class="docutils literal notranslate"><span class="pre">flatten</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># obter os vetores de 1 dimensão de cada banda</span>
+<span class="n">vetor3</span> <span class="o">=</span> <span class="n">red</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+<span class="n">vetor5</span> <span class="o">=</span> <span class="n">nir</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+
+<span class="c1"># construir o gráfico com o scatterplot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">vetor3</span><span class="p">,</span> <span class="n">vetor5</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Banda 3 - Red&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Banda 5 - NIR&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Scatterplot das bandas 3 (Red) e 5 (NIR)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>Figura scatterplot-2-bandas.png</p>
 <div class="section" id="composicao-colorida-e-contraste">
 <h2>Composição colorida e Contraste<a class="headerlink" href="#composicao-colorida-e-contraste" title="Link permanente para este título">¶</a></h2>
 <p>Para visualizar uma composição colorida, precisamos informar quais bandas serão utilizadas nas componentes RGB do gráfico:</p>
@@ -274,84 +291,105 @@ plt.grid();</p>
 <li><p>canal G (verde)</p></li>
 <li><p>canal B (azul)</p></li>
 </ul>
-<p>Para isso, podemos criar uma matriz NumPy com 3 dimensões (linhas, colunas, bandas).</p>
-<p># definimos os números de linhas/colunas
-# a partir de alguma matriz da imagem original
-linhas = blue.shape[0]
-colunas = blue.shape[1]
-bandas = 3</p>
-<p># para criar uma visualização em cores
-# verdadeiras, podemos associar as bandas
-# do RapidEye 3 - Red, 2 - Green, 1 - Blue
-array_rgb = np.zeros((linhas, colunas, bandas))</p>
-<p># veja que, para visualizar corretamente,
-# precisaremos dividir as matrizes pelo
-# maior valor, para obtermos uma matriz
-# com valores normalizados entre 0.0 e 1.0
-array_rgb[:, :, 0] = red / red.max()
-array_rgb[:, :, 1] = green / green.max()
-array_rgb[:, :, 2] = blue / blue.max()</p>
-<p>plt.figure(figsize=(20, 5))
-plt.imshow(array_rgb)
-plt.title(‘Composição colorida verdadeira’);</p>
+<p>Para isso, podemos criar uma matriz NumPy com 3 dimensões (<code class="docutils literal notranslate"><span class="pre">linhas</span></code>, <code class="docutils literal notranslate"><span class="pre">colunas</span></code>, <code class="docutils literal notranslate"><span class="pre">bandas</span></code>).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># definimos os números de linhas/colunas</span>
+<span class="c1"># a partir de alguma matriz da imagem original</span>
+<span class="n">linhas</span> <span class="o">=</span> <span class="n">blue</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">colunas</span> <span class="o">=</span> <span class="n">blue</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">bandas</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="c1"># para criar uma visualização em cores</span>
+<span class="c1"># verdadeiras, podemos associar as bandas</span>
+<span class="c1"># do RapidEye 3 - Red, 2 - Green, 1 - Blue</span>
+<span class="n">array_rgb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">linhas</span><span class="p">,</span> <span class="n">colunas</span><span class="p">,</span> <span class="n">bandas</span><span class="p">))</span>
+
+<span class="c1"># veja que, para visualizar corretamente,</span>
+<span class="c1"># precisaremos dividir as matrizes pelo</span>
+<span class="c1"># maior valor, para obtermos uma matriz</span>
+<span class="c1"># com valores normalizados entre 0.0 e 1.0</span>
+<span class="n">array_rgb</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">red</span> <span class="o">/</span> <span class="n">red</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">array_rgb</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">green</span> <span class="o">/</span> <span class="n">green</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">array_rgb</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">blue</span> <span class="o">/</span> <span class="n">blue</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">array_rgb</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Composição colorida verdadeira&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
 <p>rapideye-cores-verdadeiras.png</p>
 <p>O contraste é uma técnica que melhora a visualização da imagem. Veja que neste caso, os números digitais da imagem podem ser alterados, e assim as propriedades dos elementos em relação a suas respostas espectrais ficam comprometidas.</p>
-<p>Atenção: Para realizar análises baseadas no comportamento espectral das imagens, técnicas de contraste devem ser evitadas.</p>
-<p>Uma maneira bem conhecida de aplicar o contraste é através das operações de gain (ganho) e offset (deslocamento). O gain é um valor constante que é multiplicado por todos os pixels das imagens. O offset é um valor constante que é somado a todos os pixels das imagens.</p>
-<p># lembrando que os valores em array_rgb
-# foram normalizados entre 0.0 e 1.0
-gain = 1.8
-offset = 0.2</p>
-<p># como no exemplo anterior criamos um
-# array_rgb, vamos alterar uma cópia deste
-# array com as operações de gain/offset
-# para não comprometer os dados originais
-array_rgb_gain = array_rgb.copy()
-array_rgb_gain[:, :, 0] <a href="#id1"><span class="problematic" id="id2">*</span></a>= gain
-array_rgb_gain[:, :, 1] <a href="#id3"><span class="problematic" id="id4">*</span></a>= gain
-array_rgb_gain[:, :, 2] <a href="#id5"><span class="problematic" id="id6">*</span></a>= gain</p>
-<p># podemos aplicar gain/offset ao mesmo tempo
-# e também sobre a(s) banda(s) que desejarmos
-# para entender os efeitos, vamos aplicar
-# cada um separadamente
-array_rgb_offset = array_rgb.copy()
-array_rgb_offset[:, :, 0] += offset
-array_rgb_offset[:, :, 1] += offset
-array_rgb_offset[:, :, 2] += offset</p>
-<p># apresentação dos resultados
-plt.figure(figsize=(20, 5))
-plt.subplot(131)
-plt.imshow(array_rgb)
-plt.title(f’Imagem original’);</p>
-<p>plt.subplot(132)
-plt.imshow(array_rgb_gain)
-plt.title(f’Imagem com aplicação de gain = {gain}’);</p>
-<p>plt.subplot(133)
-plt.imshow(array_rgb_offset)
-plt.title(f’Imagem com aplicação de offset = {offset}’);</p>
+<div class="admonition warning">
+<p class="admonition-title">Aviso</p>
+<p>Para realizar análises baseadas no comportamento espectral das imagens, técnicas de contraste devem ser evitadas.</p>
+</div>
+<p>Uma maneira bem conhecida de aplicar o contraste é através das operações de <code class="docutils literal notranslate"><span class="pre">gain</span></code> (<em>ganho</em>) e <code class="docutils literal notranslate"><span class="pre">offset</span></code> (<em>deslocamento</em>). O <code class="docutils literal notranslate"><span class="pre">gain</span></code> é um valor constante que é multiplicado por todos os pixels das imagens. O <code class="docutils literal notranslate"><span class="pre">offset</span></code> é um valor constante que é somado a todos os pixels das imagens.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># lembrando que os valores em array_rgb</span>
+<span class="c1"># foram normalizados entre 0.0 e 1.0</span>
+<span class="n">gain</span> <span class="o">=</span> <span class="mf">1.8</span>
+<span class="n">offset</span> <span class="o">=</span> <span class="mf">0.2</span>
+
+<span class="c1"># como no exemplo anterior criamos um</span>
+<span class="c1"># array_rgb, vamos alterar uma cópia deste</span>
+<span class="c1"># array com as operações de gain/offset</span>
+<span class="c1"># para não comprometer os dados originais</span>
+<span class="n">array_rgb_gain</span> <span class="o">=</span> <span class="n">array_rgb</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">array_rgb_gain</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">*=</span> <span class="n">gain</span>
+<span class="n">array_rgb_gain</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*=</span> <span class="n">gain</span>
+<span class="n">array_rgb_gain</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">*=</span> <span class="n">gain</span>
+
+<span class="c1"># podemos aplicar gain/offset ao mesmo tempo</span>
+<span class="c1"># e também sobre a(s) banda(s) que desejarmos</span>
+<span class="c1"># para entender os efeitos, vamos aplicar</span>
+<span class="c1"># cada um separadamente</span>
+<span class="n">array_rgb_offset</span> <span class="o">=</span> <span class="n">array_rgb</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">array_rgb_offset</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="n">offset</span>
+<span class="n">array_rgb_offset</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">offset</span>
+<span class="n">array_rgb_offset</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">+=</span> <span class="n">offset</span>
+
+<span class="c1"># apresentação dos resultados</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">131</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">array_rgb</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Imagem original&#39;</span><span class="p">);</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">132</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">array_rgb_gain</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Imagem com aplicação de gain = </span><span class="si">{</span><span class="n">gain</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">);</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">133</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">array_rgb_offset</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Imagem com aplicação de offset = </span><span class="si">{</span><span class="n">offset</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
 <p>rapideye-offset.png</p>
 </div>
 <div class="section" id="metodos-simples-para-classificacao">
 <h2>Métodos simples para classificação<a class="headerlink" href="#metodos-simples-para-classificacao" title="Link permanente para este título">¶</a></h2>
 <p>Em diversos casos, a aplicação de limiares sobre índices espectrais produz rapidamente resultados de mapeamento de alvos.</p>
-<p># definição de algumas constantes
-delta = 0.0000000001
-limiar_NDWI = 0.0
-limiar_NDVI = 0.5</p>
-<p># vamos alterar o tipo de uma das matrizes
-# de bandas para float, para que os cálculos
-# dos índices fiquem adequados
-nir = nir.astype(float)</p>
-<p># cálculo das matrizes com os índices
-NDWI = (green - nir) / (green + nir + delta)
-NDVI = (nir - red) / (nir + red + delta)</p>
-<p># criação de classificações simples
-classificacao = np.zeros_like(NDWI)
-classificacao = np.where(NDWI &gt; limiar_NDWI, 1, np.where(NDVI &gt; limiar_NDVI, 2, 0))</p>
-<p>plt.figure(figsize=(20, 5))
-plt.imshow(classificacao)
-plt.colorbar()
-plt.title(‘Exemplo de classificação’);</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># definição de algumas constantes</span>
+<span class="n">delta</span> <span class="o">=</span> <span class="mf">0.0000000001</span>
+<span class="n">limiar_NDWI</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">limiar_NDVI</span> <span class="o">=</span> <span class="mf">0.5</span>
+
+<span class="c1"># vamos alterar o tipo de uma das matrizes</span>
+<span class="c1"># de bandas para float, para que os cálculos</span>
+<span class="c1"># dos índices fiquem adequados</span>
+<span class="n">nir</span> <span class="o">=</span> <span class="n">nir</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+
+<span class="c1"># cálculo das matrizes com os índices</span>
+<span class="n">NDWI</span> <span class="o">=</span> <span class="p">(</span><span class="n">green</span> <span class="o">-</span> <span class="n">nir</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">green</span> <span class="o">+</span> <span class="n">nir</span> <span class="o">+</span> <span class="n">delta</span><span class="p">)</span>
+<span class="n">NDVI</span> <span class="o">=</span> <span class="p">(</span><span class="n">nir</span> <span class="o">-</span> <span class="n">red</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">nir</span> <span class="o">+</span> <span class="n">red</span> <span class="o">+</span> <span class="n">delta</span><span class="p">)</span>
+
+<span class="c1"># criação de classificações simples</span>
+<span class="n">classificacao</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">NDWI</span><span class="p">)</span>
+<span class="n">classificacao</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">NDWI</span> <span class="o">&gt;</span> <span class="n">limiar_NDWI</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">NDVI</span> <span class="o">&gt;</span> <span class="n">limiar_NDVI</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">classificacao</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Exemplo de classificação&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
 <p>rapideye-classificacao-simples.png</p>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>

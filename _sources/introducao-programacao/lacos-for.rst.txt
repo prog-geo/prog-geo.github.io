@@ -3,6 +3,8 @@
     Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
 
 
+.. _sec_introducao_lacos_for:
+
 Laços do tipo for
 =================
 
@@ -11,7 +13,7 @@ Iterando nos Elementos de um Sequência
 --------------------------------------
 
 
-Strings::
+Iterando pelos caracteres de uma string::
 
     nome = "Gilberto Ribeiro"
 
@@ -19,7 +21,7 @@ Strings::
         print(letra)
 
 
-Listas::
+Iterando pelos itens de uma lista::
 
     cidades = ["São Paulo", "Rio de Janeiro", "Belo Horizonte"]
 
@@ -27,7 +29,7 @@ Listas::
         print("Nome:", cidade)
 
 
-Iteráveis::
+Iterando no intervalo de valores :math:`[7, 17)`::
 
     for num in range(7, 17):
         print(num)
@@ -37,7 +39,7 @@ Usando a função ``enumerate``
 -----------------------------
 
 
-Exemplo::
+.. code-block:: python
 
     cidades = ["São Paulo", "Rio de Janeiro", "Belo Horizonte"]
 
@@ -83,7 +85,7 @@ Iterando em Dicionários
 -----------------------
 
 
-Exemplo::
+Considere o seguinte dicionário::
 
     sao_paulo = {
         "name" : "São Paulo",
@@ -91,6 +93,9 @@ Exemplo::
         "bounding-box" : ((-46.82, -24.00), (-46.36, -23.68)),
         "country" : "Brazil"
     }
+
+
+Podemos iterar pelos pares *chave-valor* do dicionário associado ao identificador ``sao_paulo``, usando o método ``items``::
 
     for key, value in sao_paulo.items():
         print(f"key: {key}; value: {value}")

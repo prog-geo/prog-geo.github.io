@@ -127,7 +127,11 @@
 <li class="toctree-l2"><a class="reference internal" href="set.html">2.17. Conjuntos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="formatacao-strings.html">2.18. Formatação de Strings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lacos-for.html">2.19. Laços do tipo for</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2.20. Os Comandos <code class="docutils literal notranslate"><span class="pre">break</span></code> e <code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.20. Os Comandos <code class="docutils literal notranslate"><span class="pre">break</span></code> e <code class="docutils literal notranslate"><span class="pre">continue</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#interrompendo-um-laco-break">2.20.1. Interrompendo um laço - <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#desviando-a-sequencia-de-um-laco-continue">2.20.2. Desviando a sequência de um laço - <code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="funcoes.html">2.21. Funções</a></li>
 <li class="toctree-l2"><a class="reference internal" href="consideracoes.html">2.22. Considerações Finais</a></li>
 <li class="toctree-l2"><a class="reference internal" href="exemplos.html">2.23. Exemplos</a></li>
@@ -228,7 +232,65 @@
            <div itemprop="articleBody">
             
   <div class="section" id="os-comandos-break-e-continue">
-<h1><span class="section-number">2.20. </span>Os Comandos <code class="docutils literal notranslate"><span class="pre">break</span></code> e <code class="docutils literal notranslate"><span class="pre">continue</span></code><a class="headerlink" href="#os-comandos-break-e-continue" title="Link permanente para este título">¶</a></h1>
+<span id="sec-introducao-break-continue"></span><h1><span class="section-number">2.20. </span>Os Comandos <code class="docutils literal notranslate"><span class="pre">break</span></code> e <code class="docutils literal notranslate"><span class="pre">continue</span></code><a class="headerlink" href="#os-comandos-break-e-continue" title="Link permanente para este título">¶</a></h1>
+<div class="section" id="interrompendo-um-laco-break">
+<h2><span class="section-number">2.20.1. </span>Interrompendo um laço - <code class="docutils literal notranslate"><span class="pre">break</span></code><a class="headerlink" href="#interrompendo-um-laco-break" title="Link permanente para este título">¶</a></h2>
+<p>O comando <code class="docutils literal notranslate"><span class="pre">break</span></code> é usado para ajudar no controle do fluxo de execução dentro de um laço (<code class="docutils literal notranslate"><span class="pre">while</span></code> ou <code class="docutils literal notranslate"><span class="pre">for</span></code>). O comando <code class="docutils literal notranslate"><span class="pre">break</span></code> faz com que a execução do laço seja interrompida independentemente do teste condicional do laço <code class="docutils literal notranslate"><span class="pre">while</span></code> ou da existência de novos elementos para iteração no laço <code class="docutils literal notranslate"><span class="pre">for</span></code>. Ou seja, o comando <code class="docutils literal notranslate"><span class="pre">break</span></code> irá finalizar a execução do laço redirecionando a execução do programa para o próximo comando após o laço.</p>
+<p>Para ilustrar o uso desse comando, vamos apresentar um exemplo em que o laço do tipo <code class="docutils literal notranslate"><span class="pre">for</span></code> é interrompido antes do final da travessia por todos os elementos do intervalo definido:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="k">break</span>    <span class="c1"># interrompe o laço</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Número: </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Primeiro comando fora do laço!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Em um laço do tipo <code class="docutils literal notranslate"><span class="pre">while</span></code> podemos usar também o comando <code class="docutils literal notranslate"><span class="pre">break</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="k">break</span>    <span class="c1"># interrompe o laço</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Número: </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">num</span> <span class="o">=</span> <span class="n">num</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Primeiro comando fora do laço!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="desviando-a-sequencia-de-um-laco-continue">
+<h2><span class="section-number">2.20.2. </span>Desviando a sequência de um laço - <code class="docutils literal notranslate"><span class="pre">continue</span></code><a class="headerlink" href="#desviando-a-sequencia-de-um-laco-continue" title="Link permanente para este título">¶</a></h2>
+<p>O comando <code class="docutils literal notranslate"><span class="pre">continue</span></code> funciona de maneira similar ao comando <code class="docutils literal notranslate"><span class="pre">break</span></code>. Porém, ao invés de finalizar a execução do laço, o comando <code class="docutils literal notranslate"><span class="pre">continue</span></code> irá finalizar a iteração corrente. Dessa forma, todo comando após a declaração <code class="docutils literal notranslate"><span class="pre">continue</span></code> não será executado. Ou seja, o comando irá redirecionar o fluxo do programa fazendo com que a próxima iteração do laço seja executada.</p>
+<p>Veja o exemplo abaixo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<span class="c1"># Dado um intervalo fornecido pelo usuário,</span>
+<span class="c1"># escreva na tela todos os números pares dentro do intervalo.</span>
+<span class="c1">#</span>
+
+<span class="n">menor</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite o menor valor do intervalo:&quot;</span><span class="p">))</span>
+<span class="n">maior</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite o maior valor do intervalo:&quot;</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">menor</span><span class="p">,</span> <span class="n">maior</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">x</span> <span class="o">%</span> <span class="mi">2</span><span class="p">):</span>
+        <span class="k">continue</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Em geral, essas duas instruções são colocadas dentro de um <strong>teste condicional</strong> no <strong>corpo do laço</strong>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>As instruções <code class="docutils literal notranslate"><span class="pre">break</span></code> e <code class="docutils literal notranslate"><span class="pre">continue</span></code> podem ser utilizadas tanto com laços do tipo <code class="docutils literal notranslate"><span class="pre">for</span></code> quanto <code class="docutils literal notranslate"><span class="pre">while</span></code>.</p>
+</div>
+</div>
 </div>
 
 

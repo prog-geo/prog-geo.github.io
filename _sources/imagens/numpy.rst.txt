@@ -1,6 +1,5 @@
 ..
-    This file is part of "Notas de Aula dos Cursos Introdução à Programação com Dados Geoespaciais
-    e Introdução à Programação para Sensoriamento Remoto".
+    This file is part of "Notas de Aula dos Cursos Introdução à Programação com Dados Geoespaciais e Introdução à Programação para Sensoriamento Remoto".
     Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
 
 
@@ -15,23 +14,20 @@ NumPy
 
 O principal objeto manipulado pela NumPy é o *homogeneous multidimensional array*:
 
-Uma tabela de elementos de mesmo tipo (em geral números) indexados por uma tupla de inteiros positivos.
+Uma tabela de elementos de mesmo tipo (em geral números) indexados por uma tupla de inteiros positivos:
 
-As dimensões são chamadas de ``axes``.
-
-O número de ``axes`` é chamado de ``rank``.
-
+- As dimensões são chamadas de ``axes``.
+- O número de ``axes`` é chamado de ``rank``.
 
 Exemplos:
 
-    um array :math:`[1, 2, 1]` tem ``rank = 1``
-
-    um array :math:`[[ 1.0, 0.0, 0.0], [0.0, 1.0, 2.0]]`` tem ``rank = 2``: a primeira dimensão tem tamanho 2, a segunda dimensão tem tamanho 3
+- um array :math:`[1, 2, 1]` tem ``rank = 1``
+- um array :math:`[[ 1.0, 0.0, 0.0], [0.0, 1.0, 2.0]]`` tem ``rank = 2``: a primeira dimensão tem tamanho 2, a segunda dimensão tem tamanho 3
     
 A classe de array da NumPy é chamada ``ndarray`` (``numpy.array``).
 
 
-Supondo um ``ndarray`` contendo uma matriz de 30 linhas e 40 colunas, as seguintes propriedades, entre outras, estão disponíveis:
+Supondo um ``ndarray`` contendo uma matriz de 30 linhas e 40 colunas, as seguintes propriedades estão disponíveis (dentre outras):
 
 - ``ndarray.ndim``: é o número de ``axes`` do array.
 - ``ndarray.shape``: é uma tupla de inteiros indicando o tamanho do array em cada dimensão, no exemplo acima ``shape = (30, 40)``
@@ -59,7 +55,7 @@ E para saber a versão da biblioteca:
 Criando matrizes
 ----------------
 
-A NumPy fornece várias funções para criação das matrizes. Vamos começar utilizando a função arange, que permite criar um array a partir de um intervalo regular de valores::
+A NumPy fornece várias funções para criação das matrizes. Vamos começar utilizando a função ``arange``, que permite criar um array a partir de um intervalo regular de valores::
 
     np.arange?
 
@@ -67,8 +63,11 @@ Para criar um array unidimensional, isto é, um vetor com 15 elementos, fazemos:
 
 .. code-block:: python
 
-    a = np.arange(1, 16)
-    a
+.. code-block:: python
+
+    >>> a = np.arange(1, 16)
+    >>> a
+    array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15])
 
 .. note ::
 
@@ -98,8 +97,11 @@ Para alterar o formato do array ``a`` para que ele se torne uma matriz :math:`3 
 
 .. code-block:: python
     
-    a = a.reshape(3, 5)
-    a
+    >>> a = a.reshape(3, 5)
+    >>> a
+    array([[ 0,  1,  2,  3,  4],
+           [ 5,  6,  7,  8,  9],
+           [10, 11, 12, 13, 14]])
 
 Informações sobre a Estrutura de uma matriz
 -------------------------------------------

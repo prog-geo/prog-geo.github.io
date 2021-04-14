@@ -193,16 +193,18 @@
   <div class="section" id="numpy">
 <span id="sec-imagens-numpy"></span><h1>NumPy<a class="headerlink" href="#numpy" title="Link permanente para este título">¶</a></h1>
 <p>O principal objeto manipulado pela NumPy é o <em>homogeneous multidimensional array</em>:</p>
-<p>Uma tabela de elementos de mesmo tipo (em geral números) indexados por uma tupla de inteiros positivos.</p>
-<p>As dimensões são chamadas de <code class="docutils literal notranslate"><span class="pre">axes</span></code>.</p>
-<p>O número de <code class="docutils literal notranslate"><span class="pre">axes</span></code> é chamado de <code class="docutils literal notranslate"><span class="pre">rank</span></code>.</p>
+<p>Uma tabela de elementos de mesmo tipo (em geral números) indexados por uma tupla de inteiros positivos:</p>
+<ul class="simple">
+<li><p>As dimensões são chamadas de <code class="docutils literal notranslate"><span class="pre">axes</span></code>.</p></li>
+<li><p>O número de <code class="docutils literal notranslate"><span class="pre">axes</span></code> é chamado de <code class="docutils literal notranslate"><span class="pre">rank</span></code>.</p></li>
+</ul>
 <p>Exemplos:</p>
-<blockquote>
-<div><p>um array <span class="math notranslate nohighlight">\([1, 2, 1]\)</span> tem <code class="docutils literal notranslate"><span class="pre">rank</span> <span class="pre">=</span> <span class="pre">1</span></code></p>
-<p>um array <span class="math notranslate nohighlight">\([[ 1.0, 0.0, 0.0], [0.0, 1.0, 2.0]]\)</span> tem <code class="docutils literal notranslate"><span class="pre">rank</span> <span class="pre">=</span> <span class="pre">2</span></code>: a primeira dimensão tem tamanho 2, a segunda dimensão tem tamanho 3</p>
-</div></blockquote>
+<ul class="simple">
+<li><p>um array <span class="math notranslate nohighlight">\([1, 2, 1]\)</span> tem <code class="docutils literal notranslate"><span class="pre">rank</span> <span class="pre">=</span> <span class="pre">1</span></code></p></li>
+<li><p>um array <span class="math notranslate nohighlight">\([[ 1.0, 0.0, 0.0], [0.0, 1.0, 2.0]]\)</span> tem <code class="docutils literal notranslate"><span class="pre">rank</span> <span class="pre">=</span> <span class="pre">2</span></code>: a primeira dimensão tem tamanho 2, a segunda dimensão tem tamanho 3</p></li>
+</ul>
 <p>A classe de array da NumPy é chamada <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> (<code class="docutils literal notranslate"><span class="pre">numpy.array</span></code>).</p>
-<p>Supondo um <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> contendo uma matriz de 30 linhas e 40 colunas, as seguintes propriedades, entre outras, estão disponíveis:</p>
+<p>Supondo um <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> contendo uma matriz de 30 linhas e 40 colunas, as seguintes propriedades estão disponíveis (dentre outras):</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">ndarray.ndim</span></code>: é o número de <code class="docutils literal notranslate"><span class="pre">axes</span></code> do array.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ndarray.shape</span></code>: é uma tupla de inteiros indicando o tamanho do array em cada dimensão, no exemplo acima <code class="docutils literal notranslate"><span class="pre">shape</span> <span class="pre">=</span> <span class="pre">(30,</span> <span class="pre">40)</span></code></p></li>
@@ -224,13 +226,17 @@
 </div>
 <div class="section" id="criando-matrizes">
 <h2>Criando matrizes<a class="headerlink" href="#criando-matrizes" title="Link permanente para este título">¶</a></h2>
-<p>A NumPy fornece várias funções para criação das matrizes. Vamos começar utilizando a função arange, que permite criar um array a partir de um intervalo regular de valores:</p>
+<p>A NumPy fornece várias funções para criação das matrizes. Vamos começar utilizando a função <code class="docutils literal notranslate"><span class="pre">arange</span></code>, que permite criar um array a partir de um intervalo regular de valores:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>np.arange?
 </pre></div>
 </div>
 <p>Para criar um array unidimensional, isto é, um vetor com 15 elementos, fazemos:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
-<span class="n">a</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
+<span class="go">array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15])</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -256,8 +262,11 @@
 </pre></div>
 </div>
 <p>Para alterar o formato do array <code class="docutils literal notranslate"><span class="pre">a</span></code> para que ele se torne uma matriz <span class="math notranslate nohighlight">\(3 \times 5\)</span>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="n">a</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
+<span class="go">array([[ 0,  1,  2,  3,  4],</span>
+<span class="go">       [ 5,  6,  7,  8,  9],</span>
+<span class="go">       [10, 11, 12, 13, 14]])</span>
 </pre></div>
 </div>
 </div>
