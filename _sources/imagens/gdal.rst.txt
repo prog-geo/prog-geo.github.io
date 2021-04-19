@@ -58,7 +58,7 @@ Para saber a versão da GDAL instalada no seu ambiente de trabalho, use o seguin
 
 .. note::
 
-    Em um ambiente Jupyter Notebook, você pode confirir também as versões das demais ferramentas do seu ambiente::
+    Em um ambiente Jupyter Notebook, você pode conferir também as versões das demais ferramentas do seu ambiente::
 
         print('* Python')
         !python --version

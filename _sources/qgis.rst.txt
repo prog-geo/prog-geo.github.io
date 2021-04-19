@@ -60,3 +60,4 @@ Este capítulo irá apresentar algumas maneiras de utilizar a linguagem Python e
     :caption: Tópicos
 
     ./qgis/preparacao-ambiente
+    ./qgis/python-console

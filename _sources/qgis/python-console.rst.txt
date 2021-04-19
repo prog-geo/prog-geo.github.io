@@ -1,0 +1,43 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _sec_qgis_python_console:
+
+Console Python no QGIS
+======================
+
+
+Vamos criar um novo projeto no QGIS chamado ``CAP-419``. Em seguida, baixe o arquivo :download:`uf_2018.zip <https://1drv.ms/u/s!AtoTP-MfEUEDgq58cYmvg1H3okPCwQ?e=4Sixlg>`, que contém dados sobre as Unidades da Federação do Brasil relativas ao ano de 2018, no formato `ESRI Shapefile <https://en.wikipedia.org/wiki/Shapefile>`_. São 27 feições representadas por geometrias do tipo `MultiPolygon`, na escala `1:250.000`, projeção geográfica `LAT/LONG` e sistema geodésico de referência `SIRGAS 2000`. Inclua este arquivo como uma nova camada no seu projeto QGIS (:numref:`Figura %s <qgis:fig:camada-uf-2018>`).
+
+
+.. figure:: ../img/qgis/camada-uf-2018.png
+    :alt: Criando um projeto no QGIS chamado CAP-419 e carregando uma camada com as Unidades Federativas do Brasil
+    :width: 100%
+    :figclass: align-center
+    :name: qgis:fig:camada-uf-2018
+
+    Criando um projeto no QGIS chamado CAP-419 e carregando uma camada com as Unidades Federativas do Brasil.
+
+
+.. note::
+
+    Quem optou pela instalação dos sistemas através de contêiners `Docker`, coloque os arquivos do conjunto ESRI Shapefile na pasta ``/home/<seu-usuário>/CAP-419/QGIS-Data``, para que o QGIS possa acessar esses dados, mesmo sendo executado de dentro do contêiner.
+
+
+.. note::
+
+    Maiores informações sobre os arquivos desta seção podem ser encontrados no site de `Geociências <https://www.ibge.gov.br/geociencias/downloads-geociencias.html>`_ do IBGE (Acesso: 04 de Janeiro de 2020).
+
+
+Para ter acesso ao console do Python de dentro do QGIS, vá ao menu ``Plugins | Python Console``. Um componente como o mostrado na :numref:`Figura %s <qgis:fig:python-console>` será apresentado. Nesse componente, além de entrar com comandos válidos da linguagem Python, você poderá utilizar diversas funcionalidades da API de programação do QGIS.
+
+
+.. figure:: ../img/qgis/python-console.png
+    :alt: Console do Python dentro da interface gráfica do QGIS
+    :width: 100%
+    :figclass: align-center
+    :name: qgis:fig:python-console
+
+    Console do Python dentro da interface gráfica do QGIS.
