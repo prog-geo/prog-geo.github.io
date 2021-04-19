@@ -46,6 +46,7 @@ Lista de Exercícios 05
     2006012234567 - Julian Date of Production (YYYYDDDHHMMSS)
     hdf - Data Format (HDF-EOS)
 
+
 Faça um programa em Python que leia o nome de um arquivo, e escreva na saída padrão o seguinte resultado::
 
     Satellite...............: Terra
@@ -62,9 +63,12 @@ Faça um programa em Python que leia o nome de um arquivo, e escreva na saída p
     Production Second.......: 57
     Data Format.............: hdf
 
+
 **Exercício 02.** Para criar uma senha na internet, geralmente são aplicados critérios de ``força da senha``. Neste exercício, uma senha forte possui caracteres maiúsculos e minúsculos, e tem pelo menos 8 caracteres. Do contrário, é fraca. Crie um programa que leia uma senha e retorne se ela é forte ou fraca.
-    
+
+
 **Exercício 03.** Tomando como base os operadores disponíveis em `Python documentation - String Methods <https://docs.python.org/3/library/stdtypes.html#string-methods>`_, apresente as operações para converter os elementos da coluna *string de entrada* nos resultados apresentados na coluna *string de saída*.
+
 
 .. list-table::
    :widths: 50 50
@@ -96,6 +100,8 @@ Faça um programa em Python que leia o nome de um arquivo, e escreva na saída p
    * - "@@Gilberto@@@"
      - "Gilberto"
 
+
 **Exercício 04.** Faça um programa que verifique se uma string é um `palíndromo <https://pt.wikipedia.org/wiki/Pal%C3%ADndromo>`_. Exemplos de palíndromos: ``ana``, ``arara``, ``anilina``, ``asa``, ``mussum``, ``osso``, ``reviver``, ``salas``, ``ralar``, ``madam``, ``rotor``, ``level``, ``civic``. Nesse caso, acentos e símbolos devem ser desconsiderados, e não há diferença entre maiúsculas e minúsculas.
+
 
 **Exercício 05.** Faça um programa que leia uma frase e verifique se é um palíndromo. Nesse caso, os espaços, acentos e símbolos devem ser desconsiderados, e não há diferença entre maiúsculas e minúsculas. Exemplos de frases palíndromos: ``Never odd or even``, ``ROMA TIBI SUBITO MOTIBUS IBIT AMOR``, ``Socorram-me, subi no ônibus em Marrocos!``.

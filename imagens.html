@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Imagens - Processamento e Visualização &mdash; SER-347/CAP-419</title>
+  <title>3. Imagens - Processamento e Visualização &mdash; SER-347/CAP-419</title>
   
 
   
@@ -47,7 +47,9 @@
 
     
     <link rel="index" title="Índice" href="genindex.html" />
-    <link rel="search" title="Buscar" href="search.html" /> 
+    <link rel="search" title="Buscar" href="search.html" />
+    <link rel="next" title="3.1. GDAL - Geospatial Data Abstraction Library" href="imagens/gdal.html" />
+    <link rel="prev" title="2.25. Exemplos" href="introducao-programacao/exemplos.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -103,11 +105,17 @@
 <li class="toctree-l1"><a class="reference internal" href="visao-geral.html">Visão Geral do Curso</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Aulas:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="instalacao.html">1. Instalando e Configurando o Ambiente de Programação</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introducao-programacao.html">2. Introdução à Programação com a Linguagem Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="qgis.html">3. Programando com o QGIS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="variados.html">4. Tópicos Variados</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. Imagens - Processamento e Visualização</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="imagens/gdal.html">3.1. GDAL - <strong>G</strong>eospatial <strong>D</strong>ata <strong>A</strong>bstraction <strong>L</strong>ibrary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="imagens/numpy.html">3.2. NumPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="imagens/visualizacao.html">3.3. Visualização de Imagens</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="qgis.html">4. Programando com o QGIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variados.html">5. Tópicos Variados</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Referências Bibliográficas</span></p>
 <ul>
@@ -172,7 +180,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Imagens - Processamento e Visualização</li>
+      <li><span class="section-number">3. </span>Imagens - Processamento e Visualização</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -184,46 +192,53 @@
   </ul>
 
   
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="imagens/gdal.html" class="btn btn-neutral float-right" title="3.1. GDAL - Geospatial Data Abstraction Library" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="introducao-programacao/exemplos.html" class="btn btn-neutral float-left" title="2.25. Exemplos" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+      
+  </div>
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
   <div class="section" id="imagens-processamento-e-visualizacao">
-<span id="cap-imagens"></span><h1>Imagens - Processamento e Visualização<a class="headerlink" href="#imagens-processamento-e-visualizacao" title="Link permanente para este título">¶</a></h1>
-<p>Para facilitar o entendimento sobre as propriedades da imagem, vamos ver de maneira simples como as imagens de Sensoriamento Remoto óptico são geradas.</p>
+<span id="cap-imagens"></span><h1><span class="section-number">3. </span>Imagens - Processamento e Visualização<a class="headerlink" href="#imagens-processamento-e-visualizacao" title="Link permanente para este título">¶</a></h1>
+<p>Para facilitar o entendimento sobre as propriedades de uma imagem, vamos ver de maneira simples como as imagens de Sensoriamento Remoto óptico são geradas.</p>
 <iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/eFW8tV38We0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <br/>
-<br/><p>Uma imagem (comumente chamada de <code class="docutils literal notranslate"><span class="pre">raster</span></code>) pode ser armazenada de diferentes formas, uma delas é através do armazenamento individual: um raster independente para cada banda. Neste caso, cada arquivo possui metadados (sistema de coordenadas, limites geográficos, dimensões), independentes.</p>
-<p>Veja por exemplo as imagens do CBERS-04A:</p>
-<ul class="simple">
-<li><p>CBERS_4A_WPM_20200612_200_139_L4_BAND1.tif (Banda 1 - azul)</p></li>
-<li><p>CBERS_4A_WPM_20200612_200_139_L4_BAND2.tif (Banda 2 - verde)</p></li>
-<li><p>CBERS_4A_WPM_20200612_200_139_L4_BAND3.tif (Banda 3 - vermelho)</p></li>
+<br/><p>Uma imagem (comumente chamada de <em>raster</em>) pode ser armazenada de diferentes formas, uma delas é através do armazenamento individual: um <em>raster</em> independente para cada banda. Neste caso, cada arquivo possui metadados independentes. Os metadados de um arquivo incluem informações sobre o sistema de coordenadas geoespacial, limites geográficos, dimensões e o tipo de dados associado aos pixels da imagem. Veja por exemplo as imagens do <code class="docutils literal notranslate"><span class="pre">CBERS-04A</span></code> (<a class="reference internal" href="#imagens-fig-raster-unica-banda"><span class="std std-numref">Figura 3.1</span></a>):</p>
+<ul class="open">
+<li><p><code class="docutils literal notranslate"><span class="pre">CBERS_4A_WPM_20200612_200_139_L4_BAND1.tif</span></code>: Banda 1 (azul).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CBERS_4A_WPM_20200612_200_139_L4_BAND2.tif</span></code>: Banda 2 (verde).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CBERS_4A_WPM_20200612_200_139_L4_BAND3.tif</span></code>: Banda 3 (vermelho).</p></li>
 </ul>
-<div class="align-center figure align-default" id="imagens-fig-um-raster-por-banda">
-<a class="reference internal image-reference" href="_images/um-raster-por-banda.png"><img alt="Um raster independente para cada banda" src="_images/um-raster-por-banda.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-text">Um raster independente para cada banda.</span><a class="headerlink" href="#imagens-fig-um-raster-por-banda" title="Link Permanente para essa imagem">¶</a></p>
+<div class="align-center figure align-default" id="imagens-fig-raster-unica-banda">
+<a class="reference internal image-reference" href="_images/raster-unica-banda.png"><img alt="Um raster independente para cada banda" src="_images/raster-unica-banda.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Figura 3.1 - </span><span class="caption-text">Um raster independente para cada banda.</span><a class="headerlink" href="#imagens-fig-raster-unica-banda" title="Link Permanente para essa imagem">¶</a></p>
 </div>
-<p>Outra maneira é armazenar diversas bandas no mesmo arquivo. Neste caso, o conjunto de metadados vale para todas as bandas. Por exemplo, é possível gerar um raster contendo as bandas 1, 2, 3 e 4 do CBERS-04A em um único arquivo GeoTIFF:</p>
+<p>Outra maneira consiste em armazenar diversas bandas no mesmo arquivo. Neste caso, o conjunto de metadados vale para todas as bandas. Por exemplo, é possível gerar um raster contendo as bandas 1, 2, 3 e 4 do <code class="docutils literal notranslate"><span class="pre">CBERS-04A</span></code> em um único arquivo <code class="docutils literal notranslate"><span class="pre">GeoTIFF</span></code> (<a class="reference internal" href="#imagens-fig-raster-multiplas-bandas"><span class="std std-numref">Figura 3.2</span></a>):</p>
 <ul class="simple">
-<li><p>CBERS_4A_WPM_20200612_200_139_L4_BANDS1234.tif</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CBERS_4A_WPM_20200612_200_139_L4_BANDS1234.tif</span></code></p></li>
 </ul>
-<div class="align-center figure align-default" id="imagens-fig-um-raster-com-muitas-bandas">
-<a class="reference internal image-reference" href="_images/um-raster-com-muitas-bandas.png"><img alt="Um arquivo com múltiplas bandas" src="_images/um-raster-com-muitas-bandas.png" style="width: 60%;" /></a>
-<p class="caption"><span class="caption-text">Um arquivo com múltiplas bandas.</span><a class="headerlink" href="#imagens-fig-um-raster-com-muitas-bandas" title="Link Permanente para essa imagem">¶</a></p>
+<div class="align-center figure align-default" id="imagens-fig-raster-multiplas-bandas">
+<a class="reference internal image-reference" href="_images/raster-multiplas-bandas.png"><img alt="Um arquivo com múltiplas bandas" src="_images/raster-multiplas-bandas.png" style="width: 60%;" /></a>
+<p class="caption"><span class="caption-number">Figura 3.2 - </span><span class="caption-text">Um arquivo com múltiplas bandas.</span><a class="headerlink" href="#imagens-fig-raster-multiplas-bandas" title="Link Permanente para essa imagem">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>A associação de cores nas Figuras <code class="xref std std-numref docutils literal notranslate"><span class="pre">%s</span></code> e <code class="xref std std-numref docutils literal notranslate"><span class="pre">%s</span></code>  é apenas ilustrativa.</p>
-<p>Um raster pode ter qualquer número de bandas, desde que suportado pelo seu formato.</p>
+<p>A associação de cores nas Figuras <a class="reference internal" href="#imagens-fig-raster-unica-banda"><span class="std std-numref">3.1</span></a> e <a class="reference internal" href="#imagens-fig-raster-multiplas-bandas"><span class="std std-numref">3.2</span></a> é apenas ilustrativa. Um <em>raster</em> pode ter qualquer número de bandas, desde que suportado pelo seu formato.</p>
 </div>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Tópicos</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="imagens/gdal.html">GDAL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="imagens/numpy.html">NumPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="imagens/visualizacao.html">Visualização de Imagens</a></li>
+<li class="toctree-l1"><a class="reference internal" href="imagens/gdal.html">3.1. GDAL - <strong>G</strong>eospatial <strong>D</strong>ata <strong>A</strong>bstraction <strong>L</strong>ibrary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="imagens/numpy.html">3.2. NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="imagens/visualizacao.html">3.3. Visualização de Imagens</a></li>
 </ul>
 </div>
 </div>
@@ -233,6 +248,10 @@
            
           </div>
           <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="imagens/gdal.html" class="btn btn-neutral float-right" title="3.1. GDAL - Geospatial Data Abstraction Library" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="introducao-programacao/exemplos.html" class="btn btn-neutral float-left" title="2.25. Exemplos" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+    </div>
 
   <hr/>
 

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>NumPy &mdash; SER-347/CAP-419</title>
+  <title>3.2. NumPy &mdash; SER-347/CAP-419</title>
   
 
   
@@ -48,7 +48,9 @@
 
     
     <link rel="index" title="Índice" href="../genindex.html" />
-    <link rel="search" title="Buscar" href="../search.html" /> 
+    <link rel="search" title="Buscar" href="../search.html" />
+    <link rel="next" title="3.3. Visualização de Imagens" href="visualizacao.html" />
+    <link rel="prev" title="3.1. GDAL - Geospatial Data Abstraction Library" href="gdal.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -104,11 +106,24 @@
 <li class="toctree-l1"><a class="reference internal" href="../visao-geral.html">Visão Geral do Curso</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Aulas:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../instalacao.html">1. Instalando e Configurando o Ambiente de Programação</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introducao-programacao.html">2. Introdução à Programação com a Linguagem Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../qgis.html">3. Programando com o QGIS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../variados.html">4. Tópicos Variados</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../imagens.html">3. Imagens - Processamento e Visualização</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gdal.html">3.1. GDAL - <strong>G</strong>eospatial <strong>D</strong>ata <strong>A</strong>bstraction <strong>L</strong>ibrary</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.2. NumPy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#carregando-a-numpy">3.2.1. Carregando a NumPy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#criando-matrizes">3.2.2. Criando matrizes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#alterando-o-formato-de-uma-matriz">3.2.3. Alterando o formato de uma matriz</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#informacoes-sobre-a-estrutura-de-uma-matriz">3.2.4. Informações sobre a Estrutura de uma matriz</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#operacoes-com-arrays">3.2.5. Operações com arrays</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="visualizacao.html">3.3. Visualização de Imagens</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../qgis.html">4. Programando com o QGIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variados.html">5. Tópicos Variados</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Referências Bibliográficas</span></p>
 <ul>
@@ -173,7 +188,9 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>NumPy</li>
+          <li><a href="../imagens.html"><span class="section-number">3. </span>Imagens - Processamento e Visualização</a> &raquo;</li>
+        
+      <li><span class="section-number">3.2. </span>NumPy</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -185,13 +202,22 @@
   </ul>
 
   
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="visualizacao.html" class="btn btn-neutral float-right" title="3.3. Visualização de Imagens" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="gdal.html" class="btn btn-neutral float-left" title="3.1. GDAL - Geospatial Data Abstraction Library" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+      
+  </div>
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
   <div class="section" id="numpy">
-<span id="sec-imagens-numpy"></span><h1>NumPy<a class="headerlink" href="#numpy" title="Link permanente para este título">¶</a></h1>
+<span id="sec-imagens-numpy"></span><h1><span class="section-number">3.2. </span>NumPy<a class="headerlink" href="#numpy" title="Link permanente para este título">¶</a></h1>
 <p>O principal objeto manipulado pela NumPy é o <em>homogeneous multidimensional array</em>:</p>
 <p>Uma tabela de elementos de mesmo tipo (em geral números) indexados por uma tupla de inteiros positivos:</p>
 <ul class="simple">
@@ -214,7 +240,7 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">ndarray.data</span></code>: é um buffer contendo os elementos do array, geralmente não é usado dessa forma pois temos facilidades de indexação</p></li>
 </ul>
 <div class="section" id="carregando-a-numpy">
-<h2>Carregando a NumPy<a class="headerlink" href="#carregando-a-numpy" title="Link permanente para este título">¶</a></h2>
+<h2><span class="section-number">3.2.1. </span>Carregando a NumPy<a class="headerlink" href="#carregando-a-numpy" title="Link permanente para este título">¶</a></h2>
 <p>Para utilizar a NumPy devemos importar seu módulo, chamado <code class="docutils literal notranslate"><span class="pre">numpy</span></code>. Em geral, associamos esse módulo ao nome (ou apelido) <code class="docutils literal notranslate"><span class="pre">np</span></code> da seguinte forma:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
@@ -225,15 +251,12 @@
 </div>
 </div>
 <div class="section" id="criando-matrizes">
-<h2>Criando matrizes<a class="headerlink" href="#criando-matrizes" title="Link permanente para este título">¶</a></h2>
+<h2><span class="section-number">3.2.2. </span>Criando matrizes<a class="headerlink" href="#criando-matrizes" title="Link permanente para este título">¶</a></h2>
 <p>A NumPy fornece várias funções para criação das matrizes. Vamos começar utilizando a função <code class="docutils literal notranslate"><span class="pre">arange</span></code>, que permite criar um array a partir de um intervalo regular de valores:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>np.arange?
 </pre></div>
 </div>
 <p>Para criar um array unidimensional, isto é, um vetor com 15 elementos, fazemos:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
 <span class="go">array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15])</span>
@@ -256,7 +279,7 @@
 </div>
 </div>
 <div class="section" id="alterando-o-formato-de-uma-matriz">
-<h2>Alterando o formato de uma matriz<a class="headerlink" href="#alterando-o-formato-de-uma-matriz" title="Link permanente para este título">¶</a></h2>
+<h2><span class="section-number">3.2.3. </span>Alterando o formato de uma matriz<a class="headerlink" href="#alterando-o-formato-de-uma-matriz" title="Link permanente para este título">¶</a></h2>
 <p>Um array NumPy pode ser reestrutrado usando a operação <code class="docutils literal notranslate"><span class="pre">reshape</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>np.reshape?
 </pre></div>
@@ -271,7 +294,7 @@
 </div>
 </div>
 <div class="section" id="informacoes-sobre-a-estrutura-de-uma-matriz">
-<h2>Informações sobre a Estrutura de uma matriz<a class="headerlink" href="#informacoes-sobre-a-estrutura-de-uma-matriz" title="Link permanente para este título">¶</a></h2>
+<h2><span class="section-number">3.2.4. </span>Informações sobre a Estrutura de uma matriz<a class="headerlink" href="#informacoes-sobre-a-estrutura-de-uma-matriz" title="Link permanente para este título">¶</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;shape&#39;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ndim&#39;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;dtype&#39;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
@@ -283,7 +306,7 @@
 </div>
 </div>
 <div class="section" id="operacoes-com-arrays">
-<h2>Operações com arrays<a class="headerlink" href="#operacoes-com-arrays" title="Link permanente para este título">¶</a></h2>
+<h2><span class="section-number">3.2.5. </span>Operações com arrays<a class="headerlink" href="#operacoes-com-arrays" title="Link permanente para este título">¶</a></h2>
 <p>É possível realizar operações matemáticas com arrays. A NumPy permite que uma operação seja aplicada a todos os elementos, de uma só vez.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># vamos imprimir o resultado</span>
 <span class="c1"># da soma de todos os elementos</span>
@@ -358,6 +381,10 @@
            
           </div>
           <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="visualizacao.html" class="btn btn-neutral float-right" title="3.3. Visualização de Imagens" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="gdal.html" class="btn btn-neutral float-left" title="3.1. GDAL - Geospatial Data Abstraction Library" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+    </div>
 
   <hr/>
 

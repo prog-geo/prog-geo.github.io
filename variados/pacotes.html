@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>4.4. Pacotes em Python &mdash; SER-347/CAP-419</title>
+  <title>5.4. Pacotes em Python &mdash; SER-347/CAP-419</title>
   
 
   
@@ -48,8 +48,8 @@
     
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Buscar" href="../search.html" />
-    <link rel="next" title="4.4.1. Introdução" href="pacotes/introducao.html" />
-    <link rel="prev" title="4.3. Módulos em Python" href="modulos.html" /> 
+    <link rel="next" title="5.4.1. Introdução" href="pacotes/introducao.html" />
+    <link rel="prev" title="5.3. Módulos em Python" href="modulos.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -108,16 +108,17 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../instalacao.html">1. Instalando e Configurando o Ambiente de Programação</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introducao-programacao.html">2. Introdução à Programação com a Linguagem Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../qgis.html">3. Programando com o QGIS</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../variados.html">4. Tópicos Variados</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="git_github.html">4.1. git e GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="terminal-python.html">4.2. Terminal Interativo Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modulos.html">4.3. Módulos em Python</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">4.4. Pacotes em Python</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="pacotes/introducao.html">4.4.1. Introdução</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../imagens.html">3. Imagens - Processamento e Visualização</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qgis.html">4. Programando com o QGIS</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../variados.html">5. Tópicos Variados</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="git_github.html">5.1. git e GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terminal-python.html">5.2. Terminal Interativo Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modulos.html">5.3. Módulos em Python</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.4. Pacotes em Python</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pacotes/introducao.html">5.4.1. Introdução</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="documentacao.html">4.5. Documentação de Código</a></li>
+<li class="toctree-l2"><a class="reference internal" href="documentacao.html">5.5. Documentação de Código</a></li>
 </ul>
 </li>
 </ul>
@@ -184,9 +185,9 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../variados.html"><span class="section-number">4. </span>Tópicos Variados</a> &raquo;</li>
+          <li><a href="../variados.html"><span class="section-number">5. </span>Tópicos Variados</a> &raquo;</li>
         
-      <li><span class="section-number">4.4. </span>Pacotes em Python</li>
+      <li><span class="section-number">5.4. </span>Pacotes em Python</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -200,10 +201,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="pacotes/introducao.html" class="btn btn-neutral float-right" title="4.4.1. Introdução" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="pacotes/introducao.html" class="btn btn-neutral float-right" title="5.4.1. Introdução" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
       
       
-        <a href="modulos.html" class="btn btn-neutral float-left" title="4.3. Módulos em Python" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="modulos.html" class="btn btn-neutral float-left" title="5.3. Módulos em Python" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
       
   </div>
   
@@ -213,13 +214,13 @@
            <div itemprop="articleBody">
             
   <div class="section" id="pacotes-em-python">
-<span id="sec-variados-pacotes"></span><h1><span class="section-number">4.4. </span>Pacotes em Python<a class="headerlink" href="#pacotes-em-python" title="Link permanente para este título">¶</a></h1>
+<span id="sec-variados-pacotes"></span><h1><span class="section-number">5.4. </span>Pacotes em Python<a class="headerlink" href="#pacotes-em-python" title="Link permanente para este título">¶</a></h1>
 <p>A linguagem Python possui um mecanismo para organização de código conhecido como pacotes (<em>packages</em>). Podemos agrupar uma <strong>coleção de módulos</strong> em uma unidade chamada <strong>pacote</strong> (<em>package</em>). Este recurso é muito empregado por bibliotecas como a <cite>NumPy</cite>, <cite>Pandas</cite>, e <cite>Shapely</cite>, para produzir um conjunto de funcionalidades bem delimitadas e reutilizáveis.</p>
-<p>Na <a class="reference internal" href="modulos.html#sec-variados-modulos"><span class="std std-numref">Seção 4.3</span></a>, foi visto o conceito de <strong>módulos</strong>. Tecnicamente, um <strong>pacote</strong> é também um <strong>módulo</strong>, porém podendo conter <strong>sub-módulos</strong> ou <strong>sub-pacotes</strong>. O conceito de <strong>pacote</strong> em Python permite organizar módulos e fornecer uma forma padrão para a hierarquia de nomes desses sub-módulos ou sub-pacotes.</p>
+<p>Na <a class="reference internal" href="modulos.html#sec-variados-modulos"><span class="std std-numref">Seção 5.3</span></a>, foi visto o conceito de <strong>módulos</strong>. Tecnicamente, um <strong>pacote</strong> é também um <strong>módulo</strong>, porém podendo conter <strong>sub-módulos</strong> ou <strong>sub-pacotes</strong>. O conceito de <strong>pacote</strong> em Python permite organizar módulos e fornecer uma forma padrão para a hierarquia de nomes desses sub-módulos ou sub-pacotes.</p>
 <p>Esta seção apresenta como construir pacotes para a linguagem Python. Este recurso será exemplificado através da construção de um pacote chamado <code class="docutils literal notranslate"><span class="pre">spectral</span></code>, cujo objetivo será o de fornecer funcionalidades que permitam realizar a leitura de arquivos matriciais para computação dos índices de vegetação <code class="docutils literal notranslate"><span class="pre">NDVI</span></code> e <code class="docutils literal notranslate"><span class="pre">EVI</span></code>.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="pacotes/introducao.html">4.4.1. Introdução</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pacotes/introducao.html">5.4.1. Introdução</a></li>
 </ul>
 </div>
 </div>
@@ -230,8 +231,8 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="pacotes/introducao.html" class="btn btn-neutral float-right" title="4.4.1. Introdução" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="modulos.html" class="btn btn-neutral float-left" title="4.3. Módulos em Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="pacotes/introducao.html" class="btn btn-neutral float-right" title="5.4.1. Introdução" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="modulos.html" class="btn btn-neutral float-left" title="5.3. Módulos em Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
     </div>
 
   <hr/>

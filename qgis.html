@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>3. Programando com o QGIS &mdash; SER-347/CAP-419</title>
+  <title>4. Programando com o QGIS &mdash; SER-347/CAP-419</title>
   
 
   
@@ -48,8 +48,8 @@
     
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Buscar" href="search.html" />
-    <link rel="next" title="3.1. Preparação do Ambiente de Programação" href="qgis/preparacao-ambiente.html" />
-    <link rel="prev" title="2.25. Exemplos" href="introducao-programacao/exemplos.html" /> 
+    <link rel="next" title="4.1. Preparação do Ambiente de Programação" href="qgis/preparacao-ambiente.html" />
+    <link rel="prev" title="3.3. Visualização de Imagens" href="imagens/visualizacao.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -108,11 +108,12 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="instalacao.html">1. Instalando e Configurando o Ambiente de Programação</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introducao-programacao.html">2. Introdução à Programação com a Linguagem Python</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">3. Programando com o QGIS</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="qgis/preparacao-ambiente.html">3.1. Preparação do Ambiente de Programação</a></li>
+<li class="toctree-l1"><a class="reference internal" href="imagens.html">3. Imagens - Processamento e Visualização</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4. Programando com o QGIS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="qgis/preparacao-ambiente.html">4.1. Preparação do Ambiente de Programação</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="variados.html">4. Tópicos Variados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variados.html">5. Tópicos Variados</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Referências Bibliográficas</span></p>
 <ul>
@@ -177,7 +178,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li><span class="section-number">3. </span>Programando com o QGIS</li>
+      <li><span class="section-number">4. </span>Programando com o QGIS</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -191,10 +192,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="qgis/preparacao-ambiente.html" class="btn btn-neutral float-right" title="3.1. Preparação do Ambiente de Programação" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="qgis/preparacao-ambiente.html" class="btn btn-neutral float-right" title="4.1. Preparação do Ambiente de Programação" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
       
       
-        <a href="introducao-programacao/exemplos.html" class="btn btn-neutral float-left" title="2.25. Exemplos" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="imagens/visualizacao.html" class="btn btn-neutral float-left" title="3.3. Visualização de Imagens" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
       
   </div>
   
@@ -204,28 +205,28 @@
            <div itemprop="articleBody">
             
   <div class="section" id="programando-com-o-qgis">
-<span id="cap-qgis"></span><h1><span class="section-number">3. </span>Programando com o QGIS<a class="headerlink" href="#programando-com-o-qgis" title="Link permanente para este título">¶</a></h1>
+<span id="cap-qgis"></span><h1><span class="section-number">4. </span>Programando com o QGIS<a class="headerlink" href="#programando-com-o-qgis" title="Link permanente para este título">¶</a></h1>
 <a class="reference internal image-reference" href="_images/qgis-logo.svg"><img alt="QGIS" class="align-right" src="_images/qgis-logo.svg" width="128" /></a>
-<p>O aplicativo geográfico <a class="reference external" href="https://qgis.org/">QGIS</a> possui uma forte integração com a linguagem Python, permitindo utilizá-la de diversas maneiras. O console Python, disponível de dentro da interface gráfica do QGIS (<a class="reference internal" href="#qgis-fig-console-python-active-layer"><span class="std std-numref">Figura 3.1</span></a>), permite que o usuário entre com comandos válidos da linguagem Python.</p>
+<p>O aplicativo geográfico <a class="reference external" href="https://qgis.org/">QGIS</a> possui uma forte integração com a linguagem Python, permitindo utilizá-la de diversas maneiras. O console Python, disponível de dentro da interface gráfica do QGIS (<a class="reference internal" href="#qgis-fig-console-python-active-layer"><span class="std std-numref">Figura 4.1</span></a>), permite que o usuário entre com comandos válidos da linguagem Python.</p>
 <div class="align-center figure align-default" id="qgis-fig-console-python-active-layer">
 <a class="reference internal image-reference" href="_images/console-python-active-layer.png"><img alt="Console do Python dentro da interface gráfica do QGIS" src="_images/console-python-active-layer.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 3.1 - </span><span class="caption-text">Console do Python dentro da interface gráfica do QGIS.</span><a class="headerlink" href="#qgis-fig-console-python-active-layer" title="Link Permanente para essa imagem">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 4.1 - </span><span class="caption-text">Console do Python dentro da interface gráfica do QGIS.</span><a class="headerlink" href="#qgis-fig-console-python-active-layer" title="Link Permanente para essa imagem">¶</a></p>
 </div>
-<p>Também é possível criar <em>scripts</em> que utilizam a API do QGIS em Python para automação de tarefas tanto na inicialização do QGIS quanto para realização de processamentos em lote, como mostrado na <a class="reference internal" href="#qgis-fig-python-script-list-layers"><span class="std std-numref">Figura 3.2</span></a>.</p>
+<p>Também é possível criar <em>scripts</em> que utilizam a API do QGIS em Python para automação de tarefas tanto na inicialização do QGIS quanto para realização de processamentos em lote, como mostrado na <a class="reference internal" href="#qgis-fig-python-script-list-layers"><span class="std std-numref">Figura 4.2</span></a>.</p>
 <div class="align-center figure align-default" id="qgis-fig-python-script-list-layers">
 <a class="reference internal image-reference" href="_images/python-script-list-layers.png"><img alt="API do QGIS em Python para automação de tarefas" src="_images/python-script-list-layers.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 3.2 - </span><span class="caption-text">API do QGIS em Python para automação de tarefas.</span><a class="headerlink" href="#qgis-fig-python-script-list-layers" title="Link Permanente para essa imagem">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 4.2 - </span><span class="caption-text">API do QGIS em Python para automação de tarefas.</span><a class="headerlink" href="#qgis-fig-python-script-list-layers" title="Link Permanente para essa imagem">¶</a></p>
 </div>
-<p>Por último, é possível estender as funcionalidades do QGIS através da criação de novos <em>plugins</em> escritos na linguagem Python. O <strong>plugin Web Land Trajectory Service</strong> (WLTS), mostrado na <a class="reference internal" href="#qgis-fig-plugin-wlts"><span class="std std-numref">Figura 3.3</span></a>, é desenvolvido nessa linguagem e acrescenta ao QGIS funcionalidades para extração de trajetórias a partir de conjuntos de dados de uso e cobertura da Terra.</p>
+<p>Por último, é possível estender as funcionalidades do QGIS através da criação de novos <em>plugins</em> escritos na linguagem Python. O <strong>plugin Web Land Trajectory Service</strong> (WLTS), mostrado na <a class="reference internal" href="#qgis-fig-plugin-wlts"><span class="std std-numref">Figura 4.3</span></a>, é desenvolvido nessa linguagem e acrescenta ao QGIS funcionalidades para extração de trajetórias a partir de conjuntos de dados de uso e cobertura da Terra.</p>
 <div class="align-center figure align-default" id="qgis-fig-plugin-wlts">
 <a class="reference internal image-reference" href="_images/plugin-wlts.png"><img alt="Janela do plugin WLTS" src="_images/plugin-wlts.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 3.3 - </span><span class="caption-text">Janela do plugin WLTS.</span><a class="headerlink" href="#qgis-fig-plugin-wlts" title="Link Permanente para essa imagem">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 4.3 - </span><span class="caption-text">Janela do plugin WLTS.</span><a class="headerlink" href="#qgis-fig-plugin-wlts" title="Link Permanente para essa imagem">¶</a></p>
 </div>
 <p>Este capítulo irá apresentar algumas maneiras de utilizar a linguagem Python em conjunto com o aplicativo QGIS.</p>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Tópicos</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="qgis/preparacao-ambiente.html">3.1. Preparação do Ambiente de Programação</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qgis/preparacao-ambiente.html">4.1. Preparação do Ambiente de Programação</a></li>
 </ul>
 </div>
 </div>
@@ -236,8 +237,8 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="qgis/preparacao-ambiente.html" class="btn btn-neutral float-right" title="3.1. Preparação do Ambiente de Programação" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="introducao-programacao/exemplos.html" class="btn btn-neutral float-left" title="2.25. Exemplos" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="qgis/preparacao-ambiente.html" class="btn btn-neutral float-right" title="4.1. Preparação do Ambiente de Programação" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="imagens/visualizacao.html" class="btn btn-neutral float-left" title="3.3. Visualização de Imagens" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
     </div>
 
   <hr/>

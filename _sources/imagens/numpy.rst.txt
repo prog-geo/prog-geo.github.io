@@ -1,5 +1,5 @@
 ..
-    This file is part of "Notas de Aula dos Cursos Introdução à Programação com Dados Geoespaciais e Introdução à Programação para Sensoriamento Remoto".
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
     Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
 
 
@@ -60,8 +60,6 @@ A NumPy fornece várias funções para criação das matrizes. Vamos começar ut
     np.arange?
 
 Para criar um array unidimensional, isto é, um vetor com 15 elementos, fazemos:
-
-.. code-block:: python
 
 .. code-block:: python
 

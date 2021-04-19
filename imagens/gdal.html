@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>GDAL &mdash; SER-347/CAP-419</title>
+  <title>3.1. GDAL - Geospatial Data Abstraction Library &mdash; SER-347/CAP-419</title>
   
 
   
@@ -48,7 +48,9 @@
 
     
     <link rel="index" title="Índice" href="../genindex.html" />
-    <link rel="search" title="Buscar" href="../search.html" /> 
+    <link rel="search" title="Buscar" href="../search.html" />
+    <link rel="next" title="3.2. NumPy" href="numpy.html" />
+    <link rel="prev" title="3. Imagens - Processamento e Visualização" href="../imagens.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -104,11 +106,25 @@
 <li class="toctree-l1"><a class="reference internal" href="../visao-geral.html">Visão Geral do Curso</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Aulas:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../instalacao.html">1. Instalando e Configurando o Ambiente de Programação</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introducao-programacao.html">2. Introdução à Programação com a Linguagem Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../qgis.html">3. Programando com o QGIS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../variados.html">4. Tópicos Variados</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../imagens.html">3. Imagens - Processamento e Visualização</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.1. GDAL - <strong>G</strong>eospatial <strong>D</strong>ata <strong>A</strong>bstraction <strong>L</strong>ibrary</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#importando-a-biblioteca-gdal">3.1.1. Importando a Biblioteca GDAL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#abertura-de-um-arquivo-raster">3.1.2. Abertura de um arquivo <em>raster</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#estrutura-do-dataset">3.1.3. Estrutura do <em>Dataset</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#transformacao-afim">3.1.4. Transformação Afim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#leitura-dos-dados-de-uma-banda">3.1.5. Leitura dos dados de uma banda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#liberando-um-conjunto-de-dados">3.1.6. Liberando um conjunto de dados</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html">3.2. NumPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualizacao.html">3.3. Visualização de Imagens</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../qgis.html">4. Programando com o QGIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variados.html">5. Tópicos Variados</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Referências Bibliográficas</span></p>
 <ul>
@@ -173,7 +189,9 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>GDAL</li>
+          <li><a href="../imagens.html"><span class="section-number">3. </span>Imagens - Processamento e Visualização</a> &raquo;</li>
+        
+      <li><span class="section-number">3.1. </span>GDAL - <strong>G</strong>eospatial <strong>D</strong>ata <strong>A</strong>bstraction <strong>L</strong>ibrary</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -185,40 +203,50 @@
   </ul>
 
   
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="numpy.html" class="btn btn-neutral float-right" title="3.2. NumPy" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="../imagens.html" class="btn btn-neutral float-left" title="3. Imagens - Processamento e Visualização" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+      
+  </div>
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="gdal">
-<span id="sec-imagens-gdal"></span><h1>GDAL<a class="headerlink" href="#gdal" title="Link permanente para este título">¶</a></h1>
-<p>A GDAL é uma biblioteca de software livre que fornece uma camada de abstração de dados geoespaciais que possibilita o desenvolvimento de aplicações que manipulam dados nos mais diferentes formatos e sistemas. A <code class="docutils literal notranslate"><span class="pre">API</span></code> (<em>Application Programming Interface</em> ou Interface de Programação de Aplicações) desta biblioteca encontra-se disponível para uso em Python através de um binding (ou wrapper), que fornece acesso às funcionalidades implementadas em C++.</p>
+  <div class="section" id="gdal-geospatial-data-abstraction-library">
+<span id="sec-imagens-gdal"></span><h1><span class="section-number">3.1. </span>GDAL - <strong>G</strong>eospatial <strong>D</strong>ata <strong>A</strong>bstraction <strong>L</strong>ibrary<a class="headerlink" href="#gdal-geospatial-data-abstraction-library" title="Link permanente para este título">¶</a></h1>
+<a class="reference internal image-reference" href="../_images/gdal.svg"><img alt="GDAL" class="align-right" src="../_images/gdal.svg" width="96" /></a>
+<p>A <a class="reference external" href="https://gdal.org">GDAL</a> é uma biblioteca de software livre que fornece uma camada de abstração de dados geoespaciais, possibilitando o desenvolvimento de aplicações que manipulam dados nos mais diferentes formatos e sistemas. A <code class="docutils literal notranslate"><span class="pre">API</span></code> (<em>Application Programming Interface</em> ou Interface de Programação de Aplicações) desta biblioteca encontra-se disponível para uso em Python através de um <em>binding</em> (ou <em>wrapper</em>), que fornece acesso às funcionalidades implementadas em C++.</p>
 <p>A GDAL é basicamente composta de quatro APIs:</p>
-<ul class="simple">
-<li><p><strong>GDAL</strong>: Voltada para manipulação de dados matriciais (raster), com capacidade de leitura e escrita de <a class="reference external" href="http://gdal.org/formats_list.html">diversos formatos</a> de imagem de sensoriamento remoto, como GeoTIFF, HDF, e JPEG, entre outros. Esta parte da API contém objetos para manipulação das dimensões de uma imagem, para acesso de leitura e escrita de blocos das bandas espectrais de uma imagem, acesso a metadados e manipulação de pirâmides de multi-resolução.</p></li>
+<ul class="open">
+<li><p><strong>GDAL</strong>: Voltada para manipulação de dados matriciais (<em>raster</em>), com capacidade de leitura e escrita de <a class="reference external" href="http://gdal.org/formats_list.html">diversos formatos</a> de imagem de sensoriamento remoto, como GeoTIFF, HDF, e JPEG, entre outros. Esta parte da API contém objetos para manipulação das dimensões de uma imagem, para acesso de leitura e escrita de blocos das bandas espectrais de uma imagem, acesso a metadados e manipulação de pirâmides de multi-resolução.</p></li>
 <li><p><strong>OGR</strong>: Parte da API voltada para manipulação de dados em <a class="reference external" href="https://gdal.org/drivers/vector/index.html">formatos vetoriais</a>, tais como ESRI Shapefile, Google KML e GeoJSON. Apresenta os conceitos de camada de informação, feições, atributos alfanuméricos e geométricos.</p></li>
 <li><p><strong>OSR</strong>: Voltada para a manipulação de projeções e sistemas de referência espacial.</p></li>
 <li><p><strong>GNM</strong>: Acrônimo de <em>Geographic Network Model</em>, esta parte da API serve ao propósito de manipulação de redes geográficas.</p></li>
 </ul>
 <p>As aplicações que utilizam a GDAL acessam todos os formatos suportados por ela através de um único modelo de dados abstrato. Além disso, a GDAL também conta com uma variedade de programas utilitários de linha de comando para a tradução de formatos e alguns tipos básicos de processamento.</p>
-<p>Utilizamos a GDAL para manipular de imagens de sensoriamento remoto, através do acesso aos valores dos pixels das bandas, por meio de matrizes no formato NumPy.</p>
+<p>Utilizaremos a GDAL para manipular imagens de sensoriamento remoto, através do acesso aos valores dos pixels das bandas, por meio de matrizes no formato da biblioteca <a class="reference external" href="https://numpy.org/">NumPy</a>.</p>
 <div class="section" id="importando-a-biblioteca-gdal">
-<h2>Importando a Biblioteca GDAL<a class="headerlink" href="#importando-a-biblioteca-gdal" title="Link permanente para este título">¶</a></h2>
+<h2><span class="section-number">3.1.1. </span>Importando a Biblioteca GDAL<a class="headerlink" href="#importando-a-biblioteca-gdal" title="Link permanente para este título">¶</a></h2>
 <p>Para acessar a API <code class="docutils literal notranslate"><span class="pre">gdal</span></code>, que permitirá manipular as imagens, devemos importar a biblioteca <code class="docutils literal notranslate"><span class="pre">osgeo</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">gdal</span>
-
-<span class="n">gdal</span><span class="o">.</span><span class="n">UseExceptions</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">gdal</span>
+</pre></div>
+</div>
+<p>Uma boa prática consiste em ativar o uso de exceções nas operações da biblioteca GDAL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gdal</span><span class="o">.</span><span class="n">UseExceptions</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Para saber a versão da GDAL instalada no seu ambiente de trabalho, use o seguinte comando:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gdal</span><span class="o">.</span><span class="n">__version__</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>Além de importar a API na primeira linha, ativamos o uso de exceções nas operações da biblioteca GDAL (método <code class="docutils literal notranslate"><span class="pre">UseExceptions</span></code>).</p>
-</div>
-<p>Para saber a versão da GDAL instalada no seu ambiente de trabalho, use o seguinte comando:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gdal</span><span class="o">.</span><span class="n">__version__</span>
-</pre></div>
-</div>
-<p>Caso estiver em um ambiente Jupyter Notebook, confira também as versões das ferramentas:</p>
+<p>Em um ambiente Jupyter Notebook, você pode confirir também as versões das demais ferramentas do seu ambiente:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>print(&#39;* Python&#39;)
 !python --version
 
@@ -229,35 +257,45 @@ print(&#39;* Jupyter Notebook&#39;)
 !jupyter notebook --version
 </pre></div>
 </div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
 <p>Dentro de um Jupyter Notebook podemos utilizar o recurso de auto-completar. Após o operador de membro <code class="docutils literal notranslate"><span class="pre">.</span></code>, o ambiente Jupyter irá fornecer uma lista das operações disponíveis:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gdal</span><span class="o">.</span>
 </pre></div>
 </div>
-<p>Também podemos obter ajuda sobre as funções e objetos disponíveis em uma biblioteca utilizando o caracter <code class="docutils literal notranslate"><span class="pre">?</span></code> logo após o nome para o qual desejamos consultar a ajuda, como mostrado abaixo para a função Open:</p>
+<p>Também podemos obter ajuda sobre as funções e objetos disponíveis em uma biblioteca utilizando o caractere <code class="docutils literal notranslate"><span class="pre">?</span></code> ou <code class="docutils literal notranslate"><span class="pre">??</span></code> logo após o nome para o qual desejamos consultar a ajuda, como mostrado abaixo para a função Open:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>gdal.Open?
 </pre></div>
 </div>
 </div>
 </div>
 <div class="section" id="abertura-de-um-arquivo-raster">
-<h2>Abertura de um arquivo raster<a class="headerlink" href="#abertura-de-um-arquivo-raster" title="Link permanente para este título">¶</a></h2>
+<h2><span class="section-number">3.1.2. </span>Abertura de um arquivo <em>raster</em><a class="headerlink" href="#abertura-de-um-arquivo-raster" title="Link permanente para este título">¶</a></h2>
 <p>A função <code class="docutils literal notranslate"><span class="pre">Open</span></code> é utilizada para abrir um conjunto de dados (ou <code class="docutils literal notranslate"><span class="pre">dataset</span></code>), que exige dois parâmetros:</p>
-<ul class="simple">
+<ul class="open">
 <li><p><strong>Nome do Arquivo</strong>: caminho e nome completo</p></li>
 <li><p><strong>Forma de Acesso</strong>: constante que indica se o arquivo será usado apenas para leitura (<code class="docutils literal notranslate"><span class="pre">GA_ReadOnly</span></code>) ou se também será utilizado em operações de escrita (<code class="docutils literal notranslate"><span class="pre">GA_Update</span></code>).</p></li>
 </ul>
-<p>Para abrir o arquivo GeoTIFF com a imagem (<a class="reference external" href="https://drive.google.com/u/0/uc?id=1WbQ3aYWjYPpHxA3Z03_qVVTAncgr7PV_&amp;export=download">faça o download da imagem de teste</a>), vamos utilizar:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dataset</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="s2">&quot;crop_rapideye.tif&quot;</span><span class="p">,</span> <span class="n">gdal</span><span class="o">.</span><span class="n">GA_ReadOnly</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
-<span class="go">osgeo.gdal.Dataset</span>
+<p>Para abrir o arquivo GeoTIFF com a imagem (<a class="reference external" href="https://drive.google.com/u/0/uc?id=1WbQ3aYWjYPpHxA3Z03_qVVTAncgr7PV_&amp;export=download">faça o download da imagem de teste</a>), podemos fazer:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="s2">&quot;crop_rapideye.tif&quot;</span><span class="p">,</span> <span class="n">gdal</span><span class="o">.</span><span class="n">GA_ReadOnly</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Neste caso, nome do arquivo é <code class="docutils literal notranslate"><span class="pre">crop_rapideye.tif</span></code> e a forma de acesso é <code class="docutils literal notranslate"><span class="pre">GA_ReadOnly</span></code>.</p>
+<p>Neste caso, o nome do arquivo é <code class="docutils literal notranslate"><span class="pre">crop_rapideye.tif</span></code> e, a forma de acesso é <code class="docutils literal notranslate"><span class="pre">GA_ReadOnly</span></code>.</p>
+<p>Repare o tipo de objeto retornado pela operação <code class="docutils literal notranslate"><span class="pre">gdal.Open</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Saída:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">osgeo</span><span class="o">.</span><span class="n">gdal</span><span class="o">.</span><span class="n">Dataset</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="estrutura-do-dataset">
+<h2><span class="section-number">3.1.3. </span>Estrutura do <em>Dataset</em><a class="headerlink" href="#estrutura-do-dataset" title="Link permanente para este título">¶</a></h2>
 <div class="section" id="sistema-de-referencia-espacial">
-<h3>Sistema de Referência Espacial<a class="headerlink" href="#sistema-de-referencia-espacial" title="Link permanente para este título">¶</a></h3>
-<p>Para conhecer o sistema de coordenadas de um <code class="docutils literal notranslate"><span class="pre">dataset</span></code>, deve ser utilizado o método <code class="docutils literal notranslate"><span class="pre">GetProjectionRef</span></code>, que retorna uma descrição no formato WKT (<em>Well-Known Text</em>). O WKT é um formato textual, padronizado pela OGC (<em>Open Geospatial Consortium</em>), para representação de sistemas de referência espacial dos objetos geográficos.</p>
+<h3><span class="section-number">3.1.3.1. </span>Sistema de Referência Espacial<a class="headerlink" href="#sistema-de-referencia-espacial" title="Link permanente para este título">¶</a></h3>
+<p>Para conhecer o sistema de coordenadas de referência (CRS) de um <code class="docutils literal notranslate"><span class="pre">dataset</span></code>, deve ser utilizado o método <code class="docutils literal notranslate"><span class="pre">GetProjectionRef</span></code>, que retorna uma descrição no formato WKT (<em>Well-Known Text</em>). O WKT é um formato textual, padronizado pela OGC (<em>Open Geospatial Consortium</em>), para representação de sistemas de referência espacial dos objetos geográficos.</p>
 <p>Para recuperar a informação sobre a Referência Espacial de uma imagem, usa-se o método <code class="docutils literal notranslate"><span class="pre">GetProjectionRef</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span><span class="o">.</span><span class="n">GetProjectionRef</span><span class="p">()</span>
 </pre></div>
@@ -265,14 +303,14 @@ print(&#39;* Jupyter Notebook&#39;)
 <p>Um Sistema de Referência Espacial (<em>Spatial Reference System</em> - <strong>SRS</strong>) ou sistema de coordenadas de referência (<em>Coordinate Reference System</em> - <strong>CRS</strong>) pode ser um sistema local, regional ou global, usado para localizar objetos geográficos.</p>
 <p>Para permitir uma maior interoperabilidade e facilidade na utilização, vários sistemas de informação geográfica fazem referência a um SRS indicando apenas um número inteiro que representa o <code class="docutils literal notranslate"><span class="pre">SRID</span></code>, ou códigos, como o <code class="docutils literal notranslate"><span class="pre">EPSG</span></code>, definidos por autoridades como a <a class="reference external" href="https://www.iogp.org/">Associação Internacional de Produtores de Petróleo e Gás</a>.</p>
 <p>Para identificar os códigos corretos para o sistema de referência espacial do seu interesse, veja os seguintes portais:</p>
-<ul class="simple">
+<ul class="open">
 <li><p><a class="reference external" href="http://epsg.io">http://epsg.io</a></p></li>
 <li><p><a class="reference external" href="http://spatialreference.org">http://spatialreference.org</a></p></li>
 </ul>
 </div>
 </div>
 <div class="section" id="transformacao-afim">
-<h2>Transformação Afim<a class="headerlink" href="#transformacao-afim" title="Link permanente para este título">¶</a></h2>
+<h2><span class="section-number">3.1.4. </span>Transformação Afim<a class="headerlink" href="#transformacao-afim" title="Link permanente para este título">¶</a></h2>
 <p>O método <code class="docutils literal notranslate"><span class="pre">GetGeoTransform</span></code> retorna uma tupla com os 06 coeficientes referentes à transformação afim do <code class="docutils literal notranslate"><span class="pre">dataset</span></code>, isto é, os parâmetros para transformação do espaço de coordenadas da imagem (linha e coluna) para coordendas georreferenciadas (coordenadas projetadas ou geográficas).</p>
 <p>Vamos obter o valor desses coeficientes:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="o">&gt;&gt;&gt;</span> <span class="n">GT</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">GetGeoTransform</span><span class="p">()</span>
@@ -333,7 +371,7 @@ X_{geo} = GT[0] + Coluna * GT[1]\\
 Y_{geo} = GT[3] + Linha * GT[5]
 \end{cases}\end{split}\]</div>
 <p>Vamos calcular a localização no espaço geográfico do pixel que está na <code class="docutils literal notranslate"><span class="pre">coluna</span></code> 20 e <code class="docutils literal notranslate"><span class="pre">linha</span></code> 30:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">coluna</span> <span class="o">=</span> <span class="mi">20</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">coluna</span> <span class="o">=</span> <span class="mi">20</span>
 <span class="n">linha</span> <span class="o">=</span> <span class="mi">30</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">GT</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">coluna</span> <span class="o">*</span> <span class="n">GT</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
@@ -346,11 +384,10 @@ Y_{geo} = GT[3] + Linha * GT[5]
 <p class="admonition-title">Nota</p>
 <p>Para mais informaçõs sobre essa operação, consulte <a class="reference external" href="https://gdal.org/tutorials/geotransforms_tut.html">Geotransform Tutorial</a>.</p>
 </div>
-</div>
 <div class="section" id="dimensoes-numero-de-linhas-e-colunas">
-<h2>Dimensões (Número de linhas e colunas)<a class="headerlink" href="#dimensoes-numero-de-linhas-e-colunas" title="Link permanente para este título">¶</a></h2>
+<h3><span class="section-number">3.1.4.1. </span>Dimensões (Número de linhas e colunas)<a class="headerlink" href="#dimensoes-numero-de-linhas-e-colunas" title="Link permanente para este título">¶</a></h3>
 <p>Para saber o número de linhas e colunas do <code class="docutils literal notranslate"><span class="pre">dataset</span></code> que está sendo utilizado, devemos utilizar as propriedades <code class="docutils literal notranslate"><span class="pre">RasterYSize</span></code> e <code class="docutils literal notranslate"><span class="pre">RasterXSize</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">linhas</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">RasterYSize</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">linhas</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">RasterYSize</span>
 <span class="n">colunas</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">RasterXSize</span>
 
 <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Número de linhas:&quot;</span><span class="p">,</span> <span class="n">linhas</span><span class="p">)</span>
@@ -359,24 +396,24 @@ Y_{geo} = GT[3] + Linha * GT[5]
 </div>
 </div>
 <div class="section" id="bandas">
-<h2>Bandas<a class="headerlink" href="#bandas" title="Link permanente para este título">¶</a></h2>
+<h3><span class="section-number">3.1.4.2. </span>Bandas<a class="headerlink" href="#bandas" title="Link permanente para este título">¶</a></h3>
 <p>Para saber o número de bandas de um <code class="docutils literal notranslate"><span class="pre">dataset</span></code>, podemos utilizar a propriedade <code class="docutils literal notranslate"><span class="pre">RasterCount</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dataset</span><span class="o">.</span><span class="n">RasterCount</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dataset</span><span class="o">.</span><span class="n">RasterCount</span>
 <span class="go">5</span>
 </pre></div>
 </div>
 <p>Como pode ser observado, o arquivo <code class="docutils literal notranslate"><span class="pre">crop_rapideye.tif</span></code> possui 5 bandas.</p>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>A GDAL numera as bandas de 1 até <span class="math notranslate nohighlight">\(n\)</span>, onde <span class="math notranslate nohighlight">\(n\)</span> é o número total de bandas contidas no <code class="docutils literal notranslate"><span class="pre">dataset</span></code>. Lembre-se que os objetos do Python, como listas e tuplas, são indexados a partir do número 0 até <span class="math notranslate nohighlight">\(n - 1\)</span>.</p>
+<p>A GDAL numera as bandas de 1 até <span class="math notranslate nohighlight">\(n\)</span>, onde <span class="math notranslate nohighlight">\(n\)</span> é o número total de bandas contidas no <code class="docutils literal notranslate"><span class="pre">dataset</span></code>. Lembre-se que os objetos do Python, como listas e tuplas, são indexados a partir do número <span class="math notranslate nohighlight">\(0\)</span> até <span class="math notranslate nohighlight">\(n - 1\)</span>.</p>
 </div>
-<p>No caso da amostra de imagem RapidEye, as bandas 5 e 3 correspondem às bandas NIR e RED. Para acessar os dados dessas bandas, devemos utilizar o método <code class="docutils literal notranslate"><span class="pre">GetRasterBand</span></code>, que retorna um objeto capaz de manipular os dados de uma banda:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">banda_nir</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<p>No caso da amostra de imagem RapidEye, as bandas 5 e 3 correspondem às bandas NIR e RED, respectivamente. Para acessar os dados dessas bandas, devemos utilizar o método <code class="docutils literal notranslate"><span class="pre">GetRasterBand</span></code>, que retorna um objeto capaz de manipular os dados de uma banda:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">banda_nir</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">banda_red</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Um objeto do tipo banda contém as informações dos níveis digitais das imagens, além de outras propriedades, como:</p>
-<ul class="simple">
+<ul class="open">
 <li><p><code class="docutils literal notranslate"><span class="pre">NoDataValue</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Minimum</span></code>/<code class="docutils literal notranslate"><span class="pre">Maximum</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Histogram</span></code></p></li>
@@ -384,45 +421,50 @@ Y_{geo} = GT[3] + Linha * GT[5]
 <li><p>Estatísticas (média/desvio padrão)</p></li>
 <li><p>Matriz de pixels</p></li>
 </ul>
-<p>Uma das propriedades para a correta manipulação das imagens é o tipo de dados, <code class="docutils literal notranslate"><span class="pre">DataType</span></code>, armazenado e que pode ser lido a partir da operação <code class="docutils literal notranslate"><span class="pre">GetDataTypeName</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Tipos de dados:&quot;</span><span class="p">)</span>
+<p>Uma das propriedades para a correta manipulação das imagens é o tipo de dados, <code class="docutils literal notranslate"><span class="pre">DataType</span></code>, armazenado e que pode ser lido a partir da operação <code class="docutils literal notranslate"><span class="pre">GetDataTypeName</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Tipos de dados:&quot;</span><span class="p">)</span>
 <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot; - banda NIR:&quot;</span><span class="p">,</span> <span class="n">gdal</span><span class="o">.</span><span class="n">GetDataTypeName</span><span class="p">(</span><span class="n">banda_nir</span><span class="o">.</span><span class="n">DataType</span><span class="p">))</span>
 <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot; - banda RED:&quot;</span><span class="p">,</span> <span class="n">gdal</span><span class="o">.</span><span class="n">GetDataTypeName</span><span class="p">(</span><span class="n">banda_red</span><span class="o">.</span><span class="n">DataType</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>É possível saber quais os valores extremos (mínimo e máximo) dos pixels de uma banda utilizando o método <code class="docutils literal notranslate"><span class="pre">ComputeRasterMinMax</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">menor_valor</span><span class="p">,</span> <span class="n">maior_valor</span> <span class="o">=</span> <span class="n">banda_red</span><span class="o">.</span><span class="n">ComputeRasterMinMax</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">menor_valor</span><span class="p">,</span> <span class="n">maior_valor</span> <span class="o">=</span> <span class="n">banda_red</span><span class="o">.</span><span class="n">ComputeRasterMinMax</span><span class="p">()</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Menor valor de RED:&quot;</span><span class="p">,</span> <span class="n">menor_valor</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Maior valor de RED:&quot;</span><span class="p">,</span> <span class="n">maior_valor</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+</div>
 <div class="section" id="leitura-dos-dados-de-uma-banda">
-<h2>Leitura dos dados de uma banda<a class="headerlink" href="#leitura-dos-dados-de-uma-banda" title="Link permanente para este título">¶</a></h2>
-<p>Depois de criados os objetos das bandas (banda_nir e banda_red), podemos ler os dados de cada banda para iniciar qualquer processamento com estes valores. Para isso, utilizaremos o método <code class="docutils literal notranslate"><span class="pre">ReadAsArray</span></code>, que permitirá obter os dados de cada banda em uma matriz NumPy.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">matriz_red</span> <span class="o">=</span> <span class="n">banda_red</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()</span>
+<h2><span class="section-number">3.1.5. </span>Leitura dos dados de uma banda<a class="headerlink" href="#leitura-dos-dados-de-uma-banda" title="Link permanente para este título">¶</a></h2>
+<p>Depois de criados os objetos das bandas (banda_nir e banda_red), podemos ler os dados de cada banda para iniciar qualquer processamento com estes valores. Para isso, utilizaremos o método <code class="docutils literal notranslate"><span class="pre">ReadAsArray</span></code>, que permitirá obter os dados de cada banda em uma matriz NumPy:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">matriz_red</span> <span class="o">=</span> <span class="n">banda_red</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()</span>
 <span class="n">matriz_nir</span> <span class="o">=</span> <span class="n">banda_nir</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Essa operação retornará uma matriz do NumPy:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">matriz_red</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">matriz_red</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">matriz_red</span>
 </pre></div>
 </div>
 <p>Agora, podemos utilizar todas as operações disponíveis na <a class="reference external" href="https://numpy.org/">NumPy</a>:</p>
-<p>Para verificar se a matriz gerada com a leitura da banda foi criada com o número de linhas e colunas de forma correta, podemos utilizar o atributo <code class="docutils literal notranslate"><span class="pre">shape</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">matriz_red</span><span class="o">.</span><span class="n">shape</span>
+<ul>
+<li><p>Para verificar se a matriz gerada com a leitura da banda foi criada com o número de linhas e colunas de forma correta, podemos utilizar o atributo <code class="docutils literal notranslate"><span class="pre">shape</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">matriz_red</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
-<p>Para saber o tipos de dados das células da matriz, podemos usar a propriedade <code class="docutils literal notranslate"><span class="pre">dtype</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">matriz_red</span><span class="o">.</span><span class="n">dtype</span>
+</li>
+<li><p>Para saber o tipo de dados das células da matriz, podemos usar a propriedade <code class="docutils literal notranslate"><span class="pre">dtype</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">matriz_red</span><span class="o">.</span><span class="n">dtype</span>
 </pre></div>
 </div>
+</li>
+</ul>
 <p>Para computar um índice de vegetação, o NDVI, a partir das matrizes com os valores das bandas RED e NIR, aplicamos uma operação matricial, envolvendo as 2 matrizes obtidas a partir das bandas da imagem:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">matriz_red</span> <span class="o">=</span> <span class="n">matriz_red</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">matriz_red</span> <span class="o">=</span> <span class="n">matriz_red</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
 <span class="n">matriz_nir</span> <span class="o">=</span> <span class="n">matriz_nir</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
 
 <span class="c1"># geracao de array derivado das bandas</span>
@@ -441,8 +483,8 @@ Y_{geo} = GT[3] + Linha * GT[5]
 <p class="admonition-title">Nota</p>
 <p>No cálculo da <code class="docutils literal notranslate"><span class="pre">matriz_ndvi</span></code> foi colocado um termo adicional no denominador, 0.000000001. Embora não faça parte da equação original, este termo com evita que aconteçam divisões por zero, gerando valores nulos, ou inconsistentes, na matriz final. Por ser um valor muito pequeno, não impacta no resultado dos demais cálculos.</p>
 </div>
-<p>Podemos combinar as bibliotecas NumPy e Matplotlib para visualizar as matrizes como imagens.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<p>Podemos combinar as bibliotecas NumPy e Matplotlib para visualizar as matrizes como imagens:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
 
@@ -461,9 +503,9 @@ Y_{geo} = GT[3] + Linha * GT[5]
 </div>
 </div>
 <div class="section" id="liberando-um-conjunto-de-dados">
-<h2>Liberando um conjunto de dados<a class="headerlink" href="#liberando-um-conjunto-de-dados" title="Link permanente para este título">¶</a></h2>
+<h2><span class="section-number">3.1.6. </span>Liberando um conjunto de dados<a class="headerlink" href="#liberando-um-conjunto-de-dados" title="Link permanente para este título">¶</a></h2>
 <p>Para liberar a memória e fechar o arquivo aberto, associamos o valor <code class="docutils literal notranslate"><span class="pre">None</span></code> ao identificador do <code class="docutils literal notranslate"><span class="pre">dataset</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="kc">None</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="kc">None</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -478,6 +520,10 @@ Y_{geo} = GT[3] + Linha * GT[5]
            
           </div>
           <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="numpy.html" class="btn btn-neutral float-right" title="3.2. NumPy" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../imagens.html" class="btn btn-neutral float-left" title="3. Imagens - Processamento e Visualização" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+    </div>
 
   <hr/>
 

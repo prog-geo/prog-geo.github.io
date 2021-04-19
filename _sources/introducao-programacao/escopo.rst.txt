@@ -71,7 +71,7 @@ O programa acima é executado da seguinte forma (*explicação bem simplificada!
 Isso indica que o nome ``v1`` não se encontra num escopo acessível naquela linha.
 
 
-O programa abaixo ilustra outro destalhe dessa regra de escopo das variáveis.
+O programa abaixo ilustra outro detalhe dessa regra de escopo das variáveis.
 
 
 .. tip::
@@ -150,7 +150,7 @@ Nas linguagens de programação temos basicamente dois tipos de mecanismos de pa
 
 .. rst-class:: open
 
-- **Passagem por Valor:** onde uma cópia do valor informado por uma variável na chamada da função é copiado e associado ao parâmetro dessa função invocada.
+- **Passagem por Valor:** onde uma cópia do valor informado na chamada da função é associada ao parâmetro dessa função durante sua ativação.
 
 - **Passagem por Referência:** neste caso o parâmetro da função se torna um *alias* ou uma *referência* para o nome da variável usada na passagem do argumento durante a chamada dessa função.
 

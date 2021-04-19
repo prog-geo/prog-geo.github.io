@@ -1,22 +1,28 @@
 ..
-    This file is part of "Notas de Aula dos Cursos Introdução à Programação com Dados Geoespaciais e Introdução à Programação para Sensoriamento Remoto".
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
     Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
-
-
-.. include:: ../def.rst
 
 
 .. _sec_imagens_gdal:
 
-GDAL
-====
+GDAL - **G**\ eospatial **D**\ ata **A**\ bstraction **L**\ ibrary
+==================================================================
 
 
-A GDAL é uma biblioteca de software livre que fornece uma camada de abstração de dados geoespaciais que possibilita o desenvolvimento de aplicações que manipulam dados nos mais diferentes formatos e sistemas. A ``API`` (*Application Programming Interface* ou Interface de Programação de Aplicações) desta biblioteca encontra-se disponível para uso em Python através de um binding (ou wrapper), que fornece acesso às funcionalidades implementadas em C++.
+.. image:: ../img/logos/gdal.svg
+    :alt: GDAL
+    :width: 96
+    :align: right
+
+
+A `GDAL <https://gdal.org>`_ é uma biblioteca de software livre que fornece uma camada de abstração de dados geoespaciais, possibilitando o desenvolvimento de aplicações que manipulam dados nos mais diferentes formatos e sistemas. A ``API`` (*Application Programming Interface* ou Interface de Programação de Aplicações) desta biblioteca encontra-se disponível para uso em Python através de um *binding* (ou *wrapper*), que fornece acesso às funcionalidades implementadas em C++.
+
 
 A GDAL é basicamente composta de quatro APIs:
 
-- **GDAL**: Voltada para manipulação de dados matriciais (raster), com capacidade de leitura e escrita de `diversos formatos <http://gdal.org/formats_list.html>`_ de imagem de sensoriamento remoto, como GeoTIFF, HDF, e JPEG, entre outros. Esta parte da API contém objetos para manipulação das dimensões de uma imagem, para acesso de leitura e escrita de blocos das bandas espectrais de uma imagem, acesso a metadados e manipulação de pirâmides de multi-resolução.
+.. rst-class:: open
+
+- **GDAL**: Voltada para manipulação de dados matriciais (*raster*), com capacidade de leitura e escrita de `diversos formatos <http://gdal.org/formats_list.html>`_ de imagem de sensoriamento remoto, como GeoTIFF, HDF, e JPEG, entre outros. Esta parte da API contém objetos para manipulação das dimensões de uma imagem, para acesso de leitura e escrita de blocos das bandas espectrais de uma imagem, acesso a metadados e manipulação de pirâmides de multi-resolução.
 
 - **OGR**: Parte da API voltada para manipulação de dados em `formatos vetoriais <https://gdal.org/drivers/vector/index.html>`_, tais como ESRI Shapefile, Google KML e GeoJSON. Apresenta os conceitos de camada de informação, feições, atributos alfanuméricos e geométricos.
 
@@ -24,42 +30,45 @@ A GDAL é basicamente composta de quatro APIs:
 
 - **GNM**: Acrônimo de *Geographic Network Model*, esta parte da API serve ao propósito de manipulação de redes geográficas.
 
+
 As aplicações que utilizam a GDAL acessam todos os formatos suportados por ela através de um único modelo de dados abstrato. Além disso, a GDAL também conta com uma variedade de programas utilitários de linha de comando para a tradução de formatos e alguns tipos básicos de processamento.
 
-Utilizamos a GDAL para manipular de imagens de sensoriamento remoto, através do acesso aos valores dos pixels das bandas, por meio de matrizes no formato NumPy.
+
+Utilizaremos a GDAL para manipular imagens de sensoriamento remoto, através do acesso aos valores dos pixels das bandas, por meio de matrizes no formato da biblioteca `NumPy <https://numpy.org/>`_.
+
 
 Importando a Biblioteca GDAL
 ----------------------------
 
-Para acessar a API ``gdal``, que permitirá manipular as imagens, devemos importar a biblioteca ``osgeo``:
 
-
-.. code-block:: python
+Para acessar a API ``gdal``, que permitirá manipular as imagens, devemos importar a biblioteca ``osgeo``::
 
     from osgeo import gdal
 
+
+Uma boa prática consiste em ativar o uso de exceções nas operações da biblioteca GDAL::
+
     gdal.UseExceptions()
 
-.. note::
 
-    Além de importar a API na primeira linha, ativamos o uso de exceções nas operações da biblioteca GDAL (método ``UseExceptions``).
-
-Para saber a versão da GDAL instalada no seu ambiente de trabalho, use o seguinte comando:
-
-.. code-block:: python
+Para saber a versão da GDAL instalada no seu ambiente de trabalho, use o seguinte comando::
 
     gdal.__version__
 
-Caso estiver em um ambiente Jupyter Notebook, confira também as versões das ferramentas::
 
-    print('* Python')
-    !python --version
+.. note::
 
-    print('* Jupyter')
-    !jupyter --version
+    Em um ambiente Jupyter Notebook, você pode confirir também as versões das demais ferramentas do seu ambiente::
 
-    print('* Jupyter Notebook')
-    !jupyter notebook --version
+        print('* Python')
+        !python --version
+
+        print('* Jupyter')
+        !jupyter --version
+
+        print('* Jupyter Notebook')
+        !jupyter notebook --version
+
 
 .. note::
 
@@ -67,48 +76,76 @@ Caso estiver em um ambiente Jupyter Notebook, confira também as versões das fe
 
         gdal.
 
-    Também podemos obter ajuda sobre as funções e objetos disponíveis em uma biblioteca utilizando o caracter ``?`` logo após o nome para o qual desejamos consultar a ajuda, como mostrado abaixo para a função Open::
+    Também podemos obter ajuda sobre as funções e objetos disponíveis em uma biblioteca utilizando o caractere ``?`` ou ``??`` logo após o nome para o qual desejamos consultar a ajuda, como mostrado abaixo para a função Open::
 
         gdal.Open?
 
-Abertura de um arquivo raster
------------------------------
+
+Abertura de um arquivo *raster*
+-------------------------------
+
 
 A função ``Open`` é utilizada para abrir um conjunto de dados (ou ``dataset``), que exige dois parâmetros:
 
+.. rst-class:: open
+
 - **Nome do Arquivo**: caminho e nome completo
+
 - **Forma de Acesso**: constante que indica se o arquivo será usado apenas para leitura (``GA_ReadOnly``) ou se também será utilizado em operações de escrita (``GA_Update``).
 
-Para abrir o arquivo GeoTIFF com a imagem (`faça o download da imagem de teste <https://drive.google.com/u/0/uc?id=1WbQ3aYWjYPpHxA3Z03_qVVTAncgr7PV_&export=download>`_), vamos utilizar::
 
-    >>> dataset = gdal.Open("crop_rapideye.tif", gdal.GA_ReadOnly)
-    >>> type(dataset)
+Para abrir o arquivo GeoTIFF com a imagem (`faça o download da imagem de teste <https://drive.google.com/u/0/uc?id=1WbQ3aYWjYPpHxA3Z03_qVVTAncgr7PV_&export=download>`_), podemos fazer::
+
+    dataset = gdal.Open("crop_rapideye.tif", gdal.GA_ReadOnly)
+
+
+Neste caso, o nome do arquivo é ``crop_rapideye.tif`` e, a forma de acesso é ``GA_ReadOnly``.
+
+
+Repare o tipo de objeto retornado pela operação ``gdal.Open``::
+
+    type(dataset)
+
+
+Saída::
+
     osgeo.gdal.Dataset
 
-Neste caso, nome do arquivo é ``crop_rapideye.tif`` e a forma de acesso é ``GA_ReadOnly``.
+
+Estrutura do *Dataset*
+----------------------
+
 
 Sistema de Referência Espacial
 ++++++++++++++++++++++++++++++
 
-Para conhecer o sistema de coordenadas de um ``dataset``, deve ser utilizado o método ``GetProjectionRef``, que retorna uma descrição no formato WKT (*Well-Known Text*). O WKT é um formato textual, padronizado pela OGC (*Open Geospatial Consortium*), para representação de sistemas de referência espacial dos objetos geográficos.
+
+Para conhecer o sistema de coordenadas de referência (CRS) de um ``dataset``, deve ser utilizado o método ``GetProjectionRef``, que retorna uma descrição no formato WKT (*Well-Known Text*). O WKT é um formato textual, padronizado pela OGC (*Open Geospatial Consortium*), para representação de sistemas de referência espacial dos objetos geográficos.
 
 
 Para recuperar a informação sobre a Referência Espacial de uma imagem, usa-se o método ``GetProjectionRef``::
 
     dataset.GetProjectionRef()
 
+
 Um Sistema de Referência Espacial (*Spatial Reference System* - **SRS**) ou sistema de coordenadas de referência (*Coordinate Reference System* - **CRS**) pode ser um sistema local, regional ou global, usado para localizar objetos geográficos.
+
 
 Para permitir uma maior interoperabilidade e facilidade na utilização, vários sistemas de informação geográfica fazem referência a um SRS indicando apenas um número inteiro que representa o ``SRID``, ou códigos, como o ``EPSG``, definidos por autoridades como a `Associação Internacional de Produtores de Petróleo e Gás <https://www.iogp.org/>`_.
 
 
 Para identificar os códigos corretos para o sistema de referência espacial do seu interesse, veja os seguintes portais:
 
+.. rst-class:: open
+
 - http://epsg.io
+
 - http://spatialreference.org
+
 
 Transformação Afim
 ------------------
+
 
 O método ``GetGeoTransform`` retorna uma tupla com os 06 coeficientes referentes à transformação afim do ``dataset``, isto é, os parâmetros para transformação do espaço de coordenadas da imagem (linha e coluna) para coordendas georreferenciadas (coordenadas projetadas ou geográficas).
 
@@ -119,7 +156,9 @@ Vamos obter o valor desses coeficientes::
     >>> print(GT)
    (508810.0, 5.0, 0.0, 7857490.0, 0.0, -5.0)
 
+
 Na tupla acima, temos o seguinte:
+
 
 .. list-table::
    :widths: 15 15 70
@@ -148,7 +187,9 @@ Na tupla acima, temos o seguinte:
      - -5.0    
      - Resolução do pixel ao longo do eixo-:math:`y`.     
 
+
 Os parâmetros acima podem ser usados na seguinte equação de transformação:
+
 
 .. math::
 
@@ -157,7 +198,9 @@ Os parâmetros acima podem ser usados na seguinte equação de transformação:
     Y_{geo} = GT[3] + Coluna * GT[4] + Linha * GT[5]
     \end{cases}
 
+
 No caso de imagens alinhadas ao norte (north up images), essa equação se resume a:
+
 
 .. math::
 
@@ -166,9 +209,8 @@ No caso de imagens alinhadas ao norte (north up images), essa equação se resum
     Y_{geo} = GT[3] + Linha * GT[5]
     \end{cases}
 
-Vamos calcular a localização no espaço geográfico do pixel que está na ``coluna`` 20 e ``linha`` 30:
 
-.. code-block:: python
+Vamos calcular a localização no espaço geográfico do pixel que está na ``coluna`` 20 e ``linha`` 30::
 
     coluna = 20
     linha = 30
@@ -178,17 +220,17 @@ Vamos calcular a localização no espaço geográfico do pixel que está na ``co
 
     print(x, y)
 
+
 .. note::
 
     Para mais informaçõs sobre essa operação, consulte `Geotransform Tutorial <https://gdal.org/tutorials/geotransforms_tut.html>`_.
 
 
 Dimensões (Número de linhas e colunas)
---------------------------------------
+++++++++++++++++++++++++++++++++++++++
 
-Para saber o número de linhas e colunas do ``dataset`` que está sendo utilizado, devemos utilizar as propriedades ``RasterYSize`` e ``RasterXSize``:
 
-.. code-block:: python
+Para saber o número de linhas e colunas do ``dataset`` que está sendo utilizado, devemos utilizar as propriedades ``RasterYSize`` e ``RasterXSize``::
 
     linhas = dataset.RasterYSize
     colunas = dataset.RasterXSize
@@ -198,25 +240,24 @@ Para saber o número de linhas e colunas do ``dataset`` que está sendo utilizad
 
 
 Bandas
-------
+++++++
 
-Para saber o número de bandas de um ``dataset``, podemos utilizar a propriedade ``RasterCount``:
 
-.. code-block:: python
+Para saber o número de bandas de um ``dataset``, podemos utilizar a propriedade ``RasterCount``::
 
     >>> dataset.RasterCount
     5
 
+
 Como pode ser observado, o arquivo ``crop_rapideye.tif`` possui 5 bandas.
 
-.. note ::
 
-    A GDAL numera as bandas de 1 até :math:`n`, onde :math:`n` é o número total de bandas contidas no ``dataset``. Lembre-se que os objetos do Python, como listas e tuplas, são indexados a partir do número 0 até :math:`n - 1`.
+.. note::
+
+    A GDAL numera as bandas de 1 até :math:`n`, onde :math:`n` é o número total de bandas contidas no ``dataset``. Lembre-se que os objetos do Python, como listas e tuplas, são indexados a partir do número :math:`0` até :math:`n - 1`.
 
 
-No caso da amostra de imagem RapidEye, as bandas 5 e 3 correspondem às bandas NIR e RED. Para acessar os dados dessas bandas, devemos utilizar o método ``GetRasterBand``, que retorna um objeto capaz de manipular os dados de uma banda:
-
-.. code-block:: python
+No caso da amostra de imagem RapidEye, as bandas 5 e 3 correspondem às bandas NIR e RED, respectivamente. Para acessar os dados dessas bandas, devemos utilizar o método ``GetRasterBand``, que retorna um objeto capaz de manipular os dados de uma banda::
 
     banda_nir = dataset.GetRasterBand(5)
     banda_red = dataset.GetRasterBand(3)
@@ -224,24 +265,29 @@ No caso da amostra de imagem RapidEye, as bandas 5 e 3 correspondem às bandas N
 
 Um objeto do tipo banda contém as informações dos níveis digitais das imagens, além de outras propriedades, como:
 
+.. rst-class:: open
+
 - ``NoDataValue``
+
 - ``Minimum``/``Maximum``
+
 - ``Histogram``
+
 - Tipo de dados
+
 - Estatísticas (média/desvio padrão)
+
 - Matriz de pixels
 
-Uma das propriedades para a correta manipulação das imagens é o tipo de dados, ``DataType``, armazenado e que pode ser lido a partir da operação ``GetDataTypeName``.
 
-.. code-block:: python
+Uma das propriedades para a correta manipulação das imagens é o tipo de dados, ``DataType``, armazenado e que pode ser lido a partir da operação ``GetDataTypeName``::
 
     print ("Tipos de dados:")
     print (" - banda NIR:", gdal.GetDataTypeName(banda_nir.DataType))
     print (" - banda RED:", gdal.GetDataTypeName(banda_red.DataType))
 
-É possível saber quais os valores extremos (mínimo e máximo) dos pixels de uma banda utilizando o método ``ComputeRasterMinMax``:
 
-.. code-block:: python
+É possível saber quais os valores extremos (mínimo e máximo) dos pixels de uma banda utilizando o método ``ComputeRasterMinMax``::
 
     menor_valor, maior_valor = banda_red.ComputeRasterMinMax()
 
@@ -252,41 +298,35 @@ Uma das propriedades para a correta manipulação das imagens é o tipo de dados
 Leitura dos dados de uma banda
 ------------------------------
 
-Depois de criados os objetos das bandas (banda_nir e banda_red), podemos ler os dados de cada banda para iniciar qualquer processamento com estes valores. Para isso, utilizaremos o método ``ReadAsArray``, que permitirá obter os dados de cada banda em uma matriz NumPy.
 
-.. code-block:: python
+Depois de criados os objetos das bandas (banda_nir e banda_red), podemos ler os dados de cada banda para iniciar qualquer processamento com estes valores. Para isso, utilizaremos o método ``ReadAsArray``, que permitirá obter os dados de cada banda em uma matriz NumPy::
 
     matriz_red = banda_red.ReadAsArray()
     matriz_nir = banda_nir.ReadAsArray()
 
-Essa operação retornará uma matriz do NumPy:
 
-.. code-block:: python
+Essa operação retornará uma matriz do NumPy::
 
     type(matriz_red)
+
 
 .. code-block:: python
 
     matriz_red
 
+
 Agora, podemos utilizar todas as operações disponíveis na `NumPy <https://numpy.org/>`_:
 
-Para verificar se a matriz gerada com a leitura da banda foi criada com o número de linhas e colunas de forma correta, podemos utilizar o atributo ``shape``:
+- Para verificar se a matriz gerada com a leitura da banda foi criada com o número de linhas e colunas de forma correta, podemos utilizar o atributo ``shape``::
 
-.. code-block:: python
+        matriz_red.shape
 
-    matriz_red.shape
-
-Para saber o tipos de dados das células da matriz, podemos usar a propriedade ``dtype``:
-
-.. code-block:: python
+- Para saber o tipo de dados das células da matriz, podemos usar a propriedade ``dtype``::
 
     matriz_red.dtype
 
 
-Para computar um índice de vegetação, o NDVI, a partir das matrizes com os valores das bandas RED e NIR, aplicamos uma operação matricial, envolvendo as 2 matrizes obtidas a partir das bandas da imagem:
-
-.. code-block:: python
+Para computar um índice de vegetação, o NDVI, a partir das matrizes com os valores das bandas RED e NIR, aplicamos uma operação matricial, envolvendo as 2 matrizes obtidas a partir das bandas da imagem::
 
     matriz_red = matriz_red.astype(float)
     matriz_nir = matriz_nir.astype(float)
@@ -299,18 +339,18 @@ Para computar um índice de vegetação, o NDVI, a partir das matrizes com os va
     print(matriz_ndvi.shape)
     print(matriz_ndvi.dtype)
 
+
 .. code-block:: python
 
     matriz_ndvi
 
 
-.. note ::
+.. note::
 
     No cálculo da ``matriz_ndvi`` foi colocado um termo adicional no denominador, 0.000000001. Embora não faça parte da equação original, este termo com evita que aconteçam divisões por zero, gerando valores nulos, ou inconsistentes, na matriz final. Por ser um valor muito pequeno, não impacta no resultado dos demais cálculos.
 
-Podemos combinar as bibliotecas NumPy e Matplotlib para visualizar as matrizes como imagens.
 
-.. code-block:: python
+Podemos combinar as bibliotecas NumPy e Matplotlib para visualizar as matrizes como imagens::
 
     import matplotlib.pyplot as plt
 
@@ -328,15 +368,16 @@ Podemos combinar as bibliotecas NumPy e Matplotlib para visualizar as matrizes c
     plt.title("NDVI")
     plt.imshow(matriz_ndvi, cmap='gray', vmin=-1.0, vmax=1.0)
 
+
 Liberando um conjunto de dados
 ------------------------------
 
-Para liberar a memória e fechar o arquivo aberto, associamos o valor ``None`` ao identificador do ``dataset``:
 
-.. code-block:: python
+Para liberar a memória e fechar o arquivo aberto, associamos o valor ``None`` ao identificador do ``dataset``::
 
     dataset = None 
 
-.. note ::
+
+.. note::
 
     Realizar esta operação não significa que matrizes NumPy obtidas das bandas da mesma imagem serão liberadas. Após a operação ``ReadAsArray``, o ``dataset`` e a matriz são objetos independentes.

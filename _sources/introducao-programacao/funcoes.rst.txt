@@ -28,7 +28,7 @@ Vamos supor um programa hipotético com a sequência de comandos mostrada na par
 
 
 .. figure:: ../img/introducao-programacao/encapsulando-codigos-atraves-funcoes.png
-    :alt: Estrutura condicional
+    :alt: Encapsulando seções de códigos comuns na forma de funções
     :width: 80%
     :figclass: align-center
     :name: introd-prog:fig:encapsulando-codigo-func
@@ -197,7 +197,7 @@ Uma função para calcular o fatorial poderia ser expressa da seguinte forma (:n
 
     def FatorialRec(n):
 
-        if n == 0:
+        if n == 1:
             return 1
         else:
             return n * FatorialRec(n - 1)
@@ -235,9 +235,9 @@ Um exemplo de mau emprego da recursividade ocorre no cálculo de um termo da seq
     :label: introd-prog:eq:func:fib-rel-recorrencia
 
     \begin{cases}
-        F_n = F_{n-1} + F_{n-2} \\
         F_1 = 1 \\
-        F_0 = 0
+        F_2 = 1 \\
+        F_n = F_{n-1} + F_{n-2}
     \end{cases}
 
 Portanto, essa fórmula nos permitiria computar os termos da série::
@@ -338,7 +338,7 @@ Como pode ser visto, ao definirmos um parâmetro como tendo um valor *default*, 
 
 .. note::
 
-    É importante notar que os valores de parâmetros *default* são avaliados da esquerda para a direita quando a função é definida. Isto significa que isso é feito uma única vez no programa, exatamente no ponto de definição da função.
+    É importante notar que os valores de parâmetros *default* são avaliados da esquerda para a direita quando a função é definida. Além disso, esses valores são definidos uma única vez no programa, exatamente no ponto de definição da função.
 
 
 .. note::
@@ -393,7 +393,7 @@ Ou, com números em ponto flutuante e uma string::
     O parâmetro ``*args`` é na verdade uma tupla do Python.
 
 
-A segunda forma de criar uma função que aceita um número variável de argumentos é usar o tipo ``**kwargs`` (com um duplo ``*``). Esse tipo de parâmetro pode ser usado para definir uma função que aceite uma lista de parâmetros nomeados de qualquer tamanho. Esse conjunto variável de parâmetros é representado como um dicionário. A função ``MyPrintV2``, mostrada abaixo, utiliza esse tipo de parâmetro para imprimir os nome e os valores dos argumentos informados na sua chamada::
+A segunda forma de criar uma função que aceita um número variável de argumentos é usar o tipo ``**kwargs`` (com um duplo ``*``). Esse tipo de parâmetro pode ser usado para definir uma função que aceite uma lista de parâmetros nomeados de qualquer tamanho. Esse conjunto variável de parâmetros é representado como um dicionário. A função ``MyPrintV2``, mostrada abaixo, utiliza esse tipo de parâmetro para imprimir os nomes e os valores dos argumentos informados na sua chamada::
 
     def MyPrintV2(**kwargs):
         for k, v in kwargs.items():
