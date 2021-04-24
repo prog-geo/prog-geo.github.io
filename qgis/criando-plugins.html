@@ -1,0 +1,394 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="pt-BR" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>4.3. Construindo Plugins para o QGIS em Python &mdash; SER-347/CAP-419</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/table_styling.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/prog-geo.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+    <link rel="canonical" href="https://prog-geo.github.io/qgis/criando-plugins.html" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/tabs.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Buscar" href="../search.html" />
+    <link rel="next" title="4.4. Preparando o Ambiente para Inspeção do Código de um Plugin" href="plugin-debug.html" />
+    <link rel="prev" title="4.2. Console Python no QGIS" href="python-console.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SER-347/CAP-419
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Pesquisar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introdução à Programação com Dados Geoespaciais</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Visão Geral do Curso:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../visao-geral.html">Visão Geral do Curso</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Aulas:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../instalacao.html">1. Instalando e Configurando o Ambiente de Programação</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introducao-programacao.html">2. Introdução à Programação com a Linguagem Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../imagens.html">3. Imagens - Processamento e Visualização</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../qgis.html">4. Programando com o QGIS</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="preparacao-ambiente.html">4.1. Preparação do Ambiente de Programação</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-console.html">4.2. Console Python no QGIS</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.3. Construindo Plugins para o QGIS em Python</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#localizacao-dos-plugins-do-qgis-no-seu-sistema">4.3.1. Localização dos Plugins do QGIS no seu Sistema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#criando-o-plugin-spectral">4.3.2. Criando o Plugin <code class="docutils literal notranslate"><span class="pre">Spectral</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#carregando-o-plugin-spectral-no-qgis">4.3.3. Carregando o Plugin Spectral no QGIS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="plugin-debug.html">4.4. Preparando o Ambiente para Inspeção do Código de um Plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../variados.html">5. Tópicos Variados</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Referências Bibliográficas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../referencias.html">Referências Bibliográficas</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Listas de Exercícios:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Informações Gerais:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../licenca.html">Licença</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Agradecimentos:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../agradecimentos.html">Agradecimentos</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SER-347/CAP-419</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../qgis.html"><span class="section-number">4. </span>Programando com o QGIS</a> &raquo;</li>
+        
+      <li><span class="section-number">4.3. </span>Construindo Plugins para o QGIS em Python</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="plugin-debug.html" class="btn btn-neutral float-right" title="4.4. Preparando o Ambiente para Inspeção do Código de um Plugin" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="python-console.html" class="btn btn-neutral float-left" title="4.2. Console Python no QGIS" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="construindo-plugins-para-o-qgis-em-python">
+<span id="sec-qgis-criando-plugins"></span><h1><span class="section-number">4.3. </span>Construindo Plugins para o QGIS em Python<a class="headerlink" href="#construindo-plugins-para-o-qgis-em-python" title="Link permanente para este título">¶</a></h1>
+<p>O QGIS fornece um plugin chamado <code class="docutils literal notranslate"><span class="pre">Plugin</span> <span class="pre">Builder</span> <span class="pre">3</span></code> que auxilia na preparação de um novo plugin Python através de um <em>template</em>. O <code class="docutils literal notranslate"><span class="pre">Plugin</span> <span class="pre">Builder</span> <span class="pre">3</span></code> pode ser instalado, a partir da janela principal do QGIS, acessando o menu <code class="docutils literal notranslate"><span class="pre">Plugins</span> <span class="pre">|</span> <span class="pre">Manage</span> <span class="pre">and</span> <span class="pre">Install</span> <span class="pre">Plugins...</span></code>. Na janela apresentada (<a class="reference internal" href="#fig-qgis-criando-plugins-plugin-builder-install"><span class="std std-numref">Figura 4.19</span></a>), selecione o nome do <code class="docutils literal notranslate"><span class="pre">Plugin</span> <span class="pre">Builder</span> <span class="pre">3</span></code> e pressione o botão de instalação (<code class="docutils literal notranslate"><span class="pre">Install</span> <span class="pre">plugin</span></code>).</p>
+<div class="align-center figure align-default" id="fig-qgis-criando-plugins-plugin-builder-install">
+<a class="reference internal image-reference" href="../_images/plugin-builder-install.png"><img alt="Instalação do Plugin Builder 3" src="../_images/plugin-builder-install.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Figura 4.19 - </span><span class="caption-text">Instalação do <code class="docutils literal notranslate"><span class="pre">Plugin</span> <span class="pre">Builder</span> <span class="pre">3</span></code>.</span><a class="headerlink" href="#fig-qgis-criando-plugins-plugin-builder-install" title="Link Permanente para essa imagem">¶</a></p>
+</div>
+<p>Nessa mesma janela, aproveite e faça a instalção do <code class="docutils literal notranslate"><span class="pre">Plugin</span> <span class="pre">Reloader</span></code>, como mostrado na <a class="reference internal" href="#fig-qgis-criando-plugins-plugin-reloader-install"><span class="std std-numref">Figura 4.20</span></a>. Esse plugin possibilitará recarregar outros plugins em desenvolvimento quando realizarmos alterações em seus códigos.</p>
+<div class="align-center figure align-default" id="fig-qgis-criando-plugins-plugin-reloader-install">
+<a class="reference internal image-reference" href="../_images/plugin-reloader-install.png"><img alt="Instalação do Plugin Reloader" src="../_images/plugin-reloader-install.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Figura 4.20 - </span><span class="caption-text">Instalação do <code class="docutils literal notranslate"><span class="pre">Plugin</span> <span class="pre">Reloader</span></code>.</span><a class="headerlink" href="#fig-qgis-criando-plugins-plugin-reloader-install" title="Link Permanente para essa imagem">¶</a></p>
+</div>
+<p>Na janela <code class="docutils literal notranslate"><span class="pre">Plugins</span> <span class="pre">|</span> <span class="pre">Settings</span></code>, habilite também a apresentação de <strong>plugins experimentais</strong> (<a class="reference internal" href="#fig-qgis-criando-plugins-plugins-settings-experimental"><span class="std std-numref">Figura 4.21</span></a>), que será o caso do plugin que iremos criar nesta seção.</p>
+<div class="align-center figure align-default" id="fig-qgis-criando-plugins-plugins-settings-experimental">
+<a class="reference internal image-reference" href="../_images/plugins-settings-experimental.png"><img alt="Habilitando plugins experimentais" src="../_images/plugins-settings-experimental.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Figura 4.21 - </span><span class="caption-text">Habilitando plugins experimentais.</span><a class="headerlink" href="#fig-qgis-criando-plugins-plugins-settings-experimental" title="Link Permanente para essa imagem">¶</a></p>
+</div>
+<p>Após a instalação desses dois plugins, você terá no menu <code class="docutils literal notranslate"><span class="pre">Plugins</span></code> as opções mostradas na <a class="reference internal" href="#fig-qgis-criando-plugins-plugin-builder-reloader-menu"><span class="std std-numref">Figura 4.22</span></a>.</p>
+<div class="align-center figure align-default" id="fig-qgis-criando-plugins-plugin-builder-reloader-menu">
+<a class="reference internal image-reference" href="../_images/plugin-builder-reloader-menu.png"><img alt="Opções no menu Plugins: Plugin Builder 3 e Plugin Reloader" src="../_images/plugin-builder-reloader-menu.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Figura 4.22 - </span><span class="caption-text">Opções no menu Plugins: <code class="docutils literal notranslate"><span class="pre">Plugin</span> <span class="pre">Builder</span> <span class="pre">3</span></code> e <code class="docutils literal notranslate"><span class="pre">Plugin</span> <span class="pre">Reloader</span></code>.</span><a class="headerlink" href="#fig-qgis-criando-plugins-plugin-builder-reloader-menu" title="Link Permanente para essa imagem">¶</a></p>
+</div>
+<div class="section" id="localizacao-dos-plugins-do-qgis-no-seu-sistema">
+<h2><span class="section-number">4.3.1. </span>Localização dos Plugins do QGIS no seu Sistema<a class="headerlink" href="#localizacao-dos-plugins-do-qgis-no-seu-sistema" title="Link permanente para este título">¶</a></h2>
+<p>Por padrão o QGIS mantém uma estrutura de pastas base onde armazena informações de configuração e o código de seus plugins. Em cada sistema operacional, temos uma localização específica, por exemplo:</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Microsoft Windows</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">macOS</button><button aria-controls="panel-0-0-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-2" name="0-2" role="tab" tabindex="-1">Linux</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><p>No Microsoft Windows, esses arquivos encontram-se sob a pasta <code class="docutils literal notranslate"><span class="pre">AppData\Roaming\QGIS\QGIS3</span></code>, dentro da pasta principal do usuário, que, em geral, se localiza em <code class="docutils literal notranslate"><span class="pre">C:\Users\%USERNAME%</span></code> ou, apenas <code class="docutils literal notranslate"><span class="pre">%HOMEPATH%</span></code>.</p>
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><blockquote>
+<div><p>No macOS, esses arquivos encontram-se sob a pasta <code class="docutils literal notranslate"><span class="pre">Library/Application</span> <span class="pre">Support/QGIS/QGIS3</span></code>, dentro da pasta principal do usuário, em geral, <code class="docutils literal notranslate"><span class="pre">/Users/${USER}</span></code>.</p>
+</div></blockquote>
+<div aria-labelledby="tab-0-0-2" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-2" name="0-2" role="tabpanel" tabindex="0"><p>No Linux, o QGIS mantém os arquivos sob a pasta <code class="docutils literal notranslate"><span class="pre">.local/share/QGIS/QGIS3</span></code>, dentro da pasta principal do usuário, que, em geral, se localiza sob o endereço <code class="docutils literal notranslate"><span class="pre">/home/${USER}</span></code>.</p>
+</div></div></div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>No meu ambiente Linux Ubuntu 20.04 (<a class="reference internal" href="preparacao-ambiente.html#sec-qgis-preparacao-ambiente"><span class="std std-numref">Seção 4.1</span></a>), esse caminho é o seguinte:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">gribeiro</span><span class="o">/.</span><span class="n">local</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">QGIS</span><span class="o">/</span><span class="n">QGIS3</span>
+</pre></div>
+</div>
+</div>
+<p>O QGIS também permite descobrir essa localização através do console Python dentro do próprio QGIS. Acessando o menu <code class="docutils literal notranslate"><span class="pre">Plugins</span> <span class="pre">|</span> <span class="pre">Python</span> <span class="pre">Console</span></code> (<a class="reference internal" href="#fig-qgis-criando-plugins-python-console"><span class="std std-numref">Figura 4.23</span></a>). Basta entrar com o seguinte comando:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">QStandardPaths</span><span class="o">.</span><span class="n">standardLocations</span><span class="p">(</span><span class="n">QStandardPaths</span><span class="o">.</span><span class="n">AppDataLocation</span><span class="p">)</span>
+<span class="go">[&#39;/home/gribeiro/.local/share/QGIS/QGIS3&#39;, &#39;/usr/local/share/QGIS/QGIS3&#39;, &#39;/usr/share/QGIS/QGIS3&#39;]</span>
+</pre></div>
+</div>
+<div class="align-center figure align-default" id="fig-qgis-criando-plugins-python-console">
+<a class="reference internal image-reference" href="../_images/python-console.png"><img alt="Console do Python dentro da interface gráfica do QGIS" src="../_images/python-console.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Figura 4.23 - </span><span class="caption-text">Console do Python dentro da interface gráfica do QGIS.</span><a class="headerlink" href="#fig-qgis-criando-plugins-python-console" title="Link Permanente para essa imagem">¶</a></p>
+</div>
+<p>Os plugins Python são mantidos na pasta <code class="docutils literal notranslate"><span class="pre">profiles/default/python/plugins</span></code>, sob a pasta principal de configuração do QGIS. Nesta pasta você encontrará os sub-diretórios <code class="docutils literal notranslate"><span class="pre">pluginbuilder3</span></code> e <code class="docutils literal notranslate"><span class="pre">plugin_reloader</span></code>, que correspondem, respectivamente, às pastas dos plugins <code class="docutils literal notranslate"><span class="pre">Plugin</span> <span class="pre">Builder</span> <span class="pre">3</span></code> e <code class="docutils literal notranslate"><span class="pre">Plugin</span> <span class="pre">Reloader</span></code>, instalados no início desta seção.</p>
+<div class="admonition tip">
+<p class="admonition-title">Dica</p>
+<p>No meu ambiente Linux Ubuntu 20.04 (<a class="reference internal" href="preparacao-ambiente.html#sec-qgis-preparacao-ambiente"><span class="std std-numref">Seção 4.1</span></a>), esse caminho é o seguinte:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">gribeiro</span><span class="o">/.</span><span class="n">local</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">QGIS</span><span class="o">/</span><span class="n">QGIS3</span><span class="o">/</span><span class="n">profiles</span><span class="o">/</span><span class="n">default</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">plugins</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Dica</p>
+<p>Para descobrir onde o QGIS encontra-se instalado, utilize o comando abaixo no console Python dentro do próprio QGIS:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">QgsApplication</span><span class="o">.</span><span class="n">prefixPath</span><span class="p">()</span>
+<span class="go">&#39;/usr&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="criando-o-plugin-spectral">
+<h2><span class="section-number">4.3.2. </span>Criando o Plugin <code class="docutils literal notranslate"><span class="pre">Spectral</span></code><a class="headerlink" href="#criando-o-plugin-spectral" title="Link permanente para este título">¶</a></h2>
+<p>Vamos criar um plugin chamado <code class="docutils literal notranslate"><span class="pre">Spectral</span></code>. Para tal, abra o <code class="docutils literal notranslate"><span class="pre">Plugin</span> <span class="pre">Builder</span></code>, acessando o menu <code class="docutils literal notranslate"><span class="pre">Plugins</span> <span class="pre">|</span> <span class="pre">Plugin</span> <span class="pre">Builder</span> <span class="pre">|</span> <span class="pre">Plugin</span> <span class="pre">Builder</span></code>. Na janela apresentada (<a class="reference internal" href="#fig-qgis-criando-plugins-pbuilder-spectral-01"><span class="std std-numref">Figura 4.24</span></a>), preencha as informações básicas sobre este novo plugin.</p>
+<div class="align-center figure align-default" id="fig-qgis-criando-plugins-pbuilder-spectral-01">
+<a class="reference internal image-reference" href="../_images/pbuilder-spectral-01.png"><img alt="Criando o plugin Spectral - Informações básicas do plugin" src="../_images/pbuilder-spectral-01.png" style="width: 70%;" /></a>
+<p class="caption"><span class="caption-number">Figura 4.24 - </span><span class="caption-text">Criando o plugin Spectral - Informações básicas do plugin.</span><a class="headerlink" href="#fig-qgis-criando-plugins-pbuilder-spectral-01" title="Link Permanente para essa imagem">¶</a></p>
+</div>
+<p>Em seguida, forneça uma breve descrição desse plugin (<a class="reference internal" href="#fig-qgis-criando-plugins-pbuilder-spectral-02"><span class="std std-numref">Figura 4.25</span></a>).</p>
+<div class="align-center figure align-default" id="fig-qgis-criando-plugins-pbuilder-spectral-02">
+<a class="reference internal image-reference" href="../_images/pbuilder-spectral-02.png"><img alt="Criando o plugin Spectral - Descrição do plugin" src="../_images/pbuilder-spectral-02.png" style="width: 70%;" /></a>
+<p class="caption"><span class="caption-number">Figura 4.25 - </span><span class="caption-text">Criando o plugin Spectral - Descrição do plugin.</span><a class="headerlink" href="#fig-qgis-criando-plugins-pbuilder-spectral-02" title="Link Permanente para essa imagem">¶</a></p>
+</div>
+<p>Podemos escolher a criação do plugin baseado em alguns modelos (<a class="reference internal" href="#fig-qgis-criando-plugins-pbuilder-spectral-03"><span class="std std-numref">Figura 4.26</span></a>). No caso, iremos selecionar a opção <code class="docutils literal notranslate"><span class="pre">Tool</span> <span class="pre">button</span> <span class="pre">with</span> <span class="pre">dialog</span></code>. Além disso, a opção de acesso à janela desse plugin será associada ao menu <code class="docutils literal notranslate"><span class="pre">Plugins</span></code> na interface principal do QGIS.</p>
+<div class="align-center figure align-default" id="fig-qgis-criando-plugins-pbuilder-spectral-03">
+<a class="reference internal image-reference" href="../_images/pbuilder-spectral-03.png"><img alt="Criando o plugin Spectral - Modelo do plugin" src="../_images/pbuilder-spectral-03.png" style="width: 70%;" /></a>
+<p class="caption"><span class="caption-number">Figura 4.26 - </span><span class="caption-text">Criando o plugin Spectral - Modelo do plugin.</span><a class="headerlink" href="#fig-qgis-criando-plugins-pbuilder-spectral-03" title="Link Permanente para essa imagem">¶</a></p>
+</div>
+<p>Na janela seguinte (<a class="reference internal" href="#fig-qgis-criando-plugins-pbuilder-spectral-04"><span class="std std-numref">Figura 4.27</span></a>), deixe todas as opções marcadas pois assim o modelo já dará suporte à internacionalização de código, isto é, você poderá fornecer arquivos com a tradução de textos e rótulos apresentados ao usuário.</p>
+<div class="align-center figure align-default" id="fig-qgis-criando-plugins-pbuilder-spectral-04">
+<a class="reference internal image-reference" href="../_images/pbuilder-spectral-04.png"><img alt="Criando o plugin Spectral - Opções de suporte no projeto do plugin" src="../_images/pbuilder-spectral-04.png" style="width: 70%;" /></a>
+<p class="caption"><span class="caption-number">Figura 4.27 - </span><span class="caption-text">Criando o plugin Spectral - Opções de suporte no projeto do plugin.</span><a class="headerlink" href="#fig-qgis-criando-plugins-pbuilder-spectral-04" title="Link Permanente para essa imagem">¶</a></p>
+</div>
+<p>A janela seguinte, permite que você inclua nos metadados do plugin, informações sobre o repositório de código fonte e o local para reportar bugs ou acessar documentação adicional de seu plugin (<a class="reference internal" href="#fig-qgis-criando-plugins-pbuilder-spectral-05"><span class="std std-numref">Figura 4.28</span></a>).</p>
+<div class="align-center figure align-default" id="fig-qgis-criando-plugins-pbuilder-spectral-05">
+<a class="reference internal image-reference" href="../_images/pbuilder-spectral-05.png"><img alt="Criando o plugin Spectral - Metadados adicionais do plugin" src="../_images/pbuilder-spectral-05.png" style="width: 70%;" /></a>
+<p class="caption"><span class="caption-number">Figura 4.28 - </span><span class="caption-text">Criando o plugin Spectral - Metadados adicionais do plugin.</span><a class="headerlink" href="#fig-qgis-criando-plugins-pbuilder-spectral-05" title="Link Permanente para essa imagem">¶</a></p>
+</div>
+<p>A última janela apresentada pelo <code class="docutils literal notranslate"><span class="pre">Plugin</span> <span class="pre">Builder</span></code> permite definir a pasta onde o código do plugin será gerado, a partir do modelo selecionado (<a class="reference internal" href="#fig-qgis-criando-plugins-pbuilder-spectral-06"><span class="std std-numref">Figura 4.29</span></a>).</p>
+<div class="align-center figure align-default" id="fig-qgis-criando-plugins-pbuilder-spectral-06">
+<a class="reference internal image-reference" href="../_images/pbuilder-spectral-06.png"><img alt="Criando o plugin Spectral - Diretório alvo para geração do código do plugin" src="../_images/pbuilder-spectral-06.png" style="width: 70%;" /></a>
+<p class="caption"><span class="caption-number">Figura 4.29 - </span><span class="caption-text">Criando o plugin Spectral - Diretório alvo para geração do código do plugin.</span><a class="headerlink" href="#fig-qgis-criando-plugins-pbuilder-spectral-06" title="Link Permanente para essa imagem">¶</a></p>
+</div>
+<p>Se tudo ocorrer bem, uma janela como a da <a class="reference internal" href="#fig-qgis-criando-plugins-pbuilder-spectral-07"><span class="std std-numref">Figura 4.30</span></a> será apresentada, com um resumo da crição do seu plugin.</p>
+<div class="align-center figure align-default" id="fig-qgis-criando-plugins-pbuilder-spectral-07">
+<a class="reference internal image-reference" href="../_images/pbuilder-spectral-07.png"><img alt="Criando o plugin Spectral - Sumário da criação do plugin" src="../_images/pbuilder-spectral-07.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Figura 4.30 - </span><span class="caption-text">Criando o plugin Spectral - Sumário da criação do plugin.</span><a class="headerlink" href="#fig-qgis-criando-plugins-pbuilder-spectral-07" title="Link Permanente para essa imagem">¶</a></p>
+</div>
+</div>
+<div class="section" id="carregando-o-plugin-spectral-no-qgis">
+<h2><span class="section-number">4.3.3. </span>Carregando o Plugin Spectral no QGIS<a class="headerlink" href="#carregando-o-plugin-spectral-no-qgis" title="Link permanente para este título">¶</a></h2>
+<p>Reinicie o QGIS para que ele atualize a lista de plugins disponíveis no seu sistema. Ao abrir o QGIS novamente, selecione a opção de menu <code class="docutils literal notranslate"><span class="pre">Plugins</span> <span class="pre">|</span> <span class="pre">Manage</span> <span class="pre">and</span> <span class="pre">Install</span> <span class="pre">Plugins...</span></code>. Na janela que se abre, selecione o plugin com nome Spectral, como indicado na <a class="reference internal" href="#fig-qgis-criando-plugins-spectral-install"><span class="std std-numref">Figura 4.31</span></a></p>
+<div class="align-center figure align-default" id="fig-qgis-criando-plugins-spectral-install">
+<a class="reference internal image-reference" href="../_images/spectral-install.png"><img alt="Instalando o plugin Spectral" src="../_images/spectral-install.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Figura 4.31 - </span><span class="caption-text">Instalando o plugin Spectral.</span><a class="headerlink" href="#fig-qgis-criando-plugins-spectral-install" title="Link Permanente para essa imagem">¶</a></p>
+</div>
+<p>Se o plugin for devidamente carregado, ao fechar a janela de instalação de plugins, você verá que um novo botão, como destacado na <a class="reference internal" href="#fig-qgis-criando-plugins-spectral-botao-menu"><span class="std std-numref">Figura 4.32</span></a> será apresentado, bem como a opção de menu <code class="docutils literal notranslate"><span class="pre">Spectral</span></code> será acrescentada ao menu <code class="docutils literal notranslate"><span class="pre">Plugins</span></code>.</p>
+<div class="align-center figure align-default" id="fig-qgis-criando-plugins-spectral-botao-menu">
+<a class="reference internal image-reference" href="../_images/spectral-botao-menu.png"><img alt="Botão e Menu de acesso ao plugin Spectral" src="../_images/spectral-botao-menu.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Figura 4.32 - </span><span class="caption-text">Botão e Menu de acesso ao plugin Spectral.</span><a class="headerlink" href="#fig-qgis-criando-plugins-spectral-botao-menu" title="Link Permanente para essa imagem">¶</a></p>
+</div>
+<p>Se você tiver conseguido criar corretamente a estrutura do plugin, ao selecionar a opção <code class="docutils literal notranslate"><span class="pre">Spectral</span></code> no menu (<a class="reference internal" href="#fig-qgis-criando-plugins-spectral-botao-menu"><span class="std std-numref">Figura 4.32</span></a>), uma janela como a da <a class="reference internal" href="#fig-qgis-criando-plugins-plugin-spectral-dialogo"><span class="std std-numref">Figura 4.33</span></a> será apresentada.</p>
+<div class="align-center figure align-default" id="fig-qgis-criando-plugins-plugin-spectral-dialogo">
+<a class="reference internal image-reference" href="../_images/plugin-spectral-dialogo.png"><img alt="Janela do plugin Spectral logo após sua criação" src="../_images/plugin-spectral-dialogo.png" style="width: 40%;" /></a>
+<p class="caption"><span class="caption-number">Figura 4.33 - </span><span class="caption-text">Janela do plugin Spectral logo após sua criação.</span><a class="headerlink" href="#fig-qgis-criando-plugins-plugin-spectral-dialogo" title="Link Permanente para essa imagem">¶</a></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="plugin-debug.html" class="btn btn-neutral float-right" title="4.4. Preparando o Ambiente para Inspeção do Código de um Plugin" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="python-console.html" class="btn btn-neutral float-left" title="4.2. Console Python no QGIS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-165908761-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

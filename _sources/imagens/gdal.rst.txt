@@ -347,7 +347,7 @@ Para computar um índice de vegetação, o NDVI, a partir das matrizes com os va
 
 .. note::
 
-    No cálculo da ``matriz_ndvi`` foi colocado um termo adicional no denominador, 0.000000001. Embora não faça parte da equação original, este termo com evita que aconteçam divisões por zero, gerando valores nulos, ou inconsistentes, na matriz final. Por ser um valor muito pequeno, não impacta no resultado dos demais cálculos.
+    No cálculo da ``matriz_ndvi`` foi colocado um termo adicional no denominador, 0.000000001. Embora não faça parte da equação original, este termo evita que aconteçam divisões por zero, gerando valores nulos, ou inconsistentes, na matriz final. Por ser um valor muito pequeno, não impacta no resultado dos demais cálculos.
 
 
 Podemos combinar as bibliotecas NumPy e Matplotlib para visualizar as matrizes como imagens::

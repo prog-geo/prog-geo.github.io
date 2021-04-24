@@ -256,10 +256,10 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">docker</span><span class="o">-</span><span class="n">ce</span> <span class="n">docker</span><span class="o">-</span><span class="n">ce</span><span class="o">-</span><span class="n">cli</span> <span class="n">containerd</span><span class="o">.</span><span class="n">io</span>
 </pre></div>
 </div>
-<dl class="simple">
-<dt><strong>7.</strong> Faça um teste para ver se o Docker foi corretamente instalado, lançando um contêiner de teste a partir da imagem <code class="docutils literal notranslate"><span class="pre">hello-world</span></code>::</dt><dd><p>sudo docker run hello-world</p>
-</dd>
-</dl>
+<p><strong>7.</strong> Faça um teste para ver se o Docker foi corretamente instalado, lançando um contêiner de teste a partir da imagem <code class="docutils literal notranslate"><span class="pre">hello-world</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">docker</span> <span class="n">run</span> <span class="n">hello</span><span class="o">-</span><span class="n">world</span>
+</pre></div>
+</div>
 <p><strong>8.</strong> Adicione seu usuário ao grupo <code class="docutils literal notranslate"><span class="pre">docker</span></code> para que seus próximos comandos não precisem ser executados através do <code class="docutils literal notranslate"><span class="pre">sudo</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sudo usermod -aG docker $USER
 </pre></div>

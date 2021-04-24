@@ -1,0 +1,439 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _sec_qgis_plugin_debug:
+
+Preparando o Ambiente para Inspeção do Código de um Plugin
+==========================================================
+
+
+Para inspecionar o código de um plugin Python durante sua execução no QGIS, precisamos utilizar uma ferramenta que permita ligar o processo do QGIS ao ambiente de depuração. Uma possível ferramenta a ser empregada para essa finalidade é o `PyDev <https://www.pydev.org/>`_, que é uma IDE Python para o Eclipse. O PyDev permite realizar a depuração de um código Python de maneira remota (`Remote Debugger <https://www.pydev.org/manual_adv_remote_debugger.html>`_). Uma maneira fácil de utilizar o PyDev é através da distribuição `LiClipse <http://www.liclipse.com/index.html>`_, que já fornece uma versão pré-instalada do PyDev. Esta seção explica como utilizar o PyDev para inspecionar o código de um plugin Python do QGIS a partir do LiClipse.
+
+
+.. note::
+
+    Se você não tiver o QGIS ou o LiClipse instalados, considere a leitura da :numref:`Seção %s <sec_qgis_preparacao_ambiente>`.
+
+
+Configurando o QGIS para uso do PyDev
+-------------------------------------
+
+
+Precisamos instruir o QGIS de maneira que a variável ``PYTHONPATH`` aponte para o diretório do arquivo ``pydevd.py`` distribuído com o LiClipse. Para localizar o arquivo ``pydevd.py``, no Linux, utilize o seguinte comando::
+
+    find ~/liclipse/ -name pydevd.py
+
+
+Esse comando irá produzir uma saída semelhante à apresentada abaixo::
+
+    /home/gribeiro/liclipse/plugins/org.python.pydev.core_7.5.0.202001101115/pysrc/pydevd.py
+
+
+No QGIS, selecione o menu ``Settings | Options``. Uma janela como a da :numref:`Figura %s <fig:qgis:plugin-debug:options-system>` será aberta.
+
+
+.. figure:: ../img/qgis/options-system.png
+        :alt: Opções do sistema para o QGIS
+        :width: 100%
+        :figclass: align-center
+        :name: fig:qgis:plugin-debug:options-system
+
+        Opções do sistema para o QGIS.
+
+
+Na opção ``System``, seção ``Environment``, acrescente a variável ``PYTHONPATH``, associada ao caminho do módulo ``pydevd``, como indicado na :numref:`Figura %s <fig:qgis:plugin-debug:options-system-env>`.
+
+
+.. figure:: ../img/qgis/options-system-env.png
+        :alt: Configurando a variável PYTHONPATH no QGIS
+        :width: 100%
+        :figclass: align-center
+        :name: fig:qgis:plugin-debug:options-system-env
+
+        Configurando a variável ``PYTHONPATH`` no QGIS.
+
+.. note::
+
+    No meu sistema, usei o seguinte caminho::
+
+        /home/gribeiro/liclipse/plugins/org.python.pydev.core_7.5.0.202001101115/pysrc/
+
+
+Após incluir essa variável, reinicie o QGIS. Em seguida, abra o console Python do QGIS e entre com o seguinte comando::
+
+    >>> import pydevd
+
+
+A :numref:`Figura %s <fig:qgis:plugin-debug:import-pydevd>` mostra a execução deste comando.
+
+
+.. figure:: ../img/qgis/import-pydevd.png
+    :alt: Carregando o módulo pydevd para debug remoto no QGIS
+    :width: 100%
+    :figclass: align-center
+    :name: fig:qgis:plugin-debug:import-pydevd
+
+    Carregando o módulo ``pydevd`` para debug remoto no QGIS.
+
+
+Criando uma Área de Trabalho no LiClipse
+----------------------------------------
+
+
+Ao executar o aplicativo LiClipse, será exibida uma janela como a da :numref:`Figura %s <fig:qgis:plugin-debug:liclipse-select-workspace>`.
+
+
+.. figure:: ../img/qgis/liclipse-select-workspace.png
+    :alt: Criando uma área de trabalho (workspace) no LiClipse
+    :width: 100%
+    :figclass: align-center
+    :name: fig:qgis:plugin-debug:liclipse-select-workspace
+
+    Criando uma área de trabalho (*workspace*) no LiClipse.
+
+
+Nessa janela, indique o nome do diretório onde você deseja armazenar as configurações e projetos relativos ao desenvolvimento de plugins do QGIS. Esse diretório é chamado de ``workspace``, no jargão do LiClipse. Você pode indicar um novo diretório, por exemplo, chamado ``QGIS-Plugins``, que será automaticamente criado pelo LiClipse. Após confirmar essa pasta, uma janela como a da :numref:`Figura %s <fig:qgis:plugin-debug:liclipse-janela-principal>` será apresentada, sem nenhum arquivo ou projeto ainda.
+
+
+.. figure:: ../img/qgis/liclipse-janela-principal.png
+    :alt: Janela principal do LiClipse
+    :width: 100%
+    :figclass: align-center
+    :name: fig:qgis:plugin-debug:liclipse-janela-principal
+
+    Janela principal do LiClipse.
+
+
+.. note::
+
+    O LiClipse é baseado no Eclipse e, portanto, o conceito de **workspace** é o mesmo do Eclipse.
+
+
+Configurando o Interperatdor Python no PyDev/LiClipse
+-----------------------------------------------------
+
+
+Ao abrir o ``LiClipse``, vamos configurar o interpretador Python. Para isso, acesse o menu ``Window | Preferences`` (:numref:`Figura %s <fig:qgis:plugin-debug:liclipse-preferences>`).
+
+
+.. figure:: ../img/qgis/liclipse-preferences.png
+    :alt: Preferências do LiClipse
+    :width: 100%
+    :figclass: align-center
+    :name: fig:qgis:plugin-debug:liclipse-preferences
+
+    Preferências do LiClipse.
+
+
+Na janela que se abre, selecione a opção ``PyDev | Interpreters | Python Interpreter``, como mostrado na :numref:`Figura %s <fig:qgis:plugin-debug:liclipse-preferences-python-01>`.
+
+
+.. figure:: ../img/qgis/liclipse-preferences-python-01.png
+    :alt: Configurando o interpretador Python do PyDev/LiClipse
+    :width: 100%
+    :figclass: align-center
+    :name: fig:qgis:plugin-debug:liclipse-preferences-python-01
+
+    Configurando o interpretador Python do PyDev/LiClipse.
+
+
+Pressione o botão ``Browse for python/pypy exe`` para adicionar um interpretador. Uma janela como a da :numref:`Figura %s <fig:qgis:plugin-debug:liclipse-preferences-python-02>` será apresentada. Forneça a localização do executável do interpretador Python bem como um nome fácil de referenciá-lo quando necessário.
+
+
+.. figure:: ../img/qgis/liclipse-preferences-python-02.png
+    :alt: Definindo o nome e a localização do interpretador Python no PyDev/LiClipse
+    :width: 100%
+    :figclass: align-center
+    :name: fig:qgis:plugin-debug:liclipse-preferences-python-02
+
+    Definindo o nome e a localização do interpretador Python no PyDev/LiClipse.
+
+
+A janela seguinte, :numref:`Figura %s <fig:qgis:plugin-debug:liclipse-preferences-python-03>`, apenas indica que o PyDev irá acrescentar alguns caminhos ao ``PATH`` do interpretador Python quando este for usado.
+
+
+.. figure:: ../img/qgis/liclipse-preferences-python-03.png
+    :alt: Caminhos adicionados ao PATH do interpretador Python
+    :width: 100%
+    :figclass: align-center
+    :name: fig:qgis:plugin-debug:liclipse-preferences-python-03
+
+    Caminhos adicionados ao ``PATH`` do interpretador Python.
+
+
+Se o executável do seu interpretador Python for corretamente informado, você verá a lista de pacotes disponíveis para uso na aba ``Packages`` (:numref:`Figura %s <fig:qgis:plugin-debug:liclipse-preferences-python-04>`). Nessa janela, apenas confirme as informações pressionando o botão ``Apply and Close``.
+
+
+.. figure:: ../img/qgis/liclipse-preferences-python-04.png
+    :alt: Configuração completa do interpretador Python no PyDev/LiClipse
+    :width: 100%
+    :figclass: align-center
+    :name: fig:qgis:plugin-debug:liclipse-preferences-python-04
+
+    Configuração completa do interpretador Python no PyDev/LiClipse.
+
+
+Configurando as Opções de Debug Remoto no PyDev/LiClipse
+--------------------------------------------------------
+
+
+Agora, precisamos ativar as opções de ``Debug Remoto`` (*Remote Debugger*). Para que estas opções estejam disponíveis no menu ``PyDev`` da interface do LiClipse, selecione o menu ``Window | Perspective | Customize Perspective``. Uma janela como a da :numref:`Figura %s <fig:qgis:plugin-debug:liclipse-customize-perspective-01>` será apresentada.
+
+
+.. figure:: ../img/qgis/liclipse-customize-perspective-01.png
+    :alt: Janela para ativação das opções de Debug Remoto na interface gráfica do PyDev/LiClipse
+    :width: 100%
+    :figclass: align-center
+    :name: fig:qgis:plugin-debug:liclipse-customize-perspective-01
+
+    Janela para ativação das opções de ``Debug Remoto`` na interface gráfica do PyDev/LiClipse.
+
+
+Na aba ``Action Set Availability``, selecione o item ``PyDev Debug`` como indicado na :numref:`Figura %s <fig:qgis:plugin-debug:liclipse-customize-perspctive-02>`. Em seguida, pressione o botão ``Apply and Close``.
+
+
+.. figure:: ../img/qgis/liclipse-customize-perspective-02.png
+    :alt: Ativando os botões de ação de Debug Remoto para a interface gráfica do PyDev/LiClipse
+    :width: 100%
+    :figclass: align-center
+    :name: fig:qgis:plugin-debug:liclipse-customize-perspctive-02
+
+    Ativando os botões de ação de Debug Remoto para a interface gráfica do PyDev/LiClipse.
+
+
+No menu ``PyDev``, verifique se as opções mostradas na :numref:`Figura %s <fig:qgis:plugin-debug:liclipse-remote-debug>` são apresentadas.
+
+
+.. figure:: ../img/qgis/liclipse-remote-debug.png
+    :alt: Opções de Debug Remoto do PyDev
+    :width: 100%
+    :figclass: align-center
+    :name: fig:qgis:plugin-debug:liclipse-remote-debug
+
+    Opções de ``Debug Remoto`` do PyDev.
+
+
+Criando o Projeto do Plugin no LiClipse
+---------------------------------------
+
+
+Todas as configurações realizadas até o momento valem para a área de trabalho (``workspace``) criada, a qual se chama ``QGIS-Plugins``. Vamos agora criar um projeto do ``PyDev``. Acesse o menu ``File | New | Project...``. Uma janela como a da :numref:`Figura %s <fig:qgis:plugin-debug:liclipse-pydev-new-proj-01>` será apresentada. Selecione a opção ``PyDev Project`` como indicado na figura e pressione o botão ``Next``.
+
+
+.. figure:: ../img/qgis/liclipse-pydev-new-proj-01.png
+    :alt: Criando um projeto do PyDev
+    :width: 100%
+    :figclass: align-center
+    :name: fig:qgis:plugin-debug:liclipse-pydev-new-proj-01
+
+    Criando um projeto do PyDev.
+
+
+Na janela seguinte (:numref:`Figura %s <fig:qgis:plugin-debug:liclipse-pydev-new-proj-02>`), dê o nome do projeto de ``Spectral`` e marque a opção ``Create links to existing sources``, para poder apontar para o diretório onde você instalou o plugin ``Spectral``.
+
+
+.. figure:: ../img/qgis/liclipse-pydev-new-proj-02.png
+    :alt: Definindo o nome do projeto PyDev: Spectral
+    :width: 100%
+    :figclass: align-center
+    :name: fig:qgis:plugin-debug:liclipse-pydev-new-proj-02
+
+    Definindo o nome do projeto PyDev: ``Spectral``.
+
+
+Ao pressionar o botão ``Next``, a janela da :numref:`Figura %s <fig:qgis:plugin-debug:liclipse-pydev-new-proj-03>` será apresentada. Aponte para a pasta onde o QGIS mantém os arquivos do seu plugin Spectral.
+
+
+.. figure:: ../img/qgis/liclipse-pydev-new-proj-03.png
+    :alt: Vinculando os arquivos do plugin Spectral ao projeto Spectral do PyDev
+    :width: 100%
+    :figclass: align-center
+    :name: fig:qgis:plugin-debug:liclipse-pydev-new-proj-03
+
+    Vinculando os arquivos do plugin ``Spectral`` ao projeto ``Spectral`` do PyDev.
+
+
+.. note::
+
+    A pasta do meu plugin ``Spectral`` encontra-se em::
+
+        /home/gribeiro/.local/share/QGIS/QGIS3/profiles/default/python/plugins/spectral/
+
+
+Na próxima janela (:numref:`Figura %s <fig:qgis:plugin-debug:liclipse-pydev-new-proj-04>`), pressione apenas o botão ``Finish``.
+
+
+.. figure:: ../img/qgis/liclipse-pydev-new-proj-04.png
+    :alt: Finalizando a criação do projeto WTSS do PyDev
+    :width: 100%
+    :figclass: align-center
+    :name: fig:qgis:plugin-debug:liclipse-pydev-new-proj-04
+
+    Finalizando a criação do projeto ``Spectral`` do PyDev.
+
+
+Ao final, você deverá ter uma janela como a mostrada na :numref:`Figura %s <fig:qgis:plugin-debug:liclipse-pydev-new-proj-05>`.
+
+
+.. figure:: ../img/qgis/liclipse-pydev-new-proj-05.png
+    :alt: Projeto Spectral do PyDev apontando para os arquivos do plugin Spectral do QGIS
+    :width: 100%
+    :figclass: align-center
+    :name: fig:qgis:plugin-debug:liclipse-pydev-new-proj-05
+
+    Projeto ``Spectral`` do PyDev apontando para os arquivos do plugin ``Spectral`` do QGIS.
+
+
+Inicializando o Debug Remoto
+----------------------------
+
+
+Para ativar o `Debug Remoto <https://www.pydev.org/manual_adv_remote_debugger.html>`_, vá ao menu ``PyDev | Start Debug Server``. Você verá uma mensagem na parte inferior do LiClipse, no ``Console``, com a seguinte informação (:numref:`Figura %s <fig:qgis:plugin-debug:liclipse-debug-server-started>`)::
+
+    Debug Server at port: 5678
+
+
+.. figure:: ../img/qgis/liclipse-debug-server-started.png
+    :alt: Debug remoto inicializado na porta 5678
+    :width: 100%
+    :figclass: align-center
+    :name: fig:qgis:plugin-debug:liclipse-debug-server-started
+
+    Debug remoto inicializado na porta 5678.
+
+
+.. note::
+
+    Essa mensagem indica que o servidor foi inicializado e está aguardando uma conexão remota.
+
+
+Antes de irmos à próxima seção, marque um ponto de parada (*breakpoint*) na linha 183 do arquivo ``spectral.py``, como mostrado na :numref:`Figura %s <fig:qgis:plugin-debug:liclipse-pydev-remote-debug-01>`.
+
+
+.. figure:: ../img/qgis/liclipse-pydev-remote-debug-01.png
+    :alt: Marcando um ponto de parada no projeto Spectral do PyDev/LiClipse
+    :width: 100%
+    :figclass: align-center
+    :name: fig:qgis:plugin-debug:liclipse-pydev-remote-debug-01
+
+    Marcando um ponto de parada no projeto ``Spectral`` do PyDev/LiClipse.
+
+
+Aproveite também para deixar o LiClipse na perspectiva de Debug. Para isso, acesse o menu ``Window | Perspective | Open Perspective | Other ...`` e selecione a opção indicada na :numref:`Figura %s <fig:qgis:plugin-debug:liclipse-open-debug-perspective>`.
+
+
+.. figure:: ../img/qgis/liclipse-open-debug-perspective.png
+    :alt: Selecionando a perspectiva de Debug no LiClipse
+    :width: 60%
+    :figclass: align-center
+    :name: fig:qgis:plugin-debug:liclipse-open-debug-perspective
+
+    Selecionando a perspectiva de Debug no LiClipse.
+
+
+A seguinte janela deverá ser apresentada (:numref:`Figura %s <fig:qgis:plugin-debug:liclipse-debug-perspective>`):
+
+.. figure:: ../img/qgis/liclipse-debug-perspective.png
+    :alt: Perspectiva de Debug no LiClipse
+    :width: 100%
+    :figclass: align-center
+    :name: fig:qgis:plugin-debug:liclipse-debug-perspective
+
+    Perspectiva de Debug no LiClipse.
+
+
+Conectando o QGIS ao Debug do PyDev
+-----------------------------------
+
+
+No console Python do QGIS (:numref:`Figura %s <fig:qgis:plugin-debug:qgis-remote-debug-settrace>`), entre com o comando para se conectar ao servidor de debug remoto::
+
+    >>> pydevd.settrace(port=5678, suspend=False)
+
+
+.. figure:: ../img/qgis/qgis-remote-debug-settrace.png
+    :alt: Conectando o QGIS ao debug remoto do PyDev/LiClipse
+    :width: 100%
+    :figclass: align-center
+    :name: fig:qgis:plugin-debug:qgis-remote-debug-settrace
+
+    Conectando o QGIS ao debug remoto do PyDev/LiClipse.
+
+
+A conexão pode levar alguns segundos para ser estabelecida. A :numref:`Figura %s <fig:qgis:plugin-debug:liclipse-remote-debug-client-connected>` mostra como fica a janela do LiClipse após o cliente, no caso, o QGIS, se conectar ao servidor de debug remoto.
+
+
+.. figure:: ../img/qgis/liclipse-remote-debug-client-connected.png
+    :alt: PyDev conectado para debug remoto ao QGIS
+    :width: 100%
+    :figclass: align-center
+    :name: fig:qgis:plugin-debug:liclipse-remote-debug-client-connected
+
+    PyDev conectado para debug remoto ao QGIS.
+
+
+.. note::
+
+    Caso ocorra algum erro ao executar o comando ``pydevd.settrace``, o console do Python exibirá uma mensagem de erro similiar à mostrada abaixo::
+
+        Could not connect to 127.0.0.1: 5678
+        Traceback (most recent call last):
+          File "/home/gribeiro/liclipse/plugins/org.python.pydev.core_7.5.0.202001101115/pysrc/_pydevd_bundle/pydevd_comm.py", line 514, in start_client
+            s.connect((host, port))
+        ConnectionRefusedError: [Errno 111] Connection refused
+        Traceback (most recent call last):
+          File "/usr/lib/python3.6/code.py", line 91, in runcode
+            exec(code, self.locals)
+          File "<input>", line 1, in <module>
+          File "/home/gribeiro/liclipse/plugins/org.python.pydev.core_7.5.0.202001101115/pysrc/pydevd.py", line 2550, in settrace
+            client_access_token,
+          File "/home/gribeiro/liclipse/plugins/org.python.pydev.core_7.5.0.202001101115/pysrc/pydevd.py", line 2610, in _locked_settrace
+            py_db.connect(host, port)  # Note: connect can raise error.
+          File "/home/gribeiro/liclipse/plugins/org.python.pydev.core_7.5.0.202001101115/pysrc/pydevd.py", line 1179, in connect
+            s = start_client(host, port)
+          File "/home/gribeiro/liclipse/plugins/org.python.pydev.core_7.5.0.202001101115/pysrc/_pydevd_bundle/pydevd_comm.py", line 514, in start_client
+            s.connect((host, port))
+        ConnectionRefusedError: [Errno 111] Connection refused
+
+
+Ao selecionar o plugin ``Spectral``, na janela do QGIS (``Plugins | spectral | Spectral``), o LiClipse deverá parar na linha 188 do arquivo ``spectral.py``, conforme mostrado na :numref:`Figura %s <fig:qgis:plugin-debug:liclipse-remote-debug-work>`.
+
+
+.. figure:: ../img/qgis/liclipse-remote-debug-work.png
+    :alt: Parada do código do plugin na interface do LiClipse
+    :width: 100%
+    :figclass: align-center
+    :name: fig:qgis:plugin-debug:liclipse-remote-debug-work
+
+    Parada do código do plugin na interface do LiClipse.
+
+
+Deste ponto em diante, você poderá controlar a execução do seu plugin no LiClipse. Quando a linha de exibição da janela do plugin Spectral for executada, a janela mostrada na :numref:`Figura %s <fig:qgis:plugin-debug:spectral-plugin-janela-inicial>` será apresentada.
+
+
+.. figure:: ../img/qgis/spectral-plugin-janela-inicial.png
+    :alt: Janela do plugin Spectral
+    :width: 40%
+    :figclass: align-center
+    :name: fig:qgis:plugin-debug:spectral-plugin-janela-inicial
+
+    Janela do plugin WTSS.
+
+
+.. note::
+
+    Apenas resumindo, que o comando completo para uso no console Python do QGIS que estabelece a conexão ao servidor de debug remoto do PyDev pode ser realizado através do seguinte trecho de código:
+
+
+    .. code-block:: python
+
+        import pydevd
+
+        try:
+            pydevd.settrace(port=5678, suspend=False)
+        except:
+            pass
+
+

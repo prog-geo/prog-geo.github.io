@@ -1,0 +1,250 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _sec_qgis_criando_plugins:
+
+Construindo Plugins para o QGIS em Python
+=========================================
+
+
+O QGIS fornece um plugin chamado ``Plugin Builder 3`` que auxilia na preparação de um novo plugin Python através de um *template*. O ``Plugin Builder 3`` pode ser instalado, a partir da janela principal do QGIS, acessando o menu ``Plugins | Manage and Install Plugins...``. Na janela apresentada (:numref:`Figura %s <fig:qgis:criando-plugins:plugin-builder-install>`), selecione o nome do ``Plugin Builder 3`` e pressione o botão de instalação (``Install plugin``).
+
+
+.. figure:: ../img/qgis/plugin-builder-install.png
+    :alt: Instalação do Plugin Builder 3
+    :width: 100%
+    :figclass: align-center
+    :name: fig:qgis:criando-plugins:plugin-builder-install
+
+    Instalação do ``Plugin Builder 3``.
+
+
+Nessa mesma janela, aproveite e faça a instalção do ``Plugin Reloader``, como mostrado na :numref:`Figura %s <fig:qgis:criando-plugins:plugin-reloader-install>`. Esse plugin possibilitará recarregar outros plugins em desenvolvimento quando realizarmos alterações em seus códigos.
+
+
+.. figure:: ../img/qgis/plugin-reloader-install.png
+    :alt: Instalação do Plugin Reloader
+    :width: 100%
+    :figclass: align-center
+    :name: fig:qgis:criando-plugins:plugin-reloader-install
+
+    Instalação do ``Plugin Reloader``.
+
+
+Na janela ``Plugins | Settings``, habilite também a apresentação de **plugins experimentais** (:numref:`Figura %s <fig:qgis:criando-plugins:plugins-settings-experimental>`), que será o caso do plugin que iremos criar nesta seção.
+
+
+.. figure:: ../img/qgis/plugins-settings-experimental.png
+    :alt: Habilitando plugins experimentais
+    :width: 100%
+    :figclass: align-center
+    :name: fig:qgis:criando-plugins:plugins-settings-experimental
+
+    Habilitando plugins experimentais.
+
+
+Após a instalação desses dois plugins, você terá no menu ``Plugins`` as opções mostradas na :numref:`Figura %s <fig:qgis:criando-plugins:plugin-builder-reloader-menu>`.
+
+
+.. figure:: ../img/qgis/plugin-builder-reloader-menu.png
+    :alt: Opções no menu Plugins: Plugin Builder 3 e Plugin Reloader
+    :width: 100%
+    :figclass: align-center
+    :name: fig:qgis:criando-plugins:plugin-builder-reloader-menu
+
+    Opções no menu Plugins: ``Plugin Builder 3`` e ``Plugin Reloader``.
+
+
+Localização dos Plugins do QGIS no seu Sistema
+----------------------------------------------
+
+
+Por padrão o QGIS mantém uma estrutura de pastas base onde armazena informações de configuração e o código de seus plugins. Em cada sistema operacional, temos uma localização específica, por exemplo:
+
+
+.. tabs::
+
+
+   .. tab:: Microsoft Windows
+
+      No Microsoft Windows, esses arquivos encontram-se sob a pasta ``AppData\Roaming\QGIS\QGIS3``, dentro da pasta principal do usuário, que, em geral, se localiza em ``C:\Users\%USERNAME%`` ou, apenas ``%HOMEPATH%``.
+
+
+   .. tab:: macOS
+
+      No macOS, esses arquivos encontram-se sob a pasta ``Library/Application Support/QGIS/QGIS3``, dentro da pasta principal do usuário, em geral, ``/Users/${USER}``.
+
+
+    .. tab:: Linux
+
+      No Linux, o QGIS mantém os arquivos sob a pasta ``.local/share/QGIS/QGIS3``, dentro da pasta principal do usuário, que, em geral, se localiza sob o endereço ``/home/${USER}``.
+
+
+.. note::
+
+    No meu ambiente Linux Ubuntu 20.04 (:numref:`Seção %s <sec_qgis_preparacao_ambiente>`), esse caminho é o seguinte::
+
+        /home/gribeiro/.local/share/QGIS/QGIS3
+
+
+O QGIS também permite descobrir essa localização através do console Python dentro do próprio QGIS. Acessando o menu ``Plugins | Python Console`` (:numref:`Figura %s <fig:qgis:criando-plugins:python-console>`). Basta entrar com o seguinte comando::
+
+        >>> QStandardPaths.standardLocations(QStandardPaths.AppDataLocation)
+        ['/home/gribeiro/.local/share/QGIS/QGIS3', '/usr/local/share/QGIS/QGIS3', '/usr/share/QGIS/QGIS3']
+
+
+.. figure:: ../img/qgis/python-console.png
+    :alt: Console do Python dentro da interface gráfica do QGIS
+    :width: 100%
+    :figclass: align-center
+    :name: fig:qgis:criando-plugins:python-console
+
+    Console do Python dentro da interface gráfica do QGIS.
+
+
+Os plugins Python são mantidos na pasta ``profiles/default/python/plugins``, sob a pasta principal de configuração do QGIS. Nesta pasta você encontrará os sub-diretórios ``pluginbuilder3`` e ``plugin_reloader``, que correspondem, respectivamente, às pastas dos plugins ``Plugin Builder 3`` e ``Plugin Reloader``, instalados no início desta seção.
+
+
+.. tip::
+
+    No meu ambiente Linux Ubuntu 20.04 (:numref:`Seção %s <sec_qgis_preparacao_ambiente>`), esse caminho é o seguinte::
+
+        /home/gribeiro/.local/share/QGIS/QGIS3/profiles/default/python/plugins
+
+
+.. tip::
+
+    Para descobrir onde o QGIS encontra-se instalado, utilize o comando abaixo no console Python dentro do próprio QGIS::
+
+        >>> QgsApplication.prefixPath()
+        '/usr'
+
+
+Criando o Plugin ``Spectral``
+-----------------------------
+
+
+Vamos criar um plugin chamado ``Spectral``. Para tal, abra o ``Plugin Builder``, acessando o menu ``Plugins | Plugin Builder | Plugin Builder``. Na janela apresentada (:numref:`Figura %s <fig:qgis:criando-plugins:pbuilder-spectral-01>`), preencha as informações básicas sobre este novo plugin.
+
+
+.. figure:: ../img/qgis/pbuilder-spectral-01.png
+        :alt: Criando o plugin Spectral - Informações básicas do plugin
+        :width: 70%
+        :figclass: align-center
+        :name: fig:qgis:criando-plugins:pbuilder-spectral-01
+
+        Criando o plugin Spectral - Informações básicas do plugin.
+
+
+Em seguida, forneça uma breve descrição desse plugin (:numref:`Figura %s <fig:qgis:criando-plugins:pbuilder-spectral-02>`).
+
+
+.. figure:: ../img/qgis/pbuilder-spectral-02.png
+        :alt: Criando o plugin Spectral - Descrição do plugin
+        :width: 70%
+        :figclass: align-center
+        :name: fig:qgis:criando-plugins:pbuilder-spectral-02
+
+        Criando o plugin Spectral - Descrição do plugin.
+
+
+Podemos escolher a criação do plugin baseado em alguns modelos (:numref:`Figura %s <fig:qgis:criando-plugins:pbuilder-spectral-03>`). No caso, iremos selecionar a opção ``Tool button with dialog``. Além disso, a opção de acesso à janela desse plugin será associada ao menu ``Plugins`` na interface principal do QGIS.
+
+
+.. figure:: ../img/qgis/pbuilder-spectral-03.png
+        :alt: Criando o plugin Spectral - Modelo do plugin
+        :width: 70%
+        :figclass: align-center
+        :name: fig:qgis:criando-plugins:pbuilder-spectral-03
+
+        Criando o plugin Spectral - Modelo do plugin.
+
+
+Na janela seguinte (:numref:`Figura %s <fig:qgis:criando-plugins:pbuilder-spectral-04>`), deixe todas as opções marcadas pois assim o modelo já dará suporte à internacionalização de código, isto é, você poderá fornecer arquivos com a tradução de textos e rótulos apresentados ao usuário.
+
+
+.. figure:: ../img/qgis/pbuilder-spectral-04.png
+        :alt: Criando o plugin Spectral - Opções de suporte no projeto do plugin
+        :width: 70%
+        :figclass: align-center
+        :name: fig:qgis:criando-plugins:pbuilder-spectral-04
+
+        Criando o plugin Spectral - Opções de suporte no projeto do plugin.
+
+
+A janela seguinte, permite que você inclua nos metadados do plugin, informações sobre o repositório de código fonte e o local para reportar bugs ou acessar documentação adicional de seu plugin (:numref:`Figura %s <fig:qgis:criando-plugins:pbuilder-spectral-05>`).
+
+
+.. figure:: ../img/qgis/pbuilder-spectral-05.png
+        :alt: Criando o plugin Spectral - Metadados adicionais do plugin
+        :width: 70%
+        :figclass: align-center
+        :name: fig:qgis:criando-plugins:pbuilder-spectral-05
+
+        Criando o plugin Spectral - Metadados adicionais do plugin.
+
+
+A última janela apresentada pelo ``Plugin Builder`` permite definir a pasta onde o código do plugin será gerado, a partir do modelo selecionado (:numref:`Figura %s <fig:qgis:criando-plugins:pbuilder-spectral-06>`).
+
+
+.. figure:: ../img/qgis/pbuilder-spectral-06.png
+        :alt: Criando o plugin Spectral - Diretório alvo para geração do código do plugin
+        :width: 70%
+        :figclass: align-center
+        :name: fig:qgis:criando-plugins:pbuilder-spectral-06
+
+        Criando o plugin Spectral - Diretório alvo para geração do código do plugin.
+
+
+Se tudo ocorrer bem, uma janela como a da :numref:`Figura %s <fig:qgis:criando-plugins:pbuilder-spectral-07>` será apresentada, com um resumo da crição do seu plugin.
+
+
+.. figure:: ../img/qgis/pbuilder-spectral-07.png
+        :alt: Criando o plugin Spectral - Sumário da criação do plugin
+        :width: 100%
+        :figclass: align-center
+        :name: fig:qgis:criando-plugins:pbuilder-spectral-07
+
+        Criando o plugin Spectral - Sumário da criação do plugin.
+
+
+Carregando o Plugin Spectral no QGIS
+------------------------------------
+
+
+Reinicie o QGIS para que ele atualize a lista de plugins disponíveis no seu sistema. Ao abrir o QGIS novamente, selecione a opção de menu ``Plugins | Manage and Install Plugins...``. Na janela que se abre, selecione o plugin com nome Spectral, como indicado na :numref:`Figura %s <fig:qgis:criando-plugins:spectral-install>`
+
+
+.. figure:: ../img/qgis/spectral-install.png
+        :alt: Instalando o plugin Spectral
+        :width: 100%
+        :figclass: align-center
+        :name: fig:qgis:criando-plugins:spectral-install
+
+        Instalando o plugin Spectral.
+
+
+Se o plugin for devidamente carregado, ao fechar a janela de instalação de plugins, você verá que um novo botão, como destacado na :numref:`Figura %s <fig:qgis:criando-plugins:spectral-botao-menu>` será apresentado, bem como a opção de menu ``Spectral`` será acrescentada ao menu ``Plugins``.
+
+
+.. figure:: ../img/qgis/spectral-botao-menu.png
+        :alt: Botão e Menu de acesso ao plugin Spectral
+        :width: 100%
+        :figclass: align-center
+        :name: fig:qgis:criando-plugins:spectral-botao-menu
+
+        Botão e Menu de acesso ao plugin Spectral.
+
+
+Se você tiver conseguido criar corretamente a estrutura do plugin, ao selecionar a opção ``Spectral`` no menu (:numref:`Figura %s <fig:qgis:criando-plugins:spectral-botao-menu>`), uma janela como a da :numref:`Figura %s <fig:qgis:criando-plugins:plugin-spectral-dialogo>` será apresentada.
+
+
+.. figure:: ../img/qgis/plugin-spectral-dialogo.png
+        :alt: Janela do plugin Spectral logo após sua criação
+        :width: 40%
+        :figclass: align-center
+        :name: fig:qgis:criando-plugins:plugin-spectral-dialogo
+
+        Janela do plugin Spectral logo após sua criação.

@@ -112,6 +112,8 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">4. Programando com o QGIS</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="qgis/preparacao-ambiente.html">4.1. Preparação do Ambiente de Programação</a></li>
 <li class="toctree-l2"><a class="reference internal" href="qgis/python-console.html">4.2. Console Python no QGIS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qgis/criando-plugins.html">4.3. Construindo Plugins para o QGIS em Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qgis/plugin-debug.html">4.4. Preparando o Ambiente para Inspeção do Código de um Plugin</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="variados.html">5. Tópicos Variados</a></li>
@@ -208,20 +210,20 @@
   <div class="section" id="programando-com-o-qgis">
 <span id="cap-qgis"></span><h1><span class="section-number">4. </span>Programando com o QGIS<a class="headerlink" href="#programando-com-o-qgis" title="Link permanente para este título">¶</a></h1>
 <a class="reference internal image-reference" href="_images/qgis-logo.svg"><img alt="QGIS" class="align-right" src="_images/qgis-logo.svg" width="128" /></a>
-<p>O aplicativo geográfico <a class="reference external" href="https://qgis.org/">QGIS</a> possui uma forte integração com a linguagem Python, permitindo utilizá-la de diversas maneiras. O console Python, disponível de dentro da interface gráfica do QGIS (<a class="reference internal" href="#qgis-fig-console-python-active-layer"><span class="std std-numref">Figura 4.1</span></a>), permite que o usuário entre com comandos válidos da linguagem Python.</p>
-<div class="align-center figure align-default" id="qgis-fig-console-python-active-layer">
+<p>O aplicativo geográfico <a class="reference external" href="https://qgis.org/">QGIS</a> possui uma forte integração com a linguagem Python, permitindo utilizá-la de diversas maneiras. O console Python, disponível de dentro da interface gráfica do QGIS (<a class="reference internal" href="#fig-qgis-console-python-active-layer"><span class="std std-numref">Figura 4.1</span></a>), permite que o usuário entre com comandos válidos da linguagem Python.</p>
+<div class="align-center figure align-default" id="fig-qgis-console-python-active-layer">
 <a class="reference internal image-reference" href="_images/console-python-active-layer.png"><img alt="Console do Python dentro da interface gráfica do QGIS" src="_images/console-python-active-layer.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 4.1 - </span><span class="caption-text">Console do Python dentro da interface gráfica do QGIS.</span><a class="headerlink" href="#qgis-fig-console-python-active-layer" title="Link Permanente para essa imagem">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 4.1 - </span><span class="caption-text">Console do Python dentro da interface gráfica do QGIS.</span><a class="headerlink" href="#fig-qgis-console-python-active-layer" title="Link Permanente para essa imagem">¶</a></p>
 </div>
-<p>Também é possível criar <em>scripts</em> que utilizam a API do QGIS em Python para automação de tarefas tanto na inicialização do QGIS quanto para realização de processamentos em lote, como mostrado na <a class="reference internal" href="#qgis-fig-python-script-list-layers"><span class="std std-numref">Figura 4.2</span></a>.</p>
-<div class="align-center figure align-default" id="qgis-fig-python-script-list-layers">
+<p>Também é possível criar <em>scripts</em> que utilizam a API do QGIS em Python para automação de tarefas tanto na inicialização do QGIS quanto para realização de processamentos em lote, como mostrado na <a class="reference internal" href="#fig-qgis-python-script-list-layers"><span class="std std-numref">Figura 4.2</span></a>.</p>
+<div class="align-center figure align-default" id="fig-qgis-python-script-list-layers">
 <a class="reference internal image-reference" href="_images/python-script-list-layers.png"><img alt="API do QGIS em Python para automação de tarefas" src="_images/python-script-list-layers.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 4.2 - </span><span class="caption-text">API do QGIS em Python para automação de tarefas.</span><a class="headerlink" href="#qgis-fig-python-script-list-layers" title="Link Permanente para essa imagem">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 4.2 - </span><span class="caption-text">API do QGIS em Python para automação de tarefas.</span><a class="headerlink" href="#fig-qgis-python-script-list-layers" title="Link Permanente para essa imagem">¶</a></p>
 </div>
-<p>Por último, é possível estender as funcionalidades do QGIS através da criação de novos <em>plugins</em> escritos na linguagem Python. O <strong>plugin Web Land Trajectory Service</strong> (WLTS), mostrado na <a class="reference internal" href="#qgis-fig-plugin-wlts"><span class="std std-numref">Figura 4.3</span></a>, é desenvolvido nessa linguagem e acrescenta ao QGIS funcionalidades para extração de trajetórias a partir de conjuntos de dados de uso e cobertura da Terra.</p>
-<div class="align-center figure align-default" id="qgis-fig-plugin-wlts">
+<p>Por último, é possível estender as funcionalidades do QGIS através da criação de novos <em>plugins</em> escritos na linguagem Python. O <strong>plugin Web Land Trajectory Service</strong> (WLTS), mostrado na <a class="reference internal" href="#fig-qgis-plugin-wlts"><span class="std std-numref">Figura 4.3</span></a>, é desenvolvido nessa linguagem e acrescenta ao QGIS funcionalidades para extração de trajetórias a partir de conjuntos de dados de uso e cobertura da Terra.</p>
+<div class="align-center figure align-default" id="fig-qgis-plugin-wlts">
 <a class="reference internal image-reference" href="_images/plugin-wlts.png"><img alt="Janela do plugin WLTS" src="_images/plugin-wlts.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 4.3 - </span><span class="caption-text">Janela do plugin WLTS.</span><a class="headerlink" href="#qgis-fig-plugin-wlts" title="Link Permanente para essa imagem">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 4.3 - </span><span class="caption-text">Janela do plugin WLTS.</span><a class="headerlink" href="#fig-qgis-plugin-wlts" title="Link Permanente para essa imagem">¶</a></p>
 </div>
 <p>Este capítulo irá apresentar algumas maneiras de utilizar a linguagem Python em conjunto com o aplicativo QGIS.</p>
 <div class="toctree-wrapper compound">
@@ -229,6 +231,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="qgis/preparacao-ambiente.html">4.1. Preparação do Ambiente de Programação</a></li>
 <li class="toctree-l1"><a class="reference internal" href="qgis/python-console.html">4.2. Console Python no QGIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qgis/criando-plugins.html">4.3. Construindo Plugins para o QGIS em Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qgis/plugin-debug.html">4.4. Preparando o Ambiente para Inspeção do Código de um Plugin</a></li>
 </ul>
 </div>
 </div>

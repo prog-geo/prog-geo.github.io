@@ -61,6 +61,7 @@ Linux
 
 
 **7.** Faça um teste para ver se o Docker foi corretamente instalado, lançando um contêiner de teste a partir da imagem ``hello-world``::
+
     sudo docker run hello-world
 
 

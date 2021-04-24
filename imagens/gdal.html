@@ -481,7 +481,7 @@ Y_{geo} = GT[3] + Linha * GT[5]
 </div>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>No cálculo da <code class="docutils literal notranslate"><span class="pre">matriz_ndvi</span></code> foi colocado um termo adicional no denominador, 0.000000001. Embora não faça parte da equação original, este termo com evita que aconteçam divisões por zero, gerando valores nulos, ou inconsistentes, na matriz final. Por ser um valor muito pequeno, não impacta no resultado dos demais cálculos.</p>
+<p>No cálculo da <code class="docutils literal notranslate"><span class="pre">matriz_ndvi</span></code> foi colocado um termo adicional no denominador, 0.000000001. Embora não faça parte da equação original, este termo evita que aconteçam divisões por zero, gerando valores nulos, ou inconsistentes, na matriz final. Por ser um valor muito pequeno, não impacta no resultado dos demais cálculos.</p>
 </div>
 <p>Podemos combinar as bibliotecas NumPy e Matplotlib para visualizar as matrizes como imagens:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
