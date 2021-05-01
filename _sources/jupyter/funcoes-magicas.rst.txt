@@ -195,7 +195,7 @@ Assim que o comando acima é executado, o código contido no arquivo ``haversine
 No ambiente JupyterLab ou Jupyter Notebook, a mágica de célula ``%%HTML`` permite incluir vídeos do Youtube, como mostrado na :numref:`Figura %s <fig:jupyter:funcoes-magicas:magic-html>`.
 
 
-.. figure:: ../img/jupyter/terminal-ipython-magic.png
+.. figure:: ../img/jupyter/magic-html.png
     :alt: Embutindo um vídeo através da mágica %%HTML
     :width: 100%
     :figclass: align-center
