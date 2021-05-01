@@ -135,9 +135,10 @@
 <li class="toctree-l2"><a class="reference internal" href="exemplos.html">2.25. Exemplos</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../imagens.html">3. Imagens - Processamento e Visualização</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../qgis.html">4. Programando com o QGIS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../variados.html">5. Tópicos Variados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jupyter.html">3. Jupyter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../imagens.html">4. Imagens - Processamento e Visualização</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qgis.html">5. Programando com o QGIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variados.html">6. Tópicos Variados</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Referências Bibliográficas</span></p>
 <ul>
@@ -146,6 +147,10 @@
 <p class="caption"><span class="caption-text">Listas de Exercícios:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Lista de Projetos:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../projetos.html">Projetos Finais</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Informações Gerais:</span></p>
 <ul>
@@ -232,6 +237,145 @@
             
   <div class="section" id="consideracoes-finais">
 <span id="sec-introducao-programacao-consideracoes"></span><h1><span class="section-number">2.24. </span>Considerações Finais<a class="headerlink" href="#consideracoes-finais" title="Link permanente para este título">¶</a></h1>
+<p>Linguagens de programação (Seção <a class="reference internal" href="introducao.html#sec-introducao-programacao-introducao"><span class="std std-numref">2.1</span></a>):</p>
+<ul class="simple">
+<li><p>Aprendemos o que é uma linguagem de programação de alto nível. A <a class="reference internal" href="#introd-prog-fig-lp-high-low"><span class="std std-numref">Figura 2.23</span></a> mostra a diferença entre uma linguagem de alto nível e uma linguagem de baixo nível.</p></li>
+</ul>
+<div class="align-center figure align-default" id="introd-prog-fig-lp-high-low">
+<a class="reference internal image-reference" href="../_images/alto-nivel-x-baixo-nivel.png"><img alt="Linguagens de Alto Nível x Linguagens de Baixo Nível" src="../_images/alto-nivel-x-baixo-nivel.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Figura 2.23 - </span><span class="caption-text">Linguagens de Alto Nível x Linguagens de Baixo Nível. <br/> <strong>Fonte:</strong> Schmalz <span id="id1">[<a class="reference internal" href="../referencias.html#id73">54</a>]</span>.</span><a class="headerlink" href="#introd-prog-fig-lp-high-low" title="Link Permanente para essa imagem">¶</a></p>
+</div>
+<ul class="simple">
+<li><p>Python é uma linguagem de programação de alto nível e de propósito geral</p></li>
+</ul>
+<hr class="docutils" />
+<p>Tipos de dados primitivos (Seção <a class="reference internal" href="tipos-dados.html#sec-introducao-programacao-tipos-dados"><span class="std std-numref">2.2</span></a>):</p>
+<ul class="open">
+<li><p>Um bom tutorial sobre os tipos de dados elementares ou primitivos de Python pode ser encontrado em <span id="id2">[<a class="reference internal" href="../referencias.html#id81">62</a>]</span>.</p></li>
+</ul>
+<hr class="docutils" />
+<p>Tipo lógico e expressões lógicas (Seções <a class="reference internal" href="tipo-logico.html#sec-introducao-programacao-tipo-logico"><span class="std std-numref">2.8</span></a> e <a class="reference internal" href="expressoes-logicas.html#sec-introducao-programacao-expressoes-logicas"><span class="std std-numref">2.10</span></a>):</p>
+<ul class="open">
+<li><p>O tipo lógico e as expressões lógicas são muito utilizadas na construção de programas.</p></li>
+<li><p>Todos devem dominar a tabela verdade dos operadores <em>and</em>, <em>or</em> e <em>not</em>.</p></li>
+</ul>
+<hr class="docutils" />
+<p>Estruturas condicionais e de repetição (Seções <a class="reference internal" href="estruturas-condicionais.html#sec-introducao-programacao-estruturas-condicionais"><span class="std std-numref">2.11</span></a>, <a class="reference internal" href="estruturas-repeticao.html#sec-introducao-programacao-estruturas-repeticao"><span class="std std-numref">2.12</span></a>, <a class="reference internal" href="lacos-for.html#sec-introducao-lacos-for"><span class="std std-numref">2.19</span></a> e <a class="reference internal" href="break-continue.html#sec-introducao-break-continue"><span class="std std-numref">2.20</span></a>)</p>
+<ul class="open">
+<li><p>As estruturas condicionais e de repetição são importantes para controlar o fluxo de execução de um programa.</p></li>
+<li><p>Laços do tipo <code class="docutils literal notranslate"><span class="pre">for</span></code> são indicados quando temos que iterar (acessar ou atravessar) por uma coleção de objetos (ou itens).</p></li>
+<li><p>Laços do tipo <code class="docutils literal notranslate"><span class="pre">while</span></code> são indicados quando temos uma condição a ser verificada a cada iteração.</p></li>
+<li><p>Podemos modificar o fluxo de um laço através dos comandos <code class="docutils literal notranslate"><span class="pre">break</span></code> e <code class="docutils literal notranslate"><span class="pre">continue</span></code>.</p></li>
+</ul>
+<hr class="docutils" />
+<p>Tipo <code class="docutils literal notranslate"><span class="pre">str</span></code> (Seção <a class="reference internal" href="strings.html#sec-introducao-programacao-strings"><span class="std std-numref">2.13</span></a>):</p>
+<ul class="open">
+<li><p>Em Python usamos o tipo <code class="docutils literal notranslate"><span class="pre">str</span></code> para representação e manipulação de strings.</p></li>
+<li><p>O tipo string é apenas um dos <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range">tipos de sequência</a> disponíveis em Python.</p></li>
+<li><p>Existem diversas operações comuns entre os tipos denominados de sequência, como <em>Tuplas</em>, <em>Listas</em>, e <em>Ranges</em>.</p></li>
+<li><p>Strings em Python são sequências imutáveis. Em linguagens como C++ é possível alterarmos os caracteres da string diretamente.</p></li>
+</ul>
+<hr class="docutils" />
+<p>Listas (Seção <a class="reference internal" href="sequencias.html#sec-introducao-programacao-sequencias-listas"><span class="std std-numref">2.15.3</span></a>):</p>
+<ul class="open">
+<li><p>O tipo de dados lista é uma das estruturas mais utlizadas da linguagem Python.</p></li>
+<li><p>Cada item de uma lista é identificado por um índice.</p></li>
+<li><p>Listas são <strong>sequências mutáveis</strong>, isto é, podemos incluir novos elementos ou remover elementos existentes.</p></li>
+<li><p><strong>List Comprehension</strong> é um idioma muito comum da programação em Python.</p></li>
+</ul>
+<hr class="docutils" />
+<p>Dicionários (Seção <a class="reference internal" href="dicionarios.html#sec-introducao-programacao-dicionarios"><span class="std std-numref">2.16</span></a>):</p>
+<ul class="open">
+<li><p>Dicionários são práticos para agrupar dados.</p></li>
+<li><p>Para mais informações sobre o tipo <code class="docutils literal notranslate"><span class="pre">dict</span></code> (dicionário) em Python, consulte <span id="id3">[<a class="reference internal" href="../referencias.html#id82">63</a>]</span> e <span id="id4">[<a class="reference internal" href="../referencias.html#id79">57</a>]</span>.</p></li>
+</ul>
+<hr class="docutils" />
+<p>Conjuntos (Seção <a class="reference internal" href="set.html#sec-introducao-programacao-set"><span class="std std-numref">2.17</span></a>):</p>
+<ul class="open">
+<li><p>Para mais informações sobre o tipo <code class="docutils literal notranslate"><span class="pre">set</span></code> (conjuntos) em Python, consulte <span id="id5">[<a class="reference internal" href="../referencias.html#id80">61</a>]</span>, <span id="id6">[<a class="reference internal" href="../referencias.html#id86">69</a>]</span>, <span id="id7">[<a class="reference internal" href="../referencias.html#id84">68</a>]</span> e <span id="id8">[<a class="reference internal" href="../referencias.html#id85">67</a>]</span>.</p></li>
+</ul>
+<hr class="docutils" />
+<p>Funções (Seção <a class="reference internal" href="funcoes.html#sec-introducao-programacao-funcoes"><span class="std std-numref">2.22</span></a>):</p>
+<ul class="open">
+<li><p>Funções permitem organizar o código de maneira mais efetiva.</p></li>
+<li><p>Os parâmetros <code class="docutils literal notranslate"><span class="pre">*args</span></code> e <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> são usados na definição de funções com número variável de parâmetros. Bibliotecas como a <cite>Matplotlib</cite> utilizam bastante esses tipos de parâmetros para fornecer maior flexibilidade na chamada de funções e métodos das funcionalidades providas por ela. A partir da 3.6, a linguagem Python adotou uma implementação do tipo dicionário onde os pares <em>chave-valor</em> (<em>key-value pairs</em>) são ordenados. Em versões anteriores, não havia a garantia de ordenação.</p></li>
+<li><p>Toda função em Python retorna algum valor. Caso o comando <cite>return</cite> seja usado sem valor, o valor <code class="docutils literal notranslate"><span class="pre">None</span></code> é retornado. Se você não incluir um comando <code class="docutils literal notranslate"><span class="pre">return</span></code> no bloco de comandos da função ou se por acaso algum caminho da sua função fizer com que ela termine sem uma instrução <code class="docutils literal notranslate"><span class="pre">return</span></code>, automaticamente será retornado o valor <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p>Quando definimos um parâmetro com valor <em>default</em>, devemos tomar cuidado ao usar valores <em>mutáveis</em>. Observe o exemplo abaixo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">MinhaFuncao</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[]):</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">data</span>
+
+<span class="n">MinhaFuncao</span><span class="p">()</span>
+<span class="n">MinhaFuncao</span><span class="p">()</span>
+<span class="n">MinhaFuncao</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<blockquote>
+<div><p>Como pode ser observado, a lista continua crescendo à medida que usamos a função <code class="docutils literal notranslate"><span class="pre">MinhaFuncao</span></code>. Isso ocorre porque o valor da expressão com o valor <em>default</em> é realizado apenas uma única vez, quando a função é definida. Por conta dessa “armadilha”, em geral, definimos funções como essas da seguinte forma:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">MinhaFuncao2</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">data</span>
+
+<span class="n">MinhaFuncao2</span><span class="p">()</span>
+<span class="n">MinhaFuncao2</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">MinhaFuncao2</span><span class="p">([</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+</div></blockquote>
+<hr class="docutils" />
+<p>Python:</p>
+<ul class="open">
+<li><p>Por convenção, programas Python possuem nomes com a extensão <code class="docutils literal notranslate"><span class="pre">.py</span></code>.</p></li>
+<li><p>É muito comum escutarmos dizer que <em>Python é uma linguagem de script</em>:</p>
+<blockquote>
+<div><ul class="open">
+<li><p>Muitas pessoas usam o termo <em>script</em> ao invés de programa para se referir ao arquivo contendo código fonte em Python.</p></li>
+<li><p>Python também é muito usada para criação de <em>scripts</em> executados na  linha de comando (<em>shell</em>) para automação de tarefas como processamento de textos e execução de outros programas.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<hr class="docutils" />
+<p>Estruturas de dados:</p>
+<ul class="open">
+<li><p>Para mais detalhes sobre as estruturas de dados de Python, consulte <span id="id9">[<a class="reference internal" href="../referencias.html#id4">3</a>]</span>.</p></li>
+<li><p>Em geral, as linguagens de programação possuem construtores que permitem criar novos tipos a partir dos tipos básicos ou elementares. Por exemplo, um tipo para manipulação de números complexos, com a parte real e imaginária, ou um tipo tipo para manipulação de pontos no plano cartesiano. Em linguagens como C e C++, existe um construtor chamado <code class="docutils literal notranslate"><span class="pre">struct</span></code> que permite criar um novo tipo estruturado formado por elementos de outros tipos. Este construtor permite criar uma espécie de tipo composto. Wirth <span id="id10">[<a class="reference internal" href="../referencias.html#id93">77</a>]</span> lembra que este tipo composto é chamado de <strong>Produto Cartesiano</strong> na matemática.</p></li>
+</ul>
+<div class="historical-note admonition">
+<p class="admonition-title">Nota Histórica</p>
+<p>Ole-Johan Dahl e Kristen Nygaard (<a class="reference internal" href="#introd-prog-tbl-simula67"><span class="std std-numref">Tabela 2.13</span></a>) são considerados os pais da <strong>Programação Orientada a Objetos</strong> (POO). Nos anos 60, no Centro de Computação da Noruega, eles lideraram o desenvolvimento da família de linguagens de programação conhecida como <strong>SIMULA</strong>. A versão SIMULA 67 (1965-1968) introduziu uma nova abstração, a <strong>classe</strong> (<em>class</em>), como destacado no trecho do manual mostrado na <a class="reference internal" href="#introd-prog-tbl-simula67"><span class="std std-numref">Tabela 2.13</span></a>.</p>
+<table class="colwidths-given styled-table docutils align-center" id="introd-prog-tbl-simula67" style="width: 100%">
+<caption><span class="caption-number">Tabela 2.13 - </span><span class="caption-text">SIMULA 67. <br/> <strong>Fonte:</strong> Dahl et al. (1970) <span id="id11">[<a class="reference internal" href="../referencias.html#id8">7</a>]</span>.</span><a class="headerlink" href="#introd-prog-tbl-simula67" title="Link Permanente para essa tabela">¶</a></caption>
+<colgroup>
+<col style="width: 60%" />
+<col style="width: 40%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td class="center-align"><p><img alt="dahl-nygaard" src="../_images/dahl-nygaard.png" /></p>
+<p>Ole-Johan Dahl e Kristen Nygaard</p>
+</td>
+<td class="center-align"><p><img alt="simula-1" src="../_images/simula67-1.png" /></p></td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-given styled-table docutils align-center" style="width: 100%">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td class="center-align"><p><img alt="simula-2" src="../_images/simula67-2.png" /></p></td>
+<td class="center-align"><p><img alt="simula-3" src="../_images/simula67-3.png" /></p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 
 

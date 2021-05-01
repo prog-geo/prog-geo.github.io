@@ -9,7 +9,7 @@ Programando com o QGIS
 ======================
 
 
-.. image:: ./img/logos/qgis-logo.svg
+.. image:: ./img/logos/qgis.svg
     :alt: QGIS
     :width: 128
     :align: right

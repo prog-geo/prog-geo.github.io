@@ -1,0 +1,96 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _sec_jupyter_comandos_sistema:
+
+Comandos do Sistema
+===================
+
+
+O *kernel IPython* estende a sintaxe da linguagem Python para possibilitar, entre outras coisas, o uso de comandos do `Sistema Operacional` (SO) de dentro do terminal IPython ou das células dos Jupyter Notebooks, no ambiente interativo Jupyter. Linhas de código começando pelo caractere ``!`` são passadas diretamente para o SO. Além disso, é possível recuperar a saída produzida pelos comandos do SO através de linhas usando ``!!`` (dupla exclamação) ou uma sintaxe do tipo ``var = !cmd``.
+
+
+O comando ``!ls``, abaixo, faz com que o comando ``ls`` do SO seja executado, retornando a listagem de arquivos e sub-diretórios do diretório corrente da aplicação de onde o comando foi executado.
+
+
+.. code-block:: ipython
+
+    In [1]: !ls
+    Docker	LiClipse  Modules  QGIS-Data  QGIS-Plugins
+
+
+Também é possível passar opções para os comandos a serem executados. No caso do comando ``ls``, dos sistemas Unix, a opção ``-l`` faz com que listagem seja mais detalhada:
+
+
+.. code-block:: ipython
+
+    In [2]: !ls -l
+    total 20
+    drwxrwxr-x 2 gribeiro gribeiro 4096 abr 12 17:31 Docker
+    drwxrwxr-x 3 gribeiro gribeiro 4096 abr 12 18:00 LiClipse
+    drwxrwxr-x 3 gribeiro gribeiro 4096 abr 12 18:32 Modules
+    drwxrwxr-x 2 gribeiro gribeiro 4096 abr 12 17:52 QGIS-Data
+    drwxrwxr-x 3 gribeiro gribeiro 4096 abr 12 17:57 QGIS-Plugins
+
+
+É possível utilizar os resultados dos comandos de sistema, associando o resultado a uma variável:
+
+
+.. code-block:: ipython
+
+    In [3]: resultado = !ls
+
+
+.. code-block:: ipython
+
+    In [4]: for f in resultado:
+       ...:     print(f)
+       ...:
+    Docker
+    LiClipse
+    Modules
+    QGIS-Data
+    QGIS-Plugins
+
+
+Podemos também passar valores de variáveis em Python para os comandos mágicos. Para isso, basta prefixar o nome dos objetos Python com o caracter ``$`` ou delimitá-los com ``{}``. Exemplo:
+
+
+.. code-block:: ipython
+
+    In [5]: diretorios = [ "/home", "/", "/usr" ]
+
+
+.. code-block:: ipython
+
+    In [6]: for d in diretorios:
+       ...:     print("---------")
+       ...:     !ls $d
+       ...:
+    ---------
+    gribeiro
+    ---------
+    bin   cdrom  etc   lib	  lib64   lost+found  mnt  proc  run   snap  sys  usr
+    boot  dev    home  lib32  libx32  media       opt  root  sbin  srv   tmp  var
+    ---------
+    bin  games  include  lib  lib32  lib64	libexec  libx32  local	sbin  share  src
+
+
+ou, usando os nomes de objetos delimitados por ``{}``:
+
+
+.. code-block:: ipython
+
+    In [7]: for d in diretorios:
+       ...:     print("---------")
+       ...:     !ls {d}
+       ...:
+    ---------
+    gribeiro
+    ---------
+    bin   cdrom  etc   lib	  lib64   lost+found  mnt  proc  run   snap  sys  usr
+    boot  dev    home  lib32  libx32  media       opt  root  sbin  srv   tmp  var
+    ---------
+    bin  games  include  lib  lib32  lib64	libexec  libx32  local	sbin  share  src

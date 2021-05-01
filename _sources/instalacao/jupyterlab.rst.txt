@@ -55,9 +55,10 @@ Uma janela como a mostrada na :numref:`Figura %s <instalacao:docker:jupyterlab>`
 
     Janela do JupyterLab no navegador.
 
-**3.** Abra um terminal associado ao contêiner criado para instalar alguns plugins::
 
-    docker exec -it -u root my-jupyterlab bash
+**3.** Abra um terminal associado ao contêiner criado para instalar alguns plugins (ou extensões)::
+
+    docker exec -it --user root my-jupyterlab bash
 
     #
     # Install ipyleaflet in base conda environment
@@ -74,7 +75,21 @@ Uma janela como a mostrada na :numref:`Figura %s <instalacao:docker:jupyterlab>`
     jupyter labextension install @jupyterlab/geojson-extension
     jupyter labextension install @jupyterlab/vega3-extension
     jupyter labextension install @jupyterlab/mathjax3-extension
-    #jupyter labextension install @jupyterlab/github
     jupyter labextension install @jupyterlab/latex
     jupyter labextension install @pyviz/jupyterlab_pyviz
     jupyter nbextension enable --py widgetsnbextension
+
+
+.. note::
+
+    Caso queira instalar a extensão ``jupyterlab-git``, execute os dois comandos extras mostrados abaixo::
+
+        pip install -U jupyterlab-git
+        jupyter lab build
+
+
+.. note::
+
+    A extensão ``jupyterlab/github`` não encontra-se funcional com a versão 3 do JupyterLab. Nas versões anteriores, era possível instalar essa extensão através do seguinte comando::
+
+        jupyter labextension install @jupyterlab/github

@@ -266,7 +266,7 @@ Na próxima janela (:numref:`Figura %s <fig:qgis:plugin-debug:liclipse-pydev-new
 
 
 .. figure:: ../img/qgis/liclipse-pydev-new-proj-04.png
-    :alt: Finalizando a criação do projeto WTSS do PyDev
+    :alt: Finalizando a criação do projeto Spectral do PyDev
     :width: 100%
     :figclass: align-center
     :name: fig:qgis:plugin-debug:liclipse-pydev-new-proj-04
@@ -419,12 +419,12 @@ Deste ponto em diante, você poderá controlar a execução do seu plugin no LiC
     :figclass: align-center
     :name: fig:qgis:plugin-debug:spectral-plugin-janela-inicial
 
-    Janela do plugin WTSS.
+    Janela do plugin Spectral.
 
 
 .. note::
 
-    Apenas resumindo, que o comando completo para uso no console Python do QGIS que estabelece a conexão ao servidor de debug remoto do PyDev pode ser realizado através do seguinte trecho de código:
+    Resumindo, o comando completo para uso no console Python do QGIS que estabelece a conexão ao servidor de debug remoto do PyDev pode ser realizado através do seguinte trecho de código:
 
 
     .. code-block:: python

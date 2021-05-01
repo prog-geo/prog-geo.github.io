@@ -9,12 +9,13 @@ Instalando e Configurando o Ambiente de Programação
 ===================================================
 
 
-Abaixo encontram-se algumas dicas sobre a instalação do ambiente computacional que usaremos no curso.
+Este capítulo apresenta algumas dicas sobre a preparação e instalação do ambiente computacional que será usado no curso.
 
 
 .. toctree::
     :maxdepth: 1
     :titlesonly:
+    :caption: Tópicos
 
     ./instalacao/anaconda
     ./instalacao/pycharm

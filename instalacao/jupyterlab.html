@@ -114,9 +114,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../introducao-programacao.html">2. Introdução à Programação com a Linguagem Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../imagens.html">3. Imagens - Processamento e Visualização</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../qgis.html">4. Programando com o QGIS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../variados.html">5. Tópicos Variados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jupyter.html">3. Jupyter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../imagens.html">4. Imagens - Processamento e Visualização</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qgis.html">5. Programando com o QGIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variados.html">6. Tópicos Variados</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Referências Bibliográficas</span></p>
 <ul>
@@ -125,6 +126,10 @@
 <p class="caption"><span class="caption-text">Listas de Exercícios:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Lista de Projetos:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../projetos.html">Projetos Finais</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Informações Gerais:</span></p>
 <ul>
@@ -246,8 +251,8 @@ Or copy and paste one of these URLs:
 <a class="reference internal image-reference" href="../_images/docker-jupyterlab.png"><img alt="Janela do JupyterLab no navegador" src="../_images/docker-jupyterlab.png" style="width: 100%;" /></a>
 <p class="caption"><span class="caption-number">Figura 1.2 - </span><span class="caption-text">Janela do JupyterLab no navegador.</span><a class="headerlink" href="#instalacao-docker-jupyterlab" title="Link Permanente para essa imagem">¶</a></p>
 </div>
-<p><strong>3.</strong> Abra um terminal associado ao contêiner criado para instalar alguns plugins:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">exec</span> <span class="o">-</span><span class="n">it</span> <span class="o">-</span><span class="n">u</span> <span class="n">root</span> <span class="n">my</span><span class="o">-</span><span class="n">jupyterlab</span> <span class="n">bash</span>
+<p><strong>3.</strong> Abra um terminal associado ao contêiner criado para instalar alguns plugins (ou extensões):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">exec</span> <span class="o">-</span><span class="n">it</span> <span class="o">--</span><span class="n">user</span> <span class="n">root</span> <span class="n">my</span><span class="o">-</span><span class="n">jupyterlab</span> <span class="n">bash</span>
 
 <span class="c1">#</span>
 <span class="c1"># Install ipyleaflet in base conda environment</span>
@@ -264,11 +269,25 @@ Or copy and paste one of these URLs:
 <span class="n">jupyter</span> <span class="n">labextension</span> <span class="n">install</span> <span class="nd">@jupyterlab</span><span class="o">/</span><span class="n">geojson</span><span class="o">-</span><span class="n">extension</span>
 <span class="n">jupyter</span> <span class="n">labextension</span> <span class="n">install</span> <span class="nd">@jupyterlab</span><span class="o">/</span><span class="n">vega3</span><span class="o">-</span><span class="n">extension</span>
 <span class="n">jupyter</span> <span class="n">labextension</span> <span class="n">install</span> <span class="nd">@jupyterlab</span><span class="o">/</span><span class="n">mathjax3</span><span class="o">-</span><span class="n">extension</span>
-<span class="c1">#jupyter labextension install @jupyterlab/github</span>
 <span class="n">jupyter</span> <span class="n">labextension</span> <span class="n">install</span> <span class="nd">@jupyterlab</span><span class="o">/</span><span class="n">latex</span>
 <span class="n">jupyter</span> <span class="n">labextension</span> <span class="n">install</span> <span class="nd">@pyviz</span><span class="o">/</span><span class="n">jupyterlab_pyviz</span>
 <span class="n">jupyter</span> <span class="n">nbextension</span> <span class="n">enable</span> <span class="o">--</span><span class="n">py</span> <span class="n">widgetsnbextension</span>
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Caso queira instalar a extensão <code class="docutils literal notranslate"><span class="pre">jupyterlab-git</span></code>, execute os dois comandos extras mostrados abaixo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">jupyterlab</span><span class="o">-</span><span class="n">git</span>
+<span class="n">jupyter</span> <span class="n">lab</span> <span class="n">build</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>A extensão <code class="docutils literal notranslate"><span class="pre">jupyterlab/github</span></code> não encontra-se funcional com a versão 3 do JupyterLab. Nas versões anteriores, era possível instalar essa extensão através do seguinte comando:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">labextension</span> <span class="n">install</span> <span class="nd">@jupyterlab</span><span class="o">/</span><span class="n">github</span>
+</pre></div>
+</div>
 </div>
 </div>
 

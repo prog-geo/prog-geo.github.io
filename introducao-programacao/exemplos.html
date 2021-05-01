@@ -49,7 +49,7 @@
     
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Buscar" href="../search.html" />
-    <link rel="next" title="3. Imagens - Processamento e Visualização" href="../imagens.html" />
+    <link rel="next" title="3. Jupyter" href="../jupyter.html" />
     <link rel="prev" title="2.24. Considerações Finais" href="consideracoes.html" /> 
 </head>
 
@@ -136,9 +136,10 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">2.25. Exemplos</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../imagens.html">3. Imagens - Processamento e Visualização</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../qgis.html">4. Programando com o QGIS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../variados.html">5. Tópicos Variados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jupyter.html">3. Jupyter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../imagens.html">4. Imagens - Processamento e Visualização</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qgis.html">5. Programando com o QGIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variados.html">6. Tópicos Variados</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Referências Bibliográficas</span></p>
 <ul>
@@ -147,6 +148,10 @@
 <p class="caption"><span class="caption-text">Listas de Exercícios:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Lista de Projetos:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../projetos.html">Projetos Finais</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Informações Gerais:</span></p>
 <ul>
@@ -219,7 +224,7 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="../imagens.html" class="btn btn-neutral float-right" title="3. Imagens - Processamento e Visualização" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../jupyter.html" class="btn btn-neutral float-right" title="3. Jupyter" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
       
       
         <a href="consideracoes.html" class="btn btn-neutral float-left" title="2.24. Considerações Finais" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
@@ -236,10 +241,10 @@
 <p id="sec-introducao-programacao-exemplos-ex01"><strong>Exemplo 01.</strong> Uma reta pode ser representada por uma equação geral da seguinte forma:</p>
 <div class="math notranslate nohighlight" id="equation-introd-prog-math-equacao-reta">
 <span class="eqno">(2.5)<a class="headerlink" href="#equation-introd-prog-math-equacao-reta" title="Permalink para essa equação">¶</a></span>\[ax + by + c = 0\]</div>
-<p>Considere a reta com os seguintes coeficientes: <span class="math notranslate nohighlight">\(a = 3\)</span>, <span class="math notranslate nohighlight">\(b = -2\)</span> e <span class="math notranslate nohighlight">\(c = -6\)</span> (<a class="reference internal" href="#introd-prog-fig-eq-reta"><span class="std std-numref">Figura 2.23</span></a>). Faça um programa que pergunte ao usuário os valores de um par de coordenadas <span class="math notranslate nohighlight">\((x,y)\)</span>, aplique a <a class="reference internal" href="#equation-introd-prog-math-equacao-reta">Equação 2.5</a> e verifique o resultado.</p>
+<p>Considere a reta com os seguintes coeficientes: <span class="math notranslate nohighlight">\(a = 3\)</span>, <span class="math notranslate nohighlight">\(b = -2\)</span> e <span class="math notranslate nohighlight">\(c = -6\)</span> (<a class="reference internal" href="#introd-prog-fig-eq-reta"><span class="std std-numref">Figura 2.24</span></a>). Faça um programa que pergunte ao usuário os valores de um par de coordenadas <span class="math notranslate nohighlight">\((x,y)\)</span>, aplique a <a class="reference internal" href="#equation-introd-prog-math-equacao-reta">Equação 2.5</a> e verifique o resultado.</p>
 <div class="align-center figure align-default" id="introd-prog-fig-eq-reta">
 <a class="reference internal image-reference" href="../_images/eq-reta.png"><img alt="Ilustração de uma reta com coeficientes: a = 3, b = -2 e c = -6" src="../_images/eq-reta.png" style="width: 60%;" /></a>
-<p class="caption"><span class="caption-number">Figura 2.23 - </span><span class="caption-text">Ilustração de uma reta com coeficientes: <span class="math notranslate nohighlight">\(a = 3\)</span>, <span class="math notranslate nohighlight">\(b = -2\)</span> e <span class="math notranslate nohighlight">\(c = -6\)</span>.</span><a class="headerlink" href="#introd-prog-fig-eq-reta" title="Link Permanente para essa imagem">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 2.24 - </span><span class="caption-text">Ilustração de uma reta com coeficientes: <span class="math notranslate nohighlight">\(a = 3\)</span>, <span class="math notranslate nohighlight">\(b = -2\)</span> e <span class="math notranslate nohighlight">\(c = -6\)</span>.</span><a class="headerlink" href="#introd-prog-fig-eq-reta" title="Link Permanente para essa imagem">¶</a></p>
 </div>
 <p><strong>Solução:</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># coeficientes da equação geral da reta:</span>
@@ -474,7 +479,7 @@ fat(n) = n \times fat(n - 1), &amp; \text{se $n &gt; 1$}
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="../imagens.html" class="btn btn-neutral float-right" title="3. Imagens - Processamento e Visualização" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../jupyter.html" class="btn btn-neutral float-right" title="3. Jupyter" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="consideracoes.html" class="btn btn-neutral float-left" title="2.24. Considerações Finais" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
     </div>
 

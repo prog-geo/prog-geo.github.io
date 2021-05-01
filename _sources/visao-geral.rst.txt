@@ -9,9 +9,16 @@ Visão Geral do Curso
 ====================
 
 
+**Bem vindos ao curso Introdução à Programação com Dados Geoespaciais!**
+
+
+Este capítulo apresenta as motivações, objetivos, escopo e metodologia do curso.
+
+
 .. toctree::
     :maxdepth: 1
     :titlesonly:
+    :caption: Tópicos
 
     ./visao-geral/docentes
     ./visao-geral/monitoria

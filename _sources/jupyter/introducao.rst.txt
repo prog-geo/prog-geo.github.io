@@ -1,0 +1,118 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../def.rst
+
+.. _sec_jupyter_introducao:
+
+Introdução
+==========
+
+
+O `Projeto Jupyter <https://jupyter.org/>`_ fornece diversas ferramentas para que os usuários utilizem um ambiente de computação científica de maneira interativa. Uma das ferramentas desse ecossistema é o **terminal IPython** :cite:`jupyter:2021:a`, que fornece um terminal interativo com mais recursos do que o terminal padrão do Python. Esse terminal é capaz de destacar símbolos da linguagem Python, possui recursos avançados de auto-completar (*tab completion*), que inclui introspecção do objeto em questão para determinar atributos e métodos, manutenção do histórico de comandos, capacidade de execução de comandos do sistema operacional integrados com a linguagem, além de forte suporte para visualização interativa e computação distribuída e paralela. A :numref:`Figura %s <fig:jupyter:introducao:terminal-ipython-04>` mostra esse terminal realçando identificadores, palavras-chave e literais, de acordo com a sintaxe da linguagem Python, além do recurso de auto-completar. O IPython numera os comandos de entrada (``In[n]``) e os resultados produzidos (``Out[n]``) fornecendo um mecanismo de histórico bem sofisticado, com possibilidade de acesso aos comandos através da navegação das setas direcionais do teclado, entre outras facilidades.
+
+
+.. figure:: ../img/jupyter/terminal-ipython-04.png
+    :alt: Janela do terminal IPython
+    :width: 100%
+    :figclass: align-center
+    :name: fig:jupyter:introducao:terminal-ipython-04
+
+    Janela do terminal IPython.
+
+
+Outras duas ferramentas bem conhecidas desse ecossistema, o **Jupyter Notebook** :cite:`jupyter:2021:b` e o **Jupyter Lab** :cite:`jupyter:2021:c`, são aplicações web que permitem a criação, no navegador, de documentos que podem misturar elementos de código e textos descritivos formatados em Markdown, além de textos em HTML ou LaTeX. Esses documentos, chamados de **Notebook** :cite:`jupyter:2021:d`, são documentos texto, no formato JSON e adotam a extensão ``.ipynb``. A :numref:`Figura %s <fig:jupyter:introducao:jupyter-notebook>` apresenta um exemplo de *notebook* criado através do aplicativo JupyterLab.
+
+
+.. figure:: ../img/visao-geral/jupyter-notebook.png
+    :alt: Exemplo de um Notebook
+    :width: 100%
+    :figclass: align-center
+    :name: fig:jupyter:introducao:jupyter-notebook
+
+    Exemplo de um Notebook.
+
+
+As três aplicações mencionadas anteriormente - o terminal do IPython, o Jupyter Notebook e o Jupyter Lab, são consideradas **front-ends** do **Kernel IPython**. O *kernel* é um processo separado responsável por executar de fato o código provido pelo usuário nessas aplicações. Essa arquitetura, mostrada na :numref:`Figura %s <fig:jupyter:introducao:jupyter-front-back>`, permite que os ambientes clientes possam ser usados com diferentes tipos de *kernel*, como o IRkernel para R ou o IJulia para a linguagem Julia, bem como ter diferentes clientes para um mesmo *kernel*.
+
+
+.. figure:: ../img/jupyter/jupyter-front-back.png
+    :alt: Arquitetura das aplicações Jupyter
+    :width: 100%
+    :figclass: align-center
+    :name: fig:jupyter:introducao:jupyter-front-back
+
+    Arquitetura das aplicações Jupyter.
+
+
+Uma vez que você tenha o IPython instalado no seu ambiente Python, para inicializar o terminal IPython, abra o shell de comandos do seu sistema operacional (ou no prompt da Anaconda no Windows) e digite o seguinte comando::
+
+    ipython
+
+
+Uma sessão como a mostrada na :numref:`Figura %s <fig:jupyter:introducao:ipython-frontend>` será apresentada.
+
+
+.. figure:: ../img/jupyter/ipython-frontend.png
+    :alt: Abrindo o terminal IPython
+    :width: 100%
+    :figclass: align-center
+    :name: fig:jupyter:introducao:ipython-frontend
+
+    Abrindo o terminal IPython.
+
+
+Se você tiver o Jupter Notebook instalado no seu ambiente Python, é possível inicializá-lo a partir do shell de comandos do seu sistema operacional (ou no prompt da Anaconda no Windows) através do seguinte comando::
+
+    jupyter notebook
+
+
+A janela do seu navegador irá apresentar uma aplicação como a mostrada na :numref:`Figura %s <fig:jupyter:introducao:jupyter-notebook-frontend>`.
+
+
+.. figure:: ../img/jupyter/jupyter-notebook-frontend.png
+    :alt: Inicializando o Jupyter Notebook
+    :width: 100%
+    :figclass: align-center
+    :name: fig:jupyter:introducao:jupyter-notebook-frontend
+
+    Inicializando o Jupyter Notebook.
+
+
+.. note::
+
+    É possível indicar qual a pasta que o seu ambiente Jupyter Notebook deva acessar. Para isso, use o argumento ``--notebook-dir`` como indicado abaixo::
+
+        jupyter notebook --notebook-dir=/home/gribeiro
+
+
+Se você tiver o JupyterLab instalado no seu ambiente Python, é possível inicializá-lo a partir do shell de comandos do seu sistema operacional (ou no prompt da Anaconda no Windows) através do seguinte comando::
+
+    jupyter lab
+
+
+A janela do seu navegador irá apresentar uma aplicação como a mostrada na :numref:`Figura %s <fig:jupyter:introducao:jupyterlab-frontend>`.
+
+
+.. figure:: ../img/jupyter/jupyterlab-frontend.png
+    :alt: Inicializando o JupyterLab
+    :width: 100%
+    :figclass: align-center
+    :name: fig:jupyter:introducao:jupyterlab-frontend
+
+    Inicializando o JupyterLab.
+
+
+.. note::
+
+    É possível indicar qual a pasta que o seu ambiente JupyterLab deva acessar. Para isso, use o argumento ``--notebook-dir`` como indicado abaixo::
+
+        jupyter lab --notebook-dir=/home/gribeiro
+
+
+.. admonition:: Nota Histórica
+    :class: historical-note
+
+     O `IPython` foi inicialmente criado por `Fernando Pérez` :cite:`perez:2007`, como uma forma de suprir a necessidade dos cientistas de realizarem rapidamente a exploração de algoritmos, análise e visualização de dados, atividades importantes na rotina diária do trabalho científico. Atualmente, esse projeto é abrigado por uma iniciativa maior, o projeto `Jupyter`.

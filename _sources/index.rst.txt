@@ -37,6 +37,7 @@ Na era do big data, os profissionais necessitam cada vez mais de conhecimentos e
 
     instalacao
     introducao-programacao
+    jupyter
     imagens
     qgis
     variados
@@ -63,11 +64,11 @@ Na era do big data, os profissionais necessitam cada vez mais de conhecimentos e
     listas
 
 
-.. .. toctree::
+.. toctree::
     :maxdepth: 1
     :caption: Lista de Projetos:
 
-    .. projetos
+    projetos
 
 
 .. toctree::
