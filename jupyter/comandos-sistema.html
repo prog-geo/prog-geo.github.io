@@ -220,62 +220,62 @@
 <span id="sec-jupyter-comandos-sistema"></span><h1><span class="section-number">3.5. </span>Comandos do Sistema<a class="headerlink" href="#comandos-do-sistema" title="Link permanente para este título">¶</a></h1>
 <p>O <em>kernel IPython</em> estende a sintaxe da linguagem Python para possibilitar, entre outras coisas, o uso de comandos do <cite>Sistema Operacional</cite> (SO) de dentro do terminal IPython ou das células dos Jupyter Notebooks, no ambiente interativo Jupyter. Linhas de código começando pelo caractere <code class="docutils literal notranslate"><span class="pre">!</span></code> são passadas diretamente para o SO. Além disso, é possível recuperar a saída produzida pelos comandos do SO através de linhas usando <code class="docutils literal notranslate"><span class="pre">!!</span></code> (dupla exclamação) ou uma sintaxe do tipo <code class="docutils literal notranslate"><span class="pre">var</span> <span class="pre">=</span> <span class="pre">!cmd</span></code>.</p>
 <p>O comando <code class="docutils literal notranslate"><span class="pre">!ls</span></code>, abaixo, faz com que o comando <code class="docutils literal notranslate"><span class="pre">ls</span></code> do SO seja executado, retornando a listagem de arquivos e sub-diretórios do diretório corrente da aplicação de onde o comando foi executado.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="o">!</span>ls
-<span class="n">Docker</span>      <span class="n">LiClipse</span>  <span class="n">Modules</span>  <span class="n">QGIS</span><span class="o">-</span><span class="n">Data</span>  <span class="n">QGIS</span><span class="o">-</span><span class="n">Plugins</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="o">!</span>ls
+<span class="go">Docker      LiClipse  Modules  QGIS-Data  QGIS-Plugins</span>
 </pre></div>
 </div>
 <p>Também é possível passar opções para os comandos a serem executados. No caso do comando <code class="docutils literal notranslate"><span class="pre">ls</span></code>, dos sistemas Unix, a opção <code class="docutils literal notranslate"><span class="pre">-l</span></code> faz com que listagem seja mais detalhada:</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="o">!</span>ls -l
-<span class="n">total</span> <span class="mi">20</span>
-<span class="n">drwxrwxr</span><span class="o">-</span><span class="n">x</span> <span class="mi">2</span> <span class="n">gribeiro</span> <span class="n">gribeiro</span> <span class="mi">4096</span> <span class="n">abr</span> <span class="mi">12</span> <span class="mi">17</span><span class="p">:</span><span class="mi">31</span> <span class="n">Docker</span>
-<span class="n">drwxrwxr</span><span class="o">-</span><span class="n">x</span> <span class="mi">3</span> <span class="n">gribeiro</span> <span class="n">gribeiro</span> <span class="mi">4096</span> <span class="n">abr</span> <span class="mi">12</span> <span class="mi">18</span><span class="p">:</span><span class="mi">00</span> <span class="n">LiClipse</span>
-<span class="n">drwxrwxr</span><span class="o">-</span><span class="n">x</span> <span class="mi">3</span> <span class="n">gribeiro</span> <span class="n">gribeiro</span> <span class="mi">4096</span> <span class="n">abr</span> <span class="mi">12</span> <span class="mi">18</span><span class="p">:</span><span class="mi">32</span> <span class="n">Modules</span>
-<span class="n">drwxrwxr</span><span class="o">-</span><span class="n">x</span> <span class="mi">2</span> <span class="n">gribeiro</span> <span class="n">gribeiro</span> <span class="mi">4096</span> <span class="n">abr</span> <span class="mi">12</span> <span class="mi">17</span><span class="p">:</span><span class="mi">52</span> <span class="n">QGIS</span><span class="o">-</span><span class="n">Data</span>
-<span class="n">drwxrwxr</span><span class="o">-</span><span class="n">x</span> <span class="mi">3</span> <span class="n">gribeiro</span> <span class="n">gribeiro</span> <span class="mi">4096</span> <span class="n">abr</span> <span class="mi">12</span> <span class="mi">17</span><span class="p">:</span><span class="mi">57</span> <span class="n">QGIS</span><span class="o">-</span><span class="n">Plugins</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [2]: </span><span class="o">!</span>ls -l
+<span class="go">total 20</span>
+<span class="go">drwxrwxr-x 2 gribeiro gribeiro 4096 abr 12 17:31 Docker</span>
+<span class="go">drwxrwxr-x 3 gribeiro gribeiro 4096 abr 12 18:00 LiClipse</span>
+<span class="go">drwxrwxr-x 3 gribeiro gribeiro 4096 abr 12 18:32 Modules</span>
+<span class="go">drwxrwxr-x 2 gribeiro gribeiro 4096 abr 12 17:52 QGIS-Data</span>
+<span class="go">drwxrwxr-x 3 gribeiro gribeiro 4096 abr 12 17:57 QGIS-Plugins</span>
 </pre></div>
 </div>
 <p>É possível utilizar os resultados dos comandos de sistema, associando o resultado a uma variável:</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">resultado</span> <span class="o">=</span> <span class="o">!</span>ls
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [3]: </span><span class="n">resultado</span> <span class="o">=</span> <span class="o">!</span>ls
 </pre></div>
 </div>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">resultado</span><span class="p">:</span>
-   <span class="o">...</span><span class="p">:</span>     <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-   <span class="o">...</span><span class="p">:</span>
-<span class="n">Docker</span>
-<span class="n">LiClipse</span>
-<span class="n">Modules</span>
-<span class="n">QGIS</span><span class="o">-</span><span class="n">Data</span>
-<span class="n">QGIS</span><span class="o">-</span><span class="n">Plugins</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [4]: </span><span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">resultado</span><span class="p">:</span>
+<span class="gp">   ...: </span>    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="gp">   ...:</span>
+<span class="go">Docker</span>
+<span class="go">LiClipse</span>
+<span class="go">Modules</span>
+<span class="go">QGIS-Data</span>
+<span class="go">QGIS-Plugins</span>
 </pre></div>
 </div>
 <p>Podemos também passar valores de variáveis em Python para os comandos mágicos. Para isso, basta prefixar o nome dos objetos Python com o caracter <code class="docutils literal notranslate"><span class="pre">$</span></code> ou delimitá-los com <code class="docutils literal notranslate"><span class="pre">{}</span></code>. Exemplo:</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">diretorios</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">&quot;/home&quot;</span><span class="p">,</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="s2">&quot;/usr&quot;</span> <span class="p">]</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [5]: </span><span class="n">diretorios</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">&quot;/home&quot;</span><span class="p">,</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="s2">&quot;/usr&quot;</span> <span class="p">]</span>
 </pre></div>
 </div>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">diretorios</span><span class="p">:</span>
-   <span class="o">...</span><span class="p">:</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---------&quot;</span><span class="p">)</span>
-   <span class="o">...</span><span class="p">:</span>     <span class="o">!</span>ls <span class="nv">$d</span>
-   <span class="o">...</span><span class="p">:</span>
-<span class="o">---------</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [6]: </span><span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">diretorios</span><span class="p">:</span>
+<span class="gp">   ...: </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---------&quot;</span><span class="p">)</span>
+<span class="gp">   ...: </span>    <span class="o">!</span>ls <span class="nv">$d</span>
+<span class="gp">   ...:</span>
+<span class="gt">---------</span>
 <span class="n">gribeiro</span>
-<span class="o">---------</span>
+<span class="gt">---------</span>
 <span class="nb">bin</span>   <span class="n">cdrom</span>  <span class="n">etc</span>   <span class="n">lib</span>        <span class="n">lib64</span>   <span class="n">lost</span><span class="o">+</span><span class="n">found</span>  <span class="n">mnt</span>  <span class="n">proc</span>  <span class="n">run</span>   <span class="n">snap</span>  <span class="n">sys</span>  <span class="n">usr</span>
 <span class="n">boot</span>  <span class="n">dev</span>    <span class="n">home</span>  <span class="n">lib32</span>  <span class="n">libx32</span>  <span class="n">media</span>       <span class="n">opt</span>  <span class="n">root</span>  <span class="n">sbin</span>  <span class="n">srv</span>   <span class="n">tmp</span>  <span class="n">var</span>
-<span class="o">---------</span>
+<span class="gt">---------</span>
 <span class="nb">bin</span>  <span class="n">games</span>  <span class="n">include</span>  <span class="n">lib</span>  <span class="n">lib32</span>  <span class="n">lib64</span>      <span class="n">libexec</span>  <span class="n">libx32</span>  <span class="n">local</span>  <span class="n">sbin</span>  <span class="n">share</span>  <span class="n">src</span>
 </pre></div>
 </div>
 <p>ou, usando os nomes de objetos delimitados por <code class="docutils literal notranslate"><span class="pre">{}</span></code>:</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">7</span><span class="p">]:</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">diretorios</span><span class="p">:</span>
-   <span class="o">...</span><span class="p">:</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---------&quot;</span><span class="p">)</span>
-   <span class="o">...</span><span class="p">:</span>     <span class="o">!</span>ls <span class="o">{</span>d<span class="o">}</span>
-   <span class="o">...</span><span class="p">:</span>
-<span class="o">---------</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [7]: </span><span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">diretorios</span><span class="p">:</span>
+<span class="gp">   ...: </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---------&quot;</span><span class="p">)</span>
+<span class="gp">   ...: </span>    <span class="o">!</span>ls <span class="o">{</span>d<span class="o">}</span>
+<span class="gp">   ...:</span>
+<span class="gt">---------</span>
 <span class="n">gribeiro</span>
-<span class="o">---------</span>
+<span class="gt">---------</span>
 <span class="nb">bin</span>   <span class="n">cdrom</span>  <span class="n">etc</span>   <span class="n">lib</span>        <span class="n">lib64</span>   <span class="n">lost</span><span class="o">+</span><span class="n">found</span>  <span class="n">mnt</span>  <span class="n">proc</span>  <span class="n">run</span>   <span class="n">snap</span>  <span class="n">sys</span>  <span class="n">usr</span>
 <span class="n">boot</span>  <span class="n">dev</span>    <span class="n">home</span>  <span class="n">lib32</span>  <span class="n">libx32</span>  <span class="n">media</span>       <span class="n">opt</span>  <span class="n">root</span>  <span class="n">sbin</span>  <span class="n">srv</span>   <span class="n">tmp</span>  <span class="n">var</span>
-<span class="o">---------</span>
+<span class="gt">---------</span>
 <span class="nb">bin</span>  <span class="n">games</span>  <span class="n">include</span>  <span class="n">lib</span>  <span class="n">lib32</span>  <span class="n">lib64</span>      <span class="n">libexec</span>  <span class="n">libx32</span>  <span class="n">local</span>  <span class="n">sbin</span>  <span class="n">share</span>  <span class="n">src</span>
 </pre></div>
 </div>

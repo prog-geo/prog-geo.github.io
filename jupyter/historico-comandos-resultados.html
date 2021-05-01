@@ -221,16 +221,16 @@
 <p>O terminal interativo padrão do Python mantém o resultado de uma expressão avaliada sem associação a um nome específico com uma variável chamada <code class="docutils literal notranslate"><span class="pre">_</span></code> (um sublinhado simples). No entanto, cada novo resultado acaba por sobrescrever esse resultado. O terminal do IPython e os ambientes Jupyter utilizam um sistema de numeração para as entradas e saídas: <code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[N]</span></code> e <code class="docutils literal notranslate"><span class="pre">Out[N]</span></code>. Todas as saídas podem ser acessadas através do nome <code class="docutils literal notranslate"><span class="pre">_N</span></code>. O <a class="reference internal" href="#jupyter-code-numeracao-celulas"><span class="std std-numref">Trecho de Código 3.5</span></a> mostra como funciona esse recurso:</p>
 <div class="literal-block-wrapper docutils container" id="jupyter-code-numeracao-celulas">
 <div class="code-block-caption"><span class="caption-number">Trecho de Código 3.5 - </span><span class="caption-text">Histórico dos comandos de entrada e resultados.</span><a class="headerlink" href="#jupyter-code-numeracao-celulas" title="Link Permanente para esse código">¶</a></div>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">seq_fibonacci</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">21</span><span class="p">]</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="n">seq_fibonacci</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">21</span><span class="p">]</span>
 
-<span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">seq_fibonacci</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">21</span><span class="p">]</span>
+<span class="gp">In [2]: </span><span class="n">seq_fibonacci</span>
+<span class="gh">Out[2]: </span><span class="go">[1, 1, 2, 3, 5, 8, 13, 21]</span>
 
-<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">_i2</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="s1">&#39;seq_fibonacci&#39;</span>
+<span class="gp">In [3]: </span><span class="n">_i2</span>
+<span class="gh">Out[3]: </span><span class="go">&#39;seq_fibonacci&#39;</span>
 
-<span class="n">In</span> <span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="n">_i3</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="s1">&#39;_i2&#39;</span>
+<span class="gp">In [4]: </span><span class="n">_i3</span>
+<span class="gh">Out[4]: </span><span class="go">&#39;_i2&#39;</span>
 </pre></div>
 </div>
 </div>

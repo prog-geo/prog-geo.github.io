@@ -9,3 +9,9 @@ Projetos Finais
 ===============
 
 
+.. toctree::
+    :maxdepth: 1
+    :numbered:
+    :titlesonly:
+
+    ./projetos/2021/p01
