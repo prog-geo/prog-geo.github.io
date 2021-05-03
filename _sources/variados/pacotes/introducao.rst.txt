@@ -31,22 +31,22 @@ O diretório chamado ``spectral`` define o nome do pacote. O arquivo denominado 
 - ``spectral.ndvi``: módulo ``ndvi`` do pacote ``spectral``.
 
 
-Por hora, considere que o arquivo ``__init__.py`` esteja vazio. O arquivo ``evi.py`` possui o seguinte conteúdo (:numref:`Trecho de Código %s <code:variados:pacotes:spectral:v1:evi>`):
+Por hora, considere que o arquivo ``__init__.py`` esteja vazio. O arquivo ``evi.py`` possui o seguinte conteúdo (:numref:`Trecho de Código %s <code:variados:pacotes:introducao:v1:evi>`):
 
 
-.. literalinclude:: ../../code/variados/pacotes/spectral/v1/evi.py
+.. literalinclude:: ../../code/variados/pacotes/v1/spectral/evi.py
     :linenos:
-    :caption: Arquivo :download:`evi.py <../../code/variados/pacotes/spectral/v1/evi.py>`.
-    :name: code:variados:pacotes:spectral:v1:evi
+    :caption: Arquivo :download:`evi.py <../../code/variados/pacotes/v1/spectral/evi.py>`.
+    :name: code:variados:pacotes:introducao:v1:evi
 
 
-O arquivo ``ndvi.py``, por sua vez, possui o seguinte conteúdo (:numref:`Trecho de Código %s <code:variados:pacotes:spectral:v1:ndvi>`):
+O arquivo ``ndvi.py``, por sua vez, possui o seguinte conteúdo (:numref:`Trecho de Código %s <code:variados:pacotes:introducao:v1:ndvi>`):
 
 
-.. literalinclude:: ../../code/variados/pacotes/spectral/v1/ndvi.py
+.. literalinclude:: ../../code/variados/pacotes/v1/spectral/ndvi.py
     :linenos:
-    :caption: Arquivo :download:`ndvi.py <../../code/variados/pacotes/spectral/v1/ndvi.py>`.
-    :name: code:variados:pacotes:spectral:v1:ndvi
+    :caption: Arquivo :download:`ndvi.py <../../code/variados/pacotes/v1/spectral/ndvi.py>`.
+    :name: code:variados:pacotes:introducao:v1:ndvi
 
 
 .. note::
@@ -176,7 +176,7 @@ O arquivo ``__init__.py``
 
 .. note::
 
-    Se você executou o código da seção anterior, feche o intretador Python e abra-o novamente para limpar todas as definições carregadas.
+    Se você executou o código da seção anterior, feche o interpretador Python e abra-o novamente para limpar todas as definições carregadas.
 
 
 O que acontece quando você executa o código abaixo?
@@ -209,6 +209,9 @@ Agora, abra novamente o terminal do Python e veja o resultado do código abaixo:
 
     >>> from spectral import *
 
+
+.. code-block:: python
+
     >>> dir()
     ['__annotations__', '__builtins__', '__doc__', '__loader__',
      '__name__', '__package__', '__spec__', 'evi']
@@ -237,6 +240,9 @@ Altere o código do arquivo ``__init__.py`` para:
 Veja o que acontece agora com a construção ``from spectral import *``::
 
     >>> from spectral import *
+
+
+.. code-block:: python
 
     >>> dir()
     ['G', '__annotations__', '__builtins__', '__doc__',
@@ -281,18 +287,27 @@ Veja que agora o código em ``__init__.py`` foi executado mas os nomes não fora
         >>> import spectral
         O valor de G = 2.5
 
+
+    .. code-block:: python
+
         >>> dir(spectral)
         ['G', '__all__', '__builtins__', '__cached__',
          '__doc__', '__file__', '__loader__', '__name__',
           '__package__', '__path__', '__spec__', 'evi']
 
+    .. code-block:: python
+
         >>> spectral.__path__
         ['/home/gribeiro/Temp/spectral']
+
+
+    .. code-block:: python
 
         >>> dir(spectral.evi)
         ['C1', 'C2', 'EVI', 'G', 'L', '__builtins__',
          '__cached__', '__doc__', '__file__', '__loader__',
           '__name__', '__package__', '__spec__']
+
 
     Repare que o módulo ``spectral.evi`` não possui o atributo ``__path__``, enquanto o módulo ``spectral``, possui.
 
@@ -310,3 +325,16 @@ Os **pacotes de espaço de nomes** formam o mecanismo da linguagem Python que po
 .. note::
 
     Para mais informações sobre pacotes em Python, consulte :cite:`psf:reference:2021:h` e :cite:`psf:tut:2021:e`.
+
+
+Considerações Finais
+--------------------
+
+
+Ajuste o conteúdo do arquivo ``__init__.py`` conforme indicado no :numref:`Trecho de Código %s <code:variados:pacotes:introducao:v1:init>`.
+
+
+.. literalinclude:: ../../code/variados/pacotes/v1/spectral/__init__.py
+    :linenos:
+    :caption: Arquivo :download:`__init__.py <../../code/variados/pacotes/v1/spectral/__init__.py>`.
+    :name: code:variados:pacotes:introducao:v1:init

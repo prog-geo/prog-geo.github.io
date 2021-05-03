@@ -1,0 +1,275 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _sec_variados_pacotes_criando_pacotes:
+
+Criando Pacotes para Distribuição
+=================================
+
+
+Existem várias formas de criar pacotes para distribuição em Python. Esta seção será baseada no **setuptools** :cite:`ppa:2021`. Nosso objetivo será preparar a estrutura do pacote ``spectral`` para poder usar o comando abaixo para preparar o arquivo de sua distribuição::
+
+    python setup.py sdist
+
+
+Esse comando deverá produzir um arquivo chamado ``spectral-1.0.tar.gz`` contendo todos os arquivos do nosso pacote para distribuição, bem como informações de dependência de outros pacotes necessários à sua instalação. Além disso, nosso pacote poderá ser instalado através do comando ``pip``, como::
+
+    pip install spectral-1.0.tar.gz
+
+
+ou, a partir da estrutura de pasta original::
+
+    pip install .
+
+
+setuptools
+----------
+
+
+Na raiz do seu projeto crie um arquivo chamado ``pyproject.toml`` especificando o uso do setuptools. Este arquivo deverá ter o conteúdo apresentado no :numref:`Trecho de Código %s <code:variados:pacotes:criando-pacote:pyproject.toml>`.
+
+
+.. literalinclude:: ../../code/variados/pacotes/v1/pyproject.toml
+    :linenos:
+    :caption: :download:`pyproject.toml <../../code/variados/pacotes/v1/pyproject.toml>`
+    :name: code:variados:pacotes:criando-pacote:pyproject.toml
+
+
+Em seguida, devemos especificar as informações do nosso pacote através de um arquivo ``setup.py`` ou ``setup.cfg``. Vamos criar um arquivo ``setup.py``, incluindo este arquivo na raiz do projeto. O conteúdo deste arquivo é mostrado no :numref:`Trecho de Código %s <code:variados:pacotes:criando-pacote:v1:setup.py>`:
+
+
+.. literalinclude:: ../../code/variados/pacotes/v1/setup.py
+    :linenos:
+    :caption: :download:`setup.py <../../code/variados/pacotes/v1/setup.py>`
+    :name: code:variados:pacotes:criando-pacote:v1:setup.py
+
+
+O projeto do pacote ``spectral`` deve estar com a seguinte estrutura:
+
+
+.. code-block:: none
+
+    pyproject.toml
+    setup.py
+    spectral/
+        __init__.py
+        evi.py
+        ndvi.py
+
+
+Vamos testar a criação do pacote através do comando::
+
+    python setup.py sdist
+
+
+Esse comando deverá produzir um novo diretório ``dist`` contendo o arquivo ``spectral-1.0.tar.gz``. Neste diretório, podemos fazer a instalação do pacote através do comando::
+
+    pip install spectral-1.0.tar.gz
+
+
+Repare que o pacote ``spectral`` agora faz parte dos pacotes instalado no seu sistema::
+
+    pip3 freeze | grep spectral
+
+
+Para remove o pacote ``spectral``, use::
+
+    pip uninstall spectral
+
+
+Instalando um pacote no modo desenvolvimento
+--------------------------------------------
+
+
+O setuptools permite que nosso pacote possa ser instalado em um modo especial chamado *desenvolvimento*, de maneira que os arquivos do pacote não sejam copiados para a pasta ``site-packages`` do interpretador Python. Desta forma, podemos alterar o código do pacote sem necessariamente ter que reconstruir o pacote. Para instalar o pacote ``spectral`` nesse modo, faça::
+
+    pip install --editable .
+
+
+Metadados do Pacote
+-------------------
+
+
+Em geral, os pacotes Python possuem diversos metadados associados, como autor do pacote, site onde o projeto é desenvolvido, descrição detalhada do pacote, histórico de modificações e várias outras informaçõs. Nesta seção vamos acrescentar alguns metdados úteis ao pacote ``spectral``. Vamos começar criando dois novos arquivos, ``README.rst``  e ``CHANGES.rst``, com os conteúdos indicados nos Trechos de Código :numref:`%s <code:variados:pacotes:criando-pacote:readme.rst>` e :numref:`%s <code:variados:pacotes:criando-pacote:changes.rst>`, respectivamente.
+
+
+.. literalinclude:: ../../code/variados/pacotes/v1/README.rst
+    :linenos:
+    :caption: :download:`README.rst <../../code/variados/pacotes/v1/README.rst>`
+    :name: code:variados:pacotes:criando-pacote:readme.rst
+
+
+.. literalinclude:: ../../code/variados/pacotes/v1/CHANGES.rst
+    :linenos:
+    :caption: :download:`CHANGES.rst <../../code/variados/pacotes/v1/CHANGES.rst>`
+    :name: code:variados:pacotes:criando-pacote:changes.rst
+
+
+Agora, vamos atualizar o conteúdo do arquivo ``setup.py``, como indicado no :numref:`Trecho de Código %s <code:variados:pacotes:criando-pacote:v2:setup.py>`.
+
+
+.. literalinclude:: ../../code/variados/pacotes/v2/setup.py
+    :linenos:
+    :caption: :download:`setup.py <../../code/variados/pacotes/v2/setup.py>`
+    :name: code:variados:pacotes:criando-pacote:v2:setup.py
+
+
+Veja que na chamada à função ``setup``, incluímos diversos novos metadados.
+
+
+.. note::
+
+    A lista de metadados suportada pela função ``setup`` pode ser encontrada `aqui <https://setuptools.readthedocs.io/en/latest/deprecated/distutils/setupscript.html>`_.
+
+
+.. note::
+
+    A lista de classificadores (*trove classifiers*) pode ser encontrada no site do `PyPI <https://pypi.org/classifiers/>`_. Veja também o PEP 301 :cite:`pep:301`.
+
+
+Vamos também instruir o setuptools a incluir os arquivos ``README.rst`` e ``CHANGES.rst`` no pacote a ser criado. Para isso, vamos criar um arquivo chamado ``MANIFEST.in``, como mostrado do :numref:`Trecho de Código %s <code:variados:pacotes:criando-pacote:v1:manifest.in>`.
+
+
+.. literalinclude:: ../../code/variados/pacotes/v1/MANIFEST.in
+    :linenos:
+    :caption: :download:`MANIFEST.in <../../code/variados/pacotes/v1/MANIFEST.in>`
+    :name: code:variados:pacotes:criando-pacote:v1:manifest.in
+
+
+Neste ponto, o projeto do pacote ``spectral`` deve estar com a seguinte estrutura:
+
+
+.. code-block:: none
+
+    CHANGES.rst
+    MANIFEST.in
+    pyproject.toml
+    README.rst
+    setup.py
+    spectral/
+        __init__.py
+        evi.py
+        ndvi.py
+
+
+Agora, podemos construir novamente o pacote ``spectral``::
+
+    python setup.py sdist
+
+
+O arquivo ``spectral-1.0.tar.gz`` gerado no diretório ``dist``, poderá ser instalado através do comando ``pip``::
+
+    pip install spectral-1.0.tar.gz
+
+
+.. note::
+
+    Para remover o pacote instalado, faça::
+
+        pip uninstall spectral
+
+
+Dependências
+------------
+
+
+O setuptools permite indicarmos alguns tipos de dependência que um pacote pode apresentar:
+
+- ``install_requires``: Lista de dependências para funcionamento do seu pacote. Suponha que no caso do pacote ``spectral`` fosse necessária a instalação da biblioteca ``Click`` para o seu correto funcionamento.
+
+- ``extras_require``: Lista de dependências opicionais do seu pacote. Suponha que você forneça uma documentação baseada no Sphinx que possa ser construída a partir do seu pacote.
+
+
+- ``setup_requires``: Lista de dependências para o *setup* do seu pacote.
+
+- ``tests_require``: Lista de dependências para execução de testes do seu pacote.
+
+
+Vamos expandir o arquivo ``setup.py`` com o conteúdo mostrado no :numref:`Trecho de Código %s <code:variados:pacotes:criando-pacote:v3:setup.py>`.
+
+
+.. literalinclude:: ../../code/variados/pacotes/v3/setup.py
+    :linenos:
+    :emphasize-lines: 9, 11-13, 15, 17, 36-39
+    :caption: :download:`setup.py <../../code/variados/pacotes/v3/setup.py>`
+    :name: code:variados:pacotes:criando-pacote:v3:setup.py
+
+
+Para instalar o pacote com suas dependências basta executar::
+
+    pip install spectral-1.0.tar.gz
+
+
+ou::
+
+    pip install --editable .
+
+
+Para incluir também as dependências extras, faça::
+
+    pip install "spectral-1.0.tar.gz[docs]"
+
+
+ou::
+
+    pip install --editable .[docs]
+
+
+Ponto de Entrada
+----------------
+
+
+Agora que incluimos a dependência da biblioteca Click, vamos criar um novo módulo chamado ``cli`` no nosso pacote. O conteúdo desse novo módulo pode ser visto no :numref:`Trecho de Código %s <code:variados:pacotes:criando-pacote:v1:cli.py>`.
+
+
+.. literalinclude:: ../../code/variados/pacotes/v1/spectral/cli.py
+    :linenos:
+    :caption: :download:`cli.py <../../code/variados/pacotes/v1/spectral/cli.py>`
+    :name: code:variados:pacotes:criando-pacote:v1:cli.py
+
+
+Basicamente, este módulo permitirá que nosso pacote possa ser usado na linha de comando através de um comando como::
+
+    spectral ndvi --nir 0.6 --red 0.5
+
+
+Para que isso seja possível, será necessário incluir um ponto de entrada no arquivo ``setup.py``, como indicado no :numref:`Trecho de Código %s <code:variados:pacotes:criando-pacote:v4:setup.py>`.
+
+
+.. literalinclude:: ../../code/variados/pacotes/v4/setup.py
+    :linenos:
+    :emphasize-lines: 36-40
+    :caption: :download:`setup.py <../../code/variados/pacotes/v4/setup.py>`
+    :name: code:variados:pacotes:criando-pacote:v4:setup.py
+
+
+Agora, refaça a instalação do pacote spectral::
+
+    pip install --editable .
+
+
+Dessa maneira, um *script* com o mesmo nome do pacote será instalado no seu sistema, possibilitando a execução dos comandos abaixo::
+
+    spectral ndvi --nir 0.6 --red 0.5
+
+
+Saída::
+
+    NDVI: 0.09090909090909088
+
+
+Comando::
+
+    spectral evi --nir 0.6 --red 0.5 --blue 0.4
+
+
+Saída::
+
+    EVI: 0.15624999999999994
+
+
+.. note::
+
+    Para mais informações sobre a preparação de pacotes para redistribuição em Python, consule :cite:`ppa:2021`, :cite:`psf:distutils`, :cite:`psf:packaging`, :cite:`sarahan:2021`.

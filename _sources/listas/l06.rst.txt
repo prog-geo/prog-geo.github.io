@@ -36,18 +36,17 @@ Lista de Exercícios 06
 -----
 
 
-**Exercício 01.** Faça o download de um recorte da imagem Landsat-8 (`LO82190762017351CUB00_B123456789_crop.tif <https://github.com/tkorting/remote-sensing-images/blob/master/LO82190762017351CUB00_B123456789_crop.tif?raw=true>`_). A imagem possui 09 bandas, nesta ordem:
+**Exercício 01.** Faça o download de um recorte da imagem Landsat-8 (`LO82190762017351CUB00_B123456789_crop.tif <https://github.com/tkorting/remote-sensing-images/blob/master/LO82190762017351CUB00_B123456789_crop.tif?raw=true>`_). A imagem possui 9 bandas, nesta ordem:
 
-* 1 coastal
-* 2 blue
-* 3 green
-* 4 red
-* 5 nir
-* 6 swir1
-* 7 swir2
-* 8 pan
-* 9 cirrus
-
+  * 1 coastal
+  * 2 blue
+  * 3 green
+  * 4 red
+  * 5 nir
+  * 6 swir1
+  * 7 swir2
+  * 8 pan
+  * 9 cirrus
 
 *Parte 1*. Calcule 3 índices espectrais (NDVI, NDWI e NDBI). O NDBI (``Normalized Difference Built-up Index``) gera um produto que ressalta áreas construídas, e tem a seguinte fórmula:
 
@@ -60,26 +59,21 @@ Lista de Exercícios 06
 
 *Parte 2*. Crie um plot com 1 linha e 3 colunas, apresentando as imagens dos 3 índices calculados.
 
-
 *Parte 3*. Mostre os valores mínimos e máximos de cada uma das 9 bandas da imagem.
 
+**Exercício 02.** Dadas 2 imagens pancromáticas da mesma região, registradas, com diferença temporal de aproximadamente 3 anos, realize uma análise de mudança da cobertura do solo:
 
-**Exercício 02.** Dadas duas imagens pancromáticas da mesma região, registradas, com diferença temporal de aproximadamente três anos, realize uma análise de mudança da cobertura do solo:
-
-* `CBERS_4_PAN5M_20150712_154_126_L4_BAND1_crop.tif <https://github.com/tkorting/remote-sensing-images/blob/master/CBERS_4_PAN5M_20150712_154_126_L4_BAND1_crop.tif?raw=true>`_ (imagem *t1*, Julho de 2015)
-
-* `CBERS_4_PAN5M_20180924_154_126_L4_BAND1_crop.tif <https://github.com/tkorting/remote-sensing-images/blob/master/CBERS_4_PAN5M_20180924_154_126_L4_BAND1_crop.tif?raw=true>`_ (imagem *t2*, Setembro de 2018)
+  * `CBERS_4_PAN5M_20150712_154_126_L4_BAND1_crop.tif <https://github.com/tkorting/remote-sensing-images/blob/master/CBERS_4_PAN5M_20150712_154_126_L4_BAND1_crop.tif?raw=true>`_ (imagem *t1*, Julho de 2015)
+  * `CBERS_4_PAN5M_20180924_154_126_L4_BAND1_crop.tif <https://github.com/tkorting/remote-sensing-images/blob/master/CBERS_4_PAN5M_20180924_154_126_L4_BAND1_crop.tif?raw=true>`_ (imagem *t2*, Setembro de 2018)
 
 
-*Parte 1*. Abra os arquivos das duas imagens, utilizando a GDAL, e gere uma visualização de cada imagem e de seu histograma.
+*Parte 1*. Abra os arquivos das 2 imagens, utilizando a GDAL, e gere uma visualização de cada imagem e de seu histograma.
 
-
-*Parte 2*. Crie uma nova matriz :math:`delta = t2 - t1` utilizando os operadores aritméticos da NumPy. Gere uma visualização desta matriz, e apresente um scatterplot contendo como eixos, as imagens *t1* e *t2*.
+*Parte 2*. Crie uma nova matriz ``delta = t2 - t1`` utilizando os operadores aritméticos da NumPy. Gere uma visualização desta matriz, e apresente um scatterplot contendo como eixos, as imagens *t1* e *t2*.
 
 
 .. note::
 
   A imagem *t1* possui um número de linhas diferente da imagem *t2*. Você precisará fazer os ajustes necessários.
-
 
 *Parte 3*. Verifique os limites mínimos e máximos da matriz resultante, e defina um intervalo de pixels que você considera como mudança e um intervalo que considera como não mudança. A partir destes intervalos, gere uma visualização de uma classificação de *mudança* e *não mudança*.

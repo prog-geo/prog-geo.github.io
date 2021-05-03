@@ -241,8 +241,9 @@
 <p>Arquivos e pasta entregues fora do padrão de nomenclatura não serão considerados para correção.</p>
 </div>
 <hr class="docutils" />
-<p><strong>Exercício 01.</strong> Faça o download de um recorte da imagem Landsat-8 (<a class="reference external" href="https://github.com/tkorting/remote-sensing-images/blob/master/LO82190762017351CUB00_B123456789_crop.tif?raw=true">LO82190762017351CUB00_B123456789_crop.tif</a>). A imagem possui 09 bandas, nesta ordem:</p>
-<ul class="simple">
+<p><strong>Exercício 01.</strong> Faça o download de um recorte da imagem Landsat-8 (<a class="reference external" href="https://github.com/tkorting/remote-sensing-images/blob/master/LO82190762017351CUB00_B123456789_crop.tif?raw=true">LO82190762017351CUB00_B123456789_crop.tif</a>). A imagem possui 9 bandas, nesta ordem:</p>
+<blockquote>
+<div><ul class="simple">
 <li><p>1 coastal</p></li>
 <li><p>2 blue</p></li>
 <li><p>3 green</p></li>
@@ -253,6 +254,7 @@
 <li><p>8 pan</p></li>
 <li><p>9 cirrus</p></li>
 </ul>
+</div></blockquote>
 <p><em>Parte 1</em>. Calcule 3 índices espectrais (NDVI, NDWI e NDBI). O NDBI (<code class="docutils literal notranslate"><span class="pre">Normalized</span> <span class="pre">Difference</span> <span class="pre">Built-up</span> <span class="pre">Index</span></code>) gera um produto que ressalta áreas construídas, e tem a seguinte fórmula:</p>
 <blockquote>
 <div><div class="math notranslate nohighlight" id="equation-listas-l06-ndbi">
@@ -260,13 +262,15 @@
 </div></blockquote>
 <p><em>Parte 2</em>. Crie um plot com 1 linha e 3 colunas, apresentando as imagens dos 3 índices calculados.</p>
 <p><em>Parte 3</em>. Mostre os valores mínimos e máximos de cada uma das 9 bandas da imagem.</p>
-<p><strong>Exercício 02.</strong> Dadas duas imagens pancromáticas da mesma região, registradas, com diferença temporal de aproximadamente três anos, realize uma análise de mudança da cobertura do solo:</p>
-<ul class="simple">
+<p><strong>Exercício 02.</strong> Dadas 2 imagens pancromáticas da mesma região, registradas, com diferença temporal de aproximadamente 3 anos, realize uma análise de mudança da cobertura do solo:</p>
+<blockquote>
+<div><ul class="simple">
 <li><p><a class="reference external" href="https://github.com/tkorting/remote-sensing-images/blob/master/CBERS_4_PAN5M_20150712_154_126_L4_BAND1_crop.tif?raw=true">CBERS_4_PAN5M_20150712_154_126_L4_BAND1_crop.tif</a> (imagem <em>t1</em>, Julho de 2015)</p></li>
 <li><p><a class="reference external" href="https://github.com/tkorting/remote-sensing-images/blob/master/CBERS_4_PAN5M_20180924_154_126_L4_BAND1_crop.tif?raw=true">CBERS_4_PAN5M_20180924_154_126_L4_BAND1_crop.tif</a> (imagem <em>t2</em>, Setembro de 2018)</p></li>
 </ul>
-<p><em>Parte 1</em>. Abra os arquivos das duas imagens, utilizando a GDAL, e gere uma visualização de cada imagem e de seu histograma.</p>
-<p><em>Parte 2</em>. Crie uma nova matriz <span class="math notranslate nohighlight">\(delta = t2 - t1\)</span> utilizando os operadores aritméticos da NumPy. Gere uma visualização desta matriz, e apresente um scatterplot contendo como eixos, as imagens <em>t1</em> e <em>t2</em>.</p>
+</div></blockquote>
+<p><em>Parte 1</em>. Abra os arquivos das 2 imagens, utilizando a GDAL, e gere uma visualização de cada imagem e de seu histograma.</p>
+<p><em>Parte 2</em>. Crie uma nova matriz <code class="docutils literal notranslate"><span class="pre">delta</span> <span class="pre">=</span> <span class="pre">t2</span> <span class="pre">-</span> <span class="pre">t1</span></code> utilizando os operadores aritméticos da NumPy. Gere uma visualização desta matriz, e apresente um scatterplot contendo como eixos, as imagens <em>t1</em> e <em>t2</em>.</p>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
 <p>A imagem <em>t1</em> possui um número de linhas diferente da imagem <em>t2</em>. Você precisará fazer os ajustes necessários.</p>

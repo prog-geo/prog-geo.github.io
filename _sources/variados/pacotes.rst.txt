@@ -23,3 +23,4 @@ Esta seção apresenta como construir pacotes para a linguagem Python. Este recu
     :titlesonly:
 
     ./pacotes/introducao
+    ./pacotes/criando-pacotes
