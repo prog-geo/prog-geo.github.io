@@ -19,3 +19,9 @@ Projetos Finais
     ./projetos/2021/p03
     ./projetos/2021/p04
     ./projetos/2021/p05
+    ./projetos/2021/p06
+    ./projetos/2021/p07
+    ./projetos/2021/p08
+    ./projetos/2021/p09
+    ./projetos/2021/p10
+    ./projetos/2021/p11

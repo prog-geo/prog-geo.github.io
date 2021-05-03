@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>5. Extensão da Biblioteca stac.py &mdash; SER-347/CAP-419</title>
+  <title>8. Contraste de imagens &mdash; SER-347/CAP-419</title>
   
 
   
@@ -27,7 +27,7 @@
   
 
   
-    <link rel="canonical" href="https://prog-geo.github.io/projetos/2021/p05.html" />
+    <link rel="canonical" href="https://prog-geo.github.io/projetos/2021/p08.html" />
 
   
   <!--[if lt IE 9]>
@@ -48,8 +48,8 @@
     
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Buscar" href="../../search.html" />
-    <link rel="next" title="6. Detecção de mudanças em imagens" href="p06.html" />
-    <link rel="prev" title="4. API - EO Data Cube" href="p04.html" /> 
+    <link rel="next" title="9. Análise de séries temporais GOES" href="p09.html" />
+    <link rel="prev" title="7. Programação para resposta a desastres" href="p07.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -128,10 +128,10 @@
 <li class="toctree-l2"><a class="reference internal" href="p02.html">2. Spectral</a></li>
 <li class="toctree-l2"><a class="reference internal" href="p03.html">3. Amostragem com Base no Serviço WLTS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="p04.html">4. API - EO Data Cube</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">5. Extensão da Biblioteca <code class="docutils literal notranslate"><span class="pre">stac.py</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="p05.html">5. Extensão da Biblioteca <code class="docutils literal notranslate"><span class="pre">stac.py</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="p06.html">6. Detecção de mudanças em imagens</a></li>
 <li class="toctree-l2"><a class="reference internal" href="p07.html">7. Programação para resposta a desastres</a></li>
-<li class="toctree-l2"><a class="reference internal" href="p08.html">8. Contraste de imagens</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">8. Contraste de imagens</a></li>
 <li class="toctree-l2"><a class="reference internal" href="p09.html">9. Análise de séries temporais GOES</a></li>
 <li class="toctree-l2"><a class="reference internal" href="p10.html">10. Data Augmentation para Sensoriamento Remoto</a></li>
 <li class="toctree-l2"><a class="reference internal" href="p11.html">11. Séries temporais na detecção de deslizamentos</a></li>
@@ -195,7 +195,7 @@
         
           <li><a href="../../projetos.html">Projetos Finais</a> &raquo;</li>
         
-      <li><span class="section-number">5. </span>Extensão da Biblioteca <code class="docutils literal notranslate"><span class="pre">stac.py</span></code></li>
+      <li><span class="section-number">8. </span>Contraste de imagens</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -209,10 +209,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="p06.html" class="btn btn-neutral float-right" title="6. Detecção de mudanças em imagens" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="p09.html" class="btn btn-neutral float-right" title="9. Análise de séries temporais GOES" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
       
       
-        <a href="p04.html" class="btn btn-neutral float-left" title="4. API - EO Data Cube" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="p07.html" class="btn btn-neutral float-left" title="7. Programação para resposta a desastres" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
       
   </div>
   
@@ -221,9 +221,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="extensao-da-biblioteca-stac-py">
-<span id="sec-projetos-2021-p05"></span><h1><span class="section-number">5. </span>Extensão da Biblioteca <code class="docutils literal notranslate"><span class="pre">stac.py</span></code><a class="headerlink" href="#extensao-da-biblioteca-stac-py" title="Link permanente para este título">¶</a></h1>
-<p>A biblioteca <a class="reference external" href="https://github.com/brazil-data-cube/stac.py">stac.py</a> fornece uma API cliente para serviços baseados na especificação SpatioTemporal Asset Catalog. A galeria de códigos disponíveis no repositório <a class="reference external" href="https://github.com/brazil-data-cube/code-gallery">Brazil Data Cube Code Gallery</a> contém diversos exemplos de uso dessa biblioteca. Acrescente funcionalidades de visualização de dados à <code class="docutils literal notranslate"><span class="pre">stac.py</span></code> através da biblioteca <a class="reference external" href="https://holoviews.org/index.html">HoloViews</a>. Considere criar um ou mais Notebooks que ajudem a apresentar essas novas funcionalidades. Esses exemplos devem utilizar dados disponíveis no <a class="reference external" href="http://brazildatacube.dpi.inpe.br/portal/">portal do projeto Brazil Data Cube</a>.</p>
+  <div class="section" id="contraste-de-imagens">
+<span id="sec-projetos-2021-p08"></span><h1><span class="section-number">8. </span>Contraste de imagens<a class="headerlink" href="#contraste-de-imagens" title="Link permanente para este título">¶</a></h1>
+<p>O contraste de imagens é uma ferramenta muito útil para a realização de análises visuais em sensoriamento remoto. Ao realizar operações matemáticas sobre os valores dos pixels (como multiplicação por uma constante, aplicação funções como logaritmo, raiz quadrada, etc.) a visualização é transformada.</p>
+<p>Em muitos casos, a imagem de sensoriamento remoto possui uma diversidade de alvos. Eventualmente, uma técnica de contraste pode ressaltar um alvo, e mascarar outros. Conhecer a classe de cobertura antes de aplicar um contraste pode ser uma saída para ressaltar todos os alvos presentes na imagem.</p>
+<p>A proposta desse projeto consiste em definir uma série de funções prontas para cálculo de contraste de imagens. Para aplicar contraste baseado na cobertura da terra, é possível utilizar uma máscara, que pode ser obtida com o uso de plataformas como <a class="reference external" href="https://www.terraclass.gov.br/">TerraClass</a>, ou <a class="reference external" href="https://mapbiomas.org/">MapBiomas</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
 <p><strong>1.</strong> Os produtos de código desenvolvidos deverão ser licenciados de acordo com os modelos de software livre MIT, e disponibilizados em um ou mais repositórios na organização <code class="docutils literal notranslate"><span class="pre">prog-geoespacial</span></code>.</p>
@@ -240,8 +242,8 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="p06.html" class="btn btn-neutral float-right" title="6. Detecção de mudanças em imagens" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="p04.html" class="btn btn-neutral float-left" title="4. API - EO Data Cube" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="p09.html" class="btn btn-neutral float-right" title="9. Análise de séries temporais GOES" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="p07.html" class="btn btn-neutral float-left" title="7. Programação para resposta a desastres" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
     </div>
 
   <hr/>

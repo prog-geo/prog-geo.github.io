@@ -1,0 +1,37 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../../def.rst
+
+
+.. _sec_projetos_2021_p08:
+
+Contraste de imagens
+====================
+
+
+O contraste de imagens é uma ferramenta muito útil para a realização de análises visuais em sensoriamento remoto. Ao realizar operações matemáticas sobre os valores dos pixels (como multiplicação por uma constante, aplicação funções como logaritmo, raiz quadrada, etc.) a visualização é transformada.
+
+Em muitos casos, a imagem de sensoriamento remoto possui uma diversidade de alvos. Eventualmente, uma técnica de contraste pode ressaltar um alvo, e mascarar outros. Conhecer a classe de cobertura antes de aplicar um contraste pode ser uma saída para ressaltar todos os alvos presentes na imagem.
+
+A proposta desse projeto consiste em definir uma série de funções prontas para cálculo de contraste de imagens. Para aplicar contraste baseado na cobertura da terra, é possível utilizar uma máscara, que pode ser obtida com o uso de plataformas como `TerraClass <https://www.terraclass.gov.br/>`_, ou `MapBiomas <https://mapbiomas.org/>`_.
+
+
+
+.. note::
+
+    **1.** Os produtos de código desenvolvidos deverão ser licenciados de acordo com os modelos de software livre MIT, e disponibilizados em um ou mais repositórios na organização ``prog-geoespacial``.
+
+
+    **2.** Os pacotes deverão conter documentação de uso.
+
+
+    **3.** Utilize o `template de pacotes Python do Brazil Data Cube <https://github.com/brazil-data-cube/cookiecutter-bdc>`_.
+
+
+    **4.** Os produtos de dados de exemplo deverão ser disponibilizados de acordo com o modelo Creative Commons.
+
+
+    **5.** Produzir um relatório no formato do evento `GEOINFO <http://www.geoinfo.info/>`_.

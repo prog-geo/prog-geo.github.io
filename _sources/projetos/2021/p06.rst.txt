@@ -1,0 +1,32 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../../def.rst
+
+
+.. _sec_projetos_2021_p06:
+
+Detecção de mudanças em imagens
+===============================
+
+
+Utilizando um conjunto de imagens CBERS-4A, descobrir pares de imagens que pertencem à mesma região, e aplicar um algoritmo simples de detecção de mudanças para cada par encontrado, por exemplo (``imagem_t1 - imagem t2``). Quando houver uma quantidade de mudanças superior a um dado limiar (informado pelo analista), apresentar informações como alertas na região encontrada.
+
+
+.. note::
+
+    **1.** Os produtos de código desenvolvidos deverão ser licenciados de acordo com os modelos de software livre MIT, e disponibilizados em um ou mais repositórios na organização ``prog-geoespacial``.
+
+
+    **2.** Os pacotes deverão conter documentação de uso.
+
+
+    **3.** Utilize o `template de pacotes Python do Brazil Data Cube <https://github.com/brazil-data-cube/cookiecutter-bdc>`_.
+
+
+    **4.** Os produtos de dados de exemplo deverão ser disponibilizados de acordo com o modelo Creative Commons.
+
+
+    **5.** Produzir um relatório no formato do evento `GEOINFO <http://www.geoinfo.info/>`_.
