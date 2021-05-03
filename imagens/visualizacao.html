@@ -234,23 +234,23 @@
 <span class="n">gdal</span><span class="o">.</span><span class="n">UseExceptions</span><span class="p">()</span>
 
 <span class="c1"># abrir o dataset da imagem RapidEye, com 5 bandas</span>
-<span class="c1"># (lembre-se de fazer o upload na aba de arquivos)</span>
+<span class="c1"># (ao usar o colab, lembre-se de fazer o upload na aba de arquivos)</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="s2">&quot;crop_rapideye.tif&quot;</span><span class="p">,</span> <span class="n">gdal</span><span class="o">.</span><span class="n">GA_ReadOnly</span><span class="p">)</span>
 
 <span class="c1"># obter os objetos com as informações das bandas</span>
-<span class="n">banda1</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># banda blue</span>
-<span class="n">banda2</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># banda green</span>
-<span class="n">banda3</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># banda red</span>
-<span class="n">banda4</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="c1"># banda red-edge</span>
-<span class="n">banda5</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># banda nir</span>
+<span class="n">banda_blue</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">banda_green</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">banda_red</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">banda_rededge</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">banda_nir</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 
 <span class="c1"># imprimir informações de máximos/mínimos</span>
 <span class="c1"># valores dos pixels de cada banda</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">banda1</span><span class="o">.</span><span class="n">ComputeRasterMinMax</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">banda2</span><span class="o">.</span><span class="n">ComputeRasterMinMax</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">banda3</span><span class="o">.</span><span class="n">ComputeRasterMinMax</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">banda4</span><span class="o">.</span><span class="n">ComputeRasterMinMax</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">banda5</span><span class="o">.</span><span class="n">ComputeRasterMinMax</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">banda_blue</span><span class="o">.</span><span class="n">ComputeRasterMinMax</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">banda_green</span><span class="o">.</span><span class="n">ComputeRasterMinMax</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">banda_red</span><span class="o">.</span><span class="n">ComputeRasterMinMax</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">banda_rededge</span><span class="o">.</span><span class="n">ComputeRasterMinMax</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">banda_nir</span><span class="o">.</span><span class="n">ComputeRasterMinMax</span><span class="p">())</span>
 </pre></div>
 </div>
 <p>Uma maneira muito utilizada para complementar a visualização das imagens é através do <code class="docutils literal notranslate"><span class="pre">histograma</span></code>. Ele apresenta, de forma gráfica, a distribuição dos pixels na imagem. A GDAL armazena esta informação em cada banda, e podemos acessar o histograma através da função <code class="docutils literal notranslate"><span class="pre">GetHistogram</span></code>.</p>
@@ -258,22 +258,30 @@
 <span class="c1"># mínimos e máximos de pixels para cada banda (min/max)</span>
 <span class="c1"># e também a informação de divisões do gráfico (buckets)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">banda1</span><span class="o">.</span><span class="n">GetHistogram</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">25000</span><span class="p">,</span> <span class="n">buckets</span><span class="o">=</span><span class="mi">100</span><span class="p">),</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Banda 1 - Blue&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">banda2</span><span class="o">.</span><span class="n">GetHistogram</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">25000</span><span class="p">,</span> <span class="n">buckets</span><span class="o">=</span><span class="mi">100</span><span class="p">),</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Banda 2 - Green&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">banda3</span><span class="o">.</span><span class="n">GetHistogram</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">25000</span><span class="p">,</span> <span class="n">buckets</span><span class="o">=</span><span class="mi">100</span><span class="p">),</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Banda 3 - Red&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">banda4</span><span class="o">.</span><span class="n">GetHistogram</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">25000</span><span class="p">,</span> <span class="n">buckets</span><span class="o">=</span><span class="mi">100</span><span class="p">),</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Banda 4 - Red-Edge&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">banda5</span><span class="o">.</span><span class="n">GetHistogram</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">25000</span><span class="p">,</span> <span class="n">buckets</span><span class="o">=</span><span class="mi">100</span><span class="p">),</span> <span class="s1">&#39;cyan&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Banda 5 - NIR&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">banda_blue</span><span class="o">.</span><span class="n">GetHistogram</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">25000</span><span class="p">,</span> <span class="n">buckets</span><span class="o">=</span><span class="mi">100</span><span class="p">),</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Banda 1 - Blue&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">banda_green</span><span class="o">.</span><span class="n">GetHistogram</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">25000</span><span class="p">,</span> <span class="n">buckets</span><span class="o">=</span><span class="mi">100</span><span class="p">),</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Banda 2 - Green&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">banda_red</span><span class="o">.</span><span class="n">GetHistogram</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">25000</span><span class="p">,</span> <span class="n">buckets</span><span class="o">=</span><span class="mi">100</span><span class="p">),</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Banda 3 - Red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">banda_rededge</span><span class="o">.</span><span class="n">GetHistogram</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">25000</span><span class="p">,</span> <span class="n">buckets</span><span class="o">=</span><span class="mi">100</span><span class="p">),</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Banda 4 - Red-Edge&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">banda_nir</span><span class="o">.</span><span class="n">GetHistogram</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">25000</span><span class="p">,</span> <span class="n">buckets</span><span class="o">=</span><span class="mi">100</span><span class="p">),</span> <span class="s1">&#39;cyan&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Banda 5 - NIR&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Figura do Histograma histograma-5-canais.png</p>
+<div class="align-center figure align-default" id="imagens-fig-histograma-5-canais">
+<a class="reference internal image-reference" href="../_images/histograma-5-canais.png"><img alt="Gráfico contendo o histograma das 5 bandas disponíveis" src="../_images/histograma-5-canais.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Figura 4.3 - </span><span class="caption-text">Gráfico contendo o histograma das 5 bandas disponíveis.</span><a class="headerlink" href="#imagens-fig-histograma-5-canais" title="Link Permanente para essa imagem">¶</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>A informação de mínimos e máximos valores de pixels para cada banda, utilizada pelas chamadas da função <code class="docutils literal notranslate"><span class="pre">GetHistogram</span></code>, foi definida de maneira empírica, observando o retorno da função <code class="docutils literal notranslate"><span class="pre">ComputeRasterMinMax</span></code> aplicada para todas as bandas.</p>
+<p>Este histograma apresenta as informações divididas em 100 partes, ou <code class="docutils literal notranslate"><span class="pre">buckets</span></code>. Portanto, o eixo <em>x</em> não contém os valores de números digitais originais da imagem, e sim os valores espaçados no intervalo definido pelos parâmetros <code class="docutils literal notranslate"><span class="pre">min</span></code> e <code class="docutils literal notranslate"><span class="pre">max</span></code>.</p>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># obter as matrizes de pixels de cada banda</span>
-<span class="n">blue</span> <span class="o">=</span> <span class="n">banda1</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()</span>
-<span class="n">green</span> <span class="o">=</span> <span class="n">banda2</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()</span>
-<span class="n">red</span> <span class="o">=</span> <span class="n">banda3</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()</span>
-<span class="n">rededge</span> <span class="o">=</span> <span class="n">banda4</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()</span>
-<span class="n">nir</span> <span class="o">=</span> <span class="n">banda5</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()</span>
+<span class="n">blue</span> <span class="o">=</span> <span class="n">banda_blue</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()</span>
+<span class="n">green</span> <span class="o">=</span> <span class="n">banda_green</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()</span>
+<span class="n">red</span> <span class="o">=</span> <span class="n">banda_red</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()</span>
+<span class="n">rededge</span> <span class="o">=</span> <span class="n">banda_rededge</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()</span>
+<span class="n">nir</span> <span class="o">=</span> <span class="n">banda_nir</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()</span>
 
 <span class="c1"># combinamos GDAL e Matplotlib para</span>
 <span class="c1"># visualizar as bandas individualmente</span>
@@ -297,20 +305,23 @@
 </div>
 <p>Podemos combinar a visualização de 2 bandas em um gráfico comumente chamado de <code class="docutils literal notranslate"><span class="pre">scatterplot</span></code>. Para isso precisamos transformar as bandas da nossa imagem (2 dimensões) em vetores (1 dimensão). Para isso podemos usar a função da NumPy chamada <code class="docutils literal notranslate"><span class="pre">flatten</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># obter os vetores de 1 dimensão de cada banda</span>
-<span class="n">vetor3</span> <span class="o">=</span> <span class="n">red</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
-<span class="n">vetor5</span> <span class="o">=</span> <span class="n">nir</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+<span class="n">vetor_red</span> <span class="o">=</span> <span class="n">red</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+<span class="n">vetor_nir</span> <span class="o">=</span> <span class="n">nir</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
 
 <span class="c1"># construir o gráfico com o scatterplot</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">vetor3</span><span class="p">,</span> <span class="n">vetor5</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">vetor_red</span><span class="p">,</span> <span class="n">vetor_nir</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Banda 3 - Red&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Banda 5 - NIR&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Scatterplot das bandas 3 (Red) e 5 (NIR)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Scatterplot das bandas Red e NIR&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">();</span>
 </pre></div>
 </div>
-<p>Figura scatterplot-2-bandas.png</p>
+<div class="align-center figure align-default" id="imagens-fig-scatterplot-2-bandas">
+<a class="reference internal image-reference" href="../_images/scatterplot-2-bandas.png"><img alt="Gráfico de dispersão (scatterplot) entre as bandas Red e NIR" src="../_images/scatterplot-2-bandas.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Figura 4.4 - </span><span class="caption-text">Gráfico de dispersão (<em>scatterplot</em>) entre as bandas Red e NIR.</span><a class="headerlink" href="#imagens-fig-scatterplot-2-bandas" title="Link Permanente para essa imagem">¶</a></p>
+</div>
 <div class="section" id="composicao-colorida-e-contraste">
 <h2><span class="section-number">4.3.1. </span>Composição colorida e Contraste<a class="headerlink" href="#composicao-colorida-e-contraste" title="Link permanente para este título">¶</a></h2>
 <p>Para visualizar uma composição colorida, precisamos informar quais bandas serão utilizadas nas componentes RGB do gráfico:</p>
@@ -324,12 +335,13 @@
 <span class="c1"># a partir de alguma matriz da imagem original</span>
 <span class="n">linhas</span> <span class="o">=</span> <span class="n">blue</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">colunas</span> <span class="o">=</span> <span class="n">blue</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">bandas</span> <span class="o">=</span> <span class="mi">3</span>
 
 <span class="c1"># para criar uma visualização em cores</span>
 <span class="c1"># verdadeiras, podemos associar as bandas</span>
 <span class="c1"># do RapidEye 3 - Red, 2 - Green, 1 - Blue</span>
-<span class="n">array_rgb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">linhas</span><span class="p">,</span> <span class="n">colunas</span><span class="p">,</span> <span class="n">bandas</span><span class="p">))</span>
+<span class="c1"># para isso criamos uma matriz com 3 dimensões</span>
+<span class="c1"># (3 x linhas x colunas)</span>
+<span class="n">array_rgb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">linhas</span><span class="p">,</span> <span class="n">colunas</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 
 <span class="c1"># veja que, para visualizar corretamente,</span>
 <span class="c1"># precisaremos dividir as matrizes pelo</span>
@@ -344,7 +356,10 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Composição colorida verdadeira&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>rapideye-cores-verdadeiras.png</p>
+<div class="align-center figure align-default" id="imagens-fig-rapideye-cores-verdadeiras">
+<a class="reference internal image-reference" href="../_images/rapideye-cores-verdadeiras.png"><img alt="Visualização de uma composição colorida verdadeira" src="../_images/rapideye-cores-verdadeiras.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Figura 4.5 - </span><span class="caption-text">Visualização de uma composição colorida verdadeira.</span><a class="headerlink" href="#imagens-fig-rapideye-cores-verdadeiras" title="Link Permanente para essa imagem">¶</a></p>
+</div>
 <p>O contraste é uma técnica que melhora a visualização da imagem. Veja que neste caso, os números digitais da imagem podem ser alterados, e assim as propriedades dos elementos em relação a suas respostas espectrais ficam comprometidas.</p>
 <div class="admonition warning">
 <p class="admonition-title">Aviso</p>
@@ -360,19 +375,12 @@
 <span class="c1"># array_rgb, vamos alterar uma cópia deste</span>
 <span class="c1"># array com as operações de gain/offset</span>
 <span class="c1"># para não comprometer os dados originais</span>
-<span class="n">array_rgb_gain</span> <span class="o">=</span> <span class="n">array_rgb</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">array_rgb_gain</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">*=</span> <span class="n">gain</span>
-<span class="n">array_rgb_gain</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*=</span> <span class="n">gain</span>
-<span class="n">array_rgb_gain</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">*=</span> <span class="n">gain</span>
 
-<span class="c1"># podemos aplicar gain/offset ao mesmo tempo</span>
-<span class="c1"># e também sobre a(s) banda(s) que desejarmos</span>
-<span class="c1"># para entender os efeitos, vamos aplicar</span>
-<span class="c1"># cada um separadamente</span>
+<span class="n">array_rgb_gain</span> <span class="o">=</span> <span class="n">array_rgb</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">array_rgb_gain</span> <span class="o">*=</span> <span class="n">gain</span>
+
 <span class="n">array_rgb_offset</span> <span class="o">=</span> <span class="n">array_rgb</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">array_rgb_offset</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="n">offset</span>
-<span class="n">array_rgb_offset</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">offset</span>
-<span class="n">array_rgb_offset</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">+=</span> <span class="n">offset</span>
+<span class="n">array_rgb_offset</span> <span class="o">+=</span> <span class="n">offset</span>
 
 <span class="c1"># apresentação dos resultados</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
@@ -389,15 +397,14 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Imagem com aplicação de offset = </span><span class="si">{</span><span class="n">offset</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>rapideye-offset.png</p>
 </div>
 <div class="section" id="metodos-simples-para-classificacao">
 <h2><span class="section-number">4.3.2. </span>Métodos simples para classificação<a class="headerlink" href="#metodos-simples-para-classificacao" title="Link permanente para este título">¶</a></h2>
 <p>Em diversos casos, a aplicação de limiares sobre índices espectrais produz rapidamente resultados de mapeamento de alvos.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># definição de algumas constantes</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># definição de algumas constantes (empíricas)</span>
 <span class="n">delta</span> <span class="o">=</span> <span class="mf">0.0000000001</span>
-<span class="n">limiar_NDWI</span> <span class="o">=</span> <span class="mf">0.0</span>
-<span class="n">limiar_NDVI</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">limiar_ndwi</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">limiar_ndvi</span> <span class="o">=</span> <span class="mf">0.5</span>
 
 <span class="c1"># vamos alterar o tipo de uma das matrizes</span>
 <span class="c1"># de bandas para float, para que os cálculos</span>
@@ -405,20 +412,24 @@
 <span class="n">nir</span> <span class="o">=</span> <span class="n">nir</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
 
 <span class="c1"># cálculo das matrizes com os índices</span>
-<span class="n">NDWI</span> <span class="o">=</span> <span class="p">(</span><span class="n">green</span> <span class="o">-</span> <span class="n">nir</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">green</span> <span class="o">+</span> <span class="n">nir</span> <span class="o">+</span> <span class="n">delta</span><span class="p">)</span>
-<span class="n">NDVI</span> <span class="o">=</span> <span class="p">(</span><span class="n">nir</span> <span class="o">-</span> <span class="n">red</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">nir</span> <span class="o">+</span> <span class="n">red</span> <span class="o">+</span> <span class="n">delta</span><span class="p">)</span>
+<span class="n">ndwi</span> <span class="o">=</span> <span class="p">(</span><span class="n">green</span> <span class="o">-</span> <span class="n">nir</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">green</span> <span class="o">+</span> <span class="n">nir</span> <span class="o">+</span> <span class="n">delta</span><span class="p">)</span>
+<span class="n">ndvi</span> <span class="o">=</span> <span class="p">(</span><span class="n">nir</span> <span class="o">-</span> <span class="n">red</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">nir</span> <span class="o">+</span> <span class="n">red</span> <span class="o">+</span> <span class="n">delta</span><span class="p">)</span>
 
 <span class="c1"># criação de classificações simples</span>
-<span class="n">classificacao</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">NDWI</span><span class="p">)</span>
-<span class="n">classificacao</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">NDWI</span> <span class="o">&gt;</span> <span class="n">limiar_NDWI</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">NDVI</span> <span class="o">&gt;</span> <span class="n">limiar_NDVI</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">classificacao</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">ndwi</span><span class="p">)</span>
+<span class="n">classificacao</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">ndwi</span> <span class="o">&gt;</span> <span class="n">limiar_ndwi</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">ndvi</span> <span class="o">&gt;</span> <span class="n">limiar_ndvi</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">classificacao</span><span class="p">)</span>
+<span class="n">colormap_3classes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;Blues&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">classificacao</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">colormap_3classes</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Exemplo de classificação&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>rapideye-classificacao-simples.png</p>
+<div class="align-center figure align-default" id="imagens-fig-rapideye-classificacao-simples">
+<a class="reference internal image-reference" href="../_images/rapideye-classificacao-simples.png"><img alt="Exemplo de classificação simples obtida pela aplicação de 2 limiares empíricos" src="../_images/rapideye-classificacao-simples.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Figura 4.6 - </span><span class="caption-text">Exemplo de classificação simples obtida pela aplicação de 2 limiares empíricos.</span><a class="headerlink" href="#imagens-fig-rapideye-classificacao-simples" title="Link Permanente para essa imagem">¶</a></p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
 <p>A combinação das bibliotecas GDAL, NumPy e Matplotlib permite a criação de muitas ferramentas de análise de imagens. Conseguiremos também combinar essas análises com dados vetoriais e tabulares.</p>

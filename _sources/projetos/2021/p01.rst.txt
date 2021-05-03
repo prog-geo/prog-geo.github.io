@@ -29,16 +29,16 @@ Para este projeto, considere criar um ou mais pacotes Python que implementem um 
 
 .. note::
 
-    **1.** Os produtos de código desenvolvidos deverão ser licenciados de acordo com os modelos de software livre MIT, e disponibilizados em um ou mais repositório na organização ``prog-geoespacial``.
+    **1.** Os produtos de código desenvolvidos deverão ser licenciados de acordo com os modelos de software livre MIT, e disponibilizados em um ou mais repositórios na organização ``prog-geoespacial``.
 
 
     **2.** Os pacotes deverão conter documentação de uso.
 
 
-    **3**. Utilize o `template de pacotes Python do Brazil Data Cube <https://github.com/brazil-data-cube/cookiecutter-bdc>`_.
+    **3.** Utilize o `template de pacotes Python do Brazil Data Cube <https://github.com/brazil-data-cube/cookiecutter-bdc>`_.
 
 
     **4.** Os produtos de dados de exemplo deverão ser disponibilizados de acordo com o modelo Creative Commons.
 
 
-    **5.** Produzir um relatório no formato da GeoInfo.
+    **5.** Produzir um relatório no formato do evento `GEOINFO <http://www.geoinfo.info/>`_.

@@ -1,0 +1,32 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../../def.rst
+
+
+.. _sec_projetos_2021_p04:
+
+API - EO Data Cube
+==================
+
+
+Construir uma biblioteca Python chamada ``EOCubes`` que forneça uma abstração denominada ``DataCube`` para cubos de dados de observação da Terra. Essa abstração deverá possibilitar o uso das coleções disponíveis no serviço `STAC da Plataforma Brazil Data Cube <http://brazildatacube.dpi.inpe.br/stac/>`_. Utilize as bibliotecas `stac.py <https://github.com/brazil-data-cube/stac.py>`_ e `Xarray <http://xarray.pydata.org/en/stable/>`_ na construção dessa nova bilioteca. Considere criar um ou mais Notebooks que ajudem a apresentar as funcionalidades desse pacote. Utilize os cubos de dados disponíveis no `portal do projeto Brazil Data Cube <http://brazildatacube.dpi.inpe.br/portal/>`_ para testar a biblioteca desenvolvida. Forneça exemplos de uso dessa biblioteca, por exemplo, com operações de geração de índices espectrais ou extração de séries temporais. Também considere integrar recursos de visualização e processamento paralelo.
+
+
+.. note::
+
+    **1.** Os produtos de código desenvolvidos deverão ser licenciados de acordo com os modelos de software livre MIT, e disponibilizados em um ou mais repositórios na organização ``prog-geoespacial``.
+
+
+    **2.** Os pacotes deverão conter documentação de uso.
+
+
+    **3.** Utilize o `template de pacotes Python do Brazil Data Cube <https://github.com/brazil-data-cube/cookiecutter-bdc>`_.
+
+
+    **4.** Os produtos de dados de exemplo deverão ser disponibilizados de acordo com o modelo Creative Commons.
+
+
+    **5.** Produzir um relatório no formato do evento `GEOINFO <http://www.geoinfo.info/>`_.

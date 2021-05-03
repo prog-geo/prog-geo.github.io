@@ -1,0 +1,37 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../../def.rst
+
+
+.. _sec_projetos_2021_p02:
+
+Spectral
+========
+
+
+A *Tabela 1* apresentada em :cite:`capolupo:2020` contém uma lista de diversos índices espectrais. Com base nesta tabela, desenvolva uma ferramenta para geração de índices espectrais que possibilite ao usuário informar o tipo de índice desejado e o nome dos arquivos contendo as imagens com as bandas espectrais necessárias para criação do índice. Por exemplo, para a criação do NDVI o usuário poderia utilizar um comando de linha como::
+
+    spectral --index ndvi --red red.tif --nir nir.tif --output ndvi.tif --verbose
+
+
+Esta ferramenta deverá ser desenvolvida na forma de um pacote Python. Considere criar um ou mais Notebooks que ajudem a apresentar as funcionalidades desse pacote, mostrando os índices disponíveis, equações e sensores para os quais esses índices podem ser calculados. Utilize imagens Sentinel-2 e Landsat-8 disponíveis no `portal do projeto Brazil Data Cube <http://brazildatacube.dpi.inpe.br/portal/>`_.
+
+
+.. note::
+
+    **1.** Os produtos de código desenvolvidos deverão ser licenciados de acordo com os modelos de software livre MIT, e disponibilizados em um ou mais repositórios na organização ``prog-geoespacial``.
+
+
+    **2.** Os pacotes deverão conter documentação de uso.
+
+
+    **3.** Utilize o `template de pacotes Python do Brazil Data Cube <https://github.com/brazil-data-cube/cookiecutter-bdc>`_.
+
+
+    **4.** Os produtos de dados de exemplo deverão ser disponibilizados de acordo com o modelo Creative Commons.
+
+
+    **5.** Produzir um relatório no formato do evento `GEOINFO <http://www.geoinfo.info/>`_.

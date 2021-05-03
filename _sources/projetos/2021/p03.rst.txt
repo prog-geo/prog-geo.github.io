@@ -1,0 +1,45 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../../def.rst
+
+
+.. _sec_projetos_2021_p03:
+
+Amostragem com Base no Serviço WLTS
+===================================
+
+
+Os seguintes serviços web fazem parte da Plataforma Brazil Data Cube (BDC):
+
+- **WLTS:** o `Web Land Trajectory Service <https://github.com/brazil-data-cube/wlts.py>`_ é um serviço web que permite a recuperação de trajetórias de uso e cobertura da Terra a partir de coleções de dados vetoriais e matriciais disponibilizadas pelo serviço. No caso do BDC, o serviço fornece acesso aos dados do TerraClass, MapBiomas, Lapig (áreas de pastagens) e IBGE.
+
+
+- **WTSS:** o serviço `Web Time Series Service <https://github.com/brazil-data-cube/wtss.py>`_ permite recuperar a série temporal para uma dada localização do espaço em um certo intervalo de tempo. No BDC, este serviço permite acessar as séries temporais de coleções MODIS, Landsat-8, Sentinel-2 e CBERS-4/AWFI.
+
+
+Propor e desenvolver um pacote na linguagem Python que utilize estes dois serviços para geração de conjuntos amostrais. O processo de extração das amostras deverá seguir alguma metodologia. Consulte :cite:`delmelle:2014` para exemplos de como definir esses processos. O usuário desse pacote deverá informar a região e o período de interesse, bem como o número de amostras e outros parâmetros necessários. O resultado deverá incluir a localização das amostras, a data associada, a classe (legenda), a coleção (fonte de dados), os valores da série-temporal (extraídas do WTSS), entre outras informações.
+
+
+.. note::
+
+    Consulte os Notebooks sobre esses dois serviços disponíveis no repositório `Brazil Data Cube Code Gallery <https://github.com/brazil-data-cube/code-gallery>`_.
+
+
+.. note::
+
+    **1.** Os produtos de código desenvolvidos deverão ser licenciados de acordo com os modelos de software livre MIT, e disponibilizados em um ou mais repositórios na organização ``prog-geoespacial``.
+
+
+    **2.** Os pacotes deverão conter documentação de uso.
+
+
+    **3.** Utilize o `template de pacotes Python do Brazil Data Cube <https://github.com/brazil-data-cube/cookiecutter-bdc>`_.
+
+
+    **4.** Os produtos de dados de exemplo deverão ser disponibilizados de acordo com o modelo Creative Commons.
+
+
+    **5.** Produzir um relatório no formato do evento `GEOINFO <http://www.geoinfo.info/>`_.

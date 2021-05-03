@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>1. Brazil Data Cube Cloud Coverage (BDC3) &mdash; SER-347/CAP-419</title>
+  <title>4. API - EO Data Cube &mdash; SER-347/CAP-419</title>
   
 
   
@@ -27,7 +27,7 @@
   
 
   
-    <link rel="canonical" href="https://prog-geo.github.io/projetos/2021/p01.html" />
+    <link rel="canonical" href="https://prog-geo.github.io/projetos/2021/p04.html" />
 
   
   <!--[if lt IE 9]>
@@ -48,8 +48,8 @@
     
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Buscar" href="../../search.html" />
-    <link rel="next" title="2. Spectral" href="p02.html" />
-    <link rel="prev" title="Projetos Finais" href="../../projetos.html" /> 
+    <link rel="next" title="5. Extensão da Biblioteca stac.py" href="p05.html" />
+    <link rel="prev" title="3. Amostragem com Base no Serviço WLTS" href="p03.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -124,10 +124,10 @@
 <p class="caption"><span class="caption-text">Lista de Projetos:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../projetos.html">Projetos Finais</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">1. Brazil Data Cube Cloud Coverage (BDC<sup>3</sup>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p01.html">1. Brazil Data Cube Cloud Coverage (BDC<sup>3</sup>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="p02.html">2. Spectral</a></li>
 <li class="toctree-l2"><a class="reference internal" href="p03.html">3. Amostragem com Base no Serviço WLTS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="p04.html">4. API - EO Data Cube</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4. API - EO Data Cube</a></li>
 <li class="toctree-l2"><a class="reference internal" href="p05.html">5. Extensão da Biblioteca <code class="docutils literal notranslate"><span class="pre">stac.py</span></code></a></li>
 </ul>
 </li>
@@ -189,7 +189,7 @@
         
           <li><a href="../../projetos.html">Projetos Finais</a> &raquo;</li>
         
-      <li><span class="section-number">1. </span>Brazil Data Cube Cloud Coverage (BDC<sup>3</sup>)</li>
+      <li><span class="section-number">4. </span>API - EO Data Cube</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -203,10 +203,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="p02.html" class="btn btn-neutral float-right" title="2. Spectral" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="p05.html" class="btn btn-neutral float-right" title="5. Extensão da Biblioteca stac.py" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
       
       
-        <a href="../../projetos.html" class="btn btn-neutral float-left" title="Projetos Finais" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="p03.html" class="btn btn-neutral float-left" title="3. Amostragem com Base no Serviço WLTS" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
       
   </div>
   
@@ -215,14 +215,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="brazil-data-cube-cloud-coverage-bdc3">
-<span id="sec-projetos-2021-p01"></span><h1><span class="section-number">1. </span>Brazil Data Cube Cloud Coverage (BDC<sup>3</sup>)<a class="headerlink" href="#brazil-data-cube-cloud-coverage-bdc3" title="Link permanente para este título">¶</a></h1>
-<p>O trabalho apresentado em <span id="id1">[<a class="reference internal" href="../../referencias.html#id25">11</a>]</span> introduz uma aplicação para fornecer ao usuário algumas estatísticas sobre a cobertura de nuvens a partir de séries temporais de imagens de sensoriamento remoto ópticas. Esta aplicação utiliza o <a class="reference external" href="https://github.com/brazil-data-cube/code-gallery/blob/master/jupyter/Python/stac/stac-introduction.ipynb">serviço STAC do Brazil Data Cube</a> para recuperar, nos metadados das coleções de imagens e itens, o percentual de cobertura de nuvens e o <em>footprint</em> das imagens (<a class="reference internal" href="#fig-projetos-2021-p01-bdc03"><span class="std std-numref">Figura 1.3</span></a>). Assim, vários gráficos podem ser apresentados para o usuário, como porcentagem de cobertura de nuvens mensal ou anual, ou valores absolutos da cobertura de nuvem ao longo do tempo.</p>
-<div class="align-center figure align-default" id="fig-projetos-2021-p01-bdc03">
-<a class="reference internal image-reference" href="../../_images/bdc3.jpg"><img alt="Arquitetura do BDC3" src="../../_images/bdc3.jpg" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 1.3 - </span><span class="caption-text">Arquitetura do BDC<sup>3</sup>. <br/> <strong>Fonte:</strong> Lucena et al. (2020) <span id="id2">[<a class="reference internal" href="../../referencias.html#id25">11</a>]</span>.</span><a class="headerlink" href="#fig-projetos-2021-p01-bdc03" title="Link Permanente para essa imagem">¶</a></p>
-</div>
-<p>Para este projeto, considere criar um ou mais pacotes Python que implementem um processador de dados matriciais e vetoriais a partir das mácaras de nuvem disponíveis no catálogo do BDC, oferecendo a possibilidade de estatísticas a partir de partições arbitrárias, como limites municipais e estaduais, grade de um dado satélite/sensor, limite de um bioma, entre outros. Considere criar Notebooks que ajudem a apresentar as funcionalidades desse processador.</p>
+  <div class="section" id="api-eo-data-cube">
+<span id="sec-projetos-2021-p04"></span><h1><span class="section-number">4. </span>API - EO Data Cube<a class="headerlink" href="#api-eo-data-cube" title="Link permanente para este título">¶</a></h1>
+<p>Construir uma biblioteca Python chamada <code class="docutils literal notranslate"><span class="pre">EOCubes</span></code> que forneça uma abstração denominada <code class="docutils literal notranslate"><span class="pre">DataCube</span></code> para cubos de dados de observação da Terra. Essa abstração deverá possibilitar o uso das coleções disponíveis no serviço <a class="reference external" href="http://brazildatacube.dpi.inpe.br/stac/">STAC da Plataforma Brazil Data Cube</a>. Utilize as bibliotecas <a class="reference external" href="https://github.com/brazil-data-cube/stac.py">stac.py</a> e <a class="reference external" href="http://xarray.pydata.org/en/stable/">Xarray</a> na construção dessa nova bilioteca. Considere criar um ou mais Notebooks que ajudem a apresentar as funcionalidades desse pacote. Utilize os cubos de dados disponíveis no <a class="reference external" href="http://brazildatacube.dpi.inpe.br/portal/">portal do projeto Brazil Data Cube</a> para testar a biblioteca desenvolvida. Forneça exemplos de uso dessa biblioteca, por exemplo, com operações de geração de índices espectrais ou extração de séries temporais. Também considere integrar recursos de visualização e processamento paralelo.</p>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
 <p><strong>1.</strong> Os produtos de código desenvolvidos deverão ser licenciados de acordo com os modelos de software livre MIT, e disponibilizados em um ou mais repositórios na organização <code class="docutils literal notranslate"><span class="pre">prog-geoespacial</span></code>.</p>
@@ -239,8 +234,8 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="p02.html" class="btn btn-neutral float-right" title="2. Spectral" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="../../projetos.html" class="btn btn-neutral float-left" title="Projetos Finais" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="p05.html" class="btn btn-neutral float-right" title="5. Extensão da Biblioteca stac.py" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="p03.html" class="btn btn-neutral float-left" title="3. Amostragem com Base no Serviço WLTS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
     </div>
 
   <hr/>
