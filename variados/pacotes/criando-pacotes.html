@@ -48,7 +48,7 @@
     
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Buscar" href="../../search.html" />
-    <link rel="next" title="Referências Bibliográficas" href="../../referencias.html" />
+    <link rel="next" title="6.5. Visualização de dados com a Matplotlib" href="../matplotlib.html" />
     <link rel="prev" title="6.4.1. Introdução" href="introducao.html" /> 
 </head>
 
@@ -120,6 +120,7 @@
 <li class="toctree-l3 current"><a class="current reference internal" href="#">6.4.2. Criando Pacotes para Distribuição</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../matplotlib.html">6.5. Visualização de dados com a Matplotlib</a></li>
 </ul>
 </li>
 </ul>
@@ -208,7 +209,7 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="../../referencias.html" class="btn btn-neutral float-right" title="Referências Bibliográficas" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../matplotlib.html" class="btn btn-neutral float-right" title="6.5. Visualização de dados com a Matplotlib" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
       
       
         <a href="introducao.html" class="btn btn-neutral float-left" title="6.4.1. Introdução" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
@@ -222,7 +223,7 @@
             
   <div class="section" id="criando-pacotes-para-distribuicao">
 <span id="sec-variados-pacotes-criando-pacotes"></span><h1><span class="section-number">6.4.2. </span>Criando Pacotes para Distribuição<a class="headerlink" href="#criando-pacotes-para-distribuicao" title="Link permanente para este título">¶</a></h1>
-<p>Existem várias formas de criar pacotes para distribuição em Python. Esta seção será baseada no <strong>setuptools</strong> <span id="id1">[<a class="reference internal" href="../../referencias.html#id44">1</a>]</span>. Nosso objetivo será preparar a estrutura do pacote <code class="docutils literal notranslate"><span class="pre">spectral</span></code> para poder usar o comando abaixo para preparar o arquivo de sua distribuição:</p>
+<p>Existem várias formas de criar pacotes para distribuição em Python. Esta seção será baseada no <strong>setuptools</strong> <span id="id1">[<a class="reference internal" href="../../referencias.html#id44">1</a>]</span>. Nosso objetivo será preparar a estrutura do pacote <code class="docutils literal notranslate"><span class="pre">spectral</span></code> para poder usar o comando abaixo, que gera o arquivo de distribuição:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">sdist</span>
 </pre></div>
 </div>
@@ -283,11 +284,11 @@ spectral/
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">spectral</span><span class="o">-</span><span class="mf">1.0</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
 </pre></div>
 </div>
-<p>Repare que o pacote <code class="docutils literal notranslate"><span class="pre">spectral</span></code> agora faz parte dos pacotes instalado no seu sistema:</p>
+<p>Repare que o pacote <code class="docutils literal notranslate"><span class="pre">spectral</span></code> agora faz parte dos pacotes instalados no seu sistema:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip3</span> <span class="n">freeze</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">spectral</span>
 </pre></div>
 </div>
-<p>Para remove o pacote <code class="docutils literal notranslate"><span class="pre">spectral</span></code>, use:</p>
+<p>Para remover o pacote <code class="docutils literal notranslate"><span class="pre">spectral</span></code>, use:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">uninstall</span> <span class="n">spectral</span>
 </pre></div>
 </div>
@@ -301,7 +302,7 @@ spectral/
 </div>
 <div class="section" id="metadados-do-pacote">
 <h2><span class="section-number">6.4.2.3. </span>Metadados do Pacote<a class="headerlink" href="#metadados-do-pacote" title="Link permanente para este título">¶</a></h2>
-<p>Em geral, os pacotes Python possuem diversos metadados associados, como autor do pacote, site onde o projeto é desenvolvido, descrição detalhada do pacote, histórico de modificações e várias outras informaçõs. Nesta seção vamos acrescentar alguns metdados úteis ao pacote <code class="docutils literal notranslate"><span class="pre">spectral</span></code>. Vamos começar criando dois novos arquivos, <code class="docutils literal notranslate"><span class="pre">README.rst</span></code>  e <code class="docutils literal notranslate"><span class="pre">CHANGES.rst</span></code>, com os conteúdos indicados nos Trechos de Código <a class="reference internal" href="#code-variados-pacotes-criando-pacote-readme-rst"><span class="std std-numref">6.11</span></a> e <a class="reference internal" href="#code-variados-pacotes-criando-pacote-changes-rst"><span class="std std-numref">6.12</span></a>, respectivamente.</p>
+<p>Em geral, os pacotes Python possuem diversos metadados associados, como autor do pacote, site onde o projeto é desenvolvido, descrição detalhada do pacote, histórico de modificações e várias outras informações. Nesta seção vamos acrescentar alguns metadados úteis ao pacote <code class="docutils literal notranslate"><span class="pre">spectral</span></code>. Vamos começar criando dois novos arquivos, <code class="docutils literal notranslate"><span class="pre">README.rst</span></code>  e <code class="docutils literal notranslate"><span class="pre">CHANGES.rst</span></code>, com os conteúdos indicados nos Trechos de Código <a class="reference internal" href="#code-variados-pacotes-criando-pacote-readme-rst"><span class="std std-numref">6.11</span></a> e <a class="reference internal" href="#code-variados-pacotes-criando-pacote-changes-rst"><span class="std std-numref">6.12</span></a>, respectivamente.</p>
 <div class="literal-block-wrapper docutils container" id="code-variados-pacotes-criando-pacote-readme-rst">
 <div class="code-block-caption"><span class="caption-number">Trecho de Código 6.11 - </span><span class="caption-text"><a class="reference download internal" download="" href="../../_downloads/7623edc1e17037de1c9756bce8b3ca76/README.rst"><code class="xref download docutils literal notranslate"><span class="pre">README.rst</span></code></a></span><a class="headerlink" href="#code-variados-pacotes-criando-pacote-readme-rst" title="Link Permanente para esse código">¶</a></div>
 <div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
@@ -480,7 +481,7 @@ spectral/
 <p>O setuptools permite indicarmos alguns tipos de dependência que um pacote pode apresentar:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">install_requires</span></code>: Lista de dependências para funcionamento do seu pacote. Suponha que no caso do pacote <code class="docutils literal notranslate"><span class="pre">spectral</span></code> fosse necessária a instalação da biblioteca <code class="docutils literal notranslate"><span class="pre">Click</span></code> para o seu correto funcionamento.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">extras_require</span></code>: Lista de dependências opicionais do seu pacote. Suponha que você forneça uma documentação baseada no Sphinx que possa ser construída a partir do seu pacote.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">extras_require</span></code>: Lista de dependências opcionais do seu pacote. Suponha que você forneça uma documentação baseada no Sphinx que possa ser construída a partir do seu pacote.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">setup_requires</span></code>: Lista de dependências para o <em>setup</em> do seu pacote.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">tests_require</span></code>: Lista de dependências para execução de testes do seu pacote.</p></li>
 </ul>
@@ -610,7 +611,7 @@ spectral/
 </div>
 <div class="section" id="ponto-de-entrada">
 <h2><span class="section-number">6.4.2.5. </span>Ponto de Entrada<a class="headerlink" href="#ponto-de-entrada" title="Link permanente para este título">¶</a></h2>
-<p>Agora que incluimos a dependência da biblioteca Click, vamos criar um novo módulo chamado <code class="docutils literal notranslate"><span class="pre">cli</span></code> no nosso pacote. O conteúdo desse novo módulo pode ser visto no <a class="reference internal" href="#code-variados-pacotes-criando-pacote-v1-cli-py"><span class="std std-numref">Trecho de Código 6.16</span></a>.</p>
+<p>Agora que incluímos a dependência da biblioteca Click, vamos criar um novo módulo chamado <code class="docutils literal notranslate"><span class="pre">cli</span></code> no nosso pacote. O conteúdo desse novo módulo pode ser visto no <a class="reference internal" href="#code-variados-pacotes-criando-pacote-v1-cli-py"><span class="std std-numref">Trecho de Código 6.16</span></a>.</p>
 <div class="literal-block-wrapper docutils container" id="code-variados-pacotes-criando-pacote-v1-cli-py">
 <div class="code-block-caption"><span class="caption-number">Trecho de Código 6.16 - </span><span class="caption-text"><a class="reference download internal" download="" href="../../_downloads/4ad9471adc78dbd32b4acf8d0069daed/cli.py"><code class="xref download docutils literal notranslate"><span class="pre">cli.py</span></code></a></span><a class="headerlink" href="#code-variados-pacotes-criando-pacote-v1-cli-py" title="Link Permanente para esse código">¶</a></div>
 <div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
@@ -832,7 +833,7 @@ spectral/
 </div>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>Para mais informações sobre a preparação de pacotes para redistribuição em Python, consule <span id="id3">[<a class="reference internal" href="../../referencias.html#id44">1</a>]</span>, <span id="id4">[<a class="reference internal" href="../../referencias.html#id45">77</a>]</span>, <span id="id5">[<a class="reference internal" href="../../referencias.html#id47">28</a>]</span>, <span id="id6">[<a class="reference internal" href="../../referencias.html#id79">59</a>]</span>.</p>
+<p>Para mais informações sobre a preparação de pacotes para redistribuição em Python, consulte <span id="id3">[<a class="reference internal" href="../../referencias.html#id44">1</a>]</span>, <span id="id4">[<a class="reference internal" href="../../referencias.html#id45">77</a>]</span>, <span id="id5">[<a class="reference internal" href="../../referencias.html#id47">28</a>]</span>, <span id="id6">[<a class="reference internal" href="../../referencias.html#id79">59</a>]</span>.</p>
 </div>
 </div>
 </div>
@@ -843,7 +844,7 @@ spectral/
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="../../referencias.html" class="btn btn-neutral float-right" title="Referências Bibliográficas" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../matplotlib.html" class="btn btn-neutral float-right" title="6.5. Visualização de dados com a Matplotlib" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="introducao.html" class="btn btn-neutral float-left" title="6.4.1. Introdução" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
     </div>
 

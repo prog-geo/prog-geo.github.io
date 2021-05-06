@@ -9,7 +9,7 @@ Criando Pacotes para Distribuição
 =================================
 
 
-Existem várias formas de criar pacotes para distribuição em Python. Esta seção será baseada no **setuptools** :cite:`ppa:2021`. Nosso objetivo será preparar a estrutura do pacote ``spectral`` para poder usar o comando abaixo para preparar o arquivo de sua distribuição::
+Existem várias formas de criar pacotes para distribuição em Python. Esta seção será baseada no **setuptools** :cite:`ppa:2021`. Nosso objetivo será preparar a estrutura do pacote ``spectral`` para poder usar o comando abaixo, que gera o arquivo de distribuição::
 
     python setup.py sdist
 
@@ -69,12 +69,12 @@ Esse comando deverá produzir um novo diretório ``dist`` contendo o arquivo ``s
     pip install spectral-1.0.tar.gz
 
 
-Repare que o pacote ``spectral`` agora faz parte dos pacotes instalado no seu sistema::
+Repare que o pacote ``spectral`` agora faz parte dos pacotes instalados no seu sistema::
 
     pip3 freeze | grep spectral
 
 
-Para remove o pacote ``spectral``, use::
+Para remover o pacote ``spectral``, use::
 
     pip uninstall spectral
 
@@ -92,7 +92,7 @@ Metadados do Pacote
 -------------------
 
 
-Em geral, os pacotes Python possuem diversos metadados associados, como autor do pacote, site onde o projeto é desenvolvido, descrição detalhada do pacote, histórico de modificações e várias outras informaçõs. Nesta seção vamos acrescentar alguns metdados úteis ao pacote ``spectral``. Vamos começar criando dois novos arquivos, ``README.rst``  e ``CHANGES.rst``, com os conteúdos indicados nos Trechos de Código :numref:`%s <code:variados:pacotes:criando-pacote:readme.rst>` e :numref:`%s <code:variados:pacotes:criando-pacote:changes.rst>`, respectivamente.
+Em geral, os pacotes Python possuem diversos metadados associados, como autor do pacote, site onde o projeto é desenvolvido, descrição detalhada do pacote, histórico de modificações e várias outras informações. Nesta seção vamos acrescentar alguns metadados úteis ao pacote ``spectral``. Vamos começar criando dois novos arquivos, ``README.rst``  e ``CHANGES.rst``, com os conteúdos indicados nos Trechos de Código :numref:`%s <code:variados:pacotes:criando-pacote:readme.rst>` e :numref:`%s <code:variados:pacotes:criando-pacote:changes.rst>`, respectivamente.
 
 
 .. literalinclude:: ../../code/variados/pacotes/v1/README.rst
@@ -179,7 +179,7 @@ O setuptools permite indicarmos alguns tipos de dependência que um pacote pode 
 
 - ``install_requires``: Lista de dependências para funcionamento do seu pacote. Suponha que no caso do pacote ``spectral`` fosse necessária a instalação da biblioteca ``Click`` para o seu correto funcionamento.
 
-- ``extras_require``: Lista de dependências opicionais do seu pacote. Suponha que você forneça uma documentação baseada no Sphinx que possa ser construída a partir do seu pacote.
+- ``extras_require``: Lista de dependências opcionais do seu pacote. Suponha que você forneça uma documentação baseada no Sphinx que possa ser construída a partir do seu pacote.
 
 
 - ``setup_requires``: Lista de dependências para o *setup* do seu pacote.
@@ -221,7 +221,7 @@ Ponto de Entrada
 ----------------
 
 
-Agora que incluimos a dependência da biblioteca Click, vamos criar um novo módulo chamado ``cli`` no nosso pacote. O conteúdo desse novo módulo pode ser visto no :numref:`Trecho de Código %s <code:variados:pacotes:criando-pacote:v1:cli.py>`.
+Agora que incluímos a dependência da biblioteca Click, vamos criar um novo módulo chamado ``cli`` no nosso pacote. O conteúdo desse novo módulo pode ser visto no :numref:`Trecho de Código %s <code:variados:pacotes:criando-pacote:v1:cli.py>`.
 
 
 .. literalinclude:: ../../code/variados/pacotes/v1/spectral/cli.py
@@ -272,4 +272,4 @@ Saída::
 
 .. note::
 
-    Para mais informações sobre a preparação de pacotes para redistribuição em Python, consule :cite:`ppa:2021`, :cite:`psf:distutils`, :cite:`psf:packaging`, :cite:`sarahan:2021`.
+    Para mais informações sobre a preparação de pacotes para redistribuição em Python, consulte :cite:`ppa:2021`, :cite:`psf:distutils`, :cite:`psf:packaging`, :cite:`sarahan:2021`.

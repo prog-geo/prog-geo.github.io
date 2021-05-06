@@ -16,4 +16,5 @@ Tópicos Variados
     ./variados/terminal-python
     ./variados/modulos
     ./variados/pacotes
+    ./variados/matplotlib
 

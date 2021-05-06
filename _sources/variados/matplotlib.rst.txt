@@ -1,0 +1,548 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _sec_variados_matplotlib:
+
+Visualização de dados com a Matplotlib
+======================================
+
+
+Matplotlib é uma biblioteca para criar diversos tipos de visualizações em Python, incluindo gráficos estáticos, animados e interativos.
+
+Para saber se a biblioteca Matplotlib encontra-se instalada em seu ambiente de programação e sua versão, importe o módulo matplotlib através da diretiva import e verifique sua versão através do valor associado à constante ``__version__``, como mostrado abaixo::
+
+    import matplotlib as mpl
+
+    mpl.__version__
+
+
+Para utilizar a Matplotlib devemos importar seu submódulo ``pyplot``. Em geral, associamos esse módulo ao nome ``plt`` da seguinte forma::
+
+    import matplotlib.pyplot as plt
+
+A linha acima utiliza o comando ``import`` para trazer os nomes de funções, classes, e outros objetos definidos no sub-módulo ``matplotlib.pyplot`` ao escopo local com o nome ``plt``.
+
+
+Gráficos de Linhas
+------------------
+
+O portal do `Programa de Queimadas do INPE <http://www.inpe.br/queimadas>`_ disponibiliza diversos dados sobre o monitoramento de focos de incêndio na vegetação. A :numref:`Tabela %s <variados:tab:tabela_queimadas>` apresenta dados extraídos desse portal, na página de estatísticas por país, no dia 10 de Abril de 2018. Essa tabela corresponde à série histórica de focos de queimadas detectados no Brasil pelo satélite de referência no período do ano de 1998 ao ano de 2017.
+
+.. list-table:: Série histórica de focos de queimadas detectados pelo satélite de referência no Brasil.
+   :name: variados:tab:tabela_queimadas
+   :align: center
+   :header-rows: 1
+
+   * - Ano 
+     - Total de focos
+
+   * - 1998 
+     - 123.899
+   * - 1999 
+     - 134.612
+   * - 2000 
+     - 101.532
+   * - 2001 
+     - 145.567
+   * - 2002 
+     - 235.731
+   * - 2003 
+     - 235.158
+   * - 2004 
+     - 270.295
+   * - 2005 
+     - 240.707
+   * - 2006 
+     - 136.852
+   * - 2007 
+     - 231.211
+   * - 2008 
+     - 123.201
+   * - 2009 
+     - 123.120
+   * - 2010 
+     - 249.198
+   * - 2011 
+     - 132.893
+   * - 2012 
+     - 193.600
+   * - 2013 
+     - 115.046
+   * - 2014 
+     - 183.424
+   * - 2015 
+     - 236.066
+   * - 2016 
+     - 188.044
+   * - 2017 
+     - 260.051
+
+
+Para começar, vamos criar nosso primeiro gráfico com a Matplotlib, que será um gráfico de linhas (``line plot``) compreendendo o período de 2008 a 2017, onde o eixo *x* será associado aos anos e o eixo *y* estará relacionado ao número focos detectados pelo satélite de referência para um determinado ano.
+
+Podemos representar a série de valores da tabela usando duas listas, como mostrado a seguir::
+
+    # valores do eixo x
+    ano = [ 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017 ]
+
+    # valores do eixo y
+    num_focos = [ 123, 123, 249, 133, 194, 115, 183, 236, 188, 260 ]
+
+Para construir o gráfico podemos utilizar a função ``plot``, como mostrado no trecho de código abaixo::
+
+    plt.plot(ano, num_focos)
+
+Neste código temos duas listas, ``ano`` e ``num_focos``, relacionando o número de focos de incêndio na vegetação detectados no Brasil (em milhares) entre os anos de 2008 e 2017.
+
+A função ``plot`` constrói o gráfico de linhas visto acima. O primeiro argumento, a lista ``ano``, corresponde aos valores associados ao eixo horizontal *x*, enquanto o segundo argumento, a lista ``num_focos``, corresponde aos valores associados ao eixo vertical *y*.
+
+Quando usamos a Matplotlib dentro de um Jupyter Notebook não é necessário utilizar a função ``plt.show()`` ao final da construção do nosso gráfico para poder visualizá-lo. Mas lembre-se, fora dos notebooks é necessário utilizar ``plt.show()`` (ou ``plt.draw()``) ao final da preparação da plotagem pois caso contrário o interpretador irá ficar aguardando para exibir a visualização final.
+
+A função ``plot`` pode ser utilizada para controlar diversos outros aspectos da visualização do nosso gráfico, como a escrita de um título geral, os títulos dos eixos, legendas, cores das linhas, tipos e cores dos marcadores da linha, entre outras coisas.
+
+Vamos adicionar ao nosso gráfico anterior um título para os eixos *x* e *y* bem como um título geral do gráfico. Para isso, usaremos as seguintes funções:
+
+- ``xlabel``: escreve o título associado ao eixo *x*
+- ``ylabel``: escreve o título do eixo *y*
+- ``title``: escreve o título geral do gráfico
+
+.. code-block:: python
+
+    plt.plot(ano, num_focos)
+
+    plt.xlabel("Ano", fontsize=16)
+    plt.ylabel("Número de Focos (em Milhares)")
+
+    plt.title("Focos de Queimadas - Brasil", fontsize=24);
+
+Podemos controlar a área da figura gerada através da função ``figure``, como mostrado no exemplo abaixo::
+
+    plt.figure( figsize=( 10, 5 ) )
+
+    plt.plot(ano, num_focos)
+
+    plt.xlabel("Ano", fontsize=16)
+    plt.ylabel("Número de Focos (em Milhares)", fontsize=16)
+
+    plt.title("Focos de Queimadas - Brasil", fontsize=24);
+
+Outra forma de explicitar o tamanho da figura é utilizando uma razão de aspecto, determinada pela função ``plt.figaspect``. No trecho de código abaixo, iremos criar uma visualização quatro vezes mais larga do que sua altura::
+
+    plt.figure( figsize=plt.figaspect(0.25) )
+
+    plt.plot(ano, num_focos)
+
+    plt.xlabel("Ano", fontsize=16)
+    plt.ylabel("Número de Focos (em Milhares)", fontsize=16)
+
+    plt.title("Focos de Queimadas - Brasil", fontsize=24);
+
+No gráfico acima, podemos observar que as marcas sobre os eixos *x* e *y* são determinadas automaticamente a partir dos dados de entrada da função ``plot``.
+
+Podemos controlar essas marcas (ou *ticks*) através das funções ``xticks`` e ``yticks``, que permitem definir através de sequências, respectivamente, as marcas sobre os eixos *x* e *y*.
+
+No exemplo abaixo, utilizamos a função ``yticks`` com uma lista com valores no intervalo ``[100, 260]`` de 40 em 40 unidades::
+
+    plt.plot(ano, num_focos);
+
+    plt.xlabel("Ano", fontsize=16)
+    plt.ylabel("Número de Focos (em Milhares)", fontsize=16)
+
+    plt.title("Focos de Queimadas - Brasil", fontsize=24)
+
+    plt.yticks([ 100, 140, 180, 220, 260 ]);
+
+Podemos também adicionar um segundo argumento à função yticks contendo um rótulo para cada uma das marcas sobre o eixo-y. Esse argumento deve ser uma sequência com o mesmo número de rótulos do que a lista de marcas (ticks)::
+
+    plt.plot(ano, num_focos);
+
+    plt.xlabel("Ano", fontsize=16)
+    plt.ylabel("Número de Focos (em Milhares)", fontsize=16)
+
+    plt.title("Focos de Queimadas - Brasil", fontsize=24)
+
+    plt.yticks([ 100, 140, 180, 220, 260 ],
+               [ '100 mil', '140 mil', '180 mil', '220 mil', '260 mil' ] );
+
+Outras características no desenho que podemos controlar incluem a cor, a espessura da linha, e também o uso de marcas associadas aos valores de entrada.
+
+No exemplo abaixo, o terceiro argumento da função ``plot``, a string ``"ro-"``, faz com que o gráfico seja desenhado como uma linha contínua vermelha com uma marca circular associada a cada valor da sequência de entrada. E o argumento ``linewidth`` controla a espessura da linha::
+
+    plt.plot(ano, num_focos, "ro-", linewidth=2.0)
+
+    plt.xlabel("Ano", fontsize=16)
+    plt.ylabel("Número de Focos (em Milhares)", fontsize=16)
+
+    plt.title("Focos de Queimadas - Brasil", fontsize=24)
+
+    plt.yticks([ 100, 140, 180, 220, 260 ],
+               [ "100 mil", "140 mil", "180 mil", "220 mil", "260 mil" ] );
+
+A string de formatação possui a seguinte regra de composição::
+
+    fmt = '[color][marker][line]'
+
+No código acima, utilizamos ``"ro-"``, isto é, cor vermelha (``"r"``), marcador circular (``"o"``) e estilo de linha sólida (``"-"``).
+
+Note que cada uma das partes dessa formatação é opcional.
+
+Podemos também controlar as propriedades da linha e das marcas de forma individual::
+
+    plt.figure( figsize=( 10, 8 ) )
+
+    plt.plot(ano, num_focos,
+             color="red", linestyle="dashed", linewidth=3,
+             marker='s', markersize=20,
+             mew=5, mec='blue', mfc='lightblue')
+
+    plt.xlabel("Ano", fontsize=16)
+    plt.ylabel("Número de Focos (em Milhares)", fontsize=16)
+
+
+Para maiores detalhes sobre a função ``pyplot.plot``, consulte a documentação da Matplotlib.
+
+
+Matplotlib e NumPy
+------------------
+
+Como vários dos parâmetros de entrada das funções da Matplotlib são definidos com base em sequências, podemos utilizar tanto sequências nativas do Python (tuplas e listas) quanto arrays do NumPy.
+
+
+O Exemplo abaixo mostra como criar uma senóide através das funções NumPy::
+
+    import numpy as np
+
+    # a função linspace, com os parâmetros
+    # abaixo, cria 100 elementos entre 0.0 e 2.0
+    t = np.linspace(0.0, 2.0, 100)
+
+    # a função sin calcula o seno dos valores
+    # de uma matriz
+    f = np.sin(np.pi * t)
+
+
+Para todos os tipos de gráficos que veremos neste material, é possível exibir uma grade regular. A função ``plt.grid`` controla a exibição e o estilo dessa grade.
+
+
+Vários Gráficos Sobre a Mesma Área
+----------------------------------
+
+As funções de desenho, como ``plt.plot``, permitem que tracemos mais de um plot sobre a mesma área. O gráfico abaixo mostra como criar as duas senóides sobre a mesma área:
+
+- :math:`f_1(t) = \sin(\pi \times t)` 
+- :math:`f_2(t) = \sin(2 \times \pi \times t)` 
+
+.. code-block:: python
+    
+    import numpy as np
+
+    # usamos a mesma função linspace do
+    # exemplo anterior
+    t = np.linspace(0.0, 2.0, 100)
+
+    # definimos 2 arrays com diferentes
+    # funções sobre o array t
+    f1 = np.sin(np.pi * t)
+    f2 = np.sin(2 * np.pi * t)
+
+    plt.figure( figsize=(10, 8) )
+
+    # podemos usar o termo 'label' para
+    # criar a legenda, e ainda definir as
+    # fórmulas com comandos equivalentes
+    # aos da linguagem LaTeX 
+    plt.plot(t, f1, "orange", linewidth=2.0,
+             label=r"$f_1(t)=sin(\pi \times t)$")
+
+    plt.plot(t, f2, "purple", linewidth=2.0,
+             label=r"$f_2(t)=sin(2 \times \pi \times t)$")
+
+    plt.xlim([0.0, 2.0])
+    plt.ylim([-1.0, 1.0])
+
+    plt.xlabel(r"$t$", fontsize=16)
+    plt.ylabel(r"$f(t)$", fontsize=16)
+
+    plt.title("Senoides", fontsize=24)
+
+    # aqui o método legend serve para 
+    # exibir os rótulos definidos anteriormente
+    # através dos labels
+    plt.legend()
+
+    plt.grid(b=True, color='gray', linestyle='--', linewidth=0.5);
+
+No código acima, cada chamada a ``plt.plot`` traça um gráfico com a respectiva senóide. Repare também que utilizamos o argumento chamado label para informar o rótulo associado à curva. Esse rótulo é usado pela operação ``plt.legend()`` para construir a legenda apresentada.
+
+
+Múltiplas Áreas de Desenho
+--------------------------
+
+Podemos construir figuras formadas por múltiplas áreas de desenho. O trecho de código a seguir mostra como utilzar o recurso ``subplot`` da Matplotlib::
+
+    import numpy as np
+
+    t = np.linspace(0.0, 2.0, 100)
+
+    f1 = np.sin(np.pi * t)
+    f2 = np.sin(2 * np.pi * t)
+    f3 = np.sin(4 * np.pi * t)
+    f4 = np.sin(8 * np.pi * t)
+
+    plt.figure( figsize=(10, 8) )
+
+
+Gráfico de Barras
+-----------------
+
+Através da função ``bar`` podemos criar um gráfico de barras verticais (*bar chart*). Vamos utilizar essa função para criar um gráfico com os mesmos dados de queimadas usados nas seções anteriores::
+
+    ano = [ 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017 ]
+
+    num_focos = [ 123201, 123120, 249198, 132893, 193600, 115046, 183424, 236066, 188044, 260051 ]
+
+    x_pos = [ x for x in range( len(ano) ) ]
+
+    plt.figure( figsize=(10, 8) )
+
+    plt.bar(x_pos, num_focos, align='center',
+            color='Crimson', linewidth=2, edgecolor='black')
+
+
+Scatter Plot
+------------
+
+A :numref:`Tabela %s <variados:tab:ibge>`, extraída da `página do IBGE <https://educa.ibge.gov.br/>`_, apresenta uma estimativa da evolução da população brasileira entre os anos de 1900 e 2010.
+
+.. list-table:: Estimativa da evolução da população brasileira entre os anos de 1900 e 2010.
+   :name: variados:tab:ibge
+   :align: center
+   :header-rows: 1
+
+   * - Ano
+     - Estimativa População (Milhões) 
+
+   * - 1900  
+     - 17.438.434 
+   * - 1920  
+     - 30.635.605 
+   * - 1940  
+     - 41.236.315 
+   * - 1950  
+     - 51.944.397 
+   * - 1960  
+     - 70.992.343 
+   * - 1970  
+     - 94.508.583 
+   * - 1980  
+     - 121.150.573 
+   * - 1990  
+     - 146.917.459 
+   * - 2000  
+     - 169.590.693 
+   * - 2010 
+     - 190.755.799
+
+
+Para os dados da :numref:`Tabela %s <variados:tab:ibge>` podemos construir um *scatter plot* através da função ``scatter``, como mostrado abaixo::
+
+    ano = [ 1900, 1920, 1940, 1960, 1970, 1980, 1990, 2000, 2010 ]
+
+    populacao = [ 17.438, 30.635, 41.236, 51.944, 70.992, 121.150, 146.917, 169.590, 190.755 ]
+
+    plt.scatter(ano, populacao);
+
+O *scatter plot* simplesmente plota todos os pontos individuais. Neste caso os pontos não são conectados por uma linha.
+
+Podemos melhorar esse gráfico, ajustando as marcas sobre eixo *y* e introduzindo rótulos para cada uma das marcas::
+
+    plt.figure( figsize=(10, 8) )
+
+    plt.scatter(ano, populacao)
+
+    plt.xlabel("Ano")
+    plt.ylabel("Estimativa da População")
+
+    plt.title("Evolução da População Brasileira")
+
+    plt.yticks([ 50, 100, 150, 200 ],
+               [ '50M', '100M', '150M', '200M' ] );
+
+    plt.grid(b=True, color='gray', linestyle='--', linewidth=0.5);
+
+Tanto na função ``plot``, quanto na função ``scatter``, podemos controlar a forma das marcas usadas no desenho.
+
+A :numref:`Tabela %s <variados:tab:marcadores>` apresenta um subconjunto dos `marcadores pré-definidos que temos à disposição na Matplotlib <https://matplotlib.org/api/markers_api.html>`_:
+
+
+.. list-table:: Alguns tipos pré-definidos de marcadores na Matplotlib. 
+   :name: variados:tab:marcadores
+   :align: center
+   :header-rows: 1
+
+   * - Marcador
+     - Interpretação 
+     - Marcador
+     - Interpretação
+     - Marcador
+     - Interpretação
+
+   * - "." 
+     - ponto       
+     - "v" 
+     - triângulo virado para baixo 
+     - "x" 
+     - cruz
+   * - "o" 
+     - círculo
+     - "^"
+     - triângulo virado para cima
+     - "+" 
+     - sinal de +
+   * - "s" 
+     - quadrado
+     - "<"
+     - triângulo virado para a esquerda
+     - "|"
+     - barra vertical
+   * - "d" 
+     - diamante fino
+     - ">"
+     - triângulo virado para a direita
+     - "-" 
+     - horizontal
+   * - "D" 
+     - diamante
+     - "*"
+     - estrela
+     - "$...$"
+     - texto usando sintaxe matemática do LaTeX
+
+.. note::
+
+    É possível introduzir novos marcadores além dos pré-definidos.
+
+Vamos alterar o tipo, cor e tamanho dos marcadores no gráfico anterior para o símbolo de quadrados de tamanho ``50x50`` e cor laranja-escuro::
+
+    plt.figure( figsize=(10, 8) )
+
+    plt.scatter(ano, populacao, marker="s", s=50, c="darkorange")
+
+    plt.xlabel("Ano")
+    plt.ylabel("Estimativa da População")
+
+    plt.title("Evolução da População Brasileira")
+
+    plt.yticks([ 50, 100, 150, 200 ],
+              [ '50M', '100M', '150M', '200M' ] );
+
+Além de definir uma cor única para todas as marcas, podemos fornecer uma cor específica a cada uma das marcas a serem plotadas::
+
+    plt.figure( figsize=(10, 8) )
+
+    cores = ("#fff5eb", "#fee6ce", "#fdd0a2", "#fdae6b", "#fd8d3c", "#f16913", "#d94801", "#a63603", "#7f2704")
+
+    plt.scatter(ano, populacao, marker="s", s=50, c=cores)
+
+    plt.xlabel("Ano")
+    plt.ylabel("Estimativa da População")
+
+    plt.title("Evolução da População Brasileira")
+
+O tamanho das marcas também pode ser controlado aravés de uma sequência::
+
+    cores = ("#fff5eb", "#fee6ce", "#fdd0a2", "#fdae6b", "#fd8d3c", "#f16913", "#d94801", "#a63603", "#7f2704")
+
+    tamanhos = (10, 20, 30, 40, 80, 160, 300, 400, 500)
+
+    plt.figure( figsize=(10, 8) )
+
+    plt.scatter(ano, populacao, marker="o", s=tamanhos, c=cores)
+
+    plt.xlabel("Ano")
+    plt.ylabel("Estimativa da População")
+
+Para concluir a discussão sobre scatter plots, vamos ver como utilizar um esquema de cores, ou, no jargão da Matplotlib, um ``colormap``:
+
+    import matplotlib.cm as cm
+
+    cores = [ x for x in range( len( ano ) ) ]
+
+    plt.figure( figsize=(10, 8) )
+
+    plt.scatter(ano, populacao, marker="s", s=50, c=cores, cmap="rainbow")
+
+    plt.xlabel("Ano")
+    plt.ylabel("Estimativa da População")
+
+Como um último exemplo do uso da função ``scatter``, vamos criar um *scatter plot* com 80 elementos, cada um com uma cor e tamanho determinados de forma aleatória. Para isso, usaremos a seguinte função da biblioteca NumPy: ``numpy.random.rand``::
+
+    import numpy as np
+
+    N = 80
+
+    # vamos sortear N valores no intervalo [0, 1) para cada eixo.
+    x = np.random.rand(N)
+    y = np.random.rand(N)
+
+    # vamos sortear N valores no intervalo [0, 1) para associar a cores.
+    colors = np.random.rand(N)
+
+    # cada elemento será um círculo de raio entre 0 e 20 pontos.
+    area = np.pi * (20 * np.random.rand(N))**2
+
+    plt.figure( figsize=(10, 8) )
+
+    plt.scatter(x, y, s=area, c=colors, alpha=0.5);
+
+
+
+Histogramas
+-----------
+
+Na Matplotlib a função ``hist`` pode ser usada para construção de histogramas. O primeiro argumento dessa função, chamado ``x``, corresponde à lista de valores para a qual se deseja criar o histograma. O segundo argumento, chamado ``bins``, diz em quantas partições (ou *bins*) deverá ser dividido o histograma. Baseado nesse valor, a função determina automaticamente os limites de cada uma das partições. Caso esse parâmetro seja omitido, é utilizado um valor padrão (ex: 10 partições).
+
+Vamos considerar o seguinte exemplo extraído da galeria da Matplotlib e do site da NumPy::
+
+    import numpy as np
+
+    μ = 200
+    σ = 25
+
+    values = np.random.normal(μ, σ, size=100)
+
+    plt.figure( figsize=(8, 8) )
+
+    plt.hist(values, bins=10, density=False, align='left',
+             facecolor='green', edgecolor='black', linewidth=1.2, alpha=0.65);
+
+    plt.title(r"Distribuição Normal: $\mu=200$ e $\sigma=25$")
+
+    plt.xlabel("Valor")
+    plt.ylabel("Frequência");
+
+
+No trecho de código acima introduzimos outro recurso importante da biblioteca Matplotlib, sua capacidade de desenhar textos usando expressões em *LaTeX*.
+
+Repare que o texto entre os caracteres delimitados por ``$`` dentro da string do título, como ``$\mu=200$`` e ``$\sigma=25$``, dão origem, respectivamente, às expressões em *LaTeX*:
+
+    - :math:`\mu=200`
+    - :math:`\sigma=25`
+
+Outro fato importante de se notar é o uso do prefixo ``r`` antes da string do título, ``r"Distribuição ..."``. Trata-se de uma forma especial de construir uma string sem que o caracter ``\`` seja tratado como uma sequência de escape. Chamamos este tipo de literal string de `raw string <https://docs.python.org/3/reference/lexical_analysis.html#string-and-bytes-literals>`_, sendo muito útil quando criamos strings contendo expressões em *LaTeX*.
+
+
+O exemplo abaixo, extraído da galeria da Matplotlib e do site da NumPy, apresenta um histograma e uma curva::
+
+    import numpy as np
+
+    μ = 200
+    σ = 25
+
+    values = np.random.normal(μ, σ, size = 100)
+
+    plt.figure( figsize=(8, 8) )
+
+    count, bins, ignored = plt.hist(values, bins=30, density=True,

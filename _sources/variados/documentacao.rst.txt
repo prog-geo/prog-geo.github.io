@@ -29,8 +29,7 @@ Veja resultado::
 Strings de Documentação
 -----------------------
 
-Em Python é comum usarmos um literal string como a primeira instrução de uma função com a finalidade de construir sua documentação, que é chamada de `docstring`. Essa string poderá ser usada em sistemas que produzam ajuda online
-This line should begin with a capital letter and end with a period. O texto dessa string deve começar com uma letra maiúscula e terminar com um ponto final, como mostrado na documetação da função `AreaCirculo` abaixo:
+Em Python é comum usarmos um literal string como a primeira instrução de uma função com a finalidade de construir sua documentação, que é chamada de `docstring`. Essa string poderá ser usada em sistemas que produzam ajuda online. O texto dessa string deve começar com uma letra maiúscula e terminar com um ponto final, como mostrado na documetação da função `AreaCirculo` abaixo:
 
 def AreaCirculo(raio):
     """Calcula a área de um círculo.
