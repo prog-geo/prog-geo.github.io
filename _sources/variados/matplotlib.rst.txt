@@ -11,7 +11,7 @@ Visualização de dados com a Matplotlib
 
 Matplotlib é uma biblioteca para criar diversos tipos de visualizações em Python, incluindo gráficos estáticos, animados e interativos.
 
-Para saber se a biblioteca Matplotlib encontra-se instalada em seu ambiente de programação e sua versão, importe o módulo matplotlib através da diretiva import e verifique sua versão através do valor associado à constante ``__version__``, como mostrado abaixo::
+Para saber se a biblioteca Matplotlib encontra-se instalada em seu ambiente de programação, e sua versão, importe o módulo matplotlib através da diretiva import e verifique sua versão através do valor associado à constante ``__version__``, como mostrado abaixo::
 
     import matplotlib as mpl
 
@@ -139,7 +139,7 @@ Outra forma de explicitar o tamanho da figura é utilizando uma razão de aspect
 
     plt.title("Focos de Queimadas - Brasil", fontsize=24);
 
-No gráfico acima, podemos observar que as marcas sobre os eixos *x* e *y* são determinadas automaticamente a partir dos dados de entrada da função ``plot``.
+No gráfico resultante do código acima, podemos observar que as marcas sobre os eixos *x* e *y* são determinadas automaticamente a partir dos dados de entrada da função ``plot``.
 
 Podemos controlar essas marcas (ou *ticks*) através das funções ``xticks`` e ``yticks``, que permitem definir através de sequências, respectivamente, as marcas sobre os eixos *x* e *y*.
 
@@ -464,7 +464,7 @@ O tamanho das marcas também pode ser controlado aravés de uma sequência::
     plt.xlabel("Ano")
     plt.ylabel("Estimativa da População")
 
-Para concluir a discussão sobre scatter plots, vamos ver como utilizar um esquema de cores, ou, no jargão da Matplotlib, um ``colormap``:
+Para concluir a discussão sobre scatter plots, vamos ver como utilizar um esquema de cores, ou, no jargão da Matplotlib, um ``colormap``::
 
     import matplotlib.cm as cm
 

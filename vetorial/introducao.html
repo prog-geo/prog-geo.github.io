@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>9.1. Introdução &mdash; SER-347/CAP-419</title>
+  <title>5.1. Introdução &mdash; SER-347/CAP-419</title>
   
 
   
@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
   <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
   <link rel="stylesheet" href="../_static/table_styling.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/ser-347.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/prog-geo.css" type="text/css" />
 
   
   
@@ -27,7 +27,7 @@
   
 
   
-    <link rel="canonical" href="https://ser-347.github.io/vetorial/introducao.html" />
+    <link rel="canonical" href="https://prog-geo.github.io/vetorial/introducao.html" />
 
   
   <!--[if lt IE 9]>
@@ -42,14 +42,15 @@
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script src="../_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Buscar" href="../search.html" />
-    <link rel="next" title="9.2. Leitura e Escrita de Dados Vetoriais com a biblioteca Fiona" href="fiona.html" />
-    <link rel="prev" title="9. Manipulação de Dados Vetoriais" href="../vetorial.html" /> 
+    <link rel="next" title="5.2. Tipos Geométricos" href="ogc-sfs.html" />
+    <link rel="prev" title="5. Manipulação de Dados Vetoriais" href="../vetorial.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -102,33 +103,22 @@
 </ul>
 <p class="caption"><span class="caption-text">Visão Geral do Curso:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../visao-geral.html">Visao Geral do Curso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../visao-geral.html">Visão Geral do Curso</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Aulas:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../instalacao.html">1. Instalando e Configurando o Ambiente de Programação</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introducao-programacao.html">2. Introdução à Programação com a Linguagem Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../int_anaconda.html">3. Introdução ao Ambiente Anaconda</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../int_jupyter_notebooks.html">4. IPython e Jupyter Notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../matrizes.html">5. Matrizes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../visualizacao.html">6. Visualização de Dados</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../imagens.html">7. Imagens</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tipos_geometricos.html">8. Tipos e Operações Espaciais</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../vetorial.html">9. Manipulação de Dados Vetoriais</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">9.1. Introdução</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fiona.html">9.2. Leitura e Escrita de Dados Vetoriais com a biblioteca Fiona</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ogr.html">9.3. Leitura e Escrita de Dados Vetoriais com a biblioteca GDAL/OGR</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pandas.html">9.4. Pandas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="geopandas.html">9.5. GeoPandas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="consideracoes.html">9.6. Considerações Finais</a></li>
-<li class="toctree-l2"><a class="reference internal" href="referencias.html">9.7. Referências Bibliográficas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jupyter.html">3. Jupyter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../imagens.html">4. Imagens - Processamento e Visualização</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../vetorial.html">5. Manipulação de Dados Vetoriais</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.1. Introdução</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ogc-sfs.html">5.2. Tipos Geométricos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shapely.html">5.3. A Biblioteca Shapely</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../variados.html">10. Tópicos Variados</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Considerações Finais</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../consideracoes-finais.html">Considerações Finais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qgis.html">6. Programando com o QGIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variados.html">7. Tópicos Variados</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Referências Bibliográficas</span></p>
 <ul>
@@ -140,13 +130,15 @@
 </ul>
 <p class="caption"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../projetos.html">Lista dos Projetos Finais do Curso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projetos.html">Projetos Finais</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Informações Gerais:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../sites.html">Sobre o Site do Curso</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../contato.html">Contato</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../licenca.html">Licença</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Agradecimentos:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../agradecimentos.html">Agradecimentos</a></li>
 </ul>
 
             
@@ -195,9 +187,9 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../vetorial.html"><span class="section-number">9. </span>Manipulação de Dados Vetoriais</a> &raquo;</li>
+          <li><a href="../vetorial.html"><span class="section-number">5. </span>Manipulação de Dados Vetoriais</a> &raquo;</li>
         
-      <li><span class="section-number">9.1. </span>Introdução</li>
+      <li><span class="section-number">5.1. </span>Introdução</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -211,10 +203,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="fiona.html" class="btn btn-neutral float-right" title="9.2. Leitura e Escrita de Dados Vetoriais com a biblioteca Fiona" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="ogc-sfs.html" class="btn btn-neutral float-right" title="5.2. Tipos Geométricos" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
       
       
-        <a href="../vetorial.html" class="btn btn-neutral float-left" title="9. Manipulação de Dados Vetoriais" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="../vetorial.html" class="btn btn-neutral float-left" title="5. Manipulação de Dados Vetoriais" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
       
   </div>
   
@@ -224,27 +216,55 @@
            <div itemprop="articleBody">
             
   <div class="section" id="introducao">
-<h1><span class="section-number">9.1. </span>Introdução<a class="headerlink" href="#introducao" title="Link permanente para este título">¶</a></h1>
-<a class="reference internal image-reference" href="../_images/feature-collection.png"><img alt="Coleção de Feições" class="align-right" src="../_images/feature-collection.png" style="width: 150px;" /></a>
-<p>Nesta parte da aula iremos discutir como realizar a leitura e escrita de dados geoespaciais representados na forma de uma <strong>coleção de feições</strong> (<em>feature collection</em>). A <a class="reference internal" href="#vetorial-feature-collection"><span class="std std-numref">Figura 9.1</span></a> mostra uma exemplo de coleção de feições, as unidades federativas do Brasil.</p>
-<div class="align-center figure align-default" id="vetorial-feature-collection">
-<a class="reference internal image-reference" href="../_images/feature-collection.png"><img alt="Coleção de Feições" src="../_images/feature-collection.png" style="width: 480px;" /></a>
-<p class="caption"><span class="caption-number">Figura 9.1 - </span><span class="caption-text">Coleção de Feições.</span><a class="headerlink" href="#vetorial-feature-collection" title="Link Permanente para essa imagem">¶</a></p>
+<span id="sec-vetorial-introducao"></span><h1><span class="section-number">5.1. </span>Introdução<a class="headerlink" href="#introducao" title="Link permanente para este título">¶</a></h1>
+<p>A forma de modelar e representar os fenômenos geográficos no computador depende de sua percepção na forma de <strong>entidades discretas</strong> (objetos) ou <strong>campos contínuos</strong>.</p>
+<p>Quando lidamos com fenômenos onde temos um valor definido para uma ou mais variáveis de observação em toda localização possível do espaço, estamos compreendendo tal fenômeno como um <em>campo contínuo</em>. Elevação, temperatura de superfície, risco de incêndio na vegetação, e radiância da superfície são exemplos de campos contínuos.</p>
+<p>Quando percebemos o fenômeno em questão por objetos com fronteiras bem definidas e pertencentes a uma certa categoria, estamos compreendendo esse fenômeno como <em>entidades discretas</em>. Unidades de conservação estadual e federal, organização territorial, arruamento, trechos rodoviários, escolas, hospitais, linhas de transmissão de energia elétrica, são alguns exemplos de entidades discretas.</p>
+<p>Para representar os dados dessas duas formas de conceitualização do espaço geográfico, em geral, utilizamos a <strong>representação matricial</strong> para fenômenos modelados como campos contínuos, e a <strong>representação vetorial</strong> para entidades discretas.</p>
+<p>As entidades codificadas usando dados vetoriais são usualmente chamadas de <strong>feições</strong> (ou <em>features</em>). Nesse contexto, uma feição pode ser representada computacionalmente por diversas características, as quais chamamos de <strong>atributos da feição</strong>. Um <strong>atributo</strong> possui um nome, sendo associado a um determinado <strong>tipo de dado</strong>, como um número, uma sequência de caracteres (texto), ou uma data.</p>
+<p>Além dos atributos alfanuméricos, uma feição é descrita por um ou mais <strong>atributos geométricos</strong>, associados a um tipo de dado geométrico. Um <strong>tipo de dado geométrico</strong> é capaz de representar elementos geométricos primitivos tais como pontos, linhas e polígonos ou coleções desses elementos.</p>
+<p>A <a class="reference internal" href="#tbl-vetorial-introducao-tipos-objetos-geograficos"><span class="std std-numref">Tabela 5.1</span></a> apresenta alguns tipos de objetos geográficos representados por feições com representações geométricas de pontos (hidrelétricas e termoelétricas), linhas (logradouros) e polígonos (municípios brasileiros).</p>
+<table class="colwidths-given styled-table docutils align-center" id="tbl-vetorial-introducao-tipos-objetos-geograficos" style="width: 100%">
+<caption><span class="caption-number">Tabela 5.1 - </span><span class="caption-text">Representação de feições geográficas através de objetos geométricos.</span><a class="headerlink" href="#tbl-vetorial-introducao-tipos-objetos-geograficos" title="Link Permanente para essa tabela">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="center-align head"><p>Hidrelétricas/Termoelétricas</p></th>
+<th class="center-align head"><p>Logradouros</p></th>
+<th class="center-align head"><p>Municípios</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="center-align"><p><img alt="geom-pts" src="../_images/geom-pts.png" /></p></td>
+<td class="center-align"><p><img alt="geom-lins" src="../_images/geom-lns.png" /></p></td>
+<td class="center-align"><p><img alt="geom-pol" src="../_images/geom-pols.png" /></p></td>
+</tr>
+</tbody>
+</table>
+<p>A <a class="reference internal" href="#fig-vetorial-introducao-feature-collection"><span class="std std-numref">Figura 5.1</span></a> ilustra o esquema de uma coleção de feições, onde podemos observar os atributos alfanuméricos e geométricos.</p>
+<div class="align-center figure align-default" id="fig-vetorial-introducao-feature-collection">
+<a class="reference internal image-reference" href="../_images/feature-collection-uf.png"><img alt="Coleção de Feições (Feature Collection)" src="../_images/feature-collection-uf.png" style="width: 480px;" /></a>
+<p class="caption"><span class="caption-number">Figura 5.1 - </span><span class="caption-text">Coleção de Feições (<em>Feature Collection</em>).</span><a class="headerlink" href="#fig-vetorial-introducao-feature-collection" title="Link Permanente para essa imagem">¶</a></p>
 </div>
-<p>Repare que essa forma de representação, em geral, assume que todos os objetos da coleção possuem uma estrutura comum, a qual denominamos de <strong>esquema das feições</strong>. O esquema das feições é formado pelo conjunto de atributos usados para caracterizar as feições do conjunto. Além disso, cada atributo é associado a um tipo de dado.</p>
-<p>No caso da coleção mostrada na <a class="reference internal" href="#vetorial-feature-collection"><span class="std std-numref">Figura 9.1</span></a> o esquema denominado <code class="docutils literal notranslate"><span class="pre">unidades_federativas</span></code> possui o seguinte conjunto de atributos:</p>
-<ul class="simple">
+<p>As entidades codificados como dados matriciais, também chamadas de <strong>raster</strong> ou <strong>imagens</strong>, formam um plano subdividido em células de tamanho fixo, frequentemente chamadas de <strong>pixels</strong>. Para cada par de coordenada <span class="math notranslate nohighlight">\((x, y)\)</span> nesse plano há um valor de intensidade, por vezes chamado <strong>nível de cinza</strong>, que indica o valor de alguma medida para aquele ponto.</p>
+<p>A <a class="reference internal" href="#fig-vetorial-introducao-img-cbers4"><span class="std std-numref">Figura 5.2</span></a> apresenta uma imagem do satélite CBERS-4 sensor AWFI. Trata-se de um dado matricial em que cada célula, representa uma área de 64 metros da superfície terrestre e o valor de intensidade indica uma aproximação da cor refletida por essa superfície.</p>
+<div class="align-center figure align-default" id="fig-vetorial-introducao-img-cbers4">
+<a class="reference internal image-reference" href="../_images/imagem-cbers4.png"><img alt="Imagem do satélite CBERS-4 sensor AWFI" src="../_images/imagem-cbers4.png" style="width: 480px;" /></a>
+<p class="caption"><span class="caption-number">Figura 5.2 - </span><span class="caption-text">Imagem do satélite CBERS-4 sensor AWFI com 64 metros de resolução espacial, em composição colorida.</span><a class="headerlink" href="#fig-vetorial-introducao-img-cbers4" title="Link Permanente para essa imagem">¶</a></p>
+</div>
+<p>Nesta parte do curso estamos interessados em discutir sobre a representação geométrica usada em coleções de feições, como mostrado na <a class="reference internal" href="#fig-vetorial-introducao-feature-collection"><span class="std std-numref">Figura 5.1</span></a>. Repare que essa forma de representação, em geral, assume que todos os objetos da coleção possuem uma estrutura comum, a qual denominamos de <strong>esquema das feições</strong>. O esquema das feições é formado pelo conjunto de atributos usados para caracterizar as feições do conjunto. Além disso, cada atributo é associado a um tipo de dado. No caso da coleção mostrada na <a class="reference internal" href="#fig-vetorial-introducao-feature-collection"><span class="std std-numref">Figura 5.1</span></a> o esquema denominado <code class="docutils literal notranslate"><span class="pre">unidades_federativas</span></code> possui o seguinte conjunto de atributos:</p>
+<ul class="open">
 <li><p><code class="docutils literal notranslate"><span class="pre">ufid</span></code>: código do IBGE, um número inteiro usado para identificar as unidades federativas.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">nome</span></code>: nome da unidade federativa, uma string.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">populacao</span></code>: total da população da unidade federativa, um número inteiro.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">e_vida</span></code>: expectativa de vida, um número real.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">fronteira</span></code>: limite da unidade federativa, representada por um tipo geométrico (<code class="docutils literal notranslate"><span class="pre">MultiPolygon</span></code>).</p></li>
 </ul>
-<p>Atualmente existem inúmeros formatos para codificação de dados geoespaciais vetoriais: <code class="docutils literal notranslate"><span class="pre">GeoJSON</span></code>, <code class="docutils literal notranslate"><span class="pre">GML</span></code>, <code class="docutils literal notranslate"><span class="pre">KML</span></code>, <code class="docutils literal notranslate"><span class="pre">ESRI</span> <span class="pre">Shapefile</span></code>, <code class="docutils literal notranslate"><span class="pre">Geomedia</span></code>, <code class="docutils literal notranslate"><span class="pre">Atlas</span> <span class="pre">BNA</span></code>, entre outros. Além desses formatos de arquivo ainda encontramos dados geoespaciais armazenados e gerenciados por Sistemas Gerenciadores de Bancos de Dados (SGBD) como <code class="docutils literal notranslate"><span class="pre">MySQL</span></code>, <code class="docutils literal notranslate"><span class="pre">PostgreSQL</span></code>, <code class="docutils literal notranslate"><span class="pre">IBM</span> <span class="pre">DB2</span></code>, <code class="docutils literal notranslate"><span class="pre">Oracle</span></code> e <code class="docutils literal notranslate"><span class="pre">Microsoft</span> <span class="pre">SQL</span> <span class="pre">Server</span></code>. Outra forte tendência é a disponibilização de dados através de serviços Web, como o <code class="docutils literal notranslate"><span class="pre">OGC</span> <span class="pre">WFS</span></code> (<em>Web Feature Service</em>). Por conta disso, é importante usarmos tecnologias que nos abstraiam ao máximo dos detalhes de cada um desses formatos e sistemas.</p>
-<p>Nesse sentido a biblioteca <a class="reference external" href="http://www.gdal.org">GDAL</a> é um dos pilares básicos de praticamente todos os sistemas geoespaciais de software livre da atualidade. Em <code class="docutils literal notranslate"><span class="pre">Python</span></code> podemos utilizar essa biblioteca diretamente através de um <em>binding</em> (ou <em>wrapper</em>) que pode ser instalado com o gerenciador de pacotes da <code class="docutils literal notranslate"><span class="pre">Anaconda</span></code> ou pelo <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p>
-<p>Apesar da <code class="docutils literal notranslate"><span class="pre">GDAL</span></code> ser uma biblioteca robusta e completa, sua API <code class="docutils literal notranslate"><span class="pre">Python</span></code> expõe os tipos e operações com um estilo de programação muito próximo da linguagem <code class="docutils literal notranslate"><span class="pre">C/C++</span></code>, que é usada para seu desenvolvimento. Por isso, existem outras bibliotecas em <code class="docutils literal notranslate"><span class="pre">Python</span></code> que tentam fornecer um estilo de programação mais próximo dos idiomas usados em <code class="docutils literal notranslate"><span class="pre">Python</span></code>. Nesse sentido, a <a class="reference external" href="http://toblerity.org/fiona">Fiona</a> é uma biblioteca que procura facilitar a leitura e escrita de dados geoespaciais adotando um estilo de programação mais próxima do universo <code class="docutils literal notranslate"><span class="pre">Python</span></code>.</p>
-<p>Ao contrário da <code class="docutils literal notranslate"><span class="pre">GDAL/OGR</span></code>, que fornece um modelo de classes próprio (<em>DataSource</em>, <em>Layer</em>, <em>Feature</em>, <em>FeatureDefn</em>, <em>Geometry</em>) para acesso aos dados, a <code class="docutils literal notranslate"><span class="pre">Fiona</span></code> oferece esse suporte nos mesmos moldes dos protocolos de Entrada e Saída (E/S) da API de arquivos de <code class="docutils literal notranslate"><span class="pre">Python</span></code> (<code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">IO</span></code>), além do uso de dicionários (<em>mappings</em>) e iteradores para acesso aos elementos do conjunto de dados. Por isso, nesta parte da aula iremos utilizar primeiramente a biblioteca <code class="docutils literal notranslate"><span class="pre">Fiona</span></code> para realizar a leitura e escrita de arquivos <code class="docutils literal notranslate"><span class="pre">ESRI</span> <span class="pre">Shapefile</span></code>. Depois iremos ver como realizar processamentos equivalentes usando o <em>binding</em> <code class="docutils literal notranslate"><span class="pre">Python</span></code> da biblioteca <code class="docutils literal notranslate"><span class="pre">GDAL</span></code>.</p>
-<p>Vale ressaltar que a <code class="docutils literal notranslate"><span class="pre">Fiona</span></code> é construída sobre a <a class="reference external" href="http://www.gdal.org/ogr_apitut.html">OGR</a>, parte da biblioteca <code class="docutils literal notranslate"><span class="pre">GDAL</span></code> voltada para tratamento de dados vetoriais. No entanto, ela não expõe nenhum dos tipos da <code class="docutils literal notranslate"><span class="pre">GDAL</span></code>. Os registros são mantidos em dicionários que seguem o formato <a class="reference external" href="http://geojson.org">GeoJSON</a>. Os tipos geométricos retornados pela <code class="docutils literal notranslate"><span class="pre">Fiona</span></code> podem ser facilmente convertidos em geometrias da biblioteca <a class="reference external" href="https://github.com/Toblerity/Shapely">Shapely</a>. Também é possível usar a <a class="reference external" href="https://github.com/jswhit/pyproj">pyproj</a> e a <a class="reference external" href="http://toblerity.org/rtree">Rtree</a> em conjunto com a <code class="docutils literal notranslate"><span class="pre">Fiona</span></code>.</p>
+<p>Atualmente existem inúmeros formatos para codificação de dados geoespaciais vetoriais: GeoJSON, GML, KML, ESRI Shapefile, Geomedia, Atlas BNA, entre outros. Além desses formatos de arquivo ainda encontramos dados geoespaciais armazenados e gerenciados por Sistemas Gerenciadores de Bancos de Dados (SGBD) como MySQL, PostgreSQL, IBM DB2, Oracle e Microsoft SQL Server. Outra forte tendência é a disponibilização de dados através de serviços Web, como o OGC WFS (<em>Web Feature Service</em>). Por conta disso, é importante usarmos tecnologias que nos abstraiam ao máximo dos detalhes de cada um desses formatos e sistemas.</p>
+<p>Antes de começarmos a trabalhar com as coleções de feições, temos que compreender o modelo geométrico e as operações espaciais que permeiam as geotecnologias voltadas para manipulação de dados vetoriais: <strong>OGC Simple Feature</strong>.</p>
 </div>
 
 
@@ -253,8 +273,8 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="fiona.html" class="btn btn-neutral float-right" title="9.2. Leitura e Escrita de Dados Vetoriais com a biblioteca Fiona" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="../vetorial.html" class="btn btn-neutral float-left" title="9. Manipulação de Dados Vetoriais" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="ogc-sfs.html" class="btn btn-neutral float-right" title="5.2. Tipos Geométricos" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../vetorial.html" class="btn btn-neutral float-left" title="5. Manipulação de Dados Vetoriais" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
     </div>
 
   <hr/>

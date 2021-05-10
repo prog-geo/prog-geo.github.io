@@ -1,34 +1,89 @@
 ..
-    This file is part of SER-347 Documentation.
-    Copyright 2020, Gilberto Queiroz and Thales Körting.
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
 
+
+.. _sec_vetorial_introducao:
 
 Introdução
-----------
+==========
 
 
-.. image:: ../img/vetorial/feature-collection.png
-    :alt: Coleção de Feições
-    :width: 150
-    :align: right
+A forma de modelar e representar os fenômenos geográficos no computador depende de sua percepção na forma de **entidades discretas** (objetos) ou **campos contínuos**.
 
 
-Nesta parte da aula iremos discutir como realizar a leitura e escrita de dados geoespaciais representados na forma de uma **coleção de feições** (*feature collection*). A :numref:`Figura %s <vetorial:feature-collection>` mostra uma exemplo de coleção de feições, as unidades federativas do Brasil.
+Quando lidamos com fenômenos onde temos um valor definido para uma ou mais variáveis de observação em toda localização possível do espaço, estamos compreendendo tal fenômeno como um *campo contínuo*. Elevação, temperatura de superfície, risco de incêndio na vegetação, e radiância da superfície são exemplos de campos contínuos.
 
 
-.. figure:: ../img/vetorial/feature-collection.png
-    :alt: Coleção de Feições
+Quando percebemos o fenômeno em questão por objetos com fronteiras bem definidas e pertencentes a uma certa categoria, estamos compreendendo esse fenômeno como *entidades discretas*. Unidades de conservação estadual e federal, organização territorial, arruamento, trechos rodoviários, escolas, hospitais, linhas de transmissão de energia elétrica, são alguns exemplos de entidades discretas.
+
+
+Para representar os dados dessas duas formas de conceitualização do espaço geográfico, em geral, utilizamos a **representação matricial** para fenômenos modelados como campos contínuos, e a **representação vetorial** para entidades discretas.
+
+
+As entidades codificadas usando dados vetoriais são usualmente chamadas de **feições** (ou *features*). Nesse contexto, uma feição pode ser representada computacionalmente por diversas características, as quais chamamos de **atributos da feição**. Um **atributo** possui um nome, sendo associado a um determinado **tipo de dado**, como um número, uma sequência de caracteres (texto), ou uma data.
+
+
+Além dos atributos alfanuméricos, uma feição é descrita por um ou mais **atributos geométricos**, associados a um tipo de dado geométrico. Um **tipo de dado geométrico** é capaz de representar elementos geométricos primitivos tais como pontos, linhas e polígonos ou coleções desses elementos.
+
+
+A :numref:`Tabela %s <tbl:vetorial:introducao:tipos-objetos-geograficos>` apresenta alguns tipos de objetos geográficos representados por feições com representações geométricas de pontos (hidrelétricas e termoelétricas), linhas (logradouros) e polígonos (municípios brasileiros).
+
+
+.. |geom-pts| image:: ../img/vetorial/geom-pts.png
+
+
+.. |geom-lins| image:: ../img/vetorial/geom-lns.png
+
+
+.. |geom-pol| image:: ../img/vetorial/geom-pols.png
+
+
+.. table:: Representação de feições geográficas através de objetos geométricos.
+    :widths: 33 33 33
+    :width: 100%
+    :header-alignment: center center center
+    :column-alignment: center center center
+    :align: center
+    :name: tbl:vetorial:introducao:tipos-objetos-geograficos
+
+    +--------------------------------+---------------+--------------+
+    |  Hidrelétricas/Termoelétricas  |  Logradouros  |  Municípios  |
+    +================================+===============+==============+
+    |          |geom-pts|            |  |geom-lins|  |  |geom-pol|  |
+    +--------------------------------+---------------+--------------+
+
+
+A :numref:`Figura %s <fig:vetorial:introducao:feature-collection>` ilustra o esquema de uma coleção de feições, onde podemos observar os atributos alfanuméricos e geométricos.
+
+
+.. figure:: ../img/vetorial/feature-collection-uf.png
+    :alt: Coleção de Feições (Feature Collection)
     :width: 480
     :figclass: align-center
-    :name: vetorial:feature-collection
+    :name: fig:vetorial:introducao:feature-collection
 
-    Coleção de Feições.
-
-
-Repare que essa forma de representação, em geral, assume que todos os objetos da coleção possuem uma estrutura comum, a qual denominamos de **esquema das feições**. O esquema das feições é formado pelo conjunto de atributos usados para caracterizar as feições do conjunto. Além disso, cada atributo é associado a um tipo de dado.
+    Coleção de Feições (*Feature Collection*).
 
 
-No caso da coleção mostrada na :numref:`Figura %s <vetorial:feature-collection>` o esquema denominado ``unidades_federativas`` possui o seguinte conjunto de atributos:
+As entidades codificados como dados matriciais, também chamadas de **raster** ou **imagens**, formam um plano subdividido em células de tamanho fixo, frequentemente chamadas de **pixels**. Para cada par de coordenada :math:`(x, y)` nesse plano há um valor de intensidade, por vezes chamado **nível de cinza**, que indica o valor de alguma medida para aquele ponto.
+
+
+A :numref:`Figura %s <fig:vetorial:introducao:img-cbers4>` apresenta uma imagem do satélite CBERS-4 sensor AWFI. Trata-se de um dado matricial em que cada célula, representa uma área de 64 metros da superfície terrestre e o valor de intensidade indica uma aproximação da cor refletida por essa superfície.
+
+
+.. figure:: ../img/vetorial/imagem-cbers4.png
+    :alt: Imagem do satélite CBERS-4 sensor AWFI
+    :width: 480
+    :figclass: align-center
+    :name: fig:vetorial:introducao:img-cbers4
+
+    Imagem do satélite CBERS-4 sensor AWFI com 64 metros de resolução espacial, em composição colorida.
+
+
+Nesta parte do curso estamos interessados em discutir sobre a representação geométrica usada em coleções de feições, como mostrado na :numref:`Figura %s <fig:vetorial:introducao:feature-collection>`. Repare que essa forma de representação, em geral, assume que todos os objetos da coleção possuem uma estrutura comum, a qual denominamos de **esquema das feições**. O esquema das feições é formado pelo conjunto de atributos usados para caracterizar as feições do conjunto. Além disso, cada atributo é associado a um tipo de dado. No caso da coleção mostrada na :numref:`Figura %s <fig:vetorial:introducao:feature-collection>` o esquema denominado ``unidades_federativas`` possui o seguinte conjunto de atributos:
+
+.. rst-class:: open
 
 - ``ufid``: código do IBGE, um número inteiro usado para identificar as unidades federativas.
 
@@ -41,16 +96,7 @@ No caso da coleção mostrada na :numref:`Figura %s <vetorial:feature-collection
 - ``fronteira``: limite da unidade federativa, representada por um tipo geométrico (``MultiPolygon``).
 
 
-Atualmente existem inúmeros formatos para codificação de dados geoespaciais vetoriais: ``GeoJSON``, ``GML``, ``KML``, ``ESRI Shapefile``, ``Geomedia``, ``Atlas BNA``, entre outros. Além desses formatos de arquivo ainda encontramos dados geoespaciais armazenados e gerenciados por Sistemas Gerenciadores de Bancos de Dados (SGBD) como ``MySQL``, ``PostgreSQL``, ``IBM DB2``, ``Oracle`` e ``Microsoft SQL Server``. Outra forte tendência é a disponibilização de dados através de serviços Web, como o ``OGC WFS`` (*Web Feature Service*). Por conta disso, é importante usarmos tecnologias que nos abstraiam ao máximo dos detalhes de cada um desses formatos e sistemas.
+Atualmente existem inúmeros formatos para codificação de dados geoespaciais vetoriais: GeoJSON, GML, KML, ESRI Shapefile, Geomedia, Atlas BNA, entre outros. Além desses formatos de arquivo ainda encontramos dados geoespaciais armazenados e gerenciados por Sistemas Gerenciadores de Bancos de Dados (SGBD) como MySQL, PostgreSQL, IBM DB2, Oracle e Microsoft SQL Server. Outra forte tendência é a disponibilização de dados através de serviços Web, como o OGC WFS (*Web Feature Service*). Por conta disso, é importante usarmos tecnologias que nos abstraiam ao máximo dos detalhes de cada um desses formatos e sistemas.
 
 
-Nesse sentido a biblioteca `GDAL <http://www.gdal.org>`_ é um dos pilares básicos de praticamente todos os sistemas geoespaciais de software livre da atualidade. Em ``Python`` podemos utilizar essa biblioteca diretamente através de um *binding* (ou *wrapper*) que pode ser instalado com o gerenciador de pacotes da ``Anaconda`` ou pelo ``pip``.
-
-
-Apesar da ``GDAL`` ser uma biblioteca robusta e completa, sua API ``Python`` expõe os tipos e operações com um estilo de programação muito próximo da linguagem ``C/C++``, que é usada para seu desenvolvimento. Por isso, existem outras bibliotecas em ``Python`` que tentam fornecer um estilo de programação mais próximo dos idiomas usados em ``Python``. Nesse sentido, a `Fiona <http://toblerity.org/fiona>`_ é uma biblioteca que procura facilitar a leitura e escrita de dados geoespaciais adotando um estilo de programação mais próxima do universo ``Python``.
-
-
-Ao contrário da ``GDAL/OGR``, que fornece um modelo de classes próprio (*DataSource*, *Layer*, *Feature*, *FeatureDefn*, *Geometry*) para acesso aos dados, a ``Fiona`` oferece esse suporte nos mesmos moldes dos protocolos de Entrada e Saída (E/S) da API de arquivos de ``Python`` (``Python IO``), além do uso de dicionários (*mappings*) e iteradores para acesso aos elementos do conjunto de dados. Por isso, nesta parte da aula iremos utilizar primeiramente a biblioteca ``Fiona`` para realizar a leitura e escrita de arquivos ``ESRI Shapefile``. Depois iremos ver como realizar processamentos equivalentes usando o *binding* ``Python`` da biblioteca ``GDAL``.
-
-
-Vale ressaltar que a ``Fiona`` é construída sobre a `OGR <http://www.gdal.org/ogr_apitut.html>`_, parte da biblioteca ``GDAL`` voltada para tratamento de dados vetoriais. No entanto, ela não expõe nenhum dos tipos da ``GDAL``. Os registros são mantidos em dicionários que seguem o formato `GeoJSON <http://geojson.org>`_. Os tipos geométricos retornados pela ``Fiona`` podem ser facilmente convertidos em geometrias da biblioteca `Shapely <https://github.com/Toblerity/Shapely>`_. Também é possível usar a `pyproj <https://github.com/jswhit/pyproj>`_ e a `Rtree <http://toblerity.org/rtree>`_ em conjunto com a ``Fiona``.
+Antes de começarmos a trabalhar com as coleções de feições, temos que compreender o modelo geométrico e as operações espaciais que permeiam as geotecnologias voltadas para manipulação de dados vetoriais: **OGC Simple Feature**.

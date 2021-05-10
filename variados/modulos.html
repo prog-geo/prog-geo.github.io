@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>6.3. Módulos em Python &mdash; SER-347/CAP-419</title>
+  <title>7.3. Módulos em Python &mdash; SER-347/CAP-419</title>
   
 
   
@@ -48,8 +48,8 @@
     
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Buscar" href="../search.html" />
-    <link rel="next" title="6.4. Pacotes em Python" href="pacotes.html" />
-    <link rel="prev" title="6.2. Terminal Interativo Python" href="terminal-python.html" /> 
+    <link rel="next" title="7.4. Pacotes em Python" href="pacotes.html" />
+    <link rel="prev" title="7.2. Terminal Interativo Python" href="terminal-python.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -110,17 +110,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../introducao-programacao.html">2. Introdução à Programação com a Linguagem Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../jupyter.html">3. Jupyter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../imagens.html">4. Imagens - Processamento e Visualização</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../qgis.html">5. Programando com o QGIS</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../variados.html">6. Tópicos Variados</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="git_github.html">6.1. git e GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="terminal-python.html">6.2. Terminal Interativo Python</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">6.3. Módulos em Python</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#executando-modulos-como-scripts">6.3.1. Executando Módulos como Scripts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#caminhos-de-busca-por-modulos">6.3.2. Caminhos de Busca por Módulos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vetorial.html">5. Manipulação de Dados Vetoriais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qgis.html">6. Programando com o QGIS</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../variados.html">7. Tópicos Variados</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="git_github.html">7.1. git e GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="terminal-python.html">7.2. Terminal Interativo Python</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">7.3. Módulos em Python</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#executando-modulos-como-scripts">7.3.1. Executando Módulos como Scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#caminhos-de-busca-por-modulos">7.3.2. Caminhos de Busca por Módulos</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="pacotes.html">6.4. Pacotes em Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="matplotlib.html">6.5. Visualização de dados com a Matplotlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pacotes.html">7.4. Pacotes em Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matplotlib.html">7.5. Visualização de dados com a Matplotlib</a></li>
 </ul>
 </li>
 </ul>
@@ -191,9 +192,9 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../variados.html"><span class="section-number">6. </span>Tópicos Variados</a> &raquo;</li>
+          <li><a href="../variados.html"><span class="section-number">7. </span>Tópicos Variados</a> &raquo;</li>
         
-      <li><span class="section-number">6.3. </span>Módulos em Python</li>
+      <li><span class="section-number">7.3. </span>Módulos em Python</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -207,10 +208,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="pacotes.html" class="btn btn-neutral float-right" title="6.4. Pacotes em Python" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="pacotes.html" class="btn btn-neutral float-right" title="7.4. Pacotes em Python" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
       
       
-        <a href="terminal-python.html" class="btn btn-neutral float-left" title="6.2. Terminal Interativo Python" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="terminal-python.html" class="btn btn-neutral float-left" title="7.2. Terminal Interativo Python" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
       
   </div>
   
@@ -220,10 +221,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="modulos-em-python">
-<span id="sec-variados-modulos"></span><h1><span class="section-number">6.3. </span>Módulos em Python<a class="headerlink" href="#modulos-em-python" title="Link permanente para este título">¶</a></h1>
-<p>Em Python, um arquivo contendo definições e comandos é chamado de <strong>módulo</strong> (<em>module</em>). O nome do arquivo, sem a extensão <code class="docutils literal notranslate"><span class="pre">.py</span></code>, é usado para definir o nome do módulo. Vamos considerar um arquivo chamado <code class="docutils literal notranslate"><span class="pre">haversine.py</span></code>, contendo uma função (<code class="docutils literal notranslate"><span class="pre">DistanciaHaversine</span></code>) como mostrado no <a class="reference internal" href="#code-variados-module-haversine"><span class="std std-numref">Trecho de Código 6.1</span></a>.</p>
+<span id="sec-variados-modulos"></span><h1><span class="section-number">7.3. </span>Módulos em Python<a class="headerlink" href="#modulos-em-python" title="Link permanente para este título">¶</a></h1>
+<p>Em Python, um arquivo contendo definições e comandos é chamado de <strong>módulo</strong> (<em>module</em>). O nome do arquivo, sem a extensão <code class="docutils literal notranslate"><span class="pre">.py</span></code>, é usado para definir o nome do módulo. Vamos considerar um arquivo chamado <code class="docutils literal notranslate"><span class="pre">haversine.py</span></code>, contendo uma função (<code class="docutils literal notranslate"><span class="pre">DistanciaHaversine</span></code>) como mostrado no <a class="reference internal" href="#code-variados-module-haversine"><span class="std std-numref">Trecho de Código 7.1</span></a>.</p>
 <div class="literal-block-wrapper docutils container" id="code-variados-module-haversine">
-<div class="code-block-caption"><span class="caption-number">Trecho de Código 6.1 - </span><span class="caption-text">Conteúdo do arquivo <a class="reference download internal" download="" href="../_downloads/1af1c20a1aae5a31485be244148284fa/haversine.py"><code class="xref download docutils literal notranslate"><span class="pre">haversine.py</span></code></a>.</span><a class="headerlink" href="#code-variados-module-haversine" title="Link Permanente para esse código">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 7.1 - </span><span class="caption-text">Conteúdo do arquivo <a class="reference download internal" download="" href="../_downloads/1af1c20a1aae5a31485be244148284fa/haversine.py"><code class="xref download docutils literal notranslate"><span class="pre">haversine.py</span></code></a>.</span><a class="headerlink" href="#code-variados-module-haversine" title="Link Permanente para esse código">¶</a></div>
 <div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -354,7 +355,7 @@
 </pre></div>
 </td></tr></table></div>
 </div>
-<p>As definições em um módulo podem ser <strong>importadas</strong> por outros módulos. Uma das formas mais comuns de realizar esta operação é através do comando <code class="docutils literal notranslate"><span class="pre">import</span></code> <span id="id1">[<a class="reference internal" href="../referencias.html#id54">35</a>]</span>, que é uma palavra-chave da linguagem Python. Vamos salvar o arquivo <a class="reference download internal" download="" href="../_downloads/1af1c20a1aae5a31485be244148284fa/haversine.py"><code class="xref download docutils literal notranslate"><span class="pre">haversine.py</span></code></a>, mostrado no <a class="reference internal" href="#code-variados-module-haversine"><span class="std std-numref">Trecho de Código 6.1</span></a>, em um diretório chamado <code class="docutils literal notranslate"><span class="pre">modulos</span></code>, obtendo uma estrutura de diretórios como mostrada abaixo:</p>
+<p>As definições em um módulo podem ser <strong>importadas</strong> por outros módulos. Uma das formas mais comuns de realizar esta operação é através do comando <code class="docutils literal notranslate"><span class="pre">import</span></code> <span id="id1">[<a class="reference internal" href="../referencias.html#id59">36</a>]</span>, que é uma palavra-chave da linguagem Python. Vamos salvar o arquivo <a class="reference download internal" download="" href="../_downloads/1af1c20a1aae5a31485be244148284fa/haversine.py"><code class="xref download docutils literal notranslate"><span class="pre">haversine.py</span></code></a>, mostrado no <a class="reference internal" href="#code-variados-module-haversine"><span class="std std-numref">Trecho de Código 7.1</span></a>, em um diretório chamado <code class="docutils literal notranslate"><span class="pre">modulos</span></code>, obtendo uma estrutura de diretórios como mostrada abaixo:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">modulos</span><span class="o">/</span>
     <span class="n">haversine</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
@@ -480,10 +481,10 @@
 </div>
 </div>
 <div class="section" id="executando-modulos-como-scripts">
-<h2><span class="section-number">6.3.1. </span>Executando Módulos como Scripts<a class="headerlink" href="#executando-modulos-como-scripts" title="Link permanente para este título">¶</a></h2>
-<p>Repare no <a class="reference internal" href="#code-variados-module-haversine"><span class="std std-numref">Trecho de Código 6.1</span></a>, com a definição do módulo <code class="docutils literal notranslate"><span class="pre">haversine</span></code>, que incluímos uma construção ao final, linhas <code class="docutils literal notranslate"><span class="pre">58-64</span></code>, como destacado abaixo:</p>
+<h2><span class="section-number">7.3.1. </span>Executando Módulos como Scripts<a class="headerlink" href="#executando-modulos-como-scripts" title="Link permanente para este título">¶</a></h2>
+<p>Repare no <a class="reference internal" href="#code-variados-module-haversine"><span class="std std-numref">Trecho de Código 7.1</span></a>, com a definição do módulo <code class="docutils literal notranslate"><span class="pre">haversine</span></code>, que incluímos uma construção ao final, linhas <code class="docutils literal notranslate"><span class="pre">58-64</span></code>, como destacado abaixo:</p>
 <div class="literal-block-wrapper docutils container" id="code-variados-module-haversine-main">
-<div class="code-block-caption"><span class="caption-number">Trecho de Código 6.2 - </span><span class="caption-text">Seção <code class="docutils literal notranslate"><span class="pre">main</span></code> - Arquivo <a class="reference download internal" download="" href="../_downloads/1af1c20a1aae5a31485be244148284fa/haversine.py"><code class="xref download docutils literal notranslate"><span class="pre">haversine.py</span></code></a>.</span><a class="headerlink" href="#code-variados-module-haversine-main" title="Link Permanente para esse código">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 7.2 - </span><span class="caption-text">Seção <code class="docutils literal notranslate"><span class="pre">main</span></code> - Arquivo <a class="reference download internal" download="" href="../_downloads/1af1c20a1aae5a31485be244148284fa/haversine.py"><code class="xref download docutils literal notranslate"><span class="pre">haversine.py</span></code></a>.</span><a class="headerlink" href="#code-variados-module-haversine-main" title="Link Permanente para esse código">¶</a></div>
 <div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">58</span>
 <span class="normal">59</span>
 <span class="normal">60</span>
@@ -516,7 +517,7 @@
 <p>O código entre as <code class="docutils literal notranslate"><span class="pre">linhas</span> <span class="pre">59-64</span></code> não é executado pois a variável <code class="docutils literal notranslate"><span class="pre">__name__</span></code> contém a string <code class="docutils literal notranslate"><span class="pre">haversine</span></code> (nome do módulo).</p>
 </div>
 <div class="section" id="caminhos-de-busca-por-modulos">
-<h2><span class="section-number">6.3.2. </span>Caminhos de Busca por Módulos<a class="headerlink" href="#caminhos-de-busca-por-modulos" title="Link permanente para este título">¶</a></h2>
+<h2><span class="section-number">7.3.2. </span>Caminhos de Busca por Módulos<a class="headerlink" href="#caminhos-de-busca-por-modulos" title="Link permanente para este título">¶</a></h2>
 <p>Quando um módulo é importado, o Python realiza uma procura da seguinte forma:</p>
 <ul class="open">
 <li><p>Primeiro, é verificado se existe um módulo pré-construído (<em>built-in</em>) com o nome informado.</p></li>
@@ -557,7 +558,7 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>Para mais informações sobre módulos em Python, consulte <span id="id2">[<a class="reference internal" href="../referencias.html#id54">35</a>]</span> e <span id="id3">[<a class="reference internal" href="../referencias.html#id69">24</a>]</span>.</p>
+<p>Para mais informações sobre módulos em Python, consulte <span id="id2">[<a class="reference internal" href="../referencias.html#id59">36</a>]</span> e <span id="id3">[<a class="reference internal" href="../referencias.html#id74">24</a>]</span>.</p>
 </div>
 </div>
 </div>
@@ -568,8 +569,8 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="pacotes.html" class="btn btn-neutral float-right" title="6.4. Pacotes em Python" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="terminal-python.html" class="btn btn-neutral float-left" title="6.2. Terminal Interativo Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="pacotes.html" class="btn btn-neutral float-right" title="7.4. Pacotes em Python" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="terminal-python.html" class="btn btn-neutral float-left" title="7.2. Terminal Interativo Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
     </div>
 
   <hr/>

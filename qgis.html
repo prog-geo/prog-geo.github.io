@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>5. Programando com o QGIS &mdash; SER-347/CAP-419</title>
+  <title>6. Programando com o QGIS &mdash; SER-347/CAP-419</title>
   
 
   
@@ -48,8 +48,8 @@
     
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Buscar" href="search.html" />
-    <link rel="next" title="5.1. Preparação do Ambiente de Programação" href="qgis/preparacao-ambiente.html" />
-    <link rel="prev" title="4.3. Visualização de Imagens" href="imagens/visualizacao.html" /> 
+    <link rel="next" title="6.1. Preparação do Ambiente de Programação" href="qgis/preparacao-ambiente.html" />
+    <link rel="prev" title="5.3. A Biblioteca Shapely" href="vetorial/shapely.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -110,14 +110,15 @@
 <li class="toctree-l1"><a class="reference internal" href="introducao-programacao.html">2. Introdução à Programação com a Linguagem Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="jupyter.html">3. Jupyter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="imagens.html">4. Imagens - Processamento e Visualização</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">5. Programando com o QGIS</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="qgis/preparacao-ambiente.html">5.1. Preparação do Ambiente de Programação</a></li>
-<li class="toctree-l2"><a class="reference internal" href="qgis/python-console.html">5.2. Console Python no QGIS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="qgis/criando-plugins.html">5.3. Construindo Plugins para o QGIS em Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="qgis/plugin-debug.html">5.4. Preparando o Ambiente para Inspeção do Código de um Plugin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vetorial.html">5. Manipulação de Dados Vetoriais</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">6. Programando com o QGIS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="qgis/preparacao-ambiente.html">6.1. Preparação do Ambiente de Programação</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qgis/python-console.html">6.2. Console Python no QGIS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qgis/criando-plugins.html">6.3. Construindo Plugins para o QGIS em Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qgis/plugin-debug.html">6.4. Preparando o Ambiente para Inspeção do Código de um Plugin</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="variados.html">6. Tópicos Variados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variados.html">7. Tópicos Variados</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Referências Bibliográficas</span></p>
 <ul>
@@ -186,7 +187,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li><span class="section-number">5. </span>Programando com o QGIS</li>
+      <li><span class="section-number">6. </span>Programando com o QGIS</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -200,10 +201,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="qgis/preparacao-ambiente.html" class="btn btn-neutral float-right" title="5.1. Preparação do Ambiente de Programação" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="qgis/preparacao-ambiente.html" class="btn btn-neutral float-right" title="6.1. Preparação do Ambiente de Programação" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
       
       
-        <a href="imagens/visualizacao.html" class="btn btn-neutral float-left" title="4.3. Visualização de Imagens" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="vetorial/shapely.html" class="btn btn-neutral float-left" title="5.3. A Biblioteca Shapely" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
       
   </div>
   
@@ -213,31 +214,31 @@
            <div itemprop="articleBody">
             
   <div class="section" id="programando-com-o-qgis">
-<span id="cap-qgis"></span><h1><span class="section-number">5. </span>Programando com o QGIS<a class="headerlink" href="#programando-com-o-qgis" title="Link permanente para este título">¶</a></h1>
+<span id="cap-qgis"></span><h1><span class="section-number">6. </span>Programando com o QGIS<a class="headerlink" href="#programando-com-o-qgis" title="Link permanente para este título">¶</a></h1>
 <a class="reference internal image-reference" href="_images/qgis.svg"><img alt="QGIS" class="align-right" src="_images/qgis.svg" width="128" /></a>
-<p>O aplicativo geográfico <a class="reference external" href="https://qgis.org/">QGIS</a> possui uma forte integração com a linguagem Python, permitindo utilizá-la de diversas maneiras. O console Python, disponível de dentro da interface gráfica do QGIS (<a class="reference internal" href="#fig-qgis-console-python-active-layer"><span class="std std-numref">Figura 5.1</span></a>), permite que o usuário entre com comandos válidos da linguagem Python.</p>
+<p>O aplicativo geográfico <a class="reference external" href="https://qgis.org/">QGIS</a> possui uma forte integração com a linguagem Python, permitindo utilizá-la de diversas maneiras. O console Python, disponível de dentro da interface gráfica do QGIS (<a class="reference internal" href="#fig-qgis-console-python-active-layer"><span class="std std-numref">Figura 6.1</span></a>), permite que o usuário entre com comandos válidos da linguagem Python.</p>
 <div class="align-center figure align-default" id="fig-qgis-console-python-active-layer">
 <a class="reference internal image-reference" href="_images/console-python-active-layer.png"><img alt="Console do Python dentro da interface gráfica do QGIS" src="_images/console-python-active-layer.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 5.1 - </span><span class="caption-text">Console do Python dentro da interface gráfica do QGIS.</span><a class="headerlink" href="#fig-qgis-console-python-active-layer" title="Link Permanente para essa imagem">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 6.1 - </span><span class="caption-text">Console do Python dentro da interface gráfica do QGIS.</span><a class="headerlink" href="#fig-qgis-console-python-active-layer" title="Link Permanente para essa imagem">¶</a></p>
 </div>
-<p>Também é possível criar <em>scripts</em> que utilizam a API do QGIS em Python para automação de tarefas tanto na inicialização do QGIS quanto para realização de processamentos em lote, como mostrado na <a class="reference internal" href="#fig-qgis-python-script-list-layers"><span class="std std-numref">Figura 5.2</span></a>.</p>
+<p>Também é possível criar <em>scripts</em> que utilizam a API do QGIS em Python para automação de tarefas tanto na inicialização do QGIS quanto para realização de processamentos em lote, como mostrado na <a class="reference internal" href="#fig-qgis-python-script-list-layers"><span class="std std-numref">Figura 6.2</span></a>.</p>
 <div class="align-center figure align-default" id="fig-qgis-python-script-list-layers">
 <a class="reference internal image-reference" href="_images/python-script-list-layers.png"><img alt="API do QGIS em Python para automação de tarefas" src="_images/python-script-list-layers.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 5.2 - </span><span class="caption-text">API do QGIS em Python para automação de tarefas.</span><a class="headerlink" href="#fig-qgis-python-script-list-layers" title="Link Permanente para essa imagem">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 6.2 - </span><span class="caption-text">API do QGIS em Python para automação de tarefas.</span><a class="headerlink" href="#fig-qgis-python-script-list-layers" title="Link Permanente para essa imagem">¶</a></p>
 </div>
-<p>Por último, é possível estender as funcionalidades do QGIS através da criação de novos <em>plugins</em> escritos na linguagem Python. O <strong>plugin Web Land Trajectory Service</strong> (WLTS), mostrado na <a class="reference internal" href="#fig-qgis-plugin-wlts"><span class="std std-numref">Figura 5.3</span></a>, é desenvolvido nessa linguagem e acrescenta ao QGIS funcionalidades para extração de trajetórias a partir de conjuntos de dados de uso e cobertura da Terra.</p>
+<p>Por último, é possível estender as funcionalidades do QGIS através da criação de novos <em>plugins</em> escritos na linguagem Python. O <strong>plugin Web Land Trajectory Service</strong> (WLTS), mostrado na <a class="reference internal" href="#fig-qgis-plugin-wlts"><span class="std std-numref">Figura 6.3</span></a>, é desenvolvido nessa linguagem e acrescenta ao QGIS funcionalidades para extração de trajetórias a partir de conjuntos de dados de uso e cobertura da Terra.</p>
 <div class="align-center figure align-default" id="fig-qgis-plugin-wlts">
 <a class="reference internal image-reference" href="_images/plugin-wlts.png"><img alt="Janela do plugin WLTS" src="_images/plugin-wlts.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 5.3 - </span><span class="caption-text">Janela do plugin WLTS.</span><a class="headerlink" href="#fig-qgis-plugin-wlts" title="Link Permanente para essa imagem">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 6.3 - </span><span class="caption-text">Janela do plugin WLTS.</span><a class="headerlink" href="#fig-qgis-plugin-wlts" title="Link Permanente para essa imagem">¶</a></p>
 </div>
 <p>Este capítulo irá apresentar algumas maneiras de utilizar a linguagem Python em conjunto com o aplicativo QGIS.</p>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Tópicos</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="qgis/preparacao-ambiente.html">5.1. Preparação do Ambiente de Programação</a></li>
-<li class="toctree-l1"><a class="reference internal" href="qgis/python-console.html">5.2. Console Python no QGIS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="qgis/criando-plugins.html">5.3. Construindo Plugins para o QGIS em Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="qgis/plugin-debug.html">5.4. Preparando o Ambiente para Inspeção do Código de um Plugin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qgis/preparacao-ambiente.html">6.1. Preparação do Ambiente de Programação</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qgis/python-console.html">6.2. Console Python no QGIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qgis/criando-plugins.html">6.3. Construindo Plugins para o QGIS em Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qgis/plugin-debug.html">6.4. Preparando o Ambiente para Inspeção do Código de um Plugin</a></li>
 </ul>
 </div>
 </div>
@@ -248,8 +249,8 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="qgis/preparacao-ambiente.html" class="btn btn-neutral float-right" title="5.1. Preparação do Ambiente de Programação" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="imagens/visualizacao.html" class="btn btn-neutral float-left" title="4.3. Visualização de Imagens" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="qgis/preparacao-ambiente.html" class="btn btn-neutral float-right" title="6.1. Preparação do Ambiente de Programação" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="vetorial/shapely.html" class="btn btn-neutral float-left" title="5.3. A Biblioteca Shapely" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
     </div>
 
   <hr/>

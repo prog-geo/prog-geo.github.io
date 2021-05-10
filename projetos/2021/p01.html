@@ -110,8 +110,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../../introducao-programacao.html">2. Introdução à Programação com a Linguagem Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../jupyter.html">3. Jupyter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../imagens.html">4. Imagens - Processamento e Visualização</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../qgis.html">5. Programando com o QGIS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../variados.html">6. Tópicos Variados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vetorial.html">5. Manipulação de Dados Vetoriais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../qgis.html">6. Programando com o QGIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../variados.html">7. Tópicos Variados</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Referências Bibliográficas</span></p>
 <ul>
@@ -223,10 +224,10 @@
             
   <div class="section" id="brazil-data-cube-cloud-coverage-bdc3">
 <span id="sec-projetos-2021-p01"></span><h1><span class="section-number">1. </span>Brazil Data Cube Cloud Coverage (BDC<sup>3</sup>)<a class="headerlink" href="#brazil-data-cube-cloud-coverage-bdc3" title="Link permanente para este título">¶</a></h1>
-<p>O trabalho apresentado em <span id="id1">[<a class="reference internal" href="../../referencias.html#id25">12</a>]</span> introduz uma aplicação para fornecer ao usuário algumas estatísticas sobre a cobertura de nuvens a partir de séries temporais de imagens de sensoriamento remoto ópticas. Esta aplicação utiliza o <a class="reference external" href="https://github.com/brazil-data-cube/code-gallery/blob/master/jupyter/Python/stac/stac-introduction.ipynb">serviço STAC do Brazil Data Cube</a> para recuperar, nos metadados das coleções de imagens e itens, o percentual de cobertura de nuvens e o <em>footprint</em> das imagens (<a class="reference internal" href="#fig-projetos-2021-p01-bdc03"><span class="std std-numref">Figura 1.3</span></a>). Assim, vários gráficos podem ser apresentados para o usuário, como porcentagem de cobertura de nuvens mensal ou anual, ou valores absolutos da cobertura de nuvem ao longo do tempo.</p>
+<p>O trabalho apresentado em <span id="id1">[<a class="reference internal" href="../../referencias.html#id29">12</a>]</span> introduz uma aplicação para fornecer ao usuário algumas estatísticas sobre a cobertura de nuvens a partir de séries temporais de imagens de sensoriamento remoto ópticas. Esta aplicação utiliza o <a class="reference external" href="https://github.com/brazil-data-cube/code-gallery/blob/master/jupyter/Python/stac/stac-introduction.ipynb">serviço STAC do Brazil Data Cube</a> para recuperar, nos metadados das coleções de imagens e itens, o percentual de cobertura de nuvens e o <em>footprint</em> das imagens (<a class="reference internal" href="#fig-projetos-2021-p01-bdc03"><span class="std std-numref">Figura 1.3</span></a>). Assim, vários gráficos podem ser apresentados para o usuário, como porcentagem de cobertura de nuvens mensal ou anual, ou valores absolutos da cobertura de nuvem ao longo do tempo.</p>
 <div class="align-center figure align-default" id="fig-projetos-2021-p01-bdc03">
 <a class="reference internal image-reference" href="../../_images/bdc3.jpg"><img alt="Arquitetura do BDC3" src="../../_images/bdc3.jpg" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 1.3 - </span><span class="caption-text">Arquitetura do BDC<sup>3</sup>. <br/> <strong>Fonte:</strong> Lucena et al. (2020) <span id="id2">[<a class="reference internal" href="../../referencias.html#id25">12</a>]</span>.</span><a class="headerlink" href="#fig-projetos-2021-p01-bdc03" title="Link Permanente para essa imagem">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 1.3 - </span><span class="caption-text">Arquitetura do BDC<sup>3</sup>. <br/> <strong>Fonte:</strong> Lucena et al. (2020) <span id="id2">[<a class="reference internal" href="../../referencias.html#id29">12</a>]</span>.</span><a class="headerlink" href="#fig-projetos-2021-p01-bdc03" title="Link Permanente para essa imagem">¶</a></p>
 </div>
 <p>Para este projeto, considere criar um ou mais pacotes Python que implementem um processador de dados matriciais e vetoriais a partir das mácaras de nuvem disponíveis no catálogo do BDC, oferecendo a possibilidade de estatísticas a partir de partições arbitrárias, como limites municipais e estaduais, grade de um dado satélite/sensor, limite de um bioma, entre outros. Considere criar Notebooks que ajudem a apresentar as funcionalidades desse processador.</p>
 <div class="admonition note">

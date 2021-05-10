@@ -272,4 +272,4 @@ Saída::
 
 .. note::
 
-    Para mais informações sobre a preparação de pacotes para redistribuição em Python, consulte :cite:`ppa:2021`, :cite:`psf:distutils`, :cite:`psf:packaging`, :cite:`sarahan:2021`.
+    Para mais informações sobre a preparação de pacotes para redistribuição em Python, consulte :cite:`ppa:2021`, :cite:`psf:distutils`, :cite:`psf:packaging:a`, :cite:`psf:packaging:b`, :cite:`sarahan:2021`.

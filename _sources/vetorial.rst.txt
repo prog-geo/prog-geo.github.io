@@ -1,7 +1,9 @@
 ..
-    This file is part of SER-347 Documentation.
-    Copyright 2020, Gilberto Queiroz and Thales Körting.
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
 
+
+.. _cap_vetorial:
 
 Manipulação de Dados Vetoriais
 ==============================
@@ -10,11 +12,8 @@ Manipulação de Dados Vetoriais
 .. toctree::
     :maxdepth: 1
     :titlesonly:
+    :caption: Tópicos
 
     ./vetorial/introducao
-    ./vetorial/fiona
-    ./vetorial/ogr
-    ./vetorial/pandas
-    ./vetorial/geopandas
-    ./vetorial/consideracoes
-    ./vetorial/referencias
+    ./vetorial/ogc-sfs
+    ./vetorial/shapely

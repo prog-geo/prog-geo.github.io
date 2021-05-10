@@ -144,8 +144,9 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../jupyter.html">3. Jupyter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../imagens.html">4. Imagens - Processamento e Visualização</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../qgis.html">5. Programando com o QGIS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../variados.html">6. Tópicos Variados</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vetorial.html">5. Manipulação de Dados Vetoriais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../qgis.html">6. Programando com o QGIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variados.html">7. Tópicos Variados</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Referências Bibliográficas</span></p>
 <ul>
@@ -257,7 +258,7 @@
 </ul>
 <p>Operações comuns com sequências:</p>
 <table class="styled-table docutils align-center" id="introd-prog-tbl-op-seq">
-<caption><span class="caption-number">Tabela 2.12 - </span><span class="caption-text">Operações com sequências. <br/> <strong>Fonte:</strong> The Python Standard Library <span id="id1">[<a class="reference internal" href="../referencias.html#id57">16</a>]</span>.</span><a class="headerlink" href="#introd-prog-tbl-op-seq" title="Link Permanente para essa tabela">¶</a></caption>
+<caption><span class="caption-number">Tabela 2.12 - </span><span class="caption-text">Operações com sequências. <br/> <strong>Fonte:</strong> The Python Standard Library <span id="id1">[<a class="reference internal" href="../referencias.html#id62">16</a>]</span>.</span><a class="headerlink" href="#introd-prog-tbl-op-seq" title="Link Permanente para essa tabela">¶</a></caption>
 <colgroup>
 <col style="width: 21%" />
 <col style="width: 79%" />
@@ -445,11 +446,11 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>O <strong>método</strong> <code class="docutils literal notranslate"><span class="pre">sort</span></code> não cria uma nova lista, ele realiza a alteração <em>in-place</em>. Para maiores informações sobre esse método, consulte <span id="id2">[<a class="reference internal" href="../referencias.html#id61">37</a>]</span>.</p>
+<p>O <strong>método</strong> <code class="docutils literal notranslate"><span class="pre">sort</span></code> não cria uma nova lista, ele realiza a alteração <em>in-place</em>. Para maiores informações sobre esse método, consulte <span id="id2">[<a class="reference internal" href="../referencias.html#id66">38</a>]</span>.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>Python oferece também uma <strong>função</strong> denominada <code class="docutils literal notranslate"><span class="pre">sorted</span></code> que permite criar uma lista ordenada a partir de uma sequência qualquer. A definição dessa função pode ser encontrada em <span id="id3">[<a class="reference internal" href="../referencias.html#id63">15</a>]</span>. Para criar uma nova lista de cidades “ordenada ao contrário”, faça:</p>
+<p>Python oferece também uma <strong>função</strong> denominada <code class="docutils literal notranslate"><span class="pre">sorted</span></code> que permite criar uma lista ordenada a partir de uma sequência qualquer. A definição dessa função pode ser encontrada em <span id="id3">[<a class="reference internal" href="../referencias.html#id68">15</a>]</span>. Para criar uma nova lista de cidades “ordenada ao contrário”, faça:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nova_lista</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">cidades</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">nova_lista</span><span class="p">)</span>
 <span class="go">[&#39;São Paulo&#39;, &#39;Rio de Janeiro&#39;, &#39;Ouro Preto&#39;, &#39;Belo Horizonte&#39;]</span>
@@ -463,7 +464,7 @@
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Dica</p>
-<p>Veja o seguinte tutorial sobre ordenação em Python <span id="id4">[<a class="reference internal" href="../referencias.html#id10">10</a>]</span>.</p>
+<p>Veja o seguinte tutorial sobre ordenação em Python <span id="id4">[<a class="reference internal" href="../referencias.html#id11">10</a>]</span>.</p>
 </div>
 <p>Para adicionar um novo elemento ao final de uma lista, pode-se utilizar o método <code class="docutils literal notranslate"><span class="pre">append</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cidades</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;São José dos Campos&quot;</span><span class="p">)</span>
@@ -490,7 +491,7 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>Para uma lista completa das operações sobre sequências mutáveis, consulte <span id="id5">[<a class="reference internal" href="../referencias.html#id62">25</a>]</span>.</p>
+<p>Para uma lista completa das operações sobre sequências mutáveis, consulte <span id="id5">[<a class="reference internal" href="../referencias.html#id67">25</a>]</span>.</p>
 </div>
 <div class="section" id="construindo-listas">
 <h3><span class="section-number">2.15.3.1. </span>Construindo Listas<a class="headerlink" href="#construindo-listas" title="Link permanente para este título">¶</a></h3>
@@ -611,7 +612,7 @@
 <p>Esta estratégia evita que todos os elementos tenham que ser materializados de uma única vez. Repare que a grande diferença na notação é o uso de parênteses (<code class="docutils literal notranslate"><span class="pre">(</span></code> e <code class="docutils literal notranslate"><span class="pre">)</span></code>) no lugar de colchetes (<code class="docutils literal notranslate"><span class="pre">[</span></code> e <code class="docutils literal notranslate"><span class="pre">]</span></code>).</p>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>Para mais detalhes sobre <em>List Comprehension</em> e <em>Generator Expressions</em>, consulte <span id="id6">[<a class="reference internal" href="../referencias.html#id53">18</a>]</span> e <span id="id7">[<a class="reference internal" href="../referencias.html#id22">43</a>]</span>.</p>
+<p>Para mais detalhes sobre <em>List Comprehension</em> e <em>Generator Expressions</em>, consulte <span id="id6">[<a class="reference internal" href="../referencias.html#id58">18</a>]</span> e <span id="id7">[<a class="reference internal" href="../referencias.html#id26">46</a>]</span>.</p>
 </div>
 </div>
 </div>
