@@ -20,3 +20,4 @@ Manipulação de Dados Vetoriais
     ./vetorial/json
     ./vetorial/geojson
     ./vetorial/geo-io
+    ./vetorial/pandas
