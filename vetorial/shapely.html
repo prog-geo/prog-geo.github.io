@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>5.3. A Biblioteca Shapely &mdash; SER-347/CAP-419</title>
+  <title>5.3. Tipos Geométricos em Python &mdash; SER-347/CAP-419</title>
   
 
   
@@ -49,8 +49,8 @@
     
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Buscar" href="../search.html" />
-    <link rel="next" title="6. Programando com o QGIS" href="../qgis.html" />
-    <link rel="prev" title="5.2. Tipos Geométricos" href="ogc-sfs.html" /> 
+    <link rel="next" title="5.4. Documentos JSON" href="json.html" />
+    <link rel="prev" title="5.2. Tipos Geométricos" href="tipos-geometricos.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -113,8 +113,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../imagens.html">4. Imagens - Processamento e Visualização</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../vetorial.html">5. Manipulação de Dados Vetoriais</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="introducao.html">5.1. Introdução</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ogc-sfs.html">5.2. Tipos Geométricos</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">5.3. A Biblioteca Shapely</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tipos-geometricos.html">5.2. Tipos Geométricos</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.3. Tipos Geométricos em Python</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#instalacao">5.3.1. Instalação</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tipos-geometricos">5.3.2. Tipos Geométricos</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#relacionamentos-espaciais">5.3.3. Relacionamentos Espaciais</a></li>
@@ -122,6 +122,9 @@
 <li class="toctree-l3"><a class="reference internal" href="#formatos">5.3.5. Formatos</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="json.html">5.4. Documentos JSON</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geojson.html">5.5. Documentos GeoJSON</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geo-io.html">5.6. Leitura/Escrita de Dados Vetoriais</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../qgis.html">6. Programando com o QGIS</a></li>
@@ -196,7 +199,7 @@
         
           <li><a href="../vetorial.html"><span class="section-number">5. </span>Manipulação de Dados Vetoriais</a> &raquo;</li>
         
-      <li><span class="section-number">5.3. </span>A Biblioteca Shapely</li>
+      <li><span class="section-number">5.3. </span>Tipos Geométricos em Python</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -210,10 +213,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="../qgis.html" class="btn btn-neutral float-right" title="6. Programando com o QGIS" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="json.html" class="btn btn-neutral float-right" title="5.4. Documentos JSON" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
       
       
-        <a href="ogc-sfs.html" class="btn btn-neutral float-left" title="5.2. Tipos Geométricos" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="tipos-geometricos.html" class="btn btn-neutral float-left" title="5.2. Tipos Geométricos" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
       
   </div>
   
@@ -222,10 +225,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="a-biblioteca-shapely">
-<span id="sec-vetorial-shapely"></span><h1><span class="section-number">5.3. </span>A Biblioteca Shapely<a class="headerlink" href="#a-biblioteca-shapely" title="Link permanente para este título">¶</a></h1>
+  <div class="section" id="tipos-geometricos-em-python">
+<span id="sec-vetorial-shapely"></span><h1><span class="section-number">5.3. </span>Tipos Geométricos em Python<a class="headerlink" href="#tipos-geometricos-em-python" title="Link permanente para este título">¶</a></h1>
 <a class="reference internal image-reference" href="../_images/geometries.svg"><img alt="Tipos Geométricos" class="align-right" height="75" src="../_images/geometries.svg" /></a>
-<p>A biblioteca Shapely fornece o modelo geométrico e as operações espaciais da OGC-SFS (<a class="reference internal" href="ogc-sfs.html#sec-vetorial-ogc-sfs"><span class="std std-numref">Seção 5.2</span></a>) com um estilo <em>Pythonico</em>. Ela utiliza a biblioteca C++ denominada GEOS para representação dos tipos geométricos bem como para as operações espaciais.</p>
+<p>A biblioteca Shapely fornece o modelo geométrico e as operações espaciais da OGC-SFS (<a class="reference internal" href="tipos-geometricos.html#sec-vetorial-tipos-geometricos"><span class="std std-numref">Seção 5.2</span></a>) com um estilo <em>Pythonico</em>. Ela utiliza a biblioteca C++ denominada GEOS para representação dos tipos geométricos bem como para as operações espaciais.</p>
 <div class="section" id="instalacao">
 <h2><span class="section-number">5.3.1. </span>Instalação<a class="headerlink" href="#instalacao" title="Link permanente para este título">¶</a></h2>
 <p>Para realizar a instalação da Shapely com o gerenciador de pacotes da Anaconda, ative o ambiente virtual no qual deseja instalar a biblioteca e, em seguida, instale o pacote com o mesmo nome da biblioteca, como mostrado abaixo:</p>
@@ -248,7 +251,7 @@
 </div>
 <div class="section" id="tipos-geometricos">
 <h2><span class="section-number">5.3.2. </span>Tipos Geométricos<a class="headerlink" href="#tipos-geometricos" title="Link permanente para este título">¶</a></h2>
-<p>A biblioteca Shapely suporta os tipos geométricos da OGC-SFS: <strong>Point</strong>, <strong>LineString</strong>, <strong>LinearRing</strong>, <strong>Polygon</strong>, <strong>MultiPoint</strong>, <strong>MultiLineString</strong>, <strong>MultiPolygon</strong> e <strong>GeometryCollection</strong> (<a class="reference internal" href="ogc-sfs.html#fig-vetorial-ogc-sfs-class-diagram"><span class="std std-numref">Figura 5.3</span></a>).</p>
+<p>A biblioteca Shapely suporta os tipos geométricos da OGC-SFS: <strong>Point</strong>, <strong>LineString</strong>, <strong>LinearRing</strong>, <strong>Polygon</strong>, <strong>MultiPoint</strong>, <strong>MultiLineString</strong>, <strong>MultiPolygon</strong> e <strong>GeometryCollection</strong> (<a class="reference internal" href="tipos-geometricos.html#fig-vetorial-tipos-geometricos-class-diagram"><span class="std std-numref">Figura 5.3</span></a>).</p>
 <p>Como a biblioteca Shapely utiliza a GEOS, as operações suportadas não consideram a componente <span class="math notranslate nohighlight">\(z\)</span> em suas análises. Além disso, os tipos geométricos dessa biblioteca utilizam números em ponto flutuante para representação das coordenadas dos seus elementos geométricos.</p>
 <div class="section" id="pontos-point">
 <h3><span class="section-number">5.3.2.1. </span>Pontos (Point)<a class="headerlink" href="#pontos-point" title="Link permanente para este título">¶</a></h3>
@@ -614,8 +617,8 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="../qgis.html" class="btn btn-neutral float-right" title="6. Programando com o QGIS" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="ogc-sfs.html" class="btn btn-neutral float-left" title="5.2. Tipos Geométricos" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="json.html" class="btn btn-neutral float-right" title="5.4. Documentos JSON" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="tipos-geometricos.html" class="btn btn-neutral float-left" title="5.2. Tipos Geométricos" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
     </div>
 
   <hr/>

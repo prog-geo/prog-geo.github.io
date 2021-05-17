@@ -15,5 +15,8 @@ Manipulação de Dados Vetoriais
     :caption: Tópicos
 
     ./vetorial/introducao
-    ./vetorial/ogc-sfs
+    ./vetorial/tipos-geometricos
     ./vetorial/shapely
+    ./vetorial/json
+    ./vetorial/geojson
+    ./vetorial/geo-io

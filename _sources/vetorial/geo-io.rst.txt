@@ -1,0 +1,512 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../def.rst
+
+
+.. _sec_vetorial_geo_io:
+
+Leitura/Escrita de Dados Vetoriais
+==================================
+
+
+.. image:: ../img/vetorial/introducao/feature-collection-uf.png
+    :alt: Coleção de Feições
+    :width: 150
+    :align: right
+
+
+Nesta seção iremos discutir como realizar a leitura e escrita de dados geoespaciais representados na forma de uma **coleção de feições** (*feature collection*). Para isso, começaremos construindo um pequeno programa que irá abrir um arquivo de dados vetorial no formato **ESRI Shapefile** contendo os limites das Unidades da Federação do Brasil, referentes ao ano de 2018 (:numref:`Figura %s <fig:vetorial:geo-io:uf-2018>`). Portanto, faça o download do arquivo :download:`uf-2018.zip <https://1drv.ms/u/s!AtoTP-MfEUEDgq58cYmvg1H3okPCwQ?e=lQtSXZ>`, que contém esses dados.
+
+
+.. figure:: ../img/vetorial/geo-io/uf-2018.png
+    :alt: Unidades Federativas do Brasil - 2018
+    :width: 100%
+    :figclass: align-center
+    :name: fig:vetorial:geo-io:uf-2018
+
+    Unidades Federativas do Brasil - 2018. |br| **Fonte Original:** `IBGE <https://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2018/Brasil/BR/br_unidades_da_federacao.zip>`_.
+
+
+O conjunto de dados no formato ESRI Shapefile é formado pelos seguintes componentes:
+
+.. rst-class:: open
+
+- ``uf_2018.dbf``: o arquivo com extensão ``.dbf`` contém os atributos alfanuméricos de cada feição geográfica.
+
+- ``uf_2018.shp``: o arquivo com extensão ``.shp`` contém os limites das Unidades Federativas, representados por geometrias do tipo ``MultiPolygon``.
+
+- ``uf_2018.shx``: o arquivo com extensão ``.shx`` contém um índice posicional para rápido acesso às geometrias do conjunto de dados.
+
+- ``uf_2018.cpg``: o arquivo com extensão ``.cpg`` contém a codificação de caracteres dos dados contidos no arquivo ``.dbf``. Neste caso, a codificação utilizada é a ``UTF-8``.
+
+- ``uf_2018.prj``: o arquivo com extensão ``.prj`` contém a descrição do sistema de referência espacial das coordenadas das geometrias. Neste caso, as coordenadas encontram-se na projeção geográfica LAT/LONG e no sistema geodésico de referência SIRGAS 2000.
+
+
+.. note::
+
+    Para maiores detalhes do formato ESRI Shapefile, consulte :cite:`wikipedia:2021:e`.
+
+
+A Biblioteca Fiona
+------------------
+
+
+A biblioteca `Fiona <https://fiona.readthedocs.io/en/latest/>`_ oferece funcionalidades para leitura e escrita de dados geoespaciais codificados nos mais diversos formatos. Ela oferece uma API nos mesmos moldes dos protocolos de Entrada e Saída (E/S) da API de arquivos da linguagem Python (Python IO).
+
+
+Instalação
+++++++++++
+
+
+Para realizar a instalação da Fiona com o gerenciador de pacotes da Anaconda, ative o ambiente virtual no qual deseja instalar a biblioteca e, em seguida, instale o pacote com o comando ``conda install``, como mostrado abaixo::
+
+    conda install fiona
+
+
+Para verificar se sua instalação foi realizada com sucesso, importe essa biblioteca através do seguinte comando:
+
+
+.. code-block:: ipython
+
+    In [1]: import fiona
+
+
+.. note::
+
+    Para verificar a versão instalada da sua biblioteca, utilize o seguinte comando:
+
+
+    .. code-block:: ipython
+
+        In [5]: fiona.__version__
+        Out[5]: '1.8.18'
+
+
+
+Leitura de Dados
+++++++++++++++++
+
+
+O diagrama da :numref:`Figura %s <fig:vetorial:geo-io:fluxo-io>` apresenta um fluxograma geral das operações necessárias em um programa para realização da leitura de dados a partir de um arquivo qualquer. Em geral, o primeiro passo para leitura de dados consiste na utilização de um comando da linguagem que indique a abertura do arquivo, em modo leitura. Desta maneira, um identificador (ou variável) no programa é associado à estrutura que irá de fato manipular o arquivo no sistema operacional. Depois de aberto o arquivo, pode-se utilizar um ou mais comandos para recuperar os dados armazenados nesse arquivo. No caso de arquivos com uma estrutura bem definida, como é o caso do formato ESRI Shapefile, há a possibilidade de leitura dos metadados que descrevem a própria estrutura dos dados no arquivos, isto é, seu esquema. Por exemplo, os nomes dos atributos das feições das Unidades Federativas e os tipos de dados associados aos valores desses atributos podem ser recuperados. Por último, quando o arquivo não é mais necessário no programa, utiliza-se um comando para indicar o encerramento de seu uso (fechamento) e, consequentemente, a liberação de eventuais recursos associados a ele (como *buffers* de memória).
+
+
+.. figure:: ../img/vetorial/geo-io/fluxo-io.png
+    :alt: Fluxograma da leitura de dados a partir de um arquivo
+    :width: 30%
+    :figclass: align-center
+    :name: fig:vetorial:geo-io:fluxo-io
+
+    Fluxograma da leitura de dados a partir de um arquivo.
+
+
+No caso da biblioteca Fiona, a abertura de um arquivo é realizada através da operação ``fiona.open``. Esta operação recebe como argumento o nome do arquivo a ser manipulado. O nome do arquivo pode incluir o seu caminho completo ou relativo. O :numref:`Trecho de Código %s <code:vetorial:geo-io:fiona:file-open>` mostra como realizar a abertura do arquivo ``uf_2018.shp``, localizado no diretório ``data/uf``, e, em seguida, escreve na saída padrão o número de feições (ou registros) contidos nessa coleção (27 feições).
+
+
+.. code-block:: ipython
+    :linenos:
+    :emphasize-lines: 1
+    :caption: Abrindo o arquivo ``uf_2018.shp`` para leitura.
+    :name: code:vetorial:geo-io:fiona:file-open
+
+    In [1]: with fiona.open("data/uf/uf_2018.shp", "r") as ufs:
+       ...:     num_feicoes = len(ufs)
+       ...:     print(f"Número de feições: {num_feicoes}.")
+       ...:
+    Número de feições: 27.
+
+
+O :numref:`Trecho de Código %s <code:vetorial:geo-io:fiona:file-open>` introduz também uma nova construção em Python, o uso do comando ``with``. O comando ``with`` define um bloco de comandos que deva **inicializar algum recurso** no início da sua execução e, ao final da sua execução tenha que **finalizar (ou liberar) esse recurso**. Nesse caso, o recurso é o arquivo ``uf_2018.shp`` que ficará associado ao identificador ``ufs``. Ao término do último comando do bloco ``with``, neste caso o comando ``print`` na linha 03, o arquivo será automaticamente fechado, sem que seja necessário o uso explícito do comando ``ufs.close()``.
+
+
+Para acessar cada uma das feições armazenadas no arquivo, pode ser utilizado um laço do tipo ``for``, como mostrado no :numref:`Trecho de Código %s <code:vetorial:geo-io:fiona:features-read>`.
+
+
+.. code-block:: ipython
+    :linenos:
+    :emphasize-lines: 2-3
+    :caption: Acesso às feições armazendas no arquivo ``uf_2018.shp``.
+    :name: code:vetorial:geo-io:fiona:features-read
+
+    In [1]: with fiona.open("data/uf/uf_2018.shp", "r") as ufs:
+       ...:     for uf in ufs:
+       ...:         print(uf["properties"])
+       ...:
+    OrderedDict([('ID', 1), ('NOME', 'SERGIPE'), ('SIGLA', 'SE'), ('GEOCODIGO', '28'), ('REGIAO', 'NORDESTE'), ('REGIAO_SIG', 'NE')])
+    OrderedDict([('ID', 2), ('NOME', 'MARANHÃO'), ('SIGLA', 'MA'), ('GEOCODIGO', '21'), ('REGIAO', 'NORDESTE'), ('REGIAO_SIG', 'NE')])
+    ...
+    OrderedDict([('ID', 27), ('NOME', 'TOCANTINS'), ('SIGLA', 'TO'), ('GEOCODIGO', '17'), ('REGIAO', 'NORTE'), ('REGIAO_SIG', 'N')])
+
+
+A linha 03 do :numref:`Trecho de Código %s <code:vetorial:geo-io:fiona:features-read>` escreve os nomes e valores dos atributos (ou propriedades) alfanuméricos de cada feição. Cada feição possui dois atributos especiais: ``properties`` e ``geometry``. Utilizando a notação do ``operador[]``, podemos acessar tanto as propriedades alfanuméricas quanto a geométrica.
+
+
+.. note::
+
+    No :numref:`Trecho de Código %s <code:vetorial:geo-io:fiona:file-open>`, para acessar apenas a primeira feição (ou registro) do arquivo, é possível utilizar a seguinte construção dentro do bloco de comandos ``with``::
+
+        uf = next(iter(ufs))
+        print(type(uf))
+        print(uf)
+
+
+Vamos escrever um programa que compute o centróide para cada uma das geometrias das Unidades Federativas e, em seguida, escreva na saída padrão a localização do centróide e o nome da unidade. Como será necessária a realização de uma operação espacial para geração do centróide, devemos carregar a biblioteca Shapely, como indicado no :numref:`Trecho de Código %s <code:vetorial:geo-io:fiona:compute-centroid>`.
+
+
+.. code-block:: ipython
+    :linenos:
+    :emphasize-lines: 5-6
+    :caption: Computando o centróide para os polígonos das Unidades Federativas.
+    :name: code:vetorial:geo-io:fiona:compute-centroid
+
+    In [1]: from shapely.geometry import shape
+
+    In [2]: with fiona.open("data/uf/uf_2018.shp", "r") as ufs:
+       ...:     for uf in ufs:
+       ...:         geom = shape(uf["geometry"])
+       ...:         centroide = geom.centroid
+       ...:         nome = uf["properties"]["NOME"]
+       ...:         print(f"Nome: {nome}; Localização: {centroide.wkt}")
+       ...:
+    Nome: SERGIPE; Localização: POINT (-37.44374619643403 -10.58460970352795)
+    Nome: MARANHÃO; Localização: POINT (-45.28788579867823 -5.072310251937679)
+    ...
+    Nome: TOCANTINS; Localização: POINT (-48.32922962739212 -10.15031487315235)
+
+
+Para finalizar, vamos discutir o código apresentado no :numref:`Trecho de Código %s <code:vetorial:geo-io:fiona:read>`.
+
+
+.. code-block:: ipython
+    :linenos:
+    :caption: Leitura do esquema e dados de um arquivo ESRI Shapefile.
+    :name: code:vetorial:geo-io:fiona:read
+
+    In [1]: import fiona
+
+    In [2]: from shapely.geometry import shape
+    In [3]: from shapely.geometry import mapping
+
+    In [4]: with fiona.open("data/uf/uf_2018.shp", "r") as ufs:
+       ...:
+       ...:     # Número de feições
+       ...:     num_feicoes = len(ufs)
+       ...:
+       ...:     print(f"Número de feições: {num_feicoes}\n")
+       ...:
+       ...:     # Sistema de Referência Espacial
+       ...:     crs = ufs.crs
+       ...:
+       ...:     print(f"CRS: {crs}\n")
+       ...:
+       ...:     # Extensão da coleção de feições
+       ...:     mbr = ufs.bounds
+       ...:
+       ...:     print(f"xmin: {mbr[0]}, xmax: {mbr[2]}")
+       ...:     print(f"ymin: {mbr[1]}, ymax: {mbr[3]}\n")
+       ...:
+       ...:     # Esquema das feições
+       ...:     schema = ufs.schema
+       ...:
+       ...:     # Propriedades alfanuméricas
+       ...:     propriedades = schema["properties"]
+       ...:
+       ...:     for a, t in propriedades.items():
+       ...:         print(f"Atributo: {a}, Tipo: {t}")
+       ...:
+       ...:     # Propriedade geométrica
+       ...:     tipo_geometrico = schema["geometry"]
+       ...:
+       ...:     print(f"\nTipo do atributo geométrico: {tipo_geometrico}\n")
+       ...:
+       ...:     # Acessando cada uma das Unidades Federativas (feições)
+       ...:     for uf in ufs:
+       ...:         # obtendo a geometria associada a feição
+       ...:         geom = shape(uf["geometry"])
+       ...:
+       ...:         # computando o centróide da geometria recuperada
+       ...:         centroide = geom.centroid
+       ...:
+       ...:         # obtendo o atributo NOME associado à feição
+       ...:         nome = uf["properties"]["NOME"]
+       ...:
+       ...:         print(f"Nome: {nome}, Localização: {centroide.wkt}")
+       ...:
+    Número de feições: 27
+
+    CRS: {'init': 'epsg:4674'}
+
+    xmin: -73.99044996899994, xmax: -28.847639913999956
+    ymin: -33.75117799399993, ymax: 5.271841077000033
+
+    Atributo: ID, Tipo: int:11
+    Atributo: NOME, Tipo: str:50
+    ...
+    Atributo: REGIAO_SIG, Tipo: str:2
+
+    Tipo do atributo geométrico: Polygon
+
+    Nome: SERGIPE, Localização: POINT (-37.44374619643403 -10.58460970352795)
+    Nome: MARANHÃO, Localização: POINT (-45.28788579867823 -5.072310251937679)
+    ...
+    Nome: TOCANTINS, Localização: POINT (-48.32922962739212 -10.15031487315235)
+
+
+Escrita de Dados
+++++++++++++++++
+
+
+O objetivo dessa seção é criar um pequeno programa que leia as feições das Unidades Federativas e, para cada feição desse arquivo calcule o seu centróide, gravando em um arquivo de saída denominado ``uf_centroides.shp``, no mesmo diretório do dado de entrada. Para criar este novo arquivo com a biblioteca Fiona, será preciso definir:
+
+.. rst-class:: open
+
+- A estrutura dos dados, isto é, o esquema da coleção de feições, que inclui o nome das propriedades (ou atributos), tipos de dados das propriedades e o tipo geométrico.
+
+- O sistema de referência espacial dos dados (``CRS``).
+
+- O tipo do **driver** que será usado para escrita dos dados.
+
+
+A coleção de saída, ``uf_centroides.shp``, terá duas propriedades alfanuméricas: (1) o identificador, que será um valor do tipo inteiro e (2) o nome da Unidade Federativa, uma string. O tipo geométrico será ``Point``. O ``CRS`` será o mesmo das geometrias do dado de entrada, ``EPSG:4674``. Como o objetivo é criar um novo arquivo ESRI Shapefile, usaremos o *driver*  que possui este nome.
+
+
+Vamos começar criando um dicionário com o esquema da coleção:
+
+
+.. code-block:: ipython
+
+    In [1]: schema_centroides = {
+       ...:     "geometry": "Point",
+       ...:     "properties": [
+       ...:         ("ID", "int"),
+       ...:         ("NOME", "str:50")
+       ...:     ]
+       ...: }
+
+
+.. warning::
+
+     A chave ``properties`` pode ser uma lista ou um ``OrderedDict``. O importante é utilizar uma estrutura que garanta a ordem dos elementos. Lembre-se que o ``dict`` pode não garantir isso dependendo das versões da linguagem Python.
+
+
+Em seguida, vamos utilizar o comando ``fiona.open`` duas vezes. A primeira, para criar o novo arquivo, chamado ``uf_centroides.shp`` no diretório ``data/uf``, com o esquema definido acima (``schema_centroides``), o *driver* ``ESRI Shapefile``, e o *CRS* ``EPSG:4674``. E o segundo uso do comando ``fiona.open`` irá abrir o arquivo ``uf_2018.shp`` para leitura.
+
+
+.. code-block:: ipython
+
+
+    In [1]: from collections import OrderedDict
+    In [1]: import fiona
+    In [2]: from shapely.geometry import shape
+    In [3]: from shapely.geometry import mapping
+
+    In [4]: with fiona.open("data/uf/uf_centroides.shp", "w",
+       ...:                 driver="ESRI Shapefile",
+       ...:                 crs="EPSG:4674",
+       ...:                 schema=schema_centroides) as centroides, \
+       ...:      fiona.open("data/uf/uf_2018.shp", "r") as ufs:
+       ...:
+       ...:      for i, uf in enumerate(ufs):
+       ...:          geom = shape(uf["geometry"])
+       ...:          centroide = geom.centroid
+       ...:
+       ...:          nome = uf["properties"]["NOME"]
+       ...:
+       ...:          feature = dict(
+       ...:              type="Feature",
+       ...:              id=i,
+       ...:              properties=OrderedDict (
+       ...:                  ID=uf["properties"]["ID"],
+       ...:                  NOME=uf["properties"]["NOME"]
+       ...:              ),
+       ...:              geometry=mapping(centroide)
+       ...:          )
+       ...:
+       ...:          centroides.write(feature)
+       ...:
+
+
+Acessando Arquivos via HTTP/HTTPS
++++++++++++++++++++++++++++++++++
+
+
+A Fiona oferece a possibilidade de acessar arquivos ESRI Shapefile através dos protocolos HTTP ou HTTPS. O :numref:`Trecho de Código %s <code:vetorial:geo-io:fiona:url>` mostra como ler as amostras contidas no arquivo ``bdc_paper_samples.shp`` disponível na seguinte URL: https://brazildatacube.dpi.inpe.br/geo-knowledge-hub/bdc-article/training-samples/shp/bdc_paper_samples.shp.
+
+
+.. code-block:: ipython
+    :linenos:
+    :caption: Leitura de um arquivo ESRI Shapefile via HTTPS.
+    :name: code:vetorial:geo-io:fiona:url
+
+    In [1]: url = "https://brazildatacube.dpi.inpe.br/geo-knowledge-hub/bdc-article/training-samples/shp/bdc_paper_samples.shp"
+
+    In [2]: with fiona.open(url, "r") as samples:
+       ...:     for s in samples:
+       ...:         print(s)
+       ...:
+
+
+A biblioteca GDAL/OGR
+---------------------
+
+
+A parte da biblioteca ``GDAL`` voltada para manipulação de dados vetoriais é conhecida por ``OGR``. A :numref:`Figura %s <fig:vetorial:geo-io:ogr>` apresenta as principais classes que compõem esta API.
+
+
+.. figure:: ../img/vetorial/geo-io/modelo-ogr.png
+    :alt: Modelo de objetos da OGR em Python
+    :width: 70%
+    :figclass: align-center
+    :name: fig:vetorial:geo-io:ogr
+
+    Modelo de objetos da OGR em Python.
+
+
+A classe ``DataSource`` representa uma coleção de camadas de informação ou *layers*. Um objeto ``DataSource`` pode ser usado para acessar um único arquivo, um conjunto de arquivos, um conjunto de tabelas de um banco de dados, ou coleções de feições em um serviço Web do tipo OGC Web Feature Service (WFS).
+
+
+A classe ``Layer`` representa uma camada de informação contida em um ``DataSource``. Essa classe contém operações que possibilitam a leitura e escrita de feições (*features*), isto é, um objeto geográfico. Neste documento também usaremos o termo *coleção de feições* (ou *feature collection*) quando nos referirmos a uma camada de informação.
+
+
+Todas as feições de uma mesma camada possuem a mesma estrutura, isto é, o mesmo conjunto de atributos. Denominamos esta estrutura da camada de informação de **esquema**. A classe ``FeatureDefn`` é usada para descrever o esquema de uma camada de informação, isto é, ela fornece uma lista com o nome dos atributos e seus respectivos tipos de dados. As feições pertencentes a uma mesma camada de informação irão compartilhar esta estrutura.
+
+
+A classe ``Feature`` representa os dados de uma feição, que podem ser valores alfanuméricos e geométricos.
+
+
+Para entender melhor esta estrutura (:numref:`Figura %s <fig:vetorial:geo-io:ogr>`), vamos considerar o arquivo ``uf_2018.shp`` (:numref:`Figura %s <fig:vetorial:geo-io:uf-2018>`) introduzido no início dessa seção (:numref:`Seção %s <sec_vetorial_geo_io>`). Um objeto do tipo ``DataSource`` (fonte de dados) irá representar esse conjunto de arquivos. A partir dele, teremos acesso ao conjunto de feições (municípios) através de um objeto do tipo ``Layer`` (camada de informação). Esse objeto por sua vez irá possibilitar acessar os dados de cada município, através de objetos do tipo ``Feature`` (feição geográfica). A partir de um objeto do tipo ``Feature`` podemos obter tanto os atributos alfanuméricos, como o código e nome da Unidade Federativa, e a geometria usada para representar seus limites (coleções de polígonos).
+
+
+Ainda completam o diagrama da :numref:`Figura %s <fig:vetorial:geo-io:ogr>`, a classe ``FieldDefn``, que representa as informações de um dado atributo do esquema da camada de informação; e, a classe ``Geometry``, que representa os tipos geométricos suportados pela ``OGR``, como pontos, linhas e polígonos, e as coleções homogêneas desses elementos geométricos.
+
+
+Instalando a biblioteca GDAL/OGR
+++++++++++++++++++++++++++++++++
+
+
+Para instalar a ``GDAL/OGR``, ative seu ambiente de trabalho da Anaconda e instale o pacote através do ``conda``::
+
+    conda install gdal=3
+
+
+.. note::
+
+    No meu ambiente, foi instalada a versão ``3.1.4``.
+
+
+Carregando a Biblioteca GDAL/OGR
+++++++++++++++++++++++++++++++++
+
+
+Uma boa prática ao trabalhar com bibliotecas que não fazem parte da distribuição padrão do Python consiste na verificação de sua carga logo após as instruções ``import``. O trecho de código abaixo mostra como realizar essa verificação logo no início do seu *script*, para certificar que a biblioteca ``GDAL`` tenha sido devidamente carregada antes de prosseguir com as próximas instruções do programa. Neste *script*, utilizamos um bloco ``try-except`` para verificar se o módulo ``osgeo`` e as APIs ``ogr`` e ``gdal`` foram devidamente carregados (``linhas 3-6``). Na ``linha 9`` utilizamos a função ``VersionInfo`` da API ``GDAL`` para obter uma string com a versão e data de build da ``GDAL``.
+
+
+.. code-block:: python
+    :linenos:
+
+    import sys
+
+    try:
+        from osgeo import gdal, ogr
+    except:
+        sys.exit('ERRO: módulo GDAL/OGR não encontrado!')
+
+    # versão da biblioteca GDAL/OGR
+    print(gdal.VersionInfo('VERSION'))
+
+
+Leitura de Dados
+++++++++++++++++
+
+
+Vamos abrir o arquivo ``uf_2018.shp``:
+
+
+.. code-block:: python
+
+    shp = ogr.Open('data/uf/uf_2018.shp')
+
+
+Veja que a operação ``ogr.Open`` cria um objeto chamado ``shp`` da classe ``DataSource``:
+
+
+.. code-block:: python
+
+    type(shp)
+
+
+A partir de um objeto do tipo ``DataSource`` podemos recuperar a camada de informação contida nessa fonte atravé do método ``GetLayer``:
+
+
+.. code-block:: python
+
+    layer = shp.GetLayer('uf_2018')
+
+    type(layer)
+
+
+De um objeto do tipo ``Layer`` podemos recuperar algumas informações básicas, como mostrado abaixo:
+
+
+.. code-block:: python
+
+    nome_layer = layer.GetName()
+    print(f'Layer: {nome_layer}')
+
+    bbox = layer.GetExtent()
+    print(f'\tExtensão.......: {bbox}')
+
+    crs = layer.GetSpatialRef().ExportToWkt()
+    print(f'\tSRS............: {crs}')
+
+    tipo_geometrias = layer.GetGeomType()
+    print(f'\tTipo Geométrico: {tipo_geometrias}')
+
+    print('\tPolígonos? ', tipo_geometrias == ogr.wkbMultiPolygon)
+
+    num_features = layer.GetFeatureCount()
+    print(f'\t#Feições.......: {num_features}')
+
+
+Podemos também obter o esquema das feições da camada:
+
+
+.. code-block:: python
+
+    layer_def = layer.GetLayerDefn()
+
+    print("Name       - Type    Width  Precision")
+
+    for i in range(layer_def.GetFieldCount()):
+
+        field_name =  layer_def.GetFieldDefn(i).GetName()
+        field_type_code = layer_def.GetFieldDefn(i).GetType()
+        field_type = layer_def.GetFieldDefn(i).GetFieldTypeName(field_type_code)
+        field_width = layer_def.GetFieldDefn(i).GetWidth()
+        field_precision = layer_def.GetFieldDefn(i).GetPrecision()
+
+        print(field_name.ljust(10) + " - " + \
+              field_type.ljust(10) + " " + \
+              str(field_width).ljust(6) + " " + \
+              str(field_precision))
+
+
+Para acessar os elementos da camada podemos utilizar um laço do tipo ``for`` como o mostrado abaixo:
+
+
+.. code-block:: python
+
+    for feature in layer:
+        nome = feature.GetField("NOME")
+
+        geom = feature.GetGeometryRef()
+        centroide = geom.Centroid()
+
+        print(f"Nome: {nome}, Localização: {centroide.ExportToWkt()}")
+
+
+.. note::
+
+    Um bom recurso sobre a API Python da GDAL/OGR pode ser encontrado em :cite:`erickson:2021`. A documentação da API Python GDAL/OGR pode ser encontrada em :cite:`gdal:2021:a`.

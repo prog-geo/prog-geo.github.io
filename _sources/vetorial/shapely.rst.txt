@@ -5,8 +5,8 @@
 
 .. _sec_vetorial_shapely:
 
-A Biblioteca Shapely
-====================
+Tipos Geométricos em Python
+===========================
 
 
 .. image:: ../img/vetorial/geometries.svg
@@ -15,7 +15,7 @@ A Biblioteca Shapely
     :align: right
 
 
-A biblioteca Shapely fornece o modelo geométrico e as operações espaciais da OGC-SFS (:numref:`Seção %s <sec_vetorial_ogc_sfs>`) com um estilo *Pythonico*. Ela utiliza a biblioteca C++ denominada GEOS para representação dos tipos geométricos bem como para as operações espaciais.
+A biblioteca Shapely fornece o modelo geométrico e as operações espaciais da OGC-SFS (:numref:`Seção %s <sec_vetorial_tipos_geometricos>`) com um estilo *Pythonico*. Ela utiliza a biblioteca C++ denominada GEOS para representação dos tipos geométricos bem como para as operações espaciais.
 
 
 Instalação
@@ -49,7 +49,7 @@ Tipos Geométricos
 -----------------
 
 
-A biblioteca Shapely suporta os tipos geométricos da OGC-SFS: **Point**, **LineString**, **LinearRing**, **Polygon**, **MultiPoint**, **MultiLineString**, **MultiPolygon** e **GeometryCollection** (:numref:`Figura %s <fig:vetorial:ogc-sfs:class-diagram>`).
+A biblioteca Shapely suporta os tipos geométricos da OGC-SFS: **Point**, **LineString**, **LinearRing**, **Polygon**, **MultiPoint**, **MultiLineString**, **MultiPolygon** e **GeometryCollection** (:numref:`Figura %s <fig:vetorial:tipos-geometricos:class-diagram>`).
 
 
 Como a biblioteca Shapely utiliza a GEOS, as operações suportadas não consideram a componente :math:`z` em suas análises. Além disso, os tipos geométricos dessa biblioteca utilizam números em ponto flutuante para representação das coordenadas dos seus elementos geométricos.

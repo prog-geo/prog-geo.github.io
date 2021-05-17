@@ -30,13 +30,13 @@ Além dos atributos alfanuméricos, uma feição é descrita por um ou mais **at
 A :numref:`Tabela %s <tbl:vetorial:introducao:tipos-objetos-geograficos>` apresenta alguns tipos de objetos geográficos representados por feições com representações geométricas de pontos (hidrelétricas e termoelétricas), linhas (logradouros) e polígonos (municípios brasileiros).
 
 
-.. |geom-pts| image:: ../img/vetorial/geom-pts.png
+.. |geom-pts| image:: ../img/vetorial/introducao/geom-pts.png
 
 
-.. |geom-lins| image:: ../img/vetorial/geom-lns.png
+.. |geom-lins| image:: ../img/vetorial/introducao/geom-lns.png
 
 
-.. |geom-pol| image:: ../img/vetorial/geom-pols.png
+.. |geom-pol| image:: ../img/vetorial/introducao/geom-pols.png
 
 
 .. table:: Representação de feições geográficas através de objetos geométricos.
@@ -57,7 +57,7 @@ A :numref:`Tabela %s <tbl:vetorial:introducao:tipos-objetos-geograficos>` aprese
 A :numref:`Figura %s <fig:vetorial:introducao:feature-collection>` ilustra o esquema de uma coleção de feições, onde podemos observar os atributos alfanuméricos e geométricos.
 
 
-.. figure:: ../img/vetorial/feature-collection-uf.png
+.. figure:: ../img/vetorial/introducao/feature-collection-uf.png
     :alt: Coleção de Feições (Feature Collection)
     :width: 480
     :figclass: align-center
@@ -66,22 +66,7 @@ A :numref:`Figura %s <fig:vetorial:introducao:feature-collection>` ilustra o esq
     Coleção de Feições (*Feature Collection*).
 
 
-As entidades codificados como dados matriciais, também chamadas de **raster** ou **imagens**, formam um plano subdividido em células de tamanho fixo, frequentemente chamadas de **pixels**. Para cada par de coordenada :math:`(x, y)` nesse plano há um valor de intensidade, por vezes chamado **nível de cinza**, que indica o valor de alguma medida para aquele ponto.
-
-
-A :numref:`Figura %s <fig:vetorial:introducao:img-cbers4>` apresenta uma imagem do satélite CBERS-4 sensor AWFI. Trata-se de um dado matricial em que cada célula, representa uma área de 64 metros da superfície terrestre e o valor de intensidade indica uma aproximação da cor refletida por essa superfície.
-
-
-.. figure:: ../img/vetorial/imagem-cbers4.png
-    :alt: Imagem do satélite CBERS-4 sensor AWFI
-    :width: 480
-    :figclass: align-center
-    :name: fig:vetorial:introducao:img-cbers4
-
-    Imagem do satélite CBERS-4 sensor AWFI com 64 metros de resolução espacial, em composição colorida.
-
-
-Nesta parte do curso estamos interessados em discutir sobre a representação geométrica usada em coleções de feições, como mostrado na :numref:`Figura %s <fig:vetorial:introducao:feature-collection>`. Repare que essa forma de representação, em geral, assume que todos os objetos da coleção possuem uma estrutura comum, a qual denominamos de **esquema das feições**. O esquema das feições é formado pelo conjunto de atributos usados para caracterizar as feições do conjunto. Além disso, cada atributo é associado a um tipo de dado. No caso da coleção mostrada na :numref:`Figura %s <fig:vetorial:introducao:feature-collection>` o esquema denominado ``unidades_federativas`` possui o seguinte conjunto de atributos:
+Repare que essa forma de representação, em geral, assume que todos os objetos da coleção possuem uma estrutura comum, a qual denominamos de **esquema das feições**. O esquema das feições é formado pelo conjunto de atributos usados para caracterizar as feições do conjunto. Além disso, cada atributo é associado a um tipo de dado. No caso da coleção mostrada na :numref:`Figura %s <fig:vetorial:introducao:feature-collection>` o esquema denominado ``unidades_federativas`` possui o seguinte conjunto de atributos:
 
 .. rst-class:: open
 
@@ -99,4 +84,21 @@ Nesta parte do curso estamos interessados em discutir sobre a representação ge
 Atualmente existem inúmeros formatos para codificação de dados geoespaciais vetoriais: GeoJSON, GML, KML, ESRI Shapefile, Geomedia, Atlas BNA, entre outros. Além desses formatos de arquivo ainda encontramos dados geoespaciais armazenados e gerenciados por Sistemas Gerenciadores de Bancos de Dados (SGBD) como MySQL, PostgreSQL, IBM DB2, Oracle e Microsoft SQL Server. Outra forte tendência é a disponibilização de dados através de serviços Web, como o OGC WFS (*Web Feature Service*). Por conta disso, é importante usarmos tecnologias que nos abstraiam ao máximo dos detalhes de cada um desses formatos e sistemas.
 
 
-Antes de começarmos a trabalhar com as coleções de feições, temos que compreender o modelo geométrico e as operações espaciais que permeiam as geotecnologias voltadas para manipulação de dados vetoriais: **OGC Simple Feature**.
+Antes de começarmos a trabalhar com as coleções de feições, temos que compreender o modelo geométrico e as operações espaciais que permeiam as geotecnologias voltadas para manipulação de dados vetoriais.
+
+
+.. note::
+
+    As entidades codificados como dados matriciais, também chamadas de **raster** ou **imagens**, formam um plano subdividido em células de tamanho fixo, frequentemente chamadas de **pixels**. Para cada par de coordenada :math:`(x, y)` nesse plano há um valor de intensidade, por vezes chamado **nível de cinza**, que indica o valor de alguma medida para aquele ponto.
+
+
+    A :numref:`Figura %s <fig:vetorial:introducao:img-cbers4>` apresenta uma imagem do satélite CBERS-4 sensor AWFI. Trata-se de um dado matricial em que cada célula, representa uma área de 64 metros :math:`\times` 64 metros da superfície terrestre e o valor de intensidade indica uma aproximação da resposta espectral dessa superfície.
+
+
+    .. figure:: ../img/vetorial/introducao/imagem-cbers4.png
+        :alt: Imagem do satélite CBERS-4 sensor AWFI
+        :width: 480
+        :figclass: align-center
+        :name: fig:vetorial:introducao:img-cbers4
+
+        Imagem do satélite CBERS-4 sensor AWFI com 64 metros de resolução espacial, em composição colorida.

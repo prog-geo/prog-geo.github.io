@@ -49,7 +49,7 @@
     
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Buscar" href="../search.html" />
-    <link rel="next" title="5.2. Tipos Geométricos" href="ogc-sfs.html" />
+    <link rel="next" title="5.2. Tipos Geométricos" href="tipos-geometricos.html" />
     <link rel="prev" title="5. Manipulação de Dados Vetoriais" href="../vetorial.html" /> 
 </head>
 
@@ -113,8 +113,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../imagens.html">4. Imagens - Processamento e Visualização</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../vetorial.html">5. Manipulação de Dados Vetoriais</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">5.1. Introdução</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ogc-sfs.html">5.2. Tipos Geométricos</a></li>
-<li class="toctree-l2"><a class="reference internal" href="shapely.html">5.3. A Biblioteca Shapely</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tipos-geometricos.html">5.2. Tipos Geométricos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shapely.html">5.3. Tipos Geométricos em Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="json.html">5.4. Documentos JSON</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geojson.html">5.5. Documentos GeoJSON</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geo-io.html">5.6. Leitura/Escrita de Dados Vetoriais</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../qgis.html">6. Programando com o QGIS</a></li>
@@ -203,7 +206,7 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="ogc-sfs.html" class="btn btn-neutral float-right" title="5.2. Tipos Geométricos" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="tipos-geometricos.html" class="btn btn-neutral float-right" title="5.2. Tipos Geométricos" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
       
       
         <a href="../vetorial.html" class="btn btn-neutral float-left" title="5. Manipulação de Dados Vetoriais" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
@@ -249,13 +252,7 @@
 <a class="reference internal image-reference" href="../_images/feature-collection-uf.png"><img alt="Coleção de Feições (Feature Collection)" src="../_images/feature-collection-uf.png" style="width: 480px;" /></a>
 <p class="caption"><span class="caption-number">Figura 5.1 - </span><span class="caption-text">Coleção de Feições (<em>Feature Collection</em>).</span><a class="headerlink" href="#fig-vetorial-introducao-feature-collection" title="Link Permanente para essa imagem">¶</a></p>
 </div>
-<p>As entidades codificados como dados matriciais, também chamadas de <strong>raster</strong> ou <strong>imagens</strong>, formam um plano subdividido em células de tamanho fixo, frequentemente chamadas de <strong>pixels</strong>. Para cada par de coordenada <span class="math notranslate nohighlight">\((x, y)\)</span> nesse plano há um valor de intensidade, por vezes chamado <strong>nível de cinza</strong>, que indica o valor de alguma medida para aquele ponto.</p>
-<p>A <a class="reference internal" href="#fig-vetorial-introducao-img-cbers4"><span class="std std-numref">Figura 5.2</span></a> apresenta uma imagem do satélite CBERS-4 sensor AWFI. Trata-se de um dado matricial em que cada célula, representa uma área de 64 metros da superfície terrestre e o valor de intensidade indica uma aproximação da cor refletida por essa superfície.</p>
-<div class="align-center figure align-default" id="fig-vetorial-introducao-img-cbers4">
-<a class="reference internal image-reference" href="../_images/imagem-cbers4.png"><img alt="Imagem do satélite CBERS-4 sensor AWFI" src="../_images/imagem-cbers4.png" style="width: 480px;" /></a>
-<p class="caption"><span class="caption-number">Figura 5.2 - </span><span class="caption-text">Imagem do satélite CBERS-4 sensor AWFI com 64 metros de resolução espacial, em composição colorida.</span><a class="headerlink" href="#fig-vetorial-introducao-img-cbers4" title="Link Permanente para essa imagem">¶</a></p>
-</div>
-<p>Nesta parte do curso estamos interessados em discutir sobre a representação geométrica usada em coleções de feições, como mostrado na <a class="reference internal" href="#fig-vetorial-introducao-feature-collection"><span class="std std-numref">Figura 5.1</span></a>. Repare que essa forma de representação, em geral, assume que todos os objetos da coleção possuem uma estrutura comum, a qual denominamos de <strong>esquema das feições</strong>. O esquema das feições é formado pelo conjunto de atributos usados para caracterizar as feições do conjunto. Além disso, cada atributo é associado a um tipo de dado. No caso da coleção mostrada na <a class="reference internal" href="#fig-vetorial-introducao-feature-collection"><span class="std std-numref">Figura 5.1</span></a> o esquema denominado <code class="docutils literal notranslate"><span class="pre">unidades_federativas</span></code> possui o seguinte conjunto de atributos:</p>
+<p>Repare que essa forma de representação, em geral, assume que todos os objetos da coleção possuem uma estrutura comum, a qual denominamos de <strong>esquema das feições</strong>. O esquema das feições é formado pelo conjunto de atributos usados para caracterizar as feições do conjunto. Além disso, cada atributo é associado a um tipo de dado. No caso da coleção mostrada na <a class="reference internal" href="#fig-vetorial-introducao-feature-collection"><span class="std std-numref">Figura 5.1</span></a> o esquema denominado <code class="docutils literal notranslate"><span class="pre">unidades_federativas</span></code> possui o seguinte conjunto de atributos:</p>
 <ul class="open">
 <li><p><code class="docutils literal notranslate"><span class="pre">ufid</span></code>: código do IBGE, um número inteiro usado para identificar as unidades federativas.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">nome</span></code>: nome da unidade federativa, uma string.</p></li>
@@ -264,7 +261,16 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">fronteira</span></code>: limite da unidade federativa, representada por um tipo geométrico (<code class="docutils literal notranslate"><span class="pre">MultiPolygon</span></code>).</p></li>
 </ul>
 <p>Atualmente existem inúmeros formatos para codificação de dados geoespaciais vetoriais: GeoJSON, GML, KML, ESRI Shapefile, Geomedia, Atlas BNA, entre outros. Além desses formatos de arquivo ainda encontramos dados geoespaciais armazenados e gerenciados por Sistemas Gerenciadores de Bancos de Dados (SGBD) como MySQL, PostgreSQL, IBM DB2, Oracle e Microsoft SQL Server. Outra forte tendência é a disponibilização de dados através de serviços Web, como o OGC WFS (<em>Web Feature Service</em>). Por conta disso, é importante usarmos tecnologias que nos abstraiam ao máximo dos detalhes de cada um desses formatos e sistemas.</p>
-<p>Antes de começarmos a trabalhar com as coleções de feições, temos que compreender o modelo geométrico e as operações espaciais que permeiam as geotecnologias voltadas para manipulação de dados vetoriais: <strong>OGC Simple Feature</strong>.</p>
+<p>Antes de começarmos a trabalhar com as coleções de feições, temos que compreender o modelo geométrico e as operações espaciais que permeiam as geotecnologias voltadas para manipulação de dados vetoriais.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>As entidades codificados como dados matriciais, também chamadas de <strong>raster</strong> ou <strong>imagens</strong>, formam um plano subdividido em células de tamanho fixo, frequentemente chamadas de <strong>pixels</strong>. Para cada par de coordenada <span class="math notranslate nohighlight">\((x, y)\)</span> nesse plano há um valor de intensidade, por vezes chamado <strong>nível de cinza</strong>, que indica o valor de alguma medida para aquele ponto.</p>
+<p>A <a class="reference internal" href="#fig-vetorial-introducao-img-cbers4"><span class="std std-numref">Figura 5.2</span></a> apresenta uma imagem do satélite CBERS-4 sensor AWFI. Trata-se de um dado matricial em que cada célula, representa uma área de 64 metros <span class="math notranslate nohighlight">\(\times\)</span> 64 metros da superfície terrestre e o valor de intensidade indica uma aproximação da resposta espectral dessa superfície.</p>
+<div class="align-center figure align-default" id="fig-vetorial-introducao-img-cbers4">
+<a class="reference internal image-reference" href="../_images/imagem-cbers4.png"><img alt="Imagem do satélite CBERS-4 sensor AWFI" src="../_images/imagem-cbers4.png" style="width: 480px;" /></a>
+<p class="caption"><span class="caption-number">Figura 5.2 - </span><span class="caption-text">Imagem do satélite CBERS-4 sensor AWFI com 64 metros de resolução espacial, em composição colorida.</span><a class="headerlink" href="#fig-vetorial-introducao-img-cbers4" title="Link Permanente para essa imagem">¶</a></p>
+</div>
+</div>
 </div>
 
 
@@ -273,7 +279,7 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="ogc-sfs.html" class="btn btn-neutral float-right" title="5.2. Tipos Geométricos" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="tipos-geometricos.html" class="btn btn-neutral float-right" title="5.2. Tipos Geométricos" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="../vetorial.html" class="btn btn-neutral float-left" title="5. Manipulação de Dados Vetoriais" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
     </div>
 
