@@ -1,83 +1,43 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="pt-BR" >
 <head>
   <meta charset="utf-8" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>6.1. Preparação do Ambiente de Programação &mdash; SER-347/CAP-419</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/table_styling.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/prog-geo.css" type="text/css" />
-
-  
-  
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/table_styling.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/prog-geo.css" type="text/css" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-  
-
-  
-  
-
-  
     <link rel="canonical" href="https://prog-geo.github.io/qgis/preparacao-ambiente.html" />
-
-  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script src="../_static/translations.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Buscar" href="../search.html" />
     <link rel="next" title="6.2. Console Python no QGIS" href="python-console.html" />
     <link rel="prev" title="6. Programando com o QGIS" href="../qgis.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #2980B9" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> SER-347/CAP-419
-          
-
-          
-            
             <img src="../_static/logo.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Pesquisar documentos" />
@@ -85,26 +45,15 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegação">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Introdução à Programação com Dados Geoespaciais</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Visão Geral do Curso:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Visão Geral do Curso:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../visao-geral.html">Visão Geral do Curso</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Aulas:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Aulas:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../instalacao.html">1. Instalando e Configurando o Ambiente de Programação</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introducao-programacao.html">2. Introdução à Programação com a Linguagem Python</a></li>
@@ -126,103 +75,56 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../variados.html">7. Tópicos Variados</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Referências Bibliográficas</span></p>
+<p class="caption" role="heading"><span class="caption-text">Referências Bibliográficas</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../referencias.html">Referências Bibliográficas</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Listas de Exercícios:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Listas de Exercícios:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Lista de Projetos:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../projetos.html">Projetos Finais</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Informações Gerais:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Informações Gerais:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../licenca.html">Licença</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Agradecimentos:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Agradecimentos:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../agradecimentos.html">Agradecimentos</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Menu de navegação móvel"  style="background: #2980B9" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">SER-347/CAP-419</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content style-external-links">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Navegação da página">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="../qgis.html"><span class="section-number">6. </span>Programando com o QGIS</a> &raquo;</li>
-        
       <li><span class="section-number">6.1. </span>Preparação do Ambiente de Programação</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
-        
       </li>
-    
-  </ul>
-
-  
-  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-      
-        <a href="python-console.html" class="btn btn-neutral float-right" title="6.2. Console Python no QGIS" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-      
-      
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Navegação sequencial da página">
         <a href="../qgis.html" class="btn btn-neutral float-left" title="6. Programando com o QGIS" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
-      
+        <a href="python-console.html" class="btn btn-neutral float-right" title="6.2. Console Python no QGIS" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
   </div>
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <div class="section" id="preparacao-do-ambiente-de-programacao">
-<span id="sec-qgis-preparacao-ambiente"></span><h1><span class="section-number">6.1. </span>Preparação do Ambiente de Programação<a class="headerlink" href="#preparacao-do-ambiente-de-programacao" title="Link permanente para este título">¶</a></h1>
+<span id="sec-qgis-preparacao-ambiente"></span><h1><span class="section-number">6.1. </span>Preparação do Ambiente de Programação<a class="headerlink" href="#preparacao-do-ambiente-de-programacao" title="Link permanente para este título"></a></h1>
 <p>Esta seção irá mostrar como criar uma imagem Docker que permita lançar os aplicativos QGIS versão 3.16 e LiClipse versão 6.1.0 a partir de um único contêiner.</p>
 <div class="admonition warning">
 <p class="admonition-title">Aviso</p>
@@ -238,87 +140,50 @@
 <p>Os comandos abaixo irão utilizar este aplicativo em linha de comando para obter informações do seu usuário e então criar um usuário equivalente no sistema da imagem que iremos preparar.</p>
 </div>
 <div class="section" id="criando-a-imagem-docker-cap-419-qgis">
-<h2><span class="section-number">6.1.1. </span>Criando a Imagem Docker <code class="docutils literal notranslate"><span class="pre">cap-419/qgis</span></code><a class="headerlink" href="#criando-a-imagem-docker-cap-419-qgis" title="Link permanente para este título">¶</a></h2>
+<h2><span class="section-number">6.1.1. </span>Criando a Imagem Docker <code class="docutils literal notranslate"><span class="pre">cap-419/qgis</span></code><a class="headerlink" href="#criando-a-imagem-docker-cap-419-qgis" title="Link permanente para este título"></a></h2>
 <p>Copie o arquivo <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> mostrado abaixo (<a class="reference internal" href="#code-qgis-preparacao-ambiente-dockerfile"><span class="std std-numref">Trecho de Código 6.1</span></a>) para um diretório exclusivo, de onde realizaremos a construção da imagem Docker:</p>
 <div class="literal-block-wrapper docutils container" id="code-qgis-preparacao-ambiente-dockerfile">
-<div class="code-block-caption"><span class="caption-number">Trecho de Código 6.1 - </span><span class="caption-text"><a class="reference download internal" download="" href="../_downloads/7db6bfcd0a067e537471a45256504326/Dockerfile"><code class="xref download docutils literal notranslate"><span class="pre">Dockerfile</span></code></a>.</span><a class="headerlink" href="#code-qgis-preparacao-ambiente-dockerfile" title="Link Permanente para esse código">¶</a></div>
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>ARG BASE_IMAGE=qgis/qgis:release-3_16
-FROM ${BASE_IMAGE}
-
-LABEL img.author=&quot;Gilberto Ribeiro de Queiroz e Thales Körting&quot; \
-      img.description=&quot;Este script possibilita a criação de \
-uma imagem com o ambiente computacional necessário ao \
-desenvolvimento de plugins para o QGIS.&quot;
-
-ARG ROOT_USER=root
-ARG QGIS_USER_NAME=qgis
-ARG QGIS_USER_ID=1000
-ARG QGIS_USER_GROUP=qgis
-ARG QGIS_USER_GROUP_ID=1000
-
-RUN apt-get update &amp;&amp; \
-    apt-get install -y openjdk-8-jdk wget &amp;&amp; \
-    rm -rf /var/lib/apt/lists/*
-
-RUN pip3 install --upgrade pip &amp;&amp; \
-    pip3 install --upgrade setuptools &amp;&amp; \
-    pip3 install --upgrade wheel &amp;&amp; \
-    pip3 install pb_tool
-
-RUN groupadd --gid ${QGIS_USER_GROUP_ID} ${QGIS_USER_GROUP} &amp;&amp; \
-    useradd --create-home \
-            --shell /bin/bash \
-            --uid ${QGIS_USER_ID} \
-            --gid ${QGIS_USER_GROUP} ${QGIS_USER_NAME}
-
-USER ${QGIS_USER_NAME}
-
-WORKDIR /home/${QGIS_USER_NAME}
-
-ADD liclipse_6.1.0_linux.gtk.x86_64.tar.gz /home/${QGIS_USER_NAME}/
-
-USER ${ROOT_USER}
-
-CMD [&quot;sleep&quot;, &quot;infinity&quot;]
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 6.1 - </span><span class="caption-text"><a class="reference download internal" download="" href="../_downloads/7db6bfcd0a067e537471a45256504326/Dockerfile"><code class="xref download docutils literal notranslate"><span class="pre">Dockerfile</span></code></a>.</span><a class="headerlink" href="#code-qgis-preparacao-ambiente-dockerfile" title="Link Permanente para esse código"></a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>ARG BASE_IMAGE=qgis/qgis:release-3_16
+<span class="linenos"> 2</span>FROM ${BASE_IMAGE}
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span>LABEL img.author=&quot;Gilberto Ribeiro de Queiroz e Thales Körting&quot; \
+<span class="linenos"> 5</span>      img.description=&quot;Este script possibilita a criação de \
+<span class="linenos"> 6</span>uma imagem com o ambiente computacional necessário ao \
+<span class="linenos"> 7</span>desenvolvimento de plugins para o QGIS.&quot;
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span>ARG ROOT_USER=root
+<span class="linenos">10</span>ARG QGIS_USER_NAME=qgis
+<span class="linenos">11</span>ARG QGIS_USER_ID=1000
+<span class="linenos">12</span>ARG QGIS_USER_GROUP=qgis
+<span class="linenos">13</span>ARG QGIS_USER_GROUP_ID=1000
+<span class="linenos">14</span>
+<span class="linenos">15</span>RUN apt-get update &amp;&amp; \
+<span class="linenos">16</span>    apt-get install -y openjdk-8-jdk wget &amp;&amp; \
+<span class="linenos">17</span>    rm -rf /var/lib/apt/lists/*
+<span class="linenos">18</span>
+<span class="linenos">19</span>RUN pip3 install --upgrade pip &amp;&amp; \
+<span class="linenos">20</span>    pip3 install --upgrade setuptools &amp;&amp; \
+<span class="linenos">21</span>    pip3 install --upgrade wheel &amp;&amp; \
+<span class="linenos">22</span>    pip3 install pb_tool
+<span class="linenos">23</span>
+<span class="linenos">24</span>RUN groupadd --gid ${QGIS_USER_GROUP_ID} ${QGIS_USER_GROUP} &amp;&amp; \
+<span class="linenos">25</span>    useradd --create-home \
+<span class="linenos">26</span>            --shell /bin/bash \
+<span class="linenos">27</span>            --uid ${QGIS_USER_ID} \
+<span class="linenos">28</span>            --gid ${QGIS_USER_GROUP} ${QGIS_USER_NAME}
+<span class="linenos">29</span>
+<span class="linenos">30</span>USER ${QGIS_USER_NAME}
+<span class="linenos">31</span>
+<span class="linenos">32</span>WORKDIR /home/${QGIS_USER_NAME}
+<span class="linenos">33</span>
+<span class="linenos">34</span>ADD liclipse_6.1.0_linux.gtk.x86_64.tar.gz /home/${QGIS_USER_NAME}/
+<span class="linenos">35</span>
+<span class="linenos">36</span>USER ${ROOT_USER}
+<span class="linenos">37</span>
+<span class="linenos">38</span>CMD [&quot;sleep&quot;, &quot;infinity&quot;]
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <p>Baixe a versão 6.1.0 do <a class="reference external" href="https://www.liclipse.com/download.html">LiClipse</a> e coloque na mesma pasta do arquivo <code class="docutils literal notranslate"><span class="pre">Dokerfile</span></code>.</p>
 <div class="admonition note">
@@ -341,17 +206,17 @@ CMD [&quot;sleep&quot;, &quot;infinity&quot;]
 <p>O comando <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">build</span></code> fará, inicialmente, com que algumas imagens e camadas bases, necessárias à criação da imagem <code class="docutils literal notranslate"><span class="pre">cap-419/qgis</span></code>, sejam recuperadas do <a class="reference external" href="https://hub.docker.com/">Docker Hub</a>. A <a class="reference internal" href="#fig-qgis-preparacao-ambiente-docker-build-cap419-qgis-01"><span class="std std-numref">Figura 6.4</span></a> mostra essa parte inicial do processo de construção da imagem <code class="docutils literal notranslate"><span class="pre">cap-419/qgis</span></code>.</p>
 <div class="align-center figure align-default" id="fig-qgis-preparacao-ambiente-docker-build-cap419-qgis-01">
 <a class="reference internal image-reference" href="../_images/docker-build-cap419-qgis-01.png"><img alt="Construindo a imagem Docker chamada cap-419/qgis" src="../_images/docker-build-cap419-qgis-01.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 6.4 - </span><span class="caption-text">Construindo a imagem Docker chamada <code class="docutils literal notranslate"><span class="pre">cap-419/qgis</span></code>.</span><a class="headerlink" href="#fig-qgis-preparacao-ambiente-docker-build-cap419-qgis-01" title="Link Permanente para essa imagem">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 6.4 - </span><span class="caption-text">Construindo a imagem Docker chamada <code class="docutils literal notranslate"><span class="pre">cap-419/qgis</span></code>.</span><a class="headerlink" href="#fig-qgis-preparacao-ambiente-docker-build-cap419-qgis-01" title="Link Permanente para essa imagem"></a></p>
 </div>
 <p>Assim que o <em>download</em> e extração dessas imagens e camadas bases terminarem, o processo de construção irá começar a executar os demais comandos contidos no <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code>, como mostrado na <a class="reference internal" href="#fig-qgis-preparacao-ambiente-docker-build-cap419-qgis-02"><span class="std std-numref">Figura 6.5</span></a>.</p>
 <div class="align-center figure align-default" id="fig-qgis-preparacao-ambiente-docker-build-cap419-qgis-02">
 <a class="reference internal image-reference" href="../_images/docker-build-cap419-qgis-02.png"><img alt="Etapas de construção da imagem cap-419/qgis" src="../_images/docker-build-cap419-qgis-02.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 6.5 - </span><span class="caption-text">Etapas de construção da imagem <code class="docutils literal notranslate"><span class="pre">cap-419/qgis</span></code>.</span><a class="headerlink" href="#fig-qgis-preparacao-ambiente-docker-build-cap419-qgis-02" title="Link Permanente para essa imagem">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 6.5 - </span><span class="caption-text">Etapas de construção da imagem <code class="docutils literal notranslate"><span class="pre">cap-419/qgis</span></code>.</span><a class="headerlink" href="#fig-qgis-preparacao-ambiente-docker-build-cap419-qgis-02" title="Link Permanente para essa imagem"></a></p>
 </div>
 <p>Após algum tempo realizando a construção da imagem, duas mensagens notificando o sucesso da operação deverão ser apresentadas no terminal, como mostrado na <a class="reference internal" href="#fig-qgis-preparacao-ambiente-docker-build-cap419-qgis-03"><span class="std std-numref">Figura 6.6</span></a>.</p>
 <div class="align-center figure align-default" id="fig-qgis-preparacao-ambiente-docker-build-cap419-qgis-03">
 <a class="reference internal image-reference" href="../_images/docker-build-cap419-qgis-03.png"><img alt="Finalização do processo de construção da imagem cap-419/qgis" src="../_images/docker-build-cap419-qgis-03.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 6.6 - </span><span class="caption-text">Finalização do processo de construção da imagem <code class="docutils literal notranslate"><span class="pre">cap-419/qgis</span></code>.</span><a class="headerlink" href="#fig-qgis-preparacao-ambiente-docker-build-cap419-qgis-03" title="Link Permanente para essa imagem">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 6.6 - </span><span class="caption-text">Finalização do processo de construção da imagem <code class="docutils literal notranslate"><span class="pre">cap-419/qgis</span></code>.</span><a class="headerlink" href="#fig-qgis-preparacao-ambiente-docker-build-cap419-qgis-03" title="Link Permanente para essa imagem"></a></p>
 </div>
 <p>Consulte se a imagem criada se encontra na lista de imagens disponíveis no seu sistema:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">image</span> <span class="n">ls</span>
@@ -364,7 +229,7 @@ CMD [&quot;sleep&quot;, &quot;infinity&quot;]
 </div>
 </div>
 <div class="section" id="criando-o-conteiner-cap-419-qgis">
-<h2><span class="section-number">6.1.2. </span>Criando o Contêiner <code class="docutils literal notranslate"><span class="pre">cap-419-qgis</span></code><a class="headerlink" href="#criando-o-conteiner-cap-419-qgis" title="Link permanente para este título">¶</a></h2>
+<h2><span class="section-number">6.1.2. </span>Criando o Contêiner <code class="docutils literal notranslate"><span class="pre">cap-419-qgis</span></code><a class="headerlink" href="#criando-o-conteiner-cap-419-qgis" title="Link permanente para este título"></a></h2>
 <p>Uma vez criada a imagem <code class="docutils literal notranslate"><span class="pre">cap-419/qgis:3.16</span></code>, é possível criar um contêiner que permita utilizar o QGIS e o LiClipse. Mas antes, vamos criar três diretórios que possam ser compartilhados como volumes entre o seu <em>host</em> e o novo contêiner que será criado mais adiante. Sugerimos criar os seguintes diretórios:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">gribeiro</span><span class="o">/</span><span class="n">CAP</span><span class="o">-</span><span class="mi">419</span><span class="o">/</span><span class="n">QGIS</span><span class="o">-</span><span class="n">Plugins</span>
 <span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">gribeiro</span><span class="o">/</span><span class="n">CAP</span><span class="o">-</span><span class="mi">419</span><span class="o">/</span><span class="n">QGIS</span><span class="o">-</span><span class="n">Data</span>
@@ -425,7 +290,7 @@ CMD [&quot;sleep&quot;, &quot;infinity&quot;]
 </div>
 </div>
 <div class="section" id="inicializando-o-qgis">
-<h2><span class="section-number">6.1.3. </span>Inicializando o QGIS<a class="headerlink" href="#inicializando-o-qgis" title="Link permanente para este título">¶</a></h2>
+<h2><span class="section-number">6.1.3. </span>Inicializando o QGIS<a class="headerlink" href="#inicializando-o-qgis" title="Link permanente para este título"></a></h2>
 <p>Uma vez que o contêiner <code class="docutils literal notranslate"><span class="pre">cap-419-qgis</span></code> esteja em execução, é possível abrir a interface gráfica do QGIS através do comando <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">exec</span></code>, como mostrado abaixo:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>docker exec --detach --user `id --name --user` cap-419-qgis qgis
 </pre></div>
@@ -433,16 +298,16 @@ CMD [&quot;sleep&quot;, &quot;infinity&quot;]
 <p>Uma janela como a mostrada na <a class="reference internal" href="#fig-qgis-preparacao-ambiente-docker-qgis-01"><span class="std std-numref">Figura 6.7</span></a> será apresentada.</p>
 <div class="align-center figure align-default" id="fig-qgis-preparacao-ambiente-docker-qgis-01">
 <a class="reference internal image-reference" href="../_images/docker-qgis-01.png"><img alt="Janela de boas vindas ao QGIS" src="../_images/docker-qgis-01.png" style="width: 60%;" /></a>
-<p class="caption"><span class="caption-number">Figura 6.7 - </span><span class="caption-text">Janela de boas vindas ao <cite>QGIS</cite>.</span><a class="headerlink" href="#fig-qgis-preparacao-ambiente-docker-qgis-01" title="Link Permanente para essa imagem">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 6.7 - </span><span class="caption-text">Janela de boas vindas ao <cite>QGIS</cite>.</span><a class="headerlink" href="#fig-qgis-preparacao-ambiente-docker-qgis-01" title="Link Permanente para essa imagem"></a></p>
 </div>
 <p>Pressione o botão <code class="docutils literal notranslate"><span class="pre">Let's</span> <span class="pre">get</span> <span class="pre">started!</span></code> para abrir a janela principal do QGIS (<a class="reference internal" href="#fig-qgis-preparacao-ambiente-docker-qgis-02"><span class="std std-numref">Figura 6.8</span></a>).</p>
 <div class="align-center figure align-default" id="fig-qgis-preparacao-ambiente-docker-qgis-02">
 <a class="reference internal image-reference" href="../_images/docker-qgis-02.png"><img alt="Janela principal do QGIS" src="../_images/docker-qgis-02.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 6.8 - </span><span class="caption-text">Janela principal do QGIS.</span><a class="headerlink" href="#fig-qgis-preparacao-ambiente-docker-qgis-02" title="Link Permanente para essa imagem">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 6.8 - </span><span class="caption-text">Janela principal do QGIS.</span><a class="headerlink" href="#fig-qgis-preparacao-ambiente-docker-qgis-02" title="Link Permanente para essa imagem"></a></p>
 </div>
 </div>
 <div class="section" id="inicializando-o-liclipse">
-<h2><span class="section-number">6.1.4. </span>Inicializando o LiClipse<a class="headerlink" href="#inicializando-o-liclipse" title="Link permanente para este título">¶</a></h2>
+<h2><span class="section-number">6.1.4. </span>Inicializando o LiClipse<a class="headerlink" href="#inicializando-o-liclipse" title="Link permanente para este título"></a></h2>
 <p>Considerando que o contêiner <code class="docutils literal notranslate"><span class="pre">cap-419-qgis</span></code> esteja em execução, é possível abrir a interface do LiClipse através do comando <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">exec</span></code>. Utilize o comando <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">exec</span></code> como mostrado abaixo:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>docker exec --detach --user `id --name --user` cap-419-qgis &quot;/home/$(id --name --user)/liclipse/LiClipse&quot;
 </pre></div>
@@ -450,27 +315,27 @@ CMD [&quot;sleep&quot;, &quot;infinity&quot;]
 <p>A primeira vez que o LiClipse é lançado, uma janela como a da <a class="reference internal" href="#fig-qgis-preparacao-ambiente-docker-liclipse-01"><span class="std std-numref">Figura 6.9</span></a> será apresentada. Indique o nome do <em>workspace</em> como mostrado (<code class="docutils literal notranslate"><span class="pre">QGIS-Plugins</span></code>) e pressione o botão <code class="docutils literal notranslate"><span class="pre">Launch</span></code>.</p>
 <div class="align-center figure align-default" id="fig-qgis-preparacao-ambiente-docker-liclipse-01">
 <a class="reference internal image-reference" href="../_images/docker-liclipse-01.png"><img alt="Escolha do diretório da área de trabalho (workspace)." src="../_images/docker-liclipse-01.png" style="width: 60%;" /></a>
-<p class="caption"><span class="caption-number">Figura 6.9 - </span><span class="caption-text">Escolha do diretório da área de trabalho (<em>workspace</em>).</span><a class="headerlink" href="#fig-qgis-preparacao-ambiente-docker-liclipse-01" title="Link Permanente para essa imagem">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 6.9 - </span><span class="caption-text">Escolha do diretório da área de trabalho (<em>workspace</em>).</span><a class="headerlink" href="#fig-qgis-preparacao-ambiente-docker-liclipse-01" title="Link Permanente para essa imagem"></a></p>
 </div>
 <p>Na janela seguinte (<a class="reference internal" href="#fig-qgis-preparacao-ambiente-docker-liclipse-02"><span class="std std-numref">Figura 6.10</span></a>), selecione o tema preferido.</p>
 <div class="align-center figure align-default" id="fig-qgis-preparacao-ambiente-docker-liclipse-02">
 <a class="reference internal image-reference" href="../_images/docker-liclipse-02.png"><img alt="Escolha do tema do LiClipse." src="../_images/docker-liclipse-02.png" style="width: 60%;" /></a>
-<p class="caption"><span class="caption-number">Figura 6.10 - </span><span class="caption-text">Escolha do tema do LiClipse.</span><a class="headerlink" href="#fig-qgis-preparacao-ambiente-docker-liclipse-02" title="Link Permanente para essa imagem">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 6.10 - </span><span class="caption-text">Escolha do tema do LiClipse.</span><a class="headerlink" href="#fig-qgis-preparacao-ambiente-docker-liclipse-02" title="Link Permanente para essa imagem"></a></p>
 </div>
 <p>Após alguns segundos, uma janela solicitando a reinicilização do LiClipse será apresentada (<a class="reference internal" href="#fig-qgis-preparacao-ambiente-docker-liclipse-03"><span class="std std-numref">Figura 6.11</span></a>). Pressione o botão <code class="docutils literal notranslate"><span class="pre">Yes</span></code> e aguarde o LiClipse reiniciar.</p>
 <div class="align-center figure align-default" id="fig-qgis-preparacao-ambiente-docker-liclipse-03">
 <a class="reference internal image-reference" href="../_images/docker-liclipse-03.png"><img alt="Escolha do tema do LiClipse" src="../_images/docker-liclipse-03.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 6.11 - </span><span class="caption-text">Escolha do tema do LiClipse.</span><a class="headerlink" href="#fig-qgis-preparacao-ambiente-docker-liclipse-03" title="Link Permanente para essa imagem">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 6.11 - </span><span class="caption-text">Escolha do tema do LiClipse.</span><a class="headerlink" href="#fig-qgis-preparacao-ambiente-docker-liclipse-03" title="Link Permanente para essa imagem"></a></p>
 </div>
 <p>Desta vez, o LiClipse ira solicitar a você a seleção da área de trabalho (<a class="reference internal" href="#fig-qgis-preparacao-ambiente-docker-liclipse-04"><span class="std std-numref">Figura 6.12</span></a>). Selecione a área de trabalho como indicado e lance o LiClipse, pressionando o botão <code class="docutils literal notranslate"><span class="pre">Launch</span></code>.</p>
 <div class="align-center figure align-default" id="fig-qgis-preparacao-ambiente-docker-liclipse-04">
 <a class="reference internal image-reference" href="../_images/docker-liclipse-04.png"><img alt="Selecionando a área de trabalho na inicialização do LiClipse" src="../_images/docker-liclipse-04.png" style="width: 60%;" /></a>
-<p class="caption"><span class="caption-number">Figura 6.12 - </span><span class="caption-text">Selecionando a área de trabalho na inicialização do LiClipse.</span><a class="headerlink" href="#fig-qgis-preparacao-ambiente-docker-liclipse-04" title="Link Permanente para essa imagem">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 6.12 - </span><span class="caption-text">Selecionando a área de trabalho na inicialização do LiClipse.</span><a class="headerlink" href="#fig-qgis-preparacao-ambiente-docker-liclipse-04" title="Link Permanente para essa imagem"></a></p>
 </div>
 <p>Finalmente, uma janela como a da <a class="reference internal" href="#fig-qgis-preparacao-ambiente-docker-liclipse-05"><span class="std std-numref">Figura 6.13</span></a> será apresentada.</p>
 <div class="align-center figure align-default" id="fig-qgis-preparacao-ambiente-docker-liclipse-05">
 <a class="reference internal image-reference" href="../_images/docker-liclipse-05.png"><img alt="Janela principal do LiClipse" src="../_images/docker-liclipse-05.png" style="width: 60%;" /></a>
-<p class="caption"><span class="caption-number">Figura 6.13 - </span><span class="caption-text">Janela principal do LiClipse.</span><a class="headerlink" href="#fig-qgis-preparacao-ambiente-docker-liclipse-05" title="Link Permanente para essa imagem">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 6.13 - </span><span class="caption-text">Janela principal do LiClipse.</span><a class="headerlink" href="#fig-qgis-preparacao-ambiente-docker-liclipse-05" title="Link Permanente para essa imagem"></a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
@@ -508,55 +373,41 @@ CMD [&quot;sleep&quot;, &quot;infinity&quot;]
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="python-console.html" class="btn btn-neutral float-right" title="6.2. Console Python no QGIS" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Rodapé">
         <a href="../qgis.html" class="btn btn-neutral float-left" title="6. Programando com o QGIS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="python-console.html" class="btn btn-neutral float-right" title="6.2. Console Python no QGIS" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+    <p>&#169; Copyright 2020-2021, Gilberto Queiroz and Thales Körting.</p>
+  </div>
 
-    </p>
-  </div> 
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(false);
       });
   </script>
-
-  
-  
-    
     <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165908761-1"></script>
     <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-    ga('create', 'UA-165908761-1', 'auto');
-    
-    ga('send', 'pageview');
-    </script>
-
-    
-   
+      gtag('config', 'UA-165908761-1', {
+          'anonymize_ip': false,
+      });
+    </script> 
 
 </body>
 </html>

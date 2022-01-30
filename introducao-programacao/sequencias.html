@@ -1,84 +1,44 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="pt-BR" >
 <head>
   <meta charset="utf-8" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>2.15. Sequências &mdash; SER-347/CAP-419</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/table_styling.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/prog-geo.css" type="text/css" />
-
-  
-  
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/table_styling.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/prog-geo.css" type="text/css" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-  
-
-  
-  
-
-  
     <link rel="canonical" href="https://prog-geo.github.io/introducao-programacao/sequencias.html" />
-
-  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script src="../_static/translations.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Buscar" href="../search.html" />
     <link rel="next" title="2.16. Dicionários" href="dicionarios.html" />
     <link rel="prev" title="2.14. Palavras-chave" href="keywords.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #2980B9" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> SER-347/CAP-419
-          
-
-          
-            
             <img src="../_static/logo.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Pesquisar documentos" />
@@ -86,26 +46,15 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegação">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Introdução à Programação com Dados Geoespaciais</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Visão Geral do Curso:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Visão Geral do Curso:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../visao-geral.html">Visão Geral do Curso</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Aulas:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Aulas:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../instalacao.html">1. Instalando e Configurando o Ambiente de Programação</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../introducao-programacao.html">2. Introdução à Programação com a Linguagem Python</a><ul class="current">
@@ -148,103 +97,56 @@
 <li class="toctree-l1"><a class="reference internal" href="../qgis.html">6. Programando com o QGIS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variados.html">7. Tópicos Variados</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Referências Bibliográficas</span></p>
+<p class="caption" role="heading"><span class="caption-text">Referências Bibliográficas</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../referencias.html">Referências Bibliográficas</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Listas de Exercícios:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Listas de Exercícios:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Lista de Projetos:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../projetos.html">Projetos Finais</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Informações Gerais:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Informações Gerais:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../licenca.html">Licença</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Agradecimentos:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Agradecimentos:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../agradecimentos.html">Agradecimentos</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Menu de navegação móvel"  style="background: #2980B9" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">SER-347/CAP-419</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content style-external-links">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Navegação da página">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="../introducao-programacao.html"><span class="section-number">2. </span>Introdução à Programação com a Linguagem Python</a> &raquo;</li>
-        
       <li><span class="section-number">2.15. </span>Sequências</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
-        
       </li>
-    
-  </ul>
-
-  
-  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-      
-        <a href="dicionarios.html" class="btn btn-neutral float-right" title="2.16. Dicionários" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-      
-      
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Navegação sequencial da página">
         <a href="keywords.html" class="btn btn-neutral float-left" title="2.14. Palavras-chave" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
-      
+        <a href="dicionarios.html" class="btn btn-neutral float-right" title="2.16. Dicionários" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
   </div>
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <div class="section" id="sequencias">
-<span id="sec-introducao-programacao-sequencias"></span><h1><span class="section-number">2.15. </span>Sequências<a class="headerlink" href="#sequencias" title="Link permanente para este título">¶</a></h1>
+<span id="sec-introducao-programacao-sequencias"></span><h1><span class="section-number">2.15. </span>Sequências<a class="headerlink" href="#sequencias" title="Link permanente para este título"></a></h1>
 <p>Uma sequência é um conjunto ordenado de <span class="math notranslate nohighlight">\(n\)</span> valores:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(a_0, a_1, a_2, ..., a_{n-1}\)</span></p></li>
@@ -258,7 +160,7 @@
 </ul>
 <p>Operações comuns com sequências:</p>
 <table class="styled-table docutils align-center" id="introd-prog-tbl-op-seq">
-<caption><span class="caption-number">Tabela 2.12 - </span><span class="caption-text">Operações com sequências. <br/> <strong>Fonte:</strong> The Python Standard Library <span id="id1">[<a class="reference internal" href="../referencias.html#id69">20</a>]</span>.</span><a class="headerlink" href="#introd-prog-tbl-op-seq" title="Link Permanente para essa tabela">¶</a></caption>
+<caption><span class="caption-number">Tabela 2.12 - </span><span class="caption-text">Operações com sequências. <br/> <strong>Fonte:</strong> The Python Standard Library <span id="id1">[<a class="reference internal" href="../referencias.html#id69" title="Python Software Foundation. Common sequence operations. 2021. Online; acessado 07 de Março de 2021. URL: https://docs.python.org/3/library/stdtypes.html#common-sequence-operations.">20</a>]</span>.</span><a class="headerlink" href="#introd-prog-tbl-op-seq" title="Link Permanente para essa tabela"></a></caption>
 <colgroup>
 <col style="width: 21%" />
 <col style="width: 79%" />
@@ -302,7 +204,7 @@
 </tbody>
 </table>
 <div class="section" id="strings">
-<h2><span class="section-number">2.15.1. </span>Strings<a class="headerlink" href="#strings" title="Link permanente para este título">¶</a></h2>
+<h2><span class="section-number">2.15.1. </span>Strings<a class="headerlink" href="#strings" title="Link permanente para este título"></a></h2>
 <p>Como visto na <a class="reference internal" href="strings.html#sec-introducao-programacao-strings"><span class="std std-numref">Seção 2.13</span></a>, strings são sequência imutáveis de caracteres:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nome</span> <span class="o">=</span> <span class="s2">&quot;Introdução à Programação com Dados Geoespaciais&quot;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">letra</span> <span class="o">=</span> <span class="s2">&quot;ç&quot;</span>
@@ -330,35 +232,26 @@
 </div>
 </div>
 <div class="section" id="tuplas">
-<h2><span class="section-number">2.15.2. </span>Tuplas<a class="headerlink" href="#tuplas" title="Link permanente para este título">¶</a></h2>
+<h2><span class="section-number">2.15.2. </span>Tuplas<a class="headerlink" href="#tuplas" title="Link permanente para este título"></a></h2>
 <p>As <strong>tuplas</strong> são expressas através de uma <strong>sequência</strong> cujos <strong>itens</strong> são <strong>separados por vírgula</strong> e <strong>delimitados ou não</strong> por <strong>parênteses</strong>. Vamos utilizar uma tupla para representar o par de coordenadas do centróide da cidade de São Paulo (<a class="reference internal" href="#introd-prog-fig-sp-localizacao"><span class="std std-numref">Figura 2.18</span></a>):</p>
 <div class="literal-block-wrapper docutils container" id="introd-prog-code-tupla-centroide-sp">
-<div class="code-block-caption"><span class="caption-number">Trecho de Código 2.14 - </span><span class="caption-text">Criando uma tupla para representar o centróide da cidade de São Paulo.</span><a class="headerlink" href="#introd-prog-code-tupla-centroide-sp" title="Link Permanente para esse código">¶</a></div>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="hll"><span class="n">centroide_sp</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">46.7165</span><span class="p">,</span> <span class="o">-</span><span class="mf">23.6830</span><span class="p">)</span>
-</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">centroide_sp</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;longitude: </span><span class="si">{}</span><span class="s2"> latitude: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">centroide_sp</span><span class="p">))</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">centroide_sp</span><span class="p">))</span>
-
-<span class="hll"><span class="n">longitude</span> <span class="o">=</span> <span class="n">centroide_sp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</span><span class="hll"><span class="n">latitude</span> <span class="o">=</span> <span class="n">centroide_sp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 2.14 - </span><span class="caption-text">Criando uma tupla para representar o centróide da cidade de São Paulo.</span><a class="headerlink" href="#introd-prog-code-tupla-centroide-sp" title="Link Permanente para esse código"></a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos"> 1</span><span class="n">centroide_sp</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">46.7165</span><span class="p">,</span> <span class="o">-</span><span class="mf">23.6830</span><span class="p">)</span>
+</span><span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="nb">print</span><span class="p">(</span><span class="n">centroide_sp</span><span class="p">)</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;longitude: </span><span class="si">{}</span><span class="s2"> latitude: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">centroide_sp</span><span class="p">))</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">centroide_sp</span><span class="p">))</span>
+<span class="linenos"> 8</span>
+<span class="hll"><span class="linenos"> 9</span><span class="n">longitude</span> <span class="o">=</span> <span class="n">centroide_sp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span class="hll"><span class="linenos">10</span><span class="n">latitude</span> <span class="o">=</span> <span class="n">centroide_sp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 </span></pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="align-center figure align-default" id="introd-prog-fig-sp-localizacao">
 <a class="reference internal image-reference" href="../_images/sp-localizacao.png"><img alt="Centróide da cidade de São Paulo" src="../_images/sp-localizacao.png" style="width: 40%;" /></a>
-<p class="caption"><span class="caption-number">Figura 2.18 - </span><span class="caption-text">Centróide da cidade de São Paulo.</span><a class="headerlink" href="#introd-prog-fig-sp-localizacao" title="Link Permanente para essa imagem">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 2.18 - </span><span class="caption-text">Centróide da cidade de São Paulo.</span><a class="headerlink" href="#introd-prog-fig-sp-localizacao" title="Link Permanente para essa imagem"></a></p>
 </div>
 <p>No <a class="reference internal" href="#introd-prog-code-tupla-centroide-sp"><span class="std std-numref">Trecho de Código 2.14</span></a> podemos observar o seguinte:</p>
 <ul class="open">
@@ -369,34 +262,24 @@
 </ul>
 <p>Tuplas podem ser <strong>aninhadas</strong> (<em>nested</em>). No <a class="reference internal" href="#introd-prog-code-tupla-box-sp"><span class="std std-numref">Trecho de Código 2.15</span></a>, usamos uma tupla para representar o retângulo envolvente mínimo (<em>REM</em> ou <em>Bounding Box</em>) do polígono que define o limite (ou contorno, ou fronteira) da cidade de São Paulo (<a class="reference internal" href="#introd-prog-fig-sp-box"><span class="std std-numref">Figura 2.19</span></a>). Veja que cada elemento da tupla, na <code class="docutils literal notranslate"><span class="pre">linha</span> <span class="pre">01</span></code>, é também uma tupla, com as coordenadas do canto inferior esquerdo e superior direito desse retângulo.</p>
 <div class="literal-block-wrapper docutils container" id="introd-prog-code-tupla-box-sp">
-<div class="code-block-caption"><span class="caption-number">Trecho de Código 2.15 - </span><span class="caption-text">Criando uma tupla cujos elementos também são tuplas.</span><a class="headerlink" href="#introd-prog-code-tupla-box-sp" title="Link Permanente para esse código">¶</a></div>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="hll"><span class="n">rem_sp</span> <span class="o">=</span> <span class="p">(</span> <span class="p">(</span><span class="o">-</span><span class="mf">46.8254</span><span class="p">,</span> <span class="o">-</span><span class="mf">24.0084</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">46.3648</span><span class="p">,</span> <span class="o">-</span><span class="mf">23.6830</span><span class="p">)</span> <span class="p">)</span>
-</span>
-<span class="n">canto_inferior_esquerdo</span> <span class="o">=</span> <span class="n">rem_sp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-
-<span class="n">canto_superior_direito</span> <span class="o">=</span> <span class="n">rem_sp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-
-<span class="n">xmin</span> <span class="o">=</span> <span class="n">canto_inferior_esquerdo</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-
-<span class="n">ymin</span> <span class="o">=</span> <span class="n">rem_sp</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;xmax: </span><span class="si">{</span><span class="n">rem_sp</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 2.15 - </span><span class="caption-text">Criando uma tupla cujos elementos também são tuplas.</span><a class="headerlink" href="#introd-prog-code-tupla-box-sp" title="Link Permanente para esse código"></a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos"> 1</span><span class="n">rem_sp</span> <span class="o">=</span> <span class="p">(</span> <span class="p">(</span><span class="o">-</span><span class="mf">46.8254</span><span class="p">,</span> <span class="o">-</span><span class="mf">24.0084</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">46.3648</span><span class="p">,</span> <span class="o">-</span><span class="mf">23.6830</span><span class="p">)</span> <span class="p">)</span>
+</span><span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="n">canto_inferior_esquerdo</span> <span class="o">=</span> <span class="n">rem_sp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="n">canto_superior_direito</span> <span class="o">=</span> <span class="n">rem_sp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="n">xmin</span> <span class="o">=</span> <span class="n">canto_inferior_esquerdo</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="n">ymin</span> <span class="o">=</span> <span class="n">rem_sp</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;xmax: </span><span class="si">{</span><span class="n">rem_sp</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="align-center figure align-default" id="introd-prog-fig-sp-box">
 <a class="reference internal image-reference" href="../_images/sp-box.png"><img alt="Retângulo envolvente mínimo do perímetro da cidade de São Paulo" src="../_images/sp-box.png" style="width: 40%;" /></a>
-<p class="caption"><span class="caption-number">Figura 2.19 - </span><span class="caption-text">Retângulo envolvente mínimo do perímetro da cidade de São Paulo.</span><a class="headerlink" href="#introd-prog-fig-sp-box" title="Link Permanente para essa imagem">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 2.19 - </span><span class="caption-text">Retângulo envolvente mínimo do perímetro da cidade de São Paulo.</span><a class="headerlink" href="#introd-prog-fig-sp-box" title="Link Permanente para essa imagem"></a></p>
 </div>
 <p>No <a class="reference internal" href="#introd-prog-code-tupla-centroide-sp"><span class="std std-numref">Trecho de Código 2.14</span></a> ainda temos:</p>
 <ul class="open">
@@ -419,7 +302,7 @@
 </div>
 </div>
 <div class="section" id="listas">
-<span id="sec-introducao-programacao-sequencias-listas"></span><h2><span class="section-number">2.15.3. </span>Listas<a class="headerlink" href="#listas" title="Link permanente para este título">¶</a></h2>
+<span id="sec-introducao-programacao-sequencias-listas"></span><h2><span class="section-number">2.15.3. </span>Listas<a class="headerlink" href="#listas" title="Link permanente para este título"></a></h2>
 <p>As <strong>listas</strong> são expressas através de uma <strong>sequência</strong> cujos <strong>itens</strong> são <strong>separados por vírgula</strong> e <strong>delimitados por colchetes</strong>. Vamos criar uma lista com o nome de algumas cidades:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cidades</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">&quot;São Paulo&quot;</span><span class="p">,</span> <span class="s2">&quot;Rio de Janeiro&quot;</span><span class="p">,</span> <span class="s2">&quot;Belo Horizonte&quot;</span><span class="p">,</span> <span class="s2">&quot;Ouro Preto&quot;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">cidades</span><span class="p">)</span>
@@ -446,11 +329,11 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>O <strong>método</strong> <code class="docutils literal notranslate"><span class="pre">sort</span></code> não cria uma nova lista, ele realiza a alteração <em>in-place</em>. Para maiores informações sobre esse método, consulte <span id="id2">[<a class="reference internal" href="../referencias.html#id73">43</a>]</span>.</p>
+<p>O <strong>método</strong> <code class="docutils literal notranslate"><span class="pre">sort</span></code> não cria uma nova lista, ele realiza a alteração <em>in-place</em>. Para maiores informações sobre esse método, consulte <span id="id2">[<a class="reference internal" href="../referencias.html#id73" title="Python Software Foundation. Class list. 2021. Online; acessado 07 de Março de 2021. URL: https://docs.python.org/3/library/stdtypes.html#list.">43</a>]</span>.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>Python oferece também uma <strong>função</strong> denominada <code class="docutils literal notranslate"><span class="pre">sorted</span></code> que permite criar uma lista ordenada a partir de uma sequência qualquer. A definição dessa função pode ser encontrada em <span id="id3">[<a class="reference internal" href="../referencias.html#id75">19</a>]</span>. Para criar uma nova lista de cidades “ordenada ao contrário”, faça:</p>
+<p>Python oferece também uma <strong>função</strong> denominada <code class="docutils literal notranslate"><span class="pre">sorted</span></code> que permite criar uma lista ordenada a partir de uma sequência qualquer. A definição dessa função pode ser encontrada em <span id="id3">[<a class="reference internal" href="../referencias.html#id75" title="Python Software Foundation. Built-in functions - sorted. 2021. Online; acessado 07 de Março de 2021. URL: https://docs.python.org/3/library/functions.html#sorted.">19</a>]</span>. Para criar uma nova lista de cidades “ordenada ao contrário”, faça:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nova_lista</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">cidades</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">nova_lista</span><span class="p">)</span>
 <span class="go">[&#39;São Paulo&#39;, &#39;Rio de Janeiro&#39;, &#39;Ouro Preto&#39;, &#39;Belo Horizonte&#39;]</span>
@@ -464,7 +347,7 @@
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Dica</p>
-<p>Veja o seguinte tutorial sobre ordenação em Python <span id="id4">[<a class="reference internal" href="../referencias.html#id13">14</a>]</span>.</p>
+<p>Veja o seguinte tutorial sobre ordenação em Python <span id="id4">[<a class="reference internal" href="../referencias.html#id13" title="Andrew Dalke and Raymond Hettinger. Sorting how to. 2021. Online; acessado 07 de Março de 2021. URL: https://docs.python.org/3/howto/sorting.html#sortinghowto.">14</a>]</span>.</p>
 </div>
 <p>Para adicionar um novo elemento ao final de uma lista, pode-se utilizar o método <code class="docutils literal notranslate"><span class="pre">append</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cidades</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;São José dos Campos&quot;</span><span class="p">)</span>
@@ -491,10 +374,10 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>Para uma lista completa das operações sobre sequências mutáveis, consulte <span id="id5">[<a class="reference internal" href="../referencias.html#id74">30</a>]</span>.</p>
+<p>Para uma lista completa das operações sobre sequências mutáveis, consulte <span id="id5">[<a class="reference internal" href="../referencias.html#id74" title="Python Software Foundation. Mutable sequence types. 2021. Online; acessado 07 de Março de 2021. URL: https://docs.python.org/3/library/stdtypes.html#typesseq-mutable.">30</a>]</span>.</p>
 </div>
 <div class="section" id="construindo-listas">
-<h3><span class="section-number">2.15.3.1. </span>Construindo Listas<a class="headerlink" href="#construindo-listas" title="Link permanente para este título">¶</a></h3>
+<h3><span class="section-number">2.15.3.1. </span>Construindo Listas<a class="headerlink" href="#construindo-listas" title="Link permanente para este título"></a></h3>
 <p>As listas podem ser construídas de diversas formas:</p>
 <ul class="open">
 <li><p>Uma lista vazia, por exemplo, pode ser criada da seguinte maneira:</p>
@@ -540,7 +423,7 @@
 </ul>
 </div>
 <div class="section" id="list-comprehension">
-<h3><span class="section-number">2.15.3.2. </span><em>List Comprehension</em><a class="headerlink" href="#list-comprehension" title="Link permanente para este título">¶</a></h3>
+<h3><span class="section-number">2.15.3.2. </span><em>List Comprehension</em><a class="headerlink" href="#list-comprehension" title="Link permanente para este título"></a></h3>
 <p>Uma maneira prática de construir listas é através da notação conhecida como <em>list comprehensions</em>. Esta notação, inspirada na linguagem funcional <a class="reference external" href="https://www.haskell.org/">Haskell</a>, apresenta a seguinte sintaxe básica:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">]</span>
 </pre></div>
@@ -584,7 +467,7 @@
 </div>
 </div>
 <div class="section" id="generator-expressions">
-<h2><span class="section-number">2.15.4. </span><em>Generator Expressions</em><a class="headerlink" href="#generator-expressions" title="Link permanente para este título">¶</a></h2>
+<h2><span class="section-number">2.15.4. </span><em>Generator Expressions</em><a class="headerlink" href="#generator-expressions" title="Link permanente para este título"></a></h2>
 <p>Outra notação concisa muito usada na linguagem Python é a de <em>generator expressions</em>. Muito parecida com a notação de <em>list comprehensions</em>, a sintaxe básica é a seguinte:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">)</span>
 </pre></div>
@@ -612,62 +495,48 @@
 <p>Esta estratégia evita que todos os elementos tenham que ser materializados de uma única vez. Repare que a grande diferença na notação é o uso de parênteses (<code class="docutils literal notranslate"><span class="pre">(</span></code> e <code class="docutils literal notranslate"><span class="pre">)</span></code>) no lugar de colchetes (<code class="docutils literal notranslate"><span class="pre">[</span></code> e <code class="docutils literal notranslate"><span class="pre">]</span></code>).</p>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>Para mais detalhes sobre <em>List Comprehension</em> e <em>Generator Expressions</em>, consulte <span id="id6">[<a class="reference internal" href="../referencias.html#id65">22</a>]</span> e <span id="id7">[<a class="reference internal" href="../referencias.html#id31">53</a>]</span>.</p>
+<p>Para mais detalhes sobre <em>List Comprehension</em> e <em>Generator Expressions</em>, consulte <span id="id6">[<a class="reference internal" href="../referencias.html#id65" title="Python Software Foundation. Displays for lists, sets and dictionaries. 2021. Online; acessado 07 de Março de 2021. URL: https://docs.python.org/3/reference/expressions.html#displays-for-lists-sets-and-dictionaries.">22</a>]</span> e <span id="id7">[<a class="reference internal" href="../referencias.html#id31" title="A. M. Kuchling. Functional programming howto - generator expressions and list comprehensions. 2021. Online; acessado 27 de Fevereiro de 2021. URL: https://docs.python.org/3/howto/functional.html#generator-expressions-and-list-comprehensions.">53</a>]</span>.</p>
 </div>
 </div>
 </div>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="dicionarios.html" class="btn btn-neutral float-right" title="2.16. Dicionários" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Rodapé">
         <a href="keywords.html" class="btn btn-neutral float-left" title="2.14. Palavras-chave" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="dicionarios.html" class="btn btn-neutral float-right" title="2.16. Dicionários" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+    <p>&#169; Copyright 2020-2021, Gilberto Queiroz and Thales Körting.</p>
+  </div>
 
-    </p>
-  </div> 
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(false);
       });
   </script>
-
-  
-  
-    
     <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165908761-1"></script>
     <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-    ga('create', 'UA-165908761-1', 'auto');
-    
-    ga('send', 'pageview');
-    </script>
-
-    
-   
+      gtag('config', 'UA-165908761-1', {
+          'anonymize_ip': false,
+      });
+    </script> 
 
 </body>
 </html>

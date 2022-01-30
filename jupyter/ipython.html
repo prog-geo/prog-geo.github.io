@@ -1,83 +1,43 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="pt-BR" >
 <head>
   <meta charset="utf-8" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>3.2. IPython &mdash; SER-347/CAP-419</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/table_styling.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/prog-geo.css" type="text/css" />
-
-  
-  
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/table_styling.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/prog-geo.css" type="text/css" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-  
-
-  
-  
-
-  
     <link rel="canonical" href="https://prog-geo.github.io/jupyter/ipython.html" />
-
-  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script src="../_static/translations.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Buscar" href="../search.html" />
     <link rel="next" title="3.3. Notebooks" href="notebooks.html" />
     <link rel="prev" title="3.1. Introdução" href="introducao.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #2980B9" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> SER-347/CAP-419
-          
-
-          
-            
             <img src="../_static/logo.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Pesquisar documentos" />
@@ -85,26 +45,15 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegação">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Introdução à Programação com Dados Geoespaciais</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Visão Geral do Curso:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Visão Geral do Curso:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../visao-geral.html">Visão Geral do Curso</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Aulas:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Aulas:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../instalacao.html">1. Instalando e Configurando o Ambiente de Programação</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introducao-programacao.html">2. Introdução à Programação com a Linguagem Python</a></li>
@@ -122,127 +71,80 @@
 <li class="toctree-l1"><a class="reference internal" href="../qgis.html">6. Programando com o QGIS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variados.html">7. Tópicos Variados</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Referências Bibliográficas</span></p>
+<p class="caption" role="heading"><span class="caption-text">Referências Bibliográficas</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../referencias.html">Referências Bibliográficas</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Listas de Exercícios:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Listas de Exercícios:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Lista de Projetos:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../projetos.html">Projetos Finais</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Informações Gerais:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Informações Gerais:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../licenca.html">Licença</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Agradecimentos:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Agradecimentos:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../agradecimentos.html">Agradecimentos</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Menu de navegação móvel"  style="background: #2980B9" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">SER-347/CAP-419</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content style-external-links">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Navegação da página">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="../jupyter.html"><span class="section-number">3. </span>Jupyter</a> &raquo;</li>
-        
       <li><span class="section-number">3.2. </span>IPython</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
-        
       </li>
-    
-  </ul>
-
-  
-  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-      
-        <a href="notebooks.html" class="btn btn-neutral float-right" title="3.3. Notebooks" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-      
-      
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Navegação sequencial da página">
         <a href="introducao.html" class="btn btn-neutral float-left" title="3.1. Introdução" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
-      
+        <a href="notebooks.html" class="btn btn-neutral float-right" title="3.3. Notebooks" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
   </div>
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <div class="section" id="ipython">
-<span id="sec-jupyter-ipython"></span><h1><span class="section-number">3.2. </span>IPython<a class="headerlink" href="#ipython" title="Link permanente para este título">¶</a></h1>
+<span id="sec-jupyter-ipython"></span><h1><span class="section-number">3.2. </span>IPython<a class="headerlink" href="#ipython" title="Link permanente para este título"></a></h1>
 <a class="reference internal image-reference" href="../_images/ipython.png"><img alt="IPython" class="align-right" src="../_images/ipython.png" style="width: 72px;" /></a>
 <p>O <a class="reference external" href="https://ipython.org/">IPython</a> é um ambiente projetado para <a class="reference external" href="https://en.wikipedia.org/wiki/Interactive_computing">Computação Interativa</a>. Um dos aplicativos desse ambiente é o <strong>terminal IPython</strong>, mostrado na <a class="reference internal" href="#fig-jupyter-ipython-terminal-ipython-01"><span class="std std-numref">Figura 3.7</span></a>. Para entrar nesse terminal, você deve ter o ambiente instalado, como por exemplo, através da disribuição Anaconda. No terminal de comandos do seus sistema operacional, <em>shell Linux</em> ou <em>prompt da Anaconda</em> no Windows, entre o comando <code class="docutils literal notranslate"><span class="pre">ipython</span></code>, como mostrado na  figura.</p>
 <div class="align-center figure align-default" id="fig-jupyter-ipython-terminal-ipython-01">
 <a class="reference internal image-reference" href="../_images/terminal-ipython-01.png"><img alt="Terminal interativo IPython" src="../_images/terminal-ipython-01.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 3.7 - </span><span class="caption-text">Terminal interativo <cite>IPython</cite>.</span><a class="headerlink" href="#fig-jupyter-ipython-terminal-ipython-01" title="Link Permanente para essa imagem">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 3.7 - </span><span class="caption-text">Terminal interativo <cite>IPython</cite>.</span><a class="headerlink" href="#fig-jupyter-ipython-terminal-ipython-01" title="Link Permanente para essa imagem"></a></p>
 </div>
 <p>O <em>prompt</em> do IPython utiliza uma notação diferente da usada no terminal Python, ao invés do tradicional <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code>, temos <code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[N]:</span></code> (<a class="reference internal" href="#fig-jupyter-ipython-terminal-ipython-02"><span class="std std-numref">Figura 3.8</span></a>). Além disso, alguns resultados também apresentam um <em>prompt</em> <code class="docutils literal notranslate"><span class="pre">Out[N]:</span></code>.</p>
 <div class="align-center figure align-default" id="fig-jupyter-ipython-terminal-ipython-02">
 <a class="reference internal image-reference" href="../_images/terminal-ipython-02.png"><img alt="Numeração das computações e resultados no terminal interativo IPython" src="../_images/terminal-ipython-02.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 3.8 - </span><span class="caption-text">Numeração das computações e resultados no terminal interativo IPython.</span><a class="headerlink" href="#fig-jupyter-ipython-terminal-ipython-02" title="Link Permanente para essa imagem">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 3.8 - </span><span class="caption-text">Numeração das computações e resultados no terminal interativo IPython.</span><a class="headerlink" href="#fig-jupyter-ipython-terminal-ipython-02" title="Link Permanente para essa imagem"></a></p>
 </div>
 <p>Repare na <a class="reference internal" href="#fig-jupyter-ipython-terminal-ipython-03"><span class="std std-numref">Figura 3.9</span></a> que as constantes literais numéricas, assim como a função <code class="docutils literal notranslate"><span class="pre">print</span></code>, são devidamente realçadas nesse terminal. Além disso, ele possui recurso de auto-completar. No exemplo da figura, após o separador <code class="docutils literal notranslate"><span class="pre">.</span></code>, foi utilizada a tecla <code class="docutils literal notranslate"><span class="pre">TAB</span></code> para apresentar as opções de métodos disponíveis para o objeto associado ao identificador <code class="docutils literal notranslate"><span class="pre">seq_fibonacci</span></code>. As teclas de direção (setas) podem ser utilizadas para selecionar a opção desejada.</p>
 <div class="align-center figure align-default" id="fig-jupyter-ipython-terminal-ipython-03">
 <a class="reference internal image-reference" href="../_images/terminal-ipython-03.png"><img alt="Realce de sintaxe e recurso de auto-completar do terminal interativo IPython" src="../_images/terminal-ipython-03.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 3.9 - </span><span class="caption-text">Realce de sintaxe e recurso de auto-completar do terminal interativo IPython.</span><a class="headerlink" href="#fig-jupyter-ipython-terminal-ipython-03" title="Link Permanente para essa imagem">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 3.9 - </span><span class="caption-text">Realce de sintaxe e recurso de auto-completar do terminal interativo IPython.</span><a class="headerlink" href="#fig-jupyter-ipython-terminal-ipython-03" title="Link Permanente para essa imagem"></a></p>
 </div>
 <p>O recurso de auto-completar do IPython pode inclusive ser utilizado com expressões mais complexas, como a mostrada na <a class="reference internal" href="#fig-jupyter-ipython-terminal-ipython-04"><span class="std std-numref">Figura 3.10</span></a>, onde o elemento <code class="docutils literal notranslate"><span class="pre">0</span></code> da lista <code class="docutils literal notranslate"><span class="pre">L</span></code> é usado para determinar os métodos disponíveis para o objeto resultante da expressão <code class="docutils literal notranslate"><span class="pre">L[0]</span></code>.</p>
 <div class="align-center figure align-default" id="fig-jupyter-ipython-terminal-ipython-04">
 <a class="reference internal image-reference" href="../_images/terminal-ipython-04.png"><img alt="Introspecção de código no terminal do IPython" src="../_images/terminal-ipython-04.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 3.10 - </span><span class="caption-text">Introspecção de código no terminal do IPython.</span><a class="headerlink" href="#fig-jupyter-ipython-terminal-ipython-04" title="Link Permanente para essa imagem">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 3.10 - </span><span class="caption-text">Introspecção de código no terminal do IPython.</span><a class="headerlink" href="#fig-jupyter-ipython-terminal-ipython-04" title="Link Permanente para essa imagem"></a></p>
 </div>
 <p>Esse terminal do IPython possui alguns comandos úteis para obtenção de mais informações sobre o ambiente e os objetos criados na sessão interativa. A <a class="reference internal" href="#tbl-jupyter-ipython-comandos-uteis"><span class="std std-numref">Tabela 3.1</span></a> apresenta um resumo desses comandos.</p>
 <table class="styled-table docutils align-center" id="tbl-jupyter-ipython-comandos-uteis">
-<caption><span class="caption-number">Tabela 3.1 - </span><span class="caption-text">Comandos úteis Ipython.</span><a class="headerlink" href="#tbl-jupyter-ipython-comandos-uteis" title="Link Permanente para essa tabela">¶</a></caption>
+<caption><span class="caption-number">Tabela 3.1 - </span><span class="caption-text">Comandos úteis Ipython.</span><a class="headerlink" href="#tbl-jupyter-ipython-comandos-uteis" title="Link Permanente para essa tabela"></a></caption>
 <colgroup>
 <col style="width: 15%" />
 <col style="width: 85%" />
@@ -278,86 +180,72 @@ do IPython (<a class="reference internal" href="#fig-jupyter-ipython-terminal-ip
 </table>
 <div class="align-center figure align-default" id="fig-jupyter-ipython-terminal-ipython-ipython-help">
 <a class="reference internal image-reference" href="../_images/terminal-ipython-ipython-help.png"><img alt="Informações gerais sobre o IPython" src="../_images/terminal-ipython-ipython-help.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 3.11 - </span><span class="caption-text">Informações gerais sobre o IPython.</span><a class="headerlink" href="#fig-jupyter-ipython-terminal-ipython-ipython-help" title="Link Permanente para essa imagem">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 3.11 - </span><span class="caption-text">Informações gerais sobre o IPython.</span><a class="headerlink" href="#fig-jupyter-ipython-terminal-ipython-ipython-help" title="Link Permanente para essa imagem"></a></p>
 </div>
 <div class="align-center figure align-default" id="fig-jupyter-ipython-terminal-ipython-quickref">
 <a class="reference internal image-reference" href="../_images/terminal-ipython-quickref.png"><img alt="Janela de referência dos principais comandos no IPython" src="../_images/terminal-ipython-quickref.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 3.12 - </span><span class="caption-text">Janela de referência dos principais comandos no IPython.</span><a class="headerlink" href="#fig-jupyter-ipython-terminal-ipython-quickref" title="Link Permanente para essa imagem">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 3.12 - </span><span class="caption-text">Janela de referência dos principais comandos no IPython.</span><a class="headerlink" href="#fig-jupyter-ipython-terminal-ipython-quickref" title="Link Permanente para essa imagem"></a></p>
 </div>
 <div class="align-center figure align-default" id="fig-jupyter-ipython-terminal-ipython-python-help">
 <a class="reference internal image-reference" href="../_images/terminal-ipython-python-help.png"><img alt="Acessando o sistema de ajuda do Python no terminal IPython" src="../_images/terminal-ipython-python-help.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 3.13 - </span><span class="caption-text">Acessando o sistema de ajuda do Python no terminal IPython.</span><a class="headerlink" href="#fig-jupyter-ipython-terminal-ipython-python-help" title="Link Permanente para essa imagem">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 3.13 - </span><span class="caption-text">Acessando o sistema de ajuda do Python no terminal IPython.</span><a class="headerlink" href="#fig-jupyter-ipython-terminal-ipython-python-help" title="Link Permanente para essa imagem"></a></p>
 </div>
 <div class="align-center figure align-default" id="fig-jupyter-ipython-terminal-ipython-info-objeto-a">
 <a class="reference internal image-reference" href="../_images/terminal-ipython-info-objeto-b.png"><img alt="Detalhando o objeto associado ao identificador &quot;seq_fibonacci&quot; através do caractere &quot;?&quot; no terminal IPython" src="../_images/terminal-ipython-info-objeto-b.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 3.14 - </span><span class="caption-text">Detalhando o objeto associado ao identificador <code class="docutils literal notranslate"><span class="pre">seq_fibonacci</span></code> através do caractere <code class="docutils literal notranslate"><span class="pre">?</span></code> no terminal IPython.</span><a class="headerlink" href="#fig-jupyter-ipython-terminal-ipython-info-objeto-a" title="Link Permanente para essa imagem">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 3.14 - </span><span class="caption-text">Detalhando o objeto associado ao identificador <code class="docutils literal notranslate"><span class="pre">seq_fibonacci</span></code> através do caractere <code class="docutils literal notranslate"><span class="pre">?</span></code> no terminal IPython.</span><a class="headerlink" href="#fig-jupyter-ipython-terminal-ipython-info-objeto-a" title="Link Permanente para essa imagem"></a></p>
 </div>
 <div class="align-center figure align-default" id="fig-jupyter-ipython-terminal-ipython-info-objeto-b">
 <a class="reference internal image-reference" href="../_images/terminal-ipython-info-objeto-a.png"><img alt="Detalhando o identificador &quot;date&quot; através do caractere &quot;?&quot; no terminal IPython" src="../_images/terminal-ipython-info-objeto-a.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 3.15 - </span><span class="caption-text">Detalhando o identificador <code class="docutils literal notranslate"><span class="pre">date</span></code> através do caractere <code class="docutils literal notranslate"><span class="pre">?</span></code> no terminal IPython.</span><a class="headerlink" href="#fig-jupyter-ipython-terminal-ipython-info-objeto-b" title="Link Permanente para essa imagem">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 3.15 - </span><span class="caption-text">Detalhando o identificador <code class="docutils literal notranslate"><span class="pre">date</span></code> através do caractere <code class="docutils literal notranslate"><span class="pre">?</span></code> no terminal IPython.</span><a class="headerlink" href="#fig-jupyter-ipython-terminal-ipython-info-objeto-b" title="Link Permanente para essa imagem"></a></p>
 </div>
 <div class="align-center figure align-default" id="fig-jupyter-ipython-terminal-ipython-detail-objeto">
 <a class="reference internal image-reference" href="../_images/terminal-ipython-detail-objeto.png"><img alt="Detalhando o identificador &quot;date&quot; através do caractere &quot;??&quot; no terminal IPython" src="../_images/terminal-ipython-detail-objeto.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 3.16 - </span><span class="caption-text">Detalhando o identificador <code class="docutils literal notranslate"><span class="pre">date</span></code> através dos caracteres <code class="docutils literal notranslate"><span class="pre">??</span></code> no terminal IPython.</span><a class="headerlink" href="#fig-jupyter-ipython-terminal-ipython-detail-objeto" title="Link Permanente para essa imagem">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 3.16 - </span><span class="caption-text">Detalhando o identificador <code class="docutils literal notranslate"><span class="pre">date</span></code> através dos caracteres <code class="docutils literal notranslate"><span class="pre">??</span></code> no terminal IPython.</span><a class="headerlink" href="#fig-jupyter-ipython-terminal-ipython-detail-objeto" title="Link Permanente para essa imagem"></a></p>
 </div>
 <p>Portanto, o terminal interativo IPython possui capacidade de destacar símbolos da linguagem Python, possui recursos avançados de auto-completar (<em>tab completion</em>) que inclui introspecção do objeto em questão para determinar atributos e métodos, manutenção do histórico de comandos, capacidade de execução de comandos do sistema operacional integrados com a linguagem, além de forte suporte para visualização interativa e computação distribuída e paralela.</p>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>A documentação do <cite>IPython</cite> encontra-se disponível em <span id="id2">[<a class="reference internal" href="../referencias.html#id24">84</a>]</span>.</p>
+<p>A documentação do <cite>IPython</cite> encontra-se disponível em <span id="id2">[<a class="reference internal" href="../referencias.html#id24" title="The IPython Development Team. Ipython documentation. 2021. Online; acessado 24 de Abril de 2021. URL: https://ipython.readthedocs.io/en/stable/.">84</a>]</span>.</p>
 </div>
 </div>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="notebooks.html" class="btn btn-neutral float-right" title="3.3. Notebooks" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Rodapé">
         <a href="introducao.html" class="btn btn-neutral float-left" title="3.1. Introdução" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="notebooks.html" class="btn btn-neutral float-right" title="3.3. Notebooks" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+    <p>&#169; Copyright 2020-2021, Gilberto Queiroz and Thales Körting.</p>
+  </div>
 
-    </p>
-  </div> 
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(false);
       });
   </script>
-
-  
-  
-    
     <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165908761-1"></script>
     <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-    ga('create', 'UA-165908761-1', 'auto');
-    
-    ga('send', 'pageview');
-    </script>
-
-    
-   
+      gtag('config', 'UA-165908761-1', {
+          'anonymize_ip': false,
+      });
+    </script> 
 
 </body>
 </html>

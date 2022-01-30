@@ -1,83 +1,43 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="pt-BR" >
 <head>
   <meta charset="utf-8" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>3. Amostragem com Base no Serviço WLTS &mdash; SER-347/CAP-419</title>
-  
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/table_styling.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/prog-geo.css" type="text/css" />
-
-  
-  
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/table_styling.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/prog-geo.css" type="text/css" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
-  
-
-  
-  
-
-  
     <link rel="canonical" href="https://prog-geo.github.io/projetos/2021/p03.html" />
-
-  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script src="../../_static/translations.js"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
-    
+    <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Buscar" href="../../search.html" />
     <link rel="next" title="4. API - EO Data Cube" href="p04.html" />
     <link rel="prev" title="2. Spectral" href="p02.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #2980B9" >
-          
-
-          
             <a href="../../index.html" class="icon icon-home"> SER-347/CAP-419
-          
-
-          
-            
             <img src="../../_static/logo.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Pesquisar documentos" />
@@ -85,26 +45,15 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegação">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">Introdução à Programação com Dados Geoespaciais</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Visão Geral do Curso:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Visão Geral do Curso:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../visao-geral.html">Visão Geral do Curso</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Aulas:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Aulas:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../instalacao.html">1. Instalando e Configurando o Ambiente de Programação</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../introducao-programacao.html">2. Introdução à Programação com a Linguagem Python</a></li>
@@ -114,15 +63,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../../qgis.html">6. Programando com o QGIS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../variados.html">7. Tópicos Variados</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Referências Bibliográficas</span></p>
+<p class="caption" role="heading"><span class="caption-text">Referências Bibliográficas</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../referencias.html">Referências Bibliográficas</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Listas de Exercícios:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Listas de Exercícios:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../listas.html">Listas de Exercícios</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Lista de Projetos:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../projetos.html">Projetos Finais</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="p01.html">1. Brazil Data Cube Cloud Coverage (BDC<sup>3</sup>)</a></li>
@@ -139,97 +88,50 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Informações Gerais:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Informações Gerais:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../licenca.html">Licença</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Agradecimentos:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Agradecimentos:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../agradecimentos.html">Agradecimentos</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Menu de navegação móvel"  style="background: #2980B9" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">SER-347/CAP-419</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content style-external-links">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Navegação da página">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="../../projetos.html">Projetos Finais</a> &raquo;</li>
-        
       <li><span class="section-number">3. </span>Amostragem com Base no Serviço WLTS</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
-        
       </li>
-    
-  </ul>
-
-  
-  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-      
-        <a href="p04.html" class="btn btn-neutral float-right" title="4. API - EO Data Cube" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-      
-      
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Navegação sequencial da página">
         <a href="p02.html" class="btn btn-neutral float-left" title="2. Spectral" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
-      
+        <a href="p04.html" class="btn btn-neutral float-right" title="4. API - EO Data Cube" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
   </div>
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <div class="section" id="amostragem-com-base-no-servico-wlts">
-<span id="sec-projetos-2021-p03"></span><h1><span class="section-number">3. </span>Amostragem com Base no Serviço WLTS<a class="headerlink" href="#amostragem-com-base-no-servico-wlts" title="Link permanente para este título">¶</a></h1>
+<span id="sec-projetos-2021-p03"></span><h1><span class="section-number">3. </span>Amostragem com Base no Serviço WLTS<a class="headerlink" href="#amostragem-com-base-no-servico-wlts" title="Link permanente para este título"></a></h1>
 <p>Os seguintes serviços web fazem parte da Plataforma Brazil Data Cube (BDC):</p>
 <ul class="simple">
 <li><p><strong>WLTS:</strong> o <a class="reference external" href="https://github.com/brazil-data-cube/wlts.py">Web Land Trajectory Service</a> é um serviço web que permite a recuperação de trajetórias de uso e cobertura da Terra a partir de coleções de dados vetoriais e matriciais disponibilizadas pelo serviço. No caso do BDC, o serviço fornece acesso aos dados do TerraClass, MapBiomas, Lapig (áreas de pastagens) e IBGE.</p></li>
 <li><p><strong>WTSS:</strong> o serviço <a class="reference external" href="https://github.com/brazil-data-cube/wtss.py">Web Time Series Service</a> permite recuperar a série temporal para uma dada localização do espaço em um certo intervalo de tempo. No BDC, este serviço permite acessar as séries temporais de coleções MODIS, Landsat-8, Sentinel-2 e CBERS-4/AWFI.</p></li>
 </ul>
-<p>Propor e desenvolver um pacote na linguagem Python que utilize estes dois serviços para geração de conjuntos amostrais. O processo de extração das amostras deverá seguir alguma metodologia. Consulte <span id="id1">[<a class="reference internal" href="../../referencias.html#id14">17</a>]</span> para exemplos de como definir esses processos. O usuário desse pacote deverá informar a região e o período de interesse, bem como o número de amostras e outros parâmetros necessários. O resultado deverá incluir a localização das amostras, a data associada, a classe (legenda), a coleção (fonte de dados), os valores da série-temporal (extraídas do WTSS), entre outras informações.</p>
+<p>Propor e desenvolver um pacote na linguagem Python que utilize estes dois serviços para geração de conjuntos amostrais. O processo de extração das amostras deverá seguir alguma metodologia. Consulte <span id="id1">[<a class="reference internal" href="../../referencias.html#id14" title="Eric M. Delmelle. Spatial Sampling, pages 1385–1399. Springer Berlin Heidelberg, Berlin, Heidelberg, 2014. doi:10.1007/978-3-642-23430-9_73.">17</a>]</span> para exemplos de como definir esses processos. O usuário desse pacote deverá informar a região e o período de interesse, bem como o número de amostras e outros parâmetros necessários. O resultado deverá incluir a localização das amostras, a data associada, a classe (legenda), a coleção (fonte de dados), os valores da série-temporal (extraídas do WTSS), entre outras informações.</p>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
 <p>Consulte os Notebooks sobre esses dois serviços disponíveis no repositório <a class="reference external" href="https://github.com/brazil-data-cube/code-gallery">Brazil Data Cube Code Gallery</a>.</p>
@@ -246,55 +148,41 @@
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="p04.html" class="btn btn-neutral float-right" title="4. API - EO Data Cube" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Rodapé">
         <a href="p02.html" class="btn btn-neutral float-left" title="2. Spectral" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="p04.html" class="btn btn-neutral float-right" title="4. API - EO Data Cube" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+    <p>&#169; Copyright 2020-2021, Gilberto Queiroz and Thales Körting.</p>
+  </div>
 
-    </p>
-  </div> 
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(false);
       });
   </script>
-
-  
-  
-    
     <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165908761-1"></script>
     <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-    ga('create', 'UA-165908761-1', 'auto');
-    
-    ga('send', 'pageview');
-    </script>
-
-    
-   
+      gtag('config', 'UA-165908761-1', {
+          'anonymize_ip': false,
+      });
+    </script> 
 
 </body>
 </html>

@@ -9,6 +9,15 @@ Discentes
 =========
 
 
+Turma 2021
+----------
+
+
+.. image:: ../img/visao-geral/turma-2021.png
+        :width: 100%
+        :alt: Turma 2021
+        
+        
 Turma 2020
 ----------
 

@@ -1,83 +1,43 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="pt-BR" >
 <head>
   <meta charset="utf-8" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>5.7. Pandas &mdash; SER-347/CAP-419</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/table_styling.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/prog-geo.css" type="text/css" />
-
-  
-  
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/table_styling.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/prog-geo.css" type="text/css" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-  
-
-  
-  
-
-  
     <link rel="canonical" href="https://prog-geo.github.io/vetorial/pandas.html" />
-
-  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script src="../_static/translations.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Buscar" href="../search.html" />
     <link rel="next" title="6. Programando com o QGIS" href="../qgis.html" />
     <link rel="prev" title="5.6. Leitura/Escrita de Dados Vetoriais" href="geo-io.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #2980B9" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> SER-347/CAP-419
-          
-
-          
-            
             <img src="../_static/logo.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Pesquisar documentos" />
@@ -85,26 +45,15 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegação">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Introdução à Programação com Dados Geoespaciais</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Visão Geral do Curso:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Visão Geral do Curso:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../visao-geral.html">Visão Geral do Curso</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Aulas:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Aulas:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../instalacao.html">1. Instalando e Configurando o Ambiente de Programação</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introducao-programacao.html">2. Introdução à Programação com a Linguagem Python</a></li>
@@ -139,108 +88,61 @@
 <li class="toctree-l1"><a class="reference internal" href="../qgis.html">6. Programando com o QGIS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variados.html">7. Tópicos Variados</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Referências Bibliográficas</span></p>
+<p class="caption" role="heading"><span class="caption-text">Referências Bibliográficas</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../referencias.html">Referências Bibliográficas</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Listas de Exercícios:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Listas de Exercícios:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Lista de Projetos:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../projetos.html">Projetos Finais</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Informações Gerais:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Informações Gerais:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../licenca.html">Licença</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Agradecimentos:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Agradecimentos:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../agradecimentos.html">Agradecimentos</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Menu de navegação móvel"  style="background: #2980B9" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">SER-347/CAP-419</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content style-external-links">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Navegação da página">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="../vetorial.html"><span class="section-number">5. </span>Manipulação de Dados Vetoriais</a> &raquo;</li>
-        
       <li><span class="section-number">5.7. </span>Pandas</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
-        
       </li>
-    
-  </ul>
-
-  
-  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-      
-        <a href="../qgis.html" class="btn btn-neutral float-right" title="6. Programando com o QGIS" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-      
-      
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Navegação sequencial da página">
         <a href="geo-io.html" class="btn btn-neutral float-left" title="5.6. Leitura/Escrita de Dados Vetoriais" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
-      
+        <a href="../qgis.html" class="btn btn-neutral float-right" title="6. Programando com o QGIS" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
   </div>
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <div class="section" id="pandas">
-<span id="sec-vetorial-pandas"></span><h1><span class="section-number">5.7. </span>Pandas<a class="headerlink" href="#pandas" title="Link permanente para este título">¶</a></h1>
+<span id="sec-vetorial-pandas"></span><h1><span class="section-number">5.7. </span>Pandas<a class="headerlink" href="#pandas" title="Link permanente para este título"></a></h1>
 <a class="reference internal image-reference" href="../_images/pandas.svg"><img alt="Pandas" class="align-right" src="../_images/pandas.svg" width="125" /></a>
 <p>O Pandas fornece duas estruturas de dados básicas: <code class="docutils literal notranslate"><span class="pre">Series</span></code> e <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, ambas apoiadas na estrutura <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> da biblioteca NumPy. Para estas estruturas, existem diversas operações de alto nível disponíveis, tais como: agregação de valores e visualização básica através da Matplotlib.</p>
 <p>Um objeto do tipo <code class="docutils literal notranslate"><span class="pre">Series</span></code> representa um vetor (ou <em>array</em> unidimensional) capaz de armazenar qualquer tipo de dado, como números inteiros, strings ou objetos como data e hora. Uma <strong>série</strong> possui <strong>dois eixos</strong> (<code class="docutils literal notranslate"><span class="pre">axis</span></code>), um usado para rotular cada valor do vetor (linhas) e outro para rotular os valores da séries (colunas). Os rótulos do <code class="docutils literal notranslate"><span class="pre">eixo-0</span></code> funcionam como um índice para os valores da série. O rótulo do <code class="docutils literal notranslate"><span class="pre">eixo-1</span></code> se refere à coluna com os valores da série. A <a class="reference internal" href="#tbl-vetorial-pandas-series"><span class="std std-numref">Tabela 5.29</span></a> apresenta as características dessa estrutura de dados. Repare que há um eixo numérico na primeira coluna, com valores no intervalo <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">4]</span></code>, que forma a base de indexação dos valores da série (nomes de munícipio), e cuja coluna (<code class="docutils literal notranslate"><span class="pre">eixo-1</span></code>) possui um rótulo chamado <code class="docutils literal notranslate"><span class="pre">municipio</span></code>.</p>
 <table class="styled-table docutils align-center" id="tbl-vetorial-pandas-series">
-<caption><span class="caption-number">Tabela 5.29 - </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Series</span></code></span><a class="headerlink" href="#tbl-vetorial-pandas-series" title="Link Permanente para essa tabela">¶</a></caption>
+<caption><span class="caption-number">Tabela 5.29 - </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">Series</span></code></span><a class="headerlink" href="#tbl-vetorial-pandas-series" title="Link Permanente para essa tabela"></a></caption>
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -270,7 +172,7 @@
 </table>
 <p>O segundo tipo de estrutura introduzido pelo Pandas é o <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, que representa uma matriz bidimensional, mais parecida com uma tabela, com capacidade de lidar com tipos heterogêneos, conforme mostrado na <a class="reference internal" href="#tbl-vetorial-pandas-dataframe"><span class="std std-numref">Tabela 5.30</span></a>. Essa estrutura possui eixos rotulados (linhas e colunas). O <code class="docutils literal notranslate"><span class="pre">eixo-0</span></code>, dos índices, refere-se à primeira coluna, com os rótulos no intervalo <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">4]</span></code>. Esses valores podem ser usados para acessar os elementos de cada linha. O <code class="docutils literal notranslate"><span class="pre">eixo-1</span></code>, das colunas, possui os rótulos: <code class="docutils literal notranslate"><span class="pre">municipio</span></code>, <code class="docutils literal notranslate"><span class="pre">estado</span></code>, <code class="docutils literal notranslate"><span class="pre">regiao</span></code>, <code class="docutils literal notranslate"><span class="pre">pais</span></code>, <code class="docutils literal notranslate"><span class="pre">satelite</span></code>, <code class="docutils literal notranslate"><span class="pre">bioma</span></code>, <code class="docutils literal notranslate"><span class="pre">timestamp</span></code> e <code class="docutils literal notranslate"><span class="pre">satelite_r</span></code>. Os rótulos do <code class="docutils literal notranslate"><span class="pre">eixo-1</span></code> se referem à identificação das séries das colunas.</p>
 <table class="styled-table docutils align-center" id="tbl-vetorial-pandas-dataframe">
-<caption><span class="caption-number">Tabela 5.30 - </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></span><a class="headerlink" href="#tbl-vetorial-pandas-dataframe" title="Link Permanente para essa tabela">¶</a></caption>
+<caption><span class="caption-number">Tabela 5.30 - </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></span><a class="headerlink" href="#tbl-vetorial-pandas-dataframe" title="Link Permanente para essa tabela"></a></caption>
 <colgroup>
 <col style="width: 3%" />
 <col style="width: 23%" />
@@ -348,14 +250,14 @@
 </tbody>
 </table>
 <div class="section" id="usando-o-pandas">
-<h2><span class="section-number">5.7.1. </span>Usando o Pandas<a class="headerlink" href="#usando-o-pandas" title="Link permanente para este título">¶</a></h2>
+<h2><span class="section-number">5.7.1. </span>Usando o Pandas<a class="headerlink" href="#usando-o-pandas" title="Link permanente para este título"></a></h2>
 <p>Por convenção importamos as funcionalidades do Pandas da seguinte forma:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="criando-uma-serie">
-<h2><span class="section-number">5.7.2. </span>Criando uma Série<a class="headerlink" href="#criando-uma-serie" title="Link permanente para este título">¶</a></h2>
+<h2><span class="section-number">5.7.2. </span>Criando uma Série<a class="headerlink" href="#criando-uma-serie" title="Link permanente para este título"></a></h2>
 <p>Vamos criar uma série semelhante aos dados apresentados na <a class="reference internal" href="#tbl-vetorial-pandas-series"><span class="std std-numref">Tabela 5.29</span></a>, porém com os índices representados pelas letras de <code class="docutils literal notranslate"><span class="pre">a</span></code> a <code class="docutils literal notranslate"><span class="pre">e</span></code>, conforme o trecho de código abaixo:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [2]: </span><span class="n">dados</span> <span class="o">=</span> <span class="p">[</span>
 <span class="gp">   ...: </span>    <span class="s1">&#39;Sítio Novo Do Tocantins&#39;</span><span class="p">,</span>
@@ -385,7 +287,7 @@
 </div>
 </div>
 <div class="section" id="selecionando-valores-da-serie">
-<h2><span class="section-number">5.7.3. </span>Selecionando Valores da Série<a class="headerlink" href="#selecionando-valores-da-serie" title="Link permanente para este título">¶</a></h2>
+<h2><span class="section-number">5.7.3. </span>Selecionando Valores da Série<a class="headerlink" href="#selecionando-valores-da-serie" title="Link permanente para este título"></a></h2>
 <p>Podemos utilizar a função <code class="docutils literal notranslate"><span class="pre">head</span></code> para obter valores da série a partir do seu início:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [6]: </span><span class="n">serie</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="gh">Out[6]:</span>
@@ -449,7 +351,7 @@
 </div>
 </div>
 <div class="section" id="acessando-a-estrutura-de-uma-serie">
-<h2><span class="section-number">5.7.4. </span>Acessando a Estrutura de uma Série<a class="headerlink" href="#acessando-a-estrutura-de-uma-serie" title="Link permanente para este título">¶</a></h2>
+<h2><span class="section-number">5.7.4. </span>Acessando a Estrutura de uma Série<a class="headerlink" href="#acessando-a-estrutura-de-uma-serie" title="Link permanente para este título"></a></h2>
 <p>Para acessar o eixo dos rótulos associados aos valores da série, utiliza-se o atributo <code class="docutils literal notranslate"><span class="pre">index</span></code>:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [14]: </span><span class="n">serie</span><span class="o">.</span><span class="n">index</span>
 <span class="gh">Out[14]: </span><span class="go">Index([&#39;e&#39;, &#39;b&#39;, &#39;d&#39;, &#39;c&#39;, &#39;a&#39;], dtype=&#39;object&#39;)</span>
@@ -469,7 +371,7 @@
 </div>
 </div>
 <div class="section" id="ordenando-os-valores-de-uma-serie">
-<h2><span class="section-number">5.7.5. </span>Ordenando os Valores de uma Série<a class="headerlink" href="#ordenando-os-valores-de-uma-serie" title="Link permanente para este título">¶</a></h2>
+<h2><span class="section-number">5.7.5. </span>Ordenando os Valores de uma Série<a class="headerlink" href="#ordenando-os-valores-de-uma-serie" title="Link permanente para este título"></a></h2>
 <p>Podemos ordenar a série pelos seus valores através da operação <code class="docutils literal notranslate"><span class="pre">sort_values</span></code>:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [17]: </span><span class="n">serie</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="gh">Out[17]:</span>
@@ -508,7 +410,7 @@
 </div>
 </div>
 <div class="section" id="plotando-uma-serie">
-<h2><span class="section-number">5.7.6. </span>Plotando uma Série<a class="headerlink" href="#plotando-uma-serie" title="Link permanente para este título">¶</a></h2>
+<h2><span class="section-number">5.7.6. </span>Plotando uma Série<a class="headerlink" href="#plotando-uma-serie" title="Link permanente para este título"></a></h2>
 <p>Podemos construir gráficos rapidamente a partir das séries. O tipo <code class="docutils literal notranslate"><span class="pre">Series</span></code> possui uma operação geral denominada <code class="docutils literal notranslate"><span class="pre">plot</span></code>. O trecho de código abaixo mostra como utilizar esta operação para apresentar um gráfico de barras com o número de focos de incêndio na vegetação ao longo do período de 2008 a 2017.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [21]: </span><span class="n">ano</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">2008</span><span class="p">,</span> <span class="mi">2009</span><span class="p">,</span> <span class="mi">2010</span><span class="p">,</span> <span class="mi">2011</span><span class="p">,</span> <span class="mi">2012</span><span class="p">,</span> <span class="mi">2013</span><span class="p">,</span> <span class="mi">2014</span><span class="p">,</span> <span class="mi">2015</span><span class="p">,</span> <span class="mi">2016</span><span class="p">,</span> <span class="mi">2017</span> <span class="p">]</span>
 </pre></div>
@@ -559,7 +461,7 @@
 </div>
 </div>
 <div class="section" id="criando-um-dataframe">
-<h2><span class="section-number">5.7.7. </span>Criando um <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code><a class="headerlink" href="#criando-um-dataframe" title="Link permanente para este título">¶</a></h2>
+<h2><span class="section-number">5.7.7. </span>Criando um <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code><a class="headerlink" href="#criando-um-dataframe" title="Link permanente para este título"></a></h2>
 <p>Para compreender a estrutura de um <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, vamos criar um, baseando-se nos dados da <a class="reference internal" href="#tbl-vetorial-pandas-dataframe"><span class="std std-numref">Tabela 5.30</span></a>. Iremos omitir algumas colunas dessa tabela de propósito, para que possamos acrescentá-las mais adiante.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [28]: </span><span class="n">municipios</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;Sítio Novo Do Tocantins&#39;</span><span class="p">,</span> <span class="s1">&#39;Sítio Novo Do Tocantins&#39;</span><span class="p">,</span> <span class="s1">&#39;Altamira&#39;</span><span class="p">,</span> <span class="s1">&#39;Altamira&#39;</span><span class="p">,</span> <span class="s1">&#39;Sítio Novo Do Tocantins&#39;</span> <span class="p">]</span>
 
@@ -599,7 +501,7 @@
 </div>
 </div>
 <div class="section" id="selecionando-colunas-de-um-dataframe">
-<h2><span class="section-number">5.7.8. </span>Selecionando Colunas de um <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code><a class="headerlink" href="#selecionando-colunas-de-um-dataframe" title="Link permanente para este título">¶</a></h2>
+<h2><span class="section-number">5.7.8. </span>Selecionando Colunas de um <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code><a class="headerlink" href="#selecionando-colunas-de-um-dataframe" title="Link permanente para este título"></a></h2>
 <p>Para selecionar os valores da primeira coluna, rotulada com a string <code class="docutils literal notranslate"><span class="pre">municipio</span></code>, podemos utilizar o <code class="docutils literal notranslate"><span class="pre">operador</span> <span class="pre">[]</span></code> (operador de indexação) como mostrado abaixo:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [37]: </span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;municipio&#39;</span><span class="p">]</span>
 <span class="gh">Out[37]:</span>
@@ -650,7 +552,7 @@
 </div>
 </div>
 <div class="section" id="acessando-a-estrutura-de-um-dataframe">
-<h2><span class="section-number">5.7.9. </span>Acessando a Estrutura de um <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code><a class="headerlink" href="#acessando-a-estrutura-de-um-dataframe" title="Link permanente para este título">¶</a></h2>
+<h2><span class="section-number">5.7.9. </span>Acessando a Estrutura de um <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code><a class="headerlink" href="#acessando-a-estrutura-de-um-dataframe" title="Link permanente para este título"></a></h2>
 <p>Para acessar os índices ou rótulos das linhas, podemos utilizar a propriedade <code class="docutils literal notranslate"><span class="pre">index</span></code>:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [41]: </span><span class="n">df</span><span class="o">.</span><span class="n">index</span>
 <span class="gh">Out[41]: </span><span class="go">RangeIndex(start=0, stop=5, step=1)</span>
@@ -709,7 +611,7 @@
 </div>
 </div>
 <div class="section" id="selecionando-valores-do-dataframe">
-<h2><span class="section-number">5.7.10. </span>Selecionando Valores do <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code><a class="headerlink" href="#selecionando-valores-do-dataframe" title="Link permanente para este título">¶</a></h2>
+<h2><span class="section-number">5.7.10. </span>Selecionando Valores do <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code><a class="headerlink" href="#selecionando-valores-do-dataframe" title="Link permanente para este título"></a></h2>
 <p>A operação <code class="docutils literal notranslate"><span class="pre">head</span></code> permite obter valores do <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> a partir do seu início:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [47]: </span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="gh">Out[47]:</span>
@@ -764,7 +666,7 @@
 </div>
 </div>
 <div class="section" id="iterando-nas-colunas-e-linhas-de-um-dataframe">
-<h2><span class="section-number">5.7.11. </span>Iterando nas colunas e linhas de um <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code><a class="headerlink" href="#iterando-nas-colunas-e-linhas-de-um-dataframe" title="Link permanente para este título">¶</a></h2>
+<h2><span class="section-number">5.7.11. </span>Iterando nas colunas e linhas de um <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code><a class="headerlink" href="#iterando-nas-colunas-e-linhas-de-um-dataframe" title="Link permanente para este título"></a></h2>
 <p>A operação <code class="docutils literal notranslate"><span class="pre">items</span></code> permite iterarmos nos conjuntos de valores de cada coluna, como se fossem uma série individual:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [52]: </span><span class="k">for</span> <span class="n">rotulo</span><span class="p">,</span> <span class="n">serie</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
 <span class="go">    ...:     print(f&#39;Série da Coluna: {rotulo}&#39;)</span>
@@ -841,7 +743,7 @@
 </div>
 </div>
 <div class="section" id="construindo-mascaras-booleanas-para-selecao-de-linhas">
-<h2><span class="section-number">5.7.12. </span>Construindo máscaras booleanas para seleção de linhas<a class="headerlink" href="#construindo-mascaras-booleanas-para-selecao-de-linhas" title="Link permanente para este título">¶</a></h2>
+<h2><span class="section-number">5.7.12. </span>Construindo máscaras booleanas para seleção de linhas<a class="headerlink" href="#construindo-mascaras-booleanas-para-selecao-de-linhas" title="Link permanente para este título"></a></h2>
 <p>Uma técnica útil para construir uma máscara de valores booleanos é utilizar expressões que retornem séries com valores booleanos:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [55]: </span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;timestamp&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="s1">&#39;2016/02/02&#39;</span>
 <span class="gh">Out[55]:</span>
@@ -868,7 +770,7 @@
 </div>
 </div>
 <div class="section" id="leitura-de-arquivos-csv">
-<h2><span class="section-number">5.7.13. </span>Leitura de Arquivos CSV<a class="headerlink" href="#leitura-de-arquivos-csv" title="Link permanente para este título">¶</a></h2>
+<h2><span class="section-number">5.7.13. </span>Leitura de Arquivos CSV<a class="headerlink" href="#leitura-de-arquivos-csv" title="Link permanente para este título"></a></h2>
 <p>Para abrir um arquivo <code class="docutils literal notranslate"><span class="pre">CSV</span></code> basta utilizar a função <code class="docutils literal notranslate"><span class="pre">read_csv</span></code>:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [57]: </span><span class="n">patterns</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/defpatterns.missing.csv&#39;</span><span class="p">)</span>
 </pre></div>
@@ -891,7 +793,7 @@
 </div>
 </div>
 <div class="section" id="analise-de-dados-com-o-pandas">
-<h2><span class="section-number">5.7.14. </span>Análise de Dados com o Pandas<a class="headerlink" href="#analise-de-dados-com-o-pandas" title="Link permanente para este título">¶</a></h2>
+<h2><span class="section-number">5.7.14. </span>Análise de Dados com o Pandas<a class="headerlink" href="#analise-de-dados-com-o-pandas" title="Link permanente para este título"></a></h2>
 <p>Vamos começar nossa análise, do conjunto de dados lido do arquivo <code class="docutils literal notranslate"><span class="pre">defpatterns.missing.csv</span></code>, por uma estatística descritiva:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">patterns</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
@@ -899,12 +801,12 @@
 <p>Saída:</p>
 <div class="align-center figure align-default" id="fig-vetorial-pandas-describe">
 <a class="reference internal image-reference" href="../_images/describe.png"><img alt="Saída da operação describe" src="../_images/describe.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 5.9 - </span><span class="caption-text">Saída da operação <code class="docutils literal notranslate"><span class="pre">describe</span></code>.</span><a class="headerlink" href="#fig-vetorial-pandas-describe" title="Link Permanente para essa imagem">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 5.9 - </span><span class="caption-text">Saída da operação <code class="docutils literal notranslate"><span class="pre">describe</span></code>.</span><a class="headerlink" href="#fig-vetorial-pandas-describe" title="Link Permanente para essa imagem"></a></p>
 </div>
 <p>A operação <code class="docutils literal notranslate"><span class="pre">describe</span></code> apresenta um sumário do conjunto de dados do <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, mostrando sua tendência central, dispersão e forma. Essa operação cosidera apenas valores numéricos ou que possam ser transformados em valores numéricos, excluindo valores que não possam ser convertidos para números válidos. Veja que as colunas <code class="docutils literal notranslate"><span class="pre">object_id0</span></code> e <code class="docutils literal notranslate"><span class="pre">padrao</span></code> não foram consideradas pela operação. Além disso, existe um valor especial chamado <code class="docutils literal notranslate"><span class="pre">NaN</span></code> (<code class="docutils literal notranslate"><span class="pre">Not-a-Number</span></code>) que indica a ausência de valor naquela célula (<a class="reference internal" href="#fig-vetorial-pandas-nan"><span class="std std-numref">Figura 5.10</span></a>).</p>
 <div class="align-center figure align-default" id="fig-vetorial-pandas-nan">
 <a class="reference internal image-reference" href="../_images/nan.png"><img alt="DataFrame" src="../_images/nan.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 5.10 - </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> com valores <code class="docutils literal notranslate"><span class="pre">NaN</span></code>.</span><a class="headerlink" href="#fig-vetorial-pandas-nan" title="Link Permanente para essa imagem">¶</a></p>
+<p class="caption"><span class="caption-number">Figura 5.10 - </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> com valores <code class="docutils literal notranslate"><span class="pre">NaN</span></code>.</span><a class="headerlink" href="#fig-vetorial-pandas-nan" title="Link Permanente para essa imagem"></a></p>
 </div>
 <p>Na saída mostrada na <a class="reference internal" href="#fig-vetorial-pandas-describe"><span class="std std-numref">Figura 5.9</span></a>, podemos ver que o resultado da operação <code class="docutils literal notranslate"><span class="pre">describe</span></code> inclui um sumário por coluna:</p>
 <ul class="open">
@@ -1219,55 +1121,41 @@
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="../qgis.html" class="btn btn-neutral float-right" title="6. Programando com o QGIS" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Rodapé">
         <a href="geo-io.html" class="btn btn-neutral float-left" title="5.6. Leitura/Escrita de Dados Vetoriais" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="../qgis.html" class="btn btn-neutral float-right" title="6. Programando com o QGIS" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+    <p>&#169; Copyright 2020-2021, Gilberto Queiroz and Thales Körting.</p>
+  </div>
 
-    </p>
-  </div> 
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(false);
       });
   </script>
-
-  
-  
-    
     <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165908761-1"></script>
     <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-    ga('create', 'UA-165908761-1', 'auto');
-    
-    ga('send', 'pageview');
-    </script>
-
-    
-   
+      gtag('config', 'UA-165908761-1', {
+          'anonymize_ip': false,
+      });
+    </script> 
 
 </body>
 </html>

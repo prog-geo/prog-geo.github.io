@@ -1,83 +1,43 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="pt-BR" >
 <head>
   <meta charset="utf-8" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>7.4.2. Criando Pacotes para Distribuição &mdash; SER-347/CAP-419</title>
-  
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/table_styling.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/prog-geo.css" type="text/css" />
-
-  
-  
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/table_styling.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/prog-geo.css" type="text/css" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
-  
-
-  
-  
-
-  
     <link rel="canonical" href="https://prog-geo.github.io/variados/pacotes/criando-pacotes.html" />
-
-  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script src="../../_static/translations.js"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
-    
+    <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Buscar" href="../../search.html" />
     <link rel="next" title="7.5. Visualização de dados com a Matplotlib" href="../matplotlib.html" />
     <link rel="prev" title="7.4.1. Introdução" href="introducao.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #2980B9" >
-          
-
-          
             <a href="../../index.html" class="icon icon-home"> SER-347/CAP-419
-          
-
-          
-            
             <img src="../../_static/logo.png" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Pesquisar documentos" />
@@ -85,26 +45,15 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegação">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">Introdução à Programação com Dados Geoespaciais</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Visão Geral do Curso:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Visão Geral do Curso:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../visao-geral.html">Visão Geral do Curso</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Aulas:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Aulas:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../instalacao.html">1. Instalando e Configurando o Ambiente de Programação</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../introducao-programacao.html">2. Introdução à Programação com a Linguagem Python</a></li>
@@ -125,106 +74,58 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Referências Bibliográficas</span></p>
+<p class="caption" role="heading"><span class="caption-text">Referências Bibliográficas</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../referencias.html">Referências Bibliográficas</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Listas de Exercícios:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Listas de Exercícios:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../listas.html">Listas de Exercícios</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Lista de Projetos:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../projetos.html">Projetos Finais</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Informações Gerais:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Informações Gerais:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../licenca.html">Licença</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Agradecimentos:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Agradecimentos:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../agradecimentos.html">Agradecimentos</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Menu de navegação móvel"  style="background: #2980B9" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">SER-347/CAP-419</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content style-external-links">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Navegação da página">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="../../variados.html"><span class="section-number">7. </span>Tópicos Variados</a> &raquo;</li>
-        
           <li><a href="../pacotes.html"><span class="section-number">7.4. </span>Pacotes em Python</a> &raquo;</li>
-        
       <li><span class="section-number">7.4.2. </span>Criando Pacotes para Distribuição</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
-        
       </li>
-    
-  </ul>
-
-  
-  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-      
-        <a href="../matplotlib.html" class="btn btn-neutral float-right" title="7.5. Visualização de dados com a Matplotlib" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-      
-      
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Navegação sequencial da página">
         <a href="introducao.html" class="btn btn-neutral float-left" title="7.4.1. Introdução" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
-      
+        <a href="../matplotlib.html" class="btn btn-neutral float-right" title="7.5. Visualização de dados com a Matplotlib" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
   </div>
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <div class="section" id="criando-pacotes-para-distribuicao">
-<span id="sec-variados-pacotes-criando-pacotes"></span><h1><span class="section-number">7.4.2. </span>Criando Pacotes para Distribuição<a class="headerlink" href="#criando-pacotes-para-distribuicao" title="Link permanente para este título">¶</a></h1>
-<p>Existem várias formas de criar pacotes para distribuição em Python. Esta seção será baseada no <strong>setuptools</strong> <span id="id1">[<a class="reference internal" href="../../referencias.html#id55">2</a>]</span>. Nosso objetivo será preparar a estrutura do pacote <code class="docutils literal notranslate"><span class="pre">spectral</span></code> para poder usar o comando abaixo, que gera o arquivo de distribuição:</p>
+<span id="sec-variados-pacotes-criando-pacotes"></span><h1><span class="section-number">7.4.2. </span>Criando Pacotes para Distribuição<a class="headerlink" href="#criando-pacotes-para-distribuicao" title="Link permanente para este título"></a></h1>
+<p>Existem várias formas de criar pacotes para distribuição em Python. Esta seção será baseada no <strong>setuptools</strong> <span id="id1">[<a class="reference internal" href="../../referencias.html#id55" title="Python Packaging Authority. Setuptools - documentation. 2021. Online; acessado 02 de Maio de 2021. URL: https://packaging.python.org/.">2</a>]</span>. Nosso objetivo será preparar a estrutura do pacote <code class="docutils literal notranslate"><span class="pre">spectral</span></code> para poder usar o comando abaixo, que gera o arquivo de distribuição:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">sdist</span>
 </pre></div>
 </div>
@@ -237,36 +138,28 @@
 </pre></div>
 </div>
 <div class="section" id="setuptools">
-<h2><span class="section-number">7.4.2.1. </span>setuptools<a class="headerlink" href="#setuptools" title="Link permanente para este título">¶</a></h2>
+<h2><span class="section-number">7.4.2.1. </span>setuptools<a class="headerlink" href="#setuptools" title="Link permanente para este título"></a></h2>
 <p>Na raiz do seu projeto crie um arquivo chamado <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> especificando o uso do setuptools. Este arquivo deverá ter o conteúdo apresentado no <a class="reference internal" href="#code-variados-pacotes-criando-pacote-pyproject-toml"><span class="std std-numref">Trecho de Código 7.9</span></a>.</p>
 <div class="literal-block-wrapper docutils container" id="code-variados-pacotes-criando-pacote-pyproject-toml">
-<div class="code-block-caption"><span class="caption-number">Trecho de Código 7.9 - </span><span class="caption-text"><a class="reference download internal" download="" href="../../_downloads/b6b09ab4f5ba177861975d245a2789e2/pyproject.toml"><code class="xref download docutils literal notranslate"><span class="pre">pyproject.toml</span></code></a></span><a class="headerlink" href="#code-variados-pacotes-criando-pacote-pyproject-toml" title="Link Permanente para esse código">¶</a></div>
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">build</span><span class="o">-</span><span class="n">system</span><span class="p">]</span>
-<span class="n">requires</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;setuptools&quot;</span><span class="p">,</span> <span class="s2">&quot;wheel&quot;</span><span class="p">]</span>
-<span class="n">build</span><span class="o">-</span><span class="n">backend</span> <span class="o">=</span> <span class="s2">&quot;setuptools.build_meta&quot;</span>
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 7.9 - </span><span class="caption-text"><a class="reference download internal" download="" href="../../_downloads/b6b09ab4f5ba177861975d245a2789e2/pyproject.toml"><code class="xref download docutils literal notranslate"><span class="pre">pyproject.toml</span></code></a></span><a class="headerlink" href="#code-variados-pacotes-criando-pacote-pyproject-toml" title="Link Permanente para esse código"></a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p">[</span><span class="n">build</span><span class="o">-</span><span class="n">system</span><span class="p">]</span>
+<span class="linenos">2</span><span class="n">requires</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;setuptools&quot;</span><span class="p">,</span> <span class="s2">&quot;wheel&quot;</span><span class="p">]</span>
+<span class="linenos">3</span><span class="n">build</span><span class="o">-</span><span class="n">backend</span> <span class="o">=</span> <span class="s2">&quot;setuptools.build_meta&quot;</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <p>Em seguida, devemos especificar as informações do nosso pacote através de um arquivo <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> ou <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code>. Vamos criar um arquivo <code class="docutils literal notranslate"><span class="pre">setup.py</span></code>, incluindo este arquivo na raiz do projeto. O conteúdo deste arquivo é mostrado no <a class="reference internal" href="#code-variados-pacotes-criando-pacote-v1-setup-py"><span class="std std-numref">Trecho de Código 7.10</span></a>:</p>
 <div class="literal-block-wrapper docutils container" id="code-variados-pacotes-criando-pacote-v1-setup-py">
-<div class="code-block-caption"><span class="caption-number">Trecho de Código 7.10 - </span><span class="caption-text"><a class="reference download internal" download="" href="../../_downloads/e9d12315ac15d18a0f9ddc46e4a08494/setup.py"><code class="xref download docutils literal notranslate"><span class="pre">setup.py</span></code></a></span><a class="headerlink" href="#code-variados-pacotes-criando-pacote-v1-setup-py" title="Link Permanente para esse código">¶</a></div>
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span>
-
-<span class="n">setup</span><span class="p">(</span>
-    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;spectral&quot;</span><span class="p">,</span>
-    <span class="n">version</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
-    <span class="n">packages</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;spectral&quot;</span><span class="p">]</span>
-<span class="p">)</span>
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 7.10 - </span><span class="caption-text"><a class="reference download internal" download="" href="../../_downloads/e9d12315ac15d18a0f9ddc46e4a08494/setup.py"><code class="xref download docutils literal notranslate"><span class="pre">setup.py</span></code></a></span><a class="headerlink" href="#code-variados-pacotes-criando-pacote-v1-setup-py" title="Link Permanente para esse código"></a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">setup</span><span class="p">(</span>
+<span class="linenos">4</span>    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;spectral&quot;</span><span class="p">,</span>
+<span class="linenos">5</span>    <span class="n">version</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+<span class="linenos">6</span>    <span class="n">packages</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;spectral&quot;</span><span class="p">]</span>
+<span class="linenos">7</span><span class="p">)</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <p>O projeto do pacote <code class="docutils literal notranslate"><span class="pre">spectral</span></code> deve estar com a seguinte estrutura:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pyproject.toml
@@ -295,141 +188,87 @@ spectral/
 </div>
 </div>
 <div class="section" id="instalando-um-pacote-no-modo-desenvolvimento">
-<h2><span class="section-number">7.4.2.2. </span>Instalando um pacote no modo desenvolvimento<a class="headerlink" href="#instalando-um-pacote-no-modo-desenvolvimento" title="Link permanente para este título">¶</a></h2>
+<h2><span class="section-number">7.4.2.2. </span>Instalando um pacote no modo desenvolvimento<a class="headerlink" href="#instalando-um-pacote-no-modo-desenvolvimento" title="Link permanente para este título"></a></h2>
 <p>O setuptools permite que nosso pacote possa ser instalado em um modo especial chamado <em>desenvolvimento</em>, de maneira que os arquivos do pacote não sejam copiados para a pasta <code class="docutils literal notranslate"><span class="pre">site-packages</span></code> do interpretador Python. Desta forma, podemos alterar o código do pacote sem necessariamente ter que reconstruir o pacote. Para instalar o pacote <code class="docutils literal notranslate"><span class="pre">spectral</span></code> nesse modo, faça:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">editable</span> <span class="o">.</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="metadados-do-pacote">
-<h2><span class="section-number">7.4.2.3. </span>Metadados do Pacote<a class="headerlink" href="#metadados-do-pacote" title="Link permanente para este título">¶</a></h2>
+<h2><span class="section-number">7.4.2.3. </span>Metadados do Pacote<a class="headerlink" href="#metadados-do-pacote" title="Link permanente para este título"></a></h2>
 <p>Em geral, os pacotes Python possuem diversos metadados associados, como autor do pacote, site onde o projeto é desenvolvido, descrição detalhada do pacote, histórico de modificações e várias outras informações. Nesta seção vamos acrescentar alguns metadados úteis ao pacote <code class="docutils literal notranslate"><span class="pre">spectral</span></code>. Vamos começar criando dois novos arquivos, <code class="docutils literal notranslate"><span class="pre">README.rst</span></code>  e <code class="docutils literal notranslate"><span class="pre">CHANGES.rst</span></code>, com os conteúdos indicados nos Trechos de Código <a class="reference internal" href="#code-variados-pacotes-criando-pacote-readme-rst"><span class="std std-numref">7.11</span></a> e <a class="reference internal" href="#code-variados-pacotes-criando-pacote-changes-rst"><span class="std std-numref">7.12</span></a>, respectivamente.</p>
 <div class="literal-block-wrapper docutils container" id="code-variados-pacotes-criando-pacote-readme-rst">
-<div class="code-block-caption"><span class="caption-number">Trecho de Código 7.11 - </span><span class="caption-text"><a class="reference download internal" download="" href="../../_downloads/7623edc1e17037de1c9756bce8b3ca76/README.rst"><code class="xref download docutils literal notranslate"><span class="pre">README.rst</span></code></a></span><a class="headerlink" href="#code-variados-pacotes-criando-pacote-readme-rst" title="Link Permanente para esse código">¶</a></div>
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>O pacote Spectral fornece funcionalidades que permitem realizar a leitura de arquivos matriciais para computação dos índices de vegetação ``NDVI`` e ``EVI``.
-
-
-Este pacote está sendo desenvolvido para ilustrar a construção de pacotes Python na disciplina de Introdução à Programação com Dados Geoespaciais.
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 7.11 - </span><span class="caption-text"><a class="reference download internal" download="" href="../../_downloads/7623edc1e17037de1c9756bce8b3ca76/README.rst"><code class="xref download docutils literal notranslate"><span class="pre">README.rst</span></code></a></span><a class="headerlink" href="#code-variados-pacotes-criando-pacote-readme-rst" title="Link Permanente para esse código"></a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>O pacote Spectral fornece funcionalidades que permitem realizar a leitura de arquivos matriciais para computação dos índices de vegetação ``NDVI`` e ``EVI``.
+<span class="linenos">2</span>
+<span class="linenos">3</span>
+<span class="linenos">4</span>Este pacote está sendo desenvolvido para ilustrar a construção de pacotes Python na disciplina de Introdução à Programação com Dados Geoespaciais.
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="code-variados-pacotes-criando-pacote-changes-rst">
-<div class="code-block-caption"><span class="caption-number">Trecho de Código 7.12 - </span><span class="caption-text"><a class="reference download internal" download="" href="../../_downloads/6839c84cfdd502bf84df57e163b9e615/CHANGES.rst"><code class="xref download docutils literal notranslate"><span class="pre">CHANGES.rst</span></code></a></span><a class="headerlink" href="#code-variados-pacotes-criando-pacote-changes-rst" title="Link Permanente para esse código">¶</a></div>
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span>Versão 1.0.0
-------------
-
-- Primeira versão estável do pacote
-
-
-Versão 0.2.0
-------------
-
-- Inclusão da função ``EVI``.
-
-
-Versão 0.1.0
-------------
-
-- Versão experimental que inclui apenas a função ``NDVI``.
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 7.12 - </span><span class="caption-text"><a class="reference download internal" download="" href="../../_downloads/6839c84cfdd502bf84df57e163b9e615/CHANGES.rst"><code class="xref download docutils literal notranslate"><span class="pre">CHANGES.rst</span></code></a></span><a class="headerlink" href="#code-variados-pacotes-criando-pacote-changes-rst" title="Link Permanente para esse código"></a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>Versão 1.0.0
+<span class="linenos"> 2</span>------------
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span>- Primeira versão estável do pacote
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span>Versão 0.2.0
+<span class="linenos"> 8</span>------------
+<span class="linenos"> 9</span>
+<span class="linenos">10</span>- Inclusão da função ``EVI``.
+<span class="linenos">11</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span>Versão 0.1.0
+<span class="linenos">14</span>------------
+<span class="linenos">15</span>
+<span class="linenos">16</span>- Versão experimental que inclui apenas a função ``NDVI``.
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <p>Agora, vamos atualizar o conteúdo do arquivo <code class="docutils literal notranslate"><span class="pre">setup.py</span></code>, como indicado no <a class="reference internal" href="#code-variados-pacotes-criando-pacote-v2-setup-py"><span class="std std-numref">Trecho de Código 7.13</span></a>.</p>
 <div class="literal-block-wrapper docutils container" id="code-variados-pacotes-criando-pacote-v2-setup-py">
-<div class="code-block-caption"><span class="caption-number">Trecho de Código 7.13 - </span><span class="caption-text"><a class="reference download internal" download="" href="../../_downloads/e370a0f33634b28fb9f62220cc06396a/setup.py"><code class="xref download docutils literal notranslate"><span class="pre">setup.py</span></code></a></span><a class="headerlink" href="#code-variados-pacotes-criando-pacote-v2-setup-py" title="Link Permanente para esse código">¶</a></div>
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Pacote Spectral - Computando índices espectrais.&quot;&quot;&quot;</span>
-
-<span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">find_packages</span><span class="p">,</span> <span class="n">setup</span>
-
-<span class="n">readme</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;README.rst&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-
-<span class="n">history</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;CHANGES.rst&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-
-<span class="n">packages</span> <span class="o">=</span> <span class="n">find_packages</span><span class="p">()</span>
-
-<span class="n">setup</span><span class="p">(</span>
-    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;spectral&quot;</span><span class="p">,</span>
-    <span class="n">version</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
-    <span class="n">description</span><span class="o">=</span><span class="vm">__doc__</span><span class="p">,</span>
-    <span class="n">long_description</span><span class="o">=</span><span class="n">readme</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">history</span><span class="p">,</span>
-    <span class="n">long_description_content_type</span><span class="o">=</span><span class="s2">&quot;text/x-rst&quot;</span><span class="p">,</span>
-    <span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Spectral Indices&quot;</span><span class="p">,</span> <span class="s2">&quot;Earth Observations&quot;</span><span class="p">],</span>
-    <span class="n">license</span><span class="o">=</span><span class="s2">&quot;MIT&quot;</span><span class="p">,</span>
-    <span class="n">author</span><span class="o">=</span><span class="s2">&quot;Gilberto Queiroz&quot;</span><span class="p">,</span>
-    <span class="n">author_email</span><span class="o">=</span><span class="s2">&quot;user@email.org&quot;</span><span class="p">,</span>
-    <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://github.com/prog-geo/spectral&quot;</span><span class="p">,</span>
-    <span class="n">packages</span><span class="o">=</span><span class="n">packages</span><span class="p">,</span>
-    <span class="n">zip_safe</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="n">include_package_data</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">platforms</span><span class="o">=</span><span class="s2">&quot;any&quot;</span><span class="p">,</span>
-    <span class="n">classifiers</span><span class="o">=</span><span class="p">[</span>
-        <span class="s2">&quot;Development Status :: 3 - Alpha&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;Environment :: Console&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;Intended Audience :: Education&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;Intended Audience :: Science/Research&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;License :: OSI Approved :: MIT License&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;Operating System :: OS Independent&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;Programming Language :: Python :: 3.7&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;Topic :: Software Development :: Libraries :: Python Modules&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;Topic :: Scientific/Engineering :: GIS&quot;</span><span class="p">,</span>
-    <span class="p">],</span>
-<span class="p">)</span>
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 7.13 - </span><span class="caption-text"><a class="reference download internal" download="" href="../../_downloads/e370a0f33634b28fb9f62220cc06396a/setup.py"><code class="xref download docutils literal notranslate"><span class="pre">setup.py</span></code></a></span><a class="headerlink" href="#code-variados-pacotes-criando-pacote-v2-setup-py" title="Link Permanente para esse código"></a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="sd">&quot;&quot;&quot;Pacote Spectral - Computando índices espectrais.&quot;&quot;&quot;</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">find_packages</span><span class="p">,</span> <span class="n">setup</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="n">readme</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;README.rst&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="n">history</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;CHANGES.rst&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="n">packages</span> <span class="o">=</span> <span class="n">find_packages</span><span class="p">()</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span><span class="n">setup</span><span class="p">(</span>
+<span class="linenos">12</span>    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;spectral&quot;</span><span class="p">,</span>
+<span class="linenos">13</span>    <span class="n">version</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+<span class="linenos">14</span>    <span class="n">description</span><span class="o">=</span><span class="vm">__doc__</span><span class="p">,</span>
+<span class="linenos">15</span>    <span class="n">long_description</span><span class="o">=</span><span class="n">readme</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">history</span><span class="p">,</span>
+<span class="linenos">16</span>    <span class="n">long_description_content_type</span><span class="o">=</span><span class="s2">&quot;text/x-rst&quot;</span><span class="p">,</span>
+<span class="linenos">17</span>    <span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Spectral Indices&quot;</span><span class="p">,</span> <span class="s2">&quot;Earth Observations&quot;</span><span class="p">],</span>
+<span class="linenos">18</span>    <span class="n">license</span><span class="o">=</span><span class="s2">&quot;MIT&quot;</span><span class="p">,</span>
+<span class="linenos">19</span>    <span class="n">author</span><span class="o">=</span><span class="s2">&quot;Gilberto Queiroz&quot;</span><span class="p">,</span>
+<span class="linenos">20</span>    <span class="n">author_email</span><span class="o">=</span><span class="s2">&quot;user@email.org&quot;</span><span class="p">,</span>
+<span class="linenos">21</span>    <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://github.com/prog-geo/spectral&quot;</span><span class="p">,</span>
+<span class="linenos">22</span>    <span class="n">packages</span><span class="o">=</span><span class="n">packages</span><span class="p">,</span>
+<span class="linenos">23</span>    <span class="n">zip_safe</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="linenos">24</span>    <span class="n">include_package_data</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="linenos">25</span>    <span class="n">platforms</span><span class="o">=</span><span class="s2">&quot;any&quot;</span><span class="p">,</span>
+<span class="linenos">26</span>    <span class="n">classifiers</span><span class="o">=</span><span class="p">[</span>
+<span class="linenos">27</span>        <span class="s2">&quot;Development Status :: 3 - Alpha&quot;</span><span class="p">,</span>
+<span class="linenos">28</span>        <span class="s2">&quot;Environment :: Console&quot;</span><span class="p">,</span>
+<span class="linenos">29</span>        <span class="s2">&quot;Intended Audience :: Education&quot;</span><span class="p">,</span>
+<span class="linenos">30</span>        <span class="s2">&quot;Intended Audience :: Science/Research&quot;</span><span class="p">,</span>
+<span class="linenos">31</span>        <span class="s2">&quot;License :: OSI Approved :: MIT License&quot;</span><span class="p">,</span>
+<span class="linenos">32</span>        <span class="s2">&quot;Operating System :: OS Independent&quot;</span><span class="p">,</span>
+<span class="linenos">33</span>        <span class="s2">&quot;Programming Language :: Python :: 3.7&quot;</span><span class="p">,</span>
+<span class="linenos">34</span>        <span class="s2">&quot;Topic :: Software Development :: Libraries :: Python Modules&quot;</span><span class="p">,</span>
+<span class="linenos">35</span>        <span class="s2">&quot;Topic :: Scientific/Engineering :: GIS&quot;</span><span class="p">,</span>
+<span class="linenos">36</span>    <span class="p">],</span>
+<span class="linenos">37</span><span class="p">)</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <p>Veja que na chamada à função <code class="docutils literal notranslate"><span class="pre">setup</span></code>, incluímos diversos novos metadados.</p>
 <div class="admonition note">
@@ -438,16 +277,15 @@ Versão 0.1.0
 </div>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>A lista de classificadores (<em>trove classifiers</em>) pode ser encontrada no site do <a class="reference external" href="https://pypi.org/classifiers/">PyPI</a>. Veja também o PEP 301 <span id="id2">[<a class="reference internal" href="../../referencias.html#id46">49</a>]</span>.</p>
+<p>A lista de classificadores (<em>trove classifiers</em>) pode ser encontrada no site do <a class="reference external" href="https://pypi.org/classifiers/">PyPI</a>. Veja também o PEP 301 <span id="id2">[<a class="reference internal" href="../../referencias.html#id46" title="Richard Jones. Pep 301 – package index and metadata for distutils. 2002. Online; acessado 07 de Março de 2021. URL: https://www.python.org/dev/peps/pep-0301.">49</a>]</span>.</p>
 </div>
 <p>Vamos também instruir o setuptools a incluir os arquivos <code class="docutils literal notranslate"><span class="pre">README.rst</span></code> e <code class="docutils literal notranslate"><span class="pre">CHANGES.rst</span></code> no pacote a ser criado. Para isso, vamos criar um arquivo chamado <code class="docutils literal notranslate"><span class="pre">MANIFEST.in</span></code>, como mostrado do <a class="reference internal" href="#code-variados-pacotes-criando-pacote-v1-manifest-in"><span class="std std-numref">Trecho de Código 7.14</span></a>.</p>
 <div class="literal-block-wrapper docutils container" id="code-variados-pacotes-criando-pacote-v1-manifest-in">
-<div class="code-block-caption"><span class="caption-number">Trecho de Código 7.14 - </span><span class="caption-text"><a class="reference download internal" download="" href="../../_downloads/6bfaf54171a18d08a41f1c5c4d37bfd6/MANIFEST.in"><code class="xref download docutils literal notranslate"><span class="pre">MANIFEST.in</span></code></a></span><a class="headerlink" href="#code-variados-pacotes-criando-pacote-v1-manifest-in" title="Link Permanente para esse código">¶</a></div>
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">include</span> <span class="o">*.</span><span class="n">rst</span>
-<span class="n">recursive</span><span class="o">-</span><span class="n">include</span> <span class="n">spectral</span> <span class="o">*.</span><span class="n">py</span>
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 7.14 - </span><span class="caption-text"><a class="reference download internal" download="" href="../../_downloads/6bfaf54171a18d08a41f1c5c4d37bfd6/MANIFEST.in"><code class="xref download docutils literal notranslate"><span class="pre">MANIFEST.in</span></code></a></span><a class="headerlink" href="#code-variados-pacotes-criando-pacote-v1-manifest-in" title="Link Permanente para esse código"></a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">include</span> <span class="o">*.</span><span class="n">rst</span>
+<span class="linenos">2</span><span class="n">recursive</span><span class="o">-</span><span class="n">include</span> <span class="n">spectral</span> <span class="o">*.</span><span class="n">py</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <p>Neste ponto, o projeto do pacote <code class="docutils literal notranslate"><span class="pre">spectral</span></code> deve estar com a seguinte estrutura:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>CHANGES.rst
@@ -478,7 +316,7 @@ spectral/
 </div>
 </div>
 <div class="section" id="dependencias">
-<h2><span class="section-number">7.4.2.4. </span>Dependências<a class="headerlink" href="#dependencias" title="Link permanente para este título">¶</a></h2>
+<h2><span class="section-number">7.4.2.4. </span>Dependências<a class="headerlink" href="#dependencias" title="Link permanente para este título"></a></h2>
 <p>O setuptools permite indicarmos alguns tipos de dependência que um pacote pode apresentar:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">install_requires</span></code>: Lista de dependências para funcionamento do seu pacote. Suponha que no caso do pacote <code class="docutils literal notranslate"><span class="pre">spectral</span></code> fosse necessária a instalação da biblioteca <code class="docutils literal notranslate"><span class="pre">Click</span></code> para o seu correto funcionamento.</p></li>
@@ -488,110 +326,60 @@ spectral/
 </ul>
 <p>Vamos expandir o arquivo <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> com o conteúdo mostrado no <a class="reference internal" href="#code-variados-pacotes-criando-pacote-v3-setup-py"><span class="std std-numref">Trecho de Código 7.15</span></a>.</p>
 <div class="literal-block-wrapper docutils container" id="code-variados-pacotes-criando-pacote-v3-setup-py">
-<div class="code-block-caption"><span class="caption-number">Trecho de Código 7.15 - </span><span class="caption-text"><a class="reference download internal" download="" href="../../_downloads/f91fe4641d400f3db1a32c7f419a8ecb/setup.py"><code class="xref download docutils literal notranslate"><span class="pre">setup.py</span></code></a></span><a class="headerlink" href="#code-variados-pacotes-criando-pacote-v3-setup-py" title="Link Permanente para esse código">¶</a></div>
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span>
-<span class="normal">51</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Pacote Spectral - Computando índices espectrais.&quot;&quot;&quot;</span>
-
-<span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">find_packages</span><span class="p">,</span> <span class="n">setup</span>
-
-<span class="n">readme</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;README.rst&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-
-<span class="n">history</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;CHANGES.rst&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-
-<span class="hll"><span class="n">tests_require</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;pytest&gt;=5.2&quot;</span><span class="p">]</span>
-</span>
-<span class="hll"><span class="n">extras_require</span> <span class="o">=</span> <span class="p">{</span>
-</span><span class="hll">    <span class="s1">&#39;docs&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Sphinx&gt;=2.2&quot;</span><span class="p">]</span>
-</span><span class="hll"><span class="p">}</span>
-</span>
-<span class="hll"><span class="n">setup_requires</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;pytest-runner&gt;=5.2&quot;</span><span class="p">]</span>
-</span>
-<span class="hll"><span class="n">install_requires</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Click&gt;=7.0&quot;</span><span class="p">]</span>
-</span>
-<span class="n">packages</span> <span class="o">=</span> <span class="n">find_packages</span><span class="p">()</span>
-
-<span class="n">setup</span><span class="p">(</span>
-    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;spectral&quot;</span><span class="p">,</span>
-    <span class="n">version</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
-    <span class="n">description</span><span class="o">=</span><span class="vm">__doc__</span><span class="p">,</span>
-    <span class="n">long_description</span><span class="o">=</span><span class="n">readme</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">history</span><span class="p">,</span>
-    <span class="n">long_description_content_type</span> <span class="o">=</span> <span class="s2">&quot;text/x-rst&quot;</span><span class="p">,</span>
-    <span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Spectral Indices&quot;</span><span class="p">,</span> <span class="s2">&quot;Earth Observations&quot;</span><span class="p">],</span>
-    <span class="n">license</span><span class="o">=</span><span class="s2">&quot;MIT&quot;</span><span class="p">,</span>
-    <span class="n">author</span><span class="o">=</span><span class="s2">&quot;Gilberto Queiroz&quot;</span><span class="p">,</span>
-    <span class="n">author_email</span><span class="o">=</span><span class="s2">&quot;user@email.org&quot;</span><span class="p">,</span>
-    <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://github.com/prog-geo/spectral&quot;</span><span class="p">,</span>
-    <span class="n">packages</span><span class="o">=</span><span class="n">packages</span><span class="p">,</span>
-    <span class="n">zip_safe</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="n">include_package_data</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">platforms</span><span class="o">=</span><span class="s2">&quot;any&quot;</span><span class="p">,</span>
-<span class="hll">    <span class="n">extras_require</span><span class="o">=</span><span class="n">extras_require</span><span class="p">,</span>
-</span><span class="hll">    <span class="n">install_requires</span><span class="o">=</span><span class="n">install_requires</span><span class="p">,</span>
-</span><span class="hll">    <span class="n">setup_requires</span><span class="o">=</span><span class="n">setup_requires</span><span class="p">,</span>
-</span><span class="hll">    <span class="n">tests_require</span><span class="o">=</span><span class="n">tests_require</span><span class="p">,</span>
-</span>    <span class="n">classifiers</span><span class="o">=</span><span class="p">[</span>
-        <span class="s2">&quot;Development Status :: 3 - Alpha&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;Environment :: Console&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;Intended Audience :: Education&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;Intended Audience :: Science/Research&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;License :: OSI Approved :: MIT License&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;Operating System :: OS Independent&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;Programming Language :: Python :: 3.7&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;Topic :: Software Development :: Libraries :: Python Modules&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;Topic :: Scientific/Engineering :: GIS&quot;</span><span class="p">,</span>
-    <span class="p">],</span>
-<span class="p">)</span>
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 7.15 - </span><span class="caption-text"><a class="reference download internal" download="" href="../../_downloads/f91fe4641d400f3db1a32c7f419a8ecb/setup.py"><code class="xref download docutils literal notranslate"><span class="pre">setup.py</span></code></a></span><a class="headerlink" href="#code-variados-pacotes-criando-pacote-v3-setup-py" title="Link Permanente para esse código"></a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="sd">&quot;&quot;&quot;Pacote Spectral - Computando índices espectrais.&quot;&quot;&quot;</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">find_packages</span><span class="p">,</span> <span class="n">setup</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="n">readme</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;README.rst&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="n">history</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;CHANGES.rst&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="linenos"> 8</span>
+<span class="hll"><span class="linenos"> 9</span><span class="n">tests_require</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;pytest&gt;=5.2&quot;</span><span class="p">]</span>
+</span><span class="linenos">10</span>
+<span class="hll"><span class="linenos">11</span><span class="n">extras_require</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class="hll"><span class="linenos">12</span>    <span class="s1">&#39;docs&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Sphinx&gt;=2.2&quot;</span><span class="p">]</span>
+</span><span class="hll"><span class="linenos">13</span><span class="p">}</span>
+</span><span class="linenos">14</span>
+<span class="hll"><span class="linenos">15</span><span class="n">setup_requires</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;pytest-runner&gt;=5.2&quot;</span><span class="p">]</span>
+</span><span class="linenos">16</span>
+<span class="hll"><span class="linenos">17</span><span class="n">install_requires</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Click&gt;=7.0&quot;</span><span class="p">]</span>
+</span><span class="linenos">18</span>
+<span class="linenos">19</span><span class="n">packages</span> <span class="o">=</span> <span class="n">find_packages</span><span class="p">()</span>
+<span class="linenos">20</span>
+<span class="linenos">21</span><span class="n">setup</span><span class="p">(</span>
+<span class="linenos">22</span>    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;spectral&quot;</span><span class="p">,</span>
+<span class="linenos">23</span>    <span class="n">version</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+<span class="linenos">24</span>    <span class="n">description</span><span class="o">=</span><span class="vm">__doc__</span><span class="p">,</span>
+<span class="linenos">25</span>    <span class="n">long_description</span><span class="o">=</span><span class="n">readme</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">history</span><span class="p">,</span>
+<span class="linenos">26</span>    <span class="n">long_description_content_type</span> <span class="o">=</span> <span class="s2">&quot;text/x-rst&quot;</span><span class="p">,</span>
+<span class="linenos">27</span>    <span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Spectral Indices&quot;</span><span class="p">,</span> <span class="s2">&quot;Earth Observations&quot;</span><span class="p">],</span>
+<span class="linenos">28</span>    <span class="n">license</span><span class="o">=</span><span class="s2">&quot;MIT&quot;</span><span class="p">,</span>
+<span class="linenos">29</span>    <span class="n">author</span><span class="o">=</span><span class="s2">&quot;Gilberto Queiroz&quot;</span><span class="p">,</span>
+<span class="linenos">30</span>    <span class="n">author_email</span><span class="o">=</span><span class="s2">&quot;user@email.org&quot;</span><span class="p">,</span>
+<span class="linenos">31</span>    <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://github.com/prog-geo/spectral&quot;</span><span class="p">,</span>
+<span class="linenos">32</span>    <span class="n">packages</span><span class="o">=</span><span class="n">packages</span><span class="p">,</span>
+<span class="linenos">33</span>    <span class="n">zip_safe</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="linenos">34</span>    <span class="n">include_package_data</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="linenos">35</span>    <span class="n">platforms</span><span class="o">=</span><span class="s2">&quot;any&quot;</span><span class="p">,</span>
+<span class="hll"><span class="linenos">36</span>    <span class="n">extras_require</span><span class="o">=</span><span class="n">extras_require</span><span class="p">,</span>
+</span><span class="hll"><span class="linenos">37</span>    <span class="n">install_requires</span><span class="o">=</span><span class="n">install_requires</span><span class="p">,</span>
+</span><span class="hll"><span class="linenos">38</span>    <span class="n">setup_requires</span><span class="o">=</span><span class="n">setup_requires</span><span class="p">,</span>
+</span><span class="hll"><span class="linenos">39</span>    <span class="n">tests_require</span><span class="o">=</span><span class="n">tests_require</span><span class="p">,</span>
+</span><span class="linenos">40</span>    <span class="n">classifiers</span><span class="o">=</span><span class="p">[</span>
+<span class="linenos">41</span>        <span class="s2">&quot;Development Status :: 3 - Alpha&quot;</span><span class="p">,</span>
+<span class="linenos">42</span>        <span class="s2">&quot;Environment :: Console&quot;</span><span class="p">,</span>
+<span class="linenos">43</span>        <span class="s2">&quot;Intended Audience :: Education&quot;</span><span class="p">,</span>
+<span class="linenos">44</span>        <span class="s2">&quot;Intended Audience :: Science/Research&quot;</span><span class="p">,</span>
+<span class="linenos">45</span>        <span class="s2">&quot;License :: OSI Approved :: MIT License&quot;</span><span class="p">,</span>
+<span class="linenos">46</span>        <span class="s2">&quot;Operating System :: OS Independent&quot;</span><span class="p">,</span>
+<span class="linenos">47</span>        <span class="s2">&quot;Programming Language :: Python :: 3.7&quot;</span><span class="p">,</span>
+<span class="linenos">48</span>        <span class="s2">&quot;Topic :: Software Development :: Libraries :: Python Modules&quot;</span><span class="p">,</span>
+<span class="linenos">49</span>        <span class="s2">&quot;Topic :: Scientific/Engineering :: GIS&quot;</span><span class="p">,</span>
+<span class="linenos">50</span>    <span class="p">],</span>
+<span class="linenos">51</span><span class="p">)</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <p>Para instalar o pacote com suas dependências basta executar:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">spectral</span><span class="o">-</span><span class="mf">1.0</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
@@ -611,85 +399,49 @@ spectral/
 </div>
 </div>
 <div class="section" id="ponto-de-entrada">
-<h2><span class="section-number">7.4.2.5. </span>Ponto de Entrada<a class="headerlink" href="#ponto-de-entrada" title="Link permanente para este título">¶</a></h2>
+<h2><span class="section-number">7.4.2.5. </span>Ponto de Entrada<a class="headerlink" href="#ponto-de-entrada" title="Link permanente para este título"></a></h2>
 <p>Agora que incluímos a dependência da biblioteca Click, vamos criar um novo módulo chamado <code class="docutils literal notranslate"><span class="pre">cli</span></code> no nosso pacote. O conteúdo desse novo módulo pode ser visto no <a class="reference internal" href="#code-variados-pacotes-criando-pacote-v1-cli-py"><span class="std std-numref">Trecho de Código 7.16</span></a>.</p>
 <div class="literal-block-wrapper docutils container" id="code-variados-pacotes-criando-pacote-v1-cli-py">
-<div class="code-block-caption"><span class="caption-number">Trecho de Código 7.16 - </span><span class="caption-text"><a class="reference download internal" download="" href="../../_downloads/4ad9471adc78dbd32b4acf8d0069daed/cli.py"><code class="xref download docutils literal notranslate"><span class="pre">cli.py</span></code></a></span><a class="headerlink" href="#code-variados-pacotes-criando-pacote-v1-cli-py" title="Link Permanente para esse código">¶</a></div>
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Command-Line Interface for Spectral.&quot;&quot;&quot;</span>
-
-<span class="kn">import</span> <span class="nn">click</span>
-
-<span class="kn">from</span> <span class="nn">.evi</span> <span class="kn">import</span> <span class="n">EVI</span>
-<span class="kn">from</span> <span class="nn">.ndvi</span> <span class="kn">import</span> <span class="n">NDVI</span>
-
-<span class="nd">@click</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
-<span class="nd">@click</span><span class="o">.</span><span class="n">version_option</span><span class="p">()</span>
-<span class="k">def</span> <span class="nf">cli</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Spectral commands.</span>
-<span class="sd">    .. note:: You can invoke more than one subcommand in one go.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-
-
-<span class="nd">@cli</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
-<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;-n&#39;</span><span class="p">,</span> <span class="s1">&#39;--nir&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span>
-              <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Near-infrared spectral band.&#39;</span><span class="p">)</span>
-<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;-r&#39;</span><span class="p">,</span> <span class="s1">&#39;--red&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span>
-              <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Red spectral band.&#39;</span><span class="p">)</span>
-<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;-b&#39;</span><span class="p">,</span> <span class="s1">&#39;--blue&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span>
-              <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Blue spectral band.&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">evi</span><span class="p">(</span><span class="n">nir</span><span class="p">,</span> <span class="n">red</span><span class="p">,</span> <span class="n">blue</span><span class="p">):</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">EVI</span><span class="p">(</span><span class="n">nir</span><span class="p">,</span> <span class="n">red</span><span class="p">,</span> <span class="n">blue</span><span class="p">)</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;EVI: </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-
-<span class="nd">@cli</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
-<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;-n&#39;</span><span class="p">,</span> <span class="s1">&#39;--nir&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span>
-              <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Near-infrared spectral band.&#39;</span><span class="p">)</span>
-<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;-r&#39;</span><span class="p">,</span> <span class="s1">&#39;--red&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span>
-              <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Red spectral band.&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">ndvi</span><span class="p">(</span><span class="n">nir</span><span class="p">,</span> <span class="n">red</span><span class="p">):</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">NDVI</span><span class="p">(</span><span class="n">nir</span><span class="p">,</span> <span class="n">red</span><span class="p">)</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;NDVI: </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 7.16 - </span><span class="caption-text"><a class="reference download internal" download="" href="../../_downloads/4ad9471adc78dbd32b4acf8d0069daed/cli.py"><code class="xref download docutils literal notranslate"><span class="pre">cli.py</span></code></a></span><a class="headerlink" href="#code-variados-pacotes-criando-pacote-v1-cli-py" title="Link Permanente para esse código"></a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="sd">&quot;&quot;&quot;Command-Line Interface for Spectral.&quot;&quot;&quot;</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="kn">import</span> <span class="nn">click</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="kn">from</span> <span class="nn">.evi</span> <span class="kn">import</span> <span class="n">EVI</span>
+<span class="linenos"> 6</span><span class="kn">from</span> <span class="nn">.ndvi</span> <span class="kn">import</span> <span class="n">NDVI</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="nd">@click</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+<span class="linenos"> 9</span><span class="nd">@click</span><span class="o">.</span><span class="n">version_option</span><span class="p">()</span>
+<span class="linenos">10</span><span class="k">def</span> <span class="nf">cli</span><span class="p">():</span>
+<span class="linenos">11</span>    <span class="sd">&quot;&quot;&quot;Spectral commands.</span>
+<span class="linenos">12</span><span class="sd">    .. note:: You can invoke more than one subcommand in one go.</span>
+<span class="linenos">13</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span>
+<span class="linenos">16</span><span class="nd">@cli</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="linenos">17</span><span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;-n&#39;</span><span class="p">,</span> <span class="s1">&#39;--nir&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span>
+<span class="linenos">18</span>              <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Near-infrared spectral band.&#39;</span><span class="p">)</span>
+<span class="linenos">19</span><span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;-r&#39;</span><span class="p">,</span> <span class="s1">&#39;--red&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span>
+<span class="linenos">20</span>              <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Red spectral band.&#39;</span><span class="p">)</span>
+<span class="linenos">21</span><span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;-b&#39;</span><span class="p">,</span> <span class="s1">&#39;--blue&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span>
+<span class="linenos">22</span>              <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Blue spectral band.&#39;</span><span class="p">)</span>
+<span class="linenos">23</span><span class="k">def</span> <span class="nf">evi</span><span class="p">(</span><span class="n">nir</span><span class="p">,</span> <span class="n">red</span><span class="p">,</span> <span class="n">blue</span><span class="p">):</span>
+<span class="linenos">24</span>    <span class="n">result</span> <span class="o">=</span> <span class="n">EVI</span><span class="p">(</span><span class="n">nir</span><span class="p">,</span> <span class="n">red</span><span class="p">,</span> <span class="n">blue</span><span class="p">)</span>
+<span class="linenos">25</span>
+<span class="linenos">26</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;EVI: </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">27</span>
+<span class="linenos">28</span>
+<span class="linenos">29</span><span class="nd">@cli</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="linenos">30</span><span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;-n&#39;</span><span class="p">,</span> <span class="s1">&#39;--nir&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span>
+<span class="linenos">31</span>              <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Near-infrared spectral band.&#39;</span><span class="p">)</span>
+<span class="linenos">32</span><span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;-r&#39;</span><span class="p">,</span> <span class="s1">&#39;--red&#39;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span>
+<span class="linenos">33</span>              <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Red spectral band.&#39;</span><span class="p">)</span>
+<span class="linenos">34</span><span class="k">def</span> <span class="nf">ndvi</span><span class="p">(</span><span class="n">nir</span><span class="p">,</span> <span class="n">red</span><span class="p">):</span>
+<span class="linenos">35</span>    <span class="n">result</span> <span class="o">=</span> <span class="n">NDVI</span><span class="p">(</span><span class="n">nir</span><span class="p">,</span> <span class="n">red</span><span class="p">)</span>
+<span class="linenos">36</span>
+<span class="linenos">37</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;NDVI: </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <p>Basicamente, este módulo permitirá que nosso pacote possa ser usado na linha de comando através de um comando como:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">spectral</span> <span class="n">ndvi</span> <span class="o">--</span><span class="n">nir</span> <span class="mf">0.6</span> <span class="o">--</span><span class="n">red</span> <span class="mf">0.5</span>
@@ -697,120 +449,65 @@ spectral/
 </div>
 <p>Para que isso seja possível, será necessário incluir um ponto de entrada no arquivo <code class="docutils literal notranslate"><span class="pre">setup.py</span></code>, como indicado no <a class="reference internal" href="#code-variados-pacotes-criando-pacote-v4-setup-py"><span class="std std-numref">Trecho de Código 7.17</span></a>.</p>
 <div class="literal-block-wrapper docutils container" id="code-variados-pacotes-criando-pacote-v4-setup-py">
-<div class="code-block-caption"><span class="caption-number">Trecho de Código 7.17 - </span><span class="caption-text"><a class="reference download internal" download="" href="../../_downloads/5286754b60c36b11a286fb1926b46bf6/setup.py"><code class="xref download docutils literal notranslate"><span class="pre">setup.py</span></code></a></span><a class="headerlink" href="#code-variados-pacotes-criando-pacote-v4-setup-py" title="Link Permanente para esse código">¶</a></div>
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span>
-<span class="normal">42</span>
-<span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span>
-<span class="normal">51</span>
-<span class="normal">52</span>
-<span class="normal">53</span>
-<span class="normal">54</span>
-<span class="normal">55</span>
-<span class="normal">56</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Pacote Spectral - Computando índices espectrais.&quot;&quot;&quot;</span>
-
-<span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">find_packages</span><span class="p">,</span> <span class="n">setup</span>
-
-<span class="n">readme</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;README.rst&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-
-<span class="n">history</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;CHANGES.rst&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-
-<span class="n">tests_require</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;pytest&gt;=5.2&quot;</span><span class="p">]</span>
-
-<span class="n">extras_require</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;docs&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Sphinx&gt;=2.2&quot;</span><span class="p">]</span>
-<span class="p">}</span>
-
-<span class="n">setup_requires</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;pytest-runner&gt;=5.2&quot;</span><span class="p">]</span>
-
-<span class="n">install_requires</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Click&gt;=7.0&quot;</span><span class="p">]</span>
-
-<span class="n">packages</span> <span class="o">=</span> <span class="n">find_packages</span><span class="p">()</span>
-
-<span class="n">setup</span><span class="p">(</span>
-    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;spectral&quot;</span><span class="p">,</span>
-    <span class="n">version</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
-    <span class="n">description</span><span class="o">=</span><span class="vm">__doc__</span><span class="p">,</span>
-    <span class="n">long_description</span><span class="o">=</span><span class="n">readme</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">history</span><span class="p">,</span>
-    <span class="n">long_description_content_type</span> <span class="o">=</span> <span class="s2">&quot;text/x-rst&quot;</span><span class="p">,</span>
-    <span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Spectral Indices&quot;</span><span class="p">,</span> <span class="s2">&quot;Earth Observations&quot;</span><span class="p">],</span>
-    <span class="n">license</span><span class="o">=</span><span class="s2">&quot;MIT&quot;</span><span class="p">,</span>
-    <span class="n">author</span><span class="o">=</span><span class="s2">&quot;Gilberto Queiroz&quot;</span><span class="p">,</span>
-    <span class="n">author_email</span><span class="o">=</span><span class="s2">&quot;user@email.org&quot;</span><span class="p">,</span>
-    <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://github.com/prog-geo/spectral&quot;</span><span class="p">,</span>
-    <span class="n">packages</span><span class="o">=</span><span class="n">packages</span><span class="p">,</span>
-    <span class="n">zip_safe</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="n">include_package_data</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">platforms</span><span class="o">=</span><span class="s2">&quot;any&quot;</span><span class="p">,</span>
-<span class="hll">    <span class="n">entry_points</span><span class="o">=</span><span class="p">{</span>
-</span><span class="hll">        <span class="s1">&#39;console_scripts&#39;</span><span class="p">:</span> <span class="p">[</span>
-</span><span class="hll">            <span class="s1">&#39;spectral = spectral.cli:cli&#39;</span><span class="p">,</span>
-</span><span class="hll">        <span class="p">],</span>
-</span><span class="hll">    <span class="p">},</span>
-</span>    <span class="n">extras_require</span><span class="o">=</span><span class="n">extras_require</span><span class="p">,</span>
-    <span class="n">install_requires</span><span class="o">=</span><span class="n">install_requires</span><span class="p">,</span>
-    <span class="n">setup_requires</span><span class="o">=</span><span class="n">setup_requires</span><span class="p">,</span>
-    <span class="n">tests_require</span><span class="o">=</span><span class="n">tests_require</span><span class="p">,</span>
-    <span class="n">classifiers</span><span class="o">=</span><span class="p">[</span>
-        <span class="s2">&quot;Development Status :: 3 - Alpha&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;Environment :: Console&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;Intended Audience :: Education&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;Intended Audience :: Science/Research&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;License :: OSI Approved :: MIT License&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;Operating System :: OS Independent&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;Programming Language :: Python :: 3.7&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;Topic :: Software Development :: Libraries :: Python Modules&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;Topic :: Scientific/Engineering :: GIS&quot;</span><span class="p">,</span>
-    <span class="p">],</span>
-<span class="p">)</span>
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 7.17 - </span><span class="caption-text"><a class="reference download internal" download="" href="../../_downloads/5286754b60c36b11a286fb1926b46bf6/setup.py"><code class="xref download docutils literal notranslate"><span class="pre">setup.py</span></code></a></span><a class="headerlink" href="#code-variados-pacotes-criando-pacote-v4-setup-py" title="Link Permanente para esse código"></a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="sd">&quot;&quot;&quot;Pacote Spectral - Computando índices espectrais.&quot;&quot;&quot;</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">find_packages</span><span class="p">,</span> <span class="n">setup</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="n">readme</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;README.rst&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="n">history</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;CHANGES.rst&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="n">tests_require</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;pytest&gt;=5.2&quot;</span><span class="p">]</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span><span class="n">extras_require</span> <span class="o">=</span> <span class="p">{</span>
+<span class="linenos">12</span>    <span class="s1">&#39;docs&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Sphinx&gt;=2.2&quot;</span><span class="p">]</span>
+<span class="linenos">13</span><span class="p">}</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span><span class="n">setup_requires</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;pytest-runner&gt;=5.2&quot;</span><span class="p">]</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span><span class="n">install_requires</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Click&gt;=7.0&quot;</span><span class="p">]</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span><span class="n">packages</span> <span class="o">=</span> <span class="n">find_packages</span><span class="p">()</span>
+<span class="linenos">20</span>
+<span class="linenos">21</span><span class="n">setup</span><span class="p">(</span>
+<span class="linenos">22</span>    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;spectral&quot;</span><span class="p">,</span>
+<span class="linenos">23</span>    <span class="n">version</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+<span class="linenos">24</span>    <span class="n">description</span><span class="o">=</span><span class="vm">__doc__</span><span class="p">,</span>
+<span class="linenos">25</span>    <span class="n">long_description</span><span class="o">=</span><span class="n">readme</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">history</span><span class="p">,</span>
+<span class="linenos">26</span>    <span class="n">long_description_content_type</span> <span class="o">=</span> <span class="s2">&quot;text/x-rst&quot;</span><span class="p">,</span>
+<span class="linenos">27</span>    <span class="n">keywords</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Spectral Indices&quot;</span><span class="p">,</span> <span class="s2">&quot;Earth Observations&quot;</span><span class="p">],</span>
+<span class="linenos">28</span>    <span class="n">license</span><span class="o">=</span><span class="s2">&quot;MIT&quot;</span><span class="p">,</span>
+<span class="linenos">29</span>    <span class="n">author</span><span class="o">=</span><span class="s2">&quot;Gilberto Queiroz&quot;</span><span class="p">,</span>
+<span class="linenos">30</span>    <span class="n">author_email</span><span class="o">=</span><span class="s2">&quot;user@email.org&quot;</span><span class="p">,</span>
+<span class="linenos">31</span>    <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://github.com/prog-geo/spectral&quot;</span><span class="p">,</span>
+<span class="linenos">32</span>    <span class="n">packages</span><span class="o">=</span><span class="n">packages</span><span class="p">,</span>
+<span class="linenos">33</span>    <span class="n">zip_safe</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="linenos">34</span>    <span class="n">include_package_data</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="linenos">35</span>    <span class="n">platforms</span><span class="o">=</span><span class="s2">&quot;any&quot;</span><span class="p">,</span>
+<span class="hll"><span class="linenos">36</span>    <span class="n">entry_points</span><span class="o">=</span><span class="p">{</span>
+</span><span class="hll"><span class="linenos">37</span>        <span class="s1">&#39;console_scripts&#39;</span><span class="p">:</span> <span class="p">[</span>
+</span><span class="hll"><span class="linenos">38</span>            <span class="s1">&#39;spectral = spectral.cli:cli&#39;</span><span class="p">,</span>
+</span><span class="hll"><span class="linenos">39</span>        <span class="p">],</span>
+</span><span class="hll"><span class="linenos">40</span>    <span class="p">},</span>
+</span><span class="linenos">41</span>    <span class="n">extras_require</span><span class="o">=</span><span class="n">extras_require</span><span class="p">,</span>
+<span class="linenos">42</span>    <span class="n">install_requires</span><span class="o">=</span><span class="n">install_requires</span><span class="p">,</span>
+<span class="linenos">43</span>    <span class="n">setup_requires</span><span class="o">=</span><span class="n">setup_requires</span><span class="p">,</span>
+<span class="linenos">44</span>    <span class="n">tests_require</span><span class="o">=</span><span class="n">tests_require</span><span class="p">,</span>
+<span class="linenos">45</span>    <span class="n">classifiers</span><span class="o">=</span><span class="p">[</span>
+<span class="linenos">46</span>        <span class="s2">&quot;Development Status :: 3 - Alpha&quot;</span><span class="p">,</span>
+<span class="linenos">47</span>        <span class="s2">&quot;Environment :: Console&quot;</span><span class="p">,</span>
+<span class="linenos">48</span>        <span class="s2">&quot;Intended Audience :: Education&quot;</span><span class="p">,</span>
+<span class="linenos">49</span>        <span class="s2">&quot;Intended Audience :: Science/Research&quot;</span><span class="p">,</span>
+<span class="linenos">50</span>        <span class="s2">&quot;License :: OSI Approved :: MIT License&quot;</span><span class="p">,</span>
+<span class="linenos">51</span>        <span class="s2">&quot;Operating System :: OS Independent&quot;</span><span class="p">,</span>
+<span class="linenos">52</span>        <span class="s2">&quot;Programming Language :: Python :: 3.7&quot;</span><span class="p">,</span>
+<span class="linenos">53</span>        <span class="s2">&quot;Topic :: Software Development :: Libraries :: Python Modules&quot;</span><span class="p">,</span>
+<span class="linenos">54</span>        <span class="s2">&quot;Topic :: Scientific/Engineering :: GIS&quot;</span><span class="p">,</span>
+<span class="linenos">55</span>    <span class="p">],</span>
+<span class="linenos">56</span><span class="p">)</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <p>Agora, refaça a instalação do pacote spectral:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">editable</span> <span class="o">.</span>
@@ -834,62 +531,48 @@ spectral/
 </div>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>Para mais informações sobre a preparação de pacotes para redistribuição em Python, consulte <span id="id3">[<a class="reference internal" href="../../referencias.html#id55">2</a>]</span>, <span id="id4">[<a class="reference internal" href="../../referencias.html#id56">89</a>]</span>, <span id="id5">[<a class="reference internal" href="../../referencias.html#id58">34</a>]</span>, <span id="id6">[<a class="reference internal" href="../../referencias.html#id59">33</a>]</span>, <span id="id7">[<a class="reference internal" href="../../referencias.html#id92">71</a>]</span>.</p>
+<p>Para mais informações sobre a preparação de pacotes para redistribuição em Python, consulte <span id="id3">[<a class="reference internal" href="../../referencias.html#id55" title="Python Packaging Authority. Setuptools - documentation. 2021. Online; acessado 02 de Maio de 2021. URL: https://packaging.python.org/.">2</a>]</span>, <span id="id4">[<a class="reference internal" href="../../referencias.html#id56" title="Greg Ward and Anthony Baxter. Distributing python modules (legacy version). 2021. Online; acessado 07 de Março de 2021. URL: https://docs.python.org/3/distutils/index.html.">89</a>]</span>, <span id="id5">[<a class="reference internal" href="../../referencias.html#id58" title="Python Software Foundation. Python packaging user guide. 2021. Online; acessado 07 de Março de 2021. URL: https://packaging.python.org/.">34</a>]</span>, <span id="id6">[<a class="reference internal" href="../../referencias.html#id59" title="Python Software Foundation. Packaging and distributing projects. 2021. Online; acessado 07 de Março de 2021. URL: https://packaging.python.org/guides/distributing-packages-using-setuptools/.">33</a>]</span>, <span id="id7">[<a class="reference internal" href="../../referencias.html#id92" title="Michael Sarahan, Matt McCormick, Jean-Christophe Fillion-Robin, Filipe Fernandes, Chris Barker, and Jonathan Helmus. The sheer joy of packaging! 2021. Online; acessado 07 de Março de 2021. URL: https://python-packaging-tutorial.readthedocs.io/en/latest/.">71</a>]</span>.</p>
 </div>
 </div>
 </div>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="../matplotlib.html" class="btn btn-neutral float-right" title="7.5. Visualização de dados com a Matplotlib" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Rodapé">
         <a href="introducao.html" class="btn btn-neutral float-left" title="7.4.1. Introdução" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="../matplotlib.html" class="btn btn-neutral float-right" title="7.5. Visualização de dados com a Matplotlib" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+    <p>&#169; Copyright 2020-2021, Gilberto Queiroz and Thales Körting.</p>
+  </div>
 
-    </p>
-  </div> 
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(false);
       });
   </script>
-
-  
-  
-    
     <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165908761-1"></script>
     <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-    ga('create', 'UA-165908761-1', 'auto');
-    
-    ga('send', 'pageview');
-    </script>
-
-    
-   
+      gtag('config', 'UA-165908761-1', {
+          'anonymize_ip': false,
+      });
+    </script> 
 
 </body>
 </html>
