@@ -186,13 +186,14 @@ Avaliação
 
 - Listas de Exercícios: 20%.
 
-- Trabalho Prático: 50%.
+- Trabalho Prático e Artigo: 60%.
 
-- Artigo sobre o Trabalho: 30%.
+- Prova: 20%.
+
 
 .. note::
 
-    Os trabalhos serão realizados em grupos de 02 ou 03 integrantes.
+    Os trabalhos serão realizados em grupos de 03 integrantes.
 
 
 Código de Honra
@@ -211,6 +212,7 @@ Código de Honra
 
 
 - Não entregar transcrições literais de material da Internet!
+
 
 .. note::
 
@@ -250,4 +252,4 @@ Ao final do curso, esperamos que vocês...
 
 - CAP-423 - Ciência de Dados Geoespaciais
 
-- SER-413 – Processamento Digital de Imagens
+- SER-413 – Processamento Digital de Imagens de Sensores Remotos

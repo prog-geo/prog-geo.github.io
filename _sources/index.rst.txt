@@ -69,7 +69,8 @@ Na era do big data, os profissionais necessitam cada vez mais de conhecimentos e
     :maxdepth: 1
     :caption: Lista de Projetos:
 
-    projetos
+    projetos/2022/index
+    projetos/2021/index
 
 
 .. toctree::

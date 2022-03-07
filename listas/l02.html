@@ -82,7 +82,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../projetos.html">Projetos Finais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projetos/2022/index.html">Turma 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projetos/2021/index.html">Turma 2021</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Informações Gerais:</span></p>
 <ul>
@@ -137,7 +138,7 @@
 </div></blockquote>
 </li>
 <li><p>Você deverá entregar a lista através de um <em>pull-request</em> a ser realizado no repositório associado ao seu usuário na organização <a class="reference external" href="https://github.com/prog-geo">prog-geo</a>. Esse <em>pull-request</em> deverá conter todos os arquivos da entrega.</p></li>
-<li><p><strong>Prazo para entrega:</strong> 19/03/2021 - 18:00</p></li>
+<li><p><strong>Prazo para entrega:</strong> 21/03/2022 - 18:00</p></li>
 </ul>
 <hr class="docutils" />
 <p><strong>Exercício 01.</strong> Usando o terminal interativo do Python, use o comando <code class="docutils literal notranslate"><span class="pre">type(objeto)</span></code> e descubra o tipo de dados dos seguintes objetos:</p>
@@ -222,24 +223,6 @@
 </li>
 </ul>
 <p>De acordo com as equações acima, crie um programa que leia os valores de <span class="math notranslate nohighlight">\(X_{green}\)</span>, <span class="math notranslate nohighlight">\(X_{nir}\)</span> e <span class="math notranslate nohighlight">\(X_{red}\)</span>, e imprima como resultados os valores de <code class="docutils literal notranslate"><span class="pre">NDWI</span></code> e <code class="docutils literal notranslate"><span class="pre">NDVI</span></code>.</p>
-<p><strong>Solução:</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Xgreen</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span> <span class="s2">&quot;Xgreen: &quot;</span> <span class="p">)</span> <span class="p">)</span>
-<span class="n">Xnir</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span> <span class="s2">&quot;Xnir: &quot;</span> <span class="p">)</span> <span class="p">)</span>
-<span class="n">Xred</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span> <span class="s2">&quot;Xred: &quot;</span> <span class="p">)</span> <span class="p">)</span>
-
-<span class="c1"># calculando NDWI</span>
-<span class="n">NDWI</span> <span class="o">=</span> <span class="p">(</span><span class="n">Xgreen</span> <span class="o">-</span> <span class="n">Xnir</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">Xgreen</span> <span class="o">+</span> <span class="n">Xnir</span><span class="p">)</span>
-
-<span class="c1"># mostrar resultado na tela</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NDWI:&quot;</span><span class="p">,</span> <span class="n">NDWI</span><span class="p">)</span>
-
-<span class="c1"># calculando NDVI</span>
-<span class="n">NDVI</span> <span class="o">=</span> <span class="p">(</span><span class="n">Xnir</span> <span class="o">-</span> <span class="n">Xred</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">Xnir</span> <span class="o">+</span> <span class="n">Xred</span><span class="p">)</span>
-
-<span class="c1"># mostrar resultado na tela</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NDVI:&quot;</span><span class="p">,</span> <span class="n">NDVI</span><span class="p">)</span>
-</pre></div>
-</div>
 <hr class="docutils" />
 <p><strong>Exercício 04.</strong> Escreva um programa que pergunte ao usuário as coordenadas de latitude e longitude, em grau-decimal, de dois pontos quaisquer na esfera terrestre e que apresente a distância entre eles. Essa distância deverá ser calculada de acordo com a <a class="reference external" href="https://en.wikipedia.org/wiki/Haversine_formula">fórmula de Haversine</a>:</p>
 <div class="math notranslate nohighlight" id="equation-listas-l02-haversine">
@@ -254,70 +237,6 @@
 <p class="admonition-title">Nota</p>
 <p>Lembre-se que todas as funções trigonométricas e suas inversas, bem como funções para conversão entre graus e radianos encontram-se na <a class="reference external" href="https://docs.python.org/3/library/math.html">biblioteca matemática do Python</a>.</p>
 </div>
-<p><strong>Solução:</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; Distância de Haversine</span>
-
-<span class="sd">Este programa realiza a computação da distância de</span>
-<span class="sd">Haversine entre duas localizações geográficas.</span>
-
-<span class="sd">Se você quiser testar este programa, utilize as</span>
-<span class="sd">seguintes coordendas:</span>
-<span class="sd">* Localização de Ouro Preto:</span>
-<span class="sd">    - longitude: -43.50</span>
-<span class="sd">    - latitude: -20.38</span>
-
-<span class="sd">* São José dos Campos</span>
-<span class="sd">    - longitude: -45.88</span>
-<span class="sd">    - latitude: -23.17</span>
-
-<span class="sd">A distância entre Ouro Perto e São José dos Campos deve</span>
-<span class="sd">ser de aproximadamente ``395.758 km``.</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="kn">import</span> <span class="nn">math</span>
-
-
-<span class="n">long1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span> <span class="s2">&quot;Longitude do Ponto 1: &quot;</span> <span class="p">)</span> <span class="p">)</span>
-<span class="n">lat1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span> <span class="s2">&quot;Latitude do Ponto 1: &quot;</span> <span class="p">)</span> <span class="p">)</span>
-
-<span class="n">long2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span> <span class="s2">&quot;Longitude do Ponto 2: &quot;</span> <span class="p">)</span> <span class="p">)</span>
-<span class="n">lat2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span> <span class="s2">&quot;Latitude do Ponto 2: &quot;</span> <span class="p">)</span> <span class="p">)</span>
-
-<span class="c1"># Raio da Terra: 6371km</span>
-<span class="n">raio_terra</span> <span class="o">=</span> <span class="mi">6371</span>
-
-<span class="c1"># Covertendo de graus-decimal para radianos</span>
-<span class="n">fi1</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">lat1</span><span class="p">)</span>
-<span class="n">fi2</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">lat2</span><span class="p">)</span>
-
-<span class="n">lambda1</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">long1</span><span class="p">)</span>
-<span class="n">lambda2</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">long2</span><span class="p">)</span>
-
-<span class="c1"># Pré-computando alguns valores da fórmula de Haversine</span>
-<span class="n">delta_fi</span> <span class="o">=</span> <span class="n">fi2</span> <span class="o">-</span> <span class="n">fi1</span>
-<span class="n">delta_lambda</span> <span class="o">=</span> <span class="n">lambda2</span> <span class="o">-</span> <span class="n">lambda1</span>
-
-<span class="n">sin2_fi</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">delta_fi</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
-
-<span class="n">sin2_lambda</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">delta_lambda</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
-
-<span class="c1"># Computando a distância de Haversine</span>
-<span class="n">distancia</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">raio_terra</span> <span class="o">*</span> \
-                <span class="n">math</span><span class="o">.</span><span class="n">asin</span><span class="p">(</span> \
-                    <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> \
-                        <span class="n">sin2_fi</span> <span class="o">+</span> \
-                        <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">fi1</span><span class="p">)</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">fi2</span><span class="p">)</span> \
-                        <span class="o">*</span> <span class="n">sin2_lambda</span>
-                    <span class="p">)</span>
-                <span class="p">)</span>
-
-<span class="c1"># Escreve na saída padrão a distância computada</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">distancia</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Nota</p>
-<p>Mais adiante no curso iremos mostrar como estruturar o código acima em uma função, para que a seção de código que realiza a computação da distância possa ser reutilizada e melhor encapsulada em um programa.</p>
-</div>
 </div>
 
 
@@ -331,7 +250,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2021, Gilberto Queiroz and Thales Körting.</p>
+    <p>&#169; Copyright 2020-2022, Gilberto Queiroz and Thales Körting.</p>
   </div>
 
    

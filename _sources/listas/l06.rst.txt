@@ -25,7 +25,7 @@ Lista de Exercícios 06
 
 - Você deverá entregar a lista através de um *pull-request* a ser realizado no repositório associado ao seu usuário na organização `prog-geo <https://github.com/prog-geo>`_. Esse *pull-request* deverá conter uma pasta com nome **Lista-06** contendo todos os arquivos da entrega.
 
-- **Prazo para entrega:** 07/05/2021 - 18:00
+- **Prazo para entrega:** --/--/2022 - 18:00
 
 
 .. warning::
@@ -59,7 +59,9 @@ Lista de Exercícios 06
 
 *Parte 2*. Crie um plot com 1 linha e 3 colunas, apresentando as imagens dos 3 índices calculados.
 
+
 *Parte 3*. Mostre os valores mínimos e máximos de cada uma das 9 bandas da imagem.
+
 
 **Exercício 02.** Dadas 2 imagens pancromáticas da mesma região, registradas, com diferença temporal de aproximadamente 3 anos, realize uma análise de mudança da cobertura do solo:
 
@@ -69,11 +71,13 @@ Lista de Exercícios 06
 
 *Parte 1*. Abra os arquivos das 2 imagens, utilizando a GDAL, e gere uma visualização de cada imagem e de seu histograma.
 
-*Parte 2*. Crie uma nova matriz ``delta = t2 - t1`` utilizando os operadores aritméticos da NumPy. Gere uma visualização desta matriz, e apresente um scatterplot contendo como eixos, as imagens *t1* e *t2*.
+
+*Parte 2*. Crie uma nova matriz ``delta = t2 - t1`` utilizando os operadores aritméticos da NumPy. Gere uma visualização desta matriz, e apresente um scatterplot contendo como eixos, as imagens *t1* e *t2*.
 
 
 .. note::
 
-  A imagem *t1* possui um número de linhas diferente da imagem *t2*. Você precisará fazer os ajustes necessários.
+  A imagem *t1* possui um número de linhas diferente da imagem *t2*. Você precisará fazer os ajustes necessários.
+
 
 *Parte 3*. Verifique os limites mínimos e máximos da matriz resultante, e defina um intervalo de pixels que você considera como mudança e um intervalo que considera como não mudança. A partir destes intervalos, gere uma visualização de uma classificação de *mudança* e *não mudança*.
