@@ -36,7 +36,8 @@ Docentes
     |                                        | |br| |br|                                                                            |
     |                                        | Desde de 2016 é docente permanente de Geoinformática e Ciência de Dados Geoespaciais |
     |                                        | no curso de pós-graduação em Computação Aplicada do INPE.                            |
-    |                                        | Atualmente é um dos coordenadores do projeto Brazil Data Cube e suas áreas de        |
+    |                                        | Atualmente é um dos coordenadores do projeto                                         |
+    |                                        | `Brazil Data Cube <http://brazildatacube.org>`_ e suas áreas de                      |
     |                                        | pesquisa incluem computação aplicada aos desafios do sensoriamento remoto para       |
     |                                        | criação de mapas de uso e cobertura da terra e plataformas de *bigdata* na área      |
     |                                        | geoespacial.                                                                         |

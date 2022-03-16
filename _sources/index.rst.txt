@@ -36,7 +36,7 @@ Na era do big data, os profissionais necessitam cada vez mais de conhecimentos e
     :caption: Aulas:
 
     instalacao
-    introducao-programacao
+    ./introducao-programacao/index
     jupyter
     imagens
     vetorial
