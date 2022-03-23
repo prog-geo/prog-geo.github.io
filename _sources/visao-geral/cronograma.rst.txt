@@ -33,25 +33,25 @@ Aulas Regulares
     +------+------------+--------------------------------------------------------------------------------------------------------------+
     | 03   | 14/03/2022 | :ref:`Introdução à Programação com a Linguagem Python <cap_introducao_programacao>`:                         |
     |      |            |                                                                                                              |
-    |      |            |  - :ref:`Introdução <sec_introducao_programacao_introducao>`                                                 |
-    |      |            |  - :ref:`Primeiro Programa em Python <sec_introducao_programacao_primeiro_prog>`                             |
+    |      |            |   - :ref:`Introdução <sec_introducao_programacao_introducao>`                                                |
+    |      |            |   - :ref:`Primeiro Programa em Python <sec_introducao_programacao_primeiro_prog>`                            |
     +------+------------+--------------------------------------------------------------------------------------------------------------+
     | 04   | 16/03/2022 | :ref:`Introdução à Programação com a Linguagem Python <cap_introducao_programacao>`:                         |
     |      |            |                                                                                                              |
-    |      |            | - :ref: `Tipos de Dados <sec_introducao_programacao_tipos_dados>`                                            |
-    |      |            | - :ref: `Tipos Numéricos <sec_introducao_programacao_tipos_numericos>`                                       |
-    |      |            | - :ref: `Expressões <sec_introducao_programacao_expressoes>`                                                 |
+    |      |            |   - :ref:`Tipos de Dados <sec_introducao_programacao_tipos_dados>`                                           |
+    |      |            |   - :ref:`Tipos Numéricos <sec_introducao_programacao_tipos_numericos>`                                      |
+    |      |            |   - :ref:`Expressões <sec_introducao_programacao_expressoes>`                                                |
     +------+------------+--------------------------------------------------------------------------------------------------------------+
     | 05   | 21/03/2022 | :ref:`Introdução à Programação com a Linguagem Python <cap_introducao_programacao>`:                         |
     |      |            |                                                                                                              |
-    |      |            | - :ref: `Chamada de Funções <sec_introducao_programacao_chamada_funcoes>`                                    |
-    |      |            | - :ref: `Variáveis <sec_introducao_programacao_variaveis>`                                                   |
-    |      |            | - :ref: `Comentários <sec_introducao_programacao_comentarios>`                                               |
-    |      |            | - :ref: `Tipo Lógico <sec_introducao_programacao_tipo_logico>`                                               |
+    |      |            |   - :ref:`Chamada de Funções <sec_introducao_programacao_chamada_funcoes>`                                   |
+    |      |            |   - :ref:`Variáveis <sec_introducao_programacao_variaveis>`                                                  |
+    |      |            |   - :ref:`Comentários <sec_introducao_programacao_comentarios>`                                              |
+    |      |            |   - :ref:`Tipo Lógico <sec_introducao_programacao_tipo_logico>`                                              |
     +------+------------+--------------------------------------------------------------------------------------------------------------+
     | 06   | 23/03/2022 | :ref:`Introdução à Programação com a Linguagem Python <cap_introducao_programacao>`:                         |
     |      |            |                                                                                                              |
-    |      |            | - :ref: `Operadores Relacionais <sec_introducao_programacao_op_relacionais>`                                 |
+    |      |            |   - :ref:`Operadores Relacionais <sec_introducao_programacao_op_relacionais>`                                |
     +------+------------+--------------------------------------------------------------------------------------------------------------+
     | 07   | 28/03/2022 |                                                                                                              |
     +------+------------+--------------------------------------------------------------------------------------------------------------+
