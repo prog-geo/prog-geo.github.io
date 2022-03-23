@@ -6,7 +6,7 @@
 .. include:: ../def.rst
 
 
-.. _sec_primeiro_prog:
+.. _sec_introducao_programacao_primeiro_prog:
 
 Primeiro Programa em Python
 ===========================
