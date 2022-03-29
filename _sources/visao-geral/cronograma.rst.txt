@@ -49,11 +49,13 @@ Aulas Regulares
     |      |            |   - :ref:`Comentários <sec_introducao_programacao_comentarios>`                                              |
     |      |            |   - :ref:`Tipo Lógico <sec_introducao_programacao_tipo_logico>`                                              |
     +------+------------+--------------------------------------------------------------------------------------------------------------+
-    | 06   | 23/03/2022 | :ref:`Introdução à Programação com a Linguagem Python <cap_introducao_programacao>`:                         |
+    | 06   | 28/03/2022 | :ref:`Introdução à Programação com a Linguagem Python <cap_introducao_programacao>`:                         |
     |      |            |                                                                                                              |
     |      |            |   - :ref:`Operadores Relacionais <sec_introducao_programacao_op_relacionais>`                                |
+    |      |            |   - :ref:`Expressões Lógicas <sec_introducao_programacao_expressoes_logicas>`                                |
+    |      |            |   - :ref:`Estruturas Condicionais <ec_introducao_programacao_estruturas_condicionais>`                       |
     +------+------------+--------------------------------------------------------------------------------------------------------------+
-    | 07   | 28/03/2022 |                                                                                                              |
+    | 07   |            |                                                                                                              |
     +------+------------+--------------------------------------------------------------------------------------------------------------+
     | 08   | 30/03/2022 | Propostas de Projetos da Disciplina                                                                          |
     +------+------------+--------------------------------------------------------------------------------------------------------------+
