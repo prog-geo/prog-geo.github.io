@@ -53,7 +53,7 @@ Aulas Regulares
     |      |            |                                                                                                              |
     |      |            |   - :ref:`Operadores Relacionais <sec_introducao_programacao_op_relacionais>`                                |
     |      |            |   - :ref:`Expressões Lógicas <sec_introducao_programacao_expressoes_logicas>`                                |
-    |      |            |   - :ref:`Estruturas Condicionais <ec_introducao_programacao_estruturas_condicionais>`                       |
+    |      |            |   - :ref:`Estruturas Condicionais <sec_introducao_programacao_estruturas_condicionais>`                      |
     +------+------------+--------------------------------------------------------------------------------------------------------------+
     | 07   |            |                                                                                                              |
     +------+------------+--------------------------------------------------------------------------------------------------------------+
