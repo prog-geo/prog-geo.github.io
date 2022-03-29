@@ -25,7 +25,7 @@ Lista de Exercícios 02
 
 - Você deverá entregar a lista através de um *pull-request* a ser realizado no repositório associado ao seu usuário na organização `prog-geo <https://github.com/prog-geo>`_. Esse *pull-request* deverá conter todos os arquivos da entrega.
 
-- **Prazo para entrega:** 21/03/2022 - 18:00
+- **Prazo para entrega:** 06/04/2022 - 18:00
 
 
 -----
@@ -99,7 +99,7 @@ Lista de Exercícios 02
 -----
 
 
-**Exercício 03.** Considere a equação dos seguintes índices espectrais:
+**Exercício 03.** Considere as equações dos seguintes índices espectrais:
 
 - NDWI:
 

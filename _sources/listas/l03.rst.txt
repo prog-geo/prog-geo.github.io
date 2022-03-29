@@ -25,7 +25,7 @@ Lista de Exercícios 03
 
 - Você deverá entregar a lista através de um *pull-request* a ser realizado no repositório associado ao seu usuário na organização `prog-geo <https://github.com/prog-geo>`_. Esse *pull-request* deverá conter todos os arquivos da entrega.
 
-- **Prazo para entrega:** --/--/2022 - 18:00
+- **Prazo para entrega:** 13/04/2022 - 18:00
 
 
 -----
@@ -72,7 +72,7 @@ se não é divisível nem por 2 nem por 3.
 -----
 
 
-**Exercício 06.** Faça um programa que pergunte ao usuário o seu conceito final em uma disciplina hipotética. Dependendo do conceito digitado, diga o que ele significa, como mostrado abaixo::
+**Exercício 06.** Faça um programa que pergunte ao usuário o seu conceito final em uma disciplina hipotética. Dependendo do conceito digitado, diga o que ele significa (*Excepcional*, *Bom*, etc.). Utilize a tabela de conceitos abaixo::
 
      1. A+ Excepcional
      2. A  Excelente
@@ -89,7 +89,7 @@ se não é divisível nem por 2 nem por 3.
 -----
 
 
-**Exercício 07.** Escreva um programa em Python que simule uma calculadora com as 04 funções básicas (:math:`+`, :math:`−`, :math:`\div`, :math:`\times`). O programa deve pedir ao usuário para entrar com os operandos (números reais) e o tipo de operação, e a seguir escrever o resultado.
+**Exercício 07.** Escreva um programa em Python que simule uma calculadora com as 04 funções básicas (:math:`+`, :math:`−`, :math:`\div`, :math:`\times`). O programa deve pedir ao usuário para entrar com os operandos (números reais) e o tipo de operação (``+``, ``-``, ``/``, ``*``) e, a seguir, deverá escrever o resultado.
 
 
 -----
