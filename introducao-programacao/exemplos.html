@@ -151,47 +151,8 @@
 <a class="reference internal image-reference" href="../_images/eq-reta.png"><img alt="Ilustração de uma reta com coeficientes: a = 3, b = -2 e c = -6" src="../_images/eq-reta.png" style="width: 60%;" /></a>
 <p class="caption"><span class="caption-number">Figura 2.24 - </span><span class="caption-text">Ilustração de uma reta com coeficientes: <span class="math notranslate nohighlight">\(a = 3\)</span>, <span class="math notranslate nohighlight">\(b = -2\)</span> e <span class="math notranslate nohighlight">\(c = -6\)</span>.</span><a class="headerlink" href="#introd-prog-fig-eq-reta" title="Link Permanente para essa imagem"></a></p>
 </div>
-<p><strong>Solução:</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># coeficientes da equação geral da reta:</span>
-<span class="c1"># Ax + By + C = 0</span>
-<span class="n">A</span> <span class="o">=</span> <span class="mf">3.0</span>
-<span class="n">B</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.0</span>
-<span class="n">C</span> <span class="o">=</span> <span class="o">-</span><span class="mf">6.0</span>
-
-<span class="c1"># realiza a leitura das coordenadas de um ponto (x, y)</span>
-<span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;x: &#39;</span><span class="p">))</span>   <span class="c1"># lê x</span>
-<span class="n">y</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;y: &#39;</span><span class="p">))</span>   <span class="c1"># lê y</span>
-
-<span class="c1"># se a equação resultar em 0.0,</span>
-<span class="c1"># significa que o ponto encontra-se sobre a reta</span>
-<span class="n">r</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">B</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="n">C</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Resultado da equação para o ponto (</span><span class="si">{0}</span><span class="s2">, </span><span class="si">{1}</span><span class="s2">): </span><span class="si">{2}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">r</span><span class="p">))</span>
-</pre></div>
-</div>
 <hr class="docutils" />
 <p id="sec-introducao-programacao-exemplos-ex02"><strong>Exemplo 02.</strong> Altere o programa da equação geral de uma reta para incluir um teste condicional que escreva na tela a mensagem “Sobre a Reta”, caso o ponto informado esteja sobre a reta; caso o ponto encontre-se acima da reta, deverá ser escrita a mensagem “Acima da Reta”; e, caso o ponto encontra-se abaixo da reta, deverá ser escrita a mensagem “Abaixo da Reta”.</p>
-<p><strong>Solução:</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># coeficientes da equação geral da reta:</span>
-<span class="c1"># Ax + By + C = 0</span>
-<span class="n">A</span> <span class="o">=</span> <span class="mf">3.0</span>
-<span class="n">B</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.0</span>
-<span class="n">C</span> <span class="o">=</span> <span class="o">-</span><span class="mf">6.0</span>
-
-<span class="c1"># realiza a leitura das coordenadas de um ponto (x, y)</span>
-<span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;x: &#39;</span><span class="p">))</span>   <span class="c1"># lê x</span>
-<span class="n">y</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;y: &#39;</span><span class="p">))</span>   <span class="c1"># lê y</span>
-
-<span class="n">y0</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">A</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="n">C</span><span class="p">)</span> <span class="o">/</span> <span class="n">B</span>
-
-<span class="k">if</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="n">y0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Acima!&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">y0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Abaixo!&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sobre a reta!&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
 <hr class="docutils" />
 <p id="sec-introducao-programacao-exemplos-ex03"><strong>Exemplo 03.</strong> Escreva um programa em Python que leia um número inteiro <span class="math notranslate nohighlight">\(n\)</span> entre <span class="math notranslate nohighlight">\(1\)</span> e <span class="math notranslate nohighlight">\(10\)</span> e compute o fatorial desse número. Lembre-se que o fatorial de um número <span class="math notranslate nohighlight">\(n\)</span> é definindo como:</p>
 <div class="math notranslate nohighlight" id="equation-introd-prog-math-fat-produtorio">
@@ -202,25 +163,6 @@
 fat(1) = 1, &amp; \text{se $n = 1$}\\
 fat(n) = n \times fat(n - 1), &amp; \text{se $n &gt; 1$}
 \end{cases}\end{split}\]</div>
-<p><strong>Solução:</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite um número no intervalo [1, 10]: &quot;</span><span class="p">))</span>
-
-<span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">):</span>
-
-    <span class="n">fat</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">fat</span> <span class="o">=</span> <span class="n">fat</span> <span class="o">*</span> <span class="n">n</span>
-        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;variavel fat&#39;</span><span class="p">,</span> <span class="n">fat</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;variavel n&#39;</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;fatorial:&quot;</span><span class="p">,</span> <span class="n">fat</span><span class="p">)</span>
-
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Número fora do intervalo [1, 10].&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rode o programa novamente!&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
 <hr class="docutils" />
 <p id="sec-introducao-programacao-exemplos-ex04"><strong>Exemplo 04.</strong> A sequência de Fibonacci é uma sequência de números inteiros, começando por <span class="math notranslate nohighlight">\(0\)</span> e <span class="math notranslate nohighlight">\(1\)</span>, onde cada termo subsequente corresponde a soma dos dois anteriores:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="o">...</span>
@@ -234,92 +176,12 @@ fat(n) = n \times fat(n - 1), &amp; \text{se $n &gt; 1$}
     F_0 = 0
 \end{cases}\end{split}\]</div>
 <p>Faça um programa em Python que compute a sequência para um número <span class="math notranslate nohighlight">\(n\)</span> qualquer.</p>
-<p><strong>Solução:</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite um número &gt; 1: &quot;</span><span class="p">))</span>
-
-<span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
-    <span class="n">exit</span><span class="p">(</span><span class="s2">&quot;Entre com um número &gt; 1.&quot;</span><span class="p">)</span>
-
-<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-
-<span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-
-<span class="n">i</span> <span class="o">=</span> <span class="mi">2</span>
-
-<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">:</span>
-    <span class="n">proximo</span> <span class="o">=</span> <span class="n">b</span> <span class="o">+</span> <span class="n">a</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="n">proximo</span><span class="p">)</span>
-
-    <span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="n">proximo</span>
-
-    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
-</pre></div>
-</div>
 <hr class="docutils" />
 <p id="sec-introducao-programacao-exemplos-ex05"><strong>Exemplo 05.</strong> Escreva um programa em Python que leia dois números, <span class="math notranslate nohighlight">\(x\)</span> e <span class="math notranslate nohighlight">\(y\)</span>, e calcule a função potência <span class="math notranslate nohighlight">\(x^y\)</span>, sem utilizar o operador <code class="docutils literal notranslate"><span class="pre">**</span></code> de Python ou alguma função da biblioteca padrão.</p>
-<p><strong>Solução:</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite um número (X): &quot;</span><span class="p">))</span>
-<span class="n">y</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite um número (Y): &quot;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="n">y</span><span class="p">)</span>
-
-<span class="n">pot</span> <span class="o">=</span> <span class="mi">1</span>
-
-<span class="k">while</span> <span class="n">y</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
-    <span class="n">pot</span> <span class="o">=</span> <span class="n">pot</span> <span class="o">*</span> <span class="n">x</span>
-
-    <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">1</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X^Y:&quot;</span><span class="p">,</span> <span class="n">pot</span><span class="p">)</span>
-</pre></div>
-</div>
 <hr class="docutils" />
 <p id="sec-introducao-programacao-exemplos-ex06"><strong>Exemplo 06.</strong> Escreva um programa em Python que verifique se um número é primo ou não.</p>
-<p><strong>Solução:</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite um número: &quot;</span><span class="p">))</span>
-
-<span class="n">primo</span> <span class="o">=</span> <span class="kc">True</span>
-
-<span class="n">i</span> <span class="o">=</span> <span class="mi">2</span>
-
-<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-        <span class="n">primo</span> <span class="o">=</span> <span class="kc">False</span>
-        <span class="k">break</span>
-
-    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
-
-<span class="k">if</span> <span class="n">primo</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="s2">&quot;é primo!&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="s2">&quot;não é primo!&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
 <hr class="docutils" />
 <p id="sec-introducao-programacao-exemplos-ex07"><strong>Exemplo 07.</strong> Escreva um programa em Python que gere a tabela de multiplicação dos números de <span class="math notranslate nohighlight">\(1\)</span> a <span class="math notranslate nohighlight">\(10\)</span>.</p>
-<p><strong>Solução:</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
-
-<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tabuada:&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
-
-    <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span>
-
-    <span class="k">while</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="n">i</span> <span class="o">*</span> <span class="n">j</span><span class="p">)</span>
-
-        <span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span>
-
-    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
 <hr class="docutils" />
 <p id="sec-introducao-programacao-exemplos-ex08"><strong>Exemplo 08.</strong> Dada a lista de valores de NDVI:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">serie_ndvi</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.3</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">]</span>
