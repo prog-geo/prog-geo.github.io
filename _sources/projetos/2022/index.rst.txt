@@ -4,4 +4,5 @@ Turma 2022
 .. toctree::
     :maxdepth: 1
     :titlesonly:
-    :numbered:
+
+    ./p01-spectral

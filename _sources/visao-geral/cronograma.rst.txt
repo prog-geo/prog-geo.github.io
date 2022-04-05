@@ -55,13 +55,20 @@ Aulas Regulares
     |      |            |   - :ref:`Expressões Lógicas <sec_introducao_programacao_expressoes_logicas>`                                |
     |      |            |   - :ref:`Estruturas Condicionais <sec_introducao_programacao_estruturas_condicionais>`                      |
     +------+------------+--------------------------------------------------------------------------------------------------------------+
-    | 07   | 30/03/2022 |                                                                                                              |
+    | 07   | 30/03/2022 | :ref:`Introdução à Programação com a Linguagem Python <cap_introducao_programacao>`:                         |
+    |      |            |                                                                                                              |
+    |      |            |   - :ref:`Estruturas Condicionais <sec_introducao_programacao_estruturas_condicionais>`                      |
+    |      |            |   - :ref:`Estruturas de Repetição <sec_introducao_programacao_estruturas_repeticao>`                         |
     +------+------------+--------------------------------------------------------------------------------------------------------------+
-    | 08   | 30/03/2022 |                                                                                                              |
+    | 08   | 30/03/2022 | :ref:`Introdução à Programação com a Linguagem Python <cap_introducao_programacao>`:                         |
+    |      |            |                                                                                                              |
+    |      |            |   - :ref:`Estruturas de Repetição <sec_introducao_programacao_estruturas_repeticao>`                         |
     +------+------------+--------------------------------------------------------------------------------------------------------------+
-    | 09   | 04/04/2022 | Propostas de Projetos da Disciplina                                                                          |
+    | 09   | 04/04/2022 | :ref:`Introdução à Programação com a Linguagem Python <cap_introducao_programacao>`:                         |
+    |      |            |                                                                                                              |
+    |      |            |   - :ref:`O Tipo String <sec_introducao_programacao_strings>`                                                |
     +------+------------+--------------------------------------------------------------------------------------------------------------+
-    | 10   | 06/04/2022 |                                                                                                              |
+    | 10   | 06/04/2022 | Propostas de Projetos da Disciplina                                                                          |
     +------+------------+--------------------------------------------------------------------------------------------------------------+
     | 11   | 11/04/2022 |                                                                                                              |
     +------+------------+--------------------------------------------------------------------------------------------------------------+

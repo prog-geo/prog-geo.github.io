@@ -1,0 +1,119 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2022, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../../def.rst
+
+
+.. _sec_projetos_2022_p01:
+
+Spectral
+========
+
+
+O objetivo desse projeto é construir uma ferramenta em Python para computação de índices espectrais a partir de imagens de sensoriamento remoto.
+
+
+Requisitos
+----------
+
+
+**R1**: Esta ferramenta deverá possibilitar ao usuário informar o tipo de índice a ser computado e o nome dos arquivos (GeoTIFF) contendo as imagens com as bandas espectrais necessárias à criação do índice.
+
+
+**R2**: Fornecer ao usuário informações dos métodos suportados pela ferramenta, incluindo a listagem completa dos índices disponíveis e informações detalhadas sobre um índice em particular.
+
+
+.. note::
+
+    Considere fornecer ao usuário informações como:
+
+    .. rst-class:: open
+
+    - área de aplicação (vegetação, queimadas, água, áreas urbanas);
+
+    - fórmula;
+
+    - referência bibliográfica;
+
+    - bandas espectrais para sensores bem conhecidos (como OLI/Landsat-8, MSI/Sentinel-2 e WFI/CBERS4).
+
+
+**R3**: Integração com a biblioteca NumPy, permitindo tanto a computação de índices a partir de matrizes bidimensionais com valores das bandas espectrais necessárias, quanto matrizes representando séries temporais.
+
+
+.. note::
+
+    Considere utilizar o serviço de séries temporais do projeto `Brazil Data Cube <http://brazildatacube.org>`_, o `WTSS <http://brazildatacube.org/en/wtss-web-time-series-service-2/>`_, para testar a computação dos índices espectrais para uma série temporal dada uma localização no espaço geográfico.
+
+
+**R4**: Visualização dos índices espectrais a partir de configurações de paletas de cores adequadas a cada índice.
+
+
+**R5**: Integração com o ambiente Jupyter, permitindo apresentar informações sobre os índices na forma de tabelas e elementos gráficos apropriados.
+
+
+**R6**: Desenvolva esta ferramenta na forma de um pacote Python chamado ``spectral``.
+
+
+**R7**: Forneça uma interface de linha de comando para as funcionalidades deste pacote.
+
+
+**R8**: Considere criar um ou mais Notebooks que ajudem a apresentar as funcionalidades desse pacote, mostrando os índices disponíveis, equações e sensores para os quais esses índices podem ser calculados.
+
+
+Dados
+-----
+
+
+Utilize imagens CEBERS4, Sentinel-2 e Landsat-8 disponíveis no portal do projeto `Brazil Data Cube <http://brazildatacube.dpi.inpe.br/portal/>`_.
+
+
+Exemplos de funcionamento em linha de comando
+---------------------------------------------
+
+
+**Exemplo 1**: Para a criação do ``NDVI`` o usuário poderá utilizar um comando de linha como::
+
+    spectral --index ndvi --red red.tif --nir nir.tif --output ndvi.tif --verbose
+
+
+**Exemplo 2**: Fornecer uma opção de consulta dos índices suportados pela ferramenta. Por exemplo::
+
+    spectral --supported-indices
+
+
+Saída::
+
+    Canopy Chlorophyll Content Index
+    Crop water stress index
+    EVI
+    NDVI
+    ...
+
+
+Referências
+-----------
+
+
+O Capítulo 11 do livro de Jensen :cite:`jensen:2009` fornece os fundamentos sobre os índices de vegetação e apresenta uma seleção de índices. Lozano et al. (2007) :cite:`lozano:2007` e Capolupo et al. (2020)  :cite:`capolupo:2020`, também possuem uma ampla listagem de índices espectrais. Existe um banco de dados disponível na Web, chamado `Index DataBase <https://www.indexdatabase.de/>`_, que contém uma extensa lista de índices e os respectivos sensores, bem como um `repositório de scripts <https://sentinel-hub.github.io/custom-scripts/sentinel-2/indexdb/>`_ para visualização de dados com bases nesses índices a partir de imagens Sentinel-2.
+
+
+Considerações Finais
+--------------------
+
+
+**1.** Os produtos de código desenvolvidos deverão ser licenciados de acordo com os modelos de software livre MIT, e disponibilizados em um ou mais repositórios na organização ``prog-geoespacial``.
+
+
+**2.** Os pacotes deverão conter documentação de uso.
+
+
+**3.** Utilize o `template de pacotes Python do Brazil Data Cube <https://github.com/brazil-data-cube/cookiecutter-bdc>`_.
+
+
+**4.** Os produtos de dados de exemplo deverão ser disponibilizados de acordo com o modelo **Creative Commons**.
+
+
+**5.** Produzir um relatório no formato do evento `GEOINFO <http://www.geoinfo.info/>`_.
