@@ -53,7 +53,7 @@ Repare que todos os caracteres e mudanças de linha são incluídos como parte d
 
 .. note::
 
-    Em Python, apenas expressões entre parênteses (``([)``, ``)``), colchetes (``[``, ``]``) ou chaves (``{``, ``}``) podem expandir por múltiplas linhas físicas sem utilizar barras invertidas (``\``). Por exemplo, se você abrir o terminal de comandos do Python e tentar dividir a expressão ``10 + 20`` em duas linhas, como na tentativa abaixo, um erro de sintaxe será gerado::
+    Em Python, apenas expressões entre parênteses (``(``, ``)``), colchetes (``[``, ``]``) ou chaves (``{``, ``}``) podem expandir por múltiplas linhas físicas sem utilizar barras invertidas (``\``). Por exemplo, se você abrir o terminal de comandos do Python e tentar dividir a expressão ``10 + 20`` em duas linhas, como na tentativa abaixo, um erro de sintaxe será gerado::
 
         >>> 10 +
           File "<stdin>", line 1
