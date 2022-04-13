@@ -68,11 +68,24 @@ Aulas Regulares
     |      |            |                                                                                                              |
     |      |            |   - :ref:`O Tipo String <sec_introducao_programacao_strings>`                                                |
     +------+------------+--------------------------------------------------------------------------------------------------------------+
-    | 10   | 06/04/2022 | Propostas de Projetos da Disciplina                                                                          |
+    | 10   | 06/04/2022 | :ref:`Introdução à Programação com a Linguagem Python <cap_introducao_programacao>`:                         |
+    |      |            |   - :ref:`Palavras-chave <sec_introducao_programacao_keywords>`                                              |
+    |      |            |   - :ref:`Sequências <sec_introducao_programacao_sequencias>`                                                |
+    |      |            |                                                                                                              |
+    |      |            | Discussão das Propostas de Projetos da Disciplina                                                            |
     +------+------------+--------------------------------------------------------------------------------------------------------------+
-    | 11   | 11/04/2022 |                                                                                                              |
+    | 11   | 11/04/2022 | :ref:`Introdução à Programação com a Linguagem Python <cap_introducao_programacao>`:                         |
+    |      |            |   - :ref:`Dicionários <sec_introducao_programacao_dicionarios>`                                              |
+    |      |            |   - :ref:`Conjuntos <sec_introducao_programacao_set>`                                                        |
+    |      |            |   - :ref:`Formatação de Strings <sec_introducao_programacao_formatacao_strings>`                             |
+    |      |            |   - :ref:`Laços do tipo for <sec_introducao_lacos_for>`                                                      |
     +------+------------+--------------------------------------------------------------------------------------------------------------+
-    | 12   | 13/04/2022 |                                                                                                              |
+    | 12   | 13/04/2022 | :ref:`Introdução à Programação com a Linguagem Python <cap_introducao_programacao>`:                         |
+    |      |            |   - :ref:`Os Comandos break e continue <sec_introducao_break_continue>`                                      |
+    |      |            |   - :ref:`Comandos Compostos <sec_introducao_programacao_comandos_compostos>`                                |
+    |      |            |   - :ref:`Funções <sec_introducao_programacao_funcoes>`                                                      |
+    |      |            |                                                                                                              |
+    |      |            | Resolução Lista 2                                                                                            |
     +------+------------+--------------------------------------------------------------------------------------------------------------+
     | 13   | 18/04/2022 |                                                                                                              |
     +------+------------+--------------------------------------------------------------------------------------------------------------+

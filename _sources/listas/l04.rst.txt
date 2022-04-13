@@ -25,7 +25,7 @@ Lista de Exercícios 04
 
 - Você deverá entregar a lista através de um *pull-request* a ser realizado no repositório associado ao seu usuário na organização `prog-geo <https://github.com/prog-geo>`_. Esse *pull-request* deverá conter uma pasta com nome **Lista-04** contendo todos os arquivos da entrega.
 
-- **Prazo para entrega:** --/--/2022 - 18:00
+- **Prazo para entrega:** 17/04/2022 - 18:00
 
 
 .. warning::
