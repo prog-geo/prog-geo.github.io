@@ -1,0 +1,135 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _cap_prova_2022:
+
+Avaliação 2022
+==============
+
+
+Considere a seguinte lista de nomes de arquivos:
+
+
+.. code-block:: python
+
+    list_of_files = [
+        '11JAN27133853-M2AS-054874265010_01_P002.TIF',
+        'IMG_00001481.TIF',
+        'K5_20220406202237_000010_47352_D_ES07_HH_GTC_B_L1D.tif',
+        'IMG_PHR1B_PMS_202204081310085_ORT_6294369101_R1C1.JP2',
+        'IMAGE_HH_SRA_strip_011.tif',
+        'WV02S22_954027W044_0244442022032400000000MS00_GR005003002.tif',
+        '4083061-0220-MUL-C-1-1-1085421-150623T145841-BR.tif',
+        'GE01S22_461944W043_1776382022021700000000PN01_GU000000001.tif',
+        'CBERS_4A_WPM_20211227_199_141_L4_BAND0.tiff',
+        'CBERS_4_PAN5M_20220103_149_110_L4_BAND1.tif',
+        'KV3_21719_21718_01_3NP2_14_ORT_PSS1_355419_010122.tiff',
+        'KV3_21719_21718_01_3NP2_14_ORT_PSS1_355419_010122.xml',
+        'AMAZONIA_1_WFI_20211228_033_017_L4_BAND1.tif',
+        'AMAZONIA_1_WFI_20211228_033_017_L4_BAND1.xml',
+        '20220101_imagery_HH.tif'
+    ]
+
+
+-----
+
+
+**Questão 1.** Crie uma função chamada ``is_raster`` que receba como entrada um nome de arquivo em formato string, e retorne ``True`` se o nome do arquivo for correspondente ao padrão de imagens de satélite, e ``False`` se for de outro tipo. Considere como padrão de imagens o arquivo que possuir as extensões ``'.TIF'``, ``'.tif'``, ``'.JP2'`` ou ``'.tiff'``.
+
+
+Exemplos:
+
+
+.. code-block:: python
+
+    >>> is_raster('CBERS_4_PAN5M_20220103_149_110_L4_BAND1.tif')
+    True
+
+
+.. code-block:: python
+
+    >>> is_raster('KV3_21719_21718_01_3NP2_14_ORT_PSS1_355419_010122.xml')
+    False
+
+.. code-block:: python
+
+    >>> is_raster('11JAN27133853-M2AS-054874265010_01_P002.TIF.zip')
+    False
+
+
+-----
+
+
+**Questão 2.** Crie um *script* que passe por todos os arquivos da lista ``list_of_files`` e escreva na tela quantos nomes de arquivos são considerados imagens.
+
+
+-----
+
+
+**Questão 3.** O formato ESRI Shapefile é composto de pelo menos 3 arquivos, todos com o mesmo nome, e diferentes extensões (``.shp``, ``.dbf``, ``.shx``). Crie uma função ``get_shapefile``, que receba como entrada um nome de arquivo em formato string, verifique se o mesmo possui a extensão ``.shp``, e retorne uma lista de 03 arquivos, mantendo o nome, e alterando a extensão para as 03 indicadas (``.shp``, ``.dbf``, ``.shx``). Trate o caso de nomes de arquivos com letras maiúsculas e minúsculas.
+
+
+Exemplos:
+
+
+.. code-block:: python
+
+    >>> get_shapefile('teste.shp')
+    ('teste.shp', 'teste.dbf', 'teste.shx')
+
+
+.. code-block:: python
+
+    >>> get_shapefile('teste.tif')
+    ()
+
+
+.. code-block:: python
+
+    >>> get_shapefile('Vetor.SHP')
+    ('Vetor.SHP', 'Vetor.DBF', 'Vetor.SHX')
+
+
+-----
+
+
+**Questão 4.** Considere as séries temporais a seguir:
+
+
+.. code-block:: python
+
+    red_values = (
+        168, 398, 451, 337, 186, 232, 262, 349,
+        189, 204, 220, 220, 207, 239, 259, 258,
+        242, 331, 251, 323, 106, 1055, 170
+    )
+
+
+.. code-block:: python
+
+    nir_values = (
+        2346, 4431, 4638, 4286, 2752, 3521, 2928, 3087,
+        2702, 2685, 2702, 2865, 2835, 2955, 3019, 3391,
+        2986, 4042, 3050, 3617, 2478, 3361, 2613
+    )
+
+
+Crie um *script* que gere uma série temporal de NDVI (``ndvi_values``) a partir dos valores indicados. Faça também uma classificação simples, gerando uma nova série temporal como uma lista de elementos string (``classification``), com a seguinte regra:
+
+- :math:`NDVI > 0.7 \Rightarrow vegetação`
+
+- :math:`NDVI <= 0.7 \Rightarrow outros`
+
+
+Exemplo:
+
+
+.. code-block:: python
+
+    red_values = (323, 106, 1055, 170)
+    nir_values = (3617, 2478, 3361, 2613)
+
+    ndvi_values = [0.836, 0.917, 0.522, 0.877]
+    classification = ['vegetação', 'vegetação', 'outros', 'vegetação']

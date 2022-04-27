@@ -68,7 +68,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../referencias.html">Referências Bibliográficas</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Listas de Exercícios:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Listas de Exercícios</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../listas.html">Listas de Exercícios</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="l01.html">Lista de Exercícios 01</a></li>
@@ -79,6 +79,10 @@
 <li class="toctree-l2"><a class="reference internal" href="l06.html">Lista de Exercícios 06</a></li>
 </ul>
 </li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Provas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../provas/2022.html">Avaliação 2022</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
@@ -142,13 +146,93 @@
 </ul>
 <hr class="docutils" />
 <p><strong>Exercício 01.</strong> Faça um programa em Python que leia três números reais e escreva o valor do maior e do menor deles. Para resolver este exercício, não utilizar as funções <code class="docutils literal notranslate"><span class="pre">min/max</span></code>.</p>
+<p><strong>Solução:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Entre com o primeiro número: &#39;</span><span class="p">))</span>
+<span class="n">n2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Entre com o segundo número: &#39;</span><span class="p">))</span>
+<span class="n">n3</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Entre com o terceiro número: &#39;</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;O maior número: &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">n1</span> <span class="o">&gt;=</span> <span class="n">n2</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">n1</span> <span class="o">&gt;=</span> <span class="n">n3</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n1</span><span class="p">)</span>
+<span class="k">elif</span> <span class="p">(</span><span class="n">n2</span> <span class="o">&gt;=</span> <span class="n">n1</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">n2</span> <span class="o">&gt;=</span> <span class="n">n3</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n2</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n3</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;O menor número: &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">n1</span> <span class="o">&lt;=</span> <span class="n">n2</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">n1</span> <span class="o">&lt;=</span> <span class="n">n3</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n1</span><span class="p">)</span>
+<span class="k">elif</span> <span class="p">(</span><span class="n">n2</span> <span class="o">&lt;=</span> <span class="n">n1</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">n2</span> <span class="o">&lt;=</span> <span class="n">n3</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n2</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n3</span><span class="p">)</span>
+</pre></div>
+</div>
 <hr class="docutils" />
 <p><strong>Exercício 02.</strong> Escreva um programa em Python que leia o tamanho dos lados de um triângulo, avalie se esses valores realmente formam um triângulo, e em caso positivo, classifique o triângulo em isósceles, escaleno ou equilátero.</p>
+<p><strong>Solução:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span> <span class="s1">&#39;Primeiro lado do triângulo: &#39;</span><span class="p">))</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span> <span class="s1">&#39;Segundo lado do triângulo: &#39;</span><span class="p">))</span>
+<span class="n">c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span> <span class="s1">&#39;Terceiro lado do triângulo: &#39;</span><span class="p">))</span>
+
+<span class="c1"># checar se os lados formam um triângulo, segundo a regra:</span>
+<span class="c1"># | b - c | &lt; a &lt; b + c</span>
+<span class="c1"># | a - c | &lt; b &lt; a + c</span>
+<span class="c1"># | a - b | &lt; c &lt; a + b</span>
+<span class="k">if</span> <span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">c</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">a</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">b</span> <span class="o">+</span> <span class="n">c</span><span class="p">))</span> <span class="ow">and</span> \
+   <span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">c</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">b</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">c</span><span class="p">))</span> <span class="ow">and</span> \
+   <span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">c</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">c</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)):</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Os lados formam um triângulo: &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+    <span class="c1"># todos os lados iguais, equilátero</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">b</span> <span class="o">==</span> <span class="n">c</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Equilátero&#39;</span><span class="p">)</span>
+    <span class="c1"># todos os lados diferentes, escaleno</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">a</span> <span class="o">!=</span> <span class="n">b</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">b</span> <span class="o">!=</span> <span class="n">c</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">a</span> <span class="o">!=</span> <span class="n">c</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Escaleno&#39;</span><span class="p">)</span>
+    <span class="c1"># nenhum dos casos acima, isósceles</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Isósceles&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Os lados não formam um triângulo: &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 <hr class="docutils" />
 <p><strong>Exercício 03.</strong> Escreva um programa em Python que pergunte ao usuário um número entre 0 e 10, e diga se ele é ímpar ou par.</p>
+<p><strong>Solução:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Entre com um número no intervalo [0, 10]: &#39;</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">num</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Número é par:&#39;</span><span class="p">,</span> <span class="n">num</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Número é ímpar:&#39;</span><span class="p">,</span> <span class="n">num</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Número fora do intervalo [0, 10]:&#39;</span><span class="p">,</span> <span class="n">num</span><span class="p">)</span>
+</pre></div>
+</div>
 <hr class="docutils" />
 <p><strong>Exercício 04.</strong> Escreva um programa em Python que pergunte ao usuário um número qualquer (&gt; 0), e diga se ele é divisível apenas por 2, apenas por 3, por 2 e por 3, ou
 se não é divisível nem por 2 nem por 3.</p>
+<p><strong>Solução:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Entre com um número &gt; 0: &#39;</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">if</span> <span class="p">((</span><span class="n">num</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">((</span><span class="n">num</span> <span class="o">%</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="s1">&#39;é divisível por 2 e 3&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">num</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="s1">&#39;é divisível apenas por 2&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="p">(</span><span class="n">num</span> <span class="o">%</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="s1">&#39;é divisível apenas por 3&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="s1">&#39;não é divisível por 2 ou 3&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Você digitou um número menor ou igual a 0:&#39;</span><span class="p">,</span> <span class="n">num</span><span class="p">)</span>
+</pre></div>
+</div>
 <hr class="docutils" />
 <p><strong>Exercício 05.</strong> Faça um programa em Python que pergunte ao usuário qual a série que ele deseja calcular e em seguida imprima o nome da série escolhida. Veja o exemplo do que deve ser escrito na tela:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>0 Lucas
@@ -160,6 +244,32 @@ se não é divisível nem por 2 nem por 3.</p>
 Qual série você deseja computar? 3
 
 Você escolheu computar a série &quot;Square&quot;!
+</pre></div>
+</div>
+<p><strong>Solução:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        Séries:</span>
+<span class="s2">      0  Lucas</span>
+<span class="s2">      1  Pell</span>
+<span class="s2">      2  Triangular</span>
+<span class="s2">      3  Square</span>
+<span class="s2">      4  Pentagonal</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+
+<span class="n">opcao</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Qual série você deseja computar? &#39;</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="k">if</span> <span class="n">opcao</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Você escolheu computar a série &quot;Lucas&quot;!&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">opcao</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Você escolheu computar a série &quot;Pell&quot;!&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">opcao</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Você escolheu computar a série &quot;Triangular&quot;!&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">opcao</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Você escolheu computar a série &quot;Square&quot;!&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">opcao</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Você escolheu computar a série &quot;Pentagonal&quot;!&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Você escolheu uma opção inválida!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <hr class="docutils" />
@@ -176,8 +286,47 @@ Você escolheu computar a série &quot;Square&quot;!
 <span class="mf">10.</span> <span class="n">D</span>  <span class="n">Reprovação</span>
 </pre></div>
 </div>
+<p><strong>Solução:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">conceito</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Digite o seu conceito final na disciplina hipotética: &#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">conceito</span> <span class="o">==</span> <span class="s2">&quot;A+&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Excepcional&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">conceito</span> <span class="o">==</span> <span class="s2">&quot;A&quot;</span> <span class="ow">or</span> <span class="n">conceito</span> <span class="o">==</span> <span class="s2">&quot;A-&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Excelente&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">conceito</span> <span class="o">==</span> <span class="s2">&quot;B+&quot;</span> <span class="ow">or</span> <span class="n">conceito</span> <span class="o">==</span> <span class="s2">&quot;B&quot;</span> <span class="ow">or</span> <span class="n">conceito</span> <span class="o">==</span> <span class="s2">&quot;B-&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Bom&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">conceito</span> <span class="o">==</span> <span class="s2">&quot;C+&quot;</span> <span class="ow">or</span> <span class="n">conceito</span> <span class="o">==</span> <span class="s2">&quot;C&quot;</span> <span class="ow">or</span> <span class="n">conceito</span> <span class="o">==</span> <span class="s2">&quot;C-&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Regular&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">conceito</span> <span class="o">==</span> <span class="s1">&#39;D&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Reprovação&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Conceito inválido&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 <hr class="docutils" />
 <p><strong>Exercício 07.</strong> Escreva um programa em Python que simule uma calculadora com as 04 funções básicas (<span class="math notranslate nohighlight">\(+\)</span>, <span class="math notranslate nohighlight">\(−\)</span>, <span class="math notranslate nohighlight">\(\div\)</span>, <span class="math notranslate nohighlight">\(\times\)</span>). O programa deve pedir ao usuário para entrar com os operandos (números reais) e o tipo de operação (<code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>) e, a seguir, deverá escrever o resultado.</p>
+<p><strong>Solução:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">operando_1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Entre com o operando 1: &#39;</span><span class="p">))</span>
+<span class="n">tipo_de_operacao</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Entre com o tipo de operação (+, -, /, *): &#39;</span><span class="p">)</span>
+<span class="n">operando_2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Entre com o operando 2: &#39;</span><span class="p">))</span>
+
+<span class="n">resultado</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="k">if</span> <span class="n">tipo_de_operacao</span> <span class="o">==</span> <span class="s1">&#39;+&#39;</span><span class="p">:</span>
+    <span class="n">resultado</span> <span class="o">=</span> <span class="n">operando_1</span> <span class="o">+</span> <span class="n">operando_2</span>
+<span class="k">elif</span> <span class="n">tipo_de_operacao</span> <span class="o">==</span> <span class="s1">&#39;-&#39;</span><span class="p">:</span>
+    <span class="n">resultado</span> <span class="o">=</span> <span class="n">operando_1</span> <span class="o">-</span> <span class="n">operando_2</span>
+<span class="k">elif</span> <span class="n">tipo_de_operacao</span> <span class="o">==</span> <span class="s1">&#39;/&#39;</span><span class="p">:</span>
+    <span class="n">resultado</span> <span class="o">=</span> <span class="n">operando_1</span> <span class="o">/</span> <span class="n">operando_2</span>
+<span class="k">elif</span> <span class="n">tipo_de_operacao</span> <span class="o">==</span> <span class="s1">&#39;*&#39;</span><span class="p">:</span>
+    <span class="n">resultado</span> <span class="o">=</span> <span class="n">operando_1</span> <span class="o">*</span> <span class="n">operando_2</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tipo de operação inválido&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">resultado</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">operando_1</span><span class="p">,</span> <span class="n">tipo_de_operacao</span><span class="p">,</span> <span class="n">operando_2</span><span class="p">,</span> <span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="n">resultado</span><span class="p">)</span>
+</pre></div>
+</div>
 <hr class="docutils" />
 <p id="lista-02-ex-08"><strong>Exercício 08.</strong> Escreva um programa que calcule a menor distância entre um ponto e uma reta, possibilitando que o usuário entre com as informações de dois pontos pertencentes à reta, bem como o ponto para o qual deva ser avaliada a distância.</p>
 <div class="admonition note">
@@ -197,6 +346,32 @@ Você escolheu computar a série &quot;Square&quot;!
 <div class="admonition tip">
 <p class="admonition-title">Dica</p>
 <p>Compare seus resultados com os da calculadora online: <a class="reference external" href="https://onlinemschool.com/math/assistance/cartesian_coordinate/p_line1/">Distance from a point to a line - 2-Dimensional</a>.</p>
+</div>
+<p><strong>Solução:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="n">x1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;x1: &quot;</span><span class="p">))</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;y1: &quot;</span><span class="p">))</span>
+
+<span class="n">x2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;x2: &quot;</span><span class="p">))</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;y2: &quot;</span><span class="p">))</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;x: &quot;</span><span class="p">))</span>
+<span class="n">y</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;y: &quot;</span><span class="p">))</span>
+
+<span class="c1"># numerador</span>
+<span class="n">num</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">((</span><span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">x1</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">x2</span> <span class="o">-</span> <span class="n">x1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">y1</span><span class="p">))</span>
+
+<span class="c1"># denominador</span>
+<span class="n">den</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">x2</span> <span class="o">-</span> <span class="n">x1</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">den</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="n">num</span> <span class="o">/</span> <span class="n">den</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Distância:&#39;</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Coordenadas inválidas!&#39;</span><span class="p">)</span>
+</pre></div>
 </div>
 <hr class="docutils" />
 <p><strong>Exercício 09.</strong> Escreva um programa em Python que avalie se dois segmentos de reta se interceptam ou não.</p>
@@ -218,6 +393,47 @@ Você escolheu computar a série &quot;Square&quot;!
 <p class="admonition-title">Aviso</p>
 <p>Veja que não é pedido no exercício para que seja computado o ponto de interseção <span class="math notranslate nohighlight">\(I\)</span> mostrado na <a class="reference internal" href="#listas-fig-intersecao-entre-segmentos-de-reta"><span class="std std-numref">Figura 17</span></a>.</p>
 <p>Além disso, deve ser considerado que os segmentos <span class="math notranslate nohighlight">\(S\)</span> e <span class="math notranslate nohighlight">\(T\)</span> possuem interseção, se eles tiverem qualquer ponto em comum, incluindo as extremidades <span class="math notranslate nohighlight">\(P_1\)</span>, <span class="math notranslate nohighlight">\(P_2\)</span>, <span class="math notranslate nohighlight">\(P_3\)</span>, ou <span class="math notranslate nohighlight">\(P_4\)</span>.</p>
+</div>
+<p><strong>Solução:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;x1: &quot;</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;y1: &quot;</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="n">x2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;x2: &quot;</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;y2: &quot;</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="n">x3</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;x3: &quot;</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">y3</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;y3: &quot;</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="n">x4</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;x4: &quot;</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">y4</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;y4: &quot;</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="c1"># Posição de P3 em relação a P1 e P2</span>
+<span class="n">s123</span> <span class="o">=</span> <span class="p">(</span><span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x3</span> <span class="o">-</span> <span class="n">x1</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">x2</span> <span class="o">-</span> <span class="n">x1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">y3</span> <span class="o">-</span> <span class="n">y1</span><span class="p">)</span>
+
+<span class="c1"># Posição de P4 em relação a P1 e P2</span>
+<span class="n">s124</span> <span class="o">=</span> <span class="p">(</span><span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x4</span> <span class="o">-</span> <span class="n">x1</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">x2</span> <span class="o">-</span> <span class="n">x1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">y4</span> <span class="o">-</span> <span class="n">y1</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">s123</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">s124</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">):</span>   <span class="c1"># Trata-se de segmentos colineares?</span>
+    <span class="k">if</span> <span class="n">x1</span> <span class="o">==</span> <span class="n">x2</span><span class="p">:</span> <span class="c1"># se s1 é vertical =&gt; s2 também é vertical!</span>
+      <span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span> <span class="n">y2</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="nb">max</span><span class="p">(</span><span class="n">y3</span><span class="p">,</span> <span class="n">y4</span><span class="p">))</span> <span class="ow">and</span> <span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">y3</span><span class="p">,</span> <span class="n">y4</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="nb">max</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span> <span class="n">y2</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>        <span class="c1"># os segmentos não são verticais</span>
+      <span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="nb">max</span><span class="p">(</span><span class="n">x3</span><span class="p">,</span> <span class="n">x4</span><span class="p">))</span> <span class="ow">and</span> <span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">x3</span><span class="p">,</span> <span class="n">x4</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="nb">max</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">))</span>
+
+<span class="k">else</span><span class="p">:</span>  <span class="c1"># os segmentos não são colineares</span>
+    <span class="c1"># Posição de P1 em relação a P3 e P4</span>
+    <span class="n">s341</span> <span class="o">=</span> <span class="p">(</span><span class="n">y4</span> <span class="o">-</span> <span class="n">y3</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x1</span> <span class="o">-</span> <span class="n">x3</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">x4</span> <span class="o">-</span> <span class="n">x3</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">y1</span> <span class="o">-</span> <span class="n">y3</span><span class="p">)</span>
+
+    <span class="c1"># Posição de P2 em relação a P3 e P4</span>
+    <span class="n">s342</span> <span class="o">=</span> <span class="p">(</span><span class="n">y4</span> <span class="o">-</span> <span class="n">y3</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x2</span> <span class="o">-</span> <span class="n">x3</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">x4</span> <span class="o">-</span> <span class="n">x3</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">y2</span> <span class="o">-</span> <span class="n">y3</span><span class="p">)</span>
+
+    <span class="c1"># os segmentos só irão se interceptar se os sinais forem todos opostos</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">((</span><span class="n">s123</span> <span class="o">*</span> <span class="n">s124</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mf">0.0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">((</span><span class="n">s341</span> <span class="o">*</span> <span class="n">s342</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mf">0.0</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">result</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Os segmentos s e t se interceptam!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Os segmentos s e t não se interceptam!&quot;</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
 

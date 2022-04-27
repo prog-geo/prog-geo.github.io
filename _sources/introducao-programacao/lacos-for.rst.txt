@@ -44,7 +44,7 @@ Usando a função ``enumerate``
     cidades = ["São Paulo", "Rio de Janeiro", "Belo Horizonte"]
 
     for i, cidade in enumerate(cidades):
-        print("{}: {}".format(i, cidade)
+        print("{}: {}".format(i, cidade))
 
 
 Atravessando Listas
