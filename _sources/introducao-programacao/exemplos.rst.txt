@@ -35,6 +35,28 @@ Considere a reta com os seguintes coeficientes: :math:`a = 3`, :math:`b = -2` e 
     Ilustração de uma reta com coeficientes: :math:`a = 3`, :math:`b = -2` e :math:`c = -6`.
 
 
+**Solução:**
+
+
+.. code-block:: python
+
+    # coeficientes da equação geral da reta:
+    # Ax + By + C = 0
+    A = 3.0
+    B = -2.0
+    C = -6.0
+
+    # realiza a leitura das coordenadas de um ponto (x, y)
+    x = float(input('x: '))   # lê x
+    y = float(input('y: '))   # lê y
+
+    # se a equação resultar em 0.0,
+    # significa que o ponto encontra-se sobre a reta
+    r = A*x + B*y + C
+
+    print("Resultado da equação para o ponto ({0}, {1}): {2}".format(x, y, r))
+
+
 -----
 
 
@@ -42,6 +64,29 @@ Considere a reta com os seguintes coeficientes: :math:`a = 3`, :math:`b = -2` e 
 
 **Exemplo 02.** Altere o programa da equação geral de uma reta para incluir um teste condicional que escreva na tela a mensagem "Sobre a Reta", caso o ponto informado esteja sobre a reta; caso o ponto encontre-se acima da reta, deverá ser escrita a mensagem "Acima da Reta"; e, caso o ponto encontra-se abaixo da reta, deverá ser escrita a mensagem "Abaixo da Reta".
 
+**Solução:**
+
+
+.. code-block:: python
+
+    # coeficientes da equação geral da reta:
+    # Ax + By + C = 0
+    A = 3.0
+    B = -2.0
+    C = -6.0
+     
+    # realiza a leitura das coordenadas de um ponto (x, y)
+    x = float(input('x: '))   # lê x
+    y = float(input('y: '))   # lê y
+     
+    y0 = (-A*x - C) / B
+     
+    if y > y0:
+        print("Acima!")
+    elif y < y0:
+        print("Abaixo!")
+    else:
+        print("Sobre a reta!")
 
 -----
 
@@ -67,6 +112,27 @@ ou,
     \end{cases}
 
 
+**Solução:**
+
+
+.. code-block:: python
+
+    n = int(input("Digite um número no intervalo [1, 10]: "))
+
+    if (n >= 1) and (n <= 10):
+
+        fat = 1
+        while n > 1:
+            fat = fat * n
+            n = n - 1
+            print('variavel fat', fat)
+            print('variavel n', n)
+
+        print("fatorial:", fat)
+
+    else:
+        print("Número fora do intervalo [1, 10].")
+        print("Rode o programa novamente!")
 
 -----
 
@@ -94,6 +160,34 @@ A seguinte fórmula recursiva define esta sequência:
 Faça um programa em Python que compute a sequência para um número :math:`n` qualquer.
 
 
+**Solução:**
+
+
+.. code-block:: python
+
+    n = int(input("Digite um número > 1: "))
+
+    if n <= 1:
+        exit("Entre com um número > 1.")
+
+    a = 0
+    print(a)
+
+    b = 1
+    print(b)
+
+    i = 2
+
+    while i <= n:
+        proximo = b + a
+
+        print(proximo)
+
+        a = b
+        b = proximo
+
+        i = i + 1
+
 
 -----
 
@@ -102,6 +196,24 @@ Faça um programa em Python que compute a sequência para um número :math:`n` q
 
 **Exemplo 05.** Escreva um programa em Python que leia dois números, :math:`x` e :math:`y`, e calcule a função potência :math:`x^y`, sem utilizar o operador ``**`` de Python ou alguma função da biblioteca padrão.
 
+
+**Solução:**
+
+
+.. code-block:: python
+
+    x = int(input("Digite um número (X): "))
+    y = int(input("Digite um número (Y): "))
+    print(x**y)
+
+    pot = 1
+
+    while y >= 1:
+        pot = pot * x
+
+        y = y - 1
+
+    print("X^Y:", pot)
 
 
 -----
@@ -112,6 +224,31 @@ Faça um programa em Python que compute a sequência para um número :math:`n` q
 **Exemplo 06.** Escreva um programa em Python que verifique se um número é primo ou não.
 
 
+**Solução:**
+
+
+.. code-block:: python
+
+    n = int(input("Digite um número: "))
+
+    primo = True
+
+    i = 2
+
+    while i < n:
+
+        if (n % i) == 0:
+            print(i)
+            primo = False
+            break
+
+        i = i + 1
+
+    if primo:
+        print(n, "é primo!")
+    else:
+        print(n, "não é primo!")
+
 
 -----
 
@@ -119,6 +256,28 @@ Faça um programa em Python que compute a sequência para um número :math:`n` q
 .. _sec_introducao_programacao_exemplos_ex07:
 
 **Exemplo 07.** Escreva um programa em Python que gere a tabela de multiplicação dos números de :math:`1` a :math:`10`.
+
+
+**Solução:**
+
+
+.. code-block:: python
+
+    i = 1
+
+    while i <= 10:
+        print("Tabuada:", i)
+
+        j = 1
+
+        while j <= 10:
+            print(i, "x", j, "=", i * j)
+
+            j = j + 1
+
+        i = i + 1
+
+        print("")
 
 
 -----

@@ -159,7 +159,7 @@ Por padrão, os valores são formatados tomando o máximo de caracteres necessá
 
 .. code-block:: python
 
-    >>> '{:05}' % 38
+    >>> '{:05}'.format(38)
     '00038'
 
 
