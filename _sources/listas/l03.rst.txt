@@ -34,70 +34,12 @@ Lista de Exercícios 03
 **Exercício 01.** Faça um programa em Python que leia três números reais e escreva o valor do maior e do menor deles. Para resolver este exercício, não utilizar as funções ``min/max``.
 
 
-**Solução:**
-
-
-.. code-block:: python
-
-    n1 = float(input('Entre com o primeiro número: '))
-    n2 = float(input('Entre com o segundo número: '))
-    n3 = float(input('Entre com o terceiro número: '))
-
-    print('O maior número: ', end='')
-
-    if (n1 >= n2) and (n1 >= n3):
-        print(n1)
-    elif (n2 >= n1) and (n2 >= n3):
-        print(n2)
-    else:
-        print(n3)
-
-    print('O menor número: ', end='')
-
-    if (n1 <= n2) and (n1 <= n3):
-        print(n1)
-    elif (n2 <= n1) and (n2 <= n3):
-        print(n2)
-    else:
-        print(n3)
-
 
 -----
 
 
 **Exercício 02.** Escreva um programa em Python que leia o tamanho dos lados de um triângulo, avalie se esses valores realmente formam um triângulo, e em caso positivo, classifique o triângulo em isósceles, escaleno ou equilátero.
 
-
-**Solução:**
-
-
-.. code-block:: python
-
-    a = float(input( 'Primeiro lado do triângulo: '))
-    b = float(input( 'Segundo lado do triângulo: '))
-    c = float(input( 'Terceiro lado do triângulo: '))
-
-    # checar se os lados formam um triângulo, segundo a regra:
-    # | b - c | < a < b + c
-    # | a - c | < b < a + c
-    # | a - b | < c < a + b
-    if (abs(b - c) < a) and (a < (b + c)) and \
-       (abs(a - c) < b) and (b < (a + c)) and \
-       (abs(a - b) < c) and (c < (a + b)):
-
-        print('Os lados formam um triângulo: ', end='')
-
-        # todos os lados iguais, equilátero
-        if (a == b) and (b == c):
-            print('Equilátero')
-        # todos os lados diferentes, escaleno
-        elif (a != b) and (b != c) and (a != c):
-            print('Escaleno')
-        # nenhum dos casos acima, isósceles
-        else:
-            print('Isósceles')
-    else:
-        print('Os lados não formam um triângulo: ', end='')
 
 
 -----
@@ -106,21 +48,6 @@ Lista de Exercícios 03
 **Exercício 03.** Escreva um programa em Python que pergunte ao usuário um número entre 0 e 10, e diga se ele é ímpar ou par.
 
 
-**Solução:**
-
-
-.. code-block:: python
-
-    num = int(input('Entre com um número no intervalo [0, 10]: '))
-
-    if 0 <= num <= 10:
-        if (num % 2) == 0:
-            print('Número é par:', num)
-        else:
-            print('Número é ímpar:', num)
-    else:
-        print('Número fora do intervalo [0, 10]:', num)
-
 
 -----
 
@@ -128,25 +55,6 @@ Lista de Exercícios 03
 **Exercício 04.** Escreva um programa em Python que pergunte ao usuário um número qualquer (> 0), e diga se ele é divisível apenas por 2, apenas por 3, por 2 e por 3, ou
 se não é divisível nem por 2 nem por 3.
 
-
-**Solução:**
-
-
-.. code-block:: python
-
-    num = int(input('Entre com um número > 0: '))
-
-    if num > 0:
-        if ((num % 2) == 0) and ((num % 3) == 0):
-            print(num, 'é divisível por 2 e 3')
-        elif (num % 2) == 0:
-            print(num, 'é divisível apenas por 2')
-        elif (num % 3) == 0:
-            print(num, 'é divisível apenas por 3')
-        else:
-            print(num, 'não é divisível por 2 ou 3')
-    else:
-        print('Você digitou um número menor ou igual a 0:', num)
 
 
 -----
@@ -163,36 +71,6 @@ se não é divisível nem por 2 nem por 3.
     Qual série você deseja computar? 3
 
     Você escolheu computar a série "Square"!
-
-
-**Solução:**
-
-
-.. code-block:: python
-
-    print("""
-            Séries:
-          0  Lucas
-          1  Pell
-          2  Triangular
-          3  Square
-          4  Pentagonal
-    """)
-
-    opcao = int( input('Qual série você deseja computar? ') )
-
-    if opcao == 0:
-        print('Você escolheu computar a série "Lucas"!')
-    elif opcao == 1:
-        print('Você escolheu computar a série "Pell"!')
-    elif opcao == 2:
-        print('Você escolheu computar a série "Triangular"!')
-    elif opcao == 3:
-        print('Você escolheu computar a série "Square"!')
-    elif opcao == 4:
-        print('Você escolheu computar a série "Pentagonal"!')
-    else:
-        print('Você escolheu uma opção inválida!')
 
 
 -----
@@ -212,57 +90,12 @@ se não é divisível nem por 2 nem por 3.
     10. D  Reprovação
 
 
-**Solução:**
-
-
-.. code-block:: python
-
-    conceito = input('Digite o seu conceito final na disciplina hipotética: ')
-
-    if conceito == "A+":
-        print('Excepcional')
-    elif conceito == "A" or conceito == "A-":
-        print('Excelente')
-    elif conceito == "B+" or conceito == "B" or conceito == "B-":
-        print('Bom')
-    elif conceito == "C+" or conceito == "C" or conceito == "C-":
-        print('Regular')
-    elif conceito == 'D':
-        print('Reprovação')
-    else:
-        print('Conceito inválido')
-
 
 -----
 
 
 **Exercício 07.** Escreva um programa em Python que simule uma calculadora com as 04 funções básicas (:math:`+`, :math:`−`, :math:`\div`, :math:`\times`). O programa deve pedir ao usuário para entrar com os operandos (números reais) e o tipo de operação (``+``, ``-``, ``/``, ``*``) e, a seguir, deverá escrever o resultado.
 
-
-**Solução:**
-
-
-.. code-block:: python
-
-    operando_1 = float(input('Entre com o operando 1: '))
-    tipo_de_operacao = input('Entre com o tipo de operação (+, -, /, *): ')
-    operando_2 = float(input('Entre com o operando 2: '))
-
-    resultado = None
-
-    if tipo_de_operacao == '+':
-        resultado = operando_1 + operando_2
-    elif tipo_de_operacao == '-':
-        resultado = operando_1 - operando_2
-    elif tipo_de_operacao == '/':
-        resultado = operando_1 / operando_2
-    elif tipo_de_operacao == '*':
-        resultado = operando_1 * operando_2
-    else:
-        print('Tipo de operação inválido')
-
-    if resultado != None:
-        print(operando_1, tipo_de_operacao, operando_2, '=', resultado)
 
 
 -----
@@ -310,35 +143,6 @@ se não é divisível nem por 2 nem por 3.
     Compare seus resultados com os da calculadora online: `Distance from a point to a line - 2-Dimensional <https://onlinemschool.com/math/assistance/cartesian_coordinate/p_line1/>`_.
 
 
-**Solução:**
-
-
-.. code-block:: python
-
-    import math
-
-    x1 = float(input("x1: "))
-    y1 = float(input("y1: "))
-
-    x2 = float(input("x2: "))
-    y2 = float(input("y2: "))
-
-    x = float(input("x: "))
-    y = float(input("y: "))
-
-    # numerador
-    num = abs((y2 - y1) * (x - x1) - (x2 - x1) * (y - y1))
-
-    # denominador
-    den = math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
-
-    if den > 0:
-        h = num / den
-
-        print('Distância:', h)
-    else:
-        print('Coordenadas inválidas!')
-
 
 -----
 
@@ -377,46 +181,3 @@ se não é divisível nem por 2 nem por 3.
     Além disso, deve ser considerado que os segmentos :math:`S` e :math:`T` possuem interseção, se eles tiverem qualquer ponto em comum, incluindo as extremidades :math:`P_1`, :math:`P_2`, :math:`P_3`, ou :math:`P_4`.
 
 
-**Solução:**
-
-
-.. code-block:: python
-
-    x1 = float( input("x1: ") )
-    y1 = float( input("y1: ") )
-
-    x2 = float( input("x2: ") )
-    y2 = float( input("y2: ") )
-
-    x3 = float( input("x3: ") )
-    y3 = float( input("y3: ") )
-
-    x4 = float( input("x4: ") )
-    y4 = float( input("y4: ") )
-
-    # Posição de P3 em relação a P1 e P2
-    s123 = (y2 - y1) * (x3 - x1) - (x2 - x1) * (y3 - y1)
-
-    # Posição de P4 em relação a P1 e P2
-    s124 = (y2 - y1) * (x4 - x1) - (x2 - x1) * (y4 - y1)
-
-    if (s123 == 0.0) and (s124 == 0.0):   # Trata-se de segmentos colineares?
-        if x1 == x2: # se s1 é vertical => s2 também é vertical!
-          result = (min(y1, y2) <= max(y3, y4)) and (min(y3, y4) <= max(y1, y2))
-        else:        # os segmentos não são verticais
-          result = (min(x1, x2) <= max(x3, x4)) and (min(x3, x4) <= max(x1, x2))
-
-    else:  # os segmentos não são colineares
-        # Posição de P1 em relação a P3 e P4
-        s341 = (y4 - y3) * (x1 - x3) - (x4 - x3) * (y1 - y3)
-
-        # Posição de P2 em relação a P3 e P4
-        s342 = (y4 - y3) * (x2 - x3) - (x4 - x3) * (y2 - y3)
-
-        # os segmentos só irão se interceptar se os sinais forem todos opostos
-        result = ((s123 * s124) <= 0.0) and ((s341 * s342) <= 0.0)
-
-    if result:
-        print("Os segmentos s e t se interceptam!")
-    else:
-        print("Os segmentos s e t não se interceptam!")
