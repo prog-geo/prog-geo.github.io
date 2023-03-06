@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="pt-BR" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>2.2. Primeiro Programa em Python &mdash; SER-347/CAP-419</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -16,10 +17,10 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script src="../_static/translations.js"></script>
@@ -36,12 +37,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #2980B9" >
-            <a href="../index.html" class="icon icon-home"> SER-347/CAP-419
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SER-347/CAP-419
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Pesquisar documentos" />
+    <input type="text" name="q" placeholder="Pesquisar documentos" aria-label="Pesquisar documentos" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -103,10 +108,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Provas</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../provas/2022.html">Avaliação 2022</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2022/index.html">Turma 2022</a></li>
@@ -134,9 +135,9 @@
         <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Navegação da página">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html"><span class="section-number">2. </span>Introdução à Programação com a Linguagem Python</a> &raquo;</li>
-      <li><span class="section-number">2.2. </span>Primeiro Programa em Python</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">2. </span>Introdução à Programação com a Linguagem Python</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">2.2. </span>Primeiro Programa em Python</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Navegação sequencial da página">
@@ -148,31 +149,39 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="primeiro-programa-em-python">
-<span id="sec-introducao-programacao-primeiro-prog"></span><h1><span class="section-number">2.2. </span>Primeiro Programa em Python<a class="headerlink" href="#primeiro-programa-em-python" title="Link permanente para este título"></a></h1>
+  <section id="primeiro-programa-em-python">
+<span id="sec-introducao-programacao-primeiro-prog"></span><h1><span class="section-number">2.2. </span>Primeiro Programa em Python<a class="headerlink" href="#primeiro-programa-em-python" title="Link permanente para este cabeçalho"></a></h1>
 <p>Vamos começar por uma tradição na computação que é a criação de um programa que escreve na saída padrão, isto é, na tela do computador, a mensagem <code class="docutils literal notranslate"><span class="pre">Olá</span> <span class="pre">Mundo!</span></code>. Para isso, vamos ao <a class="reference external" href="https://colab.research.google.com/notebooks/intro.ipynb">Google Colab</a>.</p>
-<div class="align-center figure align-default" id="introd-prog-google-colab">
+<figure class="align-center align-default" id="introd-prog-google-colab">
 <a class="reference internal image-reference" href="../_images/google-colab.png"><img alt="Google Colab" src="../_images/google-colab.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 2.6 - </span><span class="caption-text"><strong>Google Colab</strong>.</span><a class="headerlink" href="#introd-prog-google-colab" title="Link Permanente para essa imagem"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Figura 2.6 - </span><span class="caption-text"><strong>Google Colab</strong>.</span><a class="headerlink" href="#introd-prog-google-colab" title="Link Permanente para essa imagem"></a></p>
+</figcaption>
+</figure>
 <p>Na janela do Colab (<a class="reference internal" href="#introd-prog-google-colab"><span class="std std-numref">Figura 2.6</span></a>), crie um novo documento, conhecido como Jupyter Notebook, selecionando o menu <span class="guilabel">File</span> e a opção <span class="guilabel">New notebook</span>. Isso fará com que uma janela como a mostrada na <a class="reference internal" href="#introd-prog-google-colab-new-notebook"><span class="std std-numref">Figura 2.7</span></a> seja apresentada.</p>
-<div class="align-center figure align-default" id="introd-prog-google-colab-new-notebook">
+<figure class="align-center align-default" id="introd-prog-google-colab-new-notebook">
 <a class="reference internal image-reference" href="../_images/google-colab-new-notebook.png"><img alt="Novo Jupyter Notebook no Google Colab" src="../_images/google-colab-new-notebook.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 2.7 - </span><span class="caption-text">Novo <strong>Jupyter Notebook</strong> no Google Colab.</span><a class="headerlink" href="#introd-prog-google-colab-new-notebook" title="Link Permanente para essa imagem"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Figura 2.7 - </span><span class="caption-text">Novo <strong>Jupyter Notebook</strong> no Google Colab.</span><a class="headerlink" href="#introd-prog-google-colab-new-notebook" title="Link Permanente para essa imagem"></a></p>
+</figcaption>
+</figure>
 <p>O novo documento criado possui uma célula de código. Nesse espaço, entre com o seguinte comando (<a class="reference internal" href="#introd-prog-google-colab-hello-world"><span class="std std-numref">Figura 2.8</span></a>):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Olá Mundo!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="align-center figure align-default" id="introd-prog-google-colab-hello-world">
+<figure class="align-center align-default" id="introd-prog-google-colab-hello-world">
 <a class="reference internal image-reference" href="../_images/google-colab-hello-world.png"><img alt="Criando o primeiro programa Python no Google Colab" src="../_images/google-colab-hello-world.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 2.8 - </span><span class="caption-text">Criando o primeiro programa Python no Google Colab.</span><a class="headerlink" href="#introd-prog-google-colab-hello-world" title="Link Permanente para essa imagem"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Figura 2.8 - </span><span class="caption-text">Criando o primeiro programa Python no Google Colab.</span><a class="headerlink" href="#introd-prog-google-colab-hello-world" title="Link Permanente para essa imagem"></a></p>
+</figcaption>
+</figure>
 <p>Agora, podemos executar a célula de código, isto é, solicitar que a instrução contendo código na linguagem Python seja tratada pelo interpretador Python. A saída será apresentada logo abaixo da célula de código, como mostrado na <a class="reference internal" href="#introd-prog-google-colab-hello-world-output"><span class="std std-numref">Figura 2.9</span></a>.</p>
-<div class="align-center figure align-default" id="introd-prog-google-colab-hello-world-output">
+<figure class="align-center align-default" id="introd-prog-google-colab-hello-world-output">
 <a class="reference internal image-reference" href="../_images/google-colab-hello-world-output.png"><img alt="Saída do primeiro programa Python no Google Colab" src="../_images/google-colab-hello-world-output.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 2.9 - </span><span class="caption-text">Saída do primeiro programa Python no Google Colab.</span><a class="headerlink" href="#introd-prog-google-colab-hello-world-output" title="Link Permanente para essa imagem"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Figura 2.9 - </span><span class="caption-text">Saída do primeiro programa Python no Google Colab.</span><a class="headerlink" href="#introd-prog-google-colab-hello-world-output" title="Link Permanente para essa imagem"></a></p>
+</figcaption>
+</figure>
 <p>Nesse primeiro programa, temos muitas coisas para discutir:</p>
 <ul class="open">
 <li><p>Programas em Python consistem de um conjunto de instruções, que informam as operações que devem ser realizadas para a execução de uma dada computação. Em geral, essas instruções serão formadas, entre outras coisas, por:</p>
@@ -187,8 +196,8 @@
 <li><p>Os parênteses que seguem após o nome da função delimitam a lista de argumentos ou valores para que a função realize sua computação.</p></li>
 <li><p>No caso do nosso programa, estamos passando um texto delimitado por aspas duplas, que é o texto que desejamos escrever na saída padrão do computador. A saída padrão, em geral, será a própria tela ou <em>display</em>.</p></li>
 </ul>
-<div class="section" id="conversao-entre-escalas-de-temperatura-of-rightarrow-oc">
-<h2><span class="section-number">2.2.1. </span>Conversão entre Escalas de Temperatura: <span class="math notranslate nohighlight">\(^oF \, \rightarrow \, ^oC\)</span><a class="headerlink" href="#conversao-entre-escalas-de-temperatura-of-rightarrow-oc" title="Link permanente para este título"></a></h2>
+<section id="conversao-entre-escalas-de-temperatura-of-rightarrow-oc">
+<h2><span class="section-number">2.2.1. </span>Conversão entre Escalas de Temperatura: <span class="math notranslate nohighlight">\(^oF \, \rightarrow \, ^oC\)</span><a class="headerlink" href="#conversao-entre-escalas-de-temperatura-of-rightarrow-oc" title="Link permanente para este cabeçalho"></a></h2>
 <p><strong>Problema 1:</strong> Escrever um programa para converter a temperatura de <span class="math notranslate nohighlight">\(20^oF\)</span> no valor equivalente na escala Celsius.</p>
 <div class="admonition tip">
 <p class="admonition-title">Dica</p>
@@ -237,8 +246,8 @@
 <p class="admonition-title">Nota</p>
 <p>Repare no trecho de código acima que utilizamos a função denominada <code class="docutils literal notranslate"><span class="pre">int</span></code> para converter a sequência de caracteres retornada pela função <code class="docutils literal notranslate"><span class="pre">input</span></code> numa representação numérica do tipo inteiro.</p>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

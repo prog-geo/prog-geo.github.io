@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="pt-BR" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>2.26. Exemplos &mdash; SER-347/CAP-419</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -16,10 +17,10 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script src="../_static/translations.js"></script>
@@ -36,12 +37,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #2980B9" >
-            <a href="../index.html" class="icon icon-home"> SER-347/CAP-419
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SER-347/CAP-419
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Pesquisar documentos" />
+    <input type="text" name="q" placeholder="Pesquisar documentos" aria-label="Pesquisar documentos" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -100,10 +105,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Provas</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../provas/2022.html">Avaliação 2022</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2022/index.html">Turma 2022</a></li>
@@ -131,9 +132,9 @@
         <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Navegação da página">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html"><span class="section-number">2. </span>Introdução à Programação com a Linguagem Python</a> &raquo;</li>
-      <li><span class="section-number">2.26. </span>Exemplos</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">2. </span>Introdução à Programação com a Linguagem Python</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">2.26. </span>Exemplos</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Navegação sequencial da página">
@@ -145,16 +146,18 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="exemplos">
-<span id="sec-introducao-programacao-exemplos"></span><h1><span class="section-number">2.26. </span>Exemplos<a class="headerlink" href="#exemplos" title="Link permanente para este título"></a></h1>
+  <section id="exemplos">
+<span id="sec-introducao-programacao-exemplos"></span><h1><span class="section-number">2.26. </span>Exemplos<a class="headerlink" href="#exemplos" title="Link permanente para este cabeçalho"></a></h1>
 <p id="sec-introducao-programacao-exemplos-ex01"><strong>Exemplo 01.</strong> Uma reta pode ser representada por uma equação geral da seguinte forma:</p>
 <div class="math notranslate nohighlight" id="equation-introd-prog-math-equacao-reta">
 <span class="eqno">(2.5)<a class="headerlink" href="#equation-introd-prog-math-equacao-reta" title="Link permanente para essa equação"></a></span>\[ax + by + c = 0\]</div>
 <p>Considere a reta com os seguintes coeficientes: <span class="math notranslate nohighlight">\(a = 3\)</span>, <span class="math notranslate nohighlight">\(b = -2\)</span> e <span class="math notranslate nohighlight">\(c = -6\)</span> (<a class="reference internal" href="#introd-prog-fig-eq-reta"><span class="std std-numref">Figura 2.24</span></a>). Faça um programa que pergunte ao usuário os valores de um par de coordenadas <span class="math notranslate nohighlight">\((x,y)\)</span>, aplique a <a class="reference internal" href="#equation-introd-prog-math-equacao-reta">Equação 2.5</a> e verifique o resultado.</p>
-<div class="align-center figure align-default" id="introd-prog-fig-eq-reta">
+<figure class="align-center align-default" id="introd-prog-fig-eq-reta">
 <a class="reference internal image-reference" href="../_images/eq-reta.png"><img alt="Ilustração de uma reta com coeficientes: a = 3, b = -2 e c = -6" src="../_images/eq-reta.png" style="width: 60%;" /></a>
-<p class="caption"><span class="caption-number">Figura 2.24 - </span><span class="caption-text">Ilustração de uma reta com coeficientes: <span class="math notranslate nohighlight">\(a = 3\)</span>, <span class="math notranslate nohighlight">\(b = -2\)</span> e <span class="math notranslate nohighlight">\(c = -6\)</span>.</span><a class="headerlink" href="#introd-prog-fig-eq-reta" title="Link Permanente para essa imagem"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Figura 2.24 - </span><span class="caption-text">Ilustração de uma reta com coeficientes: <span class="math notranslate nohighlight">\(a = 3\)</span>, <span class="math notranslate nohighlight">\(b = -2\)</span> e <span class="math notranslate nohighlight">\(c = -6\)</span>.</span><a class="headerlink" href="#introd-prog-fig-eq-reta" title="Link Permanente para essa imagem"></a></p>
+</figcaption>
+</figure>
 <p><strong>Solução:</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># coeficientes da equação geral da reta:</span>
 <span class="c1"># Ax + By + C = 0</span>
@@ -380,7 +383,7 @@ fat(n) = n \times fat(n - 1), &amp; \text{se $n &gt; 1$}
 <p class="admonition-title">Nota</p>
 <p>Multiplique os valores das bandas <code class="docutils literal notranslate"><span class="pre">red</span></code> e <code class="docutils literal notranslate"><span class="pre">nir</span></code> por <code class="docutils literal notranslate"><span class="pre">0.0001</span></code>.</p>
 </div>
-</div>
+</section>
 
 
            </div>

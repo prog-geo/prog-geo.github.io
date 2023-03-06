@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="pt-BR" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>2.17. Dicionários &mdash; SER-347/CAP-419</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -16,10 +17,10 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script src="../_static/translations.js"></script>
@@ -35,12 +36,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #2980B9" >
-            <a href="../index.html" class="icon icon-home"> SER-347/CAP-419
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SER-347/CAP-419
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Pesquisar documentos" />
+    <input type="text" name="q" placeholder="Pesquisar documentos" aria-label="Pesquisar documentos" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -102,10 +107,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Provas</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../provas/2022.html">Avaliação 2022</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2022/index.html">Turma 2022</a></li>
@@ -133,9 +134,9 @@
         <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Navegação da página">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html"><span class="section-number">2. </span>Introdução à Programação com a Linguagem Python</a> &raquo;</li>
-      <li><span class="section-number">2.17. </span>Dicionários</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">2. </span>Introdução à Programação com a Linguagem Python</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">2.17. </span>Dicionários</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Navegação sequencial da página">
@@ -147,8 +148,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="dicionarios">
-<span id="sec-introducao-programacao-dicionarios"></span><h1><span class="section-number">2.17. </span>Dicionários<a class="headerlink" href="#dicionarios" title="Link permanente para este título"></a></h1>
+  <section id="dicionarios">
+<span id="sec-introducao-programacao-dicionarios"></span><h1><span class="section-number">2.17. </span>Dicionários<a class="headerlink" href="#dicionarios" title="Link permanente para este cabeçalho"></a></h1>
 <p>Tipo de conjunto onde os valores são <strong>indexados por chaves</strong> que, em geral, são números inteiros ou strings. Também são denominados de <strong>arrays associativos</strong> ou <strong>dicionários</strong>. Trata-se de um tipo útil para criar objetos que agregam diversos valores que por sua vez podem ser referenciados por chaves específicas.</p>
 <p>Vamos representar um registro com informações sobre a cidade de <em>São Paulo</em>:</p>
 <div class="literal-block-wrapper docutils container" id="introd-prog-code-dict-sp">
@@ -285,8 +286,8 @@
 <li><p>Não podemos usar listas como chaves, uma vez que podemos modificá-las.</p></li>
 </ul>
 </div>
-<div class="section" id="dict-comprehension">
-<h2><span class="section-number">2.17.1. </span><em>Dict Comprehension</em><a class="headerlink" href="#dict-comprehension" title="Link permanente para este título"></a></h2>
+<section id="dict-comprehension">
+<h2><span class="section-number">2.17.1. </span><em>Dict Comprehension</em><a class="headerlink" href="#dict-comprehension" title="Link permanente para este cabeçalho"></a></h2>
 <p>Podemos criar dicionários utilizando a notação de <em>dict comprehensions</em>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">xs</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span> <span class="p">]</span>
 
@@ -303,8 +304,8 @@
 <p class="admonition-title">Nota</p>
 <p>Para mais detalhes sobre a estrutura <code class="docutils literal notranslate"><span class="pre">dict</span></code>, consulte <span id="id1">[<a class="reference internal" href="../referencias.html#id77" title="Python Software Foundation. Mapping types — dict. 2021. Online; acessado 07 de Março de 2021. URL: https://docs.python.org/3/library/stdtypes.html#mapping-types-dict.">28</a>]</span> e <span id="id2">[<a class="reference internal" href="../referencias.html#id80" title="Python Software Foundation. Dictionaries. 2021. Online; acessado 07 de Março de 2021. URL: https://docs.python.org/3/tutorial/datastructures.html#dictionaries.">21</a>]</span>.</p>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

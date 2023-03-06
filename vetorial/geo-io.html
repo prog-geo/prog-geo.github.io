@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="pt-BR" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>5.6. Leitura/Escrita de Dados Vetoriais &mdash; SER-347/CAP-419</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -16,10 +17,10 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script src="../_static/translations.js"></script>
@@ -35,12 +36,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #2980B9" >
-            <a href="../index.html" class="icon icon-home"> SER-347/CAP-419
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SER-347/CAP-419
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Pesquisar documentos" />
+    <input type="text" name="q" placeholder="Pesquisar documentos" aria-label="Pesquisar documentos" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -84,10 +89,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Provas</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../provas/2022.html">Avaliação 2022</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2022/index.html">Turma 2022</a></li>
@@ -115,9 +116,9 @@
         <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Navegação da página">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../vetorial.html"><span class="section-number">5. </span>Manipulação de Dados Vetoriais</a> &raquo;</li>
-      <li><span class="section-number">5.6. </span>Leitura/Escrita de Dados Vetoriais</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../vetorial.html"><span class="section-number">5. </span>Manipulação de Dados Vetoriais</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">5.6. </span>Leitura/Escrita de Dados Vetoriais</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Navegação sequencial da página">
@@ -129,14 +130,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="leitura-escrita-de-dados-vetoriais">
-<span id="sec-vetorial-geo-io"></span><h1><span class="section-number">5.6. </span>Leitura/Escrita de Dados Vetoriais<a class="headerlink" href="#leitura-escrita-de-dados-vetoriais" title="Link permanente para este título"></a></h1>
+  <section id="leitura-escrita-de-dados-vetoriais">
+<span id="sec-vetorial-geo-io"></span><h1><span class="section-number">5.6. </span>Leitura/Escrita de Dados Vetoriais<a class="headerlink" href="#leitura-escrita-de-dados-vetoriais" title="Link permanente para este cabeçalho"></a></h1>
 <a class="reference internal image-reference" href="../_images/feature-collection-uf.png"><img alt="Coleção de Feições" class="align-right" src="../_images/feature-collection-uf.png" style="width: 150px;" /></a>
 <p>Nesta seção iremos discutir como realizar a leitura e escrita de dados geoespaciais representados na forma de uma <strong>coleção de feições</strong> (<em>feature collection</em>). Para isso, começaremos construindo um pequeno programa que irá abrir um arquivo de dados vetorial no formato <strong>ESRI Shapefile</strong> contendo os limites das Unidades da Federação do Brasil, referentes ao ano de 2018 (<a class="reference internal" href="#fig-vetorial-geo-io-uf-2018"><span class="std std-numref">Figura 5.6</span></a>). Portanto, faça o download do arquivo <a class="reference download external" download="" href="https://1drv.ms/u/s!AtoTP-MfEUEDgq58cYmvg1H3okPCwQ?e=lQtSXZ"><code class="xref download docutils literal notranslate"><span class="pre">uf-2018.zip</span></code></a>, que contém esses dados.</p>
-<div class="align-center figure align-default" id="fig-vetorial-geo-io-uf-2018">
+<figure class="align-center align-default" id="fig-vetorial-geo-io-uf-2018">
 <a class="reference internal image-reference" href="../_images/uf-2018.png"><img alt="Unidades Federativas do Brasil - 2018" src="../_images/uf-2018.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 5.6 - </span><span class="caption-text">Unidades Federativas do Brasil - 2018. <br/> <strong>Fonte Original:</strong> <a class="reference external" href="https://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2018/Brasil/BR/br_unidades_da_federacao.zip">IBGE</a>.</span><a class="headerlink" href="#fig-vetorial-geo-io-uf-2018" title="Link Permanente para essa imagem"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Figura 5.6 - </span><span class="caption-text">Unidades Federativas do Brasil - 2018. <br/> <strong>Fonte Original:</strong> <a class="reference external" href="https://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2018/Brasil/BR/br_unidades_da_federacao.zip">IBGE</a>.</span><a class="headerlink" href="#fig-vetorial-geo-io-uf-2018" title="Link Permanente para essa imagem"></a></p>
+</figcaption>
+</figure>
 <p>O conjunto de dados no formato ESRI Shapefile é formado pelos seguintes componentes:</p>
 <ul class="open">
 <li><p><code class="docutils literal notranslate"><span class="pre">uf_2018.dbf</span></code>: o arquivo com extensão <code class="docutils literal notranslate"><span class="pre">.dbf</span></code> contém os atributos alfanuméricos de cada feição geográfica.</p></li>
@@ -147,13 +150,13 @@
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>Para maiores detalhes do formato ESRI Shapefile, consulte <span id="id1">[<a class="reference internal" href="../referencias.html#id113" title="Wikipedia. Shapefile. 2021. Online; acessado 07 de Março de 2021. URL: https://en.wikipedia.org/wiki/Shapefile.">97</a>]</span>.</p>
+<p>Para maiores detalhes do formato ESRI Shapefile, consulte <span id="id1">[<a class="reference internal" href="../referencias.html#id113" title="Wikipedia. Shapefile. 2021. Online; acessado 07 de Março de 2021. URL: https://en.wikipedia.org/wiki/Shapefile.">94</a>]</span>.</p>
 </div>
-<div class="section" id="a-biblioteca-fiona">
-<h2><span class="section-number">5.6.1. </span>A Biblioteca Fiona<a class="headerlink" href="#a-biblioteca-fiona" title="Link permanente para este título"></a></h2>
+<section id="a-biblioteca-fiona">
+<h2><span class="section-number">5.6.1. </span>A Biblioteca Fiona<a class="headerlink" href="#a-biblioteca-fiona" title="Link permanente para este cabeçalho"></a></h2>
 <p>A biblioteca <a class="reference external" href="https://fiona.readthedocs.io/en/latest/">Fiona</a> oferece funcionalidades para leitura e escrita de dados geoespaciais codificados nos mais diversos formatos. Ela oferece uma API nos mesmos moldes dos protocolos de Entrada e Saída (E/S) da API de arquivos da linguagem Python (Python IO).</p>
-<div class="section" id="instalacao">
-<h3><span class="section-number">5.6.1.1. </span>Instalação<a class="headerlink" href="#instalacao" title="Link permanente para este título"></a></h3>
+<section id="instalacao">
+<h3><span class="section-number">5.6.1.1. </span>Instalação<a class="headerlink" href="#instalacao" title="Link permanente para este cabeçalho"></a></h3>
 <p>Para realizar a instalação da Fiona com o gerenciador de pacotes da Anaconda, ative o ambiente virtual no qual deseja instalar a biblioteca e, em seguida, instale o pacote com o comando <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span></code>, como mostrado abaixo:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">fiona</span>
 </pre></div>
@@ -170,14 +173,16 @@
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="leitura-de-dados">
-<h3><span class="section-number">5.6.1.2. </span>Leitura de Dados<a class="headerlink" href="#leitura-de-dados" title="Link permanente para este título"></a></h3>
+</section>
+<section id="leitura-de-dados">
+<h3><span class="section-number">5.6.1.2. </span>Leitura de Dados<a class="headerlink" href="#leitura-de-dados" title="Link permanente para este cabeçalho"></a></h3>
 <p>O diagrama da <a class="reference internal" href="#fig-vetorial-geo-io-fluxo-io"><span class="std std-numref">Figura 5.7</span></a> apresenta um fluxograma geral das operações necessárias em um programa para realização da leitura de dados a partir de um arquivo qualquer. Em geral, o primeiro passo para leitura de dados consiste na utilização de um comando da linguagem que indique a abertura do arquivo, em modo leitura. Desta maneira, um identificador (ou variável) no programa é associado à estrutura que irá de fato manipular o arquivo no sistema operacional. Depois de aberto o arquivo, pode-se utilizar um ou mais comandos para recuperar os dados armazenados nesse arquivo. No caso de arquivos com uma estrutura bem definida, como é o caso do formato ESRI Shapefile, há a possibilidade de leitura dos metadados que descrevem a própria estrutura dos dados no arquivos, isto é, seu esquema. Por exemplo, os nomes dos atributos das feições das Unidades Federativas e os tipos de dados associados aos valores desses atributos podem ser recuperados. Por último, quando o arquivo não é mais necessário no programa, utiliza-se um comando para indicar o encerramento de seu uso (fechamento) e, consequentemente, a liberação de eventuais recursos associados a ele (como <em>buffers</em> de memória).</p>
-<div class="align-center figure align-default" id="fig-vetorial-geo-io-fluxo-io">
+<figure class="align-center align-default" id="fig-vetorial-geo-io-fluxo-io">
 <a class="reference internal image-reference" href="../_images/fluxo-io.png"><img alt="Fluxograma da leitura de dados a partir de um arquivo" src="../_images/fluxo-io.png" style="width: 30%;" /></a>
-<p class="caption"><span class="caption-number">Figura 5.7 - </span><span class="caption-text">Fluxograma da leitura de dados a partir de um arquivo.</span><a class="headerlink" href="#fig-vetorial-geo-io-fluxo-io" title="Link Permanente para essa imagem"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Figura 5.7 - </span><span class="caption-text">Fluxograma da leitura de dados a partir de um arquivo.</span><a class="headerlink" href="#fig-vetorial-geo-io-fluxo-io" title="Link Permanente para essa imagem"></a></p>
+</figcaption>
+</figure>
 <p>No caso da biblioteca Fiona, a abertura de um arquivo é realizada através da operação <code class="docutils literal notranslate"><span class="pre">fiona.open</span></code>. Esta operação recebe como argumento o nome do arquivo a ser manipulado. O nome do arquivo pode incluir o seu caminho completo ou relativo. O <a class="reference internal" href="#code-vetorial-geo-io-fiona-file-open"><span class="std std-numref">Trecho de Código 5.6</span></a> mostra como realizar a abertura do arquivo <code class="docutils literal notranslate"><span class="pre">uf_2018.shp</span></code>, localizado no diretório <code class="docutils literal notranslate"><span class="pre">data/uf</span></code>, e, em seguida, escreve na saída padrão o número de feições (ou registros) contidos nessa coleção (27 feições).</p>
 <div class="literal-block-wrapper docutils container" id="code-vetorial-geo-io-fiona-file-open">
 <div class="code-block-caption"><span class="caption-number">Trecho de Código 5.6 - </span><span class="caption-text">Abrindo o arquivo <code class="docutils literal notranslate"><span class="pre">uf_2018.shp</span></code> para leitura.</span><a class="headerlink" href="#code-vetorial-geo-io-fiona-file-open" title="Link Permanente para esse código"></a></div>
@@ -307,9 +312,9 @@
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="escrita-de-dados">
-<h3><span class="section-number">5.6.1.3. </span>Escrita de Dados<a class="headerlink" href="#escrita-de-dados" title="Link permanente para este título"></a></h3>
+</section>
+<section id="escrita-de-dados">
+<h3><span class="section-number">5.6.1.3. </span>Escrita de Dados<a class="headerlink" href="#escrita-de-dados" title="Link permanente para este cabeçalho"></a></h3>
 <p>O objetivo dessa seção é criar um pequeno programa que leia as feições das Unidades Federativas e, para cada feição desse arquivo calcule o seu centróide, gravando em um arquivo de saída denominado <code class="docutils literal notranslate"><span class="pre">uf_centroides.shp</span></code>, no mesmo diretório do dado de entrada. Para criar este novo arquivo com a biblioteca Fiona, será preciso definir:</p>
 <ul class="open">
 <li><p>A estrutura dos dados, isto é, o esquema da coleção de feições, que inclui o nome das propriedades (ou atributos), tipos de dados das propriedades e o tipo geométrico.</p></li>
@@ -363,9 +368,9 @@
 <span class="gp">   ...:</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="acessando-arquivos-via-http-https">
-<h3><span class="section-number">5.6.1.4. </span>Acessando Arquivos via HTTP/HTTPS<a class="headerlink" href="#acessando-arquivos-via-http-https" title="Link permanente para este título"></a></h3>
+</section>
+<section id="acessando-arquivos-via-http-https">
+<h3><span class="section-number">5.6.1.4. </span>Acessando Arquivos via HTTP/HTTPS<a class="headerlink" href="#acessando-arquivos-via-http-https" title="Link permanente para este cabeçalho"></a></h3>
 <p>A Fiona oferece a possibilidade de acessar arquivos ESRI Shapefile através dos protocolos HTTP ou HTTPS. O <a class="reference internal" href="#code-vetorial-geo-io-fiona-url"><span class="std std-numref">Trecho de Código 5.10</span></a> mostra como ler as amostras contidas no arquivo <code class="docutils literal notranslate"><span class="pre">bdc_paper_samples.shp</span></code> disponível na seguinte URL: <a class="reference external" href="https://brazildatacube.dpi.inpe.br/geo-knowledge-hub/bdc-article/training-samples/shp/bdc_paper_samples.shp">https://brazildatacube.dpi.inpe.br/geo-knowledge-hub/bdc-article/training-samples/shp/bdc_paper_samples.shp</a>.</p>
 <div class="literal-block-wrapper docutils container" id="code-vetorial-geo-io-fiona-url">
 <div class="code-block-caption"><span class="caption-number">Trecho de Código 5.10 - </span><span class="caption-text">Leitura de um arquivo ESRI Shapefile via HTTPS.</span><a class="headerlink" href="#code-vetorial-geo-io-fiona-url" title="Link Permanente para esse código"></a></div>
@@ -378,23 +383,25 @@
 </pre></div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="a-biblioteca-gdal-ogr">
-<h2><span class="section-number">5.6.2. </span>A biblioteca GDAL/OGR<a class="headerlink" href="#a-biblioteca-gdal-ogr" title="Link permanente para este título"></a></h2>
+</section>
+</section>
+<section id="a-biblioteca-gdal-ogr">
+<h2><span class="section-number">5.6.2. </span>A biblioteca GDAL/OGR<a class="headerlink" href="#a-biblioteca-gdal-ogr" title="Link permanente para este cabeçalho"></a></h2>
 <p>A parte da biblioteca <code class="docutils literal notranslate"><span class="pre">GDAL</span></code> voltada para manipulação de dados vetoriais é conhecida por <code class="docutils literal notranslate"><span class="pre">OGR</span></code>. A <a class="reference internal" href="#fig-vetorial-geo-io-ogr"><span class="std std-numref">Figura 5.8</span></a> apresenta as principais classes que compõem esta API.</p>
-<div class="align-center figure align-default" id="fig-vetorial-geo-io-ogr">
+<figure class="align-center align-default" id="fig-vetorial-geo-io-ogr">
 <a class="reference internal image-reference" href="../_images/modelo-ogr.png"><img alt="Modelo de objetos da OGR em Python" src="../_images/modelo-ogr.png" style="width: 70%;" /></a>
-<p class="caption"><span class="caption-number">Figura 5.8 - </span><span class="caption-text">Modelo de objetos da OGR em Python.</span><a class="headerlink" href="#fig-vetorial-geo-io-ogr" title="Link Permanente para essa imagem"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Figura 5.8 - </span><span class="caption-text">Modelo de objetos da OGR em Python.</span><a class="headerlink" href="#fig-vetorial-geo-io-ogr" title="Link Permanente para essa imagem"></a></p>
+</figcaption>
+</figure>
 <p>A classe <code class="docutils literal notranslate"><span class="pre">DataSource</span></code> representa uma coleção de camadas de informação ou <em>layers</em>. Um objeto <code class="docutils literal notranslate"><span class="pre">DataSource</span></code> pode ser usado para acessar um único arquivo, um conjunto de arquivos, um conjunto de tabelas de um banco de dados, ou coleções de feições em um serviço Web do tipo OGC Web Feature Service (WFS).</p>
 <p>A classe <code class="docutils literal notranslate"><span class="pre">Layer</span></code> representa uma camada de informação contida em um <code class="docutils literal notranslate"><span class="pre">DataSource</span></code>. Essa classe contém operações que possibilitam a leitura e escrita de feições (<em>features</em>), isto é, um objeto geográfico. Neste documento também usaremos o termo <em>coleção de feições</em> (ou <em>feature collection</em>) quando nos referirmos a uma camada de informação.</p>
 <p>Todas as feições de uma mesma camada possuem a mesma estrutura, isto é, o mesmo conjunto de atributos. Denominamos esta estrutura da camada de informação de <strong>esquema</strong>. A classe <code class="docutils literal notranslate"><span class="pre">FeatureDefn</span></code> é usada para descrever o esquema de uma camada de informação, isto é, ela fornece uma lista com o nome dos atributos e seus respectivos tipos de dados. As feições pertencentes a uma mesma camada de informação irão compartilhar esta estrutura.</p>
 <p>A classe <code class="docutils literal notranslate"><span class="pre">Feature</span></code> representa os dados de uma feição, que podem ser valores alfanuméricos e geométricos.</p>
 <p>Para entender melhor esta estrutura (<a class="reference internal" href="#fig-vetorial-geo-io-ogr"><span class="std std-numref">Figura 5.8</span></a>), vamos considerar o arquivo <code class="docutils literal notranslate"><span class="pre">uf_2018.shp</span></code> (<a class="reference internal" href="#fig-vetorial-geo-io-uf-2018"><span class="std std-numref">Figura 5.6</span></a>) introduzido no início dessa seção (<a class="reference internal" href="#sec-vetorial-geo-io"><span class="std std-numref">Seção 5.6</span></a>). Um objeto do tipo <code class="docutils literal notranslate"><span class="pre">DataSource</span></code> (fonte de dados) irá representar esse conjunto de arquivos. A partir dele, teremos acesso ao conjunto de feições (municípios) através de um objeto do tipo <code class="docutils literal notranslate"><span class="pre">Layer</span></code> (camada de informação). Esse objeto por sua vez irá possibilitar acessar os dados de cada município, através de objetos do tipo <code class="docutils literal notranslate"><span class="pre">Feature</span></code> (feição geográfica). A partir de um objeto do tipo <code class="docutils literal notranslate"><span class="pre">Feature</span></code> podemos obter tanto os atributos alfanuméricos, como o código e nome da Unidade Federativa, e a geometria usada para representar seus limites (coleções de polígonos).</p>
 <p>Ainda completam o diagrama da <a class="reference internal" href="#fig-vetorial-geo-io-ogr"><span class="std std-numref">Figura 5.8</span></a>, a classe <code class="docutils literal notranslate"><span class="pre">FieldDefn</span></code>, que representa as informações de um dado atributo do esquema da camada de informação; e, a classe <code class="docutils literal notranslate"><span class="pre">Geometry</span></code>, que representa os tipos geométricos suportados pela <code class="docutils literal notranslate"><span class="pre">OGR</span></code>, como pontos, linhas e polígonos, e as coleções homogêneas desses elementos geométricos.</p>
-<div class="section" id="instalando-a-biblioteca-gdal-ogr">
-<h3><span class="section-number">5.6.2.1. </span>Instalando a biblioteca GDAL/OGR<a class="headerlink" href="#instalando-a-biblioteca-gdal-ogr" title="Link permanente para este título"></a></h3>
+<section id="instalando-a-biblioteca-gdal-ogr">
+<h3><span class="section-number">5.6.2.1. </span>Instalando a biblioteca GDAL/OGR<a class="headerlink" href="#instalando-a-biblioteca-gdal-ogr" title="Link permanente para este cabeçalho"></a></h3>
 <p>Para instalar a <code class="docutils literal notranslate"><span class="pre">GDAL/OGR</span></code>, ative seu ambiente de trabalho da Anaconda e instale o pacote através do <code class="docutils literal notranslate"><span class="pre">conda</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">gdal</span><span class="o">=</span><span class="mi">3</span>
 </pre></div>
@@ -403,9 +410,9 @@
 <p class="admonition-title">Nota</p>
 <p>No meu ambiente, foi instalada a versão <code class="docutils literal notranslate"><span class="pre">3.1.4</span></code>.</p>
 </div>
-</div>
-<div class="section" id="carregando-a-biblioteca-gdal-ogr">
-<h3><span class="section-number">5.6.2.2. </span>Carregando a Biblioteca GDAL/OGR<a class="headerlink" href="#carregando-a-biblioteca-gdal-ogr" title="Link permanente para este título"></a></h3>
+</section>
+<section id="carregando-a-biblioteca-gdal-ogr">
+<h3><span class="section-number">5.6.2.2. </span>Carregando a Biblioteca GDAL/OGR<a class="headerlink" href="#carregando-a-biblioteca-gdal-ogr" title="Link permanente para este cabeçalho"></a></h3>
 <p>Uma boa prática ao trabalhar com bibliotecas que não fazem parte da distribuição padrão do Python consiste na verificação de sua carga logo após as instruções <code class="docutils literal notranslate"><span class="pre">import</span></code>. O trecho de código abaixo mostra como realizar essa verificação logo no início do seu <em>script</em>, para certificar que a biblioteca <code class="docutils literal notranslate"><span class="pre">GDAL</span></code> tenha sido devidamente carregada antes de prosseguir com as próximas instruções do programa. Neste <em>script</em>, utilizamos um bloco <code class="docutils literal notranslate"><span class="pre">try-except</span></code> para verificar se o módulo <code class="docutils literal notranslate"><span class="pre">osgeo</span></code> e as APIs <code class="docutils literal notranslate"><span class="pre">ogr</span></code> e <code class="docutils literal notranslate"><span class="pre">gdal</span></code> foram devidamente carregados (<code class="docutils literal notranslate"><span class="pre">linhas</span> <span class="pre">3-6</span></code>). Na <code class="docutils literal notranslate"><span class="pre">linha</span> <span class="pre">9</span></code> utilizamos a função <code class="docutils literal notranslate"><span class="pre">VersionInfo</span></code> da API <code class="docutils literal notranslate"><span class="pre">GDAL</span></code> para obter uma string com a versão e data de build da <code class="docutils literal notranslate"><span class="pre">GDAL</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">sys</span>
 <span class="linenos">2</span>
@@ -418,9 +425,9 @@
 <span class="linenos">9</span><span class="nb">print</span><span class="p">(</span><span class="n">gdal</span><span class="o">.</span><span class="n">VersionInfo</span><span class="p">(</span><span class="s1">&#39;VERSION&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id2">
-<h3><span class="section-number">5.6.2.3. </span>Leitura de Dados<a class="headerlink" href="#id2" title="Link permanente para este título"></a></h3>
+</section>
+<section id="id2">
+<h3><span class="section-number">5.6.2.3. </span>Leitura de Dados<a class="headerlink" href="#id2" title="Link permanente para este cabeçalho"></a></h3>
 <p>Vamos abrir o arquivo <code class="docutils literal notranslate"><span class="pre">uf_2018.shp</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">shp</span> <span class="o">=</span> <span class="n">ogr</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="s1">&#39;data/uf/uf_2018.shp&#39;</span><span class="p">)</span>
 </pre></div>
@@ -487,9 +494,9 @@
 <p class="admonition-title">Nota</p>
 <p>Um bom recurso sobre a API Python da GDAL/OGR pode ser encontrado em <span id="id3">[<a class="reference internal" href="../referencias.html#id16" title="Michael Payne ared Erickson, Cort Daniel. Python gdal/ogr cookbook. May 2021. Online; acessado 13 de Maio de 2021. URL: https://pcjericks.github.io/py-gdalogr-cookbook/#.">1</a>]</span>. A documentação da API Python GDAL/OGR pode ser encontrada em <span id="id4">[<a class="reference internal" href="../referencias.html#id18" title="GDAL. Gdal/ogr python api. 2021. Online; acessado 13 de Maio de 2021. URL: https://gdal.org/python/.">45</a>]</span>.</p>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>

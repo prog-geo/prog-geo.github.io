@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="pt-BR" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>2. Introdução à Programação com a Linguagem Python &mdash; SER-347/CAP-419</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -16,10 +17,10 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script src="../_static/translations.js"></script>
@@ -35,12 +36,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #2980B9" >
-            <a href="../index.html" class="icon icon-home"> SER-347/CAP-419
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SER-347/CAP-419
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Pesquisar documentos" />
+    <input type="text" name="q" placeholder="Pesquisar documentos" aria-label="Pesquisar documentos" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -99,10 +104,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Provas</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../provas/2022.html">Avaliação 2022</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2022/index.html">Turma 2022</a></li>
@@ -130,8 +131,8 @@
         <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Navegação da página">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li><span class="section-number">2. </span>Introdução à Programação com a Linguagem Python</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">2. </span>Introdução à Programação com a Linguagem Python</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Navegação sequencial da página">
@@ -143,8 +144,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="introducao-a-programacao-com-a-linguagem-python">
-<span id="cap-introducao-programacao"></span><h1><span class="section-number">2. </span>Introdução à Programação com a Linguagem Python<a class="headerlink" href="#introducao-a-programacao-com-a-linguagem-python" title="Link permanente para este título"></a></h1>
+  <section id="introducao-a-programacao-com-a-linguagem-python">
+<span id="cap-introducao-programacao"></span><h1><span class="section-number">2. </span>Introdução à Programação com a Linguagem Python<a class="headerlink" href="#introducao-a-programacao-com-a-linguagem-python" title="Link permanente para este cabeçalho"></a></h1>
 <p>Um <strong>programa</strong> é formado por uma <strong>sequência de instruções</strong> que diz ao computador como realizar uma determinada tarefa. As instruções podem dizer como o programa deve interagir com o usuário, como ele deve utilizar o hardware, e como operar os dados para realizar o que chamamos de <strong>computações</strong>. Quando um computador segue as instruções de um programa, dizemos que ele está <strong>executando o programa</strong>.</p>
 <p>A <strong>atividade de programar</strong> consiste na habilidade de expressar as computações que dizem ao computador como resolver um determinado problema. Uma das ferramentas que permitem expressar essas computações são as <strong>Linguagens de Programação</strong>. O <a class="reference internal" href="#introd-prog-code-timeseries"><span class="std std-numref">Trecho de Código 2.1</span></a> exemplifica um programa escrito na linguagem Python, composto por uma sequência de instruções encadeadas de forma a produzir o gráfico com a série temporal mostrado na <a class="reference internal" href="#introd-prog-fig-timeseries"><span class="std std-numref">Figura 2.1</span></a>.</p>
 <div class="literal-block-wrapper docutils container" id="introd-prog-code-timeseries">
@@ -178,10 +179,12 @@
 </pre></div>
 </div>
 </div>
-<div class="align-center figure align-default" id="introd-prog-fig-timeseries">
+<figure class="align-center align-default" id="introd-prog-fig-timeseries">
 <a class="reference internal image-reference" href="../_images/timeseries.png"><img alt="Série temporal das bandas red e nir para uma dada localização geográfica" src="../_images/timeseries.png" style="width: 80%;" /></a>
-<p class="caption"><span class="caption-number">Figura 2.1 - </span><span class="caption-text">Série temporal das bandas <code class="docutils literal notranslate"><span class="pre">red</span></code> e <code class="docutils literal notranslate"><span class="pre">nir</span></code> para uma dada localização geográfica.</span><a class="headerlink" href="#introd-prog-fig-timeseries" title="Link Permanente para essa imagem"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Figura 2.1 - </span><span class="caption-text">Série temporal das bandas <code class="docutils literal notranslate"><span class="pre">red</span></code> e <code class="docutils literal notranslate"><span class="pre">nir</span></code> para uma dada localização geográfica.</span><a class="headerlink" href="#introd-prog-fig-timeseries" title="Link Permanente para essa imagem"></a></p>
+</figcaption>
+</figure>
 <p>Para escrever programas em alguma linguagem, é preciso conhecer um pouco de <strong>lógica de programação</strong>. Este capítulo apresenta uma introdução aos principais conceitos e técnicas envolvidos na atividade de programação de computadores utilizando como ambiente de aprendizado a linguagem Python.</p>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Tópicos</span></p>
@@ -214,7 +217,7 @@
 <li class="toctree-l1"><a class="reference internal" href="exemplos.html">2.26. Exemplos</a></li>
 </ul>
 </div>
-</div>
+</section>
 
 
            </div>

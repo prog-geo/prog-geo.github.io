@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="pt-BR" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>7.4.1. Introdução &mdash; SER-347/CAP-419</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -16,10 +17,10 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script src="../../_static/translations.js"></script>
@@ -35,12 +36,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #2980B9" >
-            <a href="../../index.html" class="icon icon-home"> SER-347/CAP-419
-            <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            SER-347/CAP-419
+              <img src="../../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Pesquisar documentos" />
+    <input type="text" name="q" placeholder="Pesquisar documentos" aria-label="Pesquisar documentos" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -82,10 +87,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../listas.html">Listas de Exercícios</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Provas</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../provas/2022.html">Avaliação 2022</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../projetos/2022/index.html">Turma 2022</a></li>
@@ -113,10 +114,10 @@
         <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Navegação da página">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../variados.html"><span class="section-number">7. </span>Tópicos Variados</a> &raquo;</li>
-          <li><a href="../pacotes.html"><span class="section-number">7.4. </span>Pacotes em Python</a> &raquo;</li>
-      <li><span class="section-number">7.4.1. </span>Introdução</li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../variados.html"><span class="section-number">7. </span>Tópicos Variados</a></li>
+          <li class="breadcrumb-item"><a href="../pacotes.html"><span class="section-number">7.4. </span>Pacotes em Python</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">7.4.1. </span>Introdução</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Navegação sequencial da página">
@@ -128,8 +129,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="introducao">
-<span id="sec-variados-pacotes-introducao"></span><h1><span class="section-number">7.4.1. </span>Introdução<a class="headerlink" href="#introducao" title="Link permanente para este título"></a></h1>
+  <section id="introducao">
+<span id="sec-variados-pacotes-introducao"></span><h1><span class="section-number">7.4.1. </span>Introdução<a class="headerlink" href="#introducao" title="Link permanente para este cabeçalho"></a></h1>
 <p>Considere a seguinte estrutura de diretório e arquivos:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>spectral/
     __init__.py
@@ -266,8 +267,8 @@
 <span class="go">&#39;spectral.evi&#39;</span>
 </pre></div>
 </div>
-<div class="section" id="o-arquivo-init-py">
-<h2><span class="section-number">7.4.1.1. </span>O arquivo <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code><a class="headerlink" href="#o-arquivo-init-py" title="Link permanente para este título"></a></h2>
+<section id="o-arquivo-init-py">
+<h2><span class="section-number">7.4.1.1. </span>O arquivo <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code><a class="headerlink" href="#o-arquivo-init-py" title="Link permanente para este cabeçalho"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
 <p>Se você executou o código da seção anterior, feche o interpretador Python e abra-o novamente para limpar todas as definições carregadas.</p>
@@ -367,18 +368,18 @@
 </div>
 <p>Repare que o módulo <code class="docutils literal notranslate"><span class="pre">spectral.evi</span></code> não possui o atributo <code class="docutils literal notranslate"><span class="pre">__path__</span></code>, enquanto o módulo <code class="docutils literal notranslate"><span class="pre">spectral</span></code>, possui.</p>
 </div>
-</div>
-<div class="section" id="tipos-de-pacotes-em-python">
-<h2><span class="section-number">7.4.1.2. </span>Tipos de Pacotes em Python<a class="headerlink" href="#tipos-de-pacotes-em-python" title="Link permanente para este título"></a></h2>
+</section>
+<section id="tipos-de-pacotes-em-python">
+<h2><span class="section-number">7.4.1.2. </span>Tipos de Pacotes em Python<a class="headerlink" href="#tipos-de-pacotes-em-python" title="Link permanente para este cabeçalho"></a></h2>
 <p>Em Python temos dois tipos de pacotes: <strong>pacotes regulares</strong> (<a class="reference external" href="https://docs.python.org/3/glossary.html#term-regular-package">regular packages</a>) ou <strong>pacotes de espaço de nomes</strong> (<a class="reference external" href="https://docs.python.org/3/glossary.html#term-namespace-package">namespace packages</a>). Os <strong>pacotes regulares</strong> contém arquivos <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> em seus sub-diretórios. O exemplo fornecido nesta seção trabalha com este tipo de pacote.</p>
-<p>Os <strong>pacotes de espaço de nomes</strong> formam o mecanismo da linguagem Python que possibilita dividir um único pacote em vários diretórios do disco. Veja que isso é diferente de ter uma estrutura recursiva de inclusão de sub-módulos e sub-pacotes. Para mais informações sobre os pacotes de espaço de nomes, consulte <span id="id1">[<a class="reference internal" href="../../referencias.html#id48" title="Eric V. Smith. Pep 420 – implicit namespace packages. Apr 2012. Online; acessado 07 de Março de 2021. URL: https://www.python.org/dev/peps/pep-0420/.">78</a>]</span>.</p>
+<p>Os <strong>pacotes de espaço de nomes</strong> formam o mecanismo da linguagem Python que possibilita dividir um único pacote em vários diretórios do disco. Veja que isso é diferente de ter uma estrutura recursiva de inclusão de sub-módulos e sub-pacotes. Para mais informações sobre os pacotes de espaço de nomes, consulte <span id="id1">[<a class="reference internal" href="../../referencias.html#id48" title="Eric V. Smith. Pep 420 – implicit namespace packages. Apr 2012. Online; acessado 07 de Março de 2021. URL: https://www.python.org/dev/peps/pep-0420/.">75</a>]</span>.</p>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
 <p>Para mais informações sobre pacotes em Python, consulte <span id="id2">[<a class="reference internal" href="../../referencias.html#id68" title="Python Software Foundation. Packages. 2021. Online; acessado 07 de Março de 2021. URL: https://docs.python.org/3/reference/import.html#packages.">31</a>]</span> e <span id="id3">[<a class="reference internal" href="../../referencias.html#id84" title="Python Software Foundation. Packages. 2021. Online; acessado 07 de Março de 2021. URL: https://docs.python.org/3/tutorial/modules.html#packages.">32</a>]</span>.</p>
 </div>
-</div>
-<div class="section" id="consideracoes-finais">
-<h2><span class="section-number">7.4.1.3. </span>Considerações Finais<a class="headerlink" href="#consideracoes-finais" title="Link permanente para este título"></a></h2>
+</section>
+<section id="consideracoes-finais">
+<h2><span class="section-number">7.4.1.3. </span>Considerações Finais<a class="headerlink" href="#consideracoes-finais" title="Link permanente para este cabeçalho"></a></h2>
 <p>Ajuste o conteúdo do arquivo <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> conforme indicado no <a class="reference internal" href="#code-variados-pacotes-introducao-v1-init"><span class="std std-numref">Trecho de Código 7.8</span></a>.</p>
 <div class="literal-block-wrapper docutils container" id="code-variados-pacotes-introducao-v1-init">
 <div class="code-block-caption"><span class="caption-number">Trecho de Código 7.8 - </span><span class="caption-text">Arquivo <a class="reference download internal" download="" href="../../_downloads/652385ca7b24dd754f85d7726e638087/__init__.py"><code class="xref download docutils literal notranslate"><span class="pre">__init__.py</span></code></a>.</span><a class="headerlink" href="#code-variados-pacotes-introducao-v1-init" title="Link Permanente para esse código"></a></div>
@@ -389,8 +390,8 @@
 </pre></div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="pt-BR" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>2.23. Funções &mdash; SER-347/CAP-419</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -16,10 +17,10 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script src="../_static/translations.js"></script>
@@ -36,12 +37,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #2980B9" >
-            <a href="../index.html" class="icon icon-home"> SER-347/CAP-419
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SER-347/CAP-419
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Pesquisar documentos" />
+    <input type="text" name="q" placeholder="Pesquisar documentos" aria-label="Pesquisar documentos" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -107,10 +112,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Provas</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../provas/2022.html">Avaliação 2022</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2022/index.html">Turma 2022</a></li>
@@ -138,9 +139,9 @@
         <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Navegação da página">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html"><span class="section-number">2. </span>Introdução à Programação com a Linguagem Python</a> &raquo;</li>
-      <li><span class="section-number">2.23. </span>Funções</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">2. </span>Introdução à Programação com a Linguagem Python</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">2.23. </span>Funções</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Navegação sequencial da página">
@@ -152,27 +153,33 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="funcoes">
-<span id="sec-introducao-programacao-funcoes"></span><h1><span class="section-number">2.23. </span>Funções<a class="headerlink" href="#funcoes" title="Link permanente para este título"></a></h1>
+  <section id="funcoes">
+<span id="sec-introducao-programacao-funcoes"></span><h1><span class="section-number">2.23. </span>Funções<a class="headerlink" href="#funcoes" title="Link permanente para este cabeçalho"></a></h1>
 <p>Uma forma de modularizar programas consiste em organizá-los em <strong>procedimentos</strong> ou <strong>funções</strong>. Uma <strong>função</strong> é um <strong>bloco de código auto-contido</strong>, <strong>identificado com um nome</strong>, uma <strong>lista de parâmetros</strong> e que pode ser invocada em nossos programas da mesma forma que as funções da linguagem Python.</p>
 <p>A <a class="reference internal" href="#introd-prog-fig-chamada-funcao"><span class="std std-numref">Figura 2.20</span></a> apresenta a lógica de uso de uma função denominada <code class="docutils literal notranslate"><span class="pre">f</span></code>. Repare que o programa após executar os comandos <code class="docutils literal notranslate"><span class="pre">comando</span> <span class="pre">#1</span></code> e <code class="docutils literal notranslate"><span class="pre">comando</span> <span class="pre">#2</span></code>, desvia seu fluxo de execução ao atingir o comando <code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">f(...)</span></code>. Nesse ponto dizemos que a função <code class="docutils literal notranslate"><span class="pre">f</span></code> foi <strong>chamada</strong> ou <strong>invocada</strong>. O fluxo é então desviado para a sequência de instruções definida pela função, mostrada no lado direito da <a class="reference internal" href="#introd-prog-fig-chamada-funcao"><span class="std std-numref">Figura 2.20</span></a>. A sequência de comandos da função <code class="docutils literal notranslate"><span class="pre">f</span></code> é encerrada quando o comando <code class="docutils literal notranslate"><span class="pre">return</span></code> é encontrado, devolvendo o controle do programa para a linha onde a função foi chamada. O valor produzido pela função <code class="docutils literal notranslate"><span class="pre">f</span></code> será associado ao nome <code class="docutils literal notranslate"><span class="pre">v</span></code> (ou variável <code class="docutils literal notranslate"><span class="pre">v</span></code>) e o programa continuará a execução da sequência de instruções a partir do comando <code class="docutils literal notranslate"><span class="pre">comando</span> <span class="pre">#i</span> <span class="pre">+</span> <span class="pre">1</span></code>.</p>
-<div class="align-center figure align-default" id="introd-prog-fig-chamada-funcao">
+<figure class="align-center align-default" id="introd-prog-fig-chamada-funcao">
 <a class="reference internal image-reference" href="../_images/chamada-funcao.png"><img alt="Ilustração do processo de chamada de uma função" src="../_images/chamada-funcao.png" style="width: 80%;" /></a>
-<p class="caption"><span class="caption-number">Figura 2.20 - </span><span class="caption-text">Ilustração do processo de chamada de uma função.</span><a class="headerlink" href="#introd-prog-fig-chamada-funcao" title="Link Permanente para essa imagem"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Figura 2.20 - </span><span class="caption-text">Ilustração do processo de chamada de uma função.</span><a class="headerlink" href="#introd-prog-fig-chamada-funcao" title="Link Permanente para essa imagem"></a></p>
+</figcaption>
+</figure>
 <p>Vamos supor um programa hipotético com a sequência de comandos mostrada na parte esquerda da <a class="reference internal" href="#introd-prog-fig-encapsulando-codigo-func"><span class="std std-numref">Figura 2.21</span></a>. Suponha também que esse programa tenha que realizar o cálculo da distância euclidiana entre dois pontos em algumas seções do código. Nesse caso, teríamos um programa com várias seções de código muito semelhantes, com, possivelmente, pequenas variações, como diferentes pares de pontos para computar a distância. Agora, pense em seções de código que realizem computações mais complexas, tais como cálculo de derivadas e integrais, ordenação de conjuntos de elementos e outras computações que exigem muitos passos para serem expressas. Nesse caso, teríamos programas muito grandes e extremamente difíceis de dar manutenção. Novamente, suponha que você descubra um erro em uma dessas seções muito parecidas e que este erro seja comum a todas as seções. Você deveria varrer todo o seu código e corrigir esse erro em todas as seções pois, caso uma delas fique sem a aplicação dessa correção, seu programa possivelmente apresentará <em>bugs</em> ou produzirá resultados indesejados.</p>
-<div class="align-center figure align-default" id="introd-prog-fig-encapsulando-codigo-func">
+<figure class="align-center align-default" id="introd-prog-fig-encapsulando-codigo-func">
 <a class="reference internal image-reference" href="../_images/encapsulando-codigos-atraves-funcoes.png"><img alt="Encapsulando seções de códigos comuns na forma de funções" src="../_images/encapsulando-codigos-atraves-funcoes.png" style="width: 80%;" /></a>
-<p class="caption"><span class="caption-number">Figura 2.21 - </span><span class="caption-text">Encapsulando seções de códigos comuns na forma de funções.</span><a class="headerlink" href="#introd-prog-fig-encapsulando-codigo-func" title="Link Permanente para essa imagem"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Figura 2.21 - </span><span class="caption-text">Encapsulando seções de códigos comuns na forma de funções.</span><a class="headerlink" href="#introd-prog-fig-encapsulando-codigo-func" title="Link Permanente para essa imagem"></a></p>
+</figcaption>
+</figure>
 <p>A abstração de códigos na forma de funções é uma das maneiras criadas para evitar esse tipo de problema. Suponha que as seções comuns na parte esquerda da <a class="reference internal" href="#introd-prog-fig-encapsulando-codigo-func"><span class="std std-numref">Figura 2.21</span></a> sejam <strong>encapsuladas</strong> na forma de um código mais geral e reutilizável no programa através de uma função denominada <code class="docutils literal notranslate"><span class="pre">Distancia</span></code>. Neste caso, o programa do lado esquerdo na <a class="reference internal" href="#introd-prog-fig-encapsulando-codigo-func"><span class="std std-numref">Figura 2.21</span></a> seria reduzido à sequência de comandos mostrada na parte inferior direita dessa mesma figura. Repare que agora, temos uma seção comum que captura a computação da distância euclidiana, que será usada nas linhas destacadas em vermelho do programa. Dessa forma, qualquer alteração no código da função irá refletir automaticamente nas linhas que realizam sua chamada.</p>
-<div class="section" id="definindo-uma-funcao">
-<h2><span class="section-number">2.23.1. </span>Definindo uma Função<a class="headerlink" href="#definindo-uma-funcao" title="Link permanente para este título"></a></h2>
+<section id="definindo-uma-funcao">
+<h2><span class="section-number">2.23.1. </span>Definindo uma Função<a class="headerlink" href="#definindo-uma-funcao" title="Link permanente para este cabeçalho"></a></h2>
 <p>Uma função em Python pode ser definida utilizando a palavra reservada <code class="docutils literal notranslate"><span class="pre">def</span></code> seguida do <strong>nome da função</strong> e a <strong>lista de parâmetros formais</strong> dessa função. A <a class="reference internal" href="#introd-prog-fig-definicao-funcao"><span class="std std-numref">Figura 2.22</span></a> mostra a definição da função <cite>Fatorial</cite>. A linha com a <strong>assinatura</strong> ou <strong>declaração</strong> da função é terminada com o símbolo <code class="docutils literal notranslate"><span class="pre">:</span></code>. Logo abaixo dessa linha, incluímos o <strong>corpo da função</strong>, isto é, uma sequência de comandos que implementa a funcionalidade a ser fornecida pela função. Repare que a sequência de comandos do <strong>corpo da função</strong> deve ser <strong>indentada</strong>, isto é, a sequência deve possuir um recuo à direita. Em geral, usamos 04 espaços nesse recuo.</p>
-<div class="align-center figure align-default" id="introd-prog-fig-definicao-funcao">
+<figure class="align-center align-default" id="introd-prog-fig-definicao-funcao">
 <a class="reference internal image-reference" href="../_images/definicao-funcao.png"><img alt="Definição de uma função chamada Fatorial" src="../_images/definicao-funcao.png" style="width: 60%;" /></a>
-<p class="caption"><span class="caption-number">Figura 2.22 - </span><span class="caption-text">Definição de uma função chamada <code class="docutils literal notranslate"><span class="pre">Fatorial</span></code>.</span><a class="headerlink" href="#introd-prog-fig-definicao-funcao" title="Link Permanente para essa imagem"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Figura 2.22 - </span><span class="caption-text">Definição de uma função chamada <code class="docutils literal notranslate"><span class="pre">Fatorial</span></code>.</span><a class="headerlink" href="#introd-prog-fig-definicao-funcao" title="Link Permanente para essa imagem"></a></p>
+</figcaption>
+</figure>
 <p>A instrução <code class="docutils literal notranslate"><span class="pre">return</span></code> pode ser usada para indicar um ponto de saída da função, isto é, um ponto em que ela já tenha realizado sua computação e deva retornar um ou mais valores produzidos pela função.</p>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
@@ -256,9 +263,9 @@
 <p class="admonition-title">Nota</p>
 <p>A definição de uma função é um comando Python.</p>
 </div>
-</div>
-<div class="section" id="funcoes-recursivas">
-<h2><span class="section-number">2.23.2. </span>Funções Recursivas<a class="headerlink" href="#funcoes-recursivas" title="Link permanente para este título"></a></h2>
+</section>
+<section id="funcoes-recursivas">
+<h2><span class="section-number">2.23.2. </span>Funções Recursivas<a class="headerlink" href="#funcoes-recursivas" title="Link permanente para este cabeçalho"></a></h2>
 <p>Como pode ser visto na função <code class="docutils literal notranslate"><span class="pre">DistanciaEuclidiana</span></code> (<a class="reference internal" href="#introd-prog-code-func-distancia-euclidiana"><span class="std std-numref">Trecho de Código 2.18</span></a>), uma função pode chamar outras funções, como foi o caso da função <code class="docutils literal notranslate"><span class="pre">math.sqrt</span></code> da biblioteca padrão de Python, chamada na <code class="docutils literal notranslate"><span class="pre">linha</span> <span class="pre">08</span></code>. Isso possbilita a construção de programas bem organizados, agrupando a lógica em várias funções menores, cada uma com um papel bem definido.</p>
 <p>Outro recurso das linguagens de programação é a criação de <strong>funções recursivas</strong>, isto é, funções que são definidas através de <strong>chamadas à própria função</strong>. Esse recurso é muito importante pois vários problemas são inerentemente recursivos por natureza. Por exemplo, o fatorial de um número <span class="math notranslate nohighlight">\(n\)</span>, com <span class="math notranslate nohighlight">\(n \in Z^+\)</span>, pode ser definido através da seguinte equação de recorrência:</p>
 <div class="math notranslate nohighlight" id="equation-introd-prog-eq-func-fat-rel-recorrencia">
@@ -349,12 +356,12 @@ fat(n) = n \times fat(n - 1), &amp; \text{se $n &gt; 1$}
 <p class="admonition-title">Nota</p>
 <p>Veja que essa diferença não ocorre entre as versões recursiva e iterativa da função fatorial, pois o fatorial recursivo nunca chama novamente a função fatorial para um mesmo número.</p>
 </div>
-</div>
-<div class="section" id="funcoes-com-numero-variavel-de-argumentos">
-<h2><span class="section-number">2.23.3. </span>Funções com Número Variável de Argumentos<a class="headerlink" href="#funcoes-com-numero-variavel-de-argumentos" title="Link permanente para este título"></a></h2>
+</section>
+<section id="funcoes-com-numero-variavel-de-argumentos">
+<h2><span class="section-number">2.23.3. </span>Funções com Número Variável de Argumentos<a class="headerlink" href="#funcoes-com-numero-variavel-de-argumentos" title="Link permanente para este cabeçalho"></a></h2>
 <p>Em geral, as linguagens de programação imperativa permitem criar funções que podem ser chamadas com um número diferente de argumentos. Em Python temos três formas de construir funções com número variável de argumentos. Esta seção discute como criar tais funções.</p>
-<div class="section" id="parametros-default">
-<h3><span class="section-number">2.23.3.1. </span>Parâmetros Default<a class="headerlink" href="#parametros-default" title="Link permanente para este título"></a></h3>
+<section id="parametros-default">
+<h3><span class="section-number">2.23.3.1. </span>Parâmetros Default<a class="headerlink" href="#parametros-default" title="Link permanente para este cabeçalho"></a></h3>
 <p>Os parâmetros de uma função podem ser associados a valores <strong>default</strong>, isto é, caso o parâmetro seja omitido na chamada da função, o valor <em>default</em> será utilizado. Dessa forma, podemos criar uma função que pode ser chamada com um número menor de argumentos do que a lista de parâmetros da sua definição.</p>
 <p>A função <code class="docutils literal notranslate"><span class="pre">Graus2Radianos</span></code> mostrada abaixo define o valor padrão de <code class="docutils literal notranslate"><span class="pre">3.14</span></code> para o parâmetro <code class="docutils literal notranslate"><span class="pre">pi</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Graus2Radianos</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="n">pi</span><span class="o">=</span><span class="mf">3.14</span><span class="p">):</span>
@@ -383,9 +390,9 @@ fat(n) = n \times fat(n - 1), &amp; \text{se $n &gt; 1$}
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="chamando-funcoes-com-argumentos-nomeados">
-<h3><span class="section-number">2.23.3.2. </span>Chamando Funções com Argumentos Nomeados<a class="headerlink" href="#chamando-funcoes-com-argumentos-nomeados" title="Link permanente para este título"></a></h3>
+</section>
+<section id="chamando-funcoes-com-argumentos-nomeados">
+<h3><span class="section-number">2.23.3.2. </span>Chamando Funções com Argumentos Nomeados<a class="headerlink" href="#chamando-funcoes-com-argumentos-nomeados" title="Link permanente para este cabeçalho"></a></h3>
 <p>Uma função também pode ser chamada com os argumentos na forma de <strong>pares nome/valor</strong> (<strong>keyword arguments</strong>):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Graus2Radianos</span><span class="p">(</span><span class="n">pi</span><span class="o">=</span><span class="mf">3.1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
 
@@ -393,9 +400,9 @@ fat(n) = n \times fat(n - 1), &amp; \text{se $n &gt; 1$}
 </pre></div>
 </div>
 <p>Essa facilidade faz com que não precisemos lembrar a ordem exata dos argumentos em sua chamada.</p>
-</div>
-<div class="section" id="parametros-args-e-kwargs">
-<h3><span class="section-number">2.23.3.3. </span>Parâmetros <code class="docutils literal notranslate"><span class="pre">*args</span></code> e <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code><a class="headerlink" href="#parametros-args-e-kwargs" title="Link permanente para este título"></a></h3>
+</section>
+<section id="parametros-args-e-kwargs">
+<h3><span class="section-number">2.23.3.3. </span>Parâmetros <code class="docutils literal notranslate"><span class="pre">*args</span></code> e <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code><a class="headerlink" href="#parametros-args-e-kwargs" title="Link permanente para este cabeçalho"></a></h3>
 <p>Em Python, podemos utilizar os parâmetros especiais <code class="docutils literal notranslate"><span class="pre">*args</span></code> e <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> para definir funções com um <strong>número variável de argumentos</strong>. A primeira forma, <code class="docutils literal notranslate"><span class="pre">*args</span></code> (com um único <code class="docutils literal notranslate"><span class="pre">*</span></code>), permite criar uma função que aceite uma sequência de parâmetros não nomeados de qualquer tamanho. A função <code class="docutils literal notranslate"><span class="pre">MyPrintV1</span></code>, mostrada abaixo, utiliza esse tipo de parâmetro para imprimir os valores informados como argumentos:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">MyPrintV1</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
@@ -432,10 +439,10 @@ fat(n) = n \times fat(n - 1), &amp; \text{se $n &gt; 1$}
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MyPrintV2</span><span class="p">(</span><span class="n">longitude</span><span class="o">=-</span><span class="mf">45.88</span><span class="p">,</span> <span class="n">latitude</span><span class="o">=-</span><span class="mf">23.17</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="unpacking-argument-lists">
-<h2><span class="section-number">2.23.4. </span>Unpacking Argument Lists<a class="headerlink" href="#unpacking-argument-lists" title="Link permanente para este título"></a></h2>
+</section>
+</section>
+<section id="unpacking-argument-lists">
+<h2><span class="section-number">2.23.4. </span>Unpacking Argument Lists<a class="headerlink" href="#unpacking-argument-lists" title="Link permanente para este cabeçalho"></a></h2>
 <p>Um situação muito comum é termos a lista de argumentos que desejamos passar a uma função em uma sequência (lista ou tupla) ou como membros de um dicionário e a função estar definida como parâmetros separados, como a função <code class="docutils literal notranslate"><span class="pre">Graus2Radianos</span></code> definida anteriormente. Nesse caso, podemos usar um artifício prático da linguagem Python para transformar esse objetos na sequência correta a ser informada na chamada da função. O exemplo abaixo mostra como podemos transformar os elementos de uma lista <code class="docutils literal notranslate"><span class="pre">l</span></code> no único valor a ser informado na chamada da função <code class="docutils literal notranslate"><span class="pre">Graus2Radianos</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">45</span><span class="p">]</span>
 
@@ -457,9 +464,9 @@ fat(n) = n \times fat(n - 1), &amp; \text{se $n &gt; 1$}
 <span class="n">Graus2Radianos</span><span class="p">(</span><span class="o">**</span><span class="n">d</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="expressoes-lambda">
-<h2><span class="section-number">2.23.5. </span>Expressões Lambda<a class="headerlink" href="#expressoes-lambda" title="Link permanente para este título"></a></h2>
+</section>
+<section id="expressoes-lambda">
+<h2><span class="section-number">2.23.5. </span>Expressões Lambda<a class="headerlink" href="#expressoes-lambda" title="Link permanente para este cabeçalho"></a></h2>
 <p>Uma <strong>Expressão Lambda</strong> é uma pequena função anônima criada com a palavra chave <code class="docutils literal notranslate"><span class="pre">lambda</span></code>, que permite introduzir uma função definida por uma única expressão sem a necessidade de associar um nome. As expressões lambda são muito utilizadas em Python, podendo ser usadas em qualquer lugar que é preciso informar alguma função.</p>
 <p>Exemplo:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pairs</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;one&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;four&#39;</span><span class="p">)]</span>
@@ -501,8 +508,8 @@ fat(n) = n \times fat(n - 1), &amp; \text{se $n &gt; 1$}
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">pares</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

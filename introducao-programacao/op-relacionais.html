@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="pt-BR" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>2.10. Operadores Relacionais &mdash; SER-347/CAP-419</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -16,10 +17,10 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script src="../_static/translations.js"></script>
@@ -35,12 +36,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #2980B9" >
-            <a href="../index.html" class="icon icon-home"> SER-347/CAP-419
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SER-347/CAP-419
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Pesquisar documentos" />
+    <input type="text" name="q" placeholder="Pesquisar documentos" aria-label="Pesquisar documentos" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -99,10 +104,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Provas</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../provas/2022.html">Avaliação 2022</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2022/index.html">Turma 2022</a></li>
@@ -130,9 +131,9 @@
         <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Navegação da página">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html"><span class="section-number">2. </span>Introdução à Programação com a Linguagem Python</a> &raquo;</li>
-      <li><span class="section-number">2.10. </span>Operadores Relacionais</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">2. </span>Introdução à Programação com a Linguagem Python</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">2.10. </span>Operadores Relacionais</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Navegação sequencial da página">
@@ -144,22 +145,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="operadores-relacionais">
-<span id="sec-introducao-programacao-op-relacionais"></span><h1><span class="section-number">2.10. </span>Operadores Relacionais<a class="headerlink" href="#operadores-relacionais" title="Link permanente para este título"></a></h1>
+  <section id="operadores-relacionais">
+<span id="sec-introducao-programacao-op-relacionais"></span><h1><span class="section-number">2.10. </span>Operadores Relacionais<a class="headerlink" href="#operadores-relacionais" title="Link permanente para este cabeçalho"></a></h1>
 <p>Os <strong>operadores relacionais</strong> ou <strong>operadores de comparação</strong> permitem comparar dois valores e produzir um valor booleano como resultado. Esse tipo de operador, juntamente com os operadores lógicos, são essenciais nos <strong>comandos condicionais</strong> e nos <strong>testes condicionais dos laços de repetição</strong>. A <a class="reference internal" href="#introd-prog-tbl-op-relacionais"><span class="std std-numref">Tabela 2.10</span></a> apresenta a notação desses operadores e seus significados.</p>
 <table class="styled-table docutils align-center" id="introd-prog-tbl-op-relacionais">
 <caption><span class="caption-number">Tabela 2.10 - </span><span class="caption-text">Operadores relacionais.</span><a class="headerlink" href="#introd-prog-tbl-op-relacionais" title="Link Permanente para essa tabela"></a></caption>
-<colgroup>
-<col style="width: 26%" />
-<col style="width: 28%" />
-<col style="width: 28%" />
-<col style="width: 18%" />
-</colgroup>
 <thead>
-<tr class="row-odd"><th class="center-align head"><p>Operador</p></th>
-<th class="center-align head"><p>Nome</p></th>
-<th class="center-align head"><p>Expressão</p></th>
-<th class="left-align head"><p>Valor</p></th>
+<tr class="row-odd"><th class="head center-align"><p>Operador</p></th>
+<th class="head center-align"><p>Nome</p></th>
+<th class="head center-align"><p>Expressão</p></th>
+<th class="head left-align"><p>Valor</p></th>
 </tr>
 </thead>
 <tbody>
@@ -232,7 +227,7 @@ igual a</p></td>
 <span class="go">True</span>
 </pre></div>
 </div>
-</div>
+</section>
 
 
            </div>

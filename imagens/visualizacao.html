@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="pt-BR" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>4.3. Visualização de Imagens &mdash; SER-347/CAP-419</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -16,10 +17,10 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script src="../_static/translations.js"></script>
@@ -35,12 +36,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #2980B9" >
-            <a href="../index.html" class="icon icon-home"> SER-347/CAP-419
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SER-347/CAP-419
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Pesquisar documentos" />
+    <input type="text" name="q" placeholder="Pesquisar documentos" aria-label="Pesquisar documentos" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -80,10 +85,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Provas</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../provas/2022.html">Avaliação 2022</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2022/index.html">Turma 2022</a></li>
@@ -111,9 +112,9 @@
         <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Navegação da página">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../imagens.html"><span class="section-number">4. </span>Imagens - Processamento e Visualização</a> &raquo;</li>
-      <li><span class="section-number">4.3. </span>Visualização de Imagens</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../imagens.html"><span class="section-number">4. </span>Imagens - Processamento e Visualização</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">4.3. </span>Visualização de Imagens</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Navegação sequencial da página">
@@ -125,8 +126,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="visualizacao-de-imagens">
-<span id="sec-imagens-visualizacao"></span><h1><span class="section-number">4.3. </span>Visualização de Imagens<a class="headerlink" href="#visualizacao-de-imagens" title="Link permanente para este título"></a></h1>
+  <section id="visualizacao-de-imagens">
+<span id="sec-imagens-visualizacao"></span><h1><span class="section-number">4.3. </span>Visualização de Imagens<a class="headerlink" href="#visualizacao-de-imagens" title="Link permanente para este cabeçalho"></a></h1>
 <p>Primeiramente, vamos criar os objetos que nos darão acesso aos elementos da imagem:</p>
 <ul class="simple">
 <li><p>dataset</p></li>
@@ -175,10 +176,12 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="align-center figure align-default" id="imagens-fig-histograma-5-canais">
+<figure class="align-center align-default" id="imagens-fig-histograma-5-canais">
 <a class="reference internal image-reference" href="../_images/histograma-5-canais.png"><img alt="Gráfico contendo o histograma das 5 bandas disponíveis" src="../_images/histograma-5-canais.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 4.3 - </span><span class="caption-text">Gráfico contendo o histograma das 5 bandas disponíveis.</span><a class="headerlink" href="#imagens-fig-histograma-5-canais" title="Link Permanente para essa imagem"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Figura 4.3 - </span><span class="caption-text">Gráfico contendo o histograma das 5 bandas disponíveis.</span><a class="headerlink" href="#imagens-fig-histograma-5-canais" title="Link Permanente para essa imagem"></a></p>
+</figcaption>
+</figure>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
 <p>A informação de mínimos e máximos valores de pixels para cada banda, utilizada pelas chamadas da função <code class="docutils literal notranslate"><span class="pre">GetHistogram</span></code>, foi definida de maneira empírica, observando o retorno da função <code class="docutils literal notranslate"><span class="pre">ComputeRasterMinMax</span></code> aplicada para todas as bandas.</p>
@@ -226,12 +229,14 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">();</span>
 </pre></div>
 </div>
-<div class="align-center figure align-default" id="imagens-fig-scatterplot-2-bandas">
+<figure class="align-center align-default" id="imagens-fig-scatterplot-2-bandas">
 <a class="reference internal image-reference" href="../_images/scatterplot-2-bandas.png"><img alt="Gráfico de dispersão (scatterplot) entre as bandas Red e NIR" src="../_images/scatterplot-2-bandas.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 4.4 - </span><span class="caption-text">Gráfico de dispersão (<em>scatterplot</em>) entre as bandas Red e NIR.</span><a class="headerlink" href="#imagens-fig-scatterplot-2-bandas" title="Link Permanente para essa imagem"></a></p>
-</div>
-<div class="section" id="composicao-colorida-e-contraste">
-<h2><span class="section-number">4.3.1. </span>Composição colorida e Contraste<a class="headerlink" href="#composicao-colorida-e-contraste" title="Link permanente para este título"></a></h2>
+<figcaption>
+<p><span class="caption-number">Figura 4.4 - </span><span class="caption-text">Gráfico de dispersão (<em>scatterplot</em>) entre as bandas Red e NIR.</span><a class="headerlink" href="#imagens-fig-scatterplot-2-bandas" title="Link Permanente para essa imagem"></a></p>
+</figcaption>
+</figure>
+<section id="composicao-colorida-e-contraste">
+<h2><span class="section-number">4.3.1. </span>Composição colorida e Contraste<a class="headerlink" href="#composicao-colorida-e-contraste" title="Link permanente para este cabeçalho"></a></h2>
 <p>Para visualizar uma composição colorida, precisamos informar quais bandas serão utilizadas nas componentes RGB do gráfico:</p>
 <ul class="simple">
 <li><p>canal R (vermelho)</p></li>
@@ -264,10 +269,12 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Composição colorida verdadeira&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="align-center figure align-default" id="imagens-fig-rapideye-cores-verdadeiras">
+<figure class="align-center align-default" id="imagens-fig-rapideye-cores-verdadeiras">
 <a class="reference internal image-reference" href="../_images/rapideye-cores-verdadeiras.png"><img alt="Visualização de uma composição colorida verdadeira" src="../_images/rapideye-cores-verdadeiras.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 4.5 - </span><span class="caption-text">Visualização de uma composição colorida verdadeira.</span><a class="headerlink" href="#imagens-fig-rapideye-cores-verdadeiras" title="Link Permanente para essa imagem"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Figura 4.5 - </span><span class="caption-text">Visualização de uma composição colorida verdadeira.</span><a class="headerlink" href="#imagens-fig-rapideye-cores-verdadeiras" title="Link Permanente para essa imagem"></a></p>
+</figcaption>
+</figure>
 <p>O contraste é uma técnica que melhora a visualização da imagem. Veja que neste caso, os números digitais da imagem podem ser alterados, e assim as propriedades dos elementos em relação a suas respostas espectrais ficam comprometidas.</p>
 <div class="admonition warning">
 <p class="admonition-title">Aviso</p>
@@ -305,9 +312,9 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Imagem com aplicação de offset = </span><span class="si">{</span><span class="n">offset</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="metodos-simples-para-classificacao">
-<h2><span class="section-number">4.3.2. </span>Métodos simples para classificação<a class="headerlink" href="#metodos-simples-para-classificacao" title="Link permanente para este título"></a></h2>
+</section>
+<section id="metodos-simples-para-classificacao">
+<h2><span class="section-number">4.3.2. </span>Métodos simples para classificação<a class="headerlink" href="#metodos-simples-para-classificacao" title="Link permanente para este cabeçalho"></a></h2>
 <p>Em diversos casos, a aplicação de limiares sobre índices espectrais produz rapidamente resultados de mapeamento de alvos.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># definição de algumas constantes (empíricas)</span>
 <span class="n">delta</span> <span class="o">=</span> <span class="mf">0.0000000001</span>
@@ -334,16 +341,18 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Exemplo de classificação&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="align-center figure align-default" id="imagens-fig-rapideye-classificacao-simples">
+<figure class="align-center align-default" id="imagens-fig-rapideye-classificacao-simples">
 <a class="reference internal image-reference" href="../_images/rapideye-classificacao-simples.png"><img alt="Exemplo de classificação simples obtida pela aplicação de 2 limiares empíricos" src="../_images/rapideye-classificacao-simples.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 4.6 - </span><span class="caption-text">Exemplo de classificação simples obtida pela aplicação de 2 limiares empíricos.</span><a class="headerlink" href="#imagens-fig-rapideye-classificacao-simples" title="Link Permanente para essa imagem"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Figura 4.6 - </span><span class="caption-text">Exemplo de classificação simples obtida pela aplicação de 2 limiares empíricos.</span><a class="headerlink" href="#imagens-fig-rapideye-classificacao-simples" title="Link Permanente para essa imagem"></a></p>
+</figcaption>
+</figure>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
 <p>A combinação das bibliotecas GDAL, NumPy e Matplotlib permite a criação de muitas ferramentas de análise de imagens. Conseguiremos também combinar essas análises com dados vetoriais e tabulares.</p>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

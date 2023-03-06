@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="pt-BR" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>6.2. Console Python no QGIS &mdash; SER-347/CAP-419</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -16,10 +17,10 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script src="../_static/translations.js"></script>
@@ -36,12 +37,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #2980B9" >
-            <a href="../index.html" class="icon icon-home"> SER-347/CAP-419
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SER-347/CAP-419
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Pesquisar documentos" />
+    <input type="text" name="q" placeholder="Pesquisar documentos" aria-label="Pesquisar documentos" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -86,10 +91,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Provas</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../provas/2022.html">Avaliação 2022</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2022/index.html">Turma 2022</a></li>
@@ -117,9 +118,9 @@
         <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Navegação da página">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../qgis.html"><span class="section-number">6. </span>Programando com o QGIS</a> &raquo;</li>
-      <li><span class="section-number">6.2. </span>Console Python no QGIS</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../qgis.html"><span class="section-number">6. </span>Programando com o QGIS</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">6.2. </span>Console Python no QGIS</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Navegação sequencial da página">
@@ -131,13 +132,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="console-python-no-qgis">
-<span id="sec-qgis-python-console"></span><h1><span class="section-number">6.2. </span>Console Python no QGIS<a class="headerlink" href="#console-python-no-qgis" title="Link permanente para este título"></a></h1>
+  <section id="console-python-no-qgis">
+<span id="sec-qgis-python-console"></span><h1><span class="section-number">6.2. </span>Console Python no QGIS<a class="headerlink" href="#console-python-no-qgis" title="Link permanente para este cabeçalho"></a></h1>
 <p>Vamos criar um novo projeto no QGIS chamado <code class="docutils literal notranslate"><span class="pre">CAP-419</span></code>. Em seguida, baixe o arquivo <a class="reference download external" download="" href="https://1drv.ms/u/s!AtoTP-MfEUEDgq58cYmvg1H3okPCwQ?e=4Sixlg"><code class="xref download docutils literal notranslate"><span class="pre">uf_2018.zip</span></code></a>, que contém dados sobre as Unidades da Federação do Brasil. Esses dados são relativos ao ano de 2018, encontram-se no formato <a class="reference external" href="https://en.wikipedia.org/wiki/Shapefile">ESRI Shapefile</a>. São 27 feições representadas por geometrias do tipo <cite>MultiPolygon</cite>, na escala <span class="math notranslate nohighlight">\(1:250.000\)</span>, projeção geográfica <cite>LAT/LONG</cite> e sistema geodésico de referência <cite>SIRGAS 2000</cite>. Inclua este arquivo como uma nova camada no seu projeto QGIS (<a class="reference internal" href="#fig-qgis-python-console-camada-uf-2018"><span class="std std-numref">Figura 6.14</span></a>).</p>
-<div class="align-center figure align-default" id="fig-qgis-python-console-camada-uf-2018">
+<figure class="align-center align-default" id="fig-qgis-python-console-camada-uf-2018">
 <a class="reference internal image-reference" href="../_images/camada-uf-2018.png"><img alt="Criando um projeto no QGIS chamado CAP-419 e carregando uma camada com as Unidades Federativas do Brasil" src="../_images/camada-uf-2018.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 6.14 - </span><span class="caption-text">Criando um projeto no QGIS chamado <code class="docutils literal notranslate"><span class="pre">CAP-419</span></code> e carregando uma camada com as Unidades Federativas do Brasil.</span><a class="headerlink" href="#fig-qgis-python-console-camada-uf-2018" title="Link Permanente para essa imagem"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Figura 6.14 - </span><span class="caption-text">Criando um projeto no QGIS chamado <code class="docutils literal notranslate"><span class="pre">CAP-419</span></code> e carregando uma camada com as Unidades Federativas do Brasil.</span><a class="headerlink" href="#fig-qgis-python-console-camada-uf-2018" title="Link Permanente para essa imagem"></a></p>
+</figcaption>
+</figure>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
 <p>Quem optou pela instalação dos sistemas através de contêiners Docker, coloque os arquivos do conjunto ESRI Shapefile na pasta <code class="docutils literal notranslate"><span class="pre">/home/&lt;seu-usuário&gt;/CAP-419/QGIS-Data</span></code>, para que o QGIS possa acessar esses dados mesmo sendo executado de dentro do contêiner.</p>
@@ -147,12 +150,14 @@
 <p>Maiores informações sobre os arquivos desta seção podem ser encontrados no site de <a class="reference external" href="https://www.ibge.gov.br/geociencias/downloads-geociencias.html">Geociências</a> do IBGE (Acesso: 04 de Janeiro de 2020).</p>
 </div>
 <p>Para ter acesso ao console do Python de dentro do QGIS, vá ao menu <code class="docutils literal notranslate"><span class="pre">Plugins</span> <span class="pre">|</span> <span class="pre">Python</span> <span class="pre">Console</span></code>. Um componente como o mostrado na <a class="reference internal" href="#fig-qgis-python-console-python-console"><span class="std std-numref">Figura 6.15</span></a> será apresentado. Nesse componente, além de entrar com comandos válidos da linguagem Python, você poderá utilizar diversas funcionalidades da API de programação do QGIS.</p>
-<div class="align-center figure align-default" id="fig-qgis-python-console-python-console">
+<figure class="align-center align-default" id="fig-qgis-python-console-python-console">
 <a class="reference internal image-reference" href="../_images/python-console.png"><img alt="Console do Python dentro da interface gráfica do QGIS" src="../_images/python-console.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 6.15 - </span><span class="caption-text">Console do Python dentro da interface gráfica do QGIS.</span><a class="headerlink" href="#fig-qgis-python-console-python-console" title="Link Permanente para essa imagem"></a></p>
-</div>
-<div class="section" id="descobrindo-a-camada-de-informacao-ativa">
-<h2><span class="section-number">6.2.1. </span>Descobrindo a Camada de Informação Ativa<a class="headerlink" href="#descobrindo-a-camada-de-informacao-ativa" title="Link permanente para este título"></a></h2>
+<figcaption>
+<p><span class="caption-number">Figura 6.15 - </span><span class="caption-text">Console do Python dentro da interface gráfica do QGIS.</span><a class="headerlink" href="#fig-qgis-python-console-python-console" title="Link Permanente para essa imagem"></a></p>
+</figcaption>
+</figure>
+<section id="descobrindo-a-camada-de-informacao-ativa">
+<h2><span class="section-number">6.2.1. </span>Descobrindo a Camada de Informação Ativa<a class="headerlink" href="#descobrindo-a-camada-de-informacao-ativa" title="Link permanente para este cabeçalho"></a></h2>
 <p>O console Python do QGIS já vem pré-configurado com a carga de algumas bibliotecas do próprio QGIS bem como a definição de alguns identificadores associados a classes e objetos importantes da sua API Python. O identificador <code class="docutils literal notranslate"><span class="pre">iface</span></code>, por exemplo, que é uma instância da classe <a class="reference external" href="https://qgis.org/pyqgis/3.16/gui/QgisInterface.html">QgisInterface</a>, permite acessar a área de mapas (<code class="docutils literal notranslate"><span class="pre">map</span> <span class="pre">canvas</span></code>), os menus, as barras de ferramentas (<em>toolbars</em>), além de outras partes da aplicação QGIS.</p>
 <p>Vamos começar a programar nesse console utilizando alguns comandos básicos que darão propriedades da camada de informação ativa no seu projeto do QGIS. Para isso, garanta que você tenha um projeto ativo contendo a camada mostrada na <a class="reference internal" href="#fig-qgis-python-console-camada-uf-2018"><span class="std std-numref">Figura 6.14</span></a>. Lembre-se de deixar a camada vetorial denominada <code class="docutils literal notranslate"><span class="pre">Unidades</span> <span class="pre">Federativas</span> <span class="pre">-</span> <span class="pre">2018</span></code> ativada por enquanto.</p>
 <p>Para obter uma referência à camada de informação ativa, podemos utilizar o método <code class="docutils literal notranslate"><span class="pre">activeLayer</span></code> do objeto <code class="docutils literal notranslate"><span class="pre">iface</span></code>:</p>
@@ -160,26 +165,32 @@
 </pre></div>
 </div>
 <p>Entre com o comando acima no console Python do QGIS como indicado na <a class="reference internal" href="#fig-qgis-python-console-python-console-layer-info-01"><span class="std std-numref">Figura 6.16</span></a>.</p>
-<div class="align-center figure align-default" id="fig-qgis-python-console-python-console-layer-info-01">
+<figure class="align-center align-default" id="fig-qgis-python-console-python-console-layer-info-01">
 <a class="reference internal image-reference" href="../_images/python-console-layer-info-01.png"><img alt="Entrando com um comando no console Python do QGIS" src="../_images/python-console-layer-info-01.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 6.16 - </span><span class="caption-text">Entrando com um comando no console Python do QGIS.</span><a class="headerlink" href="#fig-qgis-python-console-python-console-layer-info-01" title="Link Permanente para essa imagem"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Figura 6.16 - </span><span class="caption-text">Entrando com um comando no console Python do QGIS.</span><a class="headerlink" href="#fig-qgis-python-console-python-console-layer-info-01" title="Link Permanente para essa imagem"></a></p>
+</figcaption>
+</figure>
 <p>O identificador <code class="docutils literal notranslate"><span class="pre">layer</span></code> ficará associado a um objeto representando a camada de informação ativa. Este objeto é definido pela classe <a class="reference external" href="https://qgis.org/pyqgis/3.16/core/QgsMapLayer.html#qgis.core.QgsMapLayer">QgsMapLayer</a>, que por sua vez possui inúmeros métodos e propriedades. Para recuperar o nome da camada como exibida na interface gráfica do QGIS, por exemplo, utilize o método <code class="docutils literal notranslate"><span class="pre">name</span></code>, como mostrado abaixo (<a class="reference internal" href="#fig-qgis-python-console-python-console-layer-info-02"><span class="std std-numref">Figura 6.17</span></a>):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">layer</span><span class="o">.</span><span class="n">name</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="align-center figure align-default" id="fig-qgis-python-console-python-console-layer-info-02">
+<figure class="align-center align-default" id="fig-qgis-python-console-python-console-layer-info-02">
 <a class="reference internal image-reference" href="../_images/python-console-layer-info-02.png"><img alt="Recuperando o nome de uma camada de informação" src="../_images/python-console-layer-info-02.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 6.17 - </span><span class="caption-text">Recuperando o nome de uma camada de informação.</span><a class="headerlink" href="#fig-qgis-python-console-python-console-layer-info-02" title="Link Permanente para essa imagem"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Figura 6.17 - </span><span class="caption-text">Recuperando o nome de uma camada de informação.</span><a class="headerlink" href="#fig-qgis-python-console-python-console-layer-info-02" title="Link Permanente para essa imagem"></a></p>
+</figcaption>
+</figure>
 <p>O comando produzirá uma saída com o seguinte texto (<a class="reference internal" href="#fig-qgis-python-console-python-console-layer-info-03"><span class="std std-numref">Figura 6.18</span></a>):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Unidades</span> <span class="n">Federativas</span> <span class="o">-</span> <span class="mi">2018</span>
 </pre></div>
 </div>
-<div class="align-center figure align-default" id="fig-qgis-python-console-python-console-layer-info-03">
+<figure class="align-center align-default" id="fig-qgis-python-console-python-console-layer-info-03">
 <a class="reference internal image-reference" href="../_images/python-console-layer-info-03.png"><img alt="Nome da camada de informação ativa" src="../_images/python-console-layer-info-03.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 6.18 - </span><span class="caption-text">Nome da camada de informação ativa.</span><a class="headerlink" href="#fig-qgis-python-console-python-console-layer-info-03" title="Link Permanente para essa imagem"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Figura 6.18 - </span><span class="caption-text">Nome da camada de informação ativa.</span><a class="headerlink" href="#fig-qgis-python-console-python-console-layer-info-03" title="Link Permanente para essa imagem"></a></p>
+</figcaption>
+</figure>
 <p>O método <code class="docutils literal notranslate"><span class="pre">id</span></code> permite obter o identificador único dessa camada:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">layer</span><span class="o">.</span><span class="n">id</span><span class="p">()</span>
 </pre></div>
@@ -206,9 +217,9 @@
 <p class="admonition-title">Nota</p>
 <p>Camadas vetoriais são representadas por objetos da classe <a class="reference external" href="https://qgis.org/pyqgis/3.16/core/QgsVectorLayer.html">QgsVectorLayer</a>, que é uma especialização da classe <a class="reference external" href="https://qgis.org/pyqgis/3.16/core/QgsMapLayer.html#qgis.core.QgsMapLayer">QgsMapLayer</a> discutida anteriormente.</p>
 </div>
-</div>
-<div class="section" id="extensao-de-uma-camada">
-<h2><span class="section-number">6.2.2. </span>Extensão de uma Camada<a class="headerlink" href="#extensao-de-uma-camada" title="Link permanente para este título"></a></h2>
+</section>
+<section id="extensao-de-uma-camada">
+<h2><span class="section-number">6.2.2. </span>Extensão de uma Camada<a class="headerlink" href="#extensao-de-uma-camada" title="Link permanente para este cabeçalho"></a></h2>
 <p>Para obter a extensão dos objetos de uma camada, podemos utilizar o método <code class="docutils literal notranslate"><span class="pre">extent</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">extensao</span> <span class="o">=</span> <span class="n">layer</span><span class="o">.</span><span class="n">extent</span><span class="p">()</span>
 </pre></div>
@@ -217,9 +228,9 @@
 <span class="go">&#39;-73.9904499689999398,-33.7511779939999315 : -28.8476399139999558,5.2718410770000332&#39;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="sistema-de-referencia-de-coordenadas">
-<h2><span class="section-number">6.2.3. </span>Sistema de Referência de Coordenadas<a class="headerlink" href="#sistema-de-referencia-de-coordenadas" title="Link permanente para este título"></a></h2>
+</section>
+<section id="sistema-de-referencia-de-coordenadas">
+<h2><span class="section-number">6.2.3. </span>Sistema de Referência de Coordenadas<a class="headerlink" href="#sistema-de-referencia-de-coordenadas" title="Link permanente para este cabeçalho"></a></h2>
 <p>As informações sobre o sistema de coordenadas espacial podem ser obtidas através do método <code class="docutils literal notranslate"><span class="pre">crs</span></code>, que retorna um objeto da classe <a class="reference external" href="https://qgis.org/pyqgis/3.16/core/QgsCoordinateReferenceSystem.html">QgsCoordinateReferenceSystem</a>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">layer_crs</span> <span class="o">=</span> <span class="n">layer</span><span class="o">.</span><span class="n">crs</span><span class="p">()</span>
 </pre></div>
@@ -235,9 +246,9 @@
 <span class="go">         AUTHORITY[&quot;EPSG&quot;,&quot;4674&quot;]]&#39;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="unidade-do-mapa">
-<h2><span class="section-number">6.2.4. </span>Unidade do Mapa<a class="headerlink" href="#unidade-do-mapa" title="Link permanente para este título"></a></h2>
+</section>
+<section id="unidade-do-mapa">
+<h2><span class="section-number">6.2.4. </span>Unidade do Mapa<a class="headerlink" href="#unidade-do-mapa" title="Link permanente para este cabeçalho"></a></h2>
 <p>O método <code class="docutils literal notranslate"><span class="pre">mapUnits</span></code> de um objeto da classe <a class="reference external" href="https://qgis.org/pyqgis/3.16/core/QgsCoordinateReferenceSystem.html">QgsCoordinateReferenceSystem</a> retorna a unidade associada à projeção do sistema de coordenadas espacial:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">layer_crs</span><span class="o">.</span><span class="n">mapUnits</span><span class="p">()</span>
 <span class="go">6</span>
@@ -259,9 +270,9 @@
 - <code class="docutils literal notranslate"><span class="pre">QgsUnitTypes.DistanceMillimeters</span></code> (8)
 - <code class="docutils literal notranslate"><span class="pre">QgsUnitTypes.DistanceNauticalMiles</span></code> (3)</p>
 </div>
-</div>
-<div class="section" id="acessando-as-feicoes-de-uma-camada-vetorial">
-<h2><span class="section-number">6.2.5. </span>Acessando as Feições de uma Camada Vetorial<a class="headerlink" href="#acessando-as-feicoes-de-uma-camada-vetorial" title="Link permanente para este título"></a></h2>
+</section>
+<section id="acessando-as-feicoes-de-uma-camada-vetorial">
+<h2><span class="section-number">6.2.5. </span>Acessando as Feições de uma Camada Vetorial<a class="headerlink" href="#acessando-as-feicoes-de-uma-camada-vetorial" title="Link permanente para este cabeçalho"></a></h2>
 <p>O <a class="reference internal" href="#code-qgis-python-console-feature-it"><span class="std std-numref">Trecho de Código 6.2</span></a> mostra como iterarmos nas feições de uma camada vetorial, além de obter as propriedades alfanuméricas e geométricas dessas feições.</p>
 <div class="literal-block-wrapper docutils container" id="code-qgis-python-console-feature-it">
 <div class="code-block-caption"><span class="caption-number">Trecho de Código 6.2 - </span><span class="caption-text">Iterando pelas feições da camada ativa.</span><a class="headerlink" href="#code-qgis-python-console-feature-it" title="Link Permanente para esse código"></a></div>
@@ -281,9 +292,9 @@
 </div>
 <p>O método <code class="docutils literal notranslate"><span class="pre">getFeatures</span></code> retorna um iterador para as feições contidas na camada de informação vetorial. As feições, representadas por objetos da classe <a class="reference external" href="https://qgis.org/pyqgis/3.16/core/QgsFeature.html">QgsFeature</a>, possuem um identificador, acessível através do método <code class="docutils literal notranslate"><span class="pre">id</span></code>, uma lista de propriedades ou atributos acessível atráves do método <code class="docutils literal notranslate"><span class="pre">attributes</span></code>, e uma geometria associada, que pode ser recuperada através do método <code class="docutils literal notranslate"><span class="pre">geometry</span></code>.</p>
 <p>Como as geometrias da camada <code class="docutils literal notranslate"><span class="pre">Unidades</span> <span class="pre">Federativas</span> <span class="pre">-</span> <span class="pre">2018</span></code> correspondem a polígonos ou coleções de polígonos, utilizamos a operação <code class="docutils literal notranslate"><span class="pre">centroid</span></code> para computar o centróide dessas geometrias e, em seguida, transformar esses centróides numa representação textual através da operação <code class="docutils literal notranslate"><span class="pre">asWkt</span></code> (<em>Well-Known Text</em>).</p>
-</div>
-<div class="section" id="informacoes-sobre-classes-e-operacoes-no-console-python-do-qgis">
-<h2><span class="section-number">6.2.6. </span>Informações sobre Classes e Operações no Console Python do QGIS<a class="headerlink" href="#informacoes-sobre-classes-e-operacoes-no-console-python-do-qgis" title="Link permanente para este título"></a></h2>
+</section>
+<section id="informacoes-sobre-classes-e-operacoes-no-console-python-do-qgis">
+<h2><span class="section-number">6.2.6. </span>Informações sobre Classes e Operações no Console Python do QGIS<a class="headerlink" href="#informacoes-sobre-classes-e-operacoes-no-console-python-do-qgis" title="Link permanente para este cabeçalho"></a></h2>
 <p>De dentro do console Python do QGIS podemos verificar a documentação sobre classes, objetos, operações e valores literais, usando a função <code class="docutils literal notranslate"><span class="pre">help</span></code> do Python. Por exemplo, se quisermos saber maiores informações sobre o objeto <code class="docutils literal notranslate"><span class="pre">iface</span></code>, podemos utilizar o seguinte comando:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">(</span><span class="n">iface</span><span class="p">)</span>
 <span class="go">Help on QgisInterface in module qgis._gui object:</span>
@@ -312,8 +323,8 @@
 <span class="go">[&#39;__class__&#39;, ..., &#39;addRasterLayer&#39;, ..., &#39;addVectorLayer&#39;, ..., &#39;zoomToPrevious&#39;]</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

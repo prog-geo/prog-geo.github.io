@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="pt-BR" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>7.1.1. O que é o git? &mdash; SER-347/CAP-419</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -16,10 +17,10 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script src="../../_static/translations.js"></script>
@@ -35,12 +36,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #2980B9" >
-            <a href="../../index.html" class="icon icon-home"> SER-347/CAP-419
-            <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            SER-347/CAP-419
+              <img src="../../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Pesquisar documentos" />
+    <input type="text" name="q" placeholder="Pesquisar documentos" aria-label="Pesquisar documentos" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -83,10 +88,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../listas.html">Listas de Exercícios</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Provas</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../provas/2022.html">Avaliação 2022</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../projetos/2022/index.html">Turma 2022</a></li>
@@ -114,10 +115,10 @@
         <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Navegação da página">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../variados.html"><span class="section-number">7. </span>Tópicos Variados</a> &raquo;</li>
-          <li><a href="../git_github.html"><span class="section-number">7.1. </span>git e GitHub</a> &raquo;</li>
-      <li><span class="section-number">7.1.1. </span>O que é o <code class="docutils literal notranslate"><span class="pre">git</span></code>?</li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../variados.html"><span class="section-number">7. </span>Tópicos Variados</a></li>
+          <li class="breadcrumb-item"><a href="../git_github.html"><span class="section-number">7.1. </span>git e GitHub</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">7.1.1. </span>O que é o <code class="docutils literal notranslate"><span class="pre">git</span></code>?</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Navegação sequencial da página">
@@ -129,11 +130,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="o-que-e-o-git">
-<span id="sec-variados-git-github-git-definicao"></span><h1><span class="section-number">7.1.1. </span>O que é o <code class="docutils literal notranslate"><span class="pre">git</span></code>?<a class="headerlink" href="#o-que-e-o-git" title="Link permanente para este título"></a></h1>
+  <section id="o-que-e-o-git">
+<span id="sec-variados-git-github-git-definicao"></span><h1><span class="section-number">7.1.1. </span>O que é o <code class="docutils literal notranslate"><span class="pre">git</span></code>?<a class="headerlink" href="#o-que-e-o-git" title="Link permanente para este cabeçalho"></a></h1>
 <p>Uma das dificuldades que pode surgir ao longo do desenvolvimento de um programa ou <em>script</em> está relacionada ao controle das modificações ou versões do código que estamos escrevendo. No caso de termos mais pessoas modificando o mesmo código, mais uma dificuldade é inserida: controlar as alterações realizadas de maneira independente e às vezes, simultânea. Por conta desses problemas, a indústria de software desenvolveu programas conhecidos como <strong>sistemas de controle de versão</strong> (<em>version control systems</em>), que são capazes de registrar as modificações de um ou mais arquivos de código fonte, possibilitando verificar e recuperar esse histórico de modificações em um ambiente multiusuário. Essa ideia de versionamento aplica-se não só ao código fonte na forma textual, mas também a arquivos como PDFs, imagens, e outros tipos e formatos.</p>
 <p>A abreviação <code class="docutils literal notranslate"><span class="pre">VCS</span></code> é muito comum de ser empregada para a classe de sistemas com esse propósito. Os sistemas pioneiros, <a class="reference external" href="https://en.wikipedia.org/wiki/Concurrent_Versions_System">CVS</a> e seu sucessor, o <a class="reference external" href="https://en.wikipedia.org/wiki/Apache_Subversion">Apache Subversion</a>, utilizam uma arquitetura cliente-servidor, onde o servidor armazena o histórico do projeto e os clientes se conectam a esse servidor para obter uma cópia completa do projeto para então realizarem modificações e então aplicá-las de volta ao servidor. Mais recentemente, um sistema chamado <a class="reference external" href="https://en.wikipedia.org/wiki/Git">git</a>, desenvolvido pelo criador do Linux, Linus Torvalds, tem sido uma das ferramentas de controle de versão mais utilizadas. O <code class="docutils literal notranslate"><span class="pre">git</span></code> utiliza uma arquitetura distribuída, bem diferente de seus antecesssores (<code class="docutils literal notranslate"><span class="pre">CVS</span></code> e <code class="docutils literal notranslate"><span class="pre">SVN</span></code>), sendo integrado em diversos serviços de cloud, entre eles o <a class="reference external" href="https://en.wikipedia.org/wiki/GitHub">GitHub</a>.</p>
-</div>
+</section>
 
 
            </div>

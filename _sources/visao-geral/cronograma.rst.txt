@@ -87,38 +87,21 @@ Aulas Regulares
     |      |            |                                                                                                              |
     |      |            | Resolução Lista 2                                                                                            |
     +------+------------+--------------------------------------------------------------------------------------------------------------+
-    | 13   | 18/04/2022 | :ref:`Introdução à Programação com a Linguagem Python <cap_introducao_programacao>`:                         |
-    |      |            |   - :ref:`Funções <sec_introducao_programacao_funcoes>`                                                      |
-    |      |            |                                                                                                              |
-    |      |            | Resolução Lista 3                                                                                            |
+    | 13   | 18/04/2022 |                                                                                                              |
     +------+------------+--------------------------------------------------------------------------------------------------------------+
-    | 14   | 20/04/2022 | :ref:`Introdução à Programação com a Linguagem Python <cap_introducao_programacao>`:                         |
-    |      |            |   - :ref:`Funções <sec_introducao_programacao_funcoes>`                                                      |
-    |      |            |   - :ref:`Escopo de Variáveis <sec_introducao_programacao_escopo>`                                           |
-    |      |            |                                                                                                              |
-    |      |            | :ref:`Imagens - Processamento e Visualização  <cap_imagens>`:                                                |
-    |      |            |   - :ref:`GDAL - Geospatial Data Abstraction Library <sec_introducao_programacao_funcoes>`                   |
+    | 14   | 20/04/2022 |  Prova (Introdução à Programação com a Linguagem Python)                                                     |
     +------+------------+--------------------------------------------------------------------------------------------------------------+
-    | 15   | 25/04/2022 | :ref:`Imagens - Processamento e Visualização  <cap_imagens>`:                                                |
-    |      |            |   - :ref:`GDAL - Geospatial Data Abstraction Library <sec_introducao_programacao_funcoes>`                   |
+    | 15   | 25/04/2022 |                                                                                                              |
     +------+------------+--------------------------------------------------------------------------------------------------------------+
-    | 16   | 27/04/2022 | :ref:`Prova (Introdução à Programação com a Linguagem Python) <cap_prova_2022>`                              |
+    | 16   | 27/04/2022 |                                                                                                              |
     +------+------------+--------------------------------------------------------------------------------------------------------------+
-    | 17   | 02/05/2022 | :ref:`Imagens - Processamento e Visualização  <cap_imagens>`:                                                |
-    |      |            |   - :ref:`NumPy <sec_imagens_numpy>`                                                                         |
-    |      |            |   - :ref:`Visualização de Imagens <sec_imagens_visualizacao>`                                                |
+    | 17   | 02/05/2022 |                                                                                                              |
     +------+------------+--------------------------------------------------------------------------------------------------------------+
-    | 18   | 04/05/2022 | :ref:`Manipulação de Dados Vetoriais  <cap_vetorial>`:                                                       |
-    |      |            |   - :ref:`Introdução <sec_vetorial_introducao>`                                                              |
-    |      |            |   - :ref:`Tipos Geométricos <sec_vetorial_tipos_geometricos>`                                                |
-    |      |            |   - :ref:`Tipos Geométricos em Python <sec_vetorial_shapely>`                                                |
+    | 18   | 04/05/2022 |                                                                                                              |
     +------+------------+--------------------------------------------------------------------------------------------------------------+
-    | 19   | 09/05/2022 | :ref:`Manipulação de Dados Vetoriais  <cap_vetorial>`:                                                       |
-    |      |            |   - :ref:`Documentos JSON <sec_vetorial_json>`                                                               |
-    |      |            |   - :ref:`Documentos GeoJSON <sec_vetorial_geojson>`                                                         |
-    |      |            |   - :ref:`Leitura/Escrita de Dados Vetoriais <sec_vetorial_geo_io>`                                          |
+    | 19   | 09/05/2022 |                                                                                                              |
     +------+------------+--------------------------------------------------------------------------------------------------------------+
-    | 20   | 11/05/2022 | Pandas e GeoPandas                                                                                           |
+    | 20   | 11/05/2022 |                                                                                                              |
     +------+------------+--------------------------------------------------------------------------------------------------------------+
     | 21   | 16/05/2022 |                                                                                                              |
     +------+------------+--------------------------------------------------------------------------------------------------------------+

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="pt-BR" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>5.1. Introdução &mdash; SER-347/CAP-419</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -16,10 +17,10 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script src="../_static/translations.js"></script>
@@ -36,12 +37,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #2980B9" >
-            <a href="../index.html" class="icon icon-home"> SER-347/CAP-419
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SER-347/CAP-419
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Pesquisar documentos" />
+    <input type="text" name="q" placeholder="Pesquisar documentos" aria-label="Pesquisar documentos" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -81,10 +86,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Provas</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../provas/2022.html">Avaliação 2022</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2022/index.html">Turma 2022</a></li>
@@ -112,9 +113,9 @@
         <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Navegação da página">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../vetorial.html"><span class="section-number">5. </span>Manipulação de Dados Vetoriais</a> &raquo;</li>
-      <li><span class="section-number">5.1. </span>Introdução</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../vetorial.html"><span class="section-number">5. </span>Manipulação de Dados Vetoriais</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">5.1. </span>Introdução</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Navegação sequencial da página">
@@ -126,8 +127,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="introducao">
-<span id="sec-vetorial-introducao"></span><h1><span class="section-number">5.1. </span>Introdução<a class="headerlink" href="#introducao" title="Link permanente para este título"></a></h1>
+  <section id="introducao">
+<span id="sec-vetorial-introducao"></span><h1><span class="section-number">5.1. </span>Introdução<a class="headerlink" href="#introducao" title="Link permanente para este cabeçalho"></a></h1>
 <p>A forma de modelar e representar os fenômenos geográficos no computador depende de sua percepção na forma de <strong>entidades discretas</strong> (objetos) ou <strong>campos contínuos</strong>.</p>
 <p>Quando lidamos com fenômenos onde temos um valor definido para uma ou mais variáveis de observação em toda localização possível do espaço, estamos compreendendo tal fenômeno como um <em>campo contínuo</em>. Elevação, temperatura de superfície, risco de incêndio na vegetação, e radiância da superfície são exemplos de campos contínuos.</p>
 <p>Quando percebemos o fenômeno em questão por objetos com fronteiras bem definidas e pertencentes a uma certa categoria, estamos compreendendo esse fenômeno como <em>entidades discretas</em>. Unidades de conservação estadual e federal, organização territorial, arruamento, trechos rodoviários, escolas, hospitais, linhas de transmissão de energia elétrica, são alguns exemplos de entidades discretas.</p>
@@ -135,7 +136,7 @@
 <p>As entidades codificadas usando dados vetoriais são usualmente chamadas de <strong>feições</strong> (ou <em>features</em>). Nesse contexto, uma feição pode ser representada computacionalmente por diversas características, as quais chamamos de <strong>atributos da feição</strong>. Um <strong>atributo</strong> possui um nome, sendo associado a um determinado <strong>tipo de dado</strong>, como um número, uma sequência de caracteres (texto), ou uma data.</p>
 <p>Além dos atributos alfanuméricos, uma feição é descrita por um ou mais <strong>atributos geométricos</strong>, associados a um tipo de dado geométrico. Um <strong>tipo de dado geométrico</strong> é capaz de representar elementos geométricos primitivos tais como pontos, linhas e polígonos ou coleções desses elementos.</p>
 <p>A <a class="reference internal" href="#tbl-vetorial-introducao-tipos-objetos-geograficos"><span class="std std-numref">Tabela 5.1</span></a> apresenta alguns tipos de objetos geográficos representados por feições com representações geométricas de pontos (hidrelétricas e termoelétricas), linhas (logradouros) e polígonos (municípios brasileiros).</p>
-<table class="colwidths-given styled-table docutils align-center" id="tbl-vetorial-introducao-tipos-objetos-geograficos" style="width: 100%">
+<table class="styled-table docutils align-center" id="tbl-vetorial-introducao-tipos-objetos-geograficos" style="width: 100%">
 <caption><span class="caption-number">Tabela 5.1 - </span><span class="caption-text">Representação de feições geográficas através de objetos geométricos.</span><a class="headerlink" href="#tbl-vetorial-introducao-tipos-objetos-geograficos" title="Link Permanente para essa tabela"></a></caption>
 <colgroup>
 <col style="width: 33%" />
@@ -143,9 +144,9 @@
 <col style="width: 33%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="center-align head"><p>Hidrelétricas/Termoelétricas</p></th>
-<th class="center-align head"><p>Logradouros</p></th>
-<th class="center-align head"><p>Municípios</p></th>
+<tr class="row-odd"><th class="head center-align"><p>Hidrelétricas/Termoelétricas</p></th>
+<th class="head center-align"><p>Logradouros</p></th>
+<th class="head center-align"><p>Municípios</p></th>
 </tr>
 </thead>
 <tbody>
@@ -156,10 +157,12 @@
 </tbody>
 </table>
 <p>A <a class="reference internal" href="#fig-vetorial-introducao-feature-collection"><span class="std std-numref">Figura 5.1</span></a> ilustra o esquema de uma coleção de feições, onde podemos observar os atributos alfanuméricos e geométricos.</p>
-<div class="align-center figure align-default" id="fig-vetorial-introducao-feature-collection">
+<figure class="align-center align-default" id="fig-vetorial-introducao-feature-collection">
 <a class="reference internal image-reference" href="../_images/feature-collection-uf.png"><img alt="Coleção de Feições (Feature Collection)" src="../_images/feature-collection-uf.png" style="width: 480px;" /></a>
-<p class="caption"><span class="caption-number">Figura 5.1 - </span><span class="caption-text">Coleção de Feições (<em>Feature Collection</em>).</span><a class="headerlink" href="#fig-vetorial-introducao-feature-collection" title="Link Permanente para essa imagem"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Figura 5.1 - </span><span class="caption-text">Coleção de Feições (<em>Feature Collection</em>).</span><a class="headerlink" href="#fig-vetorial-introducao-feature-collection" title="Link Permanente para essa imagem"></a></p>
+</figcaption>
+</figure>
 <p>Repare que essa forma de representação, em geral, assume que todos os objetos da coleção possuem uma estrutura comum, a qual denominamos de <strong>esquema das feições</strong>. O esquema das feições é formado pelo conjunto de atributos usados para caracterizar as feições do conjunto. Além disso, cada atributo é associado a um tipo de dado. No caso da coleção mostrada na <a class="reference internal" href="#fig-vetorial-introducao-feature-collection"><span class="std std-numref">Figura 5.1</span></a> o esquema denominado <code class="docutils literal notranslate"><span class="pre">unidades_federativas</span></code> possui o seguinte conjunto de atributos:</p>
 <ul class="open">
 <li><p><code class="docutils literal notranslate"><span class="pre">ufid</span></code>: código do IBGE, um número inteiro usado para identificar as unidades federativas.</p></li>
@@ -174,12 +177,14 @@
 <p class="admonition-title">Nota</p>
 <p>As entidades codificados como dados matriciais, também chamadas de <strong>raster</strong> ou <strong>imagens</strong>, formam um plano subdividido em células de tamanho fixo, frequentemente chamadas de <strong>pixels</strong>. Para cada par de coordenada <span class="math notranslate nohighlight">\((x, y)\)</span> nesse plano há um valor de intensidade, por vezes chamado <strong>nível de cinza</strong>, que indica o valor de alguma medida para aquele ponto.</p>
 <p>A <a class="reference internal" href="#fig-vetorial-introducao-img-cbers4"><span class="std std-numref">Figura 5.2</span></a> apresenta uma imagem do satélite CBERS-4 sensor AWFI. Trata-se de um dado matricial em que cada célula, representa uma área de 64 metros <span class="math notranslate nohighlight">\(\times\)</span> 64 metros da superfície terrestre e o valor de intensidade indica uma aproximação da resposta espectral dessa superfície.</p>
-<div class="align-center figure align-default" id="fig-vetorial-introducao-img-cbers4">
+<figure class="align-center align-default" id="fig-vetorial-introducao-img-cbers4">
 <a class="reference internal image-reference" href="../_images/imagem-cbers4.png"><img alt="Imagem do satélite CBERS-4 sensor AWFI" src="../_images/imagem-cbers4.png" style="width: 480px;" /></a>
-<p class="caption"><span class="caption-number">Figura 5.2 - </span><span class="caption-text">Imagem do satélite CBERS-4 sensor AWFI com 64 metros de resolução espacial, em composição colorida.</span><a class="headerlink" href="#fig-vetorial-introducao-img-cbers4" title="Link Permanente para essa imagem"></a></p>
+<figcaption>
+<p><span class="caption-number">Figura 5.2 - </span><span class="caption-text">Imagem do satélite CBERS-4 sensor AWFI com 64 metros de resolução espacial, em composição colorida.</span><a class="headerlink" href="#fig-vetorial-introducao-img-cbers4" title="Link Permanente para essa imagem"></a></p>
+</figcaption>
+</figure>
 </div>
-</div>
-</div>
+</section>
 
 
            </div>

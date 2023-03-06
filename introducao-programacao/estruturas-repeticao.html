@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="pt-BR" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>2.13. Estruturas de Repetição &mdash; SER-347/CAP-419</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -16,10 +17,10 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script src="../_static/translations.js"></script>
@@ -36,12 +37,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #2980B9" >
-            <a href="../index.html" class="icon icon-home"> SER-347/CAP-419
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SER-347/CAP-419
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Pesquisar documentos" />
+    <input type="text" name="q" placeholder="Pesquisar documentos" aria-label="Pesquisar documentos" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -105,10 +110,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Provas</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../provas/2022.html">Avaliação 2022</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2022/index.html">Turma 2022</a></li>
@@ -136,9 +137,9 @@
         <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Navegação da página">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html"><span class="section-number">2. </span>Introdução à Programação com a Linguagem Python</a> &raquo;</li>
-      <li><span class="section-number">2.13. </span>Estruturas de Repetição</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">2. </span>Introdução à Programação com a Linguagem Python</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">2.13. </span>Estruturas de Repetição</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Navegação sequencial da página">
@@ -150,13 +151,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="estruturas-de-repeticao">
-<span id="sec-introducao-programacao-estruturas-repeticao"></span><h1><span class="section-number">2.13. </span>Estruturas de Repetição<a class="headerlink" href="#estruturas-de-repeticao" title="Link permanente para este título"></a></h1>
+  <section id="estruturas-de-repeticao">
+<span id="sec-introducao-programacao-estruturas-repeticao"></span><h1><span class="section-number">2.13. </span>Estruturas de Repetição<a class="headerlink" href="#estruturas-de-repeticao" title="Link permanente para este cabeçalho"></a></h1>
 <p id="sec-introducao-programacao-estruturas-repeticao-problema-1"><strong>Problema 1:</strong> Escreva um programa para converter temperaturas da escala Fahrenheit para a escala Celsius. A coluna <code class="docutils literal notranslate"><span class="pre">°F</span></code> na <a class="reference internal" href="#introd-prog-fig-tabela-temperaturas"><span class="std std-numref">Figura 2.14 -</span></a> contém a lista de valores a serem convertidos para a escala Celsius.</p>
-<div class="align-center figure align-default" id="introd-prog-fig-tabela-temperaturas">
+<figure class="align-center align-default" id="introd-prog-fig-tabela-temperaturas">
 <a class="reference internal image-reference" href="../_images/tabela-temperaturas.png"><img alt="Tabela de equivalência de temperaturas entre as escalas Fahrenheit e Celsius" src="../_images/tabela-temperaturas.png" style="width: 60%;" /></a>
-<p class="caption"><span class="caption-number">Figura 2.14 - </span><span class="caption-text">Tabela de equivalência de temperaturas entre as escalas Fahrenheit e Celsius.</span><a class="headerlink" href="#introd-prog-fig-tabela-temperaturas" title="Link Permanente para essa imagem"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Figura 2.14 - </span><span class="caption-text">Tabela de equivalência de temperaturas entre as escalas Fahrenheit e Celsius.</span><a class="headerlink" href="#introd-prog-fig-tabela-temperaturas" title="Link Permanente para essa imagem"></a></p>
+</figcaption>
+</figure>
 <p><strong>Desafio:</strong> Como implementar esse programa?</p>
 <ul class="open">
 <li><p>Muitas das computações que realizamos em um programa são naturalmente <strong>repetitivas</strong>.</p></li>
@@ -164,8 +167,8 @@
 <li><p>Através desses comandos, podemos realizar uma computação até que uma certa condição seja satisfeita.</p></li>
 </ul>
 <p>Em Python, temos dois tipos de laços: <code class="docutils literal notranslate"><span class="pre">for</span></code> e <code class="docutils literal notranslate"><span class="pre">while</span></code>. Esta seção apresenta esses dois tipos de laços.</p>
-<div class="section" id="exemplo-escrita-repetitiva-na-tela">
-<h2><span class="section-number">2.13.1. </span>Exemplo: escrita repetitiva na tela<a class="headerlink" href="#exemplo-escrita-repetitiva-na-tela" title="Link permanente para este título"></a></h2>
+<section id="exemplo-escrita-repetitiva-na-tela">
+<h2><span class="section-number">2.13.1. </span>Exemplo: escrita repetitiva na tela<a class="headerlink" href="#exemplo-escrita-repetitiva-na-tela" title="Link permanente para este cabeçalho"></a></h2>
 <p><strong>Problema 2:</strong> Crie um programa para escrever os números de <code class="docutils literal notranslate"><span class="pre">1</span></code> a <code class="docutils literal notranslate"><span class="pre">5</span></code>.</p>
 <p><strong>Solução?</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -212,14 +215,16 @@
 <p class="admonition-title">Nota</p>
 <p>Um objeto do tipo <code class="docutils literal notranslate"><span class="pre">range</span></code> ocupa um espaço fixo de memória, independente do tamanho do intervalo definido por ele. Enquanto uma lista materializa de fato os elementos da sequência, o <code class="docutils literal notranslate"><span class="pre">range</span></code> apenas calcula itens à medida em que são necessários.</p>
 </div>
-</div>
-<div class="section" id="lacos-do-tipo-for">
-<h2><span class="section-number">2.13.2. </span>Laços do tipo <code class="docutils literal notranslate"><span class="pre">for</span></code><a class="headerlink" href="#lacos-do-tipo-for" title="Link permanente para este título"></a></h2>
+</section>
+<section id="lacos-do-tipo-for">
+<h2><span class="section-number">2.13.2. </span>Laços do tipo <code class="docutils literal notranslate"><span class="pre">for</span></code><a class="headerlink" href="#lacos-do-tipo-for" title="Link permanente para este cabeçalho"></a></h2>
 <p>Esse tipo de laço é muito útil quando estamos lidando com <strong>sequências</strong> (como strings, tuplas e listas) ou <strong>iteráveis</strong>. A <a class="reference internal" href="#introd-prog-fig-laco-for"><span class="std std-numref">Figura 2.15</span></a> mostra como funciona esse tipo de laço. Repare que temos uma variável de controle, <span class="math notranslate nohighlight">\(v\)</span>, que é associada aos elementos de uma sequência/iterável. Toda vez que é possível associar a variável <span class="math notranslate nohighlight">\(v\)</span> a um novo elemento da sequência/iterável, o fluxo de controle do programa é desviado para as instruções do bloco de comandos destacado em verde. Quando não há mais possibilidade de associar a variável <span class="math notranslate nohighlight">\(v\)</span> a um novo elemento da sequência/iterável, o controle é desviado para o conjunto de instruções do bloco destacado em amarelo.</p>
-<div class="align-center figure align-default" id="introd-prog-fig-laco-for">
+<figure class="align-center align-default" id="introd-prog-fig-laco-for">
 <a class="reference internal image-reference" href="../_images/laco-for.png"><img alt="Fluxograma dos laços do tipo for" src="../_images/laco-for.png" style="width: 50%;" /></a>
-<p class="caption"><span class="caption-number">Figura 2.15 - </span><span class="caption-text">Fluxograma dos laços do tipo <code class="docutils literal notranslate"><span class="pre">for</span></code>.</span><a class="headerlink" href="#introd-prog-fig-laco-for" title="Link Permanente para essa imagem"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Figura 2.15 - </span><span class="caption-text">Fluxograma dos laços do tipo <code class="docutils literal notranslate"><span class="pre">for</span></code>.</span><a class="headerlink" href="#introd-prog-fig-laco-for" title="Link Permanente para essa imagem"></a></p>
+</figcaption>
+</figure>
 <p>A sintaxe básica deste comando é a seguinte:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">variavel</span><span class="o">-</span><span class="n">it</span> <span class="ow">in</span> <span class="n">iterável</span><span class="p">:</span>
     <span class="n">instrução</span><span class="o">-</span><span class="mi">1</span>
@@ -260,16 +265,18 @@
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Dica</p>
-<p>Para mais exemplos do uso do laço <code class="docutils literal notranslate"><span class="pre">for</span></code>, consulte <span id="id2">[<a class="reference internal" href="../referencias.html#id85" title="The Python Wiki. For loops. 2019. Online; acessado 27 de Fevereiro de 2021. URL: https://wiki.python.org/moin/ForLoop.">92</a>]</span>.</p>
+<p>Para mais exemplos do uso do laço <code class="docutils literal notranslate"><span class="pre">for</span></code>, consulte <span id="id2">[<a class="reference internal" href="../referencias.html#id85" title="The Python Wiki. For loops. 2019. Online; acessado 27 de Fevereiro de 2021. URL: https://wiki.python.org/moin/ForLoop.">89</a>]</span>.</p>
 </div>
-</div>
-<div class="section" id="lacos-do-tipo-while">
-<h2><span class="section-number">2.13.3. </span>Laços do tipo <code class="docutils literal notranslate"><span class="pre">while</span></code><a class="headerlink" href="#lacos-do-tipo-while" title="Link permanente para este título"></a></h2>
+</section>
+<section id="lacos-do-tipo-while">
+<h2><span class="section-number">2.13.3. </span>Laços do tipo <code class="docutils literal notranslate"><span class="pre">while</span></code><a class="headerlink" href="#lacos-do-tipo-while" title="Link permanente para este cabeçalho"></a></h2>
 <p>Nesse tipo de laço, se a expressão lógica ou condição de repetição no início do laço for verdadeira, os comandos (ou instruções) dentro da estrutura de repetição são executados. Ao final da execução dos comandos, internos ao laço, o fluxo de controle do programa volta ao início do laço, para nova avaliação da expressão lógica. Se a expressão for satisfeita novamente (verdadeira), o corpo do laço é novamente executado, até que a repetição seja interrompida quando a expressão resultar em um valor falso. Esse funcionamento pode ser visto na <a class="reference internal" href="#introd-prog-fig-laco-while"><span class="std std-numref">Figura 2.16</span></a>.</p>
-<div class="align-center figure align-default" id="introd-prog-fig-laco-while">
+<figure class="align-center align-default" id="introd-prog-fig-laco-while">
 <a class="reference internal image-reference" href="../_images/laco-while.png"><img alt="Fluxograma dos laços do tipo while" src="../_images/laco-while.png" style="width: 50%;" /></a>
-<p class="caption"><span class="caption-number">Figura 2.16 - </span><span class="caption-text">Fluxograma dos laços do tipo <code class="docutils literal notranslate"><span class="pre">while</span></code>.</span><a class="headerlink" href="#introd-prog-fig-laco-while" title="Link Permanente para essa imagem"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Figura 2.16 - </span><span class="caption-text">Fluxograma dos laços do tipo <code class="docutils literal notranslate"><span class="pre">while</span></code>.</span><a class="headerlink" href="#introd-prog-fig-laco-while" title="Link Permanente para essa imagem"></a></p>
+</figcaption>
+</figure>
 <p>A sintaxe básica deste comando é a seguine:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="o">&lt;</span><span class="n">condição</span><span class="o">&gt;</span><span class="p">:</span>
     <span class="n">instrução</span><span class="o">-</span><span class="mi">1</span>
@@ -324,14 +331,14 @@
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Dica</p>
-<p>Um bom tutorial sobre laços pode ser encontrado em <span id="id4">[<a class="reference internal" href="../referencias.html#id44" title="Satyabrata Pal. Python loops tutorial. 10 2017. Online; acessado 27 de Fevereiro de 2021. URL: https://www.datacamp.com/community/tutorials/loops-python-tutorial.">67</a>]</span>. O site learningpython.org contém uma seção explicando o uso de laços <code class="docutils literal notranslate"><span class="pre">for</span></code> e <code class="docutils literal notranslate"><span class="pre">while</span></code> <span id="id5">[<a class="reference internal" href="../referencias.html#id33" title="LearnPython.org. Loops. 2021. Online; acessado 27 de Fevereiro de 2021. URL: https://www.learnpython.org/en/Loops.">56</a>]</span>.</p>
+<p>Um bom tutorial sobre laços pode ser encontrado em <span id="id4">[<a class="reference internal" href="../referencias.html#id44" title="Satyabrata Pal. Python loops tutorial. 10 2017. Online; acessado 27 de Fevereiro de 2021. URL: https://www.datacamp.com/community/tutorials/loops-python-tutorial.">65</a>]</span>. O site learningpython.org contém uma seção explicando o uso de laços <code class="docutils literal notranslate"><span class="pre">for</span></code> e <code class="docutils literal notranslate"><span class="pre">while</span></code> <span id="id5">[<a class="reference internal" href="../referencias.html#id33" title="LearnPython.org. Loops. 2021. Online; acessado 27 de Fevereiro de 2021. URL: https://www.learnpython.org/en/Loops.">56</a>]</span>.</p>
 </div>
 <div class="box-exemplos admonition">
 <p class="admonition-title">Exemplos</p>
 <p>Vamos fazer os exemplos <a class="reference internal" href="exemplos.html#sec-introducao-programacao-exemplos-ex03"><span class="std std-ref">03</span></a>, <a class="reference internal" href="exemplos.html#sec-introducao-programacao-exemplos-ex04"><span class="std std-ref">04</span></a>, <a class="reference internal" href="exemplos.html#sec-introducao-programacao-exemplos-ex05"><span class="std std-ref">05</span></a>, <a class="reference internal" href="exemplos.html#sec-introducao-programacao-exemplos-ex06"><span class="std std-ref">06</span></a> e <a class="reference internal" href="exemplos.html#sec-introducao-programacao-exemplos-ex07"><span class="std std-ref">07</span></a>.</p>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

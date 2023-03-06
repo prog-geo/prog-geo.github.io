@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="pt-BR" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>4. Imagens - Processamento e Visualização &mdash; SER-347/CAP-419</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -16,10 +17,10 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
         <script src="_static/clipboard.min.js"></script>
         <script src="_static/copybutton.js"></script>
         <script src="_static/translations.js"></script>
@@ -35,12 +36,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #2980B9" >
-            <a href="index.html" class="icon icon-home"> SER-347/CAP-419
-            <img src="_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            SER-347/CAP-419
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Pesquisar documentos" />
+    <input type="text" name="q" placeholder="Pesquisar documentos" aria-label="Pesquisar documentos" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -76,10 +81,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="listas.html">Listas de Exercícios</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Provas</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="provas/2022.html">Avaliação 2022</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="projetos/2022/index.html">Turma 2022</a></li>
@@ -107,8 +108,8 @@
         <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Navegação da página">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li><span class="section-number">4. </span>Imagens - Processamento e Visualização</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">4. </span>Imagens - Processamento e Visualização</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Navegação sequencial da página">
@@ -120,8 +121,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="imagens-processamento-e-visualizacao">
-<span id="cap-imagens"></span><h1><span class="section-number">4. </span>Imagens - Processamento e Visualização<a class="headerlink" href="#imagens-processamento-e-visualizacao" title="Link permanente para este título"></a></h1>
+  <section id="imagens-processamento-e-visualizacao">
+<span id="cap-imagens"></span><h1><span class="section-number">4. </span>Imagens - Processamento e Visualização<a class="headerlink" href="#imagens-processamento-e-visualizacao" title="Link permanente para este cabeçalho"></a></h1>
 <p>Para facilitar o entendimento sobre as propriedades de uma imagem, vamos ver de maneira simples como as imagens de Sensoriamento Remoto óptico são geradas.</p>
 <iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/eFW8tV38We0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <br/>
@@ -131,18 +132,22 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">CBERS_4A_WPM_20200612_200_139_L4_BAND2.tif</span></code>: Banda 2 (verde).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">CBERS_4A_WPM_20200612_200_139_L4_BAND3.tif</span></code>: Banda 3 (vermelho).</p></li>
 </ul>
-<div class="align-center figure align-default" id="imagens-fig-raster-unica-banda">
+<figure class="align-center align-default" id="imagens-fig-raster-unica-banda">
 <a class="reference internal image-reference" href="_images/raster-unica-banda.png"><img alt="Um raster independente para cada banda" src="_images/raster-unica-banda.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 4.1 - </span><span class="caption-text">Um raster independente para cada banda.</span><a class="headerlink" href="#imagens-fig-raster-unica-banda" title="Link Permanente para essa imagem"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Figura 4.1 - </span><span class="caption-text">Um raster independente para cada banda.</span><a class="headerlink" href="#imagens-fig-raster-unica-banda" title="Link Permanente para essa imagem"></a></p>
+</figcaption>
+</figure>
 <p>Outra maneira consiste em armazenar diversas bandas no mesmo arquivo. Neste caso, o conjunto de metadados vale para todas as bandas. Por exemplo, é possível gerar um raster contendo as bandas 1, 2, 3 e 4 do <code class="docutils literal notranslate"><span class="pre">CBERS-04A</span></code> em um único arquivo <code class="docutils literal notranslate"><span class="pre">GeoTIFF</span></code> (<a class="reference internal" href="#imagens-fig-raster-multiplas-bandas"><span class="std std-numref">Figura 4.2</span></a>):</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">CBERS_4A_WPM_20200612_200_139_L4_BANDS1234.tif</span></code></p></li>
 </ul>
-<div class="align-center figure align-default" id="imagens-fig-raster-multiplas-bandas">
+<figure class="align-center align-default" id="imagens-fig-raster-multiplas-bandas">
 <a class="reference internal image-reference" href="_images/raster-multiplas-bandas.png"><img alt="Um arquivo com múltiplas bandas" src="_images/raster-multiplas-bandas.png" style="width: 60%;" /></a>
-<p class="caption"><span class="caption-number">Figura 4.2 - </span><span class="caption-text">Um arquivo com múltiplas bandas.</span><a class="headerlink" href="#imagens-fig-raster-multiplas-bandas" title="Link Permanente para essa imagem"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Figura 4.2 - </span><span class="caption-text">Um arquivo com múltiplas bandas.</span><a class="headerlink" href="#imagens-fig-raster-multiplas-bandas" title="Link Permanente para essa imagem"></a></p>
+</figcaption>
+</figure>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
 <p>A associação de cores nas Figuras <a class="reference internal" href="#imagens-fig-raster-unica-banda"><span class="std std-numref">4.1</span></a> e <a class="reference internal" href="#imagens-fig-raster-multiplas-bandas"><span class="std std-numref">4.2</span></a> é apenas ilustrativa. Um <em>raster</em> pode ter qualquer número de bandas, desde que suportado pelo seu formato.</p>
@@ -155,7 +160,7 @@
 <li class="toctree-l1"><a class="reference internal" href="imagens/visualizacao.html">4.3. Visualização de Imagens</a></li>
 </ul>
 </div>
-</div>
+</section>
 
 
            </div>

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="pt-BR" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>5.3. Tipos Geométricos em Python &mdash; SER-347/CAP-419</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -16,10 +17,10 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script src="../_static/translations.js"></script>
@@ -36,12 +37,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #2980B9" >
-            <a href="../index.html" class="icon icon-home"> SER-347/CAP-419
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SER-347/CAP-419
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Pesquisar documentos" />
+    <input type="text" name="q" placeholder="Pesquisar documentos" aria-label="Pesquisar documentos" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -88,10 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Provas</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../provas/2022.html">Avaliação 2022</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2022/index.html">Turma 2022</a></li>
@@ -119,9 +120,9 @@
         <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Navegação da página">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../vetorial.html"><span class="section-number">5. </span>Manipulação de Dados Vetoriais</a> &raquo;</li>
-      <li><span class="section-number">5.3. </span>Tipos Geométricos em Python</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../vetorial.html"><span class="section-number">5. </span>Manipulação de Dados Vetoriais</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">5.3. </span>Tipos Geométricos em Python</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Navegação sequencial da página">
@@ -133,12 +134,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="tipos-geometricos-em-python">
-<span id="sec-vetorial-shapely"></span><h1><span class="section-number">5.3. </span>Tipos Geométricos em Python<a class="headerlink" href="#tipos-geometricos-em-python" title="Link permanente para este título"></a></h1>
+  <section id="tipos-geometricos-em-python">
+<span id="sec-vetorial-shapely"></span><h1><span class="section-number">5.3. </span>Tipos Geométricos em Python<a class="headerlink" href="#tipos-geometricos-em-python" title="Link permanente para este cabeçalho"></a></h1>
 <a class="reference internal image-reference" href="../_images/geometries.svg"><img alt="Tipos Geométricos" class="align-right" height="75" src="../_images/geometries.svg" /></a>
 <p>A biblioteca Shapely fornece o modelo geométrico e as operações espaciais da OGC-SFS (<a class="reference internal" href="tipos-geometricos.html#sec-vetorial-tipos-geometricos"><span class="std std-numref">Seção 5.2</span></a>) com um estilo <em>Pythonico</em>. Ela utiliza a biblioteca C++ denominada GEOS para representação dos tipos geométricos bem como para as operações espaciais.</p>
-<div class="section" id="instalacao">
-<h2><span class="section-number">5.3.1. </span>Instalação<a class="headerlink" href="#instalacao" title="Link permanente para este título"></a></h2>
+<section id="instalacao">
+<h2><span class="section-number">5.3.1. </span>Instalação<a class="headerlink" href="#instalacao" title="Link permanente para este cabeçalho"></a></h2>
 <p>Para realizar a instalação da Shapely com o gerenciador de pacotes da Anaconda, ative o ambiente virtual no qual deseja instalar a biblioteca e, em seguida, instale o pacote com o mesmo nome da biblioteca, como mostrado abaixo:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">geospatial</span>
 
@@ -156,13 +157,13 @@
 <p class="admonition-title">Nota</p>
 <p>Você deverá instalar a versão 1.7.1 ou superior.</p>
 </div>
-</div>
-<div class="section" id="tipos-geometricos">
-<h2><span class="section-number">5.3.2. </span>Tipos Geométricos<a class="headerlink" href="#tipos-geometricos" title="Link permanente para este título"></a></h2>
+</section>
+<section id="tipos-geometricos">
+<h2><span class="section-number">5.3.2. </span>Tipos Geométricos<a class="headerlink" href="#tipos-geometricos" title="Link permanente para este cabeçalho"></a></h2>
 <p>A biblioteca Shapely suporta os tipos geométricos da OGC-SFS: <strong>Point</strong>, <strong>LineString</strong>, <strong>LinearRing</strong>, <strong>Polygon</strong>, <strong>MultiPoint</strong>, <strong>MultiLineString</strong>, <strong>MultiPolygon</strong> e <strong>GeometryCollection</strong> (<a class="reference internal" href="tipos-geometricos.html#fig-vetorial-tipos-geometricos-class-diagram"><span class="std std-numref">Figura 5.3</span></a>).</p>
 <p>Como a biblioteca Shapely utiliza a GEOS, as operações suportadas não consideram a componente <span class="math notranslate nohighlight">\(z\)</span> em suas análises. Além disso, os tipos geométricos dessa biblioteca utilizam números em ponto flutuante para representação das coordenadas dos seus elementos geométricos.</p>
-<div class="section" id="pontos-point">
-<h3><span class="section-number">5.3.2.1. </span>Pontos (Point)<a class="headerlink" href="#pontos-point" title="Link permanente para este título"></a></h3>
+<section id="pontos-point">
+<h3><span class="section-number">5.3.2.1. </span>Pontos (Point)<a class="headerlink" href="#pontos-point" title="Link permanente para este cabeçalho"></a></h3>
 <p>Para criar objetos do tipo <code class="docutils literal notranslate"><span class="pre">Point</span></code> é preciso importar esse tipo a partir do módulo <code class="docutils literal notranslate"><span class="pre">geometry</span></code> do pacote <code class="docutils literal notranslate"><span class="pre">shapely</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">Point</span>
 </pre></div>
@@ -188,9 +189,9 @@
 <p class="admonition-title">Nota</p>
 <p>O desenho mostrado acima é possível pois o ambiente Jupyter reconhece que a expressão acima pode ser apresentada por uma figura em SVG.</p>
 </div>
-</div>
-<div class="section" id="linhas-linestring">
-<h3><span class="section-number">5.3.2.2. </span>Linhas (LineString)<a class="headerlink" href="#linhas-linestring" title="Link permanente para este título"></a></h3>
+</section>
+<section id="linhas-linestring">
+<h3><span class="section-number">5.3.2.2. </span>Linhas (LineString)<a class="headerlink" href="#linhas-linestring" title="Link permanente para este cabeçalho"></a></h3>
 <p>Assim como o tipo <code class="docutils literal notranslate"><span class="pre">Point</span></code>, o tipo <code class="docutils literal notranslate"><span class="pre">LineString</span></code> deve ser importado da seguinte forma:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">LineString</span>
 </pre></div>
@@ -227,9 +228,9 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">line</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="anel-linearring">
-<h3><span class="section-number">5.3.2.3. </span>Anel (LinearRing)<a class="headerlink" href="#anel-linearring" title="Link permanente para este título"></a></h3>
+</section>
+<section id="anel-linearring">
+<h3><span class="section-number">5.3.2.3. </span>Anel (LinearRing)<a class="headerlink" href="#anel-linearring" title="Link permanente para este cabeçalho"></a></h3>
 <p>Para criar objetos do tipo <code class="docutils literal notranslate"><span class="pre">LinearRing</span></code> é preciso importar a classe <code class="docutils literal notranslate"><span class="pre">LinearRing</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">LinearRing</span>
 </pre></div>
@@ -258,9 +259,9 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">anel</span><span class="o">.</span><span class="n">boundary</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="poligonos">
-<h3><span class="section-number">5.3.2.4. </span>Polígonos<a class="headerlink" href="#poligonos" title="Link permanente para este título"></a></h3>
+</section>
+<section id="poligonos">
+<h3><span class="section-number">5.3.2.4. </span>Polígonos<a class="headerlink" href="#poligonos" title="Link permanente para este cabeçalho"></a></h3>
 <p>Para criar objetos do tipo <code class="docutils literal notranslate"><span class="pre">Polygon</span></code> é preciso importar a classe <code class="docutils literal notranslate"><span class="pre">Polygon</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">Polygon</span>
 </pre></div>
@@ -306,9 +307,9 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">poly</span><span class="o">.</span><span class="n">boundary</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="multipoint">
-<h3><span class="section-number">5.3.2.5. </span>MultiPoint<a class="headerlink" href="#multipoint" title="Link permanente para este título"></a></h3>
+</section>
+<section id="multipoint">
+<h3><span class="section-number">5.3.2.5. </span>MultiPoint<a class="headerlink" href="#multipoint" title="Link permanente para este cabeçalho"></a></h3>
 <p>Para criar objetos que representam coleções homogeneas de pontos é preciso importar a classe <code class="docutils literal notranslate"><span class="pre">MultiPoint</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">MultiPoint</span>
 </pre></div>
@@ -326,9 +327,9 @@
     <span class="nb">print</span><span class="p">(</span><span class="n">pt</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">pt</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="multilinestring">
-<h3><span class="section-number">5.3.2.6. </span>MultiLineString<a class="headerlink" href="#multilinestring" title="Link permanente para este título"></a></h3>
+</section>
+<section id="multilinestring">
+<h3><span class="section-number">5.3.2.6. </span>MultiLineString<a class="headerlink" href="#multilinestring" title="Link permanente para este cabeçalho"></a></h3>
 <p>Para criar objetos que representam coleções homogeneas de linhas é preciso importar a classe <code class="docutils literal notranslate"><span class="pre">MultiLineString</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">MultiLineString</span>
 </pre></div>
@@ -355,9 +356,9 @@
     <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="multipolygon">
-<h3><span class="section-number">5.3.2.7. </span>MultiPolygon<a class="headerlink" href="#multipolygon" title="Link permanente para este título"></a></h3>
+</section>
+<section id="multipolygon">
+<h3><span class="section-number">5.3.2.7. </span>MultiPolygon<a class="headerlink" href="#multipolygon" title="Link permanente para este cabeçalho"></a></h3>
 <p>Para criar objetos que representam coleções homogeneas de polígonos é preciso importar a classe <code class="docutils literal notranslate"><span class="pre">MultiPolygon</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">MultiPolygon</span>
 </pre></div>
@@ -417,10 +418,10 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mpoly</span><span class="o">.</span><span class="n">boundary</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="relacionamentos-espaciais">
-<h2><span class="section-number">5.3.3. </span>Relacionamentos Espaciais<a class="headerlink" href="#relacionamentos-espaciais" title="Link permanente para este título"></a></h2>
+</section>
+</section>
+<section id="relacionamentos-espaciais">
+<h2><span class="section-number">5.3.3. </span>Relacionamentos Espaciais<a class="headerlink" href="#relacionamentos-espaciais" title="Link permanente para este cabeçalho"></a></h2>
 <p>Qual o relacionamento espacial entre o ponto de coordenadas <code class="docutils literal notranslate"><span class="pre">(2,</span> <span class="pre">3)</span></code> e a linha formada pelas coordenadas <code class="docutils literal notranslate"><span class="pre">(1</span> <span class="pre">1,</span> <span class="pre">0</span> <span class="pre">3,</span> <span class="pre">4</span> <span class="pre">3)</span></code>?</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pt</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 
@@ -471,9 +472,9 @@
 <span class="n">poly</span><span class="o">.</span><span class="n">touches</span><span class="p">(</span><span class="n">l2</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="operacoes-de-conjunto">
-<h2><span class="section-number">5.3.4. </span>Operações de Conjunto<a class="headerlink" href="#operacoes-de-conjunto" title="Link permanente para este título"></a></h2>
+</section>
+<section id="operacoes-de-conjunto">
+<h2><span class="section-number">5.3.4. </span>Operações de Conjunto<a class="headerlink" href="#operacoes-de-conjunto" title="Link permanente para este cabeçalho"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span> <span class="o">=</span> <span class="n">Polygon</span><span class="p">(</span> <span class="p">[</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="p">]</span> <span class="p">)</span>
 
 <span class="n">p2</span> <span class="o">=</span> <span class="n">Polygon</span><span class="p">(</span> <span class="p">[</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="p">]</span> <span class="p">)</span>
@@ -498,11 +499,11 @@
 <span class="n">g</span><span class="o">.</span><span class="n">wkt</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="formatos">
-<h2><span class="section-number">5.3.5. </span>Formatos<a class="headerlink" href="#formatos" title="Link permanente para este título"></a></h2>
-<div class="section" id="ogc-wkt-well-known-text">
-<h3><span class="section-number">5.3.5.1. </span>OGC WKT (Well-Known Text)<a class="headerlink" href="#ogc-wkt-well-known-text" title="Link permanente para este título"></a></h3>
+</section>
+<section id="formatos">
+<h2><span class="section-number">5.3.5. </span>Formatos<a class="headerlink" href="#formatos" title="Link permanente para este cabeçalho"></a></h2>
+<section id="ogc-wkt-well-known-text">
+<h3><span class="section-number">5.3.5.1. </span>OGC WKT (Well-Known Text)<a class="headerlink" href="#ogc-wkt-well-known-text" title="Link permanente para este cabeçalho"></a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">line</span><span class="o">.</span><span class="n">wkt</span>
 </pre></div>
 </div>
@@ -515,9 +516,9 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">g</span><span class="o">.</span><span class="n">wkt</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>

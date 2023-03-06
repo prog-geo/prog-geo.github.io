@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="pt-BR" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>2.7. Variáveis &mdash; SER-347/CAP-419</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -16,10 +17,10 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script src="../_static/translations.js"></script>
@@ -35,12 +36,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #2980B9" >
-            <a href="../index.html" class="icon icon-home"> SER-347/CAP-419
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SER-347/CAP-419
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Pesquisar documentos" />
+    <input type="text" name="q" placeholder="Pesquisar documentos" aria-label="Pesquisar documentos" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -104,10 +109,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Provas</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../provas/2022.html">Avaliação 2022</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2022/index.html">Turma 2022</a></li>
@@ -135,9 +136,9 @@
         <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Navegação da página">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html"><span class="section-number">2. </span>Introdução à Programação com a Linguagem Python</a> &raquo;</li>
-      <li><span class="section-number">2.7. </span>Variáveis</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">2. </span>Introdução à Programação com a Linguagem Python</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">2.7. </span>Variáveis</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Navegação sequencial da página">
@@ -149,8 +150,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="variaveis">
-<span id="sec-introducao-programacao-variaveis"></span><h1><span class="section-number">2.7. </span>Variáveis<a class="headerlink" href="#variaveis" title="Link permanente para este título"></a></h1>
+  <section id="variaveis">
+<span id="sec-introducao-programacao-variaveis"></span><h1><span class="section-number">2.7. </span>Variáveis<a class="headerlink" href="#variaveis" title="Link permanente para este cabeçalho"></a></h1>
 <p>Um programa, além de manipular <strong>valores constantes</strong> ou <strong>literais</strong>, também manipula o que chamamos de <strong>variáveis</strong>. Cada <strong>variável</strong> corresponde a uma posição de memória cujo conteúdo pode variar ao longo do tempo de execução de um programa. Uma <strong>variável</strong> possui <strong>um nome</strong> usado como <strong>identificador</strong> e, em geral, é <strong>associada</strong> com um <strong>tipo de dado</strong>.</p>
 <p>Considere o seguinte trecho de código:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="mf">5.2</span>
@@ -161,16 +162,18 @@
 </pre></div>
 </div>
 <p>Vamos supor um sistema com endereços de memória de 32-bit, como mostrado na <a class="reference internal" href="#introd-prog-fig-variaveis"><span class="std std-numref">Figura 2.10</span></a>. Após a execução da última linha acima, teremos os nomes <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> e <code class="docutils literal notranslate"><span class="pre">nome</span></code> associados aos endereços de células na memória como mostrado nessa figura.</p>
-<div class="align-center figure align-default" id="introd-prog-fig-variaveis">
+<figure class="align-center align-default" id="introd-prog-fig-variaveis">
 <a class="reference internal image-reference" href="../_images/variaveis.png"><img alt="Variáveis" src="../_images/variaveis.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 2.10 - </span><span class="caption-text">Variáveis.</span><a class="headerlink" href="#introd-prog-fig-variaveis" title="Link Permanente para essa imagem"></a></p>
-</div>
-<div class="section" id="atribuicao">
-<h2><span class="section-number">2.7.1. </span>Atribuição<a class="headerlink" href="#atribuicao" title="Link permanente para este título"></a></h2>
+<figcaption>
+<p><span class="caption-number">Figura 2.10 - </span><span class="caption-text">Variáveis.</span><a class="headerlink" href="#introd-prog-fig-variaveis" title="Link Permanente para essa imagem"></a></p>
+</figcaption>
+</figure>
+<section id="atribuicao">
+<h2><span class="section-number">2.7.1. </span>Atribuição<a class="headerlink" href="#atribuicao" title="Link permanente para este cabeçalho"></a></h2>
 <p>A atribuição é um comando que associa um valor de um determinado tipo de dados a uma variável. Essa associação pode também ser o resultado de uma expressão. Portanto, este comando possui a seguinte forma:</p>
-<div class="align-center figure align-default">
+<figure class="align-center align-default">
 <img alt="Atribuição" src="../_images/atribuicao.png" />
-</div>
+</figure>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
 <p>Os <strong>tipos de dados</strong> nos <strong>abstraem</strong> da <strong>representação interna</strong>, destacada na figura anterior pela forma de representação dos valores na memória do computador.</p>
@@ -179,13 +182,13 @@
 <p class="admonition-title">Nota</p>
 <p>O conceito de <strong>variável</strong>, nos <strong>abstrai</strong> da necessidade de lembrarmos das <strong>posições de memória</strong> onde armazenamos <strong>valores</strong>.</p>
 </div>
-</div>
-<div class="section" id="regra-para-nomes-de-variaveis">
-<h2><span class="section-number">2.7.2. </span>Regra para Nomes de Variáveis<a class="headerlink" href="#regra-para-nomes-de-variaveis" title="Link permanente para este título"></a></h2>
+</section>
+<section id="regra-para-nomes-de-variaveis">
+<h2><span class="section-number">2.7.2. </span>Regra para Nomes de Variáveis<a class="headerlink" href="#regra-para-nomes-de-variaveis" title="Link permanente para este cabeçalho"></a></h2>
 <p>Cada linguagem de programação possui suas regras para nomenclatura das variáveis, inclusive para dizer se há diferenças entre nomes de variáveis com letras maiúsculas e minúsculas. Em Python, os <strong>identificadores</strong> (ou <strong>nomes</strong>) de variáveis podem ser qualquer cadeia de caracteres formada por letras, dígitos e <em>underscore</em>, desde que não comece com um dígito. Além disso, existe a distinção entre caracteres maiúsculos e minúsculos.</p>
-</div>
-<div class="section" id="variaveis-e-atribuicoes">
-<h2><span class="section-number">2.7.3. </span>Variáveis e Atribuições<a class="headerlink" href="#variaveis-e-atribuicoes" title="Link permanente para este título"></a></h2>
+</section>
+<section id="variaveis-e-atribuicoes">
+<h2><span class="section-number">2.7.3. </span>Variáveis e Atribuições<a class="headerlink" href="#variaveis-e-atribuicoes" title="Link permanente para este cabeçalho"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="mi">3</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="mi">5</span>
@@ -211,8 +214,8 @@
 <span class="go">5</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="pt-BR" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>3.5. Comandos do Sistema &mdash; SER-347/CAP-419</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -16,10 +17,10 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script src="../_static/translations.js"></script>
@@ -35,12 +36,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #2980B9" >
-            <a href="../index.html" class="icon icon-home"> SER-347/CAP-419
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SER-347/CAP-419
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Pesquisar documentos" />
+    <input type="text" name="q" placeholder="Pesquisar documentos" aria-label="Pesquisar documentos" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -79,10 +84,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Provas</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../provas/2022.html">Avaliação 2022</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2022/index.html">Turma 2022</a></li>
@@ -110,9 +111,9 @@
         <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Navegação da página">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../jupyter.html"><span class="section-number">3. </span>Jupyter</a> &raquo;</li>
-      <li><span class="section-number">3.5. </span>Comandos do Sistema</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../jupyter.html"><span class="section-number">3. </span>Jupyter</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">3.5. </span>Comandos do Sistema</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Navegação sequencial da página">
@@ -124,8 +125,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="comandos-do-sistema">
-<span id="sec-jupyter-comandos-sistema"></span><h1><span class="section-number">3.5. </span>Comandos do Sistema<a class="headerlink" href="#comandos-do-sistema" title="Link permanente para este título"></a></h1>
+  <section id="comandos-do-sistema">
+<span id="sec-jupyter-comandos-sistema"></span><h1><span class="section-number">3.5. </span>Comandos do Sistema<a class="headerlink" href="#comandos-do-sistema" title="Link permanente para este cabeçalho"></a></h1>
 <p>O <em>kernel IPython</em> estende a sintaxe da linguagem Python para possibilitar, entre outras coisas, o uso de comandos do <cite>Sistema Operacional</cite> (SO) de dentro do terminal IPython ou das células dos Jupyter Notebooks, no ambiente interativo Jupyter. Linhas de código começando pelo caractere <code class="docutils literal notranslate"><span class="pre">!</span></code> são passadas diretamente para o SO. Além disso, é possível recuperar a saída produzida pelos comandos do SO através de linhas usando <code class="docutils literal notranslate"><span class="pre">!!</span></code> (dupla exclamação) ou uma sintaxe do tipo <code class="docutils literal notranslate"><span class="pre">var</span> <span class="pre">=</span> <span class="pre">!cmd</span></code>.</p>
 <p>O comando <code class="docutils literal notranslate"><span class="pre">!ls</span></code>, abaixo, faz com que o comando <code class="docutils literal notranslate"><span class="pre">ls</span></code> do SO seja executado, retornando a listagem de arquivos e sub-diretórios do diretório corrente da aplicação de onde o comando foi executado.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="o">!</span>ls
@@ -133,7 +134,7 @@
 </pre></div>
 </div>
 <p>Também é possível passar opções para os comandos a serem executados. No caso do comando <code class="docutils literal notranslate"><span class="pre">ls</span></code>, dos sistemas Unix, a opção <code class="docutils literal notranslate"><span class="pre">-l</span></code> faz com que listagem seja mais detalhada:</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [2]: </span><span class="o">!</span>ls -l
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [2]: </span><span class="o">!</span>ls<span class="w"> </span>-l
 <span class="go">total 20</span>
 <span class="go">drwxrwxr-x 2 gribeiro gribeiro 4096 abr 12 17:31 Docker</span>
 <span class="go">drwxrwxr-x 3 gribeiro gribeiro 4096 abr 12 18:00 LiClipse</span>
@@ -162,7 +163,7 @@
 </div>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [6]: </span><span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">diretorios</span><span class="p">:</span>
 <span class="gp">   ...: </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---------&quot;</span><span class="p">)</span>
-<span class="gp">   ...: </span>    <span class="o">!</span>ls <span class="nv">$d</span>
+<span class="gp">   ...: </span>    <span class="o">!</span>ls<span class="w"> </span><span class="nv">$d</span>
 <span class="gp">   ...:</span>
 <span class="gt">---------</span>
 <span class="n">gribeiro</span>
@@ -176,7 +177,7 @@
 <p>ou, usando os nomes de objetos delimitados por <code class="docutils literal notranslate"><span class="pre">{}</span></code>:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [7]: </span><span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">diretorios</span><span class="p">:</span>
 <span class="gp">   ...: </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---------&quot;</span><span class="p">)</span>
-<span class="gp">   ...: </span>    <span class="o">!</span>ls <span class="o">{</span>d<span class="o">}</span>
+<span class="gp">   ...: </span>    <span class="o">!</span>ls<span class="w"> </span><span class="o">{</span>d<span class="o">}</span>
 <span class="gp">   ...:</span>
 <span class="gt">---------</span>
 <span class="n">gribeiro</span>
@@ -187,7 +188,7 @@
 <span class="nb">bin</span>  <span class="n">games</span>  <span class="n">include</span>  <span class="n">lib</span>  <span class="n">lib32</span>  <span class="n">lib64</span>      <span class="n">libexec</span>  <span class="n">libx32</span>  <span class="n">local</span>  <span class="n">sbin</span>  <span class="n">share</span>  <span class="n">src</span>
 </pre></div>
 </div>
-</div>
+</section>
 
 
            </div>

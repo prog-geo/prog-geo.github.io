@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="pt-BR" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>2.18. Conjuntos &mdash; SER-347/CAP-419</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -16,10 +17,10 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script src="../_static/translations.js"></script>
@@ -35,12 +36,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #2980B9" >
-            <a href="../index.html" class="icon icon-home"> SER-347/CAP-419
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SER-347/CAP-419
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Pesquisar documentos" />
+    <input type="text" name="q" placeholder="Pesquisar documentos" aria-label="Pesquisar documentos" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -102,10 +107,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Provas</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../provas/2022.html">Avaliação 2022</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2022/index.html">Turma 2022</a></li>
@@ -133,9 +134,9 @@
         <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Navegação da página">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html"><span class="section-number">2. </span>Introdução à Programação com a Linguagem Python</a> &raquo;</li>
-      <li><span class="section-number">2.18. </span>Conjuntos</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">2. </span>Introdução à Programação com a Linguagem Python</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">2.18. </span>Conjuntos</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Navegação sequencial da página">
@@ -147,8 +148,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="conjuntos">
-<span id="sec-introducao-programacao-set"></span><h1><span class="section-number">2.18. </span>Conjuntos<a class="headerlink" href="#conjuntos" title="Link permanente para este título"></a></h1>
+  <section id="conjuntos">
+<span id="sec-introducao-programacao-set"></span><h1><span class="section-number">2.18. </span>Conjuntos<a class="headerlink" href="#conjuntos" title="Link permanente para este cabeçalho"></a></h1>
 <p>A linguagem Python fornece um tipo chamado <code class="docutils literal notranslate"><span class="pre">set</span></code> que permite construir conjuntos, isto é, coleções não ordenadas e sem elementos duplicados. Trata-se de uma estrutura adequada para operações sobre conjuntos: união, intersecção, diferença, e diferença simétrica.</p>
 <p>Um conjunto pode ser criado utilizando um par de chaves (<code class="docutils literal notranslate"><span class="pre">{</span></code> e <code class="docutils literal notranslate"><span class="pre">}</span></code>), com os elementos separados por vírgula:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mg</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;Mariana&quot;</span><span class="p">,</span> <span class="s2">&quot;Ouro Preto&quot;</span><span class="p">,</span> <span class="s2">&quot;Ouro Branco&quot;</span> <span class="p">}</span>
@@ -208,8 +209,8 @@
 <p class="admonition-title">Nota</p>
 <p>Existem dois tipos básicos de conjunto em Python: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#set">set</a> e <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#frozenset">frozenset</a>. O primeiro, é mutável, enquanto o último, imutável.</p>
 </div>
-<div class="section" id="set-comprehension">
-<h2><span class="section-number">2.18.1. </span><em>Set Comprehension</em><a class="headerlink" href="#set-comprehension" title="Link permanente para este título"></a></h2>
+<section id="set-comprehension">
+<h2><span class="section-number">2.18.1. </span><em>Set Comprehension</em><a class="headerlink" href="#set-comprehension" title="Link permanente para este cabeçalho"></a></h2>
 <p>Exemplo:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">xs</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span> <span class="p">]</span>
 
@@ -226,8 +227,8 @@
 <p class="admonition-title">Nota</p>
 <p>Para mais detalhes sobre a estrutura <code class="docutils literal notranslate"><span class="pre">set</span></code>, consulte <span id="id1">[<a class="reference internal" href="../referencias.html#id78" title="Python Software Foundation. Set types — set, frozenset. 2021. Online; acessado 07 de Março de 2021. URL: https://docs.python.org/3/library/stdtypes.html#set-types-set-frozenset.">35</a>]</span> e <span id="id2">[<a class="reference internal" href="../referencias.html#id82" title="Python Software Foundation. Sets. 2021. Online; acessado 07 de Março de 2021. URL: https://docs.python.org/3/tutorial/datastructures.html#sets.">36</a>]</span>.</p>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="pt-BR" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>3.4. Funções Mágicas &mdash; SER-347/CAP-419</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -16,10 +17,10 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script src="../_static/translations.js"></script>
@@ -36,12 +37,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #2980B9" >
-            <a href="../index.html" class="icon icon-home"> SER-347/CAP-419
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SER-347/CAP-419
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Pesquisar documentos" />
+    <input type="text" name="q" placeholder="Pesquisar documentos" aria-label="Pesquisar documentos" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -83,10 +88,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Provas</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../provas/2022.html">Avaliação 2022</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2022/index.html">Turma 2022</a></li>
@@ -114,9 +115,9 @@
         <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Navegação da página">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../jupyter.html"><span class="section-number">3. </span>Jupyter</a> &raquo;</li>
-      <li><span class="section-number">3.4. </span>Funções Mágicas</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../jupyter.html"><span class="section-number">3. </span>Jupyter</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">3.4. </span>Funções Mágicas</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Navegação sequencial da página">
@@ -128,8 +129,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="funcoes-magicas">
-<span id="sec-jupyter-comandos-magicos"></span><h1><span class="section-number">3.4. </span>Funções Mágicas<a class="headerlink" href="#funcoes-magicas" title="Link permanente para este título"></a></h1>
+  <section id="funcoes-magicas">
+<span id="sec-jupyter-comandos-magicos"></span><h1><span class="section-number">3.4. </span>Funções Mágicas<a class="headerlink" href="#funcoes-magicas" title="Link permanente para este cabeçalho"></a></h1>
 <p>O IPython possui um conjunto pré-definido de funções chamadas de <strong>funções mágicas</strong> (<em>magic functions</em>), que podem ser usadas com um estilo de chamada de comandos em linha. Existem dois tipos de <strong>mágicas</strong> (<em>magics</em>): <strong>por linha</strong> (<em>line magics</em>) e <strong>por célula</strong> (<em>cell magics</em>). As <strong>mágicas por linha</strong> são prefixadas pelo caractere <code class="docutils literal notranslate"><span class="pre">%</span></code> e, tratam todos os valores após o comando até o final da linha como argumentos. A função mágica de linha <code class="docutils literal notranslate"><span class="pre">%timeit</span></code>, mostrada no <a class="reference internal" href="#code-jupyter-funcoes-magicas-timeit-line-magic"><span class="std std-numref">Trecho de Código 3.1</span></a>, computa o tempo médio para execução de um comando ou expressão Python.</p>
 <div class="literal-block-wrapper docutils container" id="code-jupyter-funcoes-magicas-timeit-line-magic">
 <div class="code-block-caption"><span class="caption-number">Trecho de Código 3.1 - </span><span class="caption-text">Função mágica de linha <code class="docutils literal notranslate"><span class="pre">%timeit</span></code>.</span><a class="headerlink" href="#code-jupyter-funcoes-magicas-timeit-line-magic" title="Link Permanente para esse código"></a></div>
@@ -149,19 +150,23 @@
 </pre></div>
 </div>
 </div>
-<div class="align-center figure align-default" id="fig-jupyter-funcoes-magicas-terminal-ipython-magic-help">
+<figure class="align-center align-default" id="fig-jupyter-funcoes-magicas-terminal-ipython-magic-help">
 <a class="reference internal image-reference" href="../_images/terminal-ipython-magic-help.png"><img alt="Ajuda sobre a função mágica %timeit no terminal IPython" src="../_images/terminal-ipython-magic-help.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 3.27 - </span><span class="caption-text">Ajuda sobre a função mágica <code class="docutils literal notranslate"><span class="pre">%timeit</span></code> no terminal IPython.</span><a class="headerlink" href="#fig-jupyter-funcoes-magicas-terminal-ipython-magic-help" title="Link Permanente para essa imagem"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Figura 3.27 - </span><span class="caption-text">Ajuda sobre a função mágica <code class="docutils literal notranslate"><span class="pre">%timeit</span></code> no terminal IPython.</span><a class="headerlink" href="#fig-jupyter-funcoes-magicas-terminal-ipython-magic-help" title="Link Permanente para essa imagem"></a></p>
+</figcaption>
+</figure>
 <p>Para obter informações sobre o sistema de funções mágicas, podemos usar <code class="docutils literal notranslate"><span class="pre">%magic</span></code>:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="o">%</span><span class="k">magic</span>
 </pre></div>
 </div>
 <p>Esse comando fará com que a ajuda sobre o sistema de funções mágicas seja apresentada, como mostrado na <a class="reference internal" href="#fig-jupyter-funcoes-magicas-terminal-ipython-magic"><span class="std std-numref">Figura 3.28</span></a>.</p>
-<div class="align-center figure align-default" id="fig-jupyter-funcoes-magicas-terminal-ipython-magic">
+<figure class="align-center align-default" id="fig-jupyter-funcoes-magicas-terminal-ipython-magic">
 <a class="reference internal image-reference" href="../_images/terminal-ipython-magic.png"><img alt="Ajuda sobre o sistema de funções mágicas do IPython" src="../_images/terminal-ipython-magic.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 3.28 - </span><span class="caption-text">Ajuda sobre o sistema de funções mágicas do IPython.</span><a class="headerlink" href="#fig-jupyter-funcoes-magicas-terminal-ipython-magic" title="Link Permanente para essa imagem"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Figura 3.28 - </span><span class="caption-text">Ajuda sobre o sistema de funções mágicas do IPython.</span><a class="headerlink" href="#fig-jupyter-funcoes-magicas-terminal-ipython-magic" title="Link Permanente para essa imagem"></a></p>
+</figcaption>
+</figure>
 <p>A lista completa de funções mágicas pode ser obtida através da mágica <code class="docutils literal notranslate"><span class="pre">%lsmagic</span></code>:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="o">%</span><span class="k">lsmagic</span>
 <span class="gh">Out[1]:</span>
@@ -182,8 +187,8 @@
 <span class="go">4.18 µs ± 149 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)</span>
 </pre></div>
 </div>
-<div class="section" id="comandos-uteis">
-<h2><span class="section-number">3.4.1. </span>Comandos Úteis<a class="headerlink" href="#comandos-uteis" title="Link permanente para este título"></a></h2>
+<section id="comandos-uteis">
+<h2><span class="section-number">3.4.1. </span>Comandos Úteis<a class="headerlink" href="#comandos-uteis" title="Link permanente para este cabeçalho"></a></h2>
 <p>A mágica <code class="docutils literal notranslate"><span class="pre">%run</span></code> permite executar um <em>script</em> Python e carregar todas as suas definições no ambiente interativo. Faça o <em>download</em> do <em>script</em> <a class="reference download internal" download="" href="../_downloads/1af1c20a1aae5a31485be244148284fa/haversine.py"><code class="xref download docutils literal notranslate"><span class="pre">haversine.py</span></code></a> e coloque-o na pasta onde você está executando seu ambiente IPython ou <cite>Jupyter</cite>. Este <em>script</em> computa a distância na esfera para duas localizações, segundo a fórmula de Haversine. O <a class="reference internal" href="#code-jupyter-funcoes-magicas-run-line-magic"><span class="std std-numref">Trecho de Código 3.3</span></a> mostra como executar este <em>script</em> e computar a distância entre os pontos <span class="math notranslate nohighlight">\((0, 0)\)</span> e <span class="math notranslate nohighlight">\((0, 1)\)</span>.</p>
 <div class="literal-block-wrapper docutils container" id="code-jupyter-funcoes-magicas-run-line-magic">
 <div class="code-block-caption"><span class="caption-number">Trecho de Código 3.3 - </span><span class="caption-text">Usando a mágica <code class="docutils literal notranslate"><span class="pre">%run</span></code> para executar um <em>script</em>.</span><a class="headerlink" href="#code-jupyter-funcoes-magicas-run-line-magic" title="Link Permanente para esse código"></a></div>
@@ -271,10 +276,12 @@
 </pre></div>
 </div>
 <p>No ambiente JupyterLab ou Jupyter Notebook, a mágica de célula <code class="docutils literal notranslate"><span class="pre">%%HTML</span></code> permite incluir vídeos do Youtube, como mostrado na <a class="reference internal" href="#fig-jupyter-funcoes-magicas-magic-html"><span class="std std-numref">Figura 3.29</span></a>.</p>
-<div class="align-center figure align-default" id="fig-jupyter-funcoes-magicas-magic-html">
+<figure class="align-center align-default" id="fig-jupyter-funcoes-magicas-magic-html">
 <a class="reference internal image-reference" href="../_images/magic-html.png"><img alt="Embutindo um vídeo através da mágica %%HTML" src="../_images/magic-html.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 3.29 - </span><span class="caption-text">Embutindo um vídeo através da mágica <code class="docutils literal notranslate"><span class="pre">%%HTML</span></code>.</span><a class="headerlink" href="#fig-jupyter-funcoes-magicas-magic-html" title="Link Permanente para essa imagem"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Figura 3.29 - </span><span class="caption-text">Embutindo um vídeo através da mágica <code class="docutils literal notranslate"><span class="pre">%%HTML</span></code>.</span><a class="headerlink" href="#fig-jupyter-funcoes-magicas-magic-html" title="Link Permanente para essa imagem"></a></p>
+</figcaption>
+</figure>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
 <p>No caso das funções mágicas <strong>de linha</strong> é possível omitir o prefixo <code class="docutils literal notranslate"><span class="pre">%</span></code>, desde que o nome da função não esteja definido na tabela de símbolos em uso pelo seu cliente IPython. Exemplo:</p>
@@ -291,8 +298,8 @@
 <p class="admonition-title">Dica</p>
 <p>Consulte o Notebook Jupyter com <a class="reference external" href="http://nbviewer.ipython.org/urls/raw.github.com/ipython/ipython/1.x/examples/notebooks/Cell%20Magics.ipynb">exemplo de mágicas</a>.</p>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

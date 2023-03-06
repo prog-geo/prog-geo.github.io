@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="pt-BR" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>2.21. Os Comandos break e continue &mdash; SER-347/CAP-419</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -16,10 +17,10 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script src="../_static/translations.js"></script>
@@ -35,12 +36,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #2980B9" >
-            <a href="../index.html" class="icon icon-home"> SER-347/CAP-419
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SER-347/CAP-419
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Pesquisar documentos" />
+    <input type="text" name="q" placeholder="Pesquisar documentos" aria-label="Pesquisar documentos" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -103,10 +108,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Provas</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../provas/2022.html">Avaliação 2022</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2022/index.html">Turma 2022</a></li>
@@ -134,9 +135,9 @@
         <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Navegação da página">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html"><span class="section-number">2. </span>Introdução à Programação com a Linguagem Python</a> &raquo;</li>
-      <li><span class="section-number">2.21. </span>Os Comandos <code class="docutils literal notranslate"><span class="pre">break</span></code> e <code class="docutils literal notranslate"><span class="pre">continue</span></code></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">2. </span>Introdução à Programação com a Linguagem Python</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">2.21. </span>Os Comandos <code class="docutils literal notranslate"><span class="pre">break</span></code> e <code class="docutils literal notranslate"><span class="pre">continue</span></code></li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Navegação sequencial da página">
@@ -148,10 +149,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="os-comandos-break-e-continue">
-<span id="sec-introducao-break-continue"></span><h1><span class="section-number">2.21. </span>Os Comandos <code class="docutils literal notranslate"><span class="pre">break</span></code> e <code class="docutils literal notranslate"><span class="pre">continue</span></code><a class="headerlink" href="#os-comandos-break-e-continue" title="Link permanente para este título"></a></h1>
-<div class="section" id="interrompendo-um-laco-break">
-<h2><span class="section-number">2.21.1. </span>Interrompendo um laço - <code class="docutils literal notranslate"><span class="pre">break</span></code><a class="headerlink" href="#interrompendo-um-laco-break" title="Link permanente para este título"></a></h2>
+  <section id="os-comandos-break-e-continue">
+<span id="sec-introducao-break-continue"></span><h1><span class="section-number">2.21. </span>Os Comandos <code class="docutils literal notranslate"><span class="pre">break</span></code> e <code class="docutils literal notranslate"><span class="pre">continue</span></code><a class="headerlink" href="#os-comandos-break-e-continue" title="Link permanente para este cabeçalho"></a></h1>
+<section id="interrompendo-um-laco-break">
+<h2><span class="section-number">2.21.1. </span>Interrompendo um laço - <code class="docutils literal notranslate"><span class="pre">break</span></code><a class="headerlink" href="#interrompendo-um-laco-break" title="Link permanente para este cabeçalho"></a></h2>
 <p>O comando <code class="docutils literal notranslate"><span class="pre">break</span></code> é usado para ajudar no controle do fluxo de execução dentro de um laço (<code class="docutils literal notranslate"><span class="pre">while</span></code> ou <code class="docutils literal notranslate"><span class="pre">for</span></code>). O comando <code class="docutils literal notranslate"><span class="pre">break</span></code> faz com que a execução do laço seja interrompida independentemente do teste condicional do laço <code class="docutils literal notranslate"><span class="pre">while</span></code> ou da existência de novos elementos para iteração no laço <code class="docutils literal notranslate"><span class="pre">for</span></code>. Ou seja, o comando <code class="docutils literal notranslate"><span class="pre">break</span></code> irá finalizar a execução do laço redirecionando a execução do programa para o próximo comando após o laço.</p>
 <p>Para ilustrar o uso desse comando, vamos apresentar um exemplo em que o laço do tipo <code class="docutils literal notranslate"><span class="pre">for</span></code> é interrompido antes do final da travessia por todos os elementos do intervalo definido:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
@@ -177,9 +178,9 @@
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Primeiro comando fora do laço!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="desviando-a-sequencia-de-um-laco-continue">
-<h2><span class="section-number">2.21.2. </span>Desviando a sequência de um laço - <code class="docutils literal notranslate"><span class="pre">continue</span></code><a class="headerlink" href="#desviando-a-sequencia-de-um-laco-continue" title="Link permanente para este título"></a></h2>
+</section>
+<section id="desviando-a-sequencia-de-um-laco-continue">
+<h2><span class="section-number">2.21.2. </span>Desviando a sequência de um laço - <code class="docutils literal notranslate"><span class="pre">continue</span></code><a class="headerlink" href="#desviando-a-sequencia-de-um-laco-continue" title="Link permanente para este cabeçalho"></a></h2>
 <p>O comando <code class="docutils literal notranslate"><span class="pre">continue</span></code> funciona de maneira similar ao comando <code class="docutils literal notranslate"><span class="pre">break</span></code>. Porém, ao invés de finalizar a execução do laço, o comando <code class="docutils literal notranslate"><span class="pre">continue</span></code> irá finalizar a iteração corrente. Dessa forma, todo comando após a declaração <code class="docutils literal notranslate"><span class="pre">continue</span></code> não será executado. Ou seja, o comando irá redirecionar o fluxo do programa fazendo com que a próxima iteração do laço seja executada.</p>
 <p>Veja o exemplo abaixo:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
@@ -205,8 +206,8 @@
 <p class="admonition-title">Nota</p>
 <p>As instruções <code class="docutils literal notranslate"><span class="pre">break</span></code> e <code class="docutils literal notranslate"><span class="pre">continue</span></code> podem ser utilizadas tanto com laços do tipo <code class="docutils literal notranslate"><span class="pre">for</span></code> quanto <code class="docutils literal notranslate"><span class="pre">while</span></code>.</p>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

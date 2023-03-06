@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="pt-BR" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>2.9. Tipo Lógico &mdash; SER-347/CAP-419</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -16,10 +17,10 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script src="../_static/translations.js"></script>
@@ -36,12 +37,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #2980B9" >
-            <a href="../index.html" class="icon icon-home"> SER-347/CAP-419
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SER-347/CAP-419
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Pesquisar documentos" />
+    <input type="text" name="q" placeholder="Pesquisar documentos" aria-label="Pesquisar documentos" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -104,10 +109,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Provas</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../provas/2022.html">Avaliação 2022</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2022/index.html">Turma 2022</a></li>
@@ -135,9 +136,9 @@
         <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Navegação da página">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html"><span class="section-number">2. </span>Introdução à Programação com a Linguagem Python</a> &raquo;</li>
-      <li><span class="section-number">2.9. </span>Tipo Lógico</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">2. </span>Introdução à Programação com a Linguagem Python</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">2.9. </span>Tipo Lógico</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Navegação sequencial da página">
@@ -149,10 +150,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="tipo-logico">
-<span id="sec-introducao-programacao-tipo-logico"></span><h1><span class="section-number">2.9. </span>Tipo Lógico<a class="headerlink" href="#tipo-logico" title="Link permanente para este título"></a></h1>
-<div class="section" id="bool">
-<h2><span class="section-number">2.9.1. </span><code class="docutils literal notranslate"><span class="pre">bool</span></code><a class="headerlink" href="#bool" title="Link permanente para este título"></a></h2>
+  <section id="tipo-logico">
+<span id="sec-introducao-programacao-tipo-logico"></span><h1><span class="section-number">2.9. </span>Tipo Lógico<a class="headerlink" href="#tipo-logico" title="Link permanente para este cabeçalho"></a></h1>
+<section id="bool">
+<h2><span class="section-number">2.9.1. </span><code class="docutils literal notranslate"><span class="pre">bool</span></code><a class="headerlink" href="#bool" title="Link permanente para este cabeçalho"></a></h2>
 <p>O tipo <code class="docutils literal notranslate"><span class="pre">bool</span></code> é usado para representar valores <strong>booleanos</strong> ou <strong>lógicos</strong>. Este tipo possui apenas dois valores possíveis: <code class="docutils literal notranslate"><span class="pre">True</span></code> (verdadeiro) ou <code class="docutils literal notranslate"><span class="pre">False</span></code> (falso).</p>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
@@ -166,9 +167,9 @@
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="operadores-logicos">
-<h2><span class="section-number">2.9.2. </span>Operadores Lógicos<a class="headerlink" href="#operadores-logicos" title="Link permanente para este título"></a></h2>
+</section>
+<section id="operadores-logicos">
+<h2><span class="section-number">2.9.2. </span>Operadores Lógicos<a class="headerlink" href="#operadores-logicos" title="Link permanente para este cabeçalho"></a></h2>
 <p>As operações usuais sobre os tipos booleanos são conhecidas como <strong>operações lógicas</strong>. Os principais operadores lógicos são:</p>
 <ul class="open">
 <li><p><code class="docutils literal notranslate"><span class="pre">and</span></code>: o <strong>e lógico</strong> (conjunção) opera em dois valores (lógicos), também chamados de <strong>proposições</strong>, e produz o valor verdadeiro somente se os dois operandos são verdadeiros (<a class="reference internal" href="#introd-prog-tbl-op-logico-and"><span class="std std-numref">Tabela 2.7</span></a>).</p></li>
@@ -177,15 +178,10 @@
 </ul>
 <table class="styled-table docutils align-center" id="introd-prog-tbl-op-logico-and" style="width: 50%">
 <caption><span class="caption-number">Tabela 2.7 - </span><span class="caption-text">Tabela verdade do operador <code class="docutils literal notranslate"><span class="pre">and</span></code>.</span><a class="headerlink" href="#introd-prog-tbl-op-logico-and" title="Link Permanente para essa tabela"></a></caption>
-<colgroup>
-<col style="width: 26%" />
-<col style="width: 26%" />
-<col style="width: 48%" />
-</colgroup>
 <thead>
-<tr class="row-odd"><th class="center-align head"><p><span class="math notranslate nohighlight">\(p\)</span></p></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(q\)</span></p></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(p \wedge q\)</span></p></th>
+<tr class="row-odd"><th class="head center-align"><p><span class="math notranslate nohighlight">\(p\)</span></p></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(q\)</span></p></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(p \wedge q\)</span></p></th>
 </tr>
 </thead>
 <tbody>
@@ -209,15 +205,10 @@
 </table>
 <table class="styled-table docutils align-center" id="introd-prog-tbl-op-logico-or" style="width: 50%">
 <caption><span class="caption-number">Tabela 2.8 - </span><span class="caption-text">Tabela verdade do operador <code class="docutils literal notranslate"><span class="pre">or</span></code>.</span><a class="headerlink" href="#introd-prog-tbl-op-logico-or" title="Link Permanente para essa tabela"></a></caption>
-<colgroup>
-<col style="width: 28%" />
-<col style="width: 28%" />
-<col style="width: 45%" />
-</colgroup>
 <thead>
-<tr class="row-odd"><th class="center-align head"><p><span class="math notranslate nohighlight">\(p\)</span></p></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(q\)</span></p></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(p \vee q\)</span></p></th>
+<tr class="row-odd"><th class="head center-align"><p><span class="math notranslate nohighlight">\(p\)</span></p></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(q\)</span></p></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(p \vee q\)</span></p></th>
 </tr>
 </thead>
 <tbody>
@@ -241,13 +232,9 @@
 </table>
 <table class="styled-table docutils align-center" id="introd-prog-tbl-op-logico-not" style="width: 50%">
 <caption><span class="caption-number">Tabela 2.9 - </span><span class="caption-text">Tabela verdade do operador <code class="docutils literal notranslate"><span class="pre">not</span></code>.</span><a class="headerlink" href="#introd-prog-tbl-op-logico-not" title="Link Permanente para essa tabela"></a></caption>
-<colgroup>
-<col style="width: 41%" />
-<col style="width: 59%" />
-</colgroup>
 <thead>
-<tr class="row-odd"><th class="center-align head"><p><span class="math notranslate nohighlight">\(p\)</span></p></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(\neg p\)</span></p></th>
+<tr class="row-odd"><th class="head center-align"><p><span class="math notranslate nohighlight">\(p\)</span></p></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(\neg p\)</span></p></th>
 </tr>
 </thead>
 <tbody>
@@ -276,8 +263,8 @@
 <p class="admonition-title">Nota</p>
 <p>Os <strong>valores e operadores lógicos</strong> são essenciais nos <strong>comandos condicionais</strong> e nos <strong>testes condicionais dos laços de repetição</strong>.</p>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

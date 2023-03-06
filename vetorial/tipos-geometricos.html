@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="pt-BR" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>5.2. Tipos Geométricos &mdash; SER-347/CAP-419</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -16,10 +17,10 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script src="../_static/translations.js"></script>
@@ -36,12 +37,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #2980B9" >
-            <a href="../index.html" class="icon icon-home"> SER-347/CAP-419
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SER-347/CAP-419
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Pesquisar documentos" />
+    <input type="text" name="q" placeholder="Pesquisar documentos" aria-label="Pesquisar documentos" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -85,10 +90,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Provas</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../provas/2022.html">Avaliação 2022</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2022/index.html">Turma 2022</a></li>
@@ -116,9 +117,9 @@
         <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Navegação da página">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../vetorial.html"><span class="section-number">5. </span>Manipulação de Dados Vetoriais</a> &raquo;</li>
-      <li><span class="section-number">5.2. </span>Tipos Geométricos</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../vetorial.html"><span class="section-number">5. </span>Manipulação de Dados Vetoriais</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">5.2. </span>Tipos Geométricos</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Navegação sequencial da página">
@@ -130,20 +131,22 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="tipos-geometricos">
-<span id="sec-vetorial-tipos-geometricos"></span><h1><span class="section-number">5.2. </span>Tipos Geométricos<a class="headerlink" href="#tipos-geometricos" title="Link permanente para este título"></a></h1>
-<div class="section" id="modelo-geometrico">
-<h2><span class="section-number">5.2.1. </span>Modelo Geométrico<a class="headerlink" href="#modelo-geometrico" title="Link permanente para este título"></a></h2>
+  <section id="tipos-geometricos">
+<span id="sec-vetorial-tipos-geometricos"></span><h1><span class="section-number">5.2. </span>Tipos Geométricos<a class="headerlink" href="#tipos-geometricos" title="Link permanente para este cabeçalho"></a></h1>
+<section id="modelo-geometrico">
+<h2><span class="section-number">5.2.1. </span>Modelo Geométrico<a class="headerlink" href="#modelo-geometrico" title="Link permanente para este cabeçalho"></a></h2>
 <p>Atualmente, o modelo geométrico e as operações espaciais encontradas nos diversos sistemas geoespaciais são baseados na especificação conhecida por <strong>OGC Simple Features</strong> <span id="id1">[<a class="reference internal" href="../referencias.html#id20" title="John R. Herring. Opengis implementation standard for geographic information - simple feature access - part 1: common architecture. Technical Report 06-103r4, Open Geospatial Consortium Inc., May 2011. URL: http://www.opengeospatial.org/standards/sfa.">47</a>]</span>, <span id="id2">[<a class="reference internal" href="../referencias.html#id21" title="John R. Herring. Opengis implementation standard for geographic information - simple feature access - part 2: sql option. Technical Report 06-104r4, Open Geospatial Consortium Inc., August 2010. URL: http://www.opengeospatial.org/standards/sfs.">46</a>]</span>. Essa especificação padroniza o nome e as definições dos tipos geométricos bem como a semântica das operações espaciais, em especial, os relacionamentos espaciais (ou topológicos). Iremos nos referir a essa especificação com a sigla <strong>OGC-SFS</strong>.</p>
 <p>A <a class="reference internal" href="#fig-vetorial-tipos-geometricos-class-diagram"><span class="std std-numref">Figura 5.3</span></a> apresenta o modelo geométrico definido na <em>OGC-SFS</em>.</p>
-<div class="align-center figure align-default" id="fig-vetorial-tipos-geometricos-class-diagram">
+<figure class="align-center align-default" id="fig-vetorial-tipos-geometricos-class-diagram">
 <a class="reference internal image-reference" href="../_images/sfs-class-diagram.png"><img alt="Diagrama de classes do modelo geométrico da OGC Simple Features" src="../_images/sfs-class-diagram.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Figura 5.3 - </span><span class="caption-text">Diagrama de classes do modelo geométrico da <em>OGC Simple Features</em>. <br/> <strong>Fonte:</strong> Adaptada de <span id="id3">[<a class="reference internal" href="../referencias.html#id20" title="John R. Herring. Opengis implementation standard for geographic information - simple feature access - part 1: common architecture. Technical Report 06-103r4, Open Geospatial Consortium Inc., May 2011. URL: http://www.opengeospatial.org/standards/sfa.">47</a>]</span>.</span><a class="headerlink" href="#fig-vetorial-tipos-geometricos-class-diagram" title="Link Permanente para essa imagem"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Figura 5.3 - </span><span class="caption-text">Diagrama de classes do modelo geométrico da <em>OGC Simple Features</em>. <br/> <strong>Fonte:</strong> Adaptada de <span id="id3">[<a class="reference internal" href="../referencias.html#id20" title="John R. Herring. Opengis implementation standard for geographic information - simple feature access - part 1: common architecture. Technical Report 06-103r4, Open Geospatial Consortium Inc., May 2011. URL: http://www.opengeospatial.org/standards/sfa.">47</a>]</span>.</span><a class="headerlink" href="#fig-vetorial-tipos-geometricos-class-diagram" title="Link Permanente para essa imagem"></a></p>
+</figcaption>
+</figure>
 <p>Como pode ser observado, são definidas classes para representações de objetos geométricos na forma de pontos, curvas, superfícies e coleções geométricas. Além disso, todos os tipos geométricos estão associados a um <strong>sistema de referência espacial</strong>, que é usado para descrever o sistema de coordenadas no qual o objeto geométrico encontra-se definido.</p>
 <p>Os objetos geométricos definidos por essa hierarquia de classes pode existir no espaço <span class="math notranslate nohighlight">\(R^2\)</span>, <span class="math notranslate nohighlight">\(R^3\)</span> ou <span class="math notranslate nohighlight">\(R^4\)</span>. Geometrias no <span class="math notranslate nohighlight">\(R^2\)</span> possuem pontos com valores de coordenadas em <span class="math notranslate nohighlight">\(x\)</span> e <span class="math notranslate nohighlight">\(y\)</span>. Geometrias no <span class="math notranslate nohighlight">\(R^3\)</span> possuem pontos com valores de coordenadas em <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span> e <span class="math notranslate nohighlight">\(z\)</span> ou <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span> e <span class="math notranslate nohighlight">\(m\)</span>. Geometrias no <span class="math notranslate nohighlight">\(R^4\)</span> possuem pontos com valores de coordenadas em <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, <span class="math notranslate nohighlight">\(z\)</span> e <span class="math notranslate nohighlight">\(m\)</span>. Em geral, a coordenada <span class="math notranslate nohighlight">\(m\)</span> representa algum tipo de medida.</p>
 <p>A <a class="reference internal" href="#tbl-vetorial-tipos-geometricos-modelo-ilustrado"><span class="std std-numref">Tabela 5.2</span></a> ilustra graficamente objetos associados aos tipos geométricos representados pelas classes do diagrama da <a class="reference internal" href="#fig-vetorial-tipos-geometricos-class-diagram"><span class="std std-numref">Figura 5.3</span></a>.</p>
-<table class="colwidths-given styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-modelo-ilustrado" style="width: 100%">
+<table class="styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-modelo-ilustrado" style="width: 100%">
 <caption><span class="caption-number">Tabela 5.2 - </span><span class="caption-text">Exemplos dos tipos geométricos da OGC-SFS.</span><a class="headerlink" href="#tbl-vetorial-tipos-geometricos-modelo-ilustrado" title="Link Permanente para essa tabela"></a></caption>
 <colgroup>
 <col style="width: 33%" />
@@ -151,9 +154,9 @@
 <col style="width: 33%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="left-align head"><p>( a ) <code class="docutils literal notranslate"><span class="pre">Point</span></code></p></th>
-<th class="left-align head"><p>( b ) <code class="docutils literal notranslate"><span class="pre">LineString</span></code></p></th>
-<th class="left-align head"><p>( c ) <code class="docutils literal notranslate"><span class="pre">LinearRing</span></code></p></th>
+<tr class="row-odd"><th class="head left-align"><p>( a ) <code class="docutils literal notranslate"><span class="pre">Point</span></code></p></th>
+<th class="head left-align"><p>( b ) <code class="docutils literal notranslate"><span class="pre">LineString</span></code></p></th>
+<th class="head left-align"><p>( c ) <code class="docutils literal notranslate"><span class="pre">LinearRing</span></code></p></th>
 </tr>
 </thead>
 <tbody>
@@ -164,16 +167,16 @@
 <tr class="row-odd"></tr>
 </tbody>
 </table>
-<table class="colwidths-given styled-table docutils align-center" style="width: 100%">
+<table class="styled-table docutils align-center" style="width: 100%">
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
 <col style="width: 33%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="left-align head"><p>( d ) <code class="docutils literal notranslate"><span class="pre">Polygon</span></code></p></th>
-<th class="left-align head"><p>( e ) <code class="docutils literal notranslate"><span class="pre">Polygon</span></code> (com buracos)</p></th>
-<th class="left-align head"><p>( f ) <code class="docutils literal notranslate"><span class="pre">MultiPoint</span></code></p></th>
+<tr class="row-odd"><th class="head left-align"><p>( d ) <code class="docutils literal notranslate"><span class="pre">Polygon</span></code></p></th>
+<th class="head left-align"><p>( e ) <code class="docutils literal notranslate"><span class="pre">Polygon</span></code> (com buracos)</p></th>
+<th class="head left-align"><p>( f ) <code class="docutils literal notranslate"><span class="pre">MultiPoint</span></code></p></th>
 </tr>
 </thead>
 <tbody>
@@ -183,16 +186,16 @@
 </tr>
 </tbody>
 </table>
-<table class="colwidths-given styled-table docutils align-center" style="width: 100%">
+<table class="styled-table docutils align-center" style="width: 100%">
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
 <col style="width: 33%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="left-align head"><p>( g ) <code class="docutils literal notranslate"><span class="pre">MultiLineString</span></code></p></th>
-<th class="left-align head"><p>( h ) <code class="docutils literal notranslate"><span class="pre">MultiPolygon</span></code></p></th>
-<th class="left-align head"><p>( i ) <code class="docutils literal notranslate"><span class="pre">GeometryCollection</span></code></p></th>
+<tr class="row-odd"><th class="head left-align"><p>( g ) <code class="docutils literal notranslate"><span class="pre">MultiLineString</span></code></p></th>
+<th class="head left-align"><p>( h ) <code class="docutils literal notranslate"><span class="pre">MultiPolygon</span></code></p></th>
+<th class="head left-align"><p>( i ) <code class="docutils literal notranslate"><span class="pre">GeometryCollection</span></code></p></th>
 </tr>
 </thead>
 <tbody>
@@ -211,20 +214,20 @@
 <p>O diagrama da <a class="reference internal" href="#fig-vetorial-tipos-geometricos-class-diagram"><span class="std std-numref">Figura 5.3</span></a> ainda contém classes que representam coleções de geometrias. As classes <code class="docutils literal notranslate"><span class="pre">MultiPoint</span></code>, <code class="docutils literal notranslate"><span class="pre">MultiLineString</span></code> e <code class="docutils literal notranslate"><span class="pre">MultiPolygon</span></code> representam, respectivamente, coleções homogêneas de pontos (<a class="reference internal" href="#tbl-vetorial-tipos-geometricos-modelo-ilustrado"><span class="std std-numref">Tabela 5.2f</span></a>), linhas (<a class="reference internal" href="#tbl-vetorial-tipos-geometricos-modelo-ilustrado"><span class="std std-numref">Tabela 5.2g</span></a>) e polígonos (<a class="reference internal" href="#tbl-vetorial-tipos-geometricos-modelo-ilustrado"><span class="std std-numref">Tabela 5.2h</span></a>). A classe <code class="docutils literal notranslate"><span class="pre">GeometryCollection</span></code> representa coleções geométricas formadas por qualquer combinação de outros elementos geométricos, inclusive das coleções homogêneas. A coleção heterogênea mostrada na <a class="reference internal" href="#tbl-vetorial-tipos-geometricos-modelo-ilustrado"><span class="std std-numref">Tabela 5.2i</span></a> é composta de um polígono, uma linha e um ponto.</p>
 <p>Em geral, o tipo <code class="docutils literal notranslate"><span class="pre">GeometryCollection</span></code> é introduzido nos sistemas para acomodar o resultado de operações espaciais complexas sobre os tipos de geometria elementares. Por exemplo, o resultado da operação de intersecção entre dois polígonos pode resultar em um conjunto de pontos, linhas e polígonos, de forma que é necessário um contêiner especial para acomodar esse resultado.</p>
 <p>O documento da <code class="docutils literal notranslate"><span class="pre">OGC-SFS</span></code> <span id="id4">[<a class="reference internal" href="../referencias.html#id20" title="John R. Herring. Opengis implementation standard for geographic information - simple feature access - part 1: common architecture. Technical Report 06-103r4, Open Geospatial Consortium Inc., May 2011. URL: http://www.opengeospatial.org/standards/sfa.">47</a>]</span> também define o conjunto de operações sobre os tipos geométricos do diagrama da <a class="reference internal" href="#fig-vetorial-tipos-geometricos-class-diagram"><span class="std std-numref">Figura 5.3</span></a>. A seção a seguir irá detalhar as operações que possibilitam determinar os relacionamentos espaciais entre objetos espaciais.</p>
-</div>
-<div class="section" id="relacionamentos-espaciais">
-<h2><span class="section-number">5.2.2. </span>Relacionamentos Espaciais<a class="headerlink" href="#relacionamentos-espaciais" title="Link permanente para este título"></a></h2>
+</section>
+<section id="relacionamentos-espaciais">
+<h2><span class="section-number">5.2.2. </span>Relacionamentos Espaciais<a class="headerlink" href="#relacionamentos-espaciais" title="Link permanente para este cabeçalho"></a></h2>
 <p>Entre as operações definidas na OGC-SFS <span id="id5">[<a class="reference internal" href="../referencias.html#id20" title="John R. Herring. Opengis implementation standard for geographic information - simple feature access - part 1: common architecture. Technical Report 06-103r4, Open Geospatial Consortium Inc., May 2011. URL: http://www.opengeospatial.org/standards/sfa.">47</a>]</span>, existe um conjunto que merece uma atenção especial: os <strong>operadores topológicos</strong>. Esses operadores são amplamente utilizados na construção de <strong>consultas espaciais</strong> envolvendo o <strong>relacionamento espacial</strong> entre objetos geográficos.</p>
 <p>Suponha dois conjuntos de dados, um representando os limites municipais (<a class="reference internal" href="#tbl-vetorial-tipos-geometricos-exemplo-consulta"><span class="std std-numref">Tabela 5.3a</span></a>) e outro os focos de queimadas na vegetação (<a class="reference internal" href="#tbl-vetorial-tipos-geometricos-exemplo-consulta"><span class="std std-numref">Tabela 5.3b</span></a>). Para relacionar os focos de queimadas aos municípios, precisamos ser capazes de estabelecer um relacionamento espacial entre as geometrias dos municípios e as geometrias dos focos.</p>
-<table class="colwidths-given styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-exemplo-consulta" style="width: 100%">
+<table class="styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-exemplo-consulta" style="width: 100%">
 <caption><span class="caption-number">Tabela 5.3 - </span><span class="caption-text">Conjuntos de Dados</span><a class="headerlink" href="#tbl-vetorial-tipos-geometricos-exemplo-consulta" title="Link Permanente para essa tabela"></a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="left-align head"><p>( a ) Municípios Brasileiros</p></th>
-<th class="left-align head"><p>( b ) Focos de Queimadas na Vegetação</p></th>
+<tr class="row-odd"><th class="head left-align"><p>( a ) Municípios Brasileiros</p></th>
+<th class="head left-align"><p>( b ) Focos de Queimadas na Vegetação</p></th>
 </tr>
 </thead>
 <tbody>
@@ -233,10 +236,10 @@
 </tr>
 </tbody>
 </table>
-<div class="section" id="matriz-de-9-interseccoes-estendida-dimensionalmente">
-<h3><span class="section-number">5.2.2.1. </span>Matriz de 9-intersecções Estendida Dimensionalmente<a class="headerlink" href="#matriz-de-9-interseccoes-estendida-dimensionalmente" title="Link permanente para este título"></a></h3>
+<section id="matriz-de-9-interseccoes-estendida-dimensionalmente">
+<h3><span class="section-number">5.2.2.1. </span>Matriz de 9-intersecções Estendida Dimensionalmente<a class="headerlink" href="#matriz-de-9-interseccoes-estendida-dimensionalmente" title="Link permanente para este cabeçalho"></a></h3>
 <p>Os relacionamentos espaciais são definidos com base no paradigma da <strong>Matriz de 9-Intersecções Estendida Dimensionalmente</strong> (DE-9IM) proposto em <span id="id6">[<a class="reference internal" href="../referencias.html#id10" title="Eliseo Clementini, Paolino Di Felice, and Peter van Oosterom. A small set of formal topological relationships suitable for end-user interaction. In David Abel and Beng Chin Ooi, editors, Advances in Spatial Databases, 277–295. Berlin, Heidelberg, 1993. Springer Berlin Heidelberg. doi:10.1007/3-540-56869-7_16.">11</a>]</span>. A abordagem básica desse método consiste em comparar dois objetos geométricos através de testes com a intersecção entre seus <strong>interiores</strong>, <strong>fronteiras</strong> e <strong>exteriores</strong>. Desta forma, podemos construir uma matrix <span class="math notranslate nohighlight">\(3 \times 3\)</span> como a mostrada na <a class="reference internal" href="#tbl-vetorial-tipos-geometricos-de-9im"><span class="std std-numref">Tabela 5.4</span></a>.</p>
-<table class="colwidths-given styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-de-9im" style="width: 80%">
+<table class="styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-de-9im" style="width: 80%">
 <caption><span class="caption-number">Tabela 5.4 - </span><span class="caption-text">Matriz de 9-Intersecções Estendida Dimensionalmente.</span><a class="headerlink" href="#tbl-vetorial-tipos-geometricos-de-9im" title="Link Permanente para essa tabela"></a></caption>
 <colgroup>
 <col style="width: 25%" />
@@ -245,10 +248,10 @@
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="center-align head"></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
+<tr class="row-odd"><th class="head center-align"></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
 </tr>
 </thead>
 <tbody>
@@ -281,7 +284,7 @@
 <li><p><span class="math notranslate nohighlight">\(2\)</span>: Se a intersecção dos componentes resulta em alguma superfície. Adotaremos também os termos <strong>área</strong> ou <strong>região</strong> como sinônimos.</p></li>
 </ul>
 <p>A <a class="reference internal" href="#tbl-vetorial-tipos-geometricos-comp-tipos"><span class="std std-numref">Tabela 5.5</span></a> ilustra os conceitos de interior, fronteira e exterior para cada um dos tipos de objetos geométricos definidos na OGC-SFS.</p>
-<table class="colwidths-given styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-comp-tipos" style="width: 100%">
+<table class="styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-comp-tipos" style="width: 100%">
 <caption><span class="caption-number">Tabela 5.5 - </span><span class="caption-text">Interior, fronteira e exterior dos diversos tipos geométricos.</span><a class="headerlink" href="#tbl-vetorial-tipos-geometricos-comp-tipos" title="Link Permanente para essa tabela"></a></caption>
 <colgroup>
 <col style="width: 33%" />
@@ -289,9 +292,9 @@
 <col style="width: 33%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="left-align head"><p>( a ) I e E Ponto</p></th>
-<th class="left-align head"><p>( b ) I e E Coleção Pontos</p></th>
-<th class="left-align head"><p>( c ) I, F e E Curva Aberta</p></th>
+<tr class="row-odd"><th class="head left-align"><p>( a ) I e E Ponto</p></th>
+<th class="head left-align"><p>( b ) I e E Coleção Pontos</p></th>
+<th class="head left-align"><p>( c ) I, F e E Curva Aberta</p></th>
 </tr>
 </thead>
 <tbody>
@@ -301,16 +304,16 @@
 </tr>
 </tbody>
 </table>
-<table class="colwidths-given styled-table docutils align-center" style="width: 100%">
+<table class="styled-table docutils align-center" style="width: 100%">
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
 <col style="width: 33%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="left-align head"><p>( d ) I e E Curva Fechada</p></th>
-<th class="left-align head"><p>( e ) I, F e E Col. Curv. Abertas</p></th>
-<th class="left-align head"><p>( f ) I e E Col. Curv. Abertas</p></th>
+<tr class="row-odd"><th class="head left-align"><p>( d ) I e E Curva Fechada</p></th>
+<th class="head left-align"><p>( e ) I, F e E Col. Curv. Abertas</p></th>
+<th class="head left-align"><p>( f ) I e E Col. Curv. Abertas</p></th>
 </tr>
 </thead>
 <tbody>
@@ -320,16 +323,16 @@
 </tr>
 </tbody>
 </table>
-<table class="colwidths-given styled-table docutils align-center" style="width: 100%">
+<table class="styled-table docutils align-center" style="width: 100%">
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
 <col style="width: 33%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="left-align head"><p>( g ) I, F e E Polígono</p></th>
-<th class="left-align head"><p>( h ) I, F e E Coleção Polígonos</p></th>
-<th class="left-align head"><p>( i ) I, F e E Coleção Geom.</p></th>
+<tr class="row-odd"><th class="head left-align"><p>( g ) I, F e E Polígono</p></th>
+<th class="head left-align"><p>( h ) I, F e E Coleção Polígonos</p></th>
+<th class="head left-align"><p>( i ) I, F e E Coleção Geom.</p></th>
 </tr>
 </thead>
 <tbody>
@@ -361,12 +364,14 @@
 <li><p><span class="math notranslate nohighlight">\(F(B)\)</span>: formada por um único anel (externo), em laranja escuro.</p></li>
 <li><p><span class="math notranslate nohighlight">\(E(B)\)</span>: é definido como toda a região do espaço que não compreenda a fronteira e o interior de <span class="math notranslate nohighlight">\(B\)</span>.</p></li>
 </ul>
-<div class="align-center figure align-default" id="fig-vetorial-tipos-geometricos-rel-a-b">
+<figure class="align-center align-default" id="fig-vetorial-tipos-geometricos-rel-a-b">
 <a class="reference internal image-reference" href="../_images/ogc-de9im.png"><img alt="Configuração espacial de dois objetos geométricos A e B" src="../_images/ogc-de9im.png" style="width: 30%;" /></a>
-<p class="caption"><span class="caption-number">Figura 5.4 - </span><span class="caption-text">Configuração espacial de dois objetos geométricos <span class="math notranslate nohighlight">\(A\)</span> e <span class="math notranslate nohighlight">\(B\)</span>.</span><a class="headerlink" href="#fig-vetorial-tipos-geometricos-rel-a-b" title="Link Permanente para essa imagem"></a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Figura 5.4 - </span><span class="caption-text">Configuração espacial de dois objetos geométricos <span class="math notranslate nohighlight">\(A\)</span> e <span class="math notranslate nohighlight">\(B\)</span>.</span><a class="headerlink" href="#fig-vetorial-tipos-geometricos-rel-a-b" title="Link Permanente para essa imagem"></a></p>
+</figcaption>
+</figure>
 <p>O relacionamento espacial definido por <span class="math notranslate nohighlight">\(A\)</span> e <span class="math notranslate nohighlight">\(B\)</span>, segundo a matriz de intersecções, é o seguinte:</p>
-<table class="colwidths-given styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-rel-a-b-mat" style="width: 70%">
+<table class="styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-rel-a-b-mat" style="width: 70%">
 <caption><span class="caption-number">Tabela 5.6 - </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">DE-9IM</span></code> - <span class="math notranslate nohighlight">\(A\)</span> e <span class="math notranslate nohighlight">\(B\)</span>.</span><a class="headerlink" href="#tbl-vetorial-tipos-geometricos-rel-a-b-mat" title="Link Permanente para essa tabela"></a></caption>
 <colgroup>
 <col style="width: 25%" />
@@ -375,10 +380,10 @@
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="center-align head"></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
+<tr class="row-odd"><th class="head center-align"></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
 </tr>
 </thead>
 <tbody>
@@ -414,7 +419,7 @@
 <li><p>A intersecção entre exterior de <span class="math notranslate nohighlight">\(A\)</span> e fronteira de <span class="math notranslate nohighlight">\(B\)</span> forma a linha mostrada na <a class="reference internal" href="#tbl-vetorial-tipos-geometricos-i-f-e"><span class="std std-numref">Tabela 5.7h</span></a>. Logo, a <span class="math notranslate nohighlight">\(dim(E(A) \cap F(B)) = 1\)</span>.</p></li>
 <li><p>A interseção entre os exteriores de <span class="math notranslate nohighlight">\(A\)</span> e <span class="math notranslate nohighlight">\(B\)</span> formam uma área (<a class="reference internal" href="#tbl-vetorial-tipos-geometricos-i-f-e"><span class="std std-numref">Tabela 5.7i</span></a>). Logo, a <span class="math notranslate nohighlight">\(dim(E(A) \cap E(B)) = 2\)</span>.</p></li>
 </ul>
-<table class="colwidths-given styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-i-f-e" style="width: 100%">
+<table class="styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-i-f-e" style="width: 100%">
 <caption><span class="caption-number">Tabela 5.7 - </span><span class="caption-text">Intersecção entre os componentes dos objetos <span class="math notranslate nohighlight">\(A\)</span> e <span class="math notranslate nohighlight">\(B\)</span>.</span><a class="headerlink" href="#tbl-vetorial-tipos-geometricos-i-f-e" title="Link Permanente para essa tabela"></a></caption>
 <colgroup>
 <col style="width: 33%" />
@@ -422,9 +427,9 @@
 <col style="width: 33%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="left-align head"><p>( a ) <span class="math notranslate nohighlight">\(I(A) \cap I(B)\)</span></p></th>
-<th class="left-align head"><p>( b ) <span class="math notranslate nohighlight">\(I(A) \cap F(B)\)</span></p></th>
-<th class="left-align head"><p>( c ) <span class="math notranslate nohighlight">\(I(A) \cap E(B)\)</span></p></th>
+<tr class="row-odd"><th class="head left-align"><p>( a ) <span class="math notranslate nohighlight">\(I(A) \cap I(B)\)</span></p></th>
+<th class="head left-align"><p>( b ) <span class="math notranslate nohighlight">\(I(A) \cap F(B)\)</span></p></th>
+<th class="head left-align"><p>( c ) <span class="math notranslate nohighlight">\(I(A) \cap E(B)\)</span></p></th>
 </tr>
 </thead>
 <tbody>
@@ -434,16 +439,16 @@
 </tr>
 </tbody>
 </table>
-<table class="colwidths-given styled-table docutils align-center" style="width: 100%">
+<table class="styled-table docutils align-center" style="width: 100%">
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
 <col style="width: 33%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="left-align head"><p>( d ) <span class="math notranslate nohighlight">\(F(A) \cap I(B)\)</span></p></th>
-<th class="left-align head"><p>( e ) <span class="math notranslate nohighlight">\(F(A) \cap F(B)\)</span></p></th>
-<th class="left-align head"><p>( f ) <span class="math notranslate nohighlight">\(F(A) \cap E(B)\)</span></p></th>
+<tr class="row-odd"><th class="head left-align"><p>( d ) <span class="math notranslate nohighlight">\(F(A) \cap I(B)\)</span></p></th>
+<th class="head left-align"><p>( e ) <span class="math notranslate nohighlight">\(F(A) \cap F(B)\)</span></p></th>
+<th class="head left-align"><p>( f ) <span class="math notranslate nohighlight">\(F(A) \cap E(B)\)</span></p></th>
 </tr>
 </thead>
 <tbody>
@@ -453,16 +458,16 @@
 </tr>
 </tbody>
 </table>
-<table class="colwidths-given styled-table docutils align-center" style="width: 100%">
+<table class="styled-table docutils align-center" style="width: 100%">
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
 <col style="width: 33%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="left-align head"><p>( d ) <span class="math notranslate nohighlight">\(E(A) \cap I(B)\)</span></p></th>
-<th class="left-align head"><p>( e ) <span class="math notranslate nohighlight">\(E(A) \cap F(B)\)</span></p></th>
-<th class="left-align head"><p>( f ) <span class="math notranslate nohighlight">\(E(A) \cap E(B)\)</span></p></th>
+<tr class="row-odd"><th class="head left-align"><p>( d ) <span class="math notranslate nohighlight">\(E(A) \cap I(B)\)</span></p></th>
+<th class="head left-align"><p>( e ) <span class="math notranslate nohighlight">\(E(A) \cap F(B)\)</span></p></th>
+<th class="head left-align"><p>( f ) <span class="math notranslate nohighlight">\(E(A) \cap E(B)\)</span></p></th>
 </tr>
 </thead>
 <tbody>
@@ -472,9 +477,9 @@
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="operador-relate">
-<h3><span class="section-number">5.2.2.2. </span>Operador <code class="docutils literal notranslate"><span class="pre">Relate</span></code><a class="headerlink" href="#operador-relate" title="Link permanente para este título"></a></h3>
+</section>
+<section id="operador-relate">
+<h3><span class="section-number">5.2.2.2. </span>Operador <code class="docutils literal notranslate"><span class="pre">Relate</span></code><a class="headerlink" href="#operador-relate" title="Link permanente para este cabeçalho"></a></h3>
 <p>Em geral, os ambientes computacionais que dão suporte a OGC-SFS, introduzem uma função chamada <code class="docutils literal notranslate"><span class="pre">Relate</span></code> que permite determinar a matriz de intersecções ou testar se dois objetos satisfazem um determinado padrão dessa matriz. Assim, tanto em Python quanto em C++, ou Java, ou em SQL, é possível testar o relacionamento espacial entre dois objetos usando um operador chamado <code class="docutils literal notranslate"><span class="pre">Relate</span></code> (ou uma variação desse nome).</p>
 <p>O exemplo abaixo mostra como seria o uso dessa função para saber o relacionamento espacial entre dois polígonos hipotéticos:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">Polygon</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
@@ -496,9 +501,9 @@
 </pre></div>
 </div>
 <p>Nesse caso, <code class="docutils literal notranslate"><span class="pre">M</span></code> é a matriz com o padrão que desejamos verificar se os objetos <code class="docutils literal notranslate"><span class="pre">A</span></code> e <code class="docutils literal notranslate"><span class="pre">B</span></code> satisfazem. Se <code class="docutils literal notranslate"><span class="pre">A</span></code> e <code class="docutils literal notranslate"><span class="pre">B</span></code> forem os polígonos mostrados na <a class="reference internal" href="#fig-vetorial-tipos-geometricos-rel-a-b"><span class="std std-numref">Figura 5.4</span></a>, essa função retorna o valor booleano <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
-</div>
-<div class="section" id="relacionamentos-espaciais-nomeados">
-<h3><span class="section-number">5.2.2.3. </span>Relacionamentos Espaciais Nomeados<a class="headerlink" href="#relacionamentos-espaciais-nomeados" title="Link permanente para este título"></a></h3>
+</section>
+<section id="relacionamentos-espaciais-nomeados">
+<h3><span class="section-number">5.2.2.3. </span>Relacionamentos Espaciais Nomeados<a class="headerlink" href="#relacionamentos-espaciais-nomeados" title="Link permanente para este cabeçalho"></a></h3>
 <p>Para facilitar a construção de predicados topológicos nas consultas espaciais existe um conjunto de <strong>oito operadores</strong> com <strong>nomes bem definidos</strong> que são baseados na sobrecarga de alguns padrões da matriz de intersecções. Os operadores nomeados são: <code class="docutils literal notranslate"><span class="pre">Equals</span></code>, <code class="docutils literal notranslate"><span class="pre">Touches</span></code>, <code class="docutils literal notranslate"><span class="pre">Crosses</span></code>, <code class="docutils literal notranslate"><span class="pre">Within</span></code>, <code class="docutils literal notranslate"><span class="pre">Contains</span></code>, <code class="docutils literal notranslate"><span class="pre">Overlaps</span></code>, <code class="docutils literal notranslate"><span class="pre">Disjoint</span></code>, and <code class="docutils literal notranslate"><span class="pre">Intersects</span></code>. Esses operadores comparam pares de geometrias e são definidos utilizando os seguintes valores para as células da matriz de intersecções:</p>
 <ul class="open">
 <li><p><code class="docutils literal notranslate"><span class="pre">T</span></code>: indica que <span class="math notranslate nohighlight">\(dim(x) \in \{0, 1, 2\}\)</span>, ou seja, <span class="math notranslate nohighlight">\(x \neq \emptyset\)</span>. Em outras palavras, o resultado da intersecção é um objeto <span class="math notranslate nohighlight">\(x\)</span> que pode ser qualquer elemento geométrico (ponto, curva ou superfície).</p></li>
@@ -514,10 +519,10 @@
 <li><p>Curvas ou <code class="docutils literal notranslate"><span class="pre">L</span></code>: linhas, anéis, ou coleções homogêneas de linhas.</p></li>
 <li><p>Superfícies ou <code class="docutils literal notranslate"><span class="pre">A</span></code>: polígonos ou coleções homogêneas de polígonos.</p></li>
 </ul>
-<div class="section" id="equals-geometry-geometry-rightarrow-bool">
-<h4><span class="section-number">5.2.2.3.1. </span><span class="math notranslate nohighlight">\(Equals(Geometry, Geometry) \rightarrow bool\)</span><a class="headerlink" href="#equals-geometry-geometry-rightarrow-bool" title="Link permanente para este título"></a></h4>
+<section id="equals-geometry-geometry-rightarrow-bool">
+<h4><span class="section-number">5.2.2.3.1. </span><span class="math notranslate nohighlight">\(Equals(Geometry, Geometry) \rightarrow bool\)</span><a class="headerlink" href="#equals-geometry-geometry-rightarrow-bool" title="Link permanente para este cabeçalho"></a></h4>
 <p>Retorna verdadeiro (<code class="docutils literal notranslate"><span class="pre">True</span></code>) se as duas geometrias são espacialmente iguais. Neste caso, a matriz de intersecção para as duas geometrias deve satisfazer o seguinte padrão:</p>
-<table class="colwidths-given styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-de9im-equals" style="width: 70%">
+<table class="styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-de9im-equals" style="width: 70%">
 <caption><span class="caption-number">Tabela 5.8 - </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">DE-9IM</span></code> - <span class="math notranslate nohighlight">\(Equals(Geometry, Geometry) \rightarrow bool\)</span>.</span><a class="headerlink" href="#tbl-vetorial-tipos-geometricos-de9im-equals" title="Link Permanente para essa tabela"></a></caption>
 <colgroup>
 <col style="width: 25%" />
@@ -526,10 +531,10 @@
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="center-align head"></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
+<tr class="row-odd"><th class="head center-align"></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
 </tr>
 </thead>
 <tbody>
@@ -555,7 +560,7 @@
 </table>
 <p>Pela matriz acima, o relacionamento <code class="docutils literal notranslate"><span class="pre">Equals</span></code> garante que os interiores das duas geometrias tenham intersecção e que os interiores e fronteiras de um objeto não tenham intersecção com o exterior do outro.</p>
 <p>A <a class="reference internal" href="#tbl-vetorial-tipos-geometricos-equals"><span class="std std-numref">Tabela 5.9</span></a> apresenta alguns pares de objetos que satisfazem o relacionamento espacial <code class="docutils literal notranslate"><span class="pre">Equals</span></code>, de acordo com o padrão mostrado acima:</p>
-<table class="colwidths-given styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-equals" style="width: 100%">
+<table class="styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-equals" style="width: 100%">
 <caption><span class="caption-number">Tabela 5.9 - </span><span class="caption-text"><span class="math notranslate nohighlight">\(A\)</span> e <span class="math notranslate nohighlight">\(B\)</span> são geometrias espacialmente iguais.</span><a class="headerlink" href="#tbl-vetorial-tipos-geometricos-equals" title="Link Permanente para essa tabela"></a></caption>
 <colgroup>
 <col style="width: 33%" />
@@ -563,9 +568,9 @@
 <col style="width: 33%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="left-align head"><p>( a )</p></th>
-<th class="left-align head"><p>( b )</p></th>
-<th class="left-align head"><p>( c )</p></th>
+<tr class="row-odd"><th class="head left-align"><p>( a )</p></th>
+<th class="head left-align"><p>( b )</p></th>
+<th class="head left-align"><p>( c )</p></th>
 </tr>
 </thead>
 <tbody>
@@ -579,12 +584,12 @@
 <p class="admonition-title">Nota</p>
 <p>No caso dos pares de geometrias serem curvas/curvas ou superfícies/superfícies, mesmo que o número de pontos desses objetos sejam diferentes, o relacionamento <code class="docutils literal notranslate"><span class="pre">Equals</span></code> pode ser verdadeiro.</p>
 </div>
-</div>
-<div class="section" id="touches-geometry-geometry-rightarrow-bool">
-<h4><span class="section-number">5.2.2.3.2. </span><span class="math notranslate nohighlight">\(Touches(Geometry, Geometry) \rightarrow Bool\)</span><a class="headerlink" href="#touches-geometry-geometry-rightarrow-bool" title="Link permanente para este título"></a></h4>
+</section>
+<section id="touches-geometry-geometry-rightarrow-bool">
+<h4><span class="section-number">5.2.2.3.2. </span><span class="math notranslate nohighlight">\(Touches(Geometry, Geometry) \rightarrow Bool\)</span><a class="headerlink" href="#touches-geometry-geometry-rightarrow-bool" title="Link permanente para este cabeçalho"></a></h4>
 <p>Retorna verdadeiro (<code class="docutils literal notranslate"><span class="pre">True</span></code>) se as duas geometrias se tocam. Este relacionamento espacial é definido para os casos onde os pares de objetos geométricos correspondem a <code class="docutils literal notranslate"><span class="pre">A/A</span></code>, <code class="docutils literal notranslate"><span class="pre">L/L</span></code>, <code class="docutils literal notranslate"><span class="pre">L/A</span></code>, <code class="docutils literal notranslate"><span class="pre">P/A</span></code> e <code class="docutils literal notranslate"><span class="pre">P/L</span></code>. Este relacionamento não se aplica no caso dos objetos serem do tipo <code class="docutils literal notranslate"><span class="pre">P/P</span></code>.</p>
 <p>Se os pares de objetos satisfizerem um dos três padrões mostrados abaixo, dizemos que a geometria <span class="math notranslate nohighlight">\(A\)</span> toca a geometria <span class="math notranslate nohighlight">\(B\)</span>:</p>
-<table class="colwidths-given styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-de9im-touches1" style="width: 70%">
+<table class="styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-de9im-touches1" style="width: 70%">
 <caption><span class="caption-number">Tabela 5.10 - </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">DE-9IM</span></code> - <span class="math notranslate nohighlight">\(Touches(Geometry, Geometry) \rightarrow bool\)</span>.</span><a class="headerlink" href="#tbl-vetorial-tipos-geometricos-de9im-touches1" title="Link Permanente para essa tabela"></a></caption>
 <colgroup>
 <col style="width: 25%" />
@@ -593,10 +598,10 @@
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="center-align head"></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
+<tr class="row-odd"><th class="head center-align"></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
 </tr>
 </thead>
 <tbody>
@@ -620,7 +625,7 @@
 <tr class="row-odd"></tr>
 </tbody>
 </table>
-<table class="colwidths-given styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-rel-espaciais-de9im-touches2" style="width: 70%">
+<table class="styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-rel-espaciais-de9im-touches2" style="width: 70%">
 <caption><span class="caption-number">Tabela 5.11 - </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">DE-9IM</span></code> - <span class="math notranslate nohighlight">\(Touches(Geometry, Geometry) \rightarrow bool\)</span>.</span><a class="headerlink" href="#tbl-vetorial-tipos-geometricos-rel-espaciais-de9im-touches2" title="Link Permanente para essa tabela"></a></caption>
 <colgroup>
 <col style="width: 25%" />
@@ -629,10 +634,10 @@
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="center-align head"></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
+<tr class="row-odd"><th class="head center-align"></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
 </tr>
 </thead>
 <tbody>
@@ -656,7 +661,7 @@
 <tr class="row-odd"></tr>
 </tbody>
 </table>
-<table class="colwidths-given styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-de9im-touches3" style="width: 70%">
+<table class="styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-de9im-touches3" style="width: 70%">
 <caption><span class="caption-number">Tabela 5.12 - </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">DE-9IM</span></code> - <span class="math notranslate nohighlight">\(Touches(Geometry, Geometry) \rightarrow bool\)</span>.</span><a class="headerlink" href="#tbl-vetorial-tipos-geometricos-de9im-touches3" title="Link Permanente para essa tabela"></a></caption>
 <colgroup>
 <col style="width: 25%" />
@@ -665,10 +670,10 @@
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="center-align head"></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
+<tr class="row-odd"><th class="head center-align"></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
 </tr>
 </thead>
 <tbody>
@@ -694,7 +699,7 @@
 </table>
 <p>Os três padrões acima estabelecem que os objetos não podem ter intersecção entre seus interiores, mas podem ter intersecção entre as fronteiras ou entre a fronteira de um e o interior do outro.</p>
 <p>A <a class="reference internal" href="#tbl-vetorial-tipos-geometricos-touches"><span class="std std-numref">Tabela 5.13</span></a> apresenta alguns pares de objetos que satisfazem o relacionamento espacial <code class="docutils literal notranslate"><span class="pre">Touches</span></code>, de acordo com os padrões mostrados acima:</p>
-<table class="colwidths-given styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-touches" style="width: 100%">
+<table class="styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-touches" style="width: 100%">
 <caption><span class="caption-number">Tabela 5.13 - </span><span class="caption-text"><span class="math notranslate nohighlight">\(A\)</span> e <span class="math notranslate nohighlight">\(B\)</span> são geometrias que se tocam.</span><a class="headerlink" href="#tbl-vetorial-tipos-geometricos-touches" title="Link Permanente para essa tabela"></a></caption>
 <colgroup>
 <col style="width: 25%" />
@@ -703,10 +708,10 @@
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="left-align head"><p>( a )</p></th>
-<th class="left-align head"><p>( b )</p></th>
-<th class="left-align head"><p>( c )</p></th>
-<th class="left-align head"><p>( d )</p></th>
+<tr class="row-odd"><th class="head left-align"><p>( a )</p></th>
+<th class="head left-align"><p>( b )</p></th>
+<th class="head left-align"><p>( c )</p></th>
+<th class="head left-align"><p>( d )</p></th>
 </tr>
 </thead>
 <tbody>
@@ -717,13 +722,13 @@
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="crosses-geometry-geometry-rightarrow-bool">
-<h4><span class="section-number">5.2.2.3.3. </span><span class="math notranslate nohighlight">\(Crosses(Geometry, Geometry) \rightarrow bool\)</span><a class="headerlink" href="#crosses-geometry-geometry-rightarrow-bool" title="Link permanente para este título"></a></h4>
+</section>
+<section id="crosses-geometry-geometry-rightarrow-bool">
+<h4><span class="section-number">5.2.2.3.3. </span><span class="math notranslate nohighlight">\(Crosses(Geometry, Geometry) \rightarrow bool\)</span><a class="headerlink" href="#crosses-geometry-geometry-rightarrow-bool" title="Link permanente para este cabeçalho"></a></h4>
 <p>Retorna verdadeiro (<code class="docutils literal notranslate"><span class="pre">True</span></code>) se a primeira geometria cruza a segunda. Este relacionamento espacial é definido para os casos <code class="docutils literal notranslate"><span class="pre">P/L</span></code>, <code class="docutils literal notranslate"><span class="pre">P/A</span></code>, <code class="docutils literal notranslate"><span class="pre">L/L</span></code> e <code class="docutils literal notranslate"><span class="pre">L/A</span></code>.</p>
 <p>O resultado da intersecção entre duas geometrias deve gerar uma outra geometria de dimensão um nível menor do que a maior dimensão das geometrias envolvidas, e os interiores devem ter intersecção.</p>
 <p>Nos casos <code class="docutils literal notranslate"><span class="pre">P/L</span></code>, <code class="docutils literal notranslate"><span class="pre">P/A</span></code>, ou <code class="docutils literal notranslate"><span class="pre">L/A</span></code>:</p>
-<table class="colwidths-given styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-de9im-crosses1" style="width: 70%">
+<table class="styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-de9im-crosses1" style="width: 70%">
 <caption><span class="caption-number">Tabela 5.14 - </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">DE-9IM</span></code> - <span class="math notranslate nohighlight">\(Crosses(Geometry, Geometry) \rightarrow bool\)</span>.</span><a class="headerlink" href="#tbl-vetorial-tipos-geometricos-de9im-crosses1" title="Link Permanente para essa tabela"></a></caption>
 <colgroup>
 <col style="width: 25%" />
@@ -732,10 +737,10 @@
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="center-align head"></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
+<tr class="row-odd"><th class="head center-align"></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
 </tr>
 </thead>
 <tbody>
@@ -760,7 +765,7 @@
 </tbody>
 </table>
 <p>No caso <code class="docutils literal notranslate"><span class="pre">L/L</span></code>:</p>
-<table class="colwidths-given styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-de9im-crosses2" style="width: 70%">
+<table class="styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-de9im-crosses2" style="width: 70%">
 <caption><span class="caption-number">Tabela 5.15 - </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">DE-9IM</span></code> - <span class="math notranslate nohighlight">\(Crosses(Geometry, Geometry) \rightarrow bool\)</span>.</span><a class="headerlink" href="#tbl-vetorial-tipos-geometricos-de9im-crosses2" title="Link Permanente para essa tabela"></a></caption>
 <colgroup>
 <col style="width: 25%" />
@@ -769,10 +774,10 @@
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="center-align head"></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
+<tr class="row-odd"><th class="head center-align"></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
 </tr>
 </thead>
 <tbody>
@@ -797,7 +802,7 @@
 </tbody>
 </table>
 <p>A <a class="reference internal" href="#tbl-vetorial-tipos-geometricos-crosses"><span class="std std-numref">Tabela 5.16</span></a> apresenta alguns pares de objetos que satisfazem o relacionamento espacial <code class="docutils literal notranslate"><span class="pre">Crosses</span></code>, de acordo com os padrões mostrados acima:</p>
-<table class="colwidths-given styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-crosses" style="width: 100%">
+<table class="styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-crosses" style="width: 100%">
 <caption><span class="caption-number">Tabela 5.16 - </span><span class="caption-text"><span class="math notranslate nohighlight">\(A\)</span> e <span class="math notranslate nohighlight">\(B\)</span> são geometrias que se cruzam.</span><a class="headerlink" href="#tbl-vetorial-tipos-geometricos-crosses" title="Link Permanente para essa tabela"></a></caption>
 <colgroup>
 <col style="width: 25%" />
@@ -806,10 +811,10 @@
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="left-align head"><p>( a )</p></th>
-<th class="left-align head"><p>( b )</p></th>
-<th class="left-align head"><p>( c )</p></th>
-<th class="left-align head"><p>( d )</p></th>
+<tr class="row-odd"><th class="head left-align"><p>( a )</p></th>
+<th class="head left-align"><p>( b )</p></th>
+<th class="head left-align"><p>( c )</p></th>
+<th class="head left-align"><p>( d )</p></th>
 </tr>
 </thead>
 <tbody>
@@ -820,12 +825,12 @@
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="within-geometry-geometry-rightarrow-bool">
-<h4><span class="section-number">5.2.2.3.4. </span><span class="math notranslate nohighlight">\(Within(Geometry, Geometry) \rightarrow bool\)</span><a class="headerlink" href="#within-geometry-geometry-rightarrow-bool" title="Link permanente para este título"></a></h4>
+</section>
+<section id="within-geometry-geometry-rightarrow-bool">
+<h4><span class="section-number">5.2.2.3.4. </span><span class="math notranslate nohighlight">\(Within(Geometry, Geometry) \rightarrow bool\)</span><a class="headerlink" href="#within-geometry-geometry-rightarrow-bool" title="Link permanente para este cabeçalho"></a></h4>
 <p>Retorna verdadeiro (<code class="docutils literal notranslate"><span class="pre">True</span></code>) se a primeira geometria está dentro da segunda e se elas não são iguais.</p>
 <p>O padrão da matriz para este relacionamento espacial é o seguinte:</p>
-<table class="colwidths-given styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-de9im-within" style="width: 70%">
+<table class="styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-de9im-within" style="width: 70%">
 <caption><span class="caption-number">Tabela 5.17 - </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">DE-9IM</span></code> - <span class="math notranslate nohighlight">\(Within(Geometry, Geometry) \rightarrow bool\)</span>.</span><a class="headerlink" href="#tbl-vetorial-tipos-geometricos-de9im-within" title="Link Permanente para essa tabela"></a></caption>
 <colgroup>
 <col style="width: 25%" />
@@ -834,10 +839,10 @@
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="center-align head"></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
+<tr class="row-odd"><th class="head center-align"></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
 </tr>
 </thead>
 <tbody>
@@ -863,7 +868,7 @@
 </table>
 <p>A matriz acima define que o predicado <code class="docutils literal notranslate"><span class="pre">Within</span></code> retorna <code class="docutils literal notranslate"><span class="pre">True</span></code> quando os interiores das duas geometrias possuem intersecção e quando o interior e a fronteira do objeto A não têm intersecção com o exterior de B. O uso do padrão <code class="docutils literal notranslate"><span class="pre">*</span></code> nas demais células indica que nenhuma outra condição importa para determinar este relacionamento.</p>
 <p>A <a class="reference internal" href="#tbl-vetorial-tipos-geometricos-within"><span class="std std-numref">Tabela 5.18</span></a> apresenta alguns pares de objetos que satisfazem o relacionamento espacial <code class="docutils literal notranslate"><span class="pre">Within</span></code>, de acordo com os padrões mostrados acima:</p>
-<table class="colwidths-given styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-within" style="width: 100%">
+<table class="styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-within" style="width: 100%">
 <caption><span class="caption-number">Tabela 5.18 - </span><span class="caption-text">A geometria <span class="math notranslate nohighlight">\(A\)</span> está dentro da geometria <span class="math notranslate nohighlight">\(B\)</span>.</span><a class="headerlink" href="#tbl-vetorial-tipos-geometricos-within" title="Link Permanente para essa tabela"></a></caption>
 <colgroup>
 <col style="width: 33%" />
@@ -871,9 +876,9 @@
 <col style="width: 33%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="left-align head"><p>( a )</p></th>
-<th class="left-align head"><p>( b )</p></th>
-<th class="left-align head"><p>( c )</p></th>
+<tr class="row-odd"><th class="head left-align"><p>( a )</p></th>
+<th class="head left-align"><p>( b )</p></th>
+<th class="head left-align"><p>( c )</p></th>
 </tr>
 </thead>
 <tbody>
@@ -883,16 +888,16 @@
 </tr>
 </tbody>
 </table>
-<table class="colwidths-given styled-table docutils align-center" style="width: 100%">
+<table class="styled-table docutils align-center" style="width: 100%">
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
 <col style="width: 33%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="left-align head"><p>( d )</p></th>
-<th class="left-align head"><p>( e )</p></th>
-<th class="left-align head"><p>( f )</p></th>
+<tr class="row-odd"><th class="head left-align"><p>( d )</p></th>
+<th class="head left-align"><p>( e )</p></th>
+<th class="head left-align"><p>( f )</p></th>
 </tr>
 </thead>
 <tbody>
@@ -902,13 +907,13 @@
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="contains-geometrya-geometryb-rightarrow-bool">
-<h4><span class="section-number">5.2.2.3.5. </span><span class="math notranslate nohighlight">\(Contains(GeometryA, GeometryB) \rightarrow bool\)</span><a class="headerlink" href="#contains-geometrya-geometryb-rightarrow-bool" title="Link permanente para este título"></a></h4>
+</section>
+<section id="contains-geometrya-geometryb-rightarrow-bool">
+<h4><span class="section-number">5.2.2.3.5. </span><span class="math notranslate nohighlight">\(Contains(GeometryA, GeometryB) \rightarrow bool\)</span><a class="headerlink" href="#contains-geometrya-geometryb-rightarrow-bool" title="Link permanente para este cabeçalho"></a></h4>
 <p>Retorna verdadeiro (<code class="docutils literal notranslate"><span class="pre">True</span></code>) se a primeira geometria contém a segunda e se elas não são iguais. Este relacionamento espacial é o inverso de <code class="docutils literal notranslate"><span class="pre">Within</span></code>, de maneira que temos:</p>
 <p><span class="math notranslate nohighlight">\(Contains(A, B) \iff Within(B, A)\)</span></p>
 <p>A matriz de intersecções do predicado <code class="docutils literal notranslate"><span class="pre">Contains</span></code> é a seguinte:</p>
-<table class="colwidths-given styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-de9im-contains" style="width: 70%">
+<table class="styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-de9im-contains" style="width: 70%">
 <caption><span class="caption-number">Tabela 5.19 - </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">DE-9IM</span></code> - <span class="math notranslate nohighlight">\(Contains(Geometry, Geometry) \rightarrow bool\)</span>.</span><a class="headerlink" href="#tbl-vetorial-tipos-geometricos-de9im-contains" title="Link Permanente para essa tabela"></a></caption>
 <colgroup>
 <col style="width: 25%" />
@@ -917,10 +922,10 @@
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="center-align head"></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
+<tr class="row-odd"><th class="head center-align"></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
 </tr>
 </thead>
 <tbody>
@@ -945,12 +950,12 @@
 </tbody>
 </table>
 <p>Na matriz acima podemos observar que os interiores das duas geometrias devem ter intersecção e que a fronteira e interior da segunda (<code class="docutils literal notranslate"><span class="pre">B</span></code>) não pode ter intersecção com o exterior da primeira (<code class="docutils literal notranslate"><span class="pre">A</span></code>).</p>
-</div>
-<div class="section" id="overlaps-geometry-geometry-rightarrow-bool">
-<h4><span class="section-number">5.2.2.3.6. </span><span class="math notranslate nohighlight">\(Overlaps(Geometry, Geometry) \rightarrow bool\)</span><a class="headerlink" href="#overlaps-geometry-geometry-rightarrow-bool" title="Link permanente para este título"></a></h4>
+</section>
+<section id="overlaps-geometry-geometry-rightarrow-bool">
+<h4><span class="section-number">5.2.2.3.6. </span><span class="math notranslate nohighlight">\(Overlaps(Geometry, Geometry) \rightarrow bool\)</span><a class="headerlink" href="#overlaps-geometry-geometry-rightarrow-bool" title="Link permanente para este cabeçalho"></a></h4>
 <p>Retorna verdadeiro (<code class="docutils literal notranslate"><span class="pre">True</span></code>) se a primeira geometria sobrepõe a segunda. Este relacionamento espacial é definido para os casos <code class="docutils literal notranslate"><span class="pre">A/A</span></code>, <code class="docutils literal notranslate"><span class="pre">L/L</span></code> e <code class="docutils literal notranslate"><span class="pre">P/P</span></code>. Em outras palavras, este relacionamento só é válido para geometrias de mesma dimensão e se a intersecção entre elas resultar em um objeto de mesma dimensão.</p>
 <p>No caso <code class="docutils literal notranslate"><span class="pre">P/P</span></code> ou <code class="docutils literal notranslate"><span class="pre">A/A</span></code>, o predicado <code class="docutils literal notranslate"><span class="pre">Overlap</span></code> retorna <code class="docutils literal notranslate"><span class="pre">True</span></code> se os interiores das duas geometrias possuem intersecção e se o interior de uma faz intersecção com o exterior da outra e vice-versa. Este relacionamento é definido através do seguinte padrão:</p>
-<table class="colwidths-given styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-de9im-overlaps1" style="width: 70%">
+<table class="styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-de9im-overlaps1" style="width: 70%">
 <caption><span class="caption-number">Tabela 5.20 - </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">DE-9IM</span></code> - <span class="math notranslate nohighlight">\(Overlaps(Geometry, Geometry) \rightarrow bool\)</span>.</span><a class="headerlink" href="#tbl-vetorial-tipos-geometricos-de9im-overlaps1" title="Link Permanente para essa tabela"></a></caption>
 <colgroup>
 <col style="width: 25%" />
@@ -959,10 +964,10 @@
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="center-align head"></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
+<tr class="row-odd"><th class="head center-align"></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
 </tr>
 </thead>
 <tbody>
@@ -987,7 +992,7 @@
 </tbody>
 </table>
 <p>No caso <code class="docutils literal notranslate"><span class="pre">L/L</span></code>, a intersecção deve resultar em um objeto <span class="math notranslate nohighlight">\(1\)</span>-dimensional. Assim, temos o seguinte padrão de matriz:</p>
-<table class="colwidths-given styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-de9im-overlaps2" style="width: 70%">
+<table class="styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-de9im-overlaps2" style="width: 70%">
 <caption><span class="caption-number">Tabela 5.21 - </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">DE-9IM</span></code> - <span class="math notranslate nohighlight">\(Overlaps(Geometry, Geometry) \rightarrow bool\)</span>.</span><a class="headerlink" href="#tbl-vetorial-tipos-geometricos-de9im-overlaps2" title="Link Permanente para essa tabela"></a></caption>
 <colgroup>
 <col style="width: 25%" />
@@ -996,10 +1001,10 @@
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="center-align head"></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
+<tr class="row-odd"><th class="head center-align"></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
 </tr>
 </thead>
 <tbody>
@@ -1024,7 +1029,7 @@
 </tbody>
 </table>
 <p>A <a class="reference internal" href="#tbl-vetorial-tipos-geometricos-within"><span class="std std-numref">Tabela 5.18</span></a> apresenta alguns pares de objetos que satisfazem o relacionamento espacial <code class="docutils literal notranslate"><span class="pre">Overlaps</span></code>, de acordo com os padrões mostrados acima:</p>
-<table class="colwidths-given styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-overlaps" style="width: 100%">
+<table class="styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-overlaps" style="width: 100%">
 <caption><span class="caption-number">Tabela 5.22 - </span><span class="caption-text">A geometria <span class="math notranslate nohighlight">\(A\)</span> sobrepõe a geometria <span class="math notranslate nohighlight">\(B\)</span>.</span><a class="headerlink" href="#tbl-vetorial-tipos-geometricos-overlaps" title="Link Permanente para essa tabela"></a></caption>
 <colgroup>
 <col style="width: 33%" />
@@ -1032,9 +1037,9 @@
 <col style="width: 33%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="left-align head"><p>( a )</p></th>
-<th class="left-align head"><p>( b )</p></th>
-<th class="left-align head"><p>( c )</p></th>
+<tr class="row-odd"><th class="head left-align"><p>( a )</p></th>
+<th class="head left-align"><p>( b )</p></th>
+<th class="head left-align"><p>( c )</p></th>
 </tr>
 </thead>
 <tbody>
@@ -1044,11 +1049,11 @@
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="disjoint-geometry-geometry-rightarrow-bool">
-<h4><span class="section-number">5.2.2.3.7. </span><span class="math notranslate nohighlight">\(Disjoint(Geometry, Geometry) \rightarrow bool\)</span><a class="headerlink" href="#disjoint-geometry-geometry-rightarrow-bool" title="Link permanente para este título"></a></h4>
+</section>
+<section id="disjoint-geometry-geometry-rightarrow-bool">
+<h4><span class="section-number">5.2.2.3.7. </span><span class="math notranslate nohighlight">\(Disjoint(Geometry, Geometry) \rightarrow bool\)</span><a class="headerlink" href="#disjoint-geometry-geometry-rightarrow-bool" title="Link permanente para este cabeçalho"></a></h4>
 <p>Retorna verdadeiro (<code class="docutils literal notranslate"><span class="pre">True</span></code>) se as duas geometrias não possuem qualquer tipo de interação espacial, isto é, se os interiores e fronteiras não possuem qualquer intersecção, exceto com os exteriores. Neste caso, a matriz de intersecção para as duas geometrias deve satisfazer o seguinte padrão:</p>
-<table class="colwidths-given styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-de9im-disjoint" style="width: 70%">
+<table class="styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-de9im-disjoint" style="width: 70%">
 <caption><span class="caption-number">Tabela 5.23 - </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">DE-9IM</span></code> - <span class="math notranslate nohighlight">\(Disjoint(Geometry, Geometry) \rightarrow bool\)</span>.</span><a class="headerlink" href="#tbl-vetorial-tipos-geometricos-de9im-disjoint" title="Link Permanente para essa tabela"></a></caption>
 <colgroup>
 <col style="width: 25%" />
@@ -1057,10 +1062,10 @@
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="center-align head"></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
+<tr class="row-odd"><th class="head center-align"></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
 </tr>
 </thead>
 <tbody>
@@ -1086,7 +1091,7 @@
 </table>
 <p>A matriz acima define que no relacionamento <code class="docutils literal notranslate"><span class="pre">Disjoint</span></code>, nem a fronteira nem o interior de um objeto possui intersecção com a fronteira ou interior do outro objeto.</p>
 <p>A <a class="reference internal" href="#tbl-vetorial-tipos-geometricos-disjoint"><span class="std std-numref">Tabela 5.24</span></a> apresenta alguns pares de objetos que satisfazem o relacionamento espacial <code class="docutils literal notranslate"><span class="pre">Disjoint</span></code>, de acordo com o padrão mostrado acima:</p>
-<table class="colwidths-given styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-disjoint" style="width: 100%">
+<table class="styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-disjoint" style="width: 100%">
 <caption><span class="caption-number">Tabela 5.24 - </span><span class="caption-text"><span class="math notranslate nohighlight">\(A\)</span> e <span class="math notranslate nohighlight">\(B\)</span> são geometrias espacialmente disjuntas.</span><a class="headerlink" href="#tbl-vetorial-tipos-geometricos-disjoint" title="Link Permanente para essa tabela"></a></caption>
 <colgroup>
 <col style="width: 33%" />
@@ -1094,9 +1099,9 @@
 <col style="width: 33%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="left-align head"><p>( a )</p></th>
-<th class="left-align head"><p>( b )</p></th>
-<th class="left-align head"><p>( c )</p></th>
+<tr class="row-odd"><th class="head left-align"><p>( a )</p></th>
+<th class="head left-align"><p>( b )</p></th>
+<th class="head left-align"><p>( c )</p></th>
 </tr>
 </thead>
 <tbody>
@@ -1106,14 +1111,14 @@
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="intersects-geometry-geometry-rightarrow-bool">
-<h4><span class="section-number">5.2.2.3.8. </span><span class="math notranslate nohighlight">\(Intersects(Geometry, Geometry) \rightarrow bool\)</span><a class="headerlink" href="#intersects-geometry-geometry-rightarrow-bool" title="Link permanente para este título"></a></h4>
+</section>
+<section id="intersects-geometry-geometry-rightarrow-bool">
+<h4><span class="section-number">5.2.2.3.8. </span><span class="math notranslate nohighlight">\(Intersects(Geometry, Geometry) \rightarrow bool\)</span><a class="headerlink" href="#intersects-geometry-geometry-rightarrow-bool" title="Link permanente para este cabeçalho"></a></h4>
 <p>Retorna verdadeiro (<code class="docutils literal notranslate"><span class="pre">True</span></code>) se as duas geometrias tiverem algum tipo de interação espacial, isto é, se os interiores e fronteiras tiverem qualquer intersecção. Este relacionamento espacial é definido como sendo a negação do relacionamento <code class="docutils literal notranslate"><span class="pre">Disjoint</span></code>:</p>
 <p><span class="math notranslate nohighlight">\(Intersects(A, B) \iff \neg Disjoint(A, B)\)</span></p>
 <p>Na verdade esse relacionamento diz que as geometrias <span class="math notranslate nohighlight">\(A\)</span> e <span class="math notranslate nohighlight">\(B\)</span> podem se tocar, ou cruzar, ou sobrepor, ou uma estar contida uma na outra, ou serem iguais. Define-se este relacionamento para facilitar a escrita de expressões com predicados espaciais.</p>
 <p>Portanto, o predicado <code class="docutils literal notranslate"><span class="pre">Intersects</span></code> retorna <code class="docutils literal notranslate"><span class="pre">True</span></code> se os interiores das duas geometrias se intersectam:</p>
-<table class="colwidths-given styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-de9im-intersects1" style="width: 70%">
+<table class="styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-de9im-intersects1" style="width: 70%">
 <caption><span class="caption-number">Tabela 5.25 - </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">DE-9IM</span></code> - <span class="math notranslate nohighlight">\(Intersects(Geometry, Geometry) \rightarrow bool\)</span>.</span><a class="headerlink" href="#tbl-vetorial-tipos-geometricos-de9im-intersects1" title="Link Permanente para essa tabela"></a></caption>
 <colgroup>
 <col style="width: 25%" />
@@ -1122,10 +1127,10 @@
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="center-align head"></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
+<tr class="row-odd"><th class="head center-align"></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
 </tr>
 </thead>
 <tbody>
@@ -1150,7 +1155,7 @@
 </tbody>
 </table>
 <p>Se as fronteiras das duas geometrias se intersectam:</p>
-<table class="colwidths-given styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-de9im-intersects2" style="width: 70%">
+<table class="styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-de9im-intersects2" style="width: 70%">
 <caption><span class="caption-number">Tabela 5.26 - </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">DE-9IM</span></code> - <span class="math notranslate nohighlight">\(Intersects(Geometry, Geometry) \rightarrow bool\)</span>.</span><a class="headerlink" href="#tbl-vetorial-tipos-geometricos-de9im-intersects2" title="Link Permanente para essa tabela"></a></caption>
 <colgroup>
 <col style="width: 25%" />
@@ -1159,10 +1164,10 @@
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="center-align head"></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
+<tr class="row-odd"><th class="head center-align"></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
 </tr>
 </thead>
 <tbody>
@@ -1187,7 +1192,7 @@
 </tbody>
 </table>
 <p>Se o interior da primeira intersecta a fronteira da segunda:</p>
-<table class="colwidths-given styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-de9im-intersects3" style="width: 70%">
+<table class="styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-de9im-intersects3" style="width: 70%">
 <caption><span class="caption-number">Tabela 5.27 - </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">DE-9IM</span></code> - <span class="math notranslate nohighlight">\(Intersects(Geometry, Geometry) \rightarrow bool\)</span>.</span><a class="headerlink" href="#tbl-vetorial-tipos-geometricos-de9im-intersects3" title="Link Permanente para essa tabela"></a></caption>
 <colgroup>
 <col style="width: 25%" />
@@ -1196,10 +1201,10 @@
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="center-align head"></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
+<tr class="row-odd"><th class="head center-align"></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
 </tr>
 </thead>
 <tbody>
@@ -1224,7 +1229,7 @@
 </tbody>
 </table>
 <p>Ou se a fronteira da primeira intersecta o interior da segunda:</p>
-<table class="colwidths-given styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-de9im-intersects4" style="width: 70%">
+<table class="styled-table docutils align-center" id="tbl-vetorial-tipos-geometricos-de9im-intersects4" style="width: 70%">
 <caption><span class="caption-number">Tabela 5.28 - </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">DE-9IM</span></code> - <span class="math notranslate nohighlight">\(Intersects(Geometry, Geometry) \rightarrow bool\)</span>.</span><a class="headerlink" href="#tbl-vetorial-tipos-geometricos-de9im-intersects4" title="Link Permanente para essa tabela"></a></caption>
 <colgroup>
 <col style="width: 25%" />
@@ -1233,10 +1238,10 @@
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="center-align head"></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
-<th class="center-align head"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
+<tr class="row-odd"><th class="head center-align"></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Interior(B)\)</span></p></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Fronteira(B)\)</span></p></th>
+<th class="head center-align"><p><span class="math notranslate nohighlight">\(Exterior(B)\)</span></p></th>
 </tr>
 </thead>
 <tbody>
@@ -1260,10 +1265,10 @@
 <tr class="row-odd"></tr>
 </tbody>
 </table>
-</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
+</section>
 
 
            </div>

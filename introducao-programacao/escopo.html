@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="pt-BR" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>2.24. Escopo de Variáveis &mdash; SER-347/CAP-419</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -16,10 +17,10 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script src="../_static/translations.js"></script>
@@ -35,12 +36,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #2980B9" >
-            <a href="../index.html" class="icon icon-home"> SER-347/CAP-419
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SER-347/CAP-419
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Pesquisar documentos" />
+    <input type="text" name="q" placeholder="Pesquisar documentos" aria-label="Pesquisar documentos" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -99,10 +104,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Provas</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../provas/2022.html">Avaliação 2022</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2022/index.html">Turma 2022</a></li>
@@ -130,9 +131,9 @@
         <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Navegação da página">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html"><span class="section-number">2. </span>Introdução à Programação com a Linguagem Python</a> &raquo;</li>
-      <li><span class="section-number">2.24. </span>Escopo de Variáveis</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">2. </span>Introdução à Programação com a Linguagem Python</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">2.24. </span>Escopo de Variáveis</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Navegação sequencial da página">
@@ -144,8 +145,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="escopo-de-variaveis">
-<span id="sec-introducao-programacao-escopo"></span><h1><span class="section-number">2.24. </span>Escopo de Variáveis<a class="headerlink" href="#escopo-de-variaveis" title="Link permanente para este título"></a></h1>
+  <section id="escopo-de-variaveis">
+<span id="sec-introducao-programacao-escopo"></span><h1><span class="section-number">2.24. </span>Escopo de Variáveis<a class="headerlink" href="#escopo-de-variaveis" title="Link permanente para este cabeçalho"></a></h1>
 <p>Existe uma discussão importante sobre a questão de visibilidade das variáveis e do seu tempo de vida, isto é, onde os nomes dessas variáveis podem ser usados e quando esses nomes deixam de existir. Em toda linguagem de programação <strong>imperativa</strong>, como é o caso de Python, existe o conceito de <strong>escopo</strong>. Algumas vezes usamos os termos <strong>escopo local</strong> e <strong>escopo global</strong> para nos referirmos ao contexto onde as variáveis encontram-se definidas e, consequentemente, visíveis.</p>
 <p>Quando criamos uma função, a cada invocação dessa função os parâmetros são introduzidos num <strong>escopo local</strong>, isto é, os nomes dos parâmetros são acessíveis (ou visíveis) apenas aos comandos dentro da função. Já os comandos dentro da função podem acessar nomes de variáveis definidos fora da função, isto é, podem acessar variáveis consideradas globais, ou seja, que pertencem a um escopo mais externo que o local, que é chamado de <strong>escopo global</strong>.</p>
 <p>O programa a seguir demonstra como funciona o conceito de escopo:</p>
@@ -243,7 +244,7 @@
 </ul>
 <p>O primeiro tipo de passagem, por valor, evita que a variável usada na chamada possa ser modificada diretamente. Já a segunda forma, possibilita que a variável informada seja alterada dentro da função.</p>
 <p>Em Python as chamadas de função são realizadas por valor. No entanto, objetos como listas e dicionários possuem o efeito de chamadas por referência pois internamente a cópia das variáveis referenciam o mesmo conteúdo.</p>
-</div>
+</section>
 
 
            </div>

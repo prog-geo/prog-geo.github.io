@@ -9,16 +9,7 @@ Listas de Exercícios
 ====================
 
 
-.. toctree::
-    :maxdepth: 1
-    :titlesonly:
 
-    ./listas/l01
-    ./listas/l02
-    ./listas/l03
-    ./listas/l04
-    ./listas/l05
-    ./listas/l06
 
 
 

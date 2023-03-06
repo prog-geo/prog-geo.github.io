@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="pt-BR" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>7.5. Visualização de dados com a Matplotlib &mdash; SER-347/CAP-419</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -16,10 +17,10 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script src="../_static/translations.js"></script>
@@ -36,12 +37,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #2980B9" >
-            <a href="../index.html" class="icon icon-home"> SER-347/CAP-419
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SER-347/CAP-419
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Pesquisar documentos" />
+    <input type="text" name="q" placeholder="Pesquisar documentos" aria-label="Pesquisar documentos" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -88,10 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Provas</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../provas/2022.html">Avaliação 2022</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2022/index.html">Turma 2022</a></li>
@@ -119,9 +120,9 @@
         <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Navegação da página">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../variados.html"><span class="section-number">7. </span>Tópicos Variados</a> &raquo;</li>
-      <li><span class="section-number">7.5. </span>Visualização de dados com a Matplotlib</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../variados.html"><span class="section-number">7. </span>Tópicos Variados</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">7.5. </span>Visualização de dados com a Matplotlib</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Navegação sequencial da página">
@@ -133,8 +134,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="visualizacao-de-dados-com-a-matplotlib">
-<span id="sec-variados-matplotlib"></span><h1><span class="section-number">7.5. </span>Visualização de dados com a Matplotlib<a class="headerlink" href="#visualizacao-de-dados-com-a-matplotlib" title="Link permanente para este título"></a></h1>
+  <section id="visualizacao-de-dados-com-a-matplotlib">
+<span id="sec-variados-matplotlib"></span><h1><span class="section-number">7.5. </span>Visualização de dados com a Matplotlib<a class="headerlink" href="#visualizacao-de-dados-com-a-matplotlib" title="Link permanente para este cabeçalho"></a></h1>
 <p>Matplotlib é uma biblioteca para criar diversos tipos de visualizações em Python, incluindo gráficos estáticos, animados e interativos.</p>
 <p>Para saber se a biblioteca Matplotlib encontra-se instalada em seu ambiente de programação, e sua versão, importe o módulo matplotlib através da diretiva import e verifique sua versão através do valor associado à constante <code class="docutils literal notranslate"><span class="pre">__version__</span></code>, como mostrado abaixo:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
@@ -147,15 +148,11 @@
 </pre></div>
 </div>
 <p>A linha acima utiliza o comando <code class="docutils literal notranslate"><span class="pre">import</span></code> para trazer os nomes de funções, classes, e outros objetos definidos no sub-módulo <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> ao escopo local com o nome <code class="docutils literal notranslate"><span class="pre">plt</span></code>.</p>
-<div class="section" id="graficos-de-linhas">
-<h2><span class="section-number">7.5.1. </span>Gráficos de Linhas<a class="headerlink" href="#graficos-de-linhas" title="Link permanente para este título"></a></h2>
+<section id="graficos-de-linhas">
+<h2><span class="section-number">7.5.1. </span>Gráficos de Linhas<a class="headerlink" href="#graficos-de-linhas" title="Link permanente para este cabeçalho"></a></h2>
 <p>O portal do <a class="reference external" href="http://www.inpe.br/queimadas">Programa de Queimadas do INPE</a> disponibiliza diversos dados sobre o monitoramento de focos de incêndio na vegetação. A <a class="reference internal" href="#variados-tab-tabela-queimadas"><span class="std std-numref">Tabela 7.1</span></a> apresenta dados extraídos desse portal, na página de estatísticas por país, no dia 10 de Abril de 2018. Essa tabela corresponde à série histórica de focos de queimadas detectados no Brasil pelo satélite de referência no período do ano de 1998 ao ano de 2017.</p>
 <table class="docutils align-center" id="variados-tab-tabela-queimadas">
 <caption><span class="caption-number">Tabela 7.1 - </span><span class="caption-text">Série histórica de focos de queimadas detectados pelo satélite de referência no Brasil.</span><a class="headerlink" href="#variados-tab-tabela-queimadas" title="Link Permanente para essa tabela"></a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Ano</p></th>
 <th class="head"><p>Total de focos</p></th>
@@ -334,9 +331,9 @@
 </pre></div>
 </div>
 <p>Para maiores detalhes sobre a função <code class="docutils literal notranslate"><span class="pre">pyplot.plot</span></code>, consulte a documentação da Matplotlib.</p>
-</div>
-<div class="section" id="matplotlib-e-numpy">
-<h2><span class="section-number">7.5.2. </span>Matplotlib e NumPy<a class="headerlink" href="#matplotlib-e-numpy" title="Link permanente para este título"></a></h2>
+</section>
+<section id="matplotlib-e-numpy">
+<h2><span class="section-number">7.5.2. </span>Matplotlib e NumPy<a class="headerlink" href="#matplotlib-e-numpy" title="Link permanente para este cabeçalho"></a></h2>
 <p>Como vários dos parâmetros de entrada das funções da Matplotlib são definidos com base em sequências, podemos utilizar tanto sequências nativas do Python (tuplas e listas) quanto arrays do NumPy.</p>
 <p>O Exemplo abaixo mostra como criar uma senóide através das funções NumPy:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -351,9 +348,9 @@
 </pre></div>
 </div>
 <p>Para todos os tipos de gráficos que veremos neste material, é possível exibir uma grade regular. A função <code class="docutils literal notranslate"><span class="pre">plt.grid</span></code> controla a exibição e o estilo dessa grade.</p>
-</div>
-<div class="section" id="varios-graficos-sobre-a-mesma-area">
-<h2><span class="section-number">7.5.3. </span>Vários Gráficos Sobre a Mesma Área<a class="headerlink" href="#varios-graficos-sobre-a-mesma-area" title="Link permanente para este título"></a></h2>
+</section>
+<section id="varios-graficos-sobre-a-mesma-area">
+<h2><span class="section-number">7.5.3. </span>Vários Gráficos Sobre a Mesma Área<a class="headerlink" href="#varios-graficos-sobre-a-mesma-area" title="Link permanente para este cabeçalho"></a></h2>
 <p>As funções de desenho, como <code class="docutils literal notranslate"><span class="pre">plt.plot</span></code>, permitem que tracemos mais de um plot sobre a mesma área. O gráfico abaixo mostra como criar as duas senóides sobre a mesma área:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(f_1(t) = \sin(\pi \times t)\)</span></p></li>
@@ -399,9 +396,9 @@
 </pre></div>
 </div>
 <p>No código acima, cada chamada a <code class="docutils literal notranslate"><span class="pre">plt.plot</span></code> traça um gráfico com a respectiva senóide. Repare também que utilizamos o argumento chamado label para informar o rótulo associado à curva. Esse rótulo é usado pela operação <code class="docutils literal notranslate"><span class="pre">plt.legend()</span></code> para construir a legenda apresentada.</p>
-</div>
-<div class="section" id="multiplas-areas-de-desenho">
-<h2><span class="section-number">7.5.4. </span>Múltiplas Áreas de Desenho<a class="headerlink" href="#multiplas-areas-de-desenho" title="Link permanente para este título"></a></h2>
+</section>
+<section id="multiplas-areas-de-desenho">
+<h2><span class="section-number">7.5.4. </span>Múltiplas Áreas de Desenho<a class="headerlink" href="#multiplas-areas-de-desenho" title="Link permanente para este cabeçalho"></a></h2>
 <p>Podemos construir figuras formadas por múltiplas áreas de desenho. O trecho de código a seguir mostra como utilzar o recurso <code class="docutils literal notranslate"><span class="pre">subplot</span></code> da Matplotlib:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
@@ -415,9 +412,9 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="grafico-de-barras">
-<h2><span class="section-number">7.5.5. </span>Gráfico de Barras<a class="headerlink" href="#grafico-de-barras" title="Link permanente para este título"></a></h2>
+</section>
+<section id="grafico-de-barras">
+<h2><span class="section-number">7.5.5. </span>Gráfico de Barras<a class="headerlink" href="#grafico-de-barras" title="Link permanente para este cabeçalho"></a></h2>
 <p>Através da função <code class="docutils literal notranslate"><span class="pre">bar</span></code> podemos criar um gráfico de barras verticais (<em>bar chart</em>). Vamos utilizar essa função para criar um gráfico com os mesmos dados de queimadas usados nas seções anteriores:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ano</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">2008</span><span class="p">,</span> <span class="mi">2009</span><span class="p">,</span> <span class="mi">2010</span><span class="p">,</span> <span class="mi">2011</span><span class="p">,</span> <span class="mi">2012</span><span class="p">,</span> <span class="mi">2013</span><span class="p">,</span> <span class="mi">2014</span><span class="p">,</span> <span class="mi">2015</span><span class="p">,</span> <span class="mi">2016</span><span class="p">,</span> <span class="mi">2017</span> <span class="p">]</span>
 
@@ -431,16 +428,12 @@
         <span class="n">color</span><span class="o">=</span><span class="s1">&#39;Crimson&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="scatter-plot">
-<h2><span class="section-number">7.5.6. </span>Scatter Plot<a class="headerlink" href="#scatter-plot" title="Link permanente para este título"></a></h2>
+</section>
+<section id="scatter-plot">
+<h2><span class="section-number">7.5.6. </span>Scatter Plot<a class="headerlink" href="#scatter-plot" title="Link permanente para este cabeçalho"></a></h2>
 <p>A <a class="reference internal" href="#variados-tab-ibge"><span class="std std-numref">Tabela 7.2</span></a>, extraída da <a class="reference external" href="https://educa.ibge.gov.br/">página do IBGE</a>, apresenta uma estimativa da evolução da população brasileira entre os anos de 1900 e 2010.</p>
 <table class="docutils align-center" id="variados-tab-ibge">
 <caption><span class="caption-number">Tabela 7.2 - </span><span class="caption-text">Estimativa da evolução da população brasileira entre os anos de 1900 e 2010.</span><a class="headerlink" href="#variados-tab-ibge" title="Link Permanente para essa tabela"></a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Ano</p></th>
 <th class="head"><p>Estimativa População (Milhões)</p></th>
@@ -508,14 +501,6 @@
 <p>A <a class="reference internal" href="#variados-tab-marcadores"><span class="std std-numref">Tabela 7.3</span></a> apresenta um subconjunto dos <a class="reference external" href="https://matplotlib.org/api/markers_api.html">marcadores pré-definidos que temos à disposição na Matplotlib</a>:</p>
 <table class="docutils align-center" id="variados-tab-marcadores">
 <caption><span class="caption-number">Tabela 7.3 - </span><span class="caption-text">Alguns tipos pré-definidos de marcadores na Matplotlib.</span><a class="headerlink" href="#variados-tab-marcadores" title="Link Permanente para essa tabela"></a></caption>
-<colgroup>
-<col style="width: 17%" />
-<col style="width: 17%" />
-<col style="width: 17%" />
-<col style="width: 17%" />
-<col style="width: 17%" />
-<col style="width: 17%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Marcador</p></th>
 <th class="head"><p>Interpretação</p></th>
@@ -551,7 +536,7 @@
 <td><p>diamante fino</p></td>
 <td><p>“&gt;”</p></td>
 <td><p>triângulo virado para a direita</p></td>
-<td><p>“-“</p></td>
+<td><p>“-”</p></td>
 <td><p>horizontal</p></td>
 </tr>
 <tr class="row-even"><td><p>“D”</p></td>
@@ -640,9 +625,9 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">area</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">);</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="histogramas">
-<h2><span class="section-number">7.5.7. </span>Histogramas<a class="headerlink" href="#histogramas" title="Link permanente para este título"></a></h2>
+</section>
+<section id="histogramas">
+<h2><span class="section-number">7.5.7. </span>Histogramas<a class="headerlink" href="#histogramas" title="Link permanente para este cabeçalho"></a></h2>
 <p>Na Matplotlib a função <code class="docutils literal notranslate"><span class="pre">hist</span></code> pode ser usada para construção de histogramas. O primeiro argumento dessa função, chamado <code class="docutils literal notranslate"><span class="pre">x</span></code>, corresponde à lista de valores para a qual se deseja criar o histograma. O segundo argumento, chamado <code class="docutils literal notranslate"><span class="pre">bins</span></code>, diz em quantas partições (ou <em>bins</em>) deverá ser dividido o histograma. Baseado nesse valor, a função determina automaticamente os limites de cada uma das partições. Caso esse parâmetro seja omitido, é utilizado um valor padrão (ex: 10 partições).</p>
 <p>Vamos considerar o seguinte exemplo extraído da galeria da Matplotlib e do site da NumPy:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -685,8 +670,8 @@
 <span class="n">count</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">ignored</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
