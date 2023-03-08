@@ -1,0 +1,18 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _cap_variados:
+
+Tópicos Variados
+================
+
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+
+    ./variados/git_github
+    ./variados/terminal-python
+
+

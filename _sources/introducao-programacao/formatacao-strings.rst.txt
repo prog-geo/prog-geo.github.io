@@ -1,0 +1,249 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../def.rst
+
+
+.. _sec_introducao_programacao_formatacao_strings:
+
+Formatação de Strings
+=====================
+
+
+.. _sec_introducao_programacao_formatacao_strings_operador_antigo:
+
+Usando o operador ``%``
+-----------------------
+
+
+Em Python podemos usar o operador ``%`` para realizar a formatação de strings. Nesse caso, chamamos esse operador de **formatação de string** ou **operador de interpolação**. Para compreender como ele funciona, vamos começar por um exemplo:
+
+
+.. code-block::
+    :linenos:
+
+    >>> curso = "CAP-419/SER-347"
+    >>> "Bem vindo a %s!" % curso
+    'Bem vindo a CAP-419/SER-347!'
+
+
+A sequência ``%s``, dentro da string na linha 03, possui uma interpretação especial, ela funciona como um marcador de posição (*placeholder*) que será substituída (ou interpolada ou expandida) pelo valor fornecido à direita do operador ``%``. Existe uma regra bem definida de como construir as strings de formatação :cite:`psf:stdlib:2021:d`. Algumas bem utilizadas são:
+
+- ``%s``: substituição de strings.
+
+- ``%d``: substituição de números inteiros.
+
+- ``%f``: substituição de números em ponto flutuante.
+
+
+Exemplos::
+
+    >>> idade = 25
+    >>> "Idade: %d" % idade
+    'Idade: 25'
+
+
+.. code-block:: python
+
+    >>> salario = 1250.34
+
+    >>> "Salario: R$ %f" % salario
+    'Salario: R$ 1250.340000'
+
+    >>> "Salario: R$ %.2f" % salario
+    'Salario: R$ 1250.34'
+
+
+O exemplo acima utiliza também uma sequência especial para formatar um número em ponto flutuante, fazendo com que a parte fracionária seja limitada a dois caracteres.
+
+
+Por padrão, os valores são formatados tomando o máximo de caracteres necessários para representar o conteúdo. É possível também especificar que o valor deva ser preenchido com um número fixo de caracteres (*padding*)::
+
+    >>> '%20s' % 'teste'
+    '               teste'
+
+
+.. code-block:: python
+
+    >>> '%05d' % 38
+    '00038'
+
+
+Se mais de um valor precisar ser informado na formatação, devemos usar **tuplas** com exatamente o mesmo número de elementos especificados na string de formatação::
+
+    >>> plataforma = "Landsat-8"
+    >>> sensor = "OLI"
+    >>> ano = 2013
+    >>> "%s foi lançado em %d e possui o sensor %s" % (plataforma, ano, sensor)
+    'Landsat-8 foi lançado em 2013 e possui o sensor OLI'
+
+
+ou, podemos utilizar um objeto que realize o mapeamento entre nome e valores, como os **dicionários**::
+
+    >>> instrumento = {
+    ...     "plataforma": "Landsat-8",
+    ...     "sensor": "OLI"
+    ... }
+    >>> "Você está utilizando dados %(plataforma)s / %(sensor)s" % instrumento
+    'Você está utilizando dados Landsat-8 / OLI'
+
+
+.. note::
+
+    Embora o operador ``%``, para formatação de strings, tenha sido depreciado em favor do método ``format`` (:numref:`Seção %s <sec_introducao_programacao_formatacao_strings_metodo_format>`), é importante saber de sua existência pois muitos *scripts* e programas legados utilizam esta notação.
+
+
+.. note::
+
+    O operador ``%`` é semelhante ao operador ``sprintf()`` da linguagem C.
+
+
+.. _sec_introducao_programacao_formatacao_strings_metodo_format:
+
+Usando o método ``format``
+--------------------------
+
+
+Sintaxe::
+
+    s.format(*args, **kwargs)
+
+
+.. rst-class:: open
+
+- **Descrição:** O método ``format`` realiza a operação de formatação de uma string ``s`` contendo elementos de substituição delimitados pelos caracteres ``{`` e ``}``.
+
+- **Parâmetros:**
+
+    * ``args``: Sequência com os valores a serem usados na formatação da string ``s``.
+    * ``kwargs``: Pares de chave-valor. As ocorrências em ``s`` de *placeholders* nomeados usarão valores desse parâmetro.
+
+- **Retorno:** Uma cópia da string ``s`` onde cada elemento de substituição é trocado por um valor string gerado a partir do argumento correspodente.
+
+
+Exemplos::
+
+    >>> idade = 25
+    >>> "Idade: {}".format(idade)
+    'Idade: 25'
+
+
+.. code-block:: python
+
+    >>> salario = 1250.34
+
+    >>> "Salario: R$ {}".format(salario)
+    'Salario: R$ 1250.340000'
+
+    >>> "Salario: R$ {:.2f}".format(salario)
+    'Salario: R$ 1250.34'
+
+
+O exemplo acima utiliza também uma sequencia especial para formatar um número em ponto flutuante, fazendo com que a parte fracionária seja limitada a dois caracteres.
+
+
+Por padrão, os valores são formatados tomando o máximo de caracteres necessários para representar o conteúdo. É possível também especificar que o valor deva ser preenchido com um certo número fixo de caracteres (*padding*)::
+
+    >>> '{:>20}'.format('teste')
+    '               teste'
+
+
+
+.. code-block:: python
+
+    >>> '{:20}'.format('teste')
+    'teste               '
+
+
+.. code-block:: python
+
+    >>> '{:05}'.format(38)
+    '00038'
+
+
+Ou, fazer o truncamento::
+
+    >>> '{:.10} ...'.format('Introdução à Programação com Dados Geoespaciais')
+    'Introdução ...'
+
+
+Podemos passar vários valores de uma única vez::
+
+    >>> plataforma = "Landsat-8"
+    >>> sensor = "OLI"
+    >>> ano = 2013
+
+
+.. code-block:: python
+
+    >>> "{0} foi lançado em {1} e possui o sensor {2}".format(plataforma, ano, sensor)
+    'Landsat-8 foi lançado em 2013 e possui o sensor OLI'
+
+
+Podemos omitir a numeração dos argumentos, caso ele sejam dados na ordem::
+
+    >>> "{} foi lançado em {} e possui o sensor {}".format(plataforma, ano, sensor)
+    'Landsat-8 foi lançado em 2013 e possui o sensor OLI'
+
+
+Também podemos utilizar argumentos posicionais (*positional arguments*)::
+
+    >>> "O sensor {2} a bordo do satélite {0} lançado em {1}...".format(plataforma, ano, sensor)
+    'O sensor OLI a bordo do satélite Landsat-8 lançado em 2013...'
+
+
+Ou, podemos utilizar argumentos nomeados (*named keyword argument*)::
+
+    >>> 'Coordinates: {latitude}, {longitude}'.format(longitude='-45.88', latitude='-23.17')
+    'Coordinates: -23.17, -45.88'
+
+
+.. code-block:: python
+
+    >>> instrumento = {
+    ...     "plataforma": "Landsat-8",
+    ...     "sensor": "OLI"
+    ... }
+    >>> "Você está utilizando dados {plataforma} / {sensor}".format(**instrumento)
+    'Você está utilizando dados Landsat-8 / OLI'
+
+
+.. admonition:: Exemplos
+    :class: box-exemplos
+
+    Vamos examinar os exemplos apresentados no `manual da biblioteca padrão do Python <https://docs.python.org/3/library/string.html#format-examples>`_.
+
+
+.. note::
+
+    Podemos especificar vários detalhes de formatação, tais como: tamanho do campo, alinhamento, *padding*, precisão decimal, entre outros. Iremos ver mais detalhes sobre formatação de strings à medida que avançarmos no curso.
+
+
+.. note::
+
+    Se você quiser usar os caracteres ``{`` ou ``}`` como uma string do seu texto de saída, deverá utillizar uma sequência de escape especial, dobrando esses caracteres: ``{{`` ou ``}}``. Caso contrário, as marcas serão tratadas como *placeholders*.
+
+
+.. note::
+
+    A sintaxe de formatação do método ``format`` pode ser encontrada em :cite:`psf:stdlib:2021:e`.
+
+
+.. note::
+
+    Um bom guia que demonstra o uso do operador ``%`` e do método ``format`` pode ser encontrado em :cite:`petri:2017`.
+
+
+f-string
+--------
+
+
+.. note::
+
+    Veja :cite:`psf:reference:2021:d`.
+
+
+Template strings
+----------------

@@ -1,0 +1,49 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../def.rst
+
+
+.. _sec_introducao_programacao_comentarios:
+
+Comentários
+===========
+
+
+Comentários são parte importante de qualquer programa, não sendo consideradas instruções a serem executadas. Servem apenas ao propósito de documentar o código fonte do programa.
+
+
+.. note::
+
+    Em Python, há uma notação especial para documentação de funções e classes. Discutiremos esse tópico mais adiante no curso, quando apresentarmos o conceito de **funções**.
+
+
+O :numref:`Trecho de Código %s <introd-prog:code:ndvi>` mostra um exemplo de uso dos comentários para explicar as seções de um código que realiza o cálculo do NDVI:
+
+
+.. code-block:: python
+    :linenos:
+    :caption:  Calculando o NDVI.
+    :name: introd-prog:code:ndvi
+
+    # definir valores de NIR e Red
+    NIR = 0.5
+    Red = 0.3
+
+    # mostrar dados de entrada na tela
+    print("NIR:", NIR)
+    print("Red:", Red)
+
+    # calcular NDVI
+    NDVI = (NIR - Red) / (NIR + Red)
+
+    # mostrar resultado na tela
+    print("NDVI:", NDVI)
+
+
+.. admonition:: Exemplos
+    :class: box-exemplos
+
+    Vamos fazer o exemplo :ref:`01 <sec_introducao_programacao_exemplos_ex01>`.

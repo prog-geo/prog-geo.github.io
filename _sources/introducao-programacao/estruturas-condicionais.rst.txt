@@ -1,0 +1,174 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../def.rst
+
+
+.. _sec_introducao_programacao_estruturas_condicionais:
+
+Estruturas Condicionais
+=======================
+
+
+As **estruturas condicionais** ou **comandos condicionais** permitem alterar a sequência de execução de um programa dependendo do resultado de uma **expressão lógica** (:numref:`Figura %s <introd-prog:fig:estrutura-condiconal>`).
+
+
+.. figure:: ../img/introducao-programacao/fluxograma-estrutura-condicional.png
+    :alt: Estrutura condicional
+    :width: 80%
+    :figclass: align-center
+    :name: introd-prog:fig:estrutura-condiconal
+
+    Estrutura condicional.
+
+
+Em Python, usamos as palavras reservadas ``if``, ``else`` e ``elif`` para estruturar blocos de comandos (ou instruções) que organizam o fluxo de nossos programas.
+
+
+.. note::
+
+    Muitas vezes chamamos o comando ``if`` de **cláusula** ``if``.
+
+
+Estrutura Condicional Simples
+-----------------------------
+
+
+Podemos estruturar um bloco utilizando um único comando ``if``, como mostrado no :numref:`Trecho de Código %s <introd-prog:code:single-if>`. Neste exemplo, o comando da linha 04 somente será executado se um valor de NDVI maior que 0.3 e menor que 0.8 for lido na linha 01. O teste condicional associado ao comando ``if``, na linha 03, tem o papel de verificar se a expressão é verdadeira ou falsa. No caso de ela ser verdadeira, o fluxo do programa, na linha 03, é desviado para dentro do bloco de comandos definido pelo comando ``if``, que nesse caso contém apenas o comando da linha 04, e depois o fluxo continua sua execução a partir da primeira linha fora do comando ``if`` (nesse caso a linha 06). Se a expessão condicional da linha 03 for avaliada como falsa, o fluxo é desviado diretamente para a linha 06, que é a primeira linha fora da estrutura do comando ``if``. A :numref:`Figura %s <introd-prog:fig:if-single>` ilustra o fluxo de execução desse programa.
+
+
+.. code-block:: python
+    :linenos:
+    :emphasize-lines: 3,4
+    :caption: Exemplo de uso de um comando condicional simples.
+    :name: introd-prog:code:single-if
+
+    ndvi = float(input("NDVI: "))
+
+    if (ndvi > 0.3) and (ndvi < 0.8):
+        print("vegetação densa!")
+
+    print("NDVI:", ndvi)
+
+
+.. note::
+
+    Atente-se para a **indentação** das instruções dentro do bloco ``if`` e o término da linha com o caracter ``:``.
+
+
+.. figure:: ../img/introducao-programacao/if-single.png
+    :alt: Estrutura condicional simples
+    :width: 60%
+    :figclass: align-center
+    :name: introd-prog:fig:if-single
+
+    Estrutura condicional simples.
+
+
+Estrutura Condicional Composta
+------------------------------
+
+
+Neste caso, além da sequência de comandos a ser executada caso a expressão lógica seja avaliada como verdadeira, temos também um conjunto de instruções que pode ser executado caso ela seja avaliada como falsa. O :numref:`Trecho de Código %s <introd-prog:code:compound-if>` inclui a palavra-chave ``else``, definindo um bloco de comandos que será executado caso a expressão lógica da linha 03 seja avaliada como falsa. A :numref:`Figura %s <introd-prog:fig:if-compound>` ilustra o fluxo de execução desse programa.
+
+
+.. code-block:: python
+    :linenos:
+    :caption: Exemplo de uso de um comando condicional composto.
+    :name: introd-prog:code:compound-if
+
+    ndvi = float(input("NDVI: "))
+
+    if (ndvi > 0.3) and (ndvi < 0.8):
+        print("vegetação densa!")
+    else:
+        print("pouca vegetação!")
+
+    print("NDVI:", ndvi)
+
+
+.. note::
+
+    Atente-se para a **indentação** das instruções dentro dos blocos ``if`` e ``else``, bem como o término dessas linhas com o caracter ``:``.
+
+
+.. figure:: ../img/introducao-programacao/if-compound.png
+    :alt: Estrutura condicional composta
+    :width: 60%
+    :figclass: align-center
+    :name: introd-prog:fig:if-compound
+
+    Estrutura condicional composta.
+
+
+Comandos Condicionais Encadeados
+--------------------------------
+
+
+Podemos utilizar a palavra-chave ``elif`` para encadear uma estrutura condicional. O :numref:`Trecho de Código %s <introd-prog:code:chained-if>` inclui a palavra-chave ``elif`` para definir um novo teste condicional caso o teste da linha 03 seja falso. Caso os testes das linhas 03 e 05 sejam falsos, o bloco delimitado pela instrução ``else`` será executado.
+
+
+.. code-block:: python
+    :linenos:
+    :caption: Exemplo de uso de um comando condicional encadeado.
+    :name: introd-prog:code:chained-if
+
+    ndvi = float(input("NDVI: "))
+
+    if (ndvi < -1.0) or (ndvi > 1.0):
+        print("NDVI fora do intervalo!")
+    elif (ndvi > 0.3) and (ndvi < 0.8):
+        print("vegetação densa!")
+    else:
+        print("pouca vegetação!")
+
+    print("NDVI:", ndvi)
+
+
+.. note::
+
+    As estruturas condicionais podem ser **aninhadas**, isto é, podem ser instruções dentro das cláusulas ``if``, ``else`` e ``elif``.
+
+
+.. note::
+
+    A **seção de código**, ou **bloco de comandos** dentro das cláusulas ``if``, ``else`` e ``elif`` podem conter diversas instruções.
+
+
+Exemplo
+-------
+
+
+**Problema:** Escreva um programa que pergunte ao usuário o valor de um ano qualquer e que o informe se o ano é ou não bissexto.
+
+
+**Solução:**
+
+
+.. code-block:: python
+
+    ano = int(input("Ano: "))
+
+    if ano % 400 == 0:
+        print("É bissexto!")
+    elif ano % 100 == 0:
+        print("Não é bissexto!")
+    elif ano % 4 == 0:
+        print("É bissexto!")
+    else:
+        print("Não é bissexto!")
+
+    print("Fim!")
+
+
+.. note::
+
+    Este problema foi introduzido na :numref:`Seção %s <sec_introducao_programacao_expressoes_logicas>`.
+
+
+.. admonition:: Exemplos
+    :class: box-exemplos
+
+    Vamos fazer o exemplo :ref:`02 <sec_introducao_programacao_exemplos_ex02>`.

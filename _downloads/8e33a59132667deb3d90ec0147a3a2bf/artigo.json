@@ -1,0 +1,94 @@
+{
+  "indexed": {
+    "date-parts": [ [2020, 4, 17] ],
+    "date-time": "2020-04-17T06:23:05Z",
+    "timestamp": 1587104585191
+  },
+  "reference-count": 55,
+  "publisher": "MDPI AG",
+  "issue": "8",
+  "license": [
+    {
+      "URL": "https://creativecommons.org/licenses/by/4.0/",
+      "start": {
+        "date-parts": [ [2020, 4, 16] ],
+        "date-time": "2020-04-16T00:00:00Z",
+        "timestamp": 1586995200000
+      }
+    }
+  ],
+  "abstract": "In recent years, Earth observation (EO) satellites...",
+  "DOI": "10.3390/rs12081253",
+  "type": "article-journal",
+  "created": {
+    "date-parts": [ [2020, 4, 16] ],
+    "date-time": "2020-04-16T17:01:39Z",
+    "timestamp": 1587056499000
+  },
+  "page": "1253",
+  "source": "Crossref",
+  "is-referenced-by-count": 0,
+  "title": "An Overview of Platforms for Big Earth Observation Data Management and Analysis",
+  "prefix": "10.3390",
+  "volume": "12",
+  "author": [
+    {
+      "ORCID": "http://orcid.org/0000-0003-3239-2160",
+      "authenticated-orcid": false,
+      "given": "Vitor C. F.",
+      "family": "Gomes",
+      "sequence": "first",
+      "affiliation": []
+    },
+    {
+      "ORCID": "http://orcid.org/0000-0001-7534-0219",
+      "authenticated-orcid": false,
+      "given": "Gilberto R.",
+      "family": "Queiroz",
+      "sequence": "additional",
+      "affiliation": []
+    },
+    {
+      "ORCID": "http://orcid.org/0000-0003-2656-5504",
+      "authenticated-orcid": false,
+      "given": "Karine R.",
+      "family": "Ferreira",
+      "sequence": "additional",
+      "affiliation": []
+    }
+  ],
+  "member": "1968",
+  "published-online": { "date-parts": [ [2020, 4, 16] ] },
+  "container-title": "Remote Sensing",
+  "original-title": [],
+  "language": "en",
+  "link": [{
+    "URL": "https://www.mdpi.com/2072-4292/12/8/1253/pdf",
+    "content-type": "unspecified",
+    "content-version": "vor",
+    "intended-application": "similarity-checking"
+  }],
+  "deposited": {
+    "date-parts": [ [2020, 4, 16] ],
+    "date-time": "2020-04-16T17:51:19Z",
+    "timestamp": 1587059479000
+  },
+  "score": 1.0,
+  "subtitle": [],
+  "short-title": [],
+  "issued": {
+    "date-parts": [ [2020, 4, 16] ]
+  },
+  "references-count": 55,
+  "journal-issue": {
+    "published-online": {
+      "date-parts": [ [2020, 4] ]
+    },
+    "issue": "8"
+  },
+  "alternative-id": ["rs12081253"],
+  "URL": "http://dx.doi.org/10.3390/rs12081253",
+  "ISSN": ["2072-4292"],
+  "subject": ["General Earth and Planetary Sciences"],
+  "container-title-short": "Remote Sensing"
+}

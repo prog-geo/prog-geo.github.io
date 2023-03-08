@@ -1,0 +1,95 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _sec_instalacao_jupyterlab:
+
+Instalação do JupyterLab através do Docker
+==========================================
+
+
+**1.** Baixe a imagem ``jupyter/datascience-notebook``::
+
+    docker pull jupyter/datascience-notebook
+
+
+**2.** Execute o contêiner do JupyterLab::
+
+    docker run --detach \
+               --restart unless-stopped \
+               --name my-jupyterlab \
+               --publish 127.0.0.1:8888:8888 \
+               --env JUPYTER_ENABLE_LAB=yes \
+               --volume ${PWD}:/home/jovyan/my-documents \
+               jupyter/datascience-notebook
+
+
+**3.** Em seguida, verifique a URL que deverá ser usada para acessar o JupyterLab a partir de seu navegador::
+
+    docker logs my-jupyterlab-2
+
+
+Na saída do comando acima, você verá algo como::
+
+    To access the server, open this file in a browser:
+        file:///home/jovyan/.local/share/jupyter/runtime/jpserver-8-open.html
+    Or copy and paste one of these URLs:
+        http://287556ed8229:8888/lab?token=9b5af45a3c781144c92f3bf398b477ae5d32907b197a5a50
+     or http://127.0.0.1:8888/lab?token=9b5af45a3c781144c92f3bf398b477ae5d32907b197a5a50
+
+
+Abra o endereço apresentado no seu navegador::
+
+    firefox http://127.0.0.1:8888/lab?token=9b5af45a3c781144c92f3bf398b477ae5d32907b197a5a50
+
+
+Uma janela como a mostrada na :numref:`Figura %s <instalacao:docker:jupyterlab>` será apresentada:
+
+
+.. figure:: ../img/instalacao/docker-jupyterlab.png
+    :alt: Janela do JupyterLab no navegador
+    :width: 100%
+    :figclass: align-center
+    :name: instalacao:docker:jupyterlab
+
+    Janela do JupyterLab no navegador.
+
+
+**3.** Abra um terminal associado ao contêiner criado para instalar alguns plugins (ou extensões)::
+
+    docker exec -it --user root my-jupyterlab bash
+
+    #
+    # Install ipyleaflet in base conda environment
+    #
+    conda install --yes --channel conda-forge ipyleaflet
+
+    #
+    # Install JupyterLab extension in base conda environment
+    #
+    jupyter labextension install @jupyter-widgets/jupyterlab-manager
+    jupyter labextension install jupyter-leaflet
+    jupyter nbextension enable --py --sys-prefix ipyleaflet
+    jupyter labextension install @jupyterlab/debugger
+    jupyter labextension install @jupyterlab/geojson-extension
+    jupyter labextension install @jupyterlab/vega3-extension
+    jupyter labextension install @jupyterlab/mathjax3-extension
+    jupyter labextension install @jupyterlab/latex
+    jupyter labextension install @pyviz/jupyterlab_pyviz
+    jupyter nbextension enable --py widgetsnbextension
+
+
+.. note::
+
+    Caso queira instalar a extensão ``jupyterlab-git``, execute os dois comandos extras mostrados abaixo::
+
+        pip install -U jupyterlab-git
+        jupyter lab build
+
+
+.. note::
+
+    A extensão ``jupyterlab/github`` não encontra-se funcional com a versão 3 do JupyterLab. Nas versões anteriores, era possível instalar essa extensão através do seguinte comando::
+
+        jupyter labextension install @jupyterlab/github

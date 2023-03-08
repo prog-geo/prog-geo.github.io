@@ -1,0 +1,28 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _sec_introducao_programacao_comandos_compostos:
+
+Comandos Compostos
+==================
+
+
+Toda linguagem de programação de alto nível possui alguns comandos que são **compostos**, isto é, comandos que contém grupos de outros comandos. Os comandos ``if``, ``while``, e ``for``, vistos nas aulas anteriores, são exemplos de comandos compostos que permitem controlar o fluxo de execução de um outro grupo de comandos.
+
+
+Como vimos, um laço do tipo ``while`` pode conter um único comando ou uma sequência de diversos outros comandos, inclusive pode conter outros comandos do tipo ``while`` (chamamos isso de comandos ``while`` aninhados).
+
+
+Em Python, temos outros quatro tipos de comandos compostos, são eles:
+
+.. rst-class:: open
+
+- ``try``: define um bloco de comandos onde é possível realizar **tratamento de exceções** durante a execução de comandos.
+
+- ``with``: define um bloco de comandos que deva **inicializar algum recurso** no início da sua execução e ao final da sua execução tenha que **finalizar (ou liberar) esses recursos**.
+
+- ``def``: permite definir uma **função**.
+
+- ``class``: permite definir **classes**, isto é, novos tipos de dados.

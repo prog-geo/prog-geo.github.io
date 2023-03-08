@@ -1,0 +1,370 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../def.rst
+
+
+.. _sec_introducao_programacao_exemplos:
+
+Exemplos
+========
+
+
+.. _sec_introducao_programacao_exemplos_ex01:
+
+**Exemplo 01.** Uma reta pode ser representada por uma equação geral da seguinte forma:
+
+
+.. math::
+    :label: introd-prog:math:equacao-reta
+
+    ax + by + c = 0
+
+
+Considere a reta com os seguintes coeficientes: :math:`a = 3`, :math:`b = -2` e :math:`c = -6` (:numref:`Figura %s <introd-prog:fig:eq-reta>`). Faça um programa que pergunte ao usuário os valores de um par de coordenadas :math:`(x,y)`, aplique a :eq:`introd-prog:math:equacao-reta` e verifique o resultado.
+
+
+.. figure:: ../img/introducao-programacao/eq-reta.png
+    :alt: Ilustração de uma reta com coeficientes: a = 3, b = -2 e c = -6
+    :width: 60%
+    :figclass: align-center
+    :name: introd-prog:fig:eq-reta
+
+    Ilustração de uma reta com coeficientes: :math:`a = 3`, :math:`b = -2` e :math:`c = -6`.
+
+
+**Solução:**
+
+
+.. code-block:: python
+
+    # coeficientes da equação geral da reta:
+    # Ax + By + C = 0
+    A = 3.0
+    B = -2.0
+    C = -6.0
+
+    # realiza a leitura das coordenadas de um ponto (x, y)
+    x = float(input('x: '))   # lê x
+    y = float(input('y: '))   # lê y
+
+    # se a equação resultar em 0.0,
+    # significa que o ponto encontra-se sobre a reta
+    r = A*x + B*y + C
+
+    print("Resultado da equação para o ponto ({0}, {1}): {2}".format(x, y, r))
+
+
+-----
+
+
+.. _sec_introducao_programacao_exemplos_ex02:
+
+**Exemplo 02.** Altere o programa da equação geral de uma reta para incluir um teste condicional que escreva na tela a mensagem "Sobre a Reta", caso o ponto informado esteja sobre a reta; caso o ponto encontre-se acima da reta, deverá ser escrita a mensagem "Acima da Reta"; e, caso o ponto encontra-se abaixo da reta, deverá ser escrita a mensagem "Abaixo da Reta".
+
+**Solução:**
+
+
+.. code-block:: python
+
+    # coeficientes da equação geral da reta:
+    # Ax + By + C = 0
+    A = 3.0
+    B = -2.0
+    C = -6.0
+     
+    # realiza a leitura das coordenadas de um ponto (x, y)
+    x = float(input('x: '))   # lê x
+    y = float(input('y: '))   # lê y
+     
+    y0 = (-A*x - C) / B
+     
+    if y > y0:
+        print("Acima!")
+    elif y < y0:
+        print("Abaixo!")
+    else:
+        print("Sobre a reta!")
+
+-----
+
+
+.. _sec_introducao_programacao_exemplos_ex03:
+
+**Exemplo 03.** Escreva um programa em Python que leia um número inteiro :math:`n` entre :math:`1` e :math:`10` e compute o fatorial desse número. Lembre-se que o fatorial de um número :math:`n` é definindo como:
+
+
+.. math::
+    :label: introd-prog:math:fat-produtorio
+
+    n! = \prod_{i=1}^{n} i
+
+ou,
+
+.. math::
+    :label: introd-prog:math:fat-rel-recorrencia
+
+    \begin{cases}
+    fat(1) = 1, & \text{se $n = 1$}\\
+    fat(n) = n \times fat(n - 1), & \text{se $n > 1$}
+    \end{cases}
+
+
+**Solução:**
+
+
+.. code-block:: python
+
+    n = int(input("Digite um número no intervalo [1, 10]: "))
+
+    if (n >= 1) and (n <= 10):
+
+        fat = 1
+        while n > 1:
+            fat = fat * n
+            n = n - 1
+            print('variavel fat', fat)
+            print('variavel n', n)
+
+        print("fatorial:", fat)
+
+    else:
+        print("Número fora do intervalo [1, 10].")
+        print("Rode o programa novamente!")
+
+-----
+
+
+.. _sec_introducao_programacao_exemplos_ex04:
+
+**Exemplo 04.** A sequência de Fibonacci é uma sequência de números inteiros, começando por :math:`0` e :math:`1`, onde cada termo subsequente corresponde a soma dos dois anteriores::
+
+    0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
+
+
+A seguinte fórmula recursiva define esta sequência:
+
+
+.. math::
+    :label: introd-prog:math:fib-rel-recorrencia
+
+    \begin{cases}
+        F_n = F_{n-1} + F_{n-2} \\
+        F_1 = 1 \\
+        F_0 = 0
+    \end{cases}
+
+
+Faça um programa em Python que compute a sequência para um número :math:`n` qualquer.
+
+
+**Solução:**
+
+
+.. code-block:: python
+
+    n = int(input("Digite um número > 1: "))
+
+    if n <= 1:
+        exit("Entre com um número > 1.")
+
+    a = 0
+    print(a)
+
+    b = 1
+    print(b)
+
+    i = 2
+
+    while i <= n:
+        proximo = b + a
+
+        print(proximo)
+
+        a = b
+        b = proximo
+
+        i = i + 1
+
+
+-----
+
+
+.. _sec_introducao_programacao_exemplos_ex05:
+
+**Exemplo 05.** Escreva um programa em Python que leia dois números, :math:`x` e :math:`y`, e calcule a função potência :math:`x^y`, sem utilizar o operador ``**`` de Python ou alguma função da biblioteca padrão.
+
+
+**Solução:**
+
+
+.. code-block:: python
+
+    x = int(input("Digite um número (X): "))
+    y = int(input("Digite um número (Y): "))
+    print(x**y)
+
+    pot = 1
+
+    while y >= 1:
+        pot = pot * x
+
+        y = y - 1
+
+    print("X^Y:", pot)
+
+
+-----
+
+
+.. _sec_introducao_programacao_exemplos_ex06:
+
+**Exemplo 06.** Escreva um programa em Python que verifique se um número é primo ou não.
+
+
+**Solução:**
+
+
+.. code-block:: python
+
+    n = int(input("Digite um número: "))
+
+    primo = True
+
+    i = 2
+
+    while i < n:
+
+        if (n % i) == 0:
+            print(i)
+            primo = False
+            break
+
+        i = i + 1
+
+    if primo:
+        print(n, "é primo!")
+    else:
+        print(n, "não é primo!")
+
+
+-----
+
+
+.. _sec_introducao_programacao_exemplos_ex07:
+
+**Exemplo 07.** Escreva um programa em Python que gere a tabela de multiplicação dos números de :math:`1` a :math:`10`.
+
+
+**Solução:**
+
+
+.. code-block:: python
+
+    i = 1
+
+    while i <= 10:
+        print("Tabuada:", i)
+
+        j = 1
+
+        while j <= 10:
+            print(i, "x", j, "=", i * j)
+
+            j = j + 1
+
+        i = i + 1
+
+        print("")
+
+
+-----
+
+
+.. _sec_introducao_programacao_exemplos_ex08:
+
+**Exemplo 08.** Dada a lista de valores de NDVI::
+
+    serie_ndvi = [0.3, -0.3, 0.2, None, 0.9, 0.8, 0.8, None, 0.2, 0.2]
+
+
+Apresente as seguintes informações:
+
+.. rst-class:: open
+
+- Quantidade de valores inválidos (neste caso: ``None``).
+
+- Quantidade de valores válidos.
+
+
+-----
+
+
+.. _sec_introducao_programacao_exemplos_ex09:
+
+**Exemplo 09.** Uma imagem MODIS, em geral, armazena seus valores multiplicados por 10.000. Desta forma um valor 5.000 (inteiro) representa o valor real 0.5 (ponto flutuante) e ocupa menos espaço na memória. Dada uma lista de valores MODIS::
+
+    serie_modis = [7000, 6000, 3000, 3000, 10000, 2000, 5000, 500, 7500, 3000]
+
+
+Calcule e apresente a lista de valores reais (divididos por 10.000).
+
+
+-----
+
+
+.. _sec_introducao_programacao_exemplos_ex10:
+
+**Exemplo 10.** Considere a seguinte lista::
+
+    [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+
+
+Faça um programa em Python que realize a soma dos valores nessa lista e escreva o valor da soma.
+
+
+-----
+
+
+.. _sec_introducao_programacao_exemplos_ex11:
+
+**Exemplo 11.** Considere a série temporal mostrada abaixo, extraída de dados do sensor `MOD13Q1 <https://lpdaac.usgs.gov/dataset_discovery/modis/modis_products_table/mod13q1>`_, produto ``MOD13Q1``, para a localização ``(-54,-12)`` para o período de ``01/01/2015`` a ``19/12/2015``::
+
+    red_values = (
+        168, 398, 451, 337, 186, 232, 262, 349,
+        189, 204, 220, 220, 207, 239, 259, 258,
+        242, 331, 251, 323, 106, 1055, 170
+    )
+
+    nir_values = (
+        2346, 4431, 4638, 4286, 2752, 3521, 2928, 3087,
+        2702, 2685, 2702, 2865, 2835, 2955, 3019, 3391,
+        2986, 4042, 3050, 3617, 2478, 3361, 2613
+    )
+
+    timeline = (
+        "2015-01-01", "2015-01-17", "2015-02-02", "2015-02-18",
+        "2015-03-06", "2015-03-22", "2015-04-07", "2015-04-23",
+        "2015-05-09", "2015-05-25", "2015-06-10", "2015-06-26",
+        "2015-07-12", "2015-07-28", "2015-08-13", "2015-08-29",
+        "2015-09-14", "2015-09-30", "2015-10-16", "2015-11-01",
+        "2015-11-17", "2015-12-03", "2015-12-19"
+    )
+
+
+Faça um programa que:
+
+.. rst-class:: open
+
+- Crie a série temporal do NDVI.
+
+- Calcule a média do NDVI dessa série temporal.
+
+- Obtenha o maior e menor valores de NDVI e escreva a data em que eles ocorrem.
+
+
+.. note::
+
+    Multiplique os valores das bandas ``red`` e ``nir`` por ``0.0001``.

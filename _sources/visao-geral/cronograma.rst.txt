@@ -1,0 +1,115 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../def.rst
+
+
+.. _sec_visao_geral_cronograma:
+
+Cronograma de Aulas
+===================
+
+
+Aulas Regulares
+---------------
+
+
+.. table::
+    :widths: 10 20 70
+    :width: 100%
+    :align: center
+    :header-alignment: center center left
+    :column-alignment: center center left
+
+
+    +------+------------+--------------------------------------------------------------------------------------------------------------+
+    | Aula |  Data      |  Tópicos                                                                                                     |
+    +======+============+==============================================================================================================+
+    | 01   | 07/03/2022 | Aula inaugural INPE                                                                                          |
+    +------+------------+--------------------------------------------------------------------------------------------------------------+
+    | 02   | 09/03/2022 | :ref:`Visão Geral do Curso <cap_visao_geral>` (assista ao `video <https://youtu.be/OQPeRrd81a8>`_)           |
+    +------+------------+--------------------------------------------------------------------------------------------------------------+
+    | 03   | 14/03/2022 | :ref:`Introdução à Programação com a Linguagem Python <cap_introducao_programacao>`:                         |
+    |      |            |                                                                                                              |
+    |      |            |   - :ref:`Introdução <sec_introducao_programacao_introducao>`                                                |
+    |      |            |   - :ref:`Primeiro Programa em Python <sec_introducao_programacao_primeiro_prog>`                            |
+    +------+------------+--------------------------------------------------------------------------------------------------------------+
+    | 04   | 16/03/2022 | :ref:`Introdução à Programação com a Linguagem Python <cap_introducao_programacao>`:                         |
+    |      |            |                                                                                                              |
+    |      |            |   - :ref:`Tipos de Dados <sec_introducao_programacao_tipos_dados>`                                           |
+    |      |            |   - :ref:`Tipos Numéricos <sec_introducao_programacao_tipos_numericos>`                                      |
+    |      |            |   - :ref:`Expressões <sec_introducao_programacao_expressoes>`                                                |
+    +------+------------+--------------------------------------------------------------------------------------------------------------+
+    | 05   | 21/03/2022 | :ref:`Introdução à Programação com a Linguagem Python <cap_introducao_programacao>`:                         |
+    |      |            |                                                                                                              |
+    |      |            |   - :ref:`Chamada de Funções <sec_introducao_programacao_chamada_funcoes>`                                   |
+    |      |            |   - :ref:`Variáveis <sec_introducao_programacao_variaveis>`                                                  |
+    |      |            |   - :ref:`Comentários <sec_introducao_programacao_comentarios>`                                              |
+    |      |            |   - :ref:`Tipo Lógico <sec_introducao_programacao_tipo_logico>`                                              |
+    +------+------------+--------------------------------------------------------------------------------------------------------------+
+    | 06   | 28/03/2022 | :ref:`Introdução à Programação com a Linguagem Python <cap_introducao_programacao>`:                         |
+    |      |            |                                                                                                              |
+    |      |            |   - :ref:`Operadores Relacionais <sec_introducao_programacao_op_relacionais>`                                |
+    |      |            |   - :ref:`Expressões Lógicas <sec_introducao_programacao_expressoes_logicas>`                                |
+    |      |            |   - :ref:`Estruturas Condicionais <sec_introducao_programacao_estruturas_condicionais>`                      |
+    +------+------------+--------------------------------------------------------------------------------------------------------------+
+    | 07   | 30/03/2022 | :ref:`Introdução à Programação com a Linguagem Python <cap_introducao_programacao>`:                         |
+    |      |            |                                                                                                              |
+    |      |            |   - :ref:`Estruturas Condicionais <sec_introducao_programacao_estruturas_condicionais>`                      |
+    |      |            |   - :ref:`Estruturas de Repetição <sec_introducao_programacao_estruturas_repeticao>`                         |
+    +------+------------+--------------------------------------------------------------------------------------------------------------+
+    | 08   | 30/03/2022 | :ref:`Introdução à Programação com a Linguagem Python <cap_introducao_programacao>`:                         |
+    |      |            |                                                                                                              |
+    |      |            |   - :ref:`Estruturas de Repetição <sec_introducao_programacao_estruturas_repeticao>`                         |
+    +------+------------+--------------------------------------------------------------------------------------------------------------+
+    | 09   | 04/04/2022 | :ref:`Introdução à Programação com a Linguagem Python <cap_introducao_programacao>`:                         |
+    |      |            |                                                                                                              |
+    |      |            |   - :ref:`O Tipo String <sec_introducao_programacao_strings>`                                                |
+    +------+------------+--------------------------------------------------------------------------------------------------------------+
+    | 10   | 06/04/2022 | :ref:`Introdução à Programação com a Linguagem Python <cap_introducao_programacao>`:                         |
+    |      |            |   - :ref:`Palavras-chave <sec_introducao_programacao_keywords>`                                              |
+    |      |            |   - :ref:`Sequências <sec_introducao_programacao_sequencias>`                                                |
+    |      |            |                                                                                                              |
+    |      |            | Discussão das Propostas de Projetos da Disciplina                                                            |
+    +------+------------+--------------------------------------------------------------------------------------------------------------+
+    | 11   | 11/04/2022 | :ref:`Introdução à Programação com a Linguagem Python <cap_introducao_programacao>`:                         |
+    |      |            |   - :ref:`Dicionários <sec_introducao_programacao_dicionarios>`                                              |
+    |      |            |   - :ref:`Conjuntos <sec_introducao_programacao_set>`                                                        |
+    |      |            |   - :ref:`Formatação de Strings <sec_introducao_programacao_formatacao_strings>`                             |
+    |      |            |   - :ref:`Laços do tipo for <sec_introducao_lacos_for>`                                                      |
+    +------+------------+--------------------------------------------------------------------------------------------------------------+
+    | 12   | 13/04/2022 | :ref:`Introdução à Programação com a Linguagem Python <cap_introducao_programacao>`:                         |
+    |      |            |   - :ref:`Os Comandos break e continue <sec_introducao_break_continue>`                                      |
+    |      |            |   - :ref:`Comandos Compostos <sec_introducao_programacao_comandos_compostos>`                                |
+    |      |            |   - :ref:`Funções <sec_introducao_programacao_funcoes>`                                                      |
+    |      |            |                                                                                                              |
+    |      |            | Resolução Lista 2                                                                                            |
+    +------+------------+--------------------------------------------------------------------------------------------------------------+
+    | 13   | 18/04/2022 |                                                                                                              |
+    +------+------------+--------------------------------------------------------------------------------------------------------------+
+    | 14   | 20/04/2022 |  Prova (Introdução à Programação com a Linguagem Python)                                                     |
+    +------+------------+--------------------------------------------------------------------------------------------------------------+
+    | 15   | 25/04/2022 |                                                                                                              |
+    +------+------------+--------------------------------------------------------------------------------------------------------------+
+    | 16   | 27/04/2022 |                                                                                                              |
+    +------+------------+--------------------------------------------------------------------------------------------------------------+
+    | 17   | 02/05/2022 |                                                                                                              |
+    +------+------------+--------------------------------------------------------------------------------------------------------------+
+    | 18   | 04/05/2022 |                                                                                                              |
+    +------+------------+--------------------------------------------------------------------------------------------------------------+
+    | 19   | 09/05/2022 |                                                                                                              |
+    +------+------------+--------------------------------------------------------------------------------------------------------------+
+    | 20   | 11/05/2022 |                                                                                                              |
+    +------+------------+--------------------------------------------------------------------------------------------------------------+
+    | 21   | 16/05/2022 |                                                                                                              |
+    +------+------------+--------------------------------------------------------------------------------------------------------------+
+    | 22   | 18/05/2022 |                                                                                                              |
+    +------+------------+--------------------------------------------------------------------------------------------------------------+
+    | 23   | 23/05/2022 | Apresentação de Trabalhos                                                                                    |
+    +------+------------+--------------------------------------------------------------------------------------------------------------+
+    | 24   | 25/05/2022 | Apresentação de Trabalhos                                                                                    |
+    +------+------------+--------------------------------------------------------------------------------------------------------------+
+
+

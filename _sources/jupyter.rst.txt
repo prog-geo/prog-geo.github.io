@@ -1,0 +1,31 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _cap_jupyter:
+
+Jupyter
+=======
+
+
+.. image:: ./img/logos/jupyter.svg
+    :alt: Jupyter
+    :width: 72
+    :align: right
+
+
+Atualmente, o ambiente de computação interativa denominado `Jupyter <https://jupyter.org/>`_ tem recebido grande aceitação, tanto pela comunidade acadêmica quanto da indústria, para realização de pesquisas e trabalhos que envolvam o emprego de métodos computacionais. Esse ambiente permite criar documentos chamados **Jupyter Notebooks**, contendo narrativas computacionais que incluem códigos, anotações textuais, fórmulas matemáticas compatíveis com LaTeX, elementos HTML, gráficos e outros tipos de visualizações :cite:`kluyver:2016`. Este capítulo apresenta em detalhes como utilizar essa tecnologia através da distribuição Python chamada `Anaconda <https://www.anaconda.com/products/individual>`_. Todavia, os conceitos aqui apresentados também servirão nos ambientes de nuvem, como os fornecidos pelo `Google Colab <https://colab.research.google.com/>`_ e `Kaggle <https://www.kaggle.com/>`_, que também são baseados nessa mesma tecnologia.
+
+
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+    :caption: Tópicos
+
+    ./jupyter/introducao
+    ./jupyter/ipython
+    ./jupyter/notebooks
+    ./jupyter/funcoes-magicas
+    ./jupyter/comandos-sistema
+    ./jupyter/historico-comandos-resultados

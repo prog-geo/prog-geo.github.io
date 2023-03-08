@@ -1,0 +1,517 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../def.rst
+
+
+.. _sec_introducao_programacao_strings:
+
+O Tipo String
+=============
+
+
+O tipo ``str`` é capaz de representar uma **sequência de caracteres**, ou **cadeia de caracteres**, ou **string**.
+
+
+Uma **string** pode ser expressa entre **aspas duplas** ou entre **aspas simples**::
+
+    >>> print("Introdução à Programação com Dados Geoespaciais")
+    Introdução à Programação com Dados Geoespaciais
+
+
+ou::
+
+    >>> print('Introdução à Programação com Dados Geoespaciais')
+    Introdução à Programação com Dados Geoespaciais
+
+
+Para escrever **literais string** que expandem por **múltiplas linhas**, pode-se usar **três aspas duplas** ou **três aspas simples**, como mostrado no exemplo abaixo::
+
+    >>> print("""Introdução
+    ... à
+    ... Programação
+    ... com Dados Geoespaciais""")
+    Introdução
+    à
+    Programação
+    com Dados Geoespaciais
+
+
+Repare que todos os caracteres e mudanças de linha são incluídos como parte do literal::
+
+    >>> print("""Introdução
+    ...          à
+    ...          Programação
+    ...          com Dados Geoespaciais""")
+    Introdução
+         à
+         Programação
+         com Dados Geoespaciais
+
+
+.. note::
+
+    Em Python, apenas expressões entre parênteses (``(``, ``)``), colchetes (``[``, ``]``) ou chaves (``{``, ``}``) podem expandir por múltiplas linhas físicas sem utilizar barras invertidas (``\``). Por exemplo, se você abrir o terminal de comandos do Python e tentar dividir a expressão ``10 + 20`` em duas linhas, como na tentativa abaixo, um erro de sintaxe será gerado::
+
+        >>> 10 +
+          File "<stdin>", line 1
+            10 +
+               ^
+        SyntaxError: invalid syntax
+
+
+    Se você quiser juntar duas ou mais linhas físicas em um único comando, terá que utilizar barras invertidas, como mostrado abaixo::
+
+        >>> 10 + \
+        ... 20
+        30
+
+
+    A mesma coisa pode ser feita com uma string, que pode ser escrita em múltiplas linhas sem o uso das três aspas, mas com as barras invertidas::
+
+        >>> "Introdução \
+        ... à \
+        ... Programação \
+        ... com Dados Geoespaciais"
+        'Introdução à Programação com Dados Geoespaciais'
+
+
+Operações com Strings
+---------------------
+
+
+Concatenação de Strings: :math:`s + t`
+++++++++++++++++++++++++++++++++++++++
+
+
+O ``operador +`` para strings possui uma interpretação diferente dos tipos numéricos, ele realiza a concatenação de duas strings::
+
+    >>> "Programação" + "Geoespacial"
+    'ProgramaçãoGeoespacial'
+
+
+.. code-block:: python
+
+    >>> "Programação " + "Geoespacial"
+    'Programação Geoespacial'
+
+
+.. code-block:: python
+
+    >>> "Introdução " + "Programação " + "Geoespacial"
+    'Introdução Programação Geoespacial'
+
+
+Uma string é uma **sequência imutável** de caracteres. A **concatenação de strings** gera um novo objeto, isto é, uma nova string. Portanto, cuidado ao utilizar o ``operador +`` repetidamente pois ele pode gerar um *overhead* desnecessário no seu programa. Há outras opções para realizar operações semelhantes, como por exemplo, usando o operador `str.join() <https://docs.python.org/3/library/stdtypes.html>`_ ou `io.StringIO <https://docs.python.org/3/library/io.html>`_.
+
+
+Repetição de Strings: :math:`n * s`
++++++++++++++++++++++++++++++++++++
+
+
+Quando aplicado a um número inteiro :math:`n` e uma string :math:`s`, o ``operador *`` funciona como se estivéssemos adicionando a string :math:`s` a ela própria, :math:`n` vezes::
+
+    >>> "Programação" * 3
+    'ProgramaçãoProgramaçãoProgramação'
+
+
+.. code-block:: python
+
+    >>> 4 * "Programação"
+    'ProgramaçãoProgramaçãoProgramaçãoProgramação'
+
+
+.. note::
+
+    A lógica é que assim como :math:`3 * 2 = 2 + 2 + 2`, temos ``3 * "a" = "a" + "a" + "a"``.
+
+
+.. note::
+
+    Para valores negativos, a expressão é equivalente a :math:`0 * s`::
+
+        >>> -4 * "Programação"
+        ''
+
+.. _sec_introducao_programacao_strings_op_in:
+
+Pertinência: :math:`x` ``in`` :math:`s`
++++++++++++++++++++++++++++++++++++++++
+
+
+:math:`x` ``in`` :math:`s`: retorna verdadeiro se a string :math:`s` contém a sequência :math:`x`.
+
+
+Exemplos::
+
+    >>> "i" in "imagem-cbers.tif"
+
+
+.. code-block:: python
+
+    >>> "a" in "imagem-cbers.tif"
+
+
+.. code-block:: python
+
+    >>> "cbers" in "imagem-cbers.tif"
+
+
+.. code-block:: python
+
+    >>> "landsat" in "imagem-cbers.tif"
+
+
+Impertinência: :math:`x` ``not in`` :math:`s`
++++++++++++++++++++++++++++++++++++++++++++++
+
+
+:math:`x` ``not in`` :math:`s`: retorna falso se a string :math:`s` contém a sequência :math:`x`.
+
+
+Exemplos::
+
+    >>> "i" not in "imagem-cbers.tif"
+
+
+.. code-block:: python
+
+    >>> "a" not in "imagem-cbers.tif"
+
+.. code-block:: python
+
+    >>> "cbers" not in "imagem-cbers.tif"
+
+
+.. code-block:: python
+
+    >>> ".tif" not in "imagem-cbers.tif"
+
+
+Comprimento da cadeia: ``len(s)``
++++++++++++++++++++++++++++++++++
+
+
+O operador ``len(s)`` retorna o número de caracteres (ou tamanho) da string :math:`s`.
+
+
+Exemplos::
+
+    >>> len("Programação Geoespacial")
+    23
+
+
+.. code-block:: python
+
+    >>> len("")
+    0
+
+
+Índice (*indexing*): ``s[i]``
++++++++++++++++++++++++++++++
+
+
+O ``operador []`` retorna o :math:`i`-th caractere da string :math:`s`.
+
+
+Exemplos::
+
+    >>> "Programação Geoespacial"[3]
+
+
+.. code-block::
+
+    >>> "Programação Geoespacial"[0]
+
+
+.. note::
+
+    O primeiro elemento de uma sequência possui índice :math:`0`.
+
+
+Números negativos são usados para indexar a partir do final da string::
+
+    >>> "Programação Geoespacial"[-1]
+
+
+.. code-block:: python
+
+    >>> "Programação Geoespacial"[-3]
+
+
+Um índice fora do limite irá lançar uma **exceção** do tipo ``IndexError``::
+
+    >>> "Programação Geoespacial"[23]
+
+
+Slicing: ``s[i:j]``
++++++++++++++++++++
+
+
+O ``operador [i:j]`` extrai substrings de tamanho arbitrário.
+
+
+Exemplo::
+
+    "imagem-landsat.tif"[0:3]
+
+
+Se o valor antes do ":" for omitido, subentende-se o valor ``0``::
+
+    "imagem-landsat.tif"[:6]
+
+
+Se o valor após ":" for omitido, subentende-se o valor ``len(s)``::
+
+    "imagem-landsat.tif"[7:]
+
+
+Se omitirmos os valores de índices dos dois lados do sinal de ":", retornamos uma cópia completa da string::
+
+    "imagem-landsat.tif"[:]
+
+
+.. note::
+
+    A lógica do intervalo aberto à direita é que seja possível fazer: ``s[0:len(s)]``.
+
+
+.. tip::
+
+    O **tipo string** é apenas um dos **tipos de sequência** disponíveis em Python. Uma lista completa das operações relativas aos tipos sequência, pode ser consultada em :cite:`psf:stdlib:2021:b`.
+
+
+Métodos de Strings
+------------------
+
+
+Diversas **operações sobre o tipo string** encontram-se na forma de **métodos**. Um **método** nada mais é do que uma notação especial para **chamada de funções**, onde a função irá operar sobre **o próprio dado indicado na chamada**.
+
+
+A sintaxe dessas operações, em geral, têm a seguite forma (:numref:`Figura %s <introd-prog:fig:string-metodos>`):
+
+
+.. figure:: ../img/introducao-programacao/string-metodos.png
+    :alt: Chamada de um método
+    :width: 60%
+    :figclass: align-center
+    :name: introd-prog:fig:string-metodos
+
+    Chamada de um método.
+
+
+Onde:
+
+- ``str``: literal string, ou nome de uma variável string ou alguma outra expressão que produza uma string.
+
+- ``.``: operador membro, que permite acessar atributos e métodos de um objeto.
+
+- ``op``: nome de um método associado ao objeto.
+
+- ``argumentos``: lista dos valores necessários à chamada do método.
+
+
+.. note::
+
+    Em **orientação a objetos**, esse processo de chamada de métodos costuma ser referido como **invocação de um método** ou **comunicação com o objeto**.
+
+
+``s.find(sub[, start[, end]])``
++++++++++++++++++++++++++++++++
+
+
+Sintaxe::
+
+    s.find(sub[, start[, end]])
+
+
+.. rst-class:: open
+
+- **Descrição:** O método ``find`` procura a ocorrência da substring ``sub`` em ``s``.
+
+- **Parâmetros:**
+
+    * ``sub``: Substring cuja ocorrência deseja-se ser localizada.
+    * ``start``: Parâmetro opcional que indica onde a busca deve começar dentro da string ``s``.
+    * ``end``: Parâmetro opcional que indica o limite (aberto) onde a busca deve terminar.
+
+- **Retorno:** Esse método retorna a posição do primeiro caractere na string ``s`` onde a ocorrência da substring ``sub`` é encontrada, ou ``-1`` caso não seja encontrada.
+
+
+.. note::
+
+    Atente-se para o fato de que os parâmetros ``start`` e ``end`` equivalem aos índices de uma operação de *slice* em strings (``[star:end]``) e, portanto, o limite definido por eles é fechado à esquerda e aberto à direita.
+
+
+Exemplos::
+
+    >>> "Programação Geoespacial".find("gra")
+    3
+
+
+.. code-block:: python
+
+    >>> "A grade de aulas".find("gra")
+    2
+
+
+.. code-block:: python
+
+    >>> "Landsat".find("gra")
+    -1
+
+
+.. tip::
+
+    Se você não precisa saber a posição da substring, use o operador ``in`` (:numref:`Seção %s <sec_introducao_programacao_strings_op_in>`).
+
+
+``s.join(iterable)``
+++++++++++++++++++++
+
+
+Sintaxe::
+
+    s.join(iterable)
+
+
+.. rst-class:: open
+
+- **Descrição:** O método ``join`` retorna uma string formada pela concatenação de uma sequência de strings (``iterable``), usando como separador a string ``s``.
+
+- **Parâmetros:**
+
+    * ``iterable``: Um **iterável** é qualquer objeto que permita recuperar seus itens, ou membros, um de cada vez. Este pâmetro aceita iteráveis que produzam elementos do tipo string. Os **tipos sequência**, como string, listas e tuplas, são **iteráveis**. Assim, podemos utilizar como argumento, uma string, uma lista ou um tupla de strings.
+
+- **Retorno:**  Uma string representando a concatenação dos elementos do iterável, uilizando como separador a string ``s``.
+
+
+Exemplos::
+
+    >>> "-".join(["Introdução", "Programação", "Geoespacial"])
+    'Introdução-Programação-Geoespacial'
+
+
+.. note::
+
+    A sequência de strings separadas por vírgula e delimitadas por ``[`` e ``]`` corresponde a uma lista de strings.
+
+
+.. code-block:: python
+
+    >>> " ".join(["Introdução", "Programação", "Geoespacial"])
+    'Introdução Programação Geoespacial'
+
+
+.. code-block:: python
+
+    >>> "".join(["Introdução", "Programação", "Geoespacial"])
+    'IntroduçãoProgramaçãoGeoespacial'
+
+
+.. code-block:: python
+
+    >>> ",".join("Introdução à Programação com Dados Geoespaciais")
+    'I,n,t,r,o,d,u,ç,ã,o, ,à, ,P,r,o,g,r,a,m,a,ç,ã,o, ,c,o,m, ,D,a,d,o,s, ,G,e,o,e,s,p,a,c,i,a,i,s'
+
+
+``s.split(sep=None, maxsplit=-1)``
+++++++++++++++++++++++++++++++++++
+
+
+Sintaxe::
+
+    s.split(sep=None, maxsplit=-1)
+
+
+.. rst-class:: open
+
+- **Descrição:** Quebra a string ``s`` em várias, utilizando o separador ``sep``.
+
+- **Parâmetros:**
+
+    * ``sep``: String que define o separador usado para realizar o particionamento da string ``s``. Trata-se de um parâmetro opcional. Se não for informado ou se usado um valor ``None``, o caracter de espaço (*whitespace*)) é assumido como delimitador.
+    * ``maxsplit``: Este parâmetro opcional, pode ser usado para indicar o número máximo de divisões a serem realizadas.
+
+- **Retorno:** Uma lista de palavras.
+
+
+Exemplo::
+
+    >>> "Introdução à Programação com Dados Geoespaciais".split()
+    ['Introdução', 'à', 'Programação', 'com', 'Dados', 'Geoespaciais']
+
+
+.. note::
+
+    A sequência de strings separadas por vírgula e delimitadas por ``[`` e ``]`` corresponde a uma lista de strings.
+
+
+.. code-block:: python
+
+    >>> "Introdução;à;Programação;com;Dados;Geoespaciais".split(";")
+    ['Introdução', 'à', 'Programação', 'com', 'Dados', 'Geoespaciais']
+
+
+.. code-block::
+
+    >>> "1,2,,3,".split(",")
+    ['1', '2', '', '3', '']
+
+
+``s.replace(old, new[, count])``
+++++++++++++++++++++++++++++++++
+
+
+Sintaxe::
+
+    s.replace(old, new[, count])
+
+
+.. rst-class:: open
+
+- **Descrição:** Retorna uma string onde toda a ocorrência da substring ``old`` em ``s``, é substituída pela substring ``new``.
+
+- **Parâmetros:**
+
+    * ``old``: Substring a ser substituída em ``s``.
+    * ``new``: Substring a ser incluída no lugar da substring ``old``.
+    * ``count``: Este argumento opcional limita o número de substituições.
+
+- **Retorno:** Uma string.
+
+
+Exemplos::
+
+    >>> "Introdução à Programação com Dados Geoespaciais".replace("a", "@")
+    'Introdução à Progr@m@ção com D@dos Geoesp@ci@is'
+
+
+.. code-block:: python
+
+    >>> "Introdução à Programação com Dados Geoespaciais".replace("a", "@", 2)
+    'Introdução à Progr@m@ção com Dados Geoespaciais'
+
+
+Outros Métodos de String
+++++++++++++++++++++++++
+
+
+.. rst-class:: open
+
+* ``s.isdigit()``: retorna ``True`` se todos os caracteres da string são dígitos, caso contrário, retorna ``False``.
+
+* ``s.islower()``: retorna ``True`` se todos os caracteres são minúsculos e exista pelo menos uma letra, caso contrário, retorna ``False``.
+
+* ``str.isupper()``: retorna ``True`` se todos os caracteres são maiúsculos e exista pelo menos uma letra, caso contrário, retorna ``False``.
+
+* ``str.lower()``: retorna uma cópia da string com todos os caracteres em minúsculo.
+
+* ``str.upper()``: retorna uma cópia da string com todos os caracteres em maiúsculo.
+
+
+.. tip::
+
+    Para uma lista completa dos métodos de uma string, consulte :cite:`psf:stdlib:2021:c`.

@@ -1,0 +1,158 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _sec_introducao_programacao_tipos_dados:
+
+Tipos de Dados
+==============
+
+
+Um programa Python manipula o que chamamos de objetos:
+
+
+.. code-block:: python
+    :linenos:
+    :caption:  Exemplo de objetos em Python.
+    :name: introd-prog:code:obj
+
+    >>> ser = "Sensoriamento Remoto"
+
+    >>> ano = 1972
+
+    >>> print(ser, ano)
+    Sensoriamento Remoto 1972
+
+
+.. note::
+
+    O :numref:`Trecho de Código %s <introd-prog:code:obj>` foi construído no terminal interativo do Python. Consulte a :numref:`Seção %s <sec_variados_terminal_python>` para saber como inicializar o terminal interativo no seu sistema.
+
+
+O :numref:`Trecho de Código %s <introd-prog:code:obj>` apresenta dois tipos de objetos:
+
+.. rst-class:: open
+
+- A **sequência de caracteres** ou **string**, ``"Sensoriamento Remoto"``, associada a um identificador chamado ``ser``.
+
+- E o **valor numérico** (**inteiro**) ``1972``, associado a outro identificador chamado ``ano``.
+
+
+Repare que usamos o **operador** ``=`` para associar o **valor literal**, que aparece à direita nas duas primeiras instruções, a um identificador, isto é, o nome à esquerda do operador ``=``.
+
+
+Todo objeto encontra-se associado a um **tipo** (ou **tipo de dados**), que define as operações que podem ser realizadas sobre ele. Por exemplo, com o objeto numérico é possível realizar a operação de soma:
+
+
+.. code-block:: python
+
+    >>> ano + 10
+    1982
+
+
+No caso do objeto do **tipo string**, é possível, por exemplo, dividir a cadeia de caracteres em palavras separadas por espaço, obtendo uma lista de strings com cada parte do texto:
+
+
+.. code-block:: python
+
+    >>> ser.split(' ')
+    ['Sensoriamento', 'Remoto']
+
+
+Em Python, podemos descobrir o tipo de um objeto através da **função** ``type``:
+
+
+.. code-block:: python
+
+    >>> type(ser)
+    <class 'str'>
+
+    >>> type(ano)
+    <class 'int'>
+
+
+.. tip::
+
+    A função ``type`` possui a seguinte sintaxe::
+
+        class type(objeto)
+
+
+    **Descrição:** informa o tipo de um objeto (ou valor).
+
+
+    **Argumento:**
+
+        - ``objeto``: identificador ou valor para o qual se deseja saber o tipo.
+
+
+    **Retorno:** tipo do objeto.
+
+
+Um **tipo de dado** (**data type**) é definido por um conjunto de valores e um conjunto de operações sobre esses valores. Em Python, todo objeto é associado a um tipo, que define as operações que podem ser realizadas sobre ele. O **core** da linguagem Python :cite:`psf:reference:2021:a` contém um conjunto de tipos de dados chamados de **fundamentais** ou **primitivos** (**built-in types**), para manipulação de valores numéricos, lógicos (ou booleanos), strings (cadeia de caracteres), sequências (tuplas, listas), dicionários, entre outros tipos.
+
+
+Os valores individuais de cada tipo são chamados de **literais** ou **literais constantes**. Exemplos:
+
+
+.. code-block:: python
+
+    >>> 473             # número inteiro
+    473
+
+    >>> 4.1             # número real (ponto flutuante)
+    4.1
+
+    >>> 7+3j            # número complexo
+    (7+3j)
+
+    >>> True            # valor lógico verdadeiro
+    True
+
+    >>> "Satélite"      # sequência de caracteres
+    'Satélite'
+
+    >>> [1, 3, 5, 7]    # lista de números ímpares
+    [1, 3, 5, 7]
+
+    >>> {
+    ...     "Landsat",
+    ...     "Sentinel",
+    ...     "CBERS"
+    ... } # conjunto de sequência de caracteres
+    {'CBERS', 'Landsat', 'Sentinel'}
+
+    >>> {
+    ...     "latitude" : -12,
+    ...     "longitude" : -54
+    ... } # dicionário (pares chave-valor)
+    {'latitude': -12, 'longitude': -54}
+
+    >>> None            # valor nulo
+
+
+Usando a função ``type``:
+
+
+.. code-block:: python
+
+    >>> type("Gilberto")
+    <class 'str'>
+
+    >>> type(30)
+    <class 'int'>
+
+    >>> type(22.5)
+    <class 'float'>
+
+    >>> type(5 / 2 + 4 * 5)
+    <class 'float'>
+
+    >>> type([1, 3, 5, 7 ])
+    <class 'list'>
+
+
+.. tip::
+
+    A lista completa dos tipos básicos de Python pode ser consultada em `Built-in Types <https://docs.python.org/3/library/stdtypes.html>`_.

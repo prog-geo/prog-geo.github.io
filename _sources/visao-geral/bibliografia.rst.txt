@@ -1,0 +1,49 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _sec_visao_geral_bibliografia:
+
+Bibliografia
+============
+
+
+.. |livro-guttag| image:: ../img/visao-geral/livro-guttag.png
+    :alt: Introduction to Computation and Programming Using Python: With Application to Understanding Data
+
+
+.. |livro-learning-python| image:: ../img/visao-geral/livro-learning-python.png
+    :alt: Learning Python
+
+
+.. |livro-scientific-programming-python| image:: ../img/visao-geral/livro-scientific-programming-python.png
+    :alt: A Primer on Scientific Programming with Python
+
+
+.. |livro-geoproc-python| image:: ../img/visao-geral/livro-geoproc-python.png
+    :alt: Geoprocessing with Python
+
+
+.. |livro-goodchild| image:: ../img/visao-geral/livro-goodchild.png
+    :alt: Geographic Information Science and Systems
+
+
+.. table::
+    :widths: 35 65
+    :width: 100%
+    :align: center
+    :column-alignment: center justify
+
+
+    +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+    | |livro-guttag|                        | John V. Guttag. **Introduction to Computation and Programming Using Python: With Application to Understanding Data**. 2nd Edition, MIT Press. 2016. 472 p.  |
+    +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+    | |livro-scientific-programming-python| | Hans Petter Langtangen. **A Primer on Scientific Programming with Python**. 4th Edition. Springer. 2014. 872 p.                                             |
+    +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+    | |livro-learning-python|               | Mark Lutz. **Learning Python**. 5th Edition, O'Reilly Media. 2013. 1648 p.                                                                                  |
+    +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+    | |livro-geoproc-python|                | Chris Garrard. **Geoprocessing with Python**. 1st Edition, Manning Publications. 2016. 360 p.                                                               |
+    +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+    | |livro-goodchild|                     | Paul A. Longley, Michael F. Goodchild, David J. Maguire e David W. Rhind. **Geographic Information Science and Systems**. 4th Edition.  Wiley. 2015. 496 p. |
+    +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+

@@ -1,0 +1,155 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _sec_jupyter_ipython:
+
+IPython
+=======
+
+
+.. image:: ../img/logos/ipython.png
+    :alt: IPython
+    :width: 72
+    :align: right
+
+
+O `IPython <https://ipython.org/>`_ é um ambiente projetado para `Computação Interativa <https://en.wikipedia.org/wiki/Interactive_computing>`_. Um dos aplicativos desse ambiente é o **terminal IPython**, mostrado na :numref:`Figura %s <fig:jupyter:ipython:terminal-ipython-01>`. Para entrar nesse terminal, você deve ter o ambiente instalado, como por exemplo, através da disribuição Anaconda. No terminal de comandos do seus sistema operacional, *shell Linux* ou *prompt da Anaconda* no Windows, entre o comando ``ipython``, como mostrado na  figura.
+
+
+.. figure:: ../img/jupyter/terminal-ipython-01.png
+    :alt: Terminal interativo IPython
+    :width: 100%
+    :figclass: align-center
+    :name: fig:jupyter:ipython:terminal-ipython-01
+
+    Terminal interativo `IPython`.
+
+
+O *prompt* do IPython utiliza uma notação diferente da usada no terminal Python, ao invés do tradicional ``>>>``, temos ``In [N]:`` (:numref:`Figura %s <fig:jupyter:ipython:terminal-ipython-02>`). Além disso, alguns resultados também apresentam um *prompt* ``Out[N]:``.
+
+
+.. figure:: ../img/jupyter/terminal-ipython-02.png
+    :alt: Numeração das computações e resultados no terminal interativo IPython
+    :width: 100%
+    :figclass: align-center
+    :name: fig:jupyter:ipython:terminal-ipython-02
+
+    Numeração das computações e resultados no terminal interativo IPython.
+
+
+Repare na :numref:`Figura %s <fig:jupyter:ipython:terminal-ipython-03>` que as constantes literais numéricas, assim como a função ``print``, são devidamente realçadas nesse terminal. Além disso, ele possui recurso de auto-completar. No exemplo da figura, após o separador ``.``, foi utilizada a tecla ``TAB`` para apresentar as opções de métodos disponíveis para o objeto associado ao identificador ``seq_fibonacci``. As teclas de direção (setas) podem ser utilizadas para selecionar a opção desejada.
+
+
+.. figure:: ../img/jupyter/terminal-ipython-03.png
+    :alt: Realce de sintaxe e recurso de auto-completar do terminal interativo IPython
+    :width: 100%
+    :figclass: align-center
+    :name: fig:jupyter:ipython:terminal-ipython-03
+
+    Realce de sintaxe e recurso de auto-completar do terminal interativo IPython.
+
+
+O recurso de auto-completar do IPython pode inclusive ser utilizado com expressões mais complexas, como a mostrada na :numref:`Figura %s <fig:jupyter:ipython:terminal-ipython-04>`, onde o elemento ``0`` da lista ``L`` é usado para determinar os métodos disponíveis para o objeto resultante da expressão ``L[0]``.
+
+
+.. figure:: ../img/jupyter/terminal-ipython-04.png
+    :alt: Introspecção de código no terminal do IPython
+    :width: 100%
+    :figclass: align-center
+    :name: fig:jupyter:ipython:terminal-ipython-04
+
+    Introspecção de código no terminal do IPython.
+
+
+Esse terminal do IPython possui alguns comandos úteis para obtenção de mais informações sobre o ambiente e os objetos criados na sessão interativa. A :numref:`Tabela %s <tbl:jupyter:ipython:comandos-uteis>` apresenta um resumo desses comandos.
+
+
+.. table:: Comandos úteis Ipython.
+    :align: center
+    :header-alignment: center center
+    :column-alignment: left left
+    :name: tbl:jupyter:ipython:comandos-uteis
+
+    +---------------+-----------------------------------------------------------------------------------+
+    | Comando       | Descrição                                                                         |
+    +===============+===================================================================================+
+    | ``?``         | apresenta informações sobre os recursos do IPython                                |
+    |               | (:numref:`Figura %s <fig:jupyter:ipython:terminal-ipython-ipython-help>`).        |
+    +---------------+-----------------------------------------------------------------------------------+
+    | ``%quickref`` | apresenta uma janela com referências rápidas para os comandos                     |
+    |               | do IPython (:numref:`Figura %s <fig:jupyter:ipython:terminal-ipython-quickref>`). |
+    +---------------+-----------------------------------------------------------------------------------+
+    | ``help()``    | acessa o sistema de ajuda da linguagem Python                                     |
+    |               | (:numref:`Figura %s <fig:jupyter:ipython:terminal-ipython-python-help>`).         |
+    +---------------+-----------------------------------------------------------------------------------+
+    | ``objeto?``   | apresenta detalhes sobre um determinado ``objeto``                                |
+    |               | (:numref:`Figuras %s <fig:jupyter:ipython:terminal-ipython-info-objeto-a>` e      |
+    |               | :numref:`%s <fig:jupyter:ipython:terminal-ipython-info-objeto-b>`).               |
+    +---------------+-----------------------------------------------------------------------------------+
+    | ``objeto??``  | apresenta mais detalhes sobre o ``objeto``                                        |
+    |               | (:numref:`Figura %s <fig:jupyter:ipython:terminal-ipython-detail-objeto>`).       |
+    +---------------+-----------------------------------------------------------------------------------+
+
+
+.. figure:: ../img/jupyter/terminal-ipython-ipython-help.png
+    :alt: Informações gerais sobre o IPython
+    :width: 100%
+    :figclass: align-center
+    :name: fig:jupyter:ipython:terminal-ipython-ipython-help
+
+    Informações gerais sobre o IPython.
+
+
+.. figure:: ../img/jupyter/terminal-ipython-quickref.png
+    :alt: Janela de referência dos principais comandos no IPython
+    :width: 100%
+    :figclass: align-center
+    :name: fig:jupyter:ipython:terminal-ipython-quickref
+
+    Janela de referência dos principais comandos no IPython.
+
+
+.. figure:: ../img/jupyter/terminal-ipython-python-help.png
+    :alt: Acessando o sistema de ajuda do Python no terminal IPython
+    :width: 100%
+    :figclass: align-center
+    :name: fig:jupyter:ipython:terminal-ipython-python-help
+
+    Acessando o sistema de ajuda do Python no terminal IPython.
+
+
+.. figure:: ../img/jupyter/terminal-ipython-info-objeto-b.png
+    :alt: Detalhando o objeto associado ao identificador "seq_fibonacci" através do caractere "?" no terminal IPython
+    :width: 100%
+    :figclass: align-center
+    :name: fig:jupyter:ipython:terminal-ipython-info-objeto-a
+
+    Detalhando o objeto associado ao identificador ``seq_fibonacci`` através do caractere ``?`` no terminal IPython.
+
+
+.. figure:: ../img/jupyter/terminal-ipython-info-objeto-a.png
+    :alt: Detalhando o identificador "date" através do caractere "?" no terminal IPython
+    :width: 100%
+    :figclass: align-center
+    :name: fig:jupyter:ipython:terminal-ipython-info-objeto-b
+
+    Detalhando o identificador ``date`` através do caractere ``?`` no terminal IPython.
+
+
+.. figure:: ../img/jupyter/terminal-ipython-detail-objeto.png
+    :alt: Detalhando o identificador "date" através do caractere "??" no terminal IPython
+    :width: 100%
+    :figclass: align-center
+    :name: fig:jupyter:ipython:terminal-ipython-detail-objeto
+
+    Detalhando o identificador ``date`` através dos caracteres ``??`` no terminal IPython.
+
+
+Portanto, o terminal interativo IPython possui capacidade de destacar símbolos da linguagem Python, possui recursos avançados de auto-completar (*tab completion*) que inclui introspecção do objeto em questão para determinar atributos e métodos, manutenção do histórico de comandos, capacidade de execução de comandos do sistema operacional integrados com a linguagem, além de forte suporte para visualização interativa e computação distribuída e paralela.
+
+
+.. note::
+
+    A documentação do `IPython` encontra-se disponível em :cite:`jupyter:2021:a`.

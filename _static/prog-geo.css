@@ -1,0 +1,98 @@
+/*
+  This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+  Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+*/
+
+
+/* Faz com que os textos das tabela façam "automatic wrap". */
+.wy-table-responsive table td, .wy-table-responsive table th {
+    white-space: normal;
+}
+
+.wy-table-responsive {
+    margin-bottom: 24px;
+    max-width: 100%;
+    overflow: visible;
+}
+
+/* Maior espaçamento entre os itens de uma lista. */
+ul.open > li {
+   margin: 0 0 15px 0;
+}
+
+/* Texto justificado. */
+p {
+     text-align:justify;
+}
+
+/* Caption das imagens centralizados. */
+div.figure > p.caption {
+    text-align: center;
+}
+
+/* Lista com itens alinhados à esquerda e espaçamento de 10px. */
+div.li-left-align > ul > li p {
+    text-align: left;
+}
+
+div.li-left-align > ul > li {
+    margin: 10px 0 0 0;
+}
+
+/* Remove a margem da parte inferior da célula de texto dos docentes. */
+#docentes > div > table > tbody > tr > td.justify-align > div > ul {
+    margin-bottom: 0;
+}
+
+/* Fix sphinx_rtd_theme setting equation to thr right. */
+span.eqno {
+    float: right;
+}
+
+/*
+#visao-geral-do-curso > div > ul > li {
+    font-size: 24px;
+    margin: 10px 0 0 24px;
+}
+*/
+
+/* Formatação de epígrafes. */
+.epigrafe > p {
+    font-size: small;
+    text-align: right;
+    font-style: oblique;
+}
+
+/* Formatação específica da tabela com instruções MIPS. */
+#introd-prog-tbl-mips-inst > thead > tr.row-even > th:nth-child(1) {
+    text-align: left;
+    padding-left: 5px;
+}
+
+#introd-prog-tbl-mips-inst > thead > tr.row-even > th.left-align.head {
+    text-align: right;
+    padding-right: 5px;
+}
+
+/* Cor do quadro de nota histórica. */
+div.historical-note.admonition {
+    background: #fcf8e3; /*#dff0d8;*/
+}
+
+div.historical-note.admonition > p.admonition-title {
+    background: #c09853; /*#468847;*/
+}
+
+
+/* Cor do quadro de exemplos. */
+div.box-exemplos.admonition {
+    background: #d9edf7;
+}
+
+div.box-exemplos.admonition > p.admonition-title {
+    background: #3a87ad;
+}
+
+p.centered-paragraph {
+    text-align: center;
+}

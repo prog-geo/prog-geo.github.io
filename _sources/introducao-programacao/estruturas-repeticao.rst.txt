@@ -1,0 +1,292 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../def.rst
+
+
+.. _sec_introducao_programacao_estruturas_repeticao:
+
+Estruturas de Repetição
+=======================
+
+
+.. _sec_introducao_programacao_estruturas_repeticao_problema_1:
+
+**Problema 1:** Escreva um programa para converter temperaturas da escala Fahrenheit para a escala Celsius. A coluna ``°F`` na :numref:`introd-prog:fig:tabela-temperaturas` contém a lista de valores a serem convertidos para a escala Celsius.
+
+
+.. figure:: ../img/introducao-programacao/tabela-temperaturas.png
+    :alt: Tabela de equivalência de temperaturas entre as escalas Fahrenheit e Celsius
+    :width: 60%
+    :figclass: align-center
+    :name: introd-prog:fig:tabela-temperaturas
+
+    Tabela de equivalência de temperaturas entre as escalas Fahrenheit e Celsius.
+
+
+**Desafio:** Como implementar esse programa?
+
+.. rst-class:: open
+
+- Muitas das computações que realizamos em um programa são naturalmente **repetitivas**.
+
+- Nas **linguagens imperativas**, encontramos estruturas específicas para essa finalidade, que são chamadas de **comandos de repetição**, ou **estruturas de repetição**, ou **laços** (*loops*).
+
+- Através desses comandos, podemos realizar uma computação até que uma certa condição seja satisfeita.
+
+
+Em Python, temos dois tipos de laços: ``for`` e ``while``. Esta seção apresenta esses dois tipos de laços.
+
+
+Exemplo: escrita repetitiva na tela
+-----------------------------------
+
+
+**Problema 2:** Crie um programa para escrever os números de ``1`` a ``5``.
+
+
+**Solução?**
+
+
+.. code-block:: python
+
+    print(1)
+    print(2)
+    print(3)
+    print(4)
+    print(5)
+
+
+**Problema 3:** Crie um programa para escrever os números de ``1`` a ``100``.
+
+
+**Solução:** utilizar uma estrutura de repetição.
+
+
+.. code-block:: python
+    :linenos:
+
+    for i in range(1, 101):
+        print(i)
+
+
+.. note::
+
+    O tipo `range <https://docs.python.org/3/library/functions.html#func-range>`_ representa uma sequência imutável de números, sendo comumente empregado em laços do tipo ``for``, onde temos que iterar um certo número de vezes.
+
+
+.. note::
+
+    Veja o que acontece quando construímos um objeto ``range`` identificado pela variável ``r``:
+
+
+    .. code-block:: python
+
+        >>> r = range(5)
+
+
+    .. code-block:: python
+
+        >>> r.start
+        0
+
+
+    .. code-block:: python
+
+        >>> r.stop
+        5
+
+
+    .. code-block:: python
+
+        >>> r.step
+        1
+
+
+    .. code-block:: python
+
+        >>> list(r)
+        [0, 1, 2, 3, 4]
+
+
+.. note::
+
+    Um objeto do tipo ``range`` ocupa um espaço fixo de memória, independente do tamanho do intervalo definido por ele. Enquanto uma lista materializa de fato os elementos da sequência, o ``range`` apenas calcula itens à medida em que são necessários.
+
+
+Laços do tipo ``for``
+---------------------
+
+
+Esse tipo de laço é muito útil quando estamos lidando com **sequências** (como strings, tuplas e listas) ou **iteráveis**. A :numref:`Figura %s <introd-prog:fig:laco-for>` mostra como funciona esse tipo de laço. Repare que temos uma variável de controle, :math:`v`, que é associada aos elementos de uma sequência/iterável. Toda vez que é possível associar a variável :math:`v` a um novo elemento da sequência/iterável, o fluxo de controle do programa é desviado para as instruções do bloco de comandos destacado em verde. Quando não há mais possibilidade de associar a variável :math:`v` a um novo elemento da sequência/iterável, o controle é desviado para o conjunto de instruções do bloco destacado em amarelo.
+
+
+.. figure:: ../img/introducao-programacao/laco-for.png
+    :alt: Fluxograma dos laços do tipo for
+    :width: 50%
+    :figclass: align-center
+    :name: introd-prog:fig:laco-for
+
+    Fluxograma dos laços do tipo ``for``.
+
+
+A sintaxe básica deste comando é a seguinte::
+
+    for variavel-it in iterável:
+        instrução-1
+        instrução-2
+        ...
+        instrução-n
+
+
+.. tip::
+
+    Para saber a sintaxe completa do comando ``for``, consulte :cite:`psf:reference:2021:b`.
+
+
+.. _sec_introducao_programacao_estruturas_repeticao_problema_4:
+
+**Problema 4:** Escreva um programa para computar o seguinte somatório (:eq:`:introd-prog:eq:summation-for`):
+
+.. math::
+    :label: :introd-prog:eq:summation-for
+
+    \sum_{i=1}^{5} i
+
+
+**Solução:**
+
+
+.. code-block::
+    :linenos:
+    :emphasize-lines: 4
+    :caption: Computando o somatório de ``1`` a ``5`` usando laço do tipo ``for``.
+    :name: introd-prog:code:summation-for
+
+    soma = 0
+
+    for i in range(1, 6):
+        soma = soma + i
+
+    print(f"soma: {soma}")
+
+
+**Exercício:** Resolva o :ref:`problema 1 <sec_introducao_programacao_estruturas_repeticao_problema_1>` utilizando um laço do tipo ``for``.
+
+
+**Solução:**
+
+
+.. code-block:: python
+    :linenos:
+    :emphasize-lines: 2-4
+    :caption: Conversão de temperaturas entre as escalas Fahrenheit e Celsius usando laço ``for``.
+    :name: introd-prog:code:far2cel-for
+
+    for fahr in range(0, 320, 20):
+        celsius = 5 * (fahr - 32) / 9
+
+        print(fahr, celsius)
+
+
+.. tip::
+
+    Para mais exemplos do uso do laço ``for``, consulte :cite:`python:wiki:2021:a`.
+
+
+Laços do tipo ``while``
+-----------------------
+
+
+Nesse tipo de laço, se a expressão lógica ou condição de repetição no início do laço for verdadeira, os comandos (ou instruções) dentro da estrutura de repetição são executados. Ao final da execução dos comandos, internos ao laço, o fluxo de controle do programa volta ao início do laço, para nova avaliação da expressão lógica. Se a expressão for satisfeita novamente (verdadeira), o corpo do laço é novamente executado, até que a repetição seja interrompida quando a expressão resultar em um valor falso. Esse funcionamento pode ser visto na :numref:`Figura %s <introd-prog:fig:laco-while>`.
+
+
+.. figure:: ../img/introducao-programacao/laco-while.png
+    :alt: Fluxograma dos laços do tipo while
+    :width: 50%
+    :figclass: align-center
+    :name: introd-prog:fig:laco-while
+
+    Fluxograma dos laços do tipo ``while``.
+
+
+A sintaxe básica deste comando é a seguine::
+
+    while <condição>:
+        instrução-1
+        instrução-2
+        ...
+        instrução-n
+
+
+.. tip::
+
+    Para saber a sintaxe completa do comando ``while``, consulte :cite:`psf:reference:2021:c`.
+
+
+.. note::
+
+    Em algumas linguagens, como C e C++, existem outros tipos de laços, como, por exemplo, comandos de repetição com expressão de interrupção ao final da primeira iteração (ex: ``do...while``).
+
+
+**Exercício:** Resolva o :ref:`problema 4 <sec_introducao_programacao_estruturas_repeticao_problema_4>` utilizando um laço do tipo ``while``.
+
+
+**Solução:**
+
+
+.. code-block::
+    :linenos:
+    :emphasize-lines: 5-7
+    :caption: Computando o somatório de ``1`` a ``5`` usando laço do tipo ``while``.
+    :name: introd-prog:code:summation-while
+
+    i = 1
+    soma = 0
+
+    while i <= 5:
+        soma = soma + i
+
+        i = i + 1
+
+    print("Soma Final:", soma)
+    print("Valor final de i:", i)
+
+
+**Exercício:** Resolva o :ref:`problema 1 <sec_introducao_programacao_estruturas_repeticao_problema_1>` utilizando um laço do tipo ``while``.
+
+
+**Solução:**
+
+
+.. code-block::
+    :linenos:
+    :emphasize-lines: 8-12
+    :caption: Conversão de temperaturas entre as escalas Fahrenheit e Celsius usando laço ``while``.
+    :name: introd-prog:code:far2cel-while
+
+    t_min = 0     # temperatura mínima
+    t_max = 300   # temperatura máxima
+    delta_t = 20  # delta de temperatura a cada passo
+
+    fahr = t_min  # temperatura Fahrenheit inicial
+
+    while fahr <= t_max:
+        celsius = 5 * (fahr - 32) / 9
+
+        print(fahr, celsius)
+
+        fahr = fahr + delta_t
+
+
+.. tip::
+
+    Um bom tutorial sobre laços pode ser encontrado em :cite:`pal:2021:a`. O site learningpython.org contém uma seção explicando o uso de laços ``for`` e ``while`` :cite:`learnpython:2021:a`.
+
+
+.. admonition:: Exemplos
+    :class: box-exemplos
+
+    Vamos fazer os exemplos :ref:`03 <sec_introducao_programacao_exemplos_ex03>`, :ref:`04 <sec_introducao_programacao_exemplos_ex04>`, :ref:`05 <sec_introducao_programacao_exemplos_ex05>`, :ref:`06 <sec_introducao_programacao_exemplos_ex06>` e :ref:`07 <sec_introducao_programacao_exemplos_ex07>`.

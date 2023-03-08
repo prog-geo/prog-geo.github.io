@@ -1,0 +1,34 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../../def.rst
+
+
+.. _sec_projetos_2021_p11:
+
+Séries temporais na detecção de deslizamentos
+=============================================
+
+
+Séries temporais de imagens de sensoriamento remoto podem ser aplicadas para detecção de mudanças bruscas na cobertura da terra. Um exemplo de mudança brusca ocorre nos deslizamentos de terra. Ao observar a série temporal de uma evento como esse, é possível observar a quebra da tendência de estabilidade das curvas de índices de vegetação por exemplo.
+
+Para caracterizar essas mudanças, pode-se combinar as informações de séries temporais obtidas por meio do projeto `Brazil Data Cube <http://brazildatacube.org/>`_ com métricas calculadas a partir das séries, obtidas com pacotes de extração de atributos, como o `stmetrics <https://github.com/brazil-data-cube/stmetrics>`_. O propósito deste projeto é calcular um conjunto de atributos de séries temporais em uma região com deslizamentos de terra, e exibir a espacialização dos atributos que melhor destacaram estes eventos.
+
+
+.. note::
+
+    **1.** Os produtos de código desenvolvidos deverão ser licenciados de acordo com os modelos de software livre MIT, e disponibilizados em um ou mais repositórios na organização ``prog-geoespacial``.
+
+
+    **2.** Os pacotes deverão conter documentação de uso.
+
+
+    **3.** Utilize o `template de pacotes Python do Brazil Data Cube <https://github.com/brazil-data-cube/cookiecutter-bdc>`_.
+
+
+    **4.** Os produtos de dados de exemplo deverão ser disponibilizados de acordo com o modelo Creative Commons.
+
+
+    **5.** Produzir um relatório no formato do evento `GEOINFO <http://www.geoinfo.info/>`_.

@@ -1,0 +1,76 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _sec_variados_terminal_python:
+
+Terminal Interativo Python
+==========================
+
+
+Um **interpretador** é um programa capaz de executar outros programas. A forma mais simples de rodar programas escritos em Python é através do seu **terminal interativo** (:numref:`Figura %s <variados:fig:python-terminal>`).
+
+
+.. figure:: ../img/variados/python-terminal.png
+    :alt: Terminal interativo do Python
+    :width: 90%
+    :figclass: align-center
+    :name: introd-prog:fig:python-terminal
+
+    Terminal interativo do Python.
+
+
+.. tabs::
+
+    .. tab:: Microsoft Windows
+
+        Para acessar o interpretador de comandos do Python na distribuição Anaconda, na barra de atalhos de programas do Windows, localize o grupo ``Anaconda`` e, em seguida, escolha a opção ``Anaconda Prompt``, conforme :numref:`Figura %s <variados:fig:win-atalho-prompt-anaconda>`.
+
+        .. figure:: ../img/variados/win-atalho-prompt-anaconda.png
+            :alt: Atalho para o prompt de comandos da Anaconda
+            :width: 50%
+            :figclass: align-center
+            :name: variados:fig:win-atalho-prompt-anaconda
+
+            Atalho para o prompt de comandos da Anaconda.
+
+
+        Na janela aberta, digite o comando ``python``, conforme mostrado na :numref:`Figura %s <variados:fig:win-prompt-anaconda>`.
+
+
+        .. figure:: ../img/variados/win-prompt-anaconda.png
+            :alt: Terminal interativo do Python
+            :width: 90%
+            :figclass: align-center
+            :name: variados:fig:win-prompt-anaconda
+
+            Terminal interativo do Python.
+
+
+    .. tab:: macOS
+
+        No macOS, abra um terminal de comandos e digite o comando ``python``, isto deverá abrir o terminal de comandos como mostrado na :numref:`Figura %s <variados:fig:mac-terminal-python>`.
+
+
+        .. figure:: ../img/variados/python-terminal-mac.png
+            :alt: Terminal interativo do Python
+            :width: 90%
+            :figclass: align-center
+            :name: variados:fig:mac-terminal-python
+
+            Terminal interativo do Python.
+
+
+    .. tab:: Linux
+
+        No Linux, abra um terminal de comandos e digite o comando ``python`` (ou ``python3``), isto deverá abrir o terminal de comandos como mostrado na :numref:`Figura %s <variados:fig:python-terminal>`
+
+
+        .. figure:: ../img/variados/python-terminal.png
+            :alt: Terminal interativo do Python
+            :width: 90%
+            :figclass: align-center
+            :name: variados:fig:python-terminal
+
+            Terminal interativo do Python.

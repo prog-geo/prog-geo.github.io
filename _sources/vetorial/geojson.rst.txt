@@ -1,0 +1,273 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../def.rst
+
+
+.. _sec_vetorial_geojson:
+
+Documentos GeoJSON
+==================
+
+
+GeoJSON é um formato de intercâmbio geoespacial baseado na notação JSON. Um objeto GeoJSON pode representar uma:
+
+.. rst-class:: open
+
+- Geometria (``Geometry``)
+
+- Feição (``Feature``)
+
+- Coleção de Feições (``Feature Collection``)
+
+
+Geometrias
+----------
+
+
+O formato GeoJSON suporta os seguintes tipos geométricos (:numref:`Figura %s <fig:vetorial:geojson:geometries>`): ``Point``, ``LineString``, ``Polygon``, ``MultiPoint``, ``MultiLineString``, ``MultiPolygon`` e ``GeometryCollection``.
+
+
+.. figure:: ../img/vetorial/geojson/ogc-sfs-geometries.png
+    :alt: Tipos geométricos suportados pela especificação GeoJSON
+    :width: 640
+    :figclass: align-center
+    :name: fig:vetorial:geojson:geometries
+
+    Tipos geométricos suportados pela especificação GeoJSON.
+
+
+Point
++++++
+
+
+O tipo geométrico ``Point`` (:numref:`Figura %sa <fig:vetorial:geojson:geometries>`) é representado por um objeto ``JSON`` com o seguinte formato:
+
+
+.. code-block:: json
+
+    {
+        "type": "Point",
+        "coordinates": [10.0, 10.0]
+    }
+
+
+LineString
+++++++++++
+
+
+O tipo geométrico ``LineString`` (:numref:`Figura %sb <fig:vetorial:geojson:geometries>`) é representado por um objeto JSON com o seguinte formato:
+
+
+.. code-block:: json
+
+    {
+        "type": "LineString",
+        "coordinates": [
+            [10.0, 10.0],
+            [20.0, 20.0],
+            [30.0, 12.0]
+        ]
+    }
+
+
+Polygon
++++++++
+
+
+O tipo geométrico ``Polygon`` (:numref:`Figura %sd <fig:vetorial:geojson:geometries>` e :numref:`Figura %se <fig:vetorial:geojson:geometries>`) é representado por um objeto ``JSON`` com o seguinte formato:
+
+
+.. code-block:: json
+
+    {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [0.0, 0.0],
+            [0.0, 10.0],
+            [10.0, 10.0],
+            [10.0, 0.0],
+            [0.0, 0.0]
+          ]
+        ]
+    }
+
+
+MultiPoint
+++++++++++
+
+
+O tipo geométrico ``MultiPoint`` (:numref:`Figura %sf <fig:vetorial:geojson:geometries>`) é representado por um objeto ``JSON`` com o seguinte formato:
+
+
+.. code-block:: json
+
+    {
+        "type": "MultiPoint",
+        "coordinates": [
+            [10.0, 10.0],
+            [11.0, 11.0]
+        ]
+    }
+
+
+MultiLineString
++++++++++++++++
+
+
+O tipo geométrico ``MultiLineString​`` (:numref:`Figura %sg <fig:vetorial:geojson:geometries>`) é representado por um objeto ``JSON`` com o seguinte formato:
+
+
+.. code-block:: json
+
+    {
+        "type": "MultiLineString",
+        "coordinates": [
+            [ [10.0, 10.0], [11.0, 11.0] ],
+            [ [12.0, 12.0], [13.0, 13.0] ]
+        ]
+    }
+
+
+MultiPolygon
+++++++++++++
+
+
+O tipo geométrico ``MultiPolygon`` (:numref:`Figura %sh <fig:vetorial:geojson:geometries>`) é representado por um objeto ``JSON`` com o seguinte formato:
+
+
+.. code-block:: json
+
+    {
+        "type": "MultiPolygon",
+        "coordinates": [
+            [
+                [
+                    [102.0, 2.0],
+                    [103.0, 2.0],
+                    [103.0, 3.0],
+                    [102.0, 3.0],
+                    [102.0, 2.0]
+                ]
+            ],
+            [
+                [
+                    [100.0, 0.0],
+                    [101.0, 0.0],
+                    [101.0, 1.0],
+                    [100.0, 1.0],
+                    [100.0, 0.0]
+                ],
+                [
+                    [100.2, 0.2],
+                    [100.2, 0.8],
+                    [100.8, 0.8],
+                    [100.8, 0.2],
+                    [100.2, 0.2]
+                ]
+            ]
+        ]
+    }
+
+
+GeometryCollection
+++++++++++++++++++
+
+
+O tipo geométrico ``GeometryCollection`` (:numref:`Figura %si <fig:vetorial:geojson:geometries>`) é representado por um objeto JSON com o seguinte formato:
+
+
+.. code-block:: json
+
+     {
+        "type": "GeometryCollection",
+        "geometries": [
+            {
+                "type": "Point",
+                "coordinates": [100.0, 0.0]
+            },
+            {
+                "type": "LineString",
+                "coordinates": [
+                    [101.0, 0.0],
+                    [102.0, 1.0]
+                ]
+            }
+        ]
+     }
+
+
+Feature
+-------
+
+
+Um objeto do tipo ``Feature`` representa um objeto ou entidade geográfica, com o seguinte formato:
+
+
+.. code-block:: json
+
+    {
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-45.88, -23.17]
+
+        },
+
+        "properties": {
+            "cidade": "São José dos Campos"
+        }
+    }
+
+
+FeatureCollection
+-----------------
+
+
+Um objeto do tipo ``FeatureCollection`` pode ser utilizado para representar uma coleção de objetos ou entidades geográficas, com o seguinte formato:
+
+
+.. code-block:: json
+
+    {
+        "type": "FeatureCollection",
+        "features": [
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-45.88, -23.17]
+
+                },
+                "properties": {
+                    "cidade": "São José dos Campos"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-43.50, -20.38]
+
+                },
+                "properties": {
+                    "cidade": "Ouro Preto"
+                }
+            }
+        ]
+    }
+
+
+.. note::
+
+    A especificação GeoJSON pode ser encontrada em :cite:`butler:2016`.
+
+
+Validadores de Documentos GeoJSON
+---------------------------------
+
+
+Existem na Internet vários aplicativos *online* que possibilitam validar a estrutura de um documento GeoJSON, isto é, permite sabermos se o documento respeita a sintaxe (ou notação) GeoJSON. Um bom aplicativo é o `geojson.io <https://geojson.io/>`_. Acesse o endereço desse aplicativo e verifique os documentos apresentados na seção anterior.

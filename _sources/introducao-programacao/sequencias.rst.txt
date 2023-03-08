@@ -1,0 +1,423 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../def.rst
+
+
+.. _sec_introducao_programacao_sequencias:
+
+Sequências
+==========
+
+
+Uma sequência é um conjunto ordenado de :math:`n` valores:
+
+- :math:`a_0, a_1, a_2, ..., a_{n-1}`
+
+
+Cada elemento de uma sequência é associado a um número chamado de **índice** ou **posição**. O **primeiro índice** é o **zero**.
+
+
+Os três tipos básicos de sequências são:
+
+.. rst-class:: open
+
+- **Strings:** sequência imutável de caracteres.
+
+- **Tuplas:** sequência imutável de valores (ou itens).
+
+- **Listas:** sequência de valores (ou itens), que pode crescer, encolher, ou alterar elementos.
+
+
+Operações comuns com sequências:
+
+
+.. table:: Operações com sequências. |br| **Fonte:** The Python Standard Library :cite:`psf:stdlib:2021:b`.
+    :align: center
+    :header-alignment: center center
+    :column-alignment: left left
+    :name: introd-prog:tbl:op-seq
+
+    +----------------------+-----------------------------------------------------------------------------------+
+    | Operador             | Descrição                                                                         |
+    +======================+===================================================================================+
+    | :python:`x in s`     | ``True`` se um item de :math:`s` for igual a :math:`x`, ``False`` caso contrário. |
+    +----------------------+-----------------------------------------------------------------------------------+
+    | :python:`x not in s` | ``False`` se um item de :math:`s` for igual a :math:`x`, ``True`` caso contrário. |
+    +----------------------+-----------------------------------------------------------------------------------+
+    | :python:`s + t`      | Concatenação de :math:`s` e :math:`t`.                                            |
+    +----------------------+-----------------------------------------------------------------------------------+
+    | :python:`s[i]`       | :math:`i`-th item de :math:`s`.                                                   |
+    +----------------------+-----------------------------------------------------------------------------------+
+    | :python:`s[i:j]`     | Parte da sequência no intervalo :math:`[i,j)`.                                    |
+    +----------------------+-----------------------------------------------------------------------------------+
+    | :python:`len(s)`     | Comprimento da sequência :math:`s`.                                               |
+    +----------------------+-----------------------------------------------------------------------------------+
+    | :python:`min(s)`     | Menor item da sequência :math:`s`.                                                |
+    +----------------------+-----------------------------------------------------------------------------------+
+    | :python:`max(s)`     | Maior item da sequência :math:`s`.                                                |
+    +----------------------+-----------------------------------------------------------------------------------+
+    | :python:`s.index(x)` | Índice da primeira ocorrência de :math:`x`.                                       |
+    +----------------------+-----------------------------------------------------------------------------------+
+    | :python:`s.count(x)` | Número total de ocorrências de :math:`x` em :math:`s`.                            |
+    +----------------------+-----------------------------------------------------------------------------------+
+
+
+Strings
+-------
+
+
+Como visto na :numref:`Seção %s <sec_introducao_programacao_strings>`, strings são sequência imutáveis de caracteres::
+
+    >>> nome = "Introdução à Programação com Dados Geoespaciais"
+    >>> letra = "ç"
+
+
+.. code-block:: python
+
+    >>> if letra in nome:
+    ...     print(f"Nome contém a letra '{letra}'!")
+    ... else:
+    ...     print(f"Nome não contém a letra '{letra}'!")
+    ...
+    Nome contém a letra 'ç'!
+
+
+.. code-block:: python
+
+    >>> pos = nome.index(letra)
+    >>> print(pos)
+
+
+.. code-block:: python
+
+    >>> tamanho = len(nome)
+    >>> print(tamanho)
+
+
+.. note::
+
+    Para saber mais sobre strings, consulte a :numref:`Seção %s <sec_introducao_programacao_strings>`.
+
+
+Tuplas
+------
+
+As **tuplas** são expressas através de uma **sequência** cujos **itens** são **separados por vírgula** e **delimitados ou não** por **parênteses**. Vamos utilizar uma tupla para representar o par de coordenadas do centróide da cidade de São Paulo (:numref:`Figura %s <introd-prog:fig:sp-localizacao>`):
+
+
+.. code-block:: python
+    :linenos:
+    :emphasize-lines: 1,9-10
+    :caption: Criando uma tupla para representar o centróide da cidade de São Paulo.
+    :name: introd-prog:code:tupla-centroide-sp
+
+    centroide_sp = (-46.7165, -23.6830)
+
+    print(centroide_sp)
+
+    print("longitude: {} latitude: {}".format(*centroide_sp))
+
+    print(len(centroide_sp))
+
+    longitude = centroide_sp[0]
+    latitude = centroide_sp[1]
+
+
+.. figure:: ../img/introducao-programacao/sp-localizacao.png
+    :alt: Centróide da cidade de São Paulo
+    :width: 40%
+    :figclass: align-center
+    :name: introd-prog:fig:sp-localizacao
+
+    Centróide da cidade de São Paulo.
+
+
+No :numref:`Trecho de Código %s <introd-prog:code:tupla-centroide-sp>` podemos observar o seguinte:
+
+.. rst-class:: open
+
+- A ``linha 01`` cria uma tupla contendo dois valores em ponto flutuante e associa esse novo objeto ao nome (ou indentificador, ou variável) ``centroide_sp``.
+
+- A ``linha 05`` utiliza uma notação especial para *descompactar* (*unpack*) a tupla na chamada do método ``format``. Dessa maneira os valores individuais da tupla são passados ao método ``format``, que poderá então usá-los no lugar das marcações de substituição (*placeholders*) da string de formatação.
+
+- Na ``linha 07``, usamos a função ``len``, disponível para todos os tipos de sequência, para saber o número de elementos da tupla.
+
+- As ``linhas 09`` e ``10`` utilizam o operador de índice (``operador[]``) para acessar os elementos da tupla. Repare que o primeiro elemento da tupla possui o índice ``0``.
+
+
+Tuplas podem ser **aninhadas** (*nested*). No :numref:`Trecho de Código %s <introd-prog:code:tupla-box-sp>`, usamos uma tupla para representar o retângulo envolvente mínimo (*REM* ou *Bounding Box*) do polígono que define o limite (ou contorno, ou fronteira) da cidade de São Paulo (:numref:`Figura %s <introd-prog:fig:sp-box>`). Veja que cada elemento da tupla, na ``linha 01``, é também uma tupla, com as coordenadas do canto inferior esquerdo e superior direito desse retângulo.
+
+
+.. code-block:: python
+    :linenos:
+    :emphasize-lines: 1
+    :caption: Criando uma tupla cujos elementos também são tuplas.
+    :name: introd-prog:code:tupla-box-sp
+
+    rem_sp = ( (-46.8254, -24.0084), (-46.3648, -23.6830) )
+
+    canto_inferior_esquerdo = rem_sp[0]
+
+    canto_superior_direito = rem_sp[1]
+
+    xmin = canto_inferior_esquerdo[0]
+
+    ymin = rem_sp[0][1]
+
+    print(f"xmax: {rem_sp[1][0]}")
+
+
+.. figure:: ../img/introducao-programacao/sp-box.png
+    :alt: Retângulo envolvente mínimo do perímetro da cidade de São Paulo
+    :width: 40%
+    :figclass: align-center
+    :name: introd-prog:fig:sp-box
+
+    Retângulo envolvente mínimo do perímetro da cidade de São Paulo.
+
+
+No :numref:`Trecho de Código %s <introd-prog:code:tupla-centroide-sp>` ainda temos:
+
+.. rst-class:: open
+
+- Na ``linha 03``, o operador de índice (``operador[]``) é utilizado para acessar o primeiro par de coordenadas do retângulo envolvente. Podemos verificar que o elemento retornado por este operador também é uma tupla::
+
+    >>> print(type(canto_inferior_esquerdo))
+    <class 'tuple'>
+
+
+- Na ``linha 07``, utilizamos novamente o operador de índice (``[]``) para acessar o valor de :math:`x_{min}`.
+
+- A ``linha 09`` mostra que podemos usar o operador de índice de maneira encadeada, acessando o primeiro elemento da tupla mais externa e depois o valor do segundo elemento da tupla mais interna (:math:`y_{min}`).
+
+- A ``linha 11`` mostra como podemos usar elementos específicos da tupla dentro de uma string formatada.
+
+
+Uma tupla é uma sequência imutável, isto é, se tentarmos alterar um item de uma tupla, uma exceção será lançada, como pode ser visto no trecho de código abaixo::
+
+    >>> centroide_sp[1] = 45.0
+    Traceback (most recent call last):
+        File "<stdin>", line 1, in <module>
+    TypeError: 'tuple' object does not support item assignment
+
+
+.. _sec_introducao_programacao_sequencias_listas:
+
+Listas
+------
+
+
+As **listas** são expressas através de uma **sequência** cujos **itens** são **separados por vírgula** e **delimitados por colchetes**. Vamos criar uma lista com o nome de algumas cidades::
+
+    >>> cidades = [ "São Paulo", "Rio de Janeiro", "Belo Horizonte", "Ouro Preto"]
+    >>> print(cidades)
+    ['São Paulo', 'Rio de Janeiro', 'Belo Horizonte', 'Ouro Preto']
+
+
+.. note::
+
+    Podemos distribuir os elementos de uma lista em múltiplas linhas. A lista ``cidades``, por exemplo, poderia ter sido definida da seguinte maneira::
+
+        >>> cidades = [
+        ...    "São Paulo",
+        ...    "Rio de Janeiro",
+        ...    "Belo Horizonte",
+        ...    "Ouro Preto"
+        ... ]
+
+
+Como uma lista é uma **sequência mutável**, existem operações que permitem modificar, por exemplo, a ordem de seus elementos. O método ``sort`` permite ordenar os elementos de uma lista::
+
+    >>> cidades.sort()
+    >>> print(cidades)
+    ['Belo Horizonte', 'Ouro Preto', 'Rio de Janeiro', 'São Paulo']
+
+
+.. note::
+
+    O **método** ``sort`` não cria uma nova lista, ele realiza a alteração *in-place*. Para maiores informações sobre esse método, consulte :cite:`psf:stdlib:2021:f`.
+
+
+.. note::
+
+    Python oferece também uma **função** denominada ``sorted`` que permite criar uma lista ordenada a partir de uma sequência qualquer. A definição dessa função pode ser encontrada em :cite:`psf:stdlib:2021:h`. Para criar uma nova lista de cidades "ordenada ao contrário", faça::
+
+        >>> nova_lista = sorted(cidades, reverse=True)
+        >>> print(nova_lista)
+        ['São Paulo', 'Rio de Janeiro', 'Ouro Preto', 'Belo Horizonte']
+
+
+    Veja que a lista original (``cidades``) continua com os elementos ordenados em ordem ascendente ou lexicográfica::
+
+        >>> print(cidades)
+        ['Belo Horizonte', 'Ouro Preto', 'Rio de Janeiro', 'São Paulo']
+
+
+.. tip::
+
+    Veja o seguinte tutorial sobre ordenação em Python :cite:`dalke:2021`.
+
+
+Para adicionar um novo elemento ao final de uma lista, pode-se utilizar o método ``append``::
+
+    >>> cidades.append("São José dos Campos")
+    >>> print(cidades)
+
+
+Para remover um elemento de uma posição específica de uma lista, utilizamos a operação ``del`` junto com o opetrador de índice (``[]``)::
+
+    >>> del cidades[1]
+    >>> print(cidades)
+    ['Belo Horizonte', 'Rio de Janeiro', 'São Paulo', 'São José dos Campos']
+
+
+Para incluir os elementos de uma lista na outra, pode-se utilizar o método ``extend``::
+
+    >>> cidades.extend( ["Ouro Preto", "Mariana"] )
+    >>> print(cidades)
+    ['Belo Horizonte', 'Rio de Janeiro', 'São Paulo', 'São José dos Campos', 'Ouro Preto', 'Mariana']
+
+
+Para inverter a ordem dos elementos de uma lista, utilize o método ``reverse``::
+
+    >>> cidades.reverse()
+    >>> print(cidades)
+    ['Mariana', 'Ouro Preto', 'São José dos Campos', 'São Paulo', 'Rio de Janeiro', 'Belo Horizonte']
+
+
+.. note::
+
+    Para uma lista completa das operações sobre sequências mutáveis, consulte :cite:`psf:stdlib:2021:g`.
+
+
+Construindo Listas
+++++++++++++++++++
+
+
+As listas podem ser construídas de diversas formas:
+
+.. rst-class:: open
+
+- Uma lista vazia, por exemplo, pode ser criada da seguinte maneira::
+
+    >>> lista_vazia = []
+    >>> print(lista_vazia)
+    []
+
+- Uma lista pode ser criada a partir do construtor do tipo ``list``, com uma sequência de valores:
+
+    - Lista vazia::
+
+        >>> list()
+        []
+
+    - Lista a partir de uma string::
+
+        >>> lista_letras = list("Introdução à Programação")
+        >>> print(lista_letras)
+        ['I', 'n', 't', 'r', 'o', 'd', 'u', 'ç', 'ã', 'o', ' ', 'à', ' ', 'P', 'r', 'o', 'g', 'r', 'a', 'm', 'a', 'ç', 'ã', 'o']
+
+
+    - Lista a partir de uma tupla::
+
+        >>> primos = list((1, 2, 3, 5, 7))
+        >>> print(primos)
+        [1, 2, 3, 5, 7]
+
+
+    - Lista a partir de um *range* (iterável)::
+
+          >>> lista_0_ate_9 = list(range(10))
+          >>> print(lista_0_ate_9)
+          [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+
+
+*List Comprehension*
+++++++++++++++++++++
+
+
+Uma maneira prática de construir listas é através da notação conhecida como *list comprehensions*. Esta notação, inspirada na linguagem funcional `Haskell <https://www.haskell.org/>`_, apresenta a seguinte sintaxe básica::
+
+    [x for x in iterable]
+
+
+Exemplos:
+
+.. rst-class:: open
+
+- Lista com os números no intervalo de 0 a 9::
+
+    >>> lista = [ x for x in range(0, 10) ]
+
+    >>> print(lista)
+    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+    >>> type(lista)
+    <class 'list'>
+
+
+- Lista dos quadrados::
+
+    >>> quadrados = [ x**2 for x in range(0, 10) ]
+
+    >>> print(quadrados)
+    [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+
+
+- Suponha uma reta definida pela seguinte equação: :math:`y = 1.5 \times x - 3`. Dado os valores de :math:`x \in \{ 1, 2, 3, 4, 5 \}`, computar a lista de valores :math:`y`::
+
+    >>> xs = [ 1, 2, 3, 4, 5 ]
+
+    >>> ys = [ (1.5 * x - 3) for x in xs ]
+
+    >>> print(ys)
+    [-1.5, 0.0, 1.5, 3.0, 4.5]
+
+
+.. admonition:: Exemplos
+    :class: box-exemplos
+
+    Vamos fazer os exemplos :ref:`08 <sec_introducao_programacao_exemplos_ex08>` e :ref:`09 <sec_introducao_programacao_exemplos_ex09>`.
+
+
+*Generator Expressions*
+-----------------------
+
+
+Outra notação concisa muito usada na linguagem Python é a de *generator expressions*. Muito parecida com a notação de *list comprehensions*, a sintaxe básica é a seguinte::
+
+    (x for x in iterable)
+
+
+Diferentemente da notação de *list comprehensions*, que retorna uma lista, esta notação retorna um iterador ou gerador (*generator*)::
+
+    >>> xs = [ 1, 2, 3, 4, 5 ]
+
+    >>> ys = ( (1.5 * x - 3) for x in xs )
+
+    >>> type(ys)
+    <class 'generator'>
+
+
+``ys`` é tratado como um iterador, que gera os valores à medida do necessário::
+
+    >>> for y in ys:
+    ...     print(y)
+    ...
+    -1.5
+    0.0
+    1.5
+    3.0
+    4.5
+
+
+Esta estratégia evita que todos os elementos tenham que ser materializados de uma única vez. Repare que a grande diferença na notação é o uso de parênteses (``(`` e ``)``) no lugar de colchetes (``[`` e ``]``).
+
+
+.. note::
+
+    Para mais detalhes sobre *List Comprehension* e *Generator Expressions*, consulte :cite:`psf:reference:2021:f` e :cite:`kuchling:2021:a`.

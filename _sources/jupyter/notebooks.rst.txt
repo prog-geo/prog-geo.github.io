@@ -1,0 +1,127 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _sec_jupyter_notebooks:
+
+Notebooks
+=========
+
+
+Vamos utilizar o ambiente do JupyterLab para criar um documento Notebook. Para isso, na janela principal do JupyterLab (:numref:`Figura %s <fig:jupyter:notebooks:jupyterlab-frontend>`), no navegador, selecione a opção :menuselection:`Python 3`.
+
+
+.. figure:: ../img/jupyter/jupyterlab-frontend.png
+    :alt: Janela inicial do JupyterLab
+    :width: 100%
+    :figclass: align-center
+    :name: fig:jupyter:notebooks:jupyterlab-frontend
+
+    Janela inicial do JupyterLab.
+
+
+Uma nova aba com o título ``Untitled.ipynb`` será apresentada (:numref:`Figura %s <fig:jupyter:notebooks:notebook-01>`).
+
+
+.. figure:: ../img/jupyter/notebook-01.png
+    :alt: Criando um novo Notebook
+    :width: 100%
+    :figclass: align-center
+    :name: fig:jupyter:notebooks:notebook-01
+
+    Criando um novo Notebook.
+
+
+Salve esse novo notebook, que por padrão possui o nome ``Untitled.ipynb``, com o nome ``meu-primeiro-notebook.ipynb``. Para isso, selecione a opção de menu :menuselection:`File --> Save Notebook As...`. Por padrão, esse novo documento é criado contendo uma única célula, onde podemos escrever um código Python, como mostrado na :numref:`Figura %s <fig:jupyter:notebooks:notebook-02>`.
+
+
+.. figure:: ../img/jupyter/notebook-02.png
+    :alt: Célula de código Python
+    :width: 100%
+    :figclass: align-center
+    :name: fig:jupyter:notebooks:notebook-02
+
+    Célula de código Python.
+
+
+Uma **célula** é uma **caixa de texto multilinha**, cujo conteúdo pode ser executado pressionando-se ``Shift-Enter`` ou clicando no botão ``Run`` na barra de botões, ou através do menu :menuselection:`Run --> Run Selected Cells` na barra de menus. A :numref:`Figura %s <fig:jupyter:notebooks:notebook-02>` mostra o resultado da execução dessa célula.
+
+
+.. figure:: ../img/jupyter/notebook-03.png
+    :alt: Resultado da execução da célula com código Python
+    :width: 100%
+    :figclass: align-center
+    :name: fig:jupyter:notebooks:notebook-03
+
+    Resultado da execução da célula com código Python.
+
+
+O **tipo da célula** irá determinar o comportamento de sua interpretação. Essencialmente, temos três tipos de células: células de código, células com textos formatados em Markdown, e células *raw*. Toda nova célula é definida, por padrão, como sendo do tipo código, podendo esse tipo ser alterado através da ``drop-down list`` na barra de botões ou através de teclas de atalho.
+
+
+Vamos adicionar uma nova célula, desta vez como uma célula contendo textos na notação Markdown, como mostrado na :numref:`Figura %s <fig:jupyter:notebooks:notebook-04>`.
+
+
+.. figure:: ../img/jupyter/notebook-04.png
+    :alt: Célula do tipo Markdown
+    :width: 100%
+    :figclass: align-center
+    :name: fig:jupyter:notebooks:notebook-04
+
+    Célula do tipo Markdown.
+
+
+Uma célula do tipo Markdown, quando executada produz apenas uma renderização, como mostrada na :numref:`Figura %s <fig:jupyter:notebooks:notebook-05>`.
+
+
+.. figure:: ../img/jupyter/notebook-05.png
+    :alt: Resultado da execução de uma célula do tipo Markdown
+    :width: 100%
+    :figclass: align-center
+    :name: fig:jupyter:notebooks:notebook-05
+
+    Resultado da execução de uma célula do tipo Markdown.
+
+
+As células do tipo Markdown aceitam também trechos em LaTeX. Na :numref:`Figura %s <fig:jupyter:notebooks:notebook-06>` a equação de Haversine encontra-se entre as marcações ``$$...$$``, e o resultado da execução dessa célula pode ser visto na :numref:`Figura %s <fig:jupyter:notebooks:notebook-07>`.
+
+
+.. figure:: ../img/jupyter/notebook-06.png
+    :alt: Célula do tipo Markdown com trecho LaTeX
+    :width: 100%
+    :figclass: align-center
+    :name: fig:jupyter:notebooks:notebook-06
+
+    Célula do tipo Markdown com trecho LaTeX.
+
+
+.. figure:: ../img/jupyter/notebook-07.png
+    :alt: Resultado da execução de uma célula do tipo Markdown com trecho em LaTeX
+    :width: 100%
+    :figclass: align-center
+    :name: fig:jupyter:notebooks:notebook-07
+
+    Resultado da execução de uma célula do tipo Markdown com trecho em LaTeX.
+
+
+De maneira similar, podemos usar trechos em HTML, como por exemplo para escrever uma tabela formatada. As Figuras :numref:`%s <fig:jupyter:notebooks:notebook-08>` e :numref:`%s <fig:jupyter:notebooks:notebook-09>` mostram, respectivamente, como escrever um texto HTML e como será o resultado produzido pela execução da célula.
+
+
+.. figure:: ../img/jupyter/notebook-08.png
+    :alt: Célula do tipo Markdown com trecho HTML
+    :width: 100%
+    :figclass: align-center
+    :name: fig:jupyter:notebooks:notebook-08
+
+    Célula do tipo Markdown com trecho HTML.
+
+
+.. figure:: ../img/jupyter/notebook-09.png
+    :alt: Resultado da execução de uma célula do tipo Markdown com trecho em HTML
+    :width: 100%
+    :figclass: align-center
+    :name: fig:jupyter:notebooks:notebook-09
+
+    Resultado da execução de uma célula do tipo Markdown com trecho em HTML.
+

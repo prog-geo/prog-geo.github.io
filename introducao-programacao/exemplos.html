@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="pt-BR" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2.26. Exemplos &mdash; SER-347/CAP-419</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/table_styling.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/prog-geo.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://prog-geo.github.io/introducao-programacao/exemplos.html" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/translations.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Buscar" href="../search.html" />
+    <link rel="next" title="3. Jupyter" href="../jupyter.html" />
+    <link rel="prev" title="2.25. Considerações Finais" href="consideracoes.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SER-347/CAP-419
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Pesquisar documentos" aria-label="Pesquisar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegação">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introdução à Programação com Dados Geoespaciais</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Visão Geral do Curso:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../visao-geral.html">Visão Geral do Curso</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Aulas:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../instalacao.html">1. Instalando e Configurando o Ambiente de Programação</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">2. Introdução à Programação com a Linguagem Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introducao.html">2.1. Introdução</a></li>
+<li class="toctree-l2"><a class="reference internal" href="primeiro-prog.html">2.2. Primeiro Programa em Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tipos-dados.html">2.3. Tipos de Dados</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tipos-numericos.html">2.4. Tipos Numéricos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressoes.html">2.5. Expressões</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chamada-funcoes.html">2.6. Chamada de Funções</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variaveis.html">2.7. Variáveis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comentarios.html">2.8. Comentários</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tipo-logico.html">2.9. Tipo Lógico</a></li>
+<li class="toctree-l2"><a class="reference internal" href="op-relacionais.html">2.10. Operadores Relacionais</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressoes-logicas.html">2.11. Expressões Lógicas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="estruturas-condicionais.html">2.12. Estruturas Condicionais</a></li>
+<li class="toctree-l2"><a class="reference internal" href="estruturas-repeticao.html">2.13. Estruturas de Repetição</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings.html">2.14. O Tipo String</a></li>
+<li class="toctree-l2"><a class="reference internal" href="keywords.html">2.15. Palavras-chave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sequencias.html">2.16. Sequências</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dicionarios.html">2.17. Dicionários</a></li>
+<li class="toctree-l2"><a class="reference internal" href="set.html">2.18. Conjuntos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="formatacao-strings.html">2.19. Formatação de Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lacos-for.html">2.20. Laços do tipo for</a></li>
+<li class="toctree-l2"><a class="reference internal" href="break-continue.html">2.21. Os Comandos <code class="docutils literal notranslate"><span class="pre">break</span></code> e <code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="comandos-compostos.html">2.22. Comandos Compostos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="funcoes.html">2.23. Funções</a></li>
+<li class="toctree-l2"><a class="reference internal" href="escopo.html">2.24. Escopo de Variáveis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="consideracoes.html">2.25. Considerações Finais</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.26. Exemplos</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../jupyter.html">3. Jupyter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../imagens.html">4. Imagens - Processamento e Visualização</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vetorial.html">5. Manipulação de Dados Vetoriais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variados.html">6. Tópicos Variados</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Referências Bibliográficas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../referencias.html">Referências Bibliográficas</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Listas de Exercícios</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../projetos/2022/index.html">Turma 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projetos/2021/index.html">Turma 2021</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Informações Gerais:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../licenca.html">Licença</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Agradecimentos:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../agradecimentos.html">Agradecimentos</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Menu de navegação móvel"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SER-347/CAP-419</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Navegação da página">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">2. </span>Introdução à Programação com a Linguagem Python</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">2.26. </span>Exemplos</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Navegação sequencial da página">
+        <a href="consideracoes.html" class="btn btn-neutral float-left" title="2.25. Considerações Finais" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="../jupyter.html" class="btn btn-neutral float-right" title="3. Jupyter" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="exemplos">
+<span id="sec-introducao-programacao-exemplos"></span><h1><span class="section-number">2.26. </span>Exemplos<a class="headerlink" href="#exemplos" title="Link permanente para este cabeçalho"></a></h1>
+<p id="sec-introducao-programacao-exemplos-ex01"><strong>Exemplo 01.</strong> Uma reta pode ser representada por uma equação geral da seguinte forma:</p>
+<div class="math notranslate nohighlight" id="equation-introd-prog-math-equacao-reta">
+<span class="eqno">(2.5)<a class="headerlink" href="#equation-introd-prog-math-equacao-reta" title="Link permanente para essa equação"></a></span>\[ax + by + c = 0\]</div>
+<p>Considere a reta com os seguintes coeficientes: <span class="math notranslate nohighlight">\(a = 3\)</span>, <span class="math notranslate nohighlight">\(b = -2\)</span> e <span class="math notranslate nohighlight">\(c = -6\)</span> (<a class="reference internal" href="#introd-prog-fig-eq-reta"><span class="std std-numref">Figura 2.24</span></a>). Faça um programa que pergunte ao usuário os valores de um par de coordenadas <span class="math notranslate nohighlight">\((x,y)\)</span>, aplique a <a class="reference internal" href="#equation-introd-prog-math-equacao-reta">Equação 2.5</a> e verifique o resultado.</p>
+<figure class="align-center align-default" id="introd-prog-fig-eq-reta">
+<a class="reference internal image-reference" href="../_images/eq-reta.png"><img alt="Ilustração de uma reta com coeficientes: a = 3, b = -2 e c = -6" src="../_images/eq-reta.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 2.24 - </span><span class="caption-text">Ilustração de uma reta com coeficientes: <span class="math notranslate nohighlight">\(a = 3\)</span>, <span class="math notranslate nohighlight">\(b = -2\)</span> e <span class="math notranslate nohighlight">\(c = -6\)</span>.</span><a class="headerlink" href="#introd-prog-fig-eq-reta" title="Link Permanente para essa imagem"></a></p>
+</figcaption>
+</figure>
+<p><strong>Solução:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># coeficientes da equação geral da reta:</span>
+<span class="c1"># Ax + By + C = 0</span>
+<span class="n">A</span> <span class="o">=</span> <span class="mf">3.0</span>
+<span class="n">B</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.0</span>
+<span class="n">C</span> <span class="o">=</span> <span class="o">-</span><span class="mf">6.0</span>
+
+<span class="c1"># realiza a leitura das coordenadas de um ponto (x, y)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;x: &#39;</span><span class="p">))</span>   <span class="c1"># lê x</span>
+<span class="n">y</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;y: &#39;</span><span class="p">))</span>   <span class="c1"># lê y</span>
+
+<span class="c1"># se a equação resultar em 0.0,</span>
+<span class="c1"># significa que o ponto encontra-se sobre a reta</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">B</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="n">C</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Resultado da equação para o ponto (</span><span class="si">{0}</span><span class="s2">, </span><span class="si">{1}</span><span class="s2">): </span><span class="si">{2}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">r</span><span class="p">))</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p id="sec-introducao-programacao-exemplos-ex02"><strong>Exemplo 02.</strong> Altere o programa da equação geral de uma reta para incluir um teste condicional que escreva na tela a mensagem “Sobre a Reta”, caso o ponto informado esteja sobre a reta; caso o ponto encontre-se acima da reta, deverá ser escrita a mensagem “Acima da Reta”; e, caso o ponto encontra-se abaixo da reta, deverá ser escrita a mensagem “Abaixo da Reta”.</p>
+<p><strong>Solução:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># coeficientes da equação geral da reta:</span>
+<span class="c1"># Ax + By + C = 0</span>
+<span class="n">A</span> <span class="o">=</span> <span class="mf">3.0</span>
+<span class="n">B</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.0</span>
+<span class="n">C</span> <span class="o">=</span> <span class="o">-</span><span class="mf">6.0</span>
+
+<span class="c1"># realiza a leitura das coordenadas de um ponto (x, y)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;x: &#39;</span><span class="p">))</span>   <span class="c1"># lê x</span>
+<span class="n">y</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;y: &#39;</span><span class="p">))</span>   <span class="c1"># lê y</span>
+
+<span class="n">y0</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">A</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="n">C</span><span class="p">)</span> <span class="o">/</span> <span class="n">B</span>
+
+<span class="k">if</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="n">y0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Acima!&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">y0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Abaixo!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sobre a reta!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p id="sec-introducao-programacao-exemplos-ex03"><strong>Exemplo 03.</strong> Escreva um programa em Python que leia um número inteiro <span class="math notranslate nohighlight">\(n\)</span> entre <span class="math notranslate nohighlight">\(1\)</span> e <span class="math notranslate nohighlight">\(10\)</span> e compute o fatorial desse número. Lembre-se que o fatorial de um número <span class="math notranslate nohighlight">\(n\)</span> é definindo como:</p>
+<div class="math notranslate nohighlight" id="equation-introd-prog-math-fat-produtorio">
+<span class="eqno">(2.6)<a class="headerlink" href="#equation-introd-prog-math-fat-produtorio" title="Link permanente para essa equação"></a></span>\[n! = \prod_{i=1}^{n} i\]</div>
+<p>ou,</p>
+<div class="math notranslate nohighlight" id="equation-introd-prog-math-fat-rel-recorrencia">
+<span class="eqno">(2.7)<a class="headerlink" href="#equation-introd-prog-math-fat-rel-recorrencia" title="Link permanente para essa equação"></a></span>\[\begin{split}\begin{cases}
+fat(1) = 1, &amp; \text{se $n = 1$}\\
+fat(n) = n \times fat(n - 1), &amp; \text{se $n &gt; 1$}
+\end{cases}\end{split}\]</div>
+<p><strong>Solução:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite um número no intervalo [1, 10]: &quot;</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">):</span>
+
+    <span class="n">fat</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">fat</span> <span class="o">=</span> <span class="n">fat</span> <span class="o">*</span> <span class="n">n</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;variavel fat&#39;</span><span class="p">,</span> <span class="n">fat</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;variavel n&#39;</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;fatorial:&quot;</span><span class="p">,</span> <span class="n">fat</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Número fora do intervalo [1, 10].&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rode o programa novamente!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p id="sec-introducao-programacao-exemplos-ex04"><strong>Exemplo 04.</strong> A sequência de Fibonacci é uma sequência de números inteiros, começando por <span class="math notranslate nohighlight">\(0\)</span> e <span class="math notranslate nohighlight">\(1\)</span>, onde cada termo subsequente corresponde a soma dos dois anteriores:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>A seguinte fórmula recursiva define esta sequência:</p>
+<div class="math notranslate nohighlight" id="equation-introd-prog-math-fib-rel-recorrencia">
+<span class="eqno">(2.8)<a class="headerlink" href="#equation-introd-prog-math-fib-rel-recorrencia" title="Link permanente para essa equação"></a></span>\[\begin{split}\begin{cases}
+    F_n = F_{n-1} + F_{n-2} \\
+    F_1 = 1 \\
+    F_0 = 0
+\end{cases}\end{split}\]</div>
+<p>Faça um programa em Python que compute a sequência para um número <span class="math notranslate nohighlight">\(n\)</span> qualquer.</p>
+<p><strong>Solução:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite um número &gt; 1: &quot;</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="n">exit</span><span class="p">(</span><span class="s2">&quot;Entre com um número &gt; 1.&quot;</span><span class="p">)</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+
+<span class="n">i</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">:</span>
+    <span class="n">proximo</span> <span class="o">=</span> <span class="n">b</span> <span class="o">+</span> <span class="n">a</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">proximo</span><span class="p">)</span>
+
+    <span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">proximo</span>
+
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p id="sec-introducao-programacao-exemplos-ex05"><strong>Exemplo 05.</strong> Escreva um programa em Python que leia dois números, <span class="math notranslate nohighlight">\(x\)</span> e <span class="math notranslate nohighlight">\(y\)</span>, e calcule a função potência <span class="math notranslate nohighlight">\(x^y\)</span>, sem utilizar o operador <code class="docutils literal notranslate"><span class="pre">**</span></code> de Python ou alguma função da biblioteca padrão.</p>
+<p><strong>Solução:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite um número (X): &quot;</span><span class="p">))</span>
+<span class="n">y</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite um número (Y): &quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="n">y</span><span class="p">)</span>
+
+<span class="n">pot</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">while</span> <span class="n">y</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="n">pot</span> <span class="o">=</span> <span class="n">pot</span> <span class="o">*</span> <span class="n">x</span>
+
+    <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X^Y:&quot;</span><span class="p">,</span> <span class="n">pot</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p id="sec-introducao-programacao-exemplos-ex06"><strong>Exemplo 06.</strong> Escreva um programa em Python que verifique se um número é primo ou não.</p>
+<p><strong>Solução:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite um número: &quot;</span><span class="p">))</span>
+
+<span class="n">primo</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="n">i</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">primo</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">break</span>
+
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="k">if</span> <span class="n">primo</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="s2">&quot;é primo!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="s2">&quot;não é primo!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p id="sec-introducao-programacao-exemplos-ex07"><strong>Exemplo 07.</strong> Escreva um programa em Python que gere a tabela de multiplicação dos números de <span class="math notranslate nohighlight">\(1\)</span> a <span class="math notranslate nohighlight">\(10\)</span>.</p>
+<p><strong>Solução:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tabuada:&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+
+    <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="k">while</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="n">i</span> <span class="o">*</span> <span class="n">j</span><span class="p">)</span>
+
+        <span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p id="sec-introducao-programacao-exemplos-ex08"><strong>Exemplo 08.</strong> Dada a lista de valores de NDVI:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">serie_ndvi</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.3</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Apresente as seguintes informações:</p>
+<ul class="open">
+<li><p>Quantidade de valores inválidos (neste caso: <code class="docutils literal notranslate"><span class="pre">None</span></code>).</p></li>
+<li><p>Quantidade de valores válidos.</p></li>
+</ul>
+<hr class="docutils" />
+<p id="sec-introducao-programacao-exemplos-ex09"><strong>Exemplo 09.</strong> Uma imagem MODIS, em geral, armazena seus valores multiplicados por 10.000. Desta forma um valor 5.000 (inteiro) representa o valor real 0.5 (ponto flutuante) e ocupa menos espaço na memória. Dada uma lista de valores MODIS:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">serie_modis</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7000</span><span class="p">,</span> <span class="mi">6000</span><span class="p">,</span> <span class="mi">3000</span><span class="p">,</span> <span class="mi">3000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">5000</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">7500</span><span class="p">,</span> <span class="mi">3000</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Calcule e apresente a lista de valores reais (divididos por 10.000).</p>
+<hr class="docutils" />
+<p id="sec-introducao-programacao-exemplos-ex10"><strong>Exemplo 10.</strong> Considere a seguinte lista:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">89</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Faça um programa em Python que realize a soma dos valores nessa lista e escreva o valor da soma.</p>
+<hr class="docutils" />
+<p id="sec-introducao-programacao-exemplos-ex11"><strong>Exemplo 11.</strong> Considere a série temporal mostrada abaixo, extraída de dados do sensor <a class="reference external" href="https://lpdaac.usgs.gov/dataset_discovery/modis/modis_products_table/mod13q1">MOD13Q1</a>, produto <code class="docutils literal notranslate"><span class="pre">MOD13Q1</span></code>, para a localização <code class="docutils literal notranslate"><span class="pre">(-54,-12)</span></code> para o período de <code class="docutils literal notranslate"><span class="pre">01/01/2015</span></code> a <code class="docutils literal notranslate"><span class="pre">19/12/2015</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">red_values</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="mi">168</span><span class="p">,</span> <span class="mi">398</span><span class="p">,</span> <span class="mi">451</span><span class="p">,</span> <span class="mi">337</span><span class="p">,</span> <span class="mi">186</span><span class="p">,</span> <span class="mi">232</span><span class="p">,</span> <span class="mi">262</span><span class="p">,</span> <span class="mi">349</span><span class="p">,</span>
+    <span class="mi">189</span><span class="p">,</span> <span class="mi">204</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">207</span><span class="p">,</span> <span class="mi">239</span><span class="p">,</span> <span class="mi">259</span><span class="p">,</span> <span class="mi">258</span><span class="p">,</span>
+    <span class="mi">242</span><span class="p">,</span> <span class="mi">331</span><span class="p">,</span> <span class="mi">251</span><span class="p">,</span> <span class="mi">323</span><span class="p">,</span> <span class="mi">106</span><span class="p">,</span> <span class="mi">1055</span><span class="p">,</span> <span class="mi">170</span>
+<span class="p">)</span>
+
+<span class="n">nir_values</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="mi">2346</span><span class="p">,</span> <span class="mi">4431</span><span class="p">,</span> <span class="mi">4638</span><span class="p">,</span> <span class="mi">4286</span><span class="p">,</span> <span class="mi">2752</span><span class="p">,</span> <span class="mi">3521</span><span class="p">,</span> <span class="mi">2928</span><span class="p">,</span> <span class="mi">3087</span><span class="p">,</span>
+    <span class="mi">2702</span><span class="p">,</span> <span class="mi">2685</span><span class="p">,</span> <span class="mi">2702</span><span class="p">,</span> <span class="mi">2865</span><span class="p">,</span> <span class="mi">2835</span><span class="p">,</span> <span class="mi">2955</span><span class="p">,</span> <span class="mi">3019</span><span class="p">,</span> <span class="mi">3391</span><span class="p">,</span>
+    <span class="mi">2986</span><span class="p">,</span> <span class="mi">4042</span><span class="p">,</span> <span class="mi">3050</span><span class="p">,</span> <span class="mi">3617</span><span class="p">,</span> <span class="mi">2478</span><span class="p">,</span> <span class="mi">3361</span><span class="p">,</span> <span class="mi">2613</span>
+<span class="p">)</span>
+
+<span class="n">timeline</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;2015-01-01&quot;</span><span class="p">,</span> <span class="s2">&quot;2015-01-17&quot;</span><span class="p">,</span> <span class="s2">&quot;2015-02-02&quot;</span><span class="p">,</span> <span class="s2">&quot;2015-02-18&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;2015-03-06&quot;</span><span class="p">,</span> <span class="s2">&quot;2015-03-22&quot;</span><span class="p">,</span> <span class="s2">&quot;2015-04-07&quot;</span><span class="p">,</span> <span class="s2">&quot;2015-04-23&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;2015-05-09&quot;</span><span class="p">,</span> <span class="s2">&quot;2015-05-25&quot;</span><span class="p">,</span> <span class="s2">&quot;2015-06-10&quot;</span><span class="p">,</span> <span class="s2">&quot;2015-06-26&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;2015-07-12&quot;</span><span class="p">,</span> <span class="s2">&quot;2015-07-28&quot;</span><span class="p">,</span> <span class="s2">&quot;2015-08-13&quot;</span><span class="p">,</span> <span class="s2">&quot;2015-08-29&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;2015-09-14&quot;</span><span class="p">,</span> <span class="s2">&quot;2015-09-30&quot;</span><span class="p">,</span> <span class="s2">&quot;2015-10-16&quot;</span><span class="p">,</span> <span class="s2">&quot;2015-11-01&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;2015-11-17&quot;</span><span class="p">,</span> <span class="s2">&quot;2015-12-03&quot;</span><span class="p">,</span> <span class="s2">&quot;2015-12-19&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Faça um programa que:</p>
+<ul class="open">
+<li><p>Crie a série temporal do NDVI.</p></li>
+<li><p>Calcule a média do NDVI dessa série temporal.</p></li>
+<li><p>Obtenha o maior e menor valores de NDVI e escreva a data em que eles ocorrem.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Multiplique os valores das bandas <code class="docutils literal notranslate"><span class="pre">red</span></code> e <code class="docutils literal notranslate"><span class="pre">nir</span></code> por <code class="docutils literal notranslate"><span class="pre">0.0001</span></code>.</p>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Rodapé">
+        <a href="consideracoes.html" class="btn btn-neutral float-left" title="2.25. Considerações Finais" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="../jupyter.html" class="btn btn-neutral float-right" title="3. Jupyter" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2022, Gilberto Queiroz and Thales Körting.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+    <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165908761-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-165908761-1', {
+          'anonymize_ip': false,
+      });
+    </script> 
+
+</body>
+</html>

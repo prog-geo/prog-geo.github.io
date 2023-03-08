@@ -1,0 +1,199 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _sec_introducao_programacao_dicionarios:
+
+Dicionários
+===========
+
+
+Tipo de conjunto onde os valores são **indexados por chaves** que, em geral, são números inteiros ou strings. Também são denominados de **arrays associativos** ou **dicionários**. Trata-se de um tipo útil para criar objetos que agregam diversos valores que por sua vez podem ser referenciados por chaves específicas.
+
+
+Vamos representar um registro com informações sobre a cidade de *São Paulo*:
+
+
+.. code-block:: python
+    :linenos:
+    :caption: Criando um dicionário com informações da cidade de São Paulo.
+    :name: introd-prog:code:dict-sp
+
+    sao_paulo = {
+        "name" : "São Paulo",
+        "woeid" : 12582314,
+        "bounding-box" : ((-46.82, -24.00), (-46.36, -23.68)),
+        "country" : "Brazil"
+    }
+
+
+No :numref:`Trecho de Código %s <introd-prog:code:dict-sp>`, o objeto associado à variável (ou identificador) ``sao_paulo`` é um dicionário. Dicionários são objetos cujos elementos são delimitados por chaves (``{`` e ``}``) e separados por vírgula. Os elementos por sua vez, são pares pares *chave-valor*, separados pelo caractere ``:``. Nesse trecho de código, todas as chaves são representadas por strings, mas é possível utilizar valores de qualquer **tipo comparável** e que seja **imutável**. Isto significa que podemos utilizar como chaves, números inteiros, strings e tuplas (formadas por números e strings), mas não podemos utilizar listas. Além disso, as chaves devem ter valores únicos, uma vez que são usadas para identificar um valor associado. Repare também que os valores pertencem a tipos de dados variados:
+
+- ``name`` se refere à string ``São Paulo``;
+- ``woeid`` se refere a um número inteiro (``12582314``);
+- ``bounding-box`` se refere a uma tupla;
+- ``country`` a uma string (``Brazil``).
+
+
+Vamos criar dois novos dicionários com as localizações de São José dos Campos e Ouro Preto, respectivamente::
+
+    # São José dos Campos
+    sjc = {
+        "longitude": -45.88,
+        "latitude": -23.17
+    }
+
+
+.. code-block:: python
+
+    # Ouro Preto
+    ouro_preto = {
+        "longitude": -43.50,
+        "latitude": -20.38
+    }
+
+
+.. code-block::
+
+    >>> print(sjc)
+    {'longitude': -45.88, 'latitude': -23.17}
+
+
+Podemos acessar os valores individuais dos dicionários através do ``operador[]``::
+
+    >>> longitude = sjc["longitude"]
+    >>> print(longitude)
+    -45.88
+
+
+.. note::
+
+    Caso a chave informada não exista, o acesso ao item através do ``operador[]`` lança uma exceção do tipo `KeyError <https://docs.python.org/3/library/exceptions.html#KeyError>`_.
+
+
+Outra forma de acesso aos elementos de um dicionário é através do método ``get``::
+
+    >>> longitude = sjc.get("longitude")
+    >>> print(longitude)
+    -45.88
+
+
+.. note::
+
+    A diferença básica entre o ``operador[]`` e o método ``get``, é que o segundo permite informar um valor padrão (ou *default*) para ser usado caso a chave não seja encontrada. Além disso, o método ``get`` não lança exceção caso a chave não exista::
+
+        >>> altitude = sjc.get("altitude")
+        >>> print(altitude)
+        None
+
+
+    .. code-block:: python
+
+        >>> altitude = ouro_preto.get("altitude", 0.0)
+        >>> print(altitude)
+        0.0
+
+
+Dicionários são objetos mutáveis, isto é, pode-se alterar os valores associados às chaves, ou incluir novos pares chave-valor, ou remover elementos existentes::
+
+    >>> sjc["latitude"] = -20.379
+    >>> print(sjc)
+    {'longitude': -45.88, 'latitude': -20.379}
+
+
+.. code-block:: python
+
+    >>> del sjc["longitude"]
+    >>> print(sjc)
+    {'latitude': -20.379}
+
+
+.. code-block:: python
+
+    >>> sjc["longitude"] = -45.88
+    >>> print(sjc)
+    {'latitude': -20.379, 'longitude': -45.88}
+
+
+Podemos testar se uma chave encontra-se em um dicionário usando o operador ``in``::
+
+    >>> "longitude" in sjc
+    True
+
+
+De maneira análoga, podemos usar o operador ``not in``::
+
+    >>> "latitude" not in sjc
+    False
+
+
+Para saber o número de elementos em um dicionário, pode-se utilizar a função ``len``:
+
+    >>> len(sao_paulo)
+    4
+
+
+Se usarmos o construtor de listas com um dicionário como argumento, objetos uma lista com todos as chaves do dicionário na ordem em que elas foram incluídas::
+
+    >>> list(sao_paulo)
+    ['name', 'woeid', 'bounding-box', 'country']
+
+
+.. tip::
+
+    Se você quiser construir uma lista das chaves de maneira ordenada, use a função ``sorted``::
+
+        >>> list(sorted(sao_paulo))
+        ['bounding-box', 'country', 'name', 'woeid']
+
+
+Também podemos criar dicionários através do construtor ``dict`` informando uma sequência de pares chave-valor::
+
+    >>> dict([("xmin", -46.8254), ("ymin", -24.0084), ("xmax", -46.3648), ("ymax", -23.6830)])
+    {'xmin': -46.8254, 'ymin': -24.0084, 'xmax': -46.3648, 'ymax': -23.683}
+
+
+.. note::
+
+    Uma forma simplificada bastante empregada de criar dicionários é através pares de argumentos nomeados::
+
+        >>> dict( longitude=-45.88, latitude=-23.17)
+        {'longitude': -45.88, 'latitude': -23.17}
+
+
+.. note::
+
+    .. rst-class:: open
+
+    - Dicionários podem ser alterados (mutáveis).
+
+    - O dicionário vazio é representado por: ``d = {}``
+
+    - Uma chave em um dicionário pode estar associada a outro dicionário.
+
+    - Uma chave pode estar associada a uma lista.
+
+    - Não podemos usar listas como chaves, uma vez que podemos modificá-las.
+
+
+*Dict Comprehension*
+--------------------
+
+
+Podemos criar dicionários utilizando a notação de *dict comprehensions*::
+
+    >>> xs = [ 1, 2, 3, 4, 5 ]
+
+    >>> f = { x: (1.5 * x - 3) for x in xs }
+
+    >>> print(f)
+    {1: -1.5, 2: 0.0, 3: 1.5, 4: 3.0, 5: 4.5}
+
+    >>> print(f[3])
+    1.5
+
+
+.. note::
+
+    Para mais detalhes sobre a estrutura ``dict``, consulte :cite:`psf:stdlib:2021:i` e :cite:`psf:tut:2021:a`.

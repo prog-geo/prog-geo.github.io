@@ -1,0 +1,183 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _sec_visao_geral_ferramentas:
+
+Ferramentas
+===========
+
+
+Distribuição Python
+-------------------
+
+
+Se você quiser preparar o ambiente de trabalho no seu computador pessoal, você irá precisar de uma distribuição da linguagem Python. Atualmente, existem várias distribuições dessa linguagem. A considerada padrão encontra-se disponível no site da `Python Software Foundation <https://www.python.org>`_ (:numref:`Figura %s <visao-geral:ferramentas:psf>`), sendo disponibilizada para as plataformas Microsoft Windows, Linux e macOS.
+
+
+.. figure:: ../img/visao-geral/psf.png
+    :alt: Página principal da Python Software Foundation
+    :width: 100%
+    :figclass: align-center
+    :name: visao-geral:ferramentas:psf
+
+    Página principal da Python Software Foundation.
+
+
+Neste curso, recomendamos utilizar a distribuição Python da `Anaconda <https://www.anaconda.com/products/individual>`_ (:numref:`Figura %s <visao-geral:ferramentas:anaconda>`). Trata-se de uma distribuição completa que inclui não somente o interpretador Python mas também diversas bibliotecas e aplicativos para Data Science e Machine Learning. Esta distribuição também encontra-se disponível para Microsoft Windows, macOS e Linux. A versão que utilizaremos nesse curso será a ``Anaconda3-2020.11`` (Python 3.8).
+
+
+.. figure:: ../img/visao-geral/distribuicao-anaconda.png
+    :alt: Janela do Navegador Anaconda
+    :width: 100%
+    :figclass: align-center
+    :name: visao-geral:ferramentas:anaconda
+
+    Janela do **Navegador Anaconda**.
+
+
+.. note::
+
+    As instruções de como instalar o pacote Anaconda encontram-se disponíveis :ref:`aqui <sec_instalacao_anaconda>`.
+
+
+IDE
+---
+
+
+Assim como para escrever uma dissertação ou tese é necessário um bom editor de texto, para criação de programas também é necessário um bom editor. Só que esse editor precisa de capacidades diferentes das usuais. Enquanto um editor de texto tradicional se preocupa com os aspectos de apresentação do texto, como tipo de fonte, tamanho da fonte, cor, espaçamento entre linhas e parágrafos, disposição de figuras, correção ortográfica, geração de sumários, índices de palavras, referências cruzadas, entre outras; um bom editor para programas deve estar integrado à linguagem de programação que você deseja usar.
+
+
+Esse editor de programas deve ter recursos para destacar/realçar símbolos da linguagem usados para criação de programas. Na :numref:`Figura %s <visao-geral:ferramentas:ide-spyder>` podemos observar que os numerais ``3.14159`` e ``2`` encontram-se em vermelho escuro, as palavras ``def`` e ``return``, que são palavras chave da linguagem Python, encontram-se em azul, e as palavras ``Area`` e ``Circunference`` encontram-se em negrito.
+
+
+.. figure:: ../img/visao-geral/ide-spyder.png
+    :alt: Janela da IDE denominada Spyder
+    :width: 100%
+    :figclass: align-center
+    :name: visao-geral:ferramentas:ide-spyder
+
+    Janela da IDE denominada **Spyder**.
+
+
+Outro recurso importante é o de auto-completar nomes de variáveis e comandos. Isso é muito útil pois é difícil lembrar todos os nomes de comandos de uma linguagem e a forma correta de grafá-los. Sem  contar que à medida que um programa cresce teremos inúmeras variáveis. Portanto, ter algum recurso que ajude a lembrar esses nomes é imprescindível. Nessa figura, podemos ver que o que queremos lembrar nesse ponto em que estamos escrevendo o programa, é o nome da variável com informação do raio para poder calcular o cumprimento da circunferência. Ao digitar o prefixo ``ra`` o editor automaticamente nos fornece os nomes de variáveis e comandos com esse prefixo.
+
+
+Uma facilidade que em geral os editores de programas nos fornecem, é a capacidade de acompanhar a depuração dos programas, isto é, a possibilidade de examinar valores de variáveis durante a execução do programa. Existem inúmeras outras facilidades que devem ser fornecidas para a escrita de programas, como veremos ao longo do curso.
+
+
+Geralmente, chamamos esse ambiente de programação de **IDE** ou **Integrated Development Environment**, ou ambiente de desenvolvimento integrado. Será importante que você escolha um bom programa com esta finalidade para usar ao longo do curso.
+
+
+Spyder
+++++++
+
+
+A IDE apresentada na :numref:`Figura %s <visao-geral:ferramentas:ide-spyder>` é denominada **Spyder**, e já vem inclusa na distribuição Anaconda. Esta IDE possui diversos recursos, como o de auto-completar. Pode ser usada para depurar programas e se integra bem com o interpretador Python.
+
+
+Visual Studio Code
+++++++++++++++++++
+
+
+Outra IDE interessante é o `Visual Studio Code <https://code.visualstudio.com/>`_ (:numref:`Figura %s <visao-geral:ferramentas:ide-vscode>`), que também é software livre. Ele possui uma interface gráfica leve, disponível para todas as plataformas de sistema operacional e não fica nada a dever em relação ao Spyder.
+
+
+.. figure:: ../img/visao-geral/ide-vscode.png
+    :alt: Janela da IDE denominada Visual Studio Code
+    :width: 100%
+    :figclass: align-center
+    :name: visao-geral:ferramentas:ide-vscode
+
+    Janela da IDE denominada **Visual Studio Code**.
+
+
+PyCharm Community
++++++++++++++++++
+
+
+Outra IDE gratuita e com diversos recursos é o `PyCharm <https://www.jetbrains.com/pycharm/>`_ versão *Community* (:numref:`Figura %s <visao-geral:ferramentas:ide-pycharm>`).
+
+
+.. figure:: ../img/visao-geral/ide-pycharm.png
+    :alt: Janela da IDE denominada PyCharm Community
+    :width: 100%
+    :figclass: align-center
+    :name: visao-geral:ferramentas:ide-pycharm
+
+    Janela da IDE denominada **PyCharm Community**.
+
+
+.. note::
+
+    Como a proposta deste curso é ser um primeiro contato com a atividade de programação, nós achamos que a IDE com melhor compromisso de aprendizado de uso e funcionalidades é a PyCharm. Recomendamos utilizar a versão `PyCharm Community, 2020.3.3 <https://www.jetbrains.com/pycharm/download/>`_.
+
+
+.. note::
+
+    As instruções de como instalar o Pycharm encontram-se disponíveis :ref:`aqui <sec_instalacao_pycharm>`.
+
+.. note::
+
+    A IDE Visual Studio Code é muito poderosa. Nós achamos que essa IDE atende um perfil de programadores que já possuem alguma experiência de programação.
+
+
+.. note::
+
+    Você verá que o esforço de aprender a usar uma IDE é pequeno quando comprado à quantidade de benefícios, que incluem desde o ganho de produtividade na escrita dos programas até maior facilidade de verificação do funcionamento dos mesmos.
+
+
+Docker
+------
+
+
+O Docker é uma tecnologia baseada em código aberto para criação de contêiners de aplicações. Encontra-se disponível para Microsoft Windows 10, Linux e macOS. É uma tecnologia poderosa para pesquisa reprodutível, que combina muitos recursos, como virtualização de sistema operacional, reutilização e compartilhamento de componentes de software. O Docker permite encapsular todo o ambiente de software de forma a isolar o usuário da tarefa, muitas vezes árdua, de preparar o ambiente computacional original com todas as suas dependências. Embora neste curso não seja necessário utilizar essa tecnologia, nós iremos disponibilizar um material adicional com algumas informações de como utilizar o Docker no dia a dia. Para instalar o Docker, consulte a documentação oficial online, como mostrado abaixo.
+
+
+.. tabs::
+
+    .. tab:: Microsoft Windows
+
+        .. rst-class:: open
+
+        - `Install Docker Desktop on Windows 10 64-bit (Pro, Enterprise, or Education) <https://docs.docker.com/docker-for-windows/install/>`_.
+
+        - `Install Docker Desktop on Windows 10 Home <https://docs.docker.com/docker-for-windows/install-windows-home/>`_.
+
+    .. tab:: macOS
+
+        - `Install Docker Desktop on Mac <https://docs.docker.com/docker-for-mac/install/>`_.
+
+    .. tab:: Linux
+
+        - `Install Docker Engine on Ubuntu <https://docs.docker.com/engine/install/ubuntu/>`_.
+
+
+.. note::
+
+    As instruções de como instalar o Docker encontram-se disponíveis :ref:`aqui <sec_instalacao_docker>`.
+
+
+.. note::
+
+    Uma boa discussão sobre o uso do Docker no contexto de Ciência Aberta e Pesquisa Reprodutível pode ser encontrada em :cite:`boettiger:2015`.
+
+
+.. Baixe o `guia de preparação do ambiente <https://1drv.ms/b/s!AtoTP-MfEUEDgtpzOB9IZZfMptO3kA?e=luaWfD>`_.
+
+
+Google Colab
+------------
+
+
+Este ano utilizaremos o `Google Colab <https://colab.research.google.com/notebooks/intro.ipynb>`_ durante algumas aulas. Este aplicativo pode ser usado na janela do navegador e fornece um ambiente de computação interativa baseada na tecnologia Jupyter (:numref:`Figura %s <visao-geral:ferramentas:google-colab>`). Os documentos criados nessa ferramenta podem conter código e anotações textuais para ajudar a construir uma narrativa de uma pesquisa, ou de uma nota de aula ou algum processo computacional que se deseje compartilhar.
+
+
+.. figure:: ../img/visao-geral/google-colab.png
+    :alt: Janela do Google Colab
+    :width: 100%
+    :figclass: align-center
+    :name: visao-geral:ferramentas:google-colab
+
+    Janela do **Google Colab**.

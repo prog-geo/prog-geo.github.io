@@ -1,0 +1,104 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _sec_introducao_programacao_set:
+
+Conjuntos
+=========
+
+
+A linguagem Python fornece um tipo chamado ``set`` que permite construir conjuntos, isto é, coleções não ordenadas e sem elementos duplicados. Trata-se de uma estrutura adequada para operações sobre conjuntos: união, intersecção, diferença, e diferença simétrica.
+
+
+Um conjunto pode ser criado utilizando um par de chaves (``{`` e ``}``), com os elementos separados por vírgula::
+
+    >>> mg = { "Mariana", "Ouro Preto", "Ouro Branco" }
+
+    >>> rn = { "Ouro Branco", "Acari", "Caicó", "Cruzeta" }
+
+
+Para saber as cidades com mesmo nome nos dois conjuntos, utilizamos o operador ``&`` (intersecção)::
+
+    >>> mg & rn
+    {'Ouro Branco'}
+
+
+Para saber os nomes de cidades que são exclusivos de MG, utilizamos o operador ``-`` (diferença)::
+
+    >>> mg - rn
+    {'Mariana', 'Ouro Preto'}
+
+
+A união dos dois conjuntos pode ser obtida com o operador ``|``::
+
+    >>> mg | rn
+    {'Ouro Branco', 'Mariana', 'Cruzeta', 'Ouro Preto', 'Caicó', 'Acari'}
+
+
+Para saber os nomes de cidades exclusivos de MG e RN, podemos utilizar o operador de diferença simétrica ``^``::
+
+    >>> mg ^ rn
+    {'Cruzeta', 'Ouro Preto', 'Caicó', 'Acari', 'Mariana'}
+
+
+Para testar se um elemento encontra-se no conjunto, podemos utilizar o operador ``in``::
+
+    >>> "Ouro Preto" in mg
+    True
+
+
+Também podemos verificar se um dado elemento não pertence ao conjunto, através do operador ``not in``::
+
+    >>> "Perdizes" not in mg
+    True
+
+
+Para saber se dois conjuntos são disjuntos::
+
+    >>> mg.isdisjoint(rn)
+    False
+
+
+.. note::
+
+    Como o par de chaves (``{`` e ``}``) também é usado para criação de dicionários, somente pode ser criado um conjunto vazio usando o construtor ``set``::
+
+        >>> set()
+        set()
+
+
+    Repare que a representação textual do conjunto vazio também é especial, formada pelo texto: ``set()``.
+
+
+.. note::
+
+    O tipo ``set`` é muito utilizado para eliminação de duplicatas de uma sequência, além das operações de conjunto.
+
+
+.. note::
+
+    Existem dois tipos básicos de conjunto em Python: `set <https://docs.python.org/3/library/stdtypes.html#set>`_ e `frozenset <https://docs.python.org/3/library/stdtypes.html#frozenset>`_. O primeiro, é mutável, enquanto o último, imutável.
+
+
+*Set Comprehension*
+-------------------
+
+
+Exemplo::
+
+    >>> xs = [ 1, 2, 3, 4, 5 ]
+
+    >>> ys = { (1.5 * x - 3) for x in xs }
+
+    >>> type(ys)
+    <class 'set'>
+
+    >>> print(ys)
+    {0.0, 1.5, 3.0, 4.5, -1.5}
+
+
+.. note::
+
+    Para mais detalhes sobre a estrutura ``set``, consulte :cite:`psf:stdlib:2021:j` e :cite:`psf:tut:2021:c`.

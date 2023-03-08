@@ -1,0 +1,12 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. |br| raw:: html
+
+    <br/>
+
+
+.. role:: python(code)
+   :language: python

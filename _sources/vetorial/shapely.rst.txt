@@ -1,0 +1,658 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _sec_vetorial_shapely:
+
+Tipos Geométricos em Python
+===========================
+
+
+.. image:: ../img/vetorial/geometries.svg
+    :alt: Tipos Geométricos
+    :height: 75
+    :align: right
+
+
+A biblioteca Shapely fornece o modelo geométrico e as operações espaciais da OGC-SFS (:numref:`Seção %s <sec_vetorial_tipos_geometricos>`) com um estilo *Pythonico*. Ela utiliza a biblioteca C++ denominada GEOS para representação dos tipos geométricos bem como para as operações espaciais.
+
+
+Instalação
+----------
+
+
+Para realizar a instalação da Shapely com o gerenciador de pacotes da Anaconda, ative o ambiente virtual no qual deseja instalar a biblioteca e, em seguida, instale o pacote com o mesmo nome da biblioteca, como mostrado abaixo::
+
+    conda activate geospatial
+
+    conda install shapely
+
+
+Para verificar se sua instalação foi realizada com sucesso, importe a biblioteca e verifique sua versão:
+
+
+.. code-block:: ipython
+
+    In [1]: import shapely
+
+    In [2]: shapely.__version__
+    Out[2]: '1.7.1'
+
+
+.. note::
+
+    Você deverá instalar a versão 1.7.1 ou superior.
+
+
+Tipos Geométricos
+-----------------
+
+
+A biblioteca Shapely suporta os tipos geométricos da OGC-SFS: **Point**, **LineString**, **LinearRing**, **Polygon**, **MultiPoint**, **MultiLineString**, **MultiPolygon** e **GeometryCollection** (:numref:`Figura %s <fig:vetorial:tipos-geometricos:class-diagram>`).
+
+
+Como a biblioteca Shapely utiliza a GEOS, as operações suportadas não consideram a componente :math:`z` em suas análises. Além disso, os tipos geométricos dessa biblioteca utilizam números em ponto flutuante para representação das coordenadas dos seus elementos geométricos.
+
+
+Pontos (Point)
+++++++++++++++
+
+
+Para criar objetos do tipo ``Point`` é preciso importar esse tipo a partir do módulo ``geometry`` do pacote ``shapely``::
+
+    from shapely.geometry import Point
+
+
+O construtor de um objeto ``Point`` aceita um par de valores :math:`x` e :math:`y` e, opcionalmente, um valor de :math:`z`:
+
+
+.. code-block:: ipython
+
+    In [1]: pt = Point(5.0, 3.0)
+
+
+As coordenadas de um ponto podem ser acessadas através dos atributos ``x`` e ``y``:
+
+
+.. code-block:: ipython
+
+    In [1]: pt.x
+    Out[1]: 5.0
+
+
+.. code-block:: ipython
+
+    In [1]: pt.y
+    Out[1]: 3.0
+
+
+Em um jupyter notebook a expressão abaixo apresenta um figura representando o ponto:
+
+
+.. code-block:: ipython
+
+    In [1]: pt
+
+
+.. note::
+
+    O desenho mostrado acima é possível pois o ambiente Jupyter reconhece que a expressão acima pode ser apresentada por uma figura em SVG.
+
+
+Linhas (LineString)
++++++++++++++++++++
+
+
+Assim como o tipo ``Point``, o tipo ``LineString`` deve ser importado da seguinte forma::
+
+    from shapely.geometry import LineString
+
+
+O construtor de um objeto ``LineString`` aceita como argumento uma sequência de tuplas ``(x, y)`` ou ``(x, y, z)``:
+
+
+.. code-block:: python
+
+    line = LineString( [ (0, 0), (5, 2), (10, 9), (18, 10) ] )
+
+
+As coordenadas ``x`` e ``y`` dos vértices da linha podem ser acessados na forma de arrays:
+
+
+.. code-block:: python
+
+    line.xy
+
+
+Em um jupyter notebook a expressão abaixo apresenta um figura representando a linha:
+
+
+.. code-block:: python
+
+    line
+
+
+Uma linha possui comprimento:
+
+
+.. code-block:: python
+
+    line.length
+
+
+A fronteira da linha é formada pelos pontos inicial e final, portanto, por objetos :math:`0`-dimensional:
+
+
+.. code-block:: python
+
+    line.boundary
+
+
+Para acessar os elementos de uma linha podemos utilizar o atributo ``coords``:
+
+
+.. code-block:: python
+
+    for c in line.coords:
+        print(c)
+
+
+Podemos usar a notação de *slice* de sequências com objetos do tipo ``LineString``:
+
+
+.. code-block:: python
+
+    line.coords[0:2]
+
+
+.. code-block:: python
+
+    line.coords[1:]
+
+
+Anel (LinearRing)
++++++++++++++++++
+
+
+Para criar objetos do tipo ``LinearRing`` é preciso importar a classe ``LinearRing``::
+
+    from shapely.geometry import LinearRing
+
+
+O construtor de um objeto ``LinearRing`` aceita como argumento uma sequência de tuplas ``(x, y)`` ou ``(x, y, z)``::
+
+    anel = LinearRing( [ (0, 0), (10, 0), (10, 10), (0, 10), (0, 0) ] )
+
+
+.. note::
+
+    A sequência informada pode ser explicitamente fechada como no caso acima ou pode ser aberta. Neste último caso a sequência será implicitamente fechada.
+
+
+Assim como no caso de linhas, as coordenadas de um anel podem ser acessadas na forma de arrays:
+
+
+.. code-block:: python
+
+    anel.xy
+
+
+Em um jupyter notebook a expressão abaixo apresenta um figura representando o anel:
+
+
+.. code-block:: python
+
+    anel
+
+
+Um anel possui comprimento:
+
+
+.. code-block:: python
+
+    anel.length
+
+
+A fronteira de um anel é o conjunto vazio:
+
+
+.. code-block:: python
+
+    anel.boundary
+
+
+Polígonos
++++++++++
+
+
+Para criar objetos do tipo ``Polygon`` é preciso importar a classe ``Polygon``:
+
+
+.. code-block:: python
+
+    from shapely.geometry import Polygon
+
+
+O construtor de um objeto ``Polygon`` aceita dois argumentos. O primeiro, obrigatório, é uma sequência de tuplas ``(x, y)`` ou ``(x, y, z)`` que representa o anel externo do polígono. O segundo, opcional, é uma sequência de anéis e representa os anéis internos do polígono:
+
+
+.. code-block:: python
+
+    anel_externo = [ (0, 0), (10, 0), (10, 10), (0, 10), (0, 0) ]
+
+    anel_interno = [ (3, 3), (7, 3), (7, 7), (3, 7), (3, 3) ]
+
+    poly = Polygon(anel_externo, [anel_interno])
+
+
+O anel externo pode ser acessado através do operador ``exterior``:
+
+
+.. code-block:: python
+
+    poly.exterior
+
+
+Os anéis internos podem ser acessados através da propriedade ``interiors``:
+
+
+.. code-block:: python
+
+    poly.interiors
+
+
+.. code-block:: python
+
+    len(poly.interiors)
+
+
+.. code-block:: python
+
+    poly.interiors[0]
+
+
+.. code-block:: python
+
+    poly.interiors[0].xy
+
+
+Em um jupyter notebook a expressão abaixo apresenta um figura representando o polígono:
+
+
+.. code-block:: python
+
+    poly
+
+
+Um polígono possui comprimento:
+
+
+.. code-block:: python
+
+    poly.length
+
+
+Um polígono possui área:
+
+
+.. code-block:: python
+
+    poly.area
+
+
+A fronteira de um polígono é formada pelos anéis desse polígono, objetos :math:`1`-dimensional:
+
+
+.. code-block:: python
+
+    poly.boundary
+
+
+
+MultiPoint
+++++++++++
+
+
+Para criar objetos que representam coleções homogeneas de pontos é preciso importar a classe ``MultiPoint``:
+
+
+.. code-block:: python
+
+    from shapely.geometry import MultiPoint
+
+
+O construtor de um ``MultiPoint`` recebe como argumento uma sequência de valores ``(x, y)`` ou ``(x, y, z)``:
+
+
+.. code-block:: python
+
+    mpt = MultiPoint( [ (0, 0), (5, 5), (10, 0), (10, 10), (0, 10) ] )
+
+
+Em um jupyter notebook a expressão abaixo apresenta um figura representando a coleção de pontos:
+
+
+.. code-block:: python
+
+    mpt
+
+
+Os elementos da coleção podem ser acessados através da propriedade ``geoms``:
+
+
+.. code-block:: python
+
+    for pt in mpt.geoms:
+        print(pt.x, pt.y)
+
+
+MultiLineString
++++++++++++++++
+
+
+Para criar objetos que representam coleções homogeneas de linhas é preciso importar a classe ``MultiLineString``:
+
+
+.. code-block:: python
+
+    from shapely.geometry import MultiLineString
+
+
+O construtor de uma ``MultiLineString`` recebe como argumento uma sequência de linhas:
+
+
+.. code-block:: python
+
+    mline = MultiLineString( [ [ (0, 0), (8, 2), (13, 9) ],
+                               [ (21, 11), (30, -1) ] ])
+
+
+Em um jupyter notebook a expressão abaixo apresenta um figura representando a coleção de linhas:
+
+
+.. code-block:: python
+
+    mline
+
+
+Uma coleção de linhas possui comprimento:
+
+
+.. code-block:: python
+
+    mline.length
+
+
+A fronteira de uma coleção de linhas abertas é o conjunto de pontos inicial e final de cada linha, ou seja, objetos :math:`0`-dimensional:
+
+
+.. code-block:: python
+
+    mline.boundary
+
+
+Os elementos das coleção podem ser acessados através da propriedade ``geoms``:
+
+
+.. code-block:: python
+
+    for line in mline.geoms:
+        print(line)
+
+
+MultiPolygon
+++++++++++++
+
+
+Para criar objetos que representam coleções homogeneas de polígonos é preciso importar a classe ``MultiPolygon``:
+
+
+.. code-block:: python
+
+    from shapely.geometry import MultiPolygon
+
+
+O construtor de um ``MultiPolygon`` recebe como argumento uma sequência de polígonos:
+
+
+.. code-block:: python
+
+    mpoly = MultiPolygon(
+             [
+               [
+                   [ (0, 0), (16, 0), (16, 10), (0, 10), (0, 0) ],
+                   [
+                       [ (3, 1), (7, 1), (5, 7), (3, 1) ],
+                       [ (8, 1), (12, 1), (10, 9), (8, 1) ]
+                   ]
+               ],
+               [
+                   [ (20, 0), (25, 0), (22, 10), (20, 0) ],
+                   []
+               ]
+             ] )
+
+
+Em um jupyter notebook a expressão abaixo apresenta um figura representando a coleção de polígonos:
+
+
+.. code-block:: python
+
+    mpoly
+
+
+O mesmo polígono acima pode ser construído de forma mais clara criando os polígonos intermediários e depois criando a coleção:
+
+
+.. code-block:: python
+
+    # Definição do primeiro polígono
+    shell_1 = LinearRing( [ (0, 0), (16, 0), (16, 10), (0, 10), (0, 0) ] )
+
+    hole_11 = LinearRing( [ (3, 1), (7, 1), (5, 7), (3, 1) ] )
+    hole_12 = LinearRing( [ (8, 1), (12, 1), (10, 9), (8, 1) ] )
+
+    poly_1 = Polygon( shell_1, [ hole_11, hole_12 ] )
+
+
+.. code-block:: python
+
+    # Definição do segundo polígono
+    shell_2 = LinearRing( [ (20, 0), (25, 0), (22, 10), (20, 0) ] )
+
+    poly_2 = Polygon(shell_2)
+
+
+.. code-block:: python
+
+    mpoly = MultiPolygon( [ poly_1, poly_2 ] )
+
+
+.. code-block:: python
+
+    mpoly
+
+
+Uma coleção de polígonos possui comprimento:
+
+
+.. code-block:: python
+
+    mpoly.length
+
+
+Uma coleção de polígonos possui area:
+
+
+.. code-block:: python
+
+    mpoly.area
+
+
+A fronteira de uma coleção de polígonos é formada pelos anéis desses polígonos, objetos :math:`1`-dimensional:
+
+
+.. code-block:: python
+
+    mpoly.boundary
+
+
+Relacionamentos Espaciais
+-------------------------
+
+
+Qual o relacionamento espacial entre o ponto de coordenadas ``(2, 3)`` e a linha formada pelas coordenadas ``(1 1, 0 3, 4 3)``?
+
+
+.. code-block:: python
+
+    pt = Point(2, 3)
+
+
+    line = LineString( [ (1, 1), (0, 3), (4, 3) ] )
+
+
+O operador ``relate`` pode ser utilizado para determinar a matriz de intersecções, conforme discutido na **seção x.x.x**:
+
+
+.. code-block:: python
+
+    pt.relate(line)
+
+
+Podemos também usar esse operador tomando a linha como o objeto da operação e o ponto como argumento:
+
+
+.. code-block:: python
+
+    line.relate(pt)
+
+
+A linha contém o ponto?
+
+
+.. code-block:: python
+
+    line.contains(pt)
+
+
+A linha toca o ponto?
+
+
+.. code-block:: python
+
+    line.touches(pt)
+
+
+A linha cruza o ponto?
+
+
+.. code-block:: python
+
+    line.crosses(pt)
+
+
+A linha possui alguma interação espacial com o ponto?
+
+
+.. code-block:: python
+
+    line.intersects(pt)
+
+
+A linha definida anteriormente possui qual relacionamento com o polígono de coordenadas ``(1 2, 1 4, 3 4, 3 2, 1 2)``?
+
+
+.. code-block:: python
+
+    poly = Polygon( [(1, 2), (1, 4), (3, 4), (3, 2), (1, 2)] )
+
+
+.. code-block:: python
+
+    line.relate(poly)
+
+
+.. code-block:: python
+
+    line.intersects(poly)
+
+
+.. code-block:: python
+
+    line.crosses(poly)
+
+
+A linha ``(2 1, 2 2, 3 1)`` toca o polígono anterior?
+
+
+.. code-block:: python
+
+    l2 = LineString( [ (2, 1), (2, 2), (3, 1) ] )
+
+    poly.touches(l2)
+
+
+Operações de Conjunto
+---------------------
+
+
+.. code-block:: python
+
+    p1 = Polygon( [ (1, 2), (1, 4), (3, 4), (3, 2), (1, 2) ] )
+
+    p2 = Polygon( [ (2, 1), (2, 3), (4, 3), (4, 1), (2, 1) ] )
+
+    g = p1.intersection(p2)
+
+    g.wkt
+
+
+.. code-block:: python
+
+    g = p1.union(p2)
+
+    g.wkt
+
+
+.. code-block:: python
+
+    g = p1.difference(p2)
+
+    g.wkt
+
+
+.. code-block:: python
+
+    g = p1.symmetric_difference(p2)
+
+    g.wkt
+
+
+Formatos
+--------
+
+
+OGC WKT (Well-Known Text)
++++++++++++++++++++++++++
+
+
+.. code-block:: python
+
+    line.wkt
+
+
+.. code-block:: python
+
+    pt.wkt
+
+
+.. code-block:: python
+
+    poly.wkt
+
+
+.. code-block:: python
+
+    g.wkt

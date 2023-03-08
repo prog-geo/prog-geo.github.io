@@ -1,0 +1,100 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../def.rst
+
+
+.. _sec_introducao_programacao_variaveis:
+
+Variáveis
+=========
+
+
+Um programa, além de manipular **valores constantes** ou **literais**, também manipula o que chamamos de **variáveis**. Cada **variável** corresponde a uma posição de memória cujo conteúdo pode variar ao longo do tempo de execução de um programa. Uma **variável** possui **um nome** usado como **identificador** e, em geral, é **associada** com um **tipo de dado**.
+
+
+Considere o seguinte trecho de código:
+
+
+.. code-block:: python
+
+    >>> x = 5.2
+
+    >>> y = 5
+
+    >>> nome = "Gilberto Ribeiro"
+
+
+Vamos supor um sistema com endereços de memória de 32-bit, como mostrado na :numref:`Figura %s <introd-prog:fig:variaveis>`. Após a execução da última linha acima, teremos os nomes ``x``, ``y`` e ``nome`` associados aos endereços de células na memória como mostrado nessa figura.
+
+
+.. figure:: ../img/introducao-programacao/variaveis.png
+    :alt: Variáveis
+    :width: 100%
+    :figclass: align-center
+    :name: introd-prog:fig:variaveis
+
+    Variáveis.
+
+
+Atribuição
+----------
+
+
+A atribuição é um comando que associa um valor de um determinado tipo de dados a uma variável. Essa associação pode também ser o resultado de uma expressão. Portanto, este comando possui a seguinte forma:
+
+
+.. figure:: ../img/introducao-programacao/atribuicao.png
+    :alt: Atribuição
+    :figclass: align-center
+
+
+.. note::
+
+    Os **tipos de dados** nos **abstraem** da **representação interna**, destacada na figura anterior pela forma de representação dos valores na memória do computador.
+
+
+.. note::
+
+    O conceito de **variável**, nos **abstrai** da necessidade de lembrarmos das **posições de memória** onde armazenamos **valores**.
+
+
+Regra para Nomes de Variáveis
+-----------------------------
+
+
+Cada linguagem de programação possui suas regras para nomenclatura das variáveis, inclusive para dizer se há diferenças entre nomes de variáveis com letras maiúsculas e minúsculas. Em Python, os **identificadores** (ou **nomes**) de variáveis podem ser qualquer cadeia de caracteres formada por letras, dígitos e *underscore*, desde que não comece com um dígito. Além disso, existe a distinção entre caracteres maiúsculos e minúsculos.
+
+
+
+Variáveis e Atribuições
+-----------------------
+
+
+.. code-block:: python
+
+    >>> a = 2
+    >>> b = a * 3
+    >>> A = 5
+
+    >>> print(a)
+    2
+
+    >>> print(b)
+    6
+
+    >>> print(A)
+    5
+
+    >>> a = 18
+
+    >>> print(a)
+    18
+
+    >>> print(b)
+    6
+
+    >>> print(A)
+    5

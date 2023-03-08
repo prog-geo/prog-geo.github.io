@@ -1,0 +1,34 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _sec_jupyter_numeracao_in_out:
+
+Histórico dos Comandos e Resultados
+===================================
+
+
+O terminal interativo padrão do Python mantém o resultado de uma expressão avaliada sem associação a um nome específico com uma variável chamada ``_`` (um sublinhado simples). No entanto, cada novo resultado acaba por sobrescrever esse resultado. O terminal do IPython e os ambientes Jupyter utilizam um sistema de numeração para as entradas e saídas: ``In [N]`` e ``Out[N]``. Todas as saídas podem ser acessadas através do nome ``_N``. O :numref:`Trecho de Código %s <jupyter:code:numeracao-celulas>` mostra como funciona esse recurso:
+
+
+.. code-block:: ipython
+    :caption:  Histórico dos comandos de entrada e resultados.
+    :name: jupyter:code:numeracao-celulas
+
+    In [1]: seq_fibonacci = [1, 1, 2, 3, 5, 8, 13, 21]
+
+    In [2]: seq_fibonacci
+    Out[2]: [1, 1, 2, 3, 5, 8, 13, 21]
+
+    In [3]: _i2
+    Out[3]: 'seq_fibonacci'
+
+    In [4]: _i3
+    Out[4]: '_i2'
+
+
+Como pode ser visto no trecho de código, os comandos de entrada podem ser acessados através dos padrões ``_i<n>`` ou ``_ih[<n>]`` ou ``In[<n>]``. A entrada ``1`` pode ser acessada da seguinte forma: ``_i1`` ou ``_ih[1]`` ou ``In[1]``.
+
+
+A mágica ``%history`` fornece acesso ao histórico de comandos e resultados.

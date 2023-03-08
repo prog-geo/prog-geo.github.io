@@ -1,0 +1,67 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _cap_imagens:
+
+Imagens - Processamento e Visualização
+======================================
+
+
+Para facilitar o entendimento sobre as propriedades de uma imagem, vamos ver de maneira simples como as imagens de Sensoriamento Remoto óptico são geradas.
+
+
+.. raw:: html
+
+    <iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/eFW8tV38We0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <br/>
+    <br/>
+
+
+Uma imagem (comumente chamada de *raster*) pode ser armazenada de diferentes formas, uma delas é através do armazenamento individual: um *raster* independente para cada banda. Neste caso, cada arquivo possui metadados independentes. Os metadados de um arquivo incluem informações sobre o sistema de coordenadas geoespacial, limites geográficos, dimensões e o tipo de dados associado aos pixels da imagem. Veja por exemplo as imagens do ``CBERS-04A`` (:numref:`Figura %s <imagens:fig:raster-unica-banda>`):
+
+.. rst-class:: open
+
+- ``CBERS_4A_WPM_20200612_200_139_L4_BAND1.tif``: Banda 1 (azul).
+
+- ``CBERS_4A_WPM_20200612_200_139_L4_BAND2.tif``: Banda 2 (verde).
+
+- ``CBERS_4A_WPM_20200612_200_139_L4_BAND3.tif``: Banda 3 (vermelho).
+
+
+.. figure:: img/imagens/raster-unica-banda.png
+    :alt: Um raster independente para cada banda
+    :width: 100%
+    :figclass: align-center
+    :name: imagens:fig:raster-unica-banda
+
+    Um raster independente para cada banda.
+
+
+Outra maneira consiste em armazenar diversas bandas no mesmo arquivo. Neste caso, o conjunto de metadados vale para todas as bandas. Por exemplo, é possível gerar um raster contendo as bandas 1, 2, 3 e 4 do ``CBERS-04A`` em um único arquivo ``GeoTIFF`` (:numref:`Figura %s <imagens:fig:raster-multiplas-bandas>`):
+
+- ``CBERS_4A_WPM_20200612_200_139_L4_BANDS1234.tif``
+
+.. figure:: img/imagens/raster-multiplas-bandas.png
+    :alt: Um arquivo com múltiplas bandas
+    :width: 60%
+    :figclass: align-center
+    :name: imagens:fig:raster-multiplas-bandas
+
+    Um arquivo com múltiplas bandas.
+
+
+.. note::
+
+    A associação de cores nas Figuras :numref:`%s <imagens:fig:raster-unica-banda>` e :numref:`%s <imagens:fig:raster-multiplas-bandas>` é apenas ilustrativa. Um *raster* pode ter qualquer número de bandas, desde que suportado pelo seu formato.
+
+
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+    :caption: Tópicos
+
+    ./imagens/gdal
+    ./imagens/numpy
+    ./imagens/visualizacao

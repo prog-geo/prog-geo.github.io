@@ -1,0 +1,36 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../def.rst
+
+
+.. _sec_introducao_programacao_keywords:
+
+Palavras-chave
+==============
+
+
+Os seguintes identificadores encontram-se definidos na linguagem Python como **palavras reservadas** ou **palavras-chave** da linguagem e, portanto, não podem ser usadas como identificadores em nossos programas (:numref:`Tabela %s <introd-prog:tbl:keywords>`):
+
+
+.. table:: Lista de palavras-chave da linguagem Python. |br| **Fonte:** The Python Language Reference :cite:`psf:reference:2021:e`.
+    :align: center
+    :name: introd-prog:tbl:keywords
+
+    +--------+----------+---------+----------+--------+
+    | False  | await    | else    | import   | pass   |
+    +--------+----------+---------+----------+--------+
+    | None   | break    | except  | in       | raise  |
+    +--------+----------+---------+----------+--------+
+    | True   | class    | finally | is       | return |
+    +--------+----------+---------+----------+--------+
+    | and    | continue | for     | lambda   | try    |
+    +--------+----------+---------+----------+--------+
+    | as     | def      | from    | nonlocal | while  |
+    +--------+----------+---------+----------+--------+
+    | assert | del      | global  | not      | with   |
+    +--------+----------+---------+----------+--------+
+    | async  | elif     | if      | or       | yield  |
+    +--------+----------+---------+----------+--------+

@@ -1,0 +1,63 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../def.rst
+
+
+.. _sec_visao_geral_monitoria:
+
+Monitoria
+=========
+
+
+.. |foto-leo| image:: ../img/visao-geral/leo.png
+
+
+.. |foto-marcos| image:: ../img/visao-geral/marcos.png
+
+
+.. table::
+    :widths: 40 60
+    :width: 100%
+    :align: center
+    :column-alignment: center justify
+
+    +----------------------------------------+--------------------------------------------------------------------------------------+
+    | |foto-leo|                             | Bacharel em Ciência da Computação pelo Instituto Federal de Educação, Ciência e      |
+    |                                        | Tecnologia do Sul de Minas Gerais, IFSULDEMINAS - Câmpus Muzambinho (2016). Mestre   |
+    | **Leonardo de Souza Vieira             | em Computação Aplicada pelo Instituto Nacional de Pesquisas Espaciais (2019).        |
+    | (Doutorando/INPE)**                    | |br| |br|                                                                            |
+    |                                        | Atualmente é doutorando no programa de pós-graduação em Computação Aplicada do       |
+    |                                        | Instituto Nacional de Pesquisas Espaciais (INPE). Tem experiência nas áreas de       |
+    |                                        | Inteligência Artificial, Visão Computacional, Robótica e Sensoriamento Remoto.       |
+    +----------------------------------------+--------------------------------------------------------------------------------------+
+
+
+
+.. table::
+    :widths: 60 40
+    :width: 100%
+    :align: center
+    :column-alignment: justify center
+
+    +-------------------------------------------------------------------------------------+--------------------------------+
+    | Formação:                                                                           | |foto-marcos|                  |
+    |                                                                                     |                                |
+    | .. container:: li-left-align                                                        |                                |
+    |                                                                                     |                                |
+    |   - Bacharel em Computação Científica (UNITAU)                                      | **Marcos Lima Rodrigues        |
+    |   - Especialista em Tec. e Sistemas de Informação (UFABC)                           | (Doutorando/INPE)**            |
+    |   - Mestre em Computação Aplicada (INPE)                                            |                                |
+    |   - Doutorando em Computação Aplicada (INPE)                                        |                                |
+    |                                                                                     |                                |
+    | Experiência:                                                                        |                                |
+    |                                                                                     |                                |
+    | .. container:: li-left-align                                                        |                                |
+    |                                                                                     |                                |
+    |   - Iniciação Científica (DCTA)                                                     |                                |
+    |   - Divisão de Satélites e Sistemas Ambientais (DSA/CPTEC/INPE)                     |                                |
+    |   - Centro Nacional de Monitoramento e Alertas de Desastres Naturais (CEMADEN)      |                                |
+    |   - Divisão de Processamento de Imagens (DPI/OBT/INPE)                              |                                |
+    +-------------------------------------------------------------------------------------+--------------------------------+

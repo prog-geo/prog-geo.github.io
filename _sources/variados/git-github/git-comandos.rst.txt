@@ -1,0 +1,620 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _sec_variados_git_github_git_comandos:
+
+Trabalhando com o git e o GitHub
+================================
+
+
+Instalando o git
+----------------
+
+
+Para seguir os passos desta seção, você precisará ter o ``git`` instalado. Consulte `esta página <https://git-scm.com/downloads>`_ para baixar o instalador para sua plataforma. Se você quiser se apronfundar no uso do ``git``, veja :cite:`chacon:2021`.
+
+
+.. tabs::
+
+    .. tab:: macOS
+
+
+        O macOS já vem com o ``git`` instalado.
+
+
+    .. tab:: Linux
+
+
+        Na maioria das distribuições Linux, você pode utilizar o próprio gerenciador de pacotes para instalar o ``git``. Por exemplo, no Linux Ubuntu o seguinte comando realiza a instalação do ``git``::
+
+            sudo apt-get install git
+
+
+Clonando o repositório ser-347
+------------------------------
+
+
+Para trabalharmos com o nosso código, precisamos de uma cópia do repositório remoto, localizado no endereço ``https://github.com/gilberto-queiroz/ser-347``, em nosso sistema local. Para isso, podemos utilizar o comando ``git clone`` para realizar essa cópia. Abra um terminal de comandos e vá para uma pasta onde você possa copiar o repositório. Em seguida, utilize o comando ``git clone`` como indicado abaixo:
+
+
+.. code-block:: shell
+
+    git clone https://github.com/gilberto-queiroz/ser-347
+
+
+.. note::
+
+    Substitua no endereço acima, o nome de usuário ``gilberto-queiroz`` pelo seu, bem como o nome do seu repositório.
+
+
+Ao clonar o repositório, você terá uma cópia completa em sua máquina local. Utilize o comando ``ls`` para listar os arquivos da sua pasta corrente:
+
+.. code-block:: shell
+
+    ls
+
+
+.. note::
+
+    No Microsoft Windows, você poderá utilizar o comando ``dir``.
+
+
+O comando acima apresentará uma saída similar à apresentada abaixo::
+
+    ser-347
+
+
+O diretório ``ser-347`` conterá uma cópia local completa do seu repositório remoto do GitHub. Utilize o comando ``cd`` para alterar o diretório corrente para a pasta ``ser-347``, como mostrado abaixo:
+
+
+.. code-block:: shell
+
+    cd ser-347
+
+
+Neste diretório, podemos verificar os arquivos existentes:
+
+
+.. code-block:: shell
+
+    ls
+
+
+O comando acima apresentará uma saída similar à mostrada abaixo::
+
+    LICENSE  README.md
+
+
+Para obter a lista completa de arquivos, inclusive os ocultos, utilize a opção ``-a`` como indicado abaixo:
+
+
+.. code-block:: shell
+
+    ls -a
+
+
+.. note::
+
+    No Microsoft Windows, você poderá utilizar o comando ``dir /ah``.
+
+
+Dessa vez, o comando ``ls`` apresentará a seguinte saída::
+
+    .  ..  .git  .gitignore  LICENSE  README.md
+
+
+Na listagem acima:
+
+- O diretório ``.git`` contém informações de configuração e da estrutura do seu repositório local, informações essas usadas pelo próprio ``git``. Não iremos discutir a estrutura desse diretório.
+
+- O arquivo ``.gitignore`` é um arquivo texto comum, que contém em cada linha o nome de um arquivo, diretório ou padrão de nomenclatura dos arquivos e diretórios qua não devam ser tratados pelo ``git``. Como escolhemos um ``template`` para repositórios de código baseados na linguagem ``Python``, temos este arquivo com um conteúdo semelhante ao apresentado abaixo::
+
+        # Byte-compiled / optimized / DLL files
+        __pycache__/
+        *.py[cod]
+        *$py.class
+
+        # C extensions
+        *.so
+
+        # Distribution / packaging
+        .Python
+        build/
+        develop-eggs/
+        dist/
+        downloads/
+        eggs/
+        .eggs/
+        ...
+        # mypy
+        .mypy_cache/
+        .dmypy.json
+        dmypy.json
+
+        # Pyre type checker
+        .pyre/
+
+- O arquivo ``License`` contém uma declaração baseada em um ``template`` de licença ``MIT``.
+
+- O arquivo ``README.md`` contém texto utilizando a sintaxe `Markdown <https://guides.github.com/features/mastering-markdown/>`_:
+
+
+.. code-block:: md
+
+        # ser-347
+        Projeto da Disciplina SER-347
+
+
+A :numref:`Figura %s <git:clone-ser-347>` mostra um resumo dos comandos utilizados até aqui.
+
+
+.. figure:: ../../img/variados/git-clone-ser-347.png
+    :alt: Clonando o repositório ser-347
+    :width: 640
+    :figclass: align-center
+    :name: git:clone-ser-347
+
+    Clonando o repositório ``ser-347``.
+
+
+Verificando o ``status`` do repositório
+---------------------------------------
+
+
+O comando ``git status`` apresenta como se encontra nosso repositório em relação à possíveis modificações:
+
+
+.. code-block:: shell
+
+    git status
+
+
+No repositório ``ser-347``, o comando acima produzirá uma saída como mostrada abaixo::
+
+    On branch master
+    Your branch is up to date with 'origin/master'.
+
+    nothing to commit, working tree clean
+
+
+Modificando um arquivo no repositório ``ser-347``
+-------------------------------------------------
+
+
+Se modificarmos o conteúdo do arquivo ``README.md``, conforme mostrado na listagem abaixo:
+
+
+.. code-block:: md
+
+    # SER-347 - Projeto Final
+
+    Este repositório contém o código fonte do trabalho
+    final da disciplina SER-347.
+
+    ## Contexto e Objetivos
+
+    Uma breve descrição do projeto e seus objetivos...
+
+    ## Organização do Repositório
+
+    Nesta seção explicamos a organização usada para
+    os códigos e dados disponibilizados neste trabalho.
+
+    ## Referências
+
+    Alguns links e textos interessantes sobre o projeto...
+
+
+Ao verificarmos o ``status`` do nosso repositório, através do seguinte comando:
+
+
+.. code-block:: shell
+
+    git status
+
+
+obtemos a informação abaixo:
+
+
+.. code-block:: text
+    :emphasize-lines: 8
+    :linenos:
+
+    On branch master
+    Your branch is up to date with 'origin/master'.
+
+    Changes not staged for commit:
+      (use "git add <file>..." to update what will be committed)
+      (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   README.md
+
+    no changes added to commit (use "git add" and/or "git commit -a")
+
+
+Vamos discutir a saída acima:
+
+- Na ``linha 01`` o ``git`` nos informa que estamos trabalhando num ``ramo`` (``branch``) chamado ``master``. O conceito de ``ramos`` (``branches``) é muito importante para operação com o ``git``. Todo o conteúdo do nosso repositório pode ser visto em uma árvore (``tree``) com ramificações (``branches``) contendo diferenças (ou modificações) no conteúdo dos arquivos. Todo repositório criado irá possuir um ramo principal, denominado ``master``. Podemos criar novos ``ramos`` derivados de qualquer ponto da árvore com o histórico do nosso repositório.
+
+- A ``linha 02`` indica que nosso repositório está atualizado em relação à sua ``origem`` no ramo ``master`` (``origin/master``).
+
+- A ``linha 08`` indica que o arquivo chamado ``README.md`` encontra-se modificado em relação à versão existente no repositório local mantido pelo ``git``. Se quisermos desfazer a modificação, basta utilizar o comando ``git checkout`` como indicado na ``linha 06``. Para informar que o arquivo deve ser atualizado no repositório local, devemos usar o comando ``git add`` (sugestão da ``linha 05``).
+
+
+Vamos utilizar o comando ``git checkout`` para desfazer a modificação do arquivo ``README.md`` e voltar o seu conteúdo para o que existia no repositório local:
+
+
+.. code-block:: shell
+
+    git checkout -- README.md
+
+
+O comando acima fará com que o conteúdo do arquivo ``README.md`` volte a ser:
+
+.. code-block:: md
+
+    # ser-347
+    Projeto da Disciplina SER-347
+
+
+Repare também, que o ``status`` do seu repositório é de que nada foi modificado:
+
+
+.. code-block:: shell
+
+    git status
+
+
+.. code-block:: text
+
+    On branch master
+    Your branch is up to date with 'origin/master'.
+
+    nothing to commit, working tree clean
+
+
+Altere mais uma vez o conteúdo do arquivo ``README.md`` para o seguinte:
+
+
+.. code-block:: md
+
+    # SER-347 - Projeto Final
+
+    Este repositório contém o código fonte do trabalho
+    final da disciplina SER-347.
+
+    ## Contexto e Objetivos
+
+    Uma breve descrição do projeto e seus objetivos...
+
+    ## Organização do Repositório
+
+    Nesta seção explicamos a organização usada para
+    os códigos e dados disponibilizados neste trabalho.
+
+    ## Referências
+
+    Alguns links e textos interessantes sobre o projeto...
+
+
+O ``status`` do seu repositório irá indicar que o arquivo ``README.md`` foi modificado:
+
+.. code-block:: shell
+
+    git status
+
+
+.. code-block:: text
+    :emphasize-lines: 8
+    :linenos:
+
+    On branch master
+    Your branch is up to date with 'origin/master'.
+
+    Changes not staged for commit:
+      (use "git add <file>..." to update what will be committed)
+      (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   README.md
+
+    no changes added to commit (use "git add" and/or "git commit -a")
+
+
+Desta vez, vamos incluir este arquivo na lista a ser confirmada sobre atualizações para o nosso repositório local:
+
+
+.. code-block:: shell
+
+    git add README.md
+
+
+.. code-block:: shell
+
+    git status
+
+
+Como pode ser visto:
+
+
+.. code-block:: text
+    :emphasize-lines: 7
+    :linenos:
+
+    On branch master
+    Your branch is up to date with 'origin/master'.
+
+    Changes to be committed:
+      (use "git reset HEAD <file>..." to unstage)
+
+        modified:   README.md
+
+
+O arquivo ``README.md`` agora faz parte da lista de arquivos a serem confirmados (``committed``) sobre sua modifcação.
+
+
+Nesse ponto, podemos usar o comando ``git commit`` para confirmar e salvar todas as modificações realizadas até aqui na estrutura dos arquivos do nosso repositório:
+
+
+.. code-block:: shell
+
+    git commit -m "Primeira versão do arquivo README.md"
+
+
+No comando acima, a opção ``-m`` permite adicionar uma descrição que será associada ao registro da moficação realizada. Em geral, colocamos um texto que nos ajude a lembrar a modificação realizada.
+
+
+A saída do ``git commit`` será algo parecido com::
+
+    [master 2c270dc] Primeira versão do arquivo README.md
+     1 file changed, 17 insertions(+), 2 deletions(-)
+     rewrite README.md (100%)
+
+
+mostrando que as diferenças entre o arquivo atual e sua última versão no repositório local foram devidamente registradas.
+
+
+Se novamente verificarmos o ``status`` do repositório:
+
+
+.. code-block:: shell
+
+    git status
+
+
+veremos que não há mais nada modificado na cópia do nosso repositório local, mas que ele está à frente do orginal (``origin/master``), em ``01 commit``:
+
+
+.. code-block:: text
+    :emphasize-lines: 2
+
+    On branch master
+    Your branch is ahead of 'origin/master' by 1 commit.
+      (use "git push" to publish your local commits)
+
+    nothing to commit, working tree clean
+
+
+Sincronizando sua cópia local com o repositório remoto
+------------------------------------------------------
+
+Agora que nosso repositório local contém uma modificação que ainda não se encontra no repositório remoto do ``GitHub``, vamos sincronizar nossa cópia com a do GitHub.
+
+
+Primeiro devemos garantir que nossa cópia local esteja realmente atualizada com a remota. Podemos fazer isso com o comando ``git pull``:
+
+
+.. code-block:: shell
+
+    git pull
+
+
+Se nada tiver sido alterado no repositório remoto, o comando acima produzirá uma mensagem como a mostrada abaixo::
+
+    Already up to date.
+
+
+Agora, podemos atualizar o repositório remoto com as nossas modificações locais:
+
+
+.. code-block:: shell
+
+    git push
+
+
+O comando acima pedirá seu usuário e senha do GitHub::
+
+    Username for 'https://github.com': gilberto-queiroz
+    Password for 'https://gilberto-queiroz@github.com':
+
+
+Em seguida à informação das credenciais, o comando irá informar o seguinte::
+
+    Counting objects: 3, done.
+    Delta compression using up to 4 threads.
+    Compressing objects: 100% (3/3), done.
+    Writing objects: 100% (3/3), 533 bytes | 533.00 KiB/s, done.
+    Total 3 (delta 1), reused 0 (delta 0)
+    remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+    To https://github.com/gilberto-queiroz/ser-347
+       e8c3404..2c270dc  master -> master
+
+
+Ao final, você poderá ir ao GitHub e ver as modificações no seu repositório remoto, conforme mostrado na :numref:`Figura %s <github:push>`:
+
+
+.. figure:: ../../img/variados/github-push.png
+    :alt: Repositório ser-347 com o arquivo README.md atualizado
+    :width: 640
+    :figclass: align-center
+    :name: github:push
+
+    Repositório ``ser-347`` com o arquivo ``README.md`` atualizado.
+
+
+Adicionando um novo arquivo ao repositório ``ser-347``
+------------------------------------------------------
+
+
+Vamos criar um novo arquivo, chamado ``fatorial.py``, com o seguinte conteúdo:
+
+
+.. code-block:: python
+
+    def Fatorial(num):
+        produto = 1
+
+        while(num > 0):
+            produto = produto * num
+
+            num = num - 1
+
+        return produto
+
+
+Agora, verifique o ``status`` de seu repositório local:
+
+
+.. code-block:: shell
+
+     git status
+
+
+O programa produzirá uma saída como a mostrada abaixo:
+
+.. code-block:: text
+    :emphasize-lines: 7
+
+    On branch master
+    Your branch is up to date with 'origin/master'.
+
+    Untracked files:
+      (use "git add <file>..." to include in what will be committed)
+
+        fatorial.py
+
+    nothing added to commit but untracked files present (use "git add" to track)
+
+
+Como mostrado, seu repositório local continua sincronizado com o remoto, porém o ``git`` já detectou a existência de um novo arquivo chamado ``fatorial.py``. Você deverá decidir se deseja incluí-lo como parte do seu repositório. Se quiser incluí-lo, precisará utilizar o comando ``git add`` como mostrado abaixo:
+
+
+.. code-block:: shell
+
+    git add fatorial.py
+
+
+O status do seu repositório estará agora como indicado abaixo:
+
+
+.. code-block:: shell
+
+    git status
+
+
+.. code-block:: text
+    :emphasize-lines: 7
+
+    On branch master
+    Your branch is up to date with 'origin/master'.
+
+    Changes to be committed:
+      (use "git reset HEAD <file>..." to unstage)
+
+        new file:   fatorial.py
+
+
+Agora, podemos confirmar a inclusão desse arquivo no repositório local:
+
+
+.. code-block:: shell
+
+    git commit -m "Adicionando uma função para cálculo do fatorial"
+
+
+Saída::
+
+    [master 1e6c2e8] Adicionando uma função para cálculo do fatorial
+     1 file changed, 9 insertions(+)
+     create mode 100644 fatorial.py
+
+
+O ``status`` do repositório agora é o seguinte:
+
+
+.. code-block:: shell
+
+    git status
+
+
+.. code-block:: text
+    :emphasize-lines: 3
+    :linenos:
+
+    On branch master
+    Your branch is ahead of 'origin/master' by 1 commit.
+      (use "git push" to publish your local commits)
+
+    nothing to commit, working tree clean
+
+
+Para levar as modificações do repositório local para o repositório remoto no GitHub, podemo usar o comando indicado na ``linha 03`` acima:
+
+
+.. code-block:: shell
+
+    git push
+
+
+O comando acima pedirá suas credneciais do GitHub::
+
+    Username for 'https://github.com': gilberto-queiroz
+    Password for 'https://gilberto-queiroz@github.com':
+
+
+E, em seguida, apresentará o resultado da operação:
+
+
+.. code-block:: text
+
+    Counting objects: 3, done.
+    Delta compression using up to 4 threads.
+    Compressing objects: 100% (3/3), done.
+    Writing objects: 100% (3/3), 379 bytes | 379.00 KiB/s, done.
+    Total 3 (delta 1), reused 0 (delta 0)
+    remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+    To https://github.com/gilberto-queiroz/ser-347
+       2c270dc..1e6c2e8  master -> master
+
+
+
+
+
+Visualizando o histórico de modificações de um arquivo
+------------------------------------------------------
+
+TO BE DONE!
+
+
+Trabalhando com ``forks`` de um repositório
+-------------------------------------------
+
+TO BE DONE!
+
+
+Fazendo o ``fork`` de um repositório
+++++++++++++++++++++++++++++++++++++
+
+TO BE DONE!
+
+
+Sincronizando seu ``fork``
+++++++++++++++++++++++++++
+
+TO BE DONE!
+
+Fazendo um pull-request
++++++++++++++++++++++++
+
+TO BE DONE!

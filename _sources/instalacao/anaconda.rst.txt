@@ -1,0 +1,100 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _sec_instalacao_anaconda:
+
+Anaconda
+========
+
+
+Linux
+-----
+
+
+**1.** Faça o download da versão `Anaconda3-2020.11 <https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh>`_.
+
+
+**2.** Verifique a integridade do arquivo baixado::
+
+    echo "cf2ff493f11eaad5d09ce2b4feaa5ea90db5174303d5b3fe030e16d29aeef7de Anaconda3-2020.11-Linux-x86_64.sh" | sha256sum --check
+
+
+O comando acima deve produzir algo como::
+
+    Anaconda3-2020.11-Linux-x86_64.sh: OK
+
+
+.. note::
+
+    O valor ``f2ff493f11eaad5d09ce2b4feaa5ea90db5174303d5b3fe030e16d29aeef7de`` é um código gerado por meio de um algoritmo *hash* de criptografia, ``SHA-256``, aplicado ao arquivo original disponível no site da Anaconda. Este código pode ser obtido na seguinte página: `Hashes for Anaconda3-2020.11-Linux-x86_64.sh <https://docs.anaconda.com/anaconda/install/hashes/Anaconda3-2020.11-Linux-x86_64.sh-hash/>`_.
+
+
+**3.** No terminal do Linux, inicie o instalador através do comando abaixo::
+
+    bash ~/Downloads/Anaconda3-2020.11-Linux-x86_64.sh
+
+
+O comando acima irá fazer algumas perguntas. Colocamos abaixo algumas sugestôes, que você deverá substituir como desejado::
+
+    Do you accept the license terms? [yes|no]
+    [no] >>> yes
+
+    Anaconda3 will now be installed into this location:
+    /home/gribeiro/anaconda3
+
+      - Press ENTER to confirm the location
+      - Press CTRL-C to abort the installation
+      - Or specify a different location below
+
+    [/home/gribeiro/anaconda3] >>>
+    PREFIX=/home/gribeiro/anaconda3
+    Unpacking payload ...
+
+    ...
+
+    Do you wish the installer to initialize Anaconda3
+    by running conda init? [yes|no]
+    [no] >>> yes
+
+
+Ao final, uma mensagem como a mostrada abaixo será apresentada::
+
+    ==> For changes to take effect, close and re-open your current shell. <==
+
+    If you'd prefer that conda's base environment not be activated on startup,
+       set the auto_activate_base parameter to false:
+
+    conda config --set auto_activate_base false
+
+    Thank you for installing Anaconda3!
+
+    ===========================================================================
+
+
+Para testar a instalação, abra um novo terminal e digite o comando abaixo::
+
+    conda activate
+
+
+O prompt do seu sistema deverá ser alterado para algo como::
+
+    (base) gribeiro@enghaw-2021:~$
+
+
+Apenas como um teste, tente listar os ambientes disponíveis no seu sistema::
+
+    conda info --envs
+
+
+Algo semelhante ao exibido abaixo deverá ser apresentado::
+
+    # conda environments:
+    #
+    base                  *  /home/gribeiro/anaconda3
+
+
+.. note::
+
+    Para maiores detalhes sobre o processo de instalação no Linux, consulte a seção `Installing on Linux <https://docs.anaconda.com/anaconda/install/linux/>`_, no manual da Anaconda.

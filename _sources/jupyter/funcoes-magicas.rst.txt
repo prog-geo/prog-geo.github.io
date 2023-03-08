@@ -1,0 +1,226 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _sec_jupyter_comandos_magicos:
+
+Funções Mágicas
+===============
+
+
+O IPython possui um conjunto pré-definido de funções chamadas de **funções mágicas** (*magic functions*), que podem ser usadas com um estilo de chamada de comandos em linha. Existem dois tipos de **mágicas** (*magics*): **por linha** (*line magics*) e **por célula** (*cell magics*). As **mágicas por linha** são prefixadas pelo caractere ``%`` e, tratam todos os valores após o comando até o final da linha como argumentos. A função mágica de linha ``%timeit``, mostrada no :numref:`Trecho de Código %s <code:jupyter:funcoes-magicas:timeit-line-magic>`, computa o tempo médio para execução de um comando ou expressão Python.
+
+
+.. code-block:: ipython
+    :caption: Função mágica de linha ``%timeit``.
+    :name: code:jupyter:funcoes-magicas:timeit-line-magic
+
+    In [1]: %timeit range(1000)
+    161 ns ± 2.55 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+
+
+.. note::
+
+    As funções mágicas também funcionam nos ambientes do JupyterLab e Jupyter Notebook.
+
+
+Se você quiser obter mais informações sobre uma função mágica, utilize o caractere ``?`` após o nome da mágica (:numref:`Trecho de Código %s <code:jupyter:funcoes-magicas:help-line-magic>`). Uma descrição da função será apresentada, como mostrado na :numref:`Figura %s <fig:jupyter:funcoes-magicas:terminal-ipython-magic-help>`.
+
+
+.. code-block:: ipython
+    :caption: Obtendo informações sobre a função mágica de linha ``%timeit``.
+    :name: code:jupyter:funcoes-magicas:help-line-magic
+
+    In [1]: %timeit?
+
+
+.. figure:: ../img/jupyter/terminal-ipython-magic-help.png
+    :alt: Ajuda sobre a função mágica %timeit no terminal IPython
+    :width: 100%
+    :figclass: align-center
+    :name: fig:jupyter:funcoes-magicas:terminal-ipython-magic-help
+
+    Ajuda sobre a função mágica ``%timeit`` no terminal IPython.
+
+
+Para obter informações sobre o sistema de funções mágicas, podemos usar ``%magic``:
+
+
+.. code-block:: ipython
+
+    In [1]: %magic
+
+
+Esse comando fará com que a ajuda sobre o sistema de funções mágicas seja apresentada, como mostrado na :numref:`Figura %s <fig:jupyter:funcoes-magicas:terminal-ipython-magic>`.
+
+
+.. figure:: ../img/jupyter/terminal-ipython-magic.png
+    :alt: Ajuda sobre o sistema de funções mágicas do IPython
+    :width: 100%
+    :figclass: align-center
+    :name: fig:jupyter:funcoes-magicas:terminal-ipython-magic
+
+    Ajuda sobre o sistema de funções mágicas do IPython.
+
+
+A lista completa de funções mágicas pode ser obtida através da mágica ``%lsmagic``:
+
+
+.. code-block:: ipython
+
+    In [1]: %lsmagic
+    Out[1]:
+    Available line magics:
+    %alias  %alias_magic  %autoawait  %autocall  %autoindent  %automagic  %bookmark  %cat  %cd  %clear  %colors  %conda  %config  %cp  %cpaste  %debug  %dhist  %dirs  %doctest_mode  %ed  %edit  %env  %gui  %hist  %history  %killbgscripts  %ldir  %less  %lf  %lk  %ll  %load  %load_ext  %loadpy  %logoff  %logon  %logstart  %logstate  %logstop  %ls  %lsmagic  %lx  %macro  %magic  %man  %matplotlib  %mkdir  %more  %mv  %notebook  %page  %paste  %pastebin  %pdb  %pdef  %pdoc  %pfile  %pinfo  %pinfo2  %pip  %popd  %pprint  %precision  %prun  %psearch  %psource  %pushd  %pwd  %pycat  %pylab  %quickref  %recall  %rehashx  %reload_ext  %rep  %rerun  %reset  %reset_selective  %rm  %rmdir  %run  %save  %sc  %set_env  %store  %sx  %system  %tb  %time  %timeit  %unalias  %unload_ext  %who  %who_ls  %whos  %xdel  %xmode
+
+    Available cell magics:
+    %%!  %%HTML  %%SVG  %%bash  %%capture  %%debug  %%file  %%html  %%javascript  %%js  %%latex  %%markdown  %%perl  %%prun  %%pypy  %%python  %%python2  %%python3  %%ruby  %%script  %%sh  %%svg  %%sx  %%system  %%time  %%timeit  %%writefile
+
+    Automagic is ON, % prefix IS NOT needed for line magics.
+
+
+As **mágicas por célula** são prefixadas pela sequência de caracteres ``%%`` e, funcionam como comandos que tomam como argumentos todos os valores seguintes na sua linha bem como das demais linhas de sua célula. Para ilustrar esse tipo de comando, vamos utilizar o comando ``%%timeit``, que permitirá tomar o tempo de um bloco de comandos Python:
+
+
+.. code-block:: ipython
+
+    In [1]: %%timeit
+       ...: fahr = list(range(32, 101))
+       ...: celsius = [ 5 * (f - 32) / 9 for f in fahr]
+       ...:
+    4.18 µs ± 149 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+
+
+Comandos Úteis
+--------------
+
+
+A mágica ``%run`` permite executar um *script* Python e carregar todas as suas definições no ambiente interativo. Faça o *download* do *script* :download:`haversine.py <../code/variados/modulos/haversine.py>` e coloque-o na pasta onde você está executando seu ambiente IPython ou `Jupyter`. Este *script* computa a distância na esfera para duas localizações, segundo a fórmula de Haversine. O :numref:`Trecho de Código %s <code:jupyter:funcoes-magicas:run-line-magic>` mostra como executar este *script* e computar a distância entre os pontos :math:`(0, 0)` e :math:`(0, 1)`.
+
+
+.. code-block:: ipython
+    :caption: Usando a mágica ``%run`` para executar um *script*.
+    :name: code:jupyter:funcoes-magicas:run-line-magic
+
+    In [1]: %run haversine.py 0 0 0 1
+    111.19492664455873
+
+
+A mágica ``%load`` permite carregar o código fonte em uma célula (:numref:`Trecho de Código %s <code:jupyter:funcoes-magicas:load-line-magic>`):
+
+
+.. code-block:: ipython
+    :caption: Usando a mágica ``%load`` para carregar o código no ambiente `IPython` ou `Jupyter`.
+    :name: code:jupyter:funcoes-magicas:load-line-magic
+
+    In [1]: %load haversine.py
+
+
+Assim que o comando acima é executado, o código contido no arquivo ``haversine.py`` é carregado na célula e a linha original da mágica é automaticamente comentada:
+
+
+.. code-block:: ipython
+
+    In [1]: # %load Modules/haversine.py
+       ...: """Distância de Haversine.
+       ...:
+       ...: A fórmula de Haversine possibilita o cálculo de distâncias entre
+       ...: dois pontos em uma esfera a partir de suas latitudes e longitudes.
+       ...:
+       ...: Este módulo contém uma função chamada ``DistanciaHaversive``
+       ...: que implementa esse cálculo.
+       ...: """
+       ...:
+       ...: import math
+       ...:
+       ...:
+       ...: # Raio da Terra: 6371km
+       ...: raio_terra = 6371
+       ...:
+       ...:
+       ...: def DistanciaHaversine(lat1, long1, lat2, long2):
+       ...:     """Computa a distância entre dois pontos na esfera.
+       ...:
+       ...:     O cálculo de distância é baseado na fórmula de Haversine.
+       ...:
+       ...:     Args:
+       ...:         lat1 (float): latitude do primeiro pronto, em graus decimais.
+       ...:         long1 (float): longitude do primeiro pronto, em graus decimais.
+       ...:         lat2 (float): latitude do segundo pronto, em graus decimais.
+       ...:         long3 (float): longitude do segundo pronto, em graus decimais.
+       ...:
+       ...:     Returns:
+       ...:         float:
+       ...:     """
+       ...:     # Covertendo de graus decimais para radianos
+       ...:     ϕ1  = math.radians(lat1)
+       ...:     ϕ2 = math.radians(lat2)
+       ...:
+       ...:     λ1 = math.radians(long1)
+       ...:     λ2 = math.radians(long2)
+       ...:
+       ...:     # Pré-computando alguns valores da fórmula de Haversine
+       ...:     Δϕ = ϕ2 - ϕ1
+       ...:     Δλ = λ2 - λ1
+       ...:
+       ...:     sin2_fi = math.sin(Δϕ / 2.0) ** 2
+       ...:
+       ...:     sin2_lambda = math.sin(Δλ / 2.0) ** 2
+       ...:
+       ...:     # Computando a distância de Haversine
+       ...:     distancia = 2.0 * raio_terra \
+       ...:                 * math.asin(
+       ...:                     math.sqrt(
+       ...:                         sin2_fi + math.cos(ϕ1) \
+       ...:                         * math.cos(ϕ2) * sin2_lambda
+       ...:                     )
+       ...:                   )
+       ...:
+       ...:     # Retornando a distância computada
+       ...:     return distancia
+       ...:
+       ...: if __name__ == "__main__":
+       ...:     import sys
+       ...:
+       ...:     if len(sys.argv) > 1:
+       ...:         print(DistanciaHaversine(
+       ...:                 float(sys.argv[1]), float(sys.argv[2]),
+       ...:                 float(sys.argv[3]), float(sys.argv[4])
+       ...:               )
+       ...:         )
+       ...:
+
+
+No ambiente JupyterLab ou Jupyter Notebook, a mágica de célula ``%%HTML`` permite incluir vídeos do Youtube, como mostrado na :numref:`Figura %s <fig:jupyter:funcoes-magicas:magic-html>`.
+
+
+.. figure:: ../img/jupyter/magic-html.png
+    :alt: Embutindo um vídeo através da mágica %%HTML
+    :width: 100%
+    :figclass: align-center
+    :name: fig:jupyter:funcoes-magicas:magic-html
+
+    Embutindo um vídeo através da mágica ``%%HTML``.
+
+
+.. note::
+
+    No caso das funções mágicas **de linha** é possível omitir o prefixo ``%``, desde que o nome da função não esteja definido na tabela de símbolos em uso pelo seu cliente IPython. Exemplo:
+
+
+    .. code-block:: ipython
+
+        In [1]: timeit range(1000)
+        148 ns ± 2.65 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+
+
+.. note::
+
+    Para ativar ou desativar o recurso que permite as mágicas de linha serem chamadas sem o caractere ``%``, pode-se usar a função mágica ``%automagic``.
+
+
+.. tip::
+
+    Consulte o Notebook Jupyter com `exemplo de mágicas <http://nbviewer.ipython.org/urls/raw.github.com/ipython/ipython/1.x/examples/notebooks/Cell%20Magics.ipynb>`_.
+

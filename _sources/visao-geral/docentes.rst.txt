@@ -1,0 +1,112 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../def.rst
+
+
+.. _sec_visao_geral_docentes:
+
+Docentes
+========
+
+
+.. |foto-gribeiro| image:: ../img/visao-geral/gribeiro.png
+
+
+.. |foto-tkorting| image:: ../img/visao-geral/tkorting.png
+
+
+.. |foto-fabiano| image:: ../img/visao-geral/fabiano.png
+
+
+.. table::
+    :widths: 50 50
+    :width: 100%
+    :align: center
+    :column-alignment: center justify
+
+    +----------------------------------------+--------------------------------------------------------------------------------------+
+    | |foto-gribeiro|                        | Gilberto é tecnologista sênior do Instituto Nacional de Pesquisas Espaciais (INPE).  |
+    |                                        | Possui mestrado e doutorado em Computação Aplicada.                                  |
+    | **Gilberto Ribeiro de Queiroz (INPE)** | Trabalha com projetos  de pesquisa e desenvolvimento relacionados às geotecnologias  |
+    |                                        | que apoiam as atividades do Programa de Monitoramento da Amazônia e Demais Biomas    |
+    |                                        | Brasileiros.                                                                         |
+    |                                        | |br| |br|                                                                            |
+    |                                        | Desde de 2016 é docente permanente de Geoinformática e Ciência de Dados Geoespaciais |
+    |                                        | no curso de pós-graduação em Computação Aplicada do INPE.                            |
+    |                                        | Atualmente é um dos coordenadores do projeto                                         |
+    |                                        | `Brazil Data Cube <http://brazildatacube.org>`_ e suas áreas de                      |
+    |                                        | pesquisa incluem computação aplicada aos desafios do sensoriamento remoto para       |
+    |                                        | criação de mapas de uso e cobertura da terra e plataformas de *bigdata* na área      |
+    |                                        | geoespacial.                                                                         |
+    |                                        | |br| |br|                                                                            |
+    |                                        | Outros cursos ministrados em colaboração :                                           |
+    |                                        |                                                                                      |
+    |                                        | .. container:: li-left-align                                                         |
+    |                                        |                                                                                      |
+    |                                        |   - CAP-349 - Bancos de Dados Geográficos                                            |
+    |                                        |   - CAP-395 - Geoinformática                                                         |
+    |                                        |   - CAP-394 - Introdução à Ciência de Dados                                          |
+    |                                        |   - CAP-423 - Ciência de Dados Geoespaciais                                          |
+    +----------------------------------------+--------------------------------------------------------------------------------------+
+
+
+.. table::
+    :widths: 50 50
+    :width: 100%
+    :align: center
+    :column-alignment: justify center
+
+    +-------------------------------------------------------------------------------------+--------------------------------+
+    | Thales é pesquisador no Instituto Nacional de  Pesquisas Espaciais (INPE),          | |foto-tkorting|                |
+    | doutor em Sensoriamento Remoto, com mestrado em Computação Aplicada                 |                                |
+    | (ambos títulos obtidos no INPE). Também é Engenheiro de Computação pela             | **Thales Sehn Körting (INPE)** |
+    | Universidade Federal do Rio Grande (FURG).                                          |                                |
+    | |br| |br|                                                                           |                                |
+    | Trabalha com segmentação e classificação de imagens de sensoriamento remoto,        |                                |
+    | análise multitemporal, mineração de dados e inteligência artificial.                |                                |
+    | É docente permanente nos cursos de pós-graduação em Sensoriamento Remoto            |                                |
+    | e Computação Aplicada do INPE.                                                      |                                |
+    | |br| |br|                                                                           |                                |
+    | Outros cursos ministrados em colaboração:                                           |                                |
+    |                                                                                     |                                |
+    | .. container:: li-left-align                                                        |                                |
+    |                                                                                     |                                |
+    |   - SER-411 - Tópicos Avançados em Processamento  de Imagens                        |                                |
+    |   - SER-413 - Processamento Digital de Imagens de Sensores Remotos                  |                                |
+    |   - SER-415 - Detecção e Análise de Padrões de Mudanças de Uso e Cobertura da Terra |                                |
+    |   - CAP-421 - Aprendizado Profundo                                                  |                                |
+    |   - CAP-423 - Ciência de Dados Geoespaciais                                         |                                |
+    +-------------------------------------------------------------------------------------+--------------------------------+
+
+
+.. table::
+    :widths: 50 50
+    :width: 100%
+    :align: center
+    :column-alignment: center justify
+
+    +----------------------------------------+--------------------------------------------------------------------------------------+
+    | |foto-fabiano|                         | Fabiano é tecnologista sênior do Instituto Nacional de Pesquisas Espaciais (INPE).   |
+    |                                        | Oceanógrafo, possui mestrado em Sensoriamento Remoto pelo INPE e doutorado em        |
+    | **Fabiano Morelli (INPE)**             | Ciências pelo ITA.                                                                   |
+    |                                        | |br| |br|                                                                            |
+    |                                        | Trabalha com projetos relacionados ao monitoramento ambiental                        |
+    |                                        | realizando pesquisa e desenvolvimento com o tema fogo, dados meteorológicos e        |
+    |                                        | ambientais, que são utilizados em diferentes áreas de aplicação.                     |
+    |                                        | |br| |br|                                                                            |
+    |                                        | É colaborador nos avanços da plataforma TerraMA\ :sup:`2`.                           |
+    |                                        | |br| |br|                                                                            |
+    |                                        | |br| |br|                                                                            |
+    |                                        | |br| |br|                                                                            |
+    |                                        | |br| |br|                                                                            |
+    |                                        | |br|                                                                                 |
+    |                                        | |br|                                                                                 |
+    |                                        | |br|                                                                                 |
+    |                                        | |br|                                                                                 |
+    |                                        | |br|                                                                                 |
+    |                                        | |br|                                                                                 |
+    |                                        | |br|                                                                                 |
+    +----------------------------------------+--------------------------------------------------------------------------------------+

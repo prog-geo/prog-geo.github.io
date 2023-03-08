@@ -1,0 +1,1096 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../def.rst
+
+
+.. _sec_vetorial_tipos_geometricos:
+
+Tipos Geométricos
+=================
+
+
+Modelo Geométrico
+-----------------
+
+
+Atualmente, o modelo geométrico e as operações espaciais encontradas nos diversos sistemas geoespaciais são baseados na especificação conhecida por **OGC Simple Features** :cite:`herring:2011:a`, :cite:`herring:2011:b`. Essa especificação padroniza o nome e as definições dos tipos geométricos bem como a semântica das operações espaciais, em especial, os relacionamentos espaciais (ou topológicos). Iremos nos referir a essa especificação com a sigla **OGC-SFS**.
+
+
+A :numref:`Figura %s <fig:vetorial:tipos-geometricos:class-diagram>` apresenta o modelo geométrico definido na *OGC-SFS*.
+
+
+.. figure:: ../img/vetorial/tipos-geometricos/sfs-class-diagram.png
+    :alt: Diagrama de classes do modelo geométrico da OGC Simple Features
+    :width: 100%
+    :figclass: align-center
+    :name: fig:vetorial:tipos-geometricos:class-diagram
+
+    Diagrama de classes do modelo geométrico da *OGC Simple Features*. |br| **Fonte:** Adaptada de :cite:`herring:2011:a`.
+
+
+Como pode ser observado, são definidas classes para representações de objetos geométricos na forma de pontos, curvas, superfícies e coleções geométricas. Além disso, todos os tipos geométricos estão associados a um **sistema de referência espacial**, que é usado para descrever o sistema de coordenadas no qual o objeto geométrico encontra-se definido.
+
+
+Os objetos geométricos definidos por essa hierarquia de classes pode existir no espaço :math:`R^2`, :math:`R^3` ou :math:`R^4`. Geometrias no :math:`R^2` possuem pontos com valores de coordenadas em :math:`x` e :math:`y`. Geometrias no :math:`R^3` possuem pontos com valores de coordenadas em :math:`x`, :math:`y` e :math:`z` ou :math:`x`, :math:`y` e :math:`m`. Geometrias no :math:`R^4` possuem pontos com valores de coordenadas em :math:`x`, :math:`y`, :math:`z` e :math:`m`. Em geral, a coordenada :math:`m` representa algum tipo de medida.
+
+
+A :numref:`Tabela %s <tbl:vetorial:tipos-geometricos:modelo-ilustrado>` ilustra graficamente objetos associados aos tipos geométricos representados pelas classes do diagrama da :numref:`Figura %s <fig:vetorial:tipos-geometricos:class-diagram>`.
+
+
+.. |ogc-geom-point| image:: ../img/vetorial/tipos-geometricos/ogc-geom-point.png
+
+
+.. |ogc-geom-linestring| image:: ../img/vetorial/tipos-geometricos/ogc-geom-linestring.png
+
+
+.. |ogc-geom-linearring| image:: ../img/vetorial/tipos-geometricos/ogc-geom-linearring.png
+
+
+.. |ogc-geom-polygon| image:: ../img/vetorial/tipos-geometricos/ogc-geom-polygon.png
+
+
+.. |ogc-geom-polygon-with-hole| image:: ../img/vetorial/tipos-geometricos/ogc-geom-polygon-with-hole.png
+
+
+.. |ogc-geom-multipoint| image:: ../img/vetorial/tipos-geometricos/ogc-geom-multipoint.png
+
+
+.. |ogc-geom-multilinestring| image:: ../img/vetorial/tipos-geometricos/ogc-geom-multilinestring.png
+
+
+.. |ogc-geom-multipolygon| image:: ../img/vetorial/tipos-geometricos/ogc-geom-multipolygon.png
+
+
+.. |ogc-geom-geometrycollection| image:: ../img/vetorial/tipos-geometricos/ogc-geom-geometrycollection.png
+
+
+.. table:: Exemplos dos tipos geométricos da OGC-SFS.
+    :widths: 33 33 33
+    :width: 100%
+    :align: center
+    :name: tbl:vetorial:tipos-geometricos:modelo-ilustrado
+
+    +--------------------+--------------------------------+-----------------------+
+    |  ( a ) ``Point``   | ( b ) ``LineString``           | ( c ) ``LinearRing``  |
+    +====================+================================+=======================+
+    | |ogc-geom-point|   | |ogc-geom-linestring|          | |ogc-geom-linearring| +
+    +--------------------+--------------------------------+-----------------------+
+
+
+.. table::
+    :widths: 33 33 33
+    :width: 100%
+    :align: center
+
+    +--------------------+---------------------------------+-----------------------+
+    | ( d ) ``Polygon``  | ( e ) ``Polygon`` (com buracos) | ( f ) ``MultiPoint``  |
+    +====================+=================================+=======================+
+    | |ogc-geom-polygon| | |ogc-geom-polygon-with-hole|    | |ogc-geom-multipoint| |
+    +--------------------+---------------------------------+-----------------------+
+
+
+.. table::
+    :widths: 33 33 33
+    :width: 100%
+    :align: center
+
+    +----------------------------+-------------------------+-------------------------------+
+    | ( g ) ``MultiLineString``  | ( h ) ``MultiPolygon``  | ( i ) ``GeometryCollection``  |
+    +============================+=========================+===============================+
+    | |ogc-geom-multilinestring| | |ogc-geom-multipolygon| | |ogc-geom-geometrycollection| |
+    +----------------------------+-------------------------+-------------------------------+
+
+
+O tipo ``Point`` (:numref:`Figura %s <fig:vetorial:tipos-geometricos:class-diagram>` e :numref:`Tabela %sa <tbl:vetorial:tipos-geometricos:modelo-ilustrado>`) representa pontos no espaço :math:`R^2`, :math:`R^3` ou :math:`R^4`. Um ponto é um objeto geométrico :math:`0`-dimensional (dimensão topológica), isto é, não possui comprimento, largura, altura, ou volume, representando uma única localização no sistema de coordenadas. A fronteira de um ponto é o conjunto vazio. Em geral, utilizamos esse tipo de geometria para representar atributos de feições associadas a ocorrências ou eventos, como incidência de crimes ou doenças.
+
+
+O tipo ``Curve`` (:numref:`Figura %s <fig:vetorial:tipos-geometricos:class-diagram>`) representa a imagem contínua de uma linha. Uma curva é um objeto geométrico :math:`1`-dimensional (dimensão topológica), isto é, possui comprimento mas não possui largura, altura, ou volume. Em geral, utilizamos elementos geométricos das subclasses de ``Curve`` para representar entidades lineares tais como rodovias, linhas de transmissão de energia elétrica, dutos, arruamentos, entre outras. Uma curva pode conter coordenadas com :math:`m` ou :math:`z`.
+
+
+A subclasse ``LineString`` representa linhas com interpolação linear entre pontos consecutivos (:numref:`Figura %s <fig:vetorial:tipos-geometricos:class-diagram>` e :numref:`Tabela %sb <tbl:vetorial:tipos-geometricos:modelo-ilustrado>`). A fronteira de uma **linha aberta** é definida como sendo os pontos extremos dessa linha. O primeiro ponto é chamado de *ponto inicial* (*start point*) e o último ponto da sequência, *ponto final* (*end point*).
+
+
+A subclasse ``LinearRing`` representa linhas fechadas, denominadas anéis, cujo ponto inicial e final são coincidentes (:numref:`Figura %s <fig:vetorial:tipos-geometricos:class-diagram>` e :numref:`Tabela %sc <tbl:vetorial:tipos-geometricos:modelo-ilustrado>`). A fronteira de um anel é definida como o conjunto vazio. Essa classe é o bloco básico para construção de polígonos (classe ``Polygon``).
+
+
+O tipo ``Surface`` representa objetos geométricos :math:`2`-dimensional (dimensão topológica), isto é, objetos que possuem área (largura e altura) mas não possuem volume. Esse tipo geométrico pode ser utilizado para representar entidades discretas como áreas de cultivo, unidades de conservação florestal, divisões territoriais, entre outras.
+
+
+A subclasse ``Polygon`` representa polígonos que podem ser formados por um anel externo e zero ou mais anéis internos (buracos ou ilhas). A :numref:`Tabela %sd <tbl:vetorial:tipos-geometricos:modelo-ilustrado>` representa um polígono formado apenas por um anel, que é o anel externo. O polígono mostrado na :numref:`Tabela %se <tbl:vetorial:tipos-geometricos:modelo-ilustrado>` representa um polígono formado por um anel externo e um anel interno. A fronteira de um polígono é definida como sendo o conjunto de todos os anéis que o delimitam.
+
+
+O diagrama da :numref:`Figura %s <fig:vetorial:tipos-geometricos:class-diagram>` ainda contém classes que representam coleções de geometrias. As classes ``MultiPoint``, ``MultiLineString`` e ``MultiPolygon`` representam, respectivamente, coleções homogêneas de pontos (:numref:`Tabela %sf <tbl:vetorial:tipos-geometricos:modelo-ilustrado>`), linhas (:numref:`Tabela %sg <tbl:vetorial:tipos-geometricos:modelo-ilustrado>`) e polígonos (:numref:`Tabela %sh <tbl:vetorial:tipos-geometricos:modelo-ilustrado>`). A classe ``GeometryCollection`` representa coleções geométricas formadas por qualquer combinação de outros elementos geométricos, inclusive das coleções homogêneas. A coleção heterogênea mostrada na :numref:`Tabela %si <tbl:vetorial:tipos-geometricos:modelo-ilustrado>` é composta de um polígono, uma linha e um ponto.
+
+
+Em geral, o tipo ``GeometryCollection`` é introduzido nos sistemas para acomodar o resultado de operações espaciais complexas sobre os tipos de geometria elementares. Por exemplo, o resultado da operação de intersecção entre dois polígonos pode resultar em um conjunto de pontos, linhas e polígonos, de forma que é necessário um contêiner especial para acomodar esse resultado.
+
+
+O documento da ``OGC-SFS`` :cite:`herring:2011:a` também define o conjunto de operações sobre os tipos geométricos do diagrama da :numref:`Figura %s <fig:vetorial:tipos-geometricos:class-diagram>`. A seção a seguir irá detalhar as operações que possibilitam determinar os relacionamentos espaciais entre objetos espaciais.
+
+
+Relacionamentos Espaciais
+-------------------------
+
+
+Entre as operações definidas na OGC-SFS :cite:`herring:2011:a`, existe um conjunto que merece uma atenção especial: os **operadores topológicos**. Esses operadores são amplamente utilizados na construção de **consultas espaciais** envolvendo o **relacionamento espacial** entre objetos geográficos.
+
+
+Suponha dois conjuntos de dados, um representando os limites municipais (:numref:`Tabela %sa <tbl:vetorial:tipos-geometricos:exemplo-consulta>`) e outro os focos de queimadas na vegetação (:numref:`Tabela %sb <tbl:vetorial:tipos-geometricos:exemplo-consulta>`). Para relacionar os focos de queimadas aos municípios, precisamos ser capazes de estabelecer um relacionamento espacial entre as geometrias dos municípios e as geometrias dos focos.
+
+
+.. |dataset-municipios| image:: ../img/vetorial/tipos-geometricos/municipios.png
+
+
+.. |dataset-focos| image:: ../img/vetorial/tipos-geometricos/focos.png
+
+
+.. table:: Conjuntos de Dados
+    :widths: 50 50
+    :width: 100%
+    :header-alignment: left left
+    :column-alignment: center center
+    :align: center
+    :name: tbl:vetorial:tipos-geometricos:exemplo-consulta
+
+    +------------------------------+---------------------------------------+
+    | ( a ) Municípios Brasileiros | ( b ) Focos de Queimadas na Vegetação |
+    +==============================+=======================================+
+    | |dataset-municipios|         | |dataset-focos|                       |
+    +------------------------------+---------------------------------------+
+
+
+
+Matriz de 9-intersecções Estendida Dimensionalmente
++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+Os relacionamentos espaciais são definidos com base no paradigma da **Matriz de 9-Intersecções Estendida Dimensionalmente** (DE-9IM) proposto em :cite:`clementini:1993`. A abordagem básica desse método consiste em comparar dois objetos geométricos através de testes com a intersecção entre seus **interiores**, **fronteiras** e **exteriores**. Desta forma, podemos construir uma matrix :math:`3 \times 3` como a mostrada na :numref:`Tabela %s <tbl:vetorial:tipos-geometricos:de-9im>`.
+
+
+.. table:: Matriz de 9-Intersecções Estendida Dimensionalmente.
+    :width: 80%
+    :widths: 25 25 25 25
+    :align: center
+    :header-alignment: center center center center
+    :column-alignment: right center center center
+    :name: tbl:vetorial:tipos-geometricos:de-9im
+
+    +---------------------+-----------------------------+-----------------------------+-----------------------------+
+    |                     | :math:`Interior(B)`         | :math:`Fronteira(B)`        | :math:`Exterior(B)`         |
+    +=====================+=============================+=============================+=============================+
+    | :math:`Interior(A)` + :math:`dim(I(A) \cap I(B))` + :math:`dim(I(A) \cap F(B))` + :math:`dim(I(A) \cap E(B))` |
+    +---------------------+-----------------------------+-----------------------------+-----------------------------+
+    | :math:`Fonteira(A)` + :math:`dim(F(A) \cap I(B))` + :math:`dim(F(A) \cap F(B))` + :math:`dim(F(A) \cap E(B))` |
+    +---------------------+-----------------------------+-----------------------------+-----------------------------+
+    | :math:`Exterior(A)` + :math:`dim(E(A) \cap I(B))` + :math:`dim(E(A) \cap F(B))` + :math:`dim(E(A) \cap E(B))` |
+    +---------------------+-----------------------------+-----------------------------+-----------------------------+
+
+
+Na matriz acima (:numref:`Tabela %s <tbl:vetorial:tipos-geometricos:de-9im>`), :math:`I(A)`, :math:`F(A)` e :math:`E(A)` referem-se, respectivamente, ao **interior**, **fronteira** e **exterior** do objeto :math:`A`. De maneira análoga, :math:`I(B)`, :math:`F(B)` e :math:`E(B)` referem-se, respectivamente, ao interior, fronteira  e exterior do objeto :math:`B`.
+
+
+A **dimensionalidade máxima** dos objetos resultantes da intersecção dos componentes avaliados, :math:`dim(x)`, pode ser:
+
+.. rst-class:: open
+
+- :math:`\emptyset`: Caso os componentes não tenham intersecção. Adotaremos o valor :math:`-1` para este caso.
+
+- :math:`0`: Se a intersecção dos componentes resulta em um ponto.
+
+- :math:`1`: Se a intersecção dos componentes resulta em alguma curva.
+
+- :math:`2`: Se a intersecção dos componentes resulta em alguma superfície. Adotaremos também os termos **área** ou **região** como sinônimos.
+
+
+A :numref:`Tabela %s <tbl:vetorial:tipos-geometricos:comp-tipos>` ilustra os conceitos de interior, fronteira e exterior para cada um dos tipos de objetos geométricos definidos na OGC-SFS.
+
+
+.. |ogc-geom-topo-point| image:: ../img/vetorial/tipos-geometricos/ogc-geom-topo-point.png
+
+
+.. |ogc-geom-topo-multipoint| image:: ../img/vetorial/tipos-geometricos/ogc-geom-topo-multipoint.png
+
+
+.. |ogc-geom-topo-line| image:: ../img/vetorial/tipos-geometricos/ogc-geom-topo-line.png
+
+
+.. |ogc-geom-topo-ring| image:: ../img/vetorial/tipos-geometricos/ogc-geom-topo-ring.png
+
+
+.. |ogc-geom-topo-multiline| image:: ../img/vetorial/tipos-geometricos/ogc-geom-topo-multiline.png
+
+
+.. |ogc-geom-topo-multiline2| image:: ../img/vetorial/tipos-geometricos/ogc-geom-topo-multiline2.png
+
+
+.. |ogc-geom-topo-poly| image:: ../img/vetorial/tipos-geometricos/ogc-geom-topo-poly.png
+
+
+.. |ogc-geom-topo-multipoly| image:: ../img/vetorial/tipos-geometricos/ogc-geom-topo-multipoly.png
+
+
+.. |ogc-geom-topo-geomcoll| image:: ../img/vetorial/tipos-geometricos/ogc-geom-topo-geomcoll.png
+
+
+.. table:: Interior, fronteira e exterior dos diversos tipos geométricos.
+    :widths: 33 33 33
+    :width: 100%
+    :align: center
+    :name: tbl:vetorial:tipos-geometricos:comp-tipos
+
+    +-----------------------+----------------------------+-----------------------------+
+    | ( a ) I e E Ponto     | ( b ) I e E Coleção Pontos | ( c ) I, F e E Curva Aberta |
+    +=======================+============================+=============================+
+    | |ogc-geom-topo-point| | |ogc-geom-topo-multipoint| | |ogc-geom-topo-line|        |
+    +-----------------------+----------------------------+-----------------------------+
+
+
+.. table::
+    :widths: 33 33 33
+    :width: 100%
+    :align: center
+
+    +---------------------------+-----------------------------------+--------------------------------+
+    | ( d ) I e E Curva Fechada | ( e ) I, F e E Col. Curv. Abertas | ( f ) I e E Col. Curv. Abertas |
+    +===========================+===================================+================================+
+    | |ogc-geom-topo-ring|      | |ogc-geom-topo-multiline|         | |ogc-geom-topo-multiline2|     |
+    +---------------------------+-----------------------------------+--------------------------------+
+
+
+.. table::
+    :widths: 33 33 33
+    :width: 100%
+    :align: center
+
+    +-------------------------+----------------------------------+------------------------------+
+    | ( g ) I, F e E Polígono | ( h ) I, F e E Coleção Polígonos | ( i ) I, F e E Coleção Geom. |
+    +=========================+==================================+==============================+
+    | |ogc-geom-topo-poly|    | |ogc-geom-topo-multipoly|        | |ogc-geom-topo-geomcoll|     |
+    +-------------------------+----------------------------------+------------------------------+
+
+
+A fronteira de um objeto geométrico é formada por um conjunto de objetos geométricos de uma dimensão abaixo do objeto em questão.
+
+
+Assim, a fronteira de um objeto do tipo ponto (``Point``) é o conjunto vazio (:math:`\emptyset`), uma vez que um ponto é um objeto :math:`0`-dimensional (dimensão topológica). Observe na :numref:`Tabela %sa <tbl:vetorial:tipos-geometricos:comp-tipos>` que no caso de um ponto, temos apenas a definição de seu interior, destacado em azul escuro, e seu exterior, representado pela região em vermelho. Portanto, o interior de um ponto é um objeto :math:`0`-dimensional e seu exterior, um objeto :math:`2`-dimensional.
+
+
+Um objeto geométrico do tipo ``MultiPoint``, que também é :math:`0`-dimensional, tem sua fronteira definida como o conjunto vazio (:math:`\emptyset`). O interior é formado pelos próprios pontos da coleção, destacados em azul escuro na :numref:`Tabela %sb <tbl:vetorial:tipos-geometricos:comp-tipos>`, e o exterior é a região destacada em vermelho nessa tabela.
+
+
+A fronteira de uma curva aberta (``Curve``) consiste nos pontos inicial e final dessa curva. A :numref:`Tabela %sc <tbl:vetorial:tipos-geometricos:comp-tipos>` mostra uma exemplo de curva aberta, onde os pontos destacados em verde formam a fronteira dessa curva. Portanto, a fronteira de uma curva aberta é um conjunto de objetos geométricos :math:`0`-dimensional. O interior de uma curva aberta é formado pelos infinitos pontos de sua imagem, exceto os pontos da fronteira. Na :numref:`Tabela %sc <tbl:vetorial:tipos-geometricos:comp-tipos>`, a linha em azul escuro corresponde ao interior da curva, que é um objeto geométrico :math:`1`-dimensional. O exterior da curva é representado pela região em vermelho que não contém os pontos da fronteira e do interior da curva.
+
+
+A fronteira de uma curva fechada (``Curve``) é o conjunto vazio (:math:`\emptyset`). A :numref:`Tabela %sd <tbl:vetorial:tipos-geometricos:comp-tipos>` mostra um exemplo de curva fechada. Nessa tabela, podemos observar que o interior é formado por todos os pontos da curva, incluindo os pontos inicial e final, formando um objeto geométrico :math:`1`-dimensional. O exterior de uma curva fechada é uma região, um objeto :math:`2`-dimensional, destacado em vermelho nessa tabela.
+
+
+A fronteira de uma coleção de curvas (``MultiCurve``) consiste nos pontos na fronteira de um número ímpar de elementos da curva. A :numref:`Tabela %se <tbl:vetorial:tipos-geometricos:comp-tipos>` mostra um exemplo de coleção de curvas abertas. Repare que os pontos destacados em verde formam a fronteira dessa curva, enquanto os pontos sobre as imagens das linhas, destacados em azul escuro, forma seus interiores e seu exterior é destacado pela região em vermelho. A :numref:`Tabela %sf <tbl:vetorial:tipos-geometricos:comp-tipos>` ilustra a regra de que os pontos da fronteira devem pertencer a um número ímpar de elementos da curva.
+
+
+Uma coleção de curvas (``MultiCurve``) é dita fechada se todos os seus elementos são fechados, consequentemente, a fronteira de uma coleção de curvas fechadas é o conjunto vazio (:math:`\emptyset`).
+
+
+A fronteira de um polígono (``Polygon``) consiste no seu conjunto de anéis (``LinearRing``). A :numref:`Tabela %sg <tbl:vetorial:tipos-geometricos:comp-tipos>` ilustra esse caso. Repare que o exterior de um polígono com buraco é desconectado.
+
+
+A fronteira de uma coleção de polígonos (``MultiPolygon``) consiste no conjunto de anéis (``LinearRing``) de seus polígonos (``Polygon``) (:numref:`Tabela %sh <tbl:vetorial:tipos-geometricos:comp-tipos>`).
+
+
+A fronteira de um conjunto de objetos geométricos heterogêneos (``GeometryCollection``) cujos interiores dos seus elementos são disjuntos, consiste nos objetos geométricos das fronteiras desses elementos, obedecendo à regra de que os pontos devem pertencer a um número ímpar de elementos (:numref:`Tabela %si <tbl:vetorial:tipos-geometricos:comp-tipos>`).
+
+
+Vamos considerar os objetos geométricos apresentados na :numref:`Figura %s <fig:vetorial:tipos-geometricos:rel-a-b>`. Podemos estabelecer o seguinte:
+
+.. rst-class:: open
+
+- :math:`I(A)`: área mostrada em azul claro.
+
+- :math:`F(A)`: formada por um único anel (externo), em azul escuro.
+
+- :math:`E(A)`: é definido como toda a região do espaço que não compreenda a fronteira e o interior de :math:`A`.
+
+
+De maneira análoga:
+
+.. rst-class:: open
+
+- :math:`I(B)`: área mostrada em laranja claro.
+
+- :math:`F(B)`: formada por um único anel (externo), em laranja escuro.
+
+- :math:`E(B)`: é definido como toda a região do espaço que não compreenda a fronteira e o interior de :math:`B`.
+
+
+.. figure:: ../img/vetorial/tipos-geometricos/ogc-de9im.png
+    :alt: Configuração espacial de dois objetos geométricos A e B
+    :width: 30%
+    :figclass: align-center
+    :name: fig:vetorial:tipos-geometricos:rel-a-b
+
+    Configuração espacial de dois objetos geométricos :math:`A` e :math:`B`.
+
+
+O relacionamento espacial definido por :math:`A` e :math:`B`, segundo a matriz de intersecções, é o seguinte:
+
+
+.. table:: ``DE-9IM`` - :math:`A` e :math:`B`.
+    :widths: 25 25 25 25
+    :width: 70%
+    :header-alignment: center center center center
+    :column-alignment: right center center center
+    :align: center
+    :name: tbl:vetorial:tipos-geometricos:rel-a-b-mat
+
+    +---------------------+---------------------+----------------------+---------------------+
+    |                     | :math:`Interior(B)` | :math:`Fronteira(B)` | :math:`Exterior(B)` |
+    +=====================+=====================+======================+=====================+
+    | :math:`Interior(A)` + :math:`2`           + :math:`1`            + :math:`2`           |
+    +---------------------+---------------------+----------------------+---------------------+
+    | :math:`Fonteira(A)` + :math:`1`           + :math:`0`            + :math:`1`           |
+    +---------------------+---------------------+----------------------+---------------------+
+    | :math:`Exterior(A)` + :math:`2`           + :math:`1`            + :math:`2`           |
+    +---------------------+---------------------+----------------------+---------------------+
+
+
+A matriz acima foi definida considerando:
+
+.. rst-class:: open
+
+- Os interiores de :math:`A` e :math:`B` são regiões, isto é, objetos :math:`2`-dimensional. A intersecção desses dois componentes forma uma nova região, a área em vermelho na :numref:`Tabela %sa <tbl:vetorial:tipos-geometricos:i-f-e>`, que também é um objeto :math:`2`-dimensional. Logo, a :math:`dim(I(A) \cap I(B)) = 2`.
+
+- A fronteira de :math:`B` é formada por um anel (laranja), um objeto :math:`1`-dimensional. A intersecção entre :math:`I(A)` e a :math:`F(B)` forma uma linha, destacada em vermelho na :numref:`Tabela %sb <tbl:vetorial:tipos-geometricos:i-f-e>`, que é um objeto :math:`1`-dimensional.  Logo, a :math:`dim(I(A) \cap F(B)) = 1`.
+
+- O exterior de :math:`B` é uma região. A intersecção do :math:`I(A)` e o :math:`E(B)` forma a área destacada em vermelho da :numref:`Tabela %sc <tbl:vetorial:tipos-geometricos:i-f-e>`. Logo, a :math:`dim(I(A) \cap E(B)) = 2`.
+
+- A fronteira de :math:`A` é formada por um anel (azul). A intersecção entre :math:`F(A)` e o :math:`I(B)` forma uma linha, destacada em vermelho na :numref:`Tabela %sd <tbl:vetorial:tipos-geometricos:i-f-e>`, que é um objeto :math:`1`-dimensional.  Logo, a :math:`dim(F(A) \cap I(B)) = 1`.
+
+- A intersecção entre as fronteiras de :math:`A` e :math:`B` são os pontos mostrados em vermelho na :numref:`Tabela %se <tbl:vetorial:tipos-geometricos:i-f-e>`. Como um ponto é um objeto :math:`0`-dimensional, a :math:`dim(F(A) \cap F(B)) = 0`.
+
+- A intersecção entre a fronteira de :math:`A` e o exterior de :math:`B` forma a linha mostrada na :numref:`Tabela %sf <tbl:vetorial:tipos-geometricos:i-f-e>`. Logo, a :math:`dim(F(A) \cap E(B)) = 1`.
+
+- A intersecção entre exterior de :math:`A` e interior de :math:`B` forma uma área (:numref:`Tabela %sg <tbl:vetorial:tipos-geometricos:i-f-e>`). Logo, a :math:`dim(E(A) \cap I(B)) = 2`.
+
+- A intersecção entre exterior de :math:`A` e fronteira de :math:`B` forma a linha mostrada na :numref:`Tabela %sh <tbl:vetorial:tipos-geometricos:i-f-e>`. Logo, a :math:`dim(E(A) \cap F(B)) = 1`.
+
+- A interseção entre os exteriores de :math:`A` e :math:`B` formam uma área (:numref:`Tabela %si <tbl:vetorial:tipos-geometricos:i-f-e>`). Logo, a :math:`dim(E(A) \cap E(B)) = 2`.
+
+
+.. |ogc-de9im-ia-ib| image:: ../img/vetorial/tipos-geometricos/ogc-de9im-ia-ib.png
+
+
+.. |ogc-de9im-ia-fb| image:: ../img/vetorial/tipos-geometricos/ogc-de9im-ia-fb.png
+
+
+.. |ogc-de9im-ia-eb| image:: ../img/vetorial/tipos-geometricos/ogc-de9im-ia-eb.png
+
+
+.. |ogc-de9im-fa-ib| image:: ../img/vetorial/tipos-geometricos/ogc-de9im-fa-ib.png
+
+
+.. |ogc-de9im-fa-fb| image:: ../img/vetorial/tipos-geometricos/ogc-de9im-fa-fb.png
+
+
+.. |ogc-de9im-fa-eb| image:: ../img/vetorial/tipos-geometricos/ogc-de9im-fa-eb.png
+
+
+.. |ogc-de9im-ea-ib| image:: ../img/vetorial/tipos-geometricos/ogc-de9im-ea-ib.png
+
+
+.. |ogc-de9im-ea-fb| image:: ../img/vetorial/tipos-geometricos/ogc-de9im-ea-fb.png
+
+
+.. |ogc-de9im-ea-eb| image:: ../img/vetorial/tipos-geometricos/ogc-de9im-ea-eb.png
+
+
+.. table:: Intersecção entre os componentes dos objetos :math:`A` e :math:`B`.
+    :widths: 33 33 33
+    :width: 100%
+    :align: center
+    :name: tbl:vetorial:tipos-geometricos:i-f-e
+
+    +------------------------------+------------------------------+------------------------------+
+    | ( a ) :math:`I(A) \cap I(B)` | ( b ) :math:`I(A) \cap F(B)` | ( c ) :math:`I(A) \cap E(B)` |
+    +==============================+==============================+==============================+
+    | |ogc-de9im-ia-ib|            | |ogc-de9im-ia-fb|            | |ogc-de9im-ia-eb|            |
+    +------------------------------+------------------------------+------------------------------+
+
+
+.. table::
+    :widths: 33 33 33
+    :width: 100%
+    :align: center
+
+    +------------------------------+------------------------------+------------------------------+
+    | ( d ) :math:`F(A) \cap I(B)` | ( e ) :math:`F(A) \cap F(B)` | ( f ) :math:`F(A) \cap E(B)` |
+    +==============================+==============================+==============================+
+    | |ogc-de9im-fa-ib|            | |ogc-de9im-fa-fb|            | |ogc-de9im-fa-eb|            |
+    +------------------------------+------------------------------+------------------------------+
+
+
+.. table::
+    :widths: 33 33 33
+    :width: 100%
+    :align: center
+
+    +------------------------------+------------------------------+------------------------------+
+    | ( d ) :math:`E(A) \cap I(B)` | ( e ) :math:`E(A) \cap F(B)` | ( f ) :math:`E(A) \cap E(B)` |
+    +==============================+==============================+==============================+
+    | |ogc-de9im-ea-ib|            | |ogc-de9im-ea-fb|            | |ogc-de9im-ea-eb|            |
+    +------------------------------+------------------------------+------------------------------+
+
+
+Operador ``Relate``
++++++++++++++++++++
+
+
+Em geral, os ambientes computacionais que dão suporte a OGC-SFS, introduzem uma função chamada ``Relate`` que permite determinar a matriz de intersecções ou testar se dois objetos satisfazem um determinado padrão dessa matriz. Assim, tanto em Python quanto em C++, ou Java, ou em SQL, é possível testar o relacionamento espacial entre dois objetos usando um operador chamado ``Relate`` (ou uma variação desse nome).
+
+
+O exemplo abaixo mostra como seria o uso dessa função para saber o relacionamento espacial entre dois polígonos hipotéticos:
+
+
+.. code-block:: python
+
+    A = Polygon(...)
+    B = Polygon(...)
+
+    M = Relate(A, B)
+
+
+Nesse caso, ``M`` é a matriz resultante do relacionamento espacial entre ``A`` e ``B``. Se ``A`` e ``B`` forem os polígonos mostrados na :numref:`Figura %s <fig:vetorial:tipos-geometricos:rel-a-b>`, teríamos ``M`` codificado como a seguinte string: ``"212101212"``.
+
+
+O próximo exemplo mostra como seria a utlização da função ``Relate`` para saber se dois objetos ``A`` e ``B`` satisfazem um padrão específico da matriz de intersecções:
+
+
+.. code-block:: python
+
+    A = Polygon(...)
+    B = Polygon(...)
+
+    M = "212101212"
+
+    resultado = Relate(A, B, M)
+
+    print(resultado)
+
+
+Nesse caso, ``M`` é a matriz com o padrão que desejamos verificar se os objetos ``A`` e ``B`` satisfazem. Se ``A`` e ``B`` forem os polígonos mostrados na :numref:`Figura %s <fig:vetorial:tipos-geometricos:rel-a-b>`, essa função retorna o valor booleano ``True``.
+
+
+Relacionamentos Espaciais Nomeados
+++++++++++++++++++++++++++++++++++
+
+
+Para facilitar a construção de predicados topológicos nas consultas espaciais existe um conjunto de **oito operadores** com **nomes bem definidos** que são baseados na sobrecarga de alguns padrões da matriz de intersecções. Os operadores nomeados são: ``Equals``, ``Touches``, ``Crosses``, ``Within``, ``Contains``, ``Overlaps``, ``Disjoint``, and ``Intersects``. Esses operadores comparam pares de geometrias e são definidos utilizando os seguintes valores para as células da matriz de intersecções:
+
+.. rst-class:: open
+
+- ``T``: indica que :math:`dim(x) \in \{0, 1, 2\}`, ou seja, :math:`x \neq \emptyset`. Em outras palavras, o resultado da intersecção é um objeto :math:`x` que pode ser qualquer elemento geométrico (ponto, curva ou superfície).
+
+- ``F``: indica que :math:`dim(x) = \emptyset`, ou seja, :math:`x = \emptyset`. Em outras palavras, o resultado da intersecção é um conjunto vazio. Adotaremos que :math:`dim(x) = \emptyset \implies dim(x) = -1`, de maneira que usaremos :math:`-1` quando necessário para indicar que a intersecção é vazia.
+
+- ``*``: indica que :math:`dim(x) \in \{-1, 0, 1, 2\}`, ou seja, não importa se há ou não intersecção.
+
+- ``0``:  indica que :math:`dim(x) = 0`, ou seja, que a dimensão máxima do elemento geométrico resultante da intersecção é zero, isto é, um ponto.
+
+- ``1``:  indica que :math:`dim(x) = 1`, ou seja, que a dimensão máxima do elemento geométrico resultante da intersecção é uma curva.
+
+- ``2``:  indica que :math:`dim(x) = 2`, ou seja, que a dimensão máxima do elemento geométrico resultante da intersecção é uma superfície (ou área).
+
+
+Além disso, em alguns casos diferenciamos os padrões pelos tipos de objetos testados. Usamos a seguinte nomenclatura para os tipos de objetos:
+
+.. rst-class:: open
+
+- Pontuais ou ``P``: pontos e coleções homogêneas de pontos.
+
+- Curvas ou ``L``: linhas, anéis, ou coleções homogêneas de linhas.
+
+- Superfícies ou ``A``: polígonos ou coleções homogêneas de polígonos.
+
+
+:math:`Equals(Geometry, Geometry) \rightarrow bool`
+***************************************************
+
+
+Retorna verdadeiro (``True``) se as duas geometrias são espacialmente iguais. Neste caso, a matriz de intersecção para as duas geometrias deve satisfazer o seguinte padrão:
+
+
+.. table:: ``DE-9IM`` - :math:`Equals(Geometry, Geometry) \rightarrow bool`.
+    :widths: 25 25 25 25
+    :width: 70%
+    :header-alignment: center center center center
+    :column-alignment: right center center center
+    :align: center
+    :name: tbl:vetorial:tipos-geometricos:de9im-equals
+
+    +---------------------+---------------------+----------------------+---------------------+
+    |                     | :math:`Interior(B)` | :math:`Fronteira(B)` | :math:`Exterior(B)` |
+    +=====================+=====================+======================+=====================+
+    | :math:`Interior(A)` + :math:`T`           + :math:`F`            + :math:`F`           |
+    +---------------------+---------------------+----------------------+---------------------+
+    | :math:`Fonteira(A)` + :math:`F`           + :math:`T`            + :math:`F`           |
+    +---------------------+---------------------+----------------------+---------------------+
+    | :math:`Exterior(A)` + :math:`F`           + :math:`F`            + :math:`T`           |
+    +---------------------+---------------------+----------------------+---------------------+
+
+
+Pela matriz acima, o relacionamento ``Equals`` garante que os interiores das duas geometrias tenham intersecção e que os interiores e fronteiras de um objeto não tenham intersecção com o exterior do outro.
+
+
+A :numref:`Tabela %s <tbl:vetorial:tipos-geometricos:equals>` apresenta alguns pares de objetos que satisfazem o relacionamento espacial ``Equals``, de acordo com o padrão mostrado acima:
+
+
+.. |op-equals-1| image:: ../img/vetorial/tipos-geometricos/op-equals-1.png
+
+
+.. |op-equals-2| image:: ../img/vetorial/tipos-geometricos/op-equals-2.png
+
+
+.. |op-equals-3| image:: ../img/vetorial/tipos-geometricos/op-equals-3.png
+
+
+.. table:: :math:`A` e :math:`B` são geometrias espacialmente iguais.
+    :widths: 33 33 33
+    :width: 100%
+    :align: center
+    :name: tbl:vetorial:tipos-geometricos:equals
+
+    +---------------+---------------+---------------+
+    | ( a )         | ( b )         | ( c )         |
+    +===============+===============+===============+
+    | |op-equals-1| | |op-equals-2| | |op-equals-3| |
+    +---------------+---------------+---------------+
+
+
+.. note::
+
+    No caso dos pares de geometrias serem curvas/curvas ou superfícies/superfícies, mesmo que o número de pontos desses objetos sejam diferentes, o relacionamento ``Equals`` pode ser verdadeiro.
+
+
+:math:`Touches(Geometry, Geometry) \rightarrow Bool`
+****************************************************
+
+
+Retorna verdadeiro (``True``) se as duas geometrias se tocam. Este relacionamento espacial é definido para os casos onde os pares de objetos geométricos correspondem a ``A/A``, ``L/L``, ``L/A``, ``P/A`` e ``P/L``. Este relacionamento não se aplica no caso dos objetos serem do tipo ``P/P``.
+
+
+Se os pares de objetos satisfizerem um dos três padrões mostrados abaixo, dizemos que a geometria :math:`A` toca a geometria :math:`B`:
+
+
+.. table:: ``DE-9IM`` - :math:`Touches(Geometry, Geometry) \rightarrow bool`.
+    :widths: 25 25 25 25
+    :width: 70%
+    :header-alignment: center center center center
+    :column-alignment: right center center center
+    :align: center
+    :name: tbl:vetorial:tipos-geometricos:de9im-touches1
+
+    +---------------------+---------------------+----------------------+---------------------+
+    |                     | :math:`Interior(B)` | :math:`Fronteira(B)` | :math:`Exterior(B)` |
+    +=====================+=====================+======================+=====================+
+    | :math:`Interior(A)` + :math:`F`           + :math:`T`            + :math:`*`           |
+    +---------------------+---------------------+----------------------+---------------------+
+    | :math:`Fonteira(A)` + :math:`*`           + :math:`*`            + :math:`*`           |
+    +---------------------+---------------------+----------------------+---------------------+
+    | :math:`Exterior(A)` + :math:`*`           + :math:`*`            + :math:`*`           |
+    +---------------------+---------------------+----------------------+---------------------+
+
+
+.. table:: ``DE-9IM`` - :math:`Touches(Geometry, Geometry) \rightarrow bool`.
+    :widths: 25 25 25 25
+    :width: 70%
+    :header-alignment: center center center center
+    :column-alignment: right center center center
+    :align: center
+    :name: tbl:vetorial:tipos-geometricos:rel-espaciais:de9im-touches2
+
+    +---------------------+---------------------+----------------------+---------------------+
+    |                     | :math:`Interior(B)` | :math:`Fronteira(B)` | :math:`Exterior(B)` |
+    +=====================+=====================+======================+=====================+
+    | :math:`Interior(A)` + :math:`F`           + :math:`*`            + :math:`*`           |
+    +---------------------+---------------------+----------------------+---------------------+
+    | :math:`Fonteira(A)` + :math:`T`           + :math:`*`            + :math:`*`           |
+    +---------------------+---------------------+----------------------+---------------------+
+    | :math:`Exterior(A)` + :math:`*`           + :math:`*`            + :math:`*`           |
+    +---------------------+---------------------+----------------------+---------------------+
+
+
+.. table:: ``DE-9IM`` - :math:`Touches(Geometry, Geometry) \rightarrow bool`.
+    :widths: 25 25 25 25
+    :width: 70%
+    :header-alignment: center center center center
+    :column-alignment: right center center center
+    :align: center
+    :name: tbl:vetorial:tipos-geometricos:de9im-touches3
+
+    +---------------------+---------------------+----------------------+---------------------+
+    |                     | :math:`Interior(B)` | :math:`Fronteira(B)` | :math:`Exterior(B)` |
+    +=====================+=====================+======================+=====================+
+    | :math:`Interior(A)` + :math:`F`           + :math:`*`            + :math:`*`           |
+    +---------------------+---------------------+----------------------+---------------------+
+    | :math:`Fonteira(A)` + :math:`*`           + :math:`T`            + :math:`*`           |
+    +---------------------+---------------------+----------------------+---------------------+
+    | :math:`Exterior(A)` + :math:`*`           + :math:`*`            + :math:`*`           |
+    +---------------------+---------------------+----------------------+---------------------+
+
+
+Os três padrões acima estabelecem que os objetos não podem ter intersecção entre seus interiores, mas podem ter intersecção entre as fronteiras ou entre a fronteira de um e o interior do outro.
+
+
+A :numref:`Tabela %s <tbl:vetorial:tipos-geometricos:touches>` apresenta alguns pares de objetos que satisfazem o relacionamento espacial ``Touches``, de acordo com os padrões mostrados acima:
+
+
+.. |op-touch-1| image:: ../img/vetorial/tipos-geometricos/op-touch-1.png
+
+
+.. |op-touch-2| image:: ../img/vetorial/tipos-geometricos/op-touch-2.png
+
+
+.. |op-touch-3| image:: ../img/vetorial/tipos-geometricos/op-touch-3.png
+
+
+.. |op-touch-4| image:: ../img/vetorial/tipos-geometricos/op-touch-4.png
+
+
+.. table:: :math:`A` e :math:`B` são geometrias que se tocam.
+    :widths: 25 25 25 25
+    :width: 100%
+    :align: center
+    :name: tbl:vetorial:tipos-geometricos:touches
+
+    +--------------+--------------+--------------+--------------+
+    | ( a )        | ( b )        | ( c )        | ( d )        |
+    +==============+==============+==============+==============+
+    | |op-touch-1| | |op-touch-2| | |op-touch-3| | |op-touch-4| |
+    +--------------+--------------+--------------+--------------+
+
+
+:math:`Crosses(Geometry, Geometry) \rightarrow bool`
+****************************************************
+
+
+Retorna verdadeiro (``True``) se a primeira geometria cruza a segunda. Este relacionamento espacial é definido para os casos ``P/L``, ``P/A``, ``L/L`` e ``L/A``.
+
+
+O resultado da intersecção entre duas geometrias deve gerar uma outra geometria de dimensão um nível menor do que a maior dimensão das geometrias envolvidas, e os interiores devem ter intersecção.
+
+
+Nos casos ``P/L``, ``P/A``, ou ``L/A``:
+
+
+.. table:: ``DE-9IM`` - :math:`Crosses(Geometry, Geometry) \rightarrow bool`.
+    :widths: 25 25 25 25
+    :width: 70%
+    :header-alignment: center center center center
+    :column-alignment: right center center center
+    :align: center
+    :name: tbl:vetorial:tipos-geometricos:de9im-crosses1
+
+    +---------------------+---------------------+----------------------+---------------------+
+    |                     | :math:`Interior(B)` | :math:`Fronteira(B)` | :math:`Exterior(B)` |
+    +=====================+=====================+======================+=====================+
+    | :math:`Interior(A)` + :math:`T`           + :math:`*`            + :math:`T`           |
+    +---------------------+---------------------+----------------------+---------------------+
+    | :math:`Fonteira(A)` + :math:`*`           + :math:`*`            + :math:`*`           |
+    +---------------------+---------------------+----------------------+---------------------+
+    | :math:`Exterior(A)` + :math:`*`           + :math:`*`            + :math:`*`           |
+    +---------------------+---------------------+----------------------+---------------------+
+
+
+No caso ``L/L``:
+
+
+.. table:: ``DE-9IM`` - :math:`Crosses(Geometry, Geometry) \rightarrow bool`.
+    :widths: 25 25 25 25
+    :width: 70%
+    :header-alignment: center center center center
+    :column-alignment: right center center center
+    :align: center
+    :name: tbl:vetorial:tipos-geometricos:de9im-crosses2
+
+    +---------------------+---------------------+----------------------+---------------------+
+    |                     | :math:`Interior(B)` | :math:`Fronteira(B)` | :math:`Exterior(B)` |
+    +=====================+=====================+======================+=====================+
+    | :math:`Interior(A)` + :math:`0`           + :math:`*`            + :math:`*`           |
+    +---------------------+---------------------+----------------------+---------------------+
+    | :math:`Fonteira(A)` + :math:`*`           + :math:`*`            + :math:`*`           |
+    +---------------------+---------------------+----------------------+---------------------+
+    | :math:`Exterior(A)` + :math:`*`           + :math:`*`            + :math:`*`           |
+    +---------------------+---------------------+----------------------+---------------------+
+
+
+A :numref:`Tabela %s <tbl:vetorial:tipos-geometricos:crosses>` apresenta alguns pares de objetos que satisfazem o relacionamento espacial ``Crosses``, de acordo com os padrões mostrados acima:
+
+
+.. |op-cross-1| image:: ../img/vetorial/tipos-geometricos/op-cross-1.png
+
+
+.. |op-cross-2| image:: ../img/vetorial/tipos-geometricos/op-cross-2.png
+
+
+.. |op-cross-3| image:: ../img/vetorial/tipos-geometricos/op-cross-3.png
+
+
+.. |op-cross-4| image:: ../img/vetorial/tipos-geometricos/op-cross-4.png
+
+
+.. table:: :math:`A` e :math:`B` são geometrias que se cruzam.
+    :widths: 25 25 25 25
+    :width: 100%
+    :align: center
+    :name: tbl:vetorial:tipos-geometricos:crosses
+
+    +--------------+--------------+--------------+--------------+
+    | ( a )        | ( b )        | ( c )        | ( d )        |
+    +==============+==============+==============+==============+
+    | |op-cross-1| | |op-cross-2| | |op-cross-3| | |op-cross-4| |
+    +--------------+--------------+--------------+--------------+
+
+
+:math:`Within(Geometry, Geometry) \rightarrow bool`
+***************************************************
+
+
+Retorna verdadeiro (``True``) se a primeira geometria está dentro da segunda e se elas não são iguais.
+
+
+O padrão da matriz para este relacionamento espacial é o seguinte:
+
+
+.. table:: ``DE-9IM`` - :math:`Within(Geometry, Geometry) \rightarrow bool`.
+    :widths: 25 25 25 25
+    :width: 70%
+    :header-alignment: center center center center
+    :column-alignment: right center center center
+    :align: center
+    :name: tbl:vetorial:tipos-geometricos:de9im-within
+
+    +---------------------+---------------------+----------------------+---------------------+
+    |                     | :math:`Interior(B)` | :math:`Fronteira(B)` | :math:`Exterior(B)` |
+    +=====================+=====================+======================+=====================+
+    | :math:`Interior(A)` + :math:`T`           + :math:`*`            + :math:`F`           |
+    +---------------------+---------------------+----------------------+---------------------+
+    | :math:`Fonteira(A)` + :math:`*`           + :math:`*`            + :math:`F`           |
+    +---------------------+---------------------+----------------------+---------------------+
+    | :math:`Exterior(A)` + :math:`*`           + :math:`*`            + :math:`*`           |
+    +---------------------+---------------------+----------------------+---------------------+
+
+
+A matriz acima define que o predicado ``Within`` retorna ``True`` quando os interiores das duas geometrias possuem intersecção e quando o interior e a fronteira do objeto A não têm intersecção com o exterior de B. O uso do padrão ``*`` nas demais células indica que nenhuma outra condição importa para determinar este relacionamento.
+
+
+A :numref:`Tabela %s <tbl:vetorial:tipos-geometricos:within>` apresenta alguns pares de objetos que satisfazem o relacionamento espacial ``Within``, de acordo com os padrões mostrados acima:
+
+
+.. |op-within-1| image:: ../img/vetorial/tipos-geometricos/op-within-1.png
+
+
+.. |op-within-2| image:: ../img/vetorial/tipos-geometricos/op-within-2.png
+
+
+.. |op-within-3| image:: ../img/vetorial/tipos-geometricos/op-within-3.png
+
+
+.. |op-within-4| image:: ../img/vetorial/tipos-geometricos/op-within-4.png
+
+
+.. |op-within-5| image:: ../img/vetorial/tipos-geometricos/op-within-5.png
+
+
+.. |op-within-6| image:: ../img/vetorial/tipos-geometricos/op-within-6.png
+
+
+.. table:: A geometria :math:`A` está dentro da geometria :math:`B`.
+    :widths: 33 33 33
+    :width: 100%
+    :align: center
+    :name: tbl:vetorial:tipos-geometricos:within
+
+    +---------------+---------------+---------------+
+    | ( a )         | ( b )         | ( c )         |
+    +===============+===============+===============+
+    | |op-within-1| | |op-within-2| | |op-within-3| |
+    +---------------+---------------+---------------+
+
+
+.. table::
+    :widths: 33 33 33
+    :width: 100%
+    :align: center
+
+    +---------------+---------------+---------------+
+    | ( d )         | ( e )         | ( f )         |
+    +===============+===============+===============+
+    | |op-within-4| | |op-within-5| | |op-within-6| |
+    +---------------+---------------+---------------+
+
+
+:math:`Contains(GeometryA, GeometryB) \rightarrow bool`
+*******************************************************
+
+
+Retorna verdadeiro (``True``) se a primeira geometria contém a segunda e se elas não são iguais. Este relacionamento espacial é o inverso de ``Within``, de maneira que temos:
+
+
+:math:`Contains(A, B) \iff Within(B, A)`
+
+
+A matriz de intersecções do predicado ``Contains`` é a seguinte:
+
+
+.. table:: ``DE-9IM`` - :math:`Contains(Geometry, Geometry) \rightarrow bool`.
+    :widths: 25 25 25 25
+    :width: 70%
+    :header-alignment: center center center center
+    :column-alignment: right center center center
+    :align: center
+    :name: tbl:vetorial:tipos-geometricos:de9im-contains
+
+    +---------------------+---------------------+----------------------+---------------------+
+    |                     | :math:`Interior(B)` | :math:`Fronteira(B)` | :math:`Exterior(B)` |
+    +=====================+=====================+======================+=====================+
+    | :math:`Interior(A)` + :math:`T`           + :math:`*`            + :math:`*`           |
+    +---------------------+---------------------+----------------------+---------------------+
+    | :math:`Fonteira(A)` + :math:`*`           + :math:`*`            + :math:`*`           |
+    +---------------------+---------------------+----------------------+---------------------+
+    | :math:`Exterior(A)` + :math:`F`           + :math:`F`            + :math:`*`           |
+    +---------------------+---------------------+----------------------+---------------------+
+
+
+Na matriz acima podemos observar que os interiores das duas geometrias devem ter intersecção e que a fronteira e interior da segunda (``B``) não pode ter intersecção com o exterior da primeira (``A``).
+
+
+:math:`Overlaps(Geometry, Geometry) \rightarrow bool`
+*****************************************************
+
+
+Retorna verdadeiro (``True``) se a primeira geometria sobrepõe a segunda. Este relacionamento espacial é definido para os casos ``A/A``, ``L/L`` e ``P/P``. Em outras palavras, este relacionamento só é válido para geometrias de mesma dimensão e se a intersecção entre elas resultar em um objeto de mesma dimensão.
+
+
+No caso ``P/P`` ou ``A/A``, o predicado ``Overlap`` retorna ``True`` se os interiores das duas geometrias possuem intersecção e se o interior de uma faz intersecção com o exterior da outra e vice-versa. Este relacionamento é definido através do seguinte padrão:
+
+
+.. table:: ``DE-9IM`` - :math:`Overlaps(Geometry, Geometry) \rightarrow bool`.
+    :widths: 25 25 25 25
+    :width: 70%
+    :header-alignment: center center center center
+    :column-alignment: right center center center
+    :align: center
+    :name: tbl:vetorial:tipos-geometricos:de9im-overlaps1
+
+    +---------------------+---------------------+----------------------+---------------------+
+    |                     | :math:`Interior(B)` | :math:`Fronteira(B)` | :math:`Exterior(B)` |
+    +=====================+=====================+======================+=====================+
+    | :math:`Interior(A)` + :math:`T`           + :math:`*`            + :math:`T`           |
+    +---------------------+---------------------+----------------------+---------------------+
+    | :math:`Fonteira(A)` + :math:`*`           + :math:`*`            + :math:`*`           |
+    +---------------------+---------------------+----------------------+---------------------+
+    | :math:`Exterior(A)` + :math:`T`           + :math:`*`            + :math:`*`           |
+    +---------------------+---------------------+----------------------+---------------------+
+
+
+No caso ``L/L``, a intersecção deve resultar em um objeto :math:`1`-dimensional. Assim, temos o seguinte padrão de matriz:
+
+
+.. table:: ``DE-9IM`` - :math:`Overlaps(Geometry, Geometry) \rightarrow bool`.
+    :widths: 25 25 25 25
+    :width: 70%
+    :header-alignment: center center center center
+    :column-alignment: right center center center
+    :align: center
+    :name: tbl:vetorial:tipos-geometricos:de9im-overlaps2
+
+    +---------------------+---------------------+----------------------+---------------------+
+    |                     | :math:`Interior(B)` | :math:`Fronteira(B)` | :math:`Exterior(B)` |
+    +=====================+=====================+======================+=====================+
+    | :math:`Interior(A)` + :math:`1`           + :math:`*`            + :math:`T`           |
+    +---------------------+---------------------+----------------------+---------------------+
+    | :math:`Fonteira(A)` + :math:`*`           + :math:`*`            + :math:`*`           |
+    +---------------------+---------------------+----------------------+---------------------+
+    | :math:`Exterior(A)` + :math:`T`           + :math:`*`            + :math:`*`           |
+    +---------------------+---------------------+----------------------+---------------------+
+
+
+A :numref:`Tabela %s <tbl:vetorial:tipos-geometricos:within>` apresenta alguns pares de objetos que satisfazem o relacionamento espacial ``Overlaps``, de acordo com os padrões mostrados acima:
+
+
+.. |op-overlap-1| image:: ../img/vetorial/tipos-geometricos/op-overlap-1.png
+
+
+.. |op-overlap-2| image:: ../img/vetorial/tipos-geometricos/op-overlap-2.png
+
+
+.. |op-overlap-3| image:: ../img/vetorial/tipos-geometricos/op-overlap-3.png
+
+
+.. table:: A geometria :math:`A` sobrepõe a geometria :math:`B`.
+    :widths: 33 33 33
+    :width: 100%
+    :align: center
+    :name: tbl:vetorial:tipos-geometricos:overlaps
+
+    +----------------+----------------+----------------+
+    | ( a )          | ( b )          | ( c )          |
+    +================+================+================+
+    | |op-overlap-1| | |op-overlap-2| | |op-overlap-3| |
+    +----------------+----------------+----------------+
+
+
+:math:`Disjoint(Geometry, Geometry) \rightarrow bool`
+*****************************************************
+
+
+Retorna verdadeiro (``True``) se as duas geometrias não possuem qualquer tipo de interação espacial, isto é, se os interiores e fronteiras não possuem qualquer intersecção, exceto com os exteriores. Neste caso, a matriz de intersecção para as duas geometrias deve satisfazer o seguinte padrão:
+
+
+.. table:: ``DE-9IM`` - :math:`Disjoint(Geometry, Geometry) \rightarrow bool`.
+    :widths: 25 25 25 25
+    :width: 70%
+    :header-alignment: center center center center
+    :column-alignment: right center center center
+    :align: center
+    :name: tbl:vetorial:tipos-geometricos:de9im-disjoint
+
+    +---------------------+---------------------+----------------------+---------------------+
+    |                     | :math:`Interior(B)` | :math:`Fronteira(B)` | :math:`Exterior(B)` |
+    +=====================+=====================+======================+=====================+
+    | :math:`Interior(A)` + :math:`F`           + :math:`F`            + :math:`*`           |
+    +---------------------+---------------------+----------------------+---------------------+
+    | :math:`Fonteira(A)` + :math:`F`           + :math:`F`            + :math:`*`           |
+    +---------------------+---------------------+----------------------+---------------------+
+    | :math:`Exterior(A)` + :math:`*`           + :math:`*`            + :math:`*`           |
+    +---------------------+---------------------+----------------------+---------------------+
+
+
+A matriz acima define que no relacionamento ``Disjoint``, nem a fronteira nem o interior de um objeto possui intersecção com a fronteira ou interior do outro objeto.
+
+
+A :numref:`Tabela %s <tbl:vetorial:tipos-geometricos:disjoint>` apresenta alguns pares de objetos que satisfazem o relacionamento espacial ``Disjoint``, de acordo com o padrão mostrado acima:
+
+
+.. |op-disjoint-1| image:: ../img/vetorial/tipos-geometricos/op-disjoint-1.png
+
+
+.. |op-disjoint-2| image:: ../img/vetorial/tipos-geometricos/op-disjoint-2.png
+
+
+.. |op-disjoint-3| image:: ../img/vetorial/tipos-geometricos/op-disjoint-3.png
+
+
+.. table:: :math:`A` e :math:`B` são geometrias espacialmente disjuntas.
+    :widths: 33 33 33
+    :width: 100%
+    :align: center
+    :name: tbl:vetorial:tipos-geometricos:disjoint
+
+    +-----------------+-----------------+-----------------+
+    | ( a )           | ( b )           | ( c )           |
+    +=================+=================+=================+
+    | |op-disjoint-1| | |op-disjoint-2| | |op-disjoint-3| |
+    +-----------------+-----------------+-----------------+
+
+
+:math:`Intersects(Geometry, Geometry) \rightarrow bool`
+*******************************************************
+
+
+Retorna verdadeiro (``True``) se as duas geometrias tiverem algum tipo de interação espacial, isto é, se os interiores e fronteiras tiverem qualquer intersecção. Este relacionamento espacial é definido como sendo a negação do relacionamento ``Disjoint``:
+
+
+:math:`Intersects(A, B) \iff \neg Disjoint(A, B)`
+
+
+Na verdade esse relacionamento diz que as geometrias :math:`A` e :math:`B` podem se tocar, ou cruzar, ou sobrepor, ou uma estar contida uma na outra, ou serem iguais. Define-se este relacionamento para facilitar a escrita de expressões com predicados espaciais.
+
+
+Portanto, o predicado ``Intersects`` retorna ``True`` se os interiores das duas geometrias se intersectam:
+
+
+.. table:: ``DE-9IM`` - :math:`Intersects(Geometry, Geometry) \rightarrow bool`.
+    :widths: 25 25 25 25
+    :width: 70%
+    :header-alignment: center center center center
+    :column-alignment: right center center center
+    :align: center
+    :name: tbl:vetorial:tipos-geometricos:de9im-intersects1
+
+    +---------------------+---------------------+----------------------+---------------------+
+    |                     | :math:`Interior(B)` | :math:`Fronteira(B)` | :math:`Exterior(B)` |
+    +=====================+=====================+======================+=====================+
+    | :math:`Interior(A)` + :math:`T`           + :math:`*`            + :math:`*`           |
+    +---------------------+---------------------+----------------------+---------------------+
+    | :math:`Fonteira(A)` + :math:`*`           + :math:`*`            + :math:`*`           |
+    +---------------------+---------------------+----------------------+---------------------+
+    | :math:`Exterior(A)` + :math:`*`           + :math:`*`            + :math:`*`           |
+    +---------------------+---------------------+----------------------+---------------------+
+
+
+Se as fronteiras das duas geometrias se intersectam:
+
+
+.. table:: ``DE-9IM`` - :math:`Intersects(Geometry, Geometry) \rightarrow bool`.
+    :widths: 25 25 25 25
+    :width: 70%
+    :header-alignment: center center center center
+    :column-alignment: right center center center
+    :align: center
+    :name: tbl:vetorial:tipos-geometricos:de9im-intersects2
+
+    +---------------------+---------------------+----------------------+---------------------+
+    |                     | :math:`Interior(B)` | :math:`Fronteira(B)` | :math:`Exterior(B)` |
+    +=====================+=====================+======================+=====================+
+    | :math:`Interior(A)` + :math:`*`           + :math:`*`            + :math:`*`           |
+    +---------------------+---------------------+----------------------+---------------------+
+    | :math:`Fonteira(A)` + :math:`*`           + :math:`T`            + :math:`*`           |
+    +---------------------+---------------------+----------------------+---------------------+
+    | :math:`Exterior(A)` + :math:`*`           + :math:`*`            + :math:`*`           |
+    +---------------------+---------------------+----------------------+---------------------+
+
+
+Se o interior da primeira intersecta a fronteira da segunda:
+
+
+.. table:: ``DE-9IM`` - :math:`Intersects(Geometry, Geometry) \rightarrow bool`.
+    :widths: 25 25 25 25
+    :width: 70%
+    :header-alignment: center center center center
+    :column-alignment: right center center center
+    :align: center
+    :name: tbl:vetorial:tipos-geometricos:de9im-intersects3
+
+    +---------------------+---------------------+----------------------+---------------------+
+    |                     | :math:`Interior(B)` | :math:`Fronteira(B)` | :math:`Exterior(B)` |
+    +=====================+=====================+======================+=====================+
+    | :math:`Interior(A)` + :math:`*`           + :math:`T`            + :math:`*`           |
+    +---------------------+---------------------+----------------------+---------------------+
+    | :math:`Fonteira(A)` + :math:`*`           + :math:`*`            + :math:`*`           |
+    +---------------------+---------------------+----------------------+---------------------+
+    | :math:`Exterior(A)` + :math:`*`           + :math:`*`            + :math:`*`           |
+    +---------------------+---------------------+----------------------+---------------------+
+
+
+Ou se a fronteira da primeira intersecta o interior da segunda:
+
+
+.. table:: ``DE-9IM`` - :math:`Intersects(Geometry, Geometry) \rightarrow bool`.
+    :widths: 25 25 25 25
+    :width: 70%
+    :header-alignment: center center center center
+    :column-alignment: right center center center
+    :align: center
+    :name: tbl:vetorial:tipos-geometricos:de9im-intersects4
+
+    +---------------------+---------------------+----------------------+---------------------+
+    |                     | :math:`Interior(B)` | :math:`Fronteira(B)` | :math:`Exterior(B)` |
+    +=====================+=====================+======================+=====================+
+    | :math:`Interior(A)` + :math:`*`           + :math:`*`            + :math:`*`           |
+    +---------------------+---------------------+----------------------+---------------------+
+    | :math:`Fonteira(A)` + :math:`T`           + :math:`*`            + :math:`*`           |
+    +---------------------+---------------------+----------------------+---------------------+
+    | :math:`Exterior(A)` + :math:`*`           + :math:`*`            + :math:`*`           |
+    +---------------------+---------------------+----------------------+---------------------+

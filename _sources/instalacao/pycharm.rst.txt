@@ -1,0 +1,51 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _sec_instalacao_pycharm:
+
+PyCharm
+=======
+
+
+Linux
+-----
+
+**1.** Baixe a versão `pycharm-community-2020.3.3 <https://download-cf.jetbrains.com/python/pycharm-community-2020.3.3.tar.gz>`_.
+
+
+**2.** Descompacte o arquivo baixado (``pycharm-community-2020.3.3.tar.gz``)::
+
+    cd Downloads
+
+    tar xzvf pycharm-community-2020.3.3.tar.gz
+
+
+**3.** Mova o diretório criado pelo comando acima para o local desejado, por exemplo, sob o diretório raiz do seu usuário::
+
+    mv pycharm-community-2020.3.3 ~/
+
+
+**4.** Entre na pasta onde se localiza o executável do PyCharm e o coloque em execução::
+
+    cd ~/pycharm-community-2020.3.3/bin
+
+    ./pycharm.sh
+
+
+Uma janela de boas vindas ccomo a mostrada na :numref:`Figura %s <instalacao:pycharm:linux>` será exibida.
+
+
+.. figure:: ../img/instalacao/linux-welcome-pycharm.png
+    :alt: Janela de boas vindas do PyCharm
+    :width: 80%
+    :figclass: align-center
+    :name: instalacao:pycharm:linux
+
+    Janela de boas vindas do PyCharm.
+
+
+.. tip::
+
+    Para que o PyCharm seja instalado na sua barra de programas, vá ao menu ``Tools`` e selecione a opção ``Create Desktop Entry...``. Isso fará com que um atalho com o ícone do PyCharm seja instalado em seu sistema e facilite a sua inicialização.

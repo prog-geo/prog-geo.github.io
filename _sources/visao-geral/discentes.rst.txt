@@ -1,0 +1,46 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _sec_visao_geral_discentes:
+
+Discentes
+=========
+
+
+Turma 2021
+----------
+
+
+.. image:: ../img/visao-geral/turma-2021.png
+        :width: 100%
+        :alt: Turma 2021
+        
+        
+Turma 2020
+----------
+
+
+.. image:: ../img/visao-geral/turma-2020.png
+        :width: 100%
+        :alt: Turma 2020
+
+
+Turma 2019
+----------
+
+
+.. image:: ../img/visao-geral/turma-2019.png
+        :width: 100%
+        :alt: Turma 2019
+
+
+Turma 2018
+----------
+
+
+.. image:: ../img/visao-geral/turma-2018.png
+        :width: 100%
+        :alt: Turma 2018
+

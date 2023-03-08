@@ -1,0 +1,77 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../def.rst
+
+
+.. _sec_introducao_programacao_op_relacionais:
+
+Operadores Relacionais
+======================
+
+
+Os **operadores relacionais** ou **operadores de comparação** permitem comparar dois valores e produzir um valor booleano como resultado. Esse tipo de operador, juntamente com os operadores lógicos, são essenciais nos **comandos condicionais** e nos **testes condicionais dos laços de repetição**. A :numref:`Tabela %s <introd-prog:tbl:op-relacionais>` apresenta a notação desses operadores e seus significados.
+
+
+.. table:: Operadores relacionais.
+    :align: center
+    :header-alignment: center center center
+    :column-alignment: center left center
+    :name: introd-prog:tbl:op-relacionais
+
+    +----------+-----------+-----------+-------+
+    | Operador | Nome      | Expressão | Valor |
+    +==========+===========+===========+=======+
+    | ``==``   | igual     | 5 == 4    | False |
+    |          |           +-----------+-------+
+    |          |           | 5 == 5    | True  |
+    +----------+-----------+-----------+-------+
+    | ``!=``   | diferente | 5 != 4    | True  |
+    |          |           +-----------+-------+
+    |          |           | 5 != 5    | False |
+    +----------+-----------+-----------+-------+
+    | ``<``    | menor que | 5 < 5     | False |
+    |          |           +-----------+-------+
+    |          |           | 4 < 5     | True  |
+    +----------+-----------+-----------+-------+
+    | ``<=``   | menor ou  | 5 <= 5    | True  |
+    |          | igual a   +-----------+-------+
+    |          |           | 6 <= 5    | False |
+    +----------+-----------+-----------+-------+
+    | ``>``    | maior que | 5 > 4     | True  |
+    |          |           +-----------+-------+
+    |          |           | 4 > 5     | False |
+    +----------+-----------+-----------+-------+
+    | ``>=``   | maior ou  | 5 >= 5    | True  |
+    |          | igual a   +-----------+-------+
+    |          |           | 5 >= 6    | False |
+    +----------+-----------+-----------+-------+
+
+
+Exemplos:
+
+
+.. code-block:: python
+
+    >>> 5 > 4.1
+    True
+
+
+.. code-block:: python
+
+    >>> "Land" < "Landsat"
+    True
+
+
+.. code-block:: python
+
+    >>> "Land Cover" > "Landsat"
+    False
+
+
+.. code-block:: python
+
+    >>> 5 != 4.1
+    True

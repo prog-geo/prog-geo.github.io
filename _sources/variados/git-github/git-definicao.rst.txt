@@ -1,0 +1,18 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _sec_variados_git_github_git_definicao:
+
+O que é o ``git``?
+==================
+
+
+Uma das dificuldades que pode surgir ao longo do desenvolvimento de um programa ou *script* está relacionada ao controle das modificações ou versões do código que estamos escrevendo. No caso de termos mais pessoas modificando o mesmo código, mais uma dificuldade é inserida: controlar as alterações realizadas de maneira independente e às vezes, simultânea. Por conta desses problemas, a indústria de software desenvolveu programas conhecidos como **sistemas de controle de versão** (*version control systems*), que são capazes de registrar as modificações de um ou mais arquivos de código fonte, possibilitando verificar e recuperar esse histórico de modificações em um ambiente multiusuário. Essa ideia de versionamento aplica-se não só ao código fonte na forma textual, mas também a arquivos como PDFs, imagens, e outros tipos e formatos.
+
+
+A abreviação ``VCS`` é muito comum de ser empregada para a classe de sistemas com esse propósito. Os sistemas pioneiros, `CVS <https://en.wikipedia.org/wiki/Concurrent_Versions_System>`_ e seu sucessor, o `Apache Subversion <https://en.wikipedia.org/wiki/Apache_Subversion>`_, utilizam uma arquitetura cliente-servidor, onde o servidor armazena o histórico do projeto e os clientes se conectam a esse servidor para obter uma cópia completa do projeto para então realizarem modificações e então aplicá-las de volta ao servidor. Mais recentemente, um sistema chamado `git <https://en.wikipedia.org/wiki/Git>`_, desenvolvido pelo criador do Linux, Linus Torvalds, tem sido uma das ferramentas de controle de versão mais utilizadas. O ``git`` utiliza uma arquitetura distribuída, bem diferente de seus antecesssores (``CVS`` e ``SVN``), sendo integrado em diversos serviços de cloud, entre eles o `GitHub <https://en.wikipedia.org/wiki/GitHub>`_.
+
+
+

@@ -1,0 +1,174 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../def.rst
+
+
+.. _sec_visao_geral_porque_programar:
+
+Por que aprender a programar?
+=============================
+
+
+Cada vez mais as atividades envolvidas em pesquisas, bem como o mercado de trabalho, exigem novas habilidades, e a programação é uma delas.
+
+
+Satélites de Observação da Terra
+--------------------------------
+
+
+Atualmente existem diversas fontes de dados geoespaciais, como os satélites de observação da Terra mostrados na :numref:`Figura %s <visao-geral:fig:satelites>`.
+
+
+.. figure:: ../img/visao-geral/earthsat-hd.jpg
+    :alt: Satélites de Observação da Terra
+    :width: 100%
+    :figclass: align-center
+    :name: visao-geral:fig:satelites
+
+    Satélites de Observação da Terra. |br| **Fonte:** NASA :cite:`nasa:2021:a`.
+
+
+Sensores a bordo de satélites como Terra e Aqua e da série Landsat, têm sido importantes instrumentos de coleta de dados sobre nosso planeta. Esses satélites produzem dados sobre superfície, oceanos, atmosfera, entre outros, servindo de insumo básico para a construção de diversas aplicações. No INPE, as imagens da série Landsat são utilizadas, por exemplo, no sistema de monitoramento da Floresta Amazônica. Através dessas imagens, o `PRODES <http://www.obt.inpe.br/OBT/assuntos/programas/amazonia/prodes>`_ mantém o inventário de todo o desmatamento por corte raso na vegatação natural ocorrido na Amazônia Legal desde 1988.
+
+
+A :numref:`Figura %s <visao-geral:fig:lcc>` apresenta imagens da série Landsat para uma mesma região em duas datas diferentes. A imagem à esquerda mostra como era parte da floresta amazônica, numa região do Peru, em 13 de Novembro de 1986. A imagem à direita mostra essa mesma região no ano de 2016, onde podemos observar algumas ocupações, áreas de pastagem e estradas em áreas que antes eram floresta.
+
+
+.. figure:: ../img/visao-geral/lcc.png
+    :alt: Monitoramento da mudança na cobertura
+    :width: 100%
+    :figclass: align-center
+    :name: visao-geral:fig:lcc
+
+    Monitoramento da mudança na cobertura. |br| **Fonte:** Adaptado de :cite:`nasa:2021:b`.
+
+
+Open Data
+---------
+
+
+O gráfico apresentado na :numref:`Figura %s <visao-geral:fig:soille:2018>` contém uma estimativa do volume de dados produzidos entre os anos de 2013 e 2019 por algumas plataformas bem conhecidas. Como pode ser visto, os satélites de observação da Terra produzem uma grande quantidade de dados geoespaciais.
+
+
+.. figure:: ../img/visao-geral/soille-et-al-2018.png
+    :alt: Volume de dados
+    :width: 100%
+    :figclass: align-center
+    :name: visao-geral:fig:soille:2018
+
+    Estimativa do volume anual de dados abertos provenientes dos satélites Landsat-7, Landsat-8, Terra/Aqua, Sentinel-1, Sentinel-2 e Sentinel-3. |br| **Fonte:** Soille et al. (2018) :cite:`soille:2018`.
+
+
+
+Free and Open Source Software (FOSS)
+------------------------------------
+
+
+Além dos dados, o panorama tecnológico mudou bastante nos últimos 10 anos. Temos uma grande disponibilidade de ferramentas livres denominados ``FOSS4G`` (*Free and Open Source Software for Geospatial*) (:numref:`Figuras %s <visao-geral:fig:foss4g>`, :numref:`%s <visao-geral:fig:qgis>`, :numref:`%s <visao-geral:fig:gvsig>`, :numref:`%s <visao-geral:fig:tview>`).
+
+
+.. figure:: ../img/visao-geral/foss4g.jpg
+    :alt: Free and Open Source Software for Geospatial
+    :width: 100%
+    :figclass: align-center
+    :name: visao-geral:fig:foss4g
+
+    Free and Open Source Software for Geospatial.
+
+
+.. figure:: ../img/visao-geral/qgis.png
+    :alt: QGIS
+    :width: 100%
+    :figclass: align-center
+    :name: visao-geral:fig:qgis
+
+    QGIS.
+
+
+.. figure:: ../img/visao-geral/gvsig.png
+    :alt: QGIS
+    :width: 100%
+    :figclass: align-center
+    :name: visao-geral:fig:gvSIG
+
+    gvSIG.
+
+
+.. figure:: ../img/visao-geral/tview.png
+    :alt: QGIS
+    :width: 100%
+    :figclass: align-center
+    :name: visao-geral:fig:tview
+
+    TerraView.
+
+
+Ciência Aberta e Reprodutível
+-----------------------------
+
+
+Apesar do grande esforço da comunidade geoespacial em promover uma política de dados abertos e software aberto, ainda existem vários desafios para facilitar a reprodutibilidade de trabalhos científicos desse domínio :cite:`nust:2020`, :cite:`kedron:2020`. Atualmente, a Ciência Aberta tem sido um termo muito utilizado para promover um conjunto de práticas que ajude a fomentar uma maior transparência na comunicação das pesquisas :cite:`pontika:2015`. Essas práticas envolvem não somente o compartilhamento de dados, mas também do código relativo aos processos que suportam a metodologia da pesquisa, dos resultados e metadados. Os termos Ciência Aberta e Reprodutibilidade de Pesquisas são dois termos extremamente relacionados :cite:`powers:2019`. Tanto as agências de fomento a pesquisa quanto os principais periódicos internacionais têm adotado diretrizes baseadas em Ciência Aberta, respectivamente, para o financiamento e forma de comunicação das publicações :cite:`fapesp:2021:a`, :cite:`nature:2021:a`, :cite:`science:2021:a`, :cite:`plosone:2021:a`, :cite:`theroyalsociety:2021:a`.
+
+
+Nesse contexto, alguns pesquisadores têm utilizado o termo **artigo executável** para denotar uma forma de publicação mais dinâmica, onde os códigos utilizados nas análises são combinados com anotações textuais, visualização e outros artefatos da pesquisa, de maneira que o leitor possa interagir com essa publicação e consiga reproduzir os passos da pesquisa e chegar às conclusões apresentadas nela :cite:`lasser:2020`. O intuito é tornar a comunicação da pesquisa mais efetiva, com transparência não somente no compartilhamento dos dados, mas também na metodologia, garantindo também a reprodutibilidade.
+
+
+Atualmente, existem ferramentas baseadas em código aberto projetadas para esse fim. Os documentos Jupyter Notebooks, por exemplo, permitem construir narrativas computacionais que envolvem códigos, anotações textuais, fórmulas matemáticas compatíveis com LaTeX, elementos HTML, gráficos e outros tipos de visualizações :cite:`kluyver:2016`. Um típico Jupyter Notebook é organizado em células, que podem ser código executável (python, R, Julia, entre outros) ou um tipo de anotação com uma sintaxe especial usada para formatar o texto e os elementos de mídia, tabelas e imagens (:numref:`Figura %s <visao-geral:fig:jupyter-notebook>`).
+
+
+.. figure:: ../img/visao-geral/jupyter-notebook.png
+    :alt: Exemplo de um Jupyter Notebook
+    :width: 100%
+    :figclass: align-center
+    :name: visao-geral:fig:jupyter-notebook
+
+    Exemplo de um Jupyter Notebook.
+
+
+O código fonte dos componentes de software de uma pesquisa podem ser facilmente compartilhados através de plataformas gratuitas, especializadas no controle e versionamento de código fonte, como o `GitHub <https://github.com/>`_. O `GitHub <https://github.com/>`_ é uma plataforma que oferece aos desenvolvedores a possibilidade de hospedar repositórios de código versionados através do sistema `git <https://git-scm.com/>`_ e com uma interface web amigável. Além disso, oferece diversas ferramentas para o desenvolvimento colaborativo. Essas ferramentas vão desde o controle de atividades (`issues <https://guides.github.com/features/issues/>`_), áreas de rascunho de código (`gist <https://help.github.com/en/github/writing-on-github/creating-gists>`_), disponibilização de páginas web (`github pages <https://pages.github.com/>`_), `wikis <https://guides.github.com/features/wikis/>`_, até a interface com sistemas de integração contínua. Um bom exemplo de uso de repositórios do GitHub para compartilhamento de Jupyter Notebooks pode ser encontrado na `Galeria de Jupyter Notebooks do projeto Brazil Data Cube <https://github.com/brazil-data-cube/code-gallery>`_.
+
+
+Neste curso, iremos discutir várias ferramentas que irão ajudar vocês nas práticas de Ciência Aberta. Esperamos que no futuro vocês consigam compartilhar suas pesquisas de maneira a facilitar a sua reprodutibilidade. Portanto, como mostrado na :numref:`Figura %s <visao-geral:fig:spectrum-reproducibility>`, esperamos contribuir para que cada vez mais as pesquisas desenvolvidas no INPE atendam os padrões denominados por Peng :cite:`peng:2011` de  **padrões de ouro**, com possibilidade de replicação completa.
+
+.. figure:: ../img/visao-geral/reproducibility-spectrum.jpg
+    :alt: The spectrum of reproducibility
+    :width: 100%
+    :figclass: align-center
+    :name: visao-geral:fig:spectrum-reproducibility
+
+    The spectrum of reproducibility. |br| **Fonte:** Peng (2011) :cite:`peng:2011`.
+
+
+.. note::
+
+    Apesar de não existir uma definição comum, amplamente aceita, para as palavras **reprodutibilidade** e **replicabilidade** em ciência, sugerimos a leitura de :cite:`barba:2018`, que discute o significado desses dois termos. Neste curso, adotaremos as seguinte definições:
+
+    .. rst-class:: open
+
+    - **Pesquisa Reprodutível:** os autores fornecem todos os dados necessários e os códigos de computador para executar a análise novamente, recriando os resultados.
+
+    - **Replicação:** um estudo que chega às mesmas descobertas científicas de outro estudo, porém coletando novos dados (possivelmente com métodos diferentes) e aperfeiçoando as análises.
+
+
+.. note::
+
+    O `Grupo de Observação da Terra (GEO) <https://earthobservations.org/>`_ está desenvolvendo uma biblioteca digital para compartilhamento de aplicações baseada nas ideias e fundamentos de Ciência Aberta, conhecida por **GEO Knowledge Hub**. No vídeo abaixo, o time apresenta as ideias dessa biblioteca digital.
+
+    .. raw:: html
+
+        <iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/ZFXyU9FRtfc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+.. note::
+
+    Ainda sobre o **GEO Knowledge Hub**, o próximo vídeo apresenta uma das aplicações desenvolvida pelo time do projeto **Brazil Data Cube**, que será compartilhada nessa biblioteca digital.
+
+    .. raw:: html
+
+        <iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/DteS_1yTojw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+.. Este é um termo frequentemente definido como um conjunto de outros termos que envolvem movimentos a favor de remover as barreiras para o compartilhamento de recursos, resultados, métodos, ferramentas, dados, publicações, etc.

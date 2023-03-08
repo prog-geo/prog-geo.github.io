@@ -1,0 +1,34 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../../def.rst
+
+
+.. _sec_projetos_2021_p10:
+
+Data Augmentation para Sensoriamento Remoto
+===========================================
+
+
+Uma estratégia que tem sido adotada por muitos trabalhos recentes na área de *Deep Learning* com imagens, é o aumento de dados (*data augmentation*). Em geral, uma amostra é obtida com recortes de tamanho reduzido (por exemplo 100 x 100 pixels) das regiões da imagem contendo a classe de interesse. Para aumentar a quantidade de amostras sem gerar novas amostras, são aplicadas técnicas como rotação da amostra (90°, ou 180°), aplicação de diferentes ruídos ou filtros, entre outras.
+
+Dada uma imagem contendo pontos centrais de cada amostra, e o tamanho do recorte desejado, o sistema deve gerar amostras originais e um conjunto adicional obtido por *data augmentation*. Proponha pelo menos 5 diferentes técnicas, sendo uma delas relacionada com características encontradas em sensoriamento remoto (presença de nuvens, sombra de nuvens, ou diferentes resoluções espaciais).
+
+
+.. note::
+
+    **1.** Os produtos de código desenvolvidos deverão ser licenciados de acordo com os modelos de software livre MIT, e disponibilizados em um ou mais repositórios na organização ``prog-geoespacial``.
+
+
+    **2.** Os pacotes deverão conter documentação de uso.
+
+
+    **3.** Utilize o `template de pacotes Python do Brazil Data Cube <https://github.com/brazil-data-cube/cookiecutter-bdc>`_.
+
+
+    **4.** Os produtos de dados de exemplo deverão ser disponibilizados de acordo com o modelo Creative Commons.
+
+
+    **5.** Produzir um relatório no formato do evento `GEOINFO <http://www.geoinfo.info/>`_.

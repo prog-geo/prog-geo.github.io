@@ -1,0 +1,265 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../def.rst
+
+
+.. _sec_imagens_visualizacao:
+
+Visualização de Imagens
+=======================
+
+
+Primeiramente, vamos criar os objetos que nos darão acesso aos elementos da imagem:
+
+- dataset
+- bandas individuais
+- array de pixels (formato NumPy)
+
+.. code-block:: python
+
+	# importar bibliotecas
+	from osgeo import gdal
+	import numpy as np
+	import matplotlib.pyplot as plt
+
+	# informar o uso de exceções
+	gdal.UseExceptions()
+
+	# abrir o dataset da imagem RapidEye, com 5 bandas
+	# (ao usar o colab, lembre-se de fazer o upload na aba de arquivos)
+	dataset = gdal.Open("crop_rapideye.tif", gdal.GA_ReadOnly)
+
+	# obter os objetos com as informações das bandas
+	banda_blue = dataset.GetRasterBand(1)
+	banda_green = dataset.GetRasterBand(2)
+	banda_red = dataset.GetRasterBand(3)
+	banda_rededge = dataset.GetRasterBand(4)
+	banda_nir = dataset.GetRasterBand(5)
+
+	# imprimir informações de máximos/mínimos 
+	# valores dos pixels de cada banda
+	print(banda_blue.ComputeRasterMinMax())
+	print(banda_green.ComputeRasterMinMax())
+	print(banda_red.ComputeRasterMinMax())
+	print(banda_rededge.ComputeRasterMinMax())
+	print(banda_nir.ComputeRasterMinMax())
+
+Uma maneira muito utilizada para complementar a visualização das imagens é através do ``histograma``. Ele apresenta, de forma gráfica, a distribuição dos pixels na imagem. A GDAL armazena esta informação em cada banda, e podemos acessar o histograma através da função ``GetHistogram``.
+
+.. code-block:: python
+
+	# a função GetHistogram precisa de intervalos
+	# mínimos e máximos de pixels para cada banda (min/max)
+	# e também a informação de divisões do gráfico (buckets)
+	plt.figure(figsize=(20, 5))
+	plt.plot(banda_blue.GetHistogram(min=0, max=25000, buckets=100), 'b', label='Banda 1 - Blue')
+	plt.plot(banda_green.GetHistogram(min=0, max=25000, buckets=100), 'g', label='Banda 2 - Green')
+	plt.plot(banda_red.GetHistogram(min=0, max=25000, buckets=100), 'r', label='Banda 3 - Red')
+	plt.plot(banda_rededge.GetHistogram(min=0, max=25000, buckets=100), 'orange', label='Banda 4 - Red-Edge')
+	plt.plot(banda_nir.GetHistogram(min=0, max=25000, buckets=100), 'cyan', label='Banda 5 - NIR')
+	plt.grid()
+	plt.legend()
+
+.. figure:: ../img/imagens/histograma-5-canais.png
+    :alt: Gráfico contendo o histograma das 5 bandas disponíveis
+    :width: 100%
+    :figclass: align-center
+    :name: imagens:fig:histograma-5-canais
+
+    Gráfico contendo o histograma das 5 bandas disponíveis.
+
+.. note::
+
+	A informação de mínimos e máximos valores de pixels para cada banda, utilizada pelas chamadas da função ``GetHistogram``, foi definida de maneira empírica, observando o retorno da função ``ComputeRasterMinMax`` aplicada para todas as bandas. 
+
+	Este histograma apresenta as informações divididas em 100 partes, ou ``buckets``. Portanto, o eixo *x* não contém os valores de números digitais originais da imagem, e sim os valores espaçados no intervalo definido pelos parâmetros ``min`` e ``max``.
+
+
+.. code-block:: python
+
+	# obter as matrizes de pixels de cada banda
+	blue = banda_blue.ReadAsArray()
+	green = banda_green.ReadAsArray()
+	red = banda_red.ReadAsArray()
+	rededge = banda_rededge.ReadAsArray()
+	nir = banda_nir.ReadAsArray()
+
+	# combinamos GDAL e Matplotlib para
+	# visualizar as bandas individualmente
+	plt.figure(figsize=(20, 5))
+	plt.subplot(151)
+	plt.imshow(blue, cmap='gray')
+	plt.title('Banda 1 - Blue')
+	plt.subplot(152)
+	plt.imshow(green, cmap='gray')
+	plt.title('Banda 2 - Green')
+	plt.subplot(153)
+	plt.imshow(red, cmap='gray')
+	plt.title('Banda 3 - Red')
+	plt.subplot(154)
+	plt.imshow(rededge, cmap='gray')
+	plt.title('Banda 4 - Red-Edge')
+	plt.subplot(155)
+	plt.imshow(nir, cmap='gray')
+	plt.title('Banda 5 - NIR')
+
+Podemos combinar a visualização de 2 bandas em um gráfico comumente chamado de ``scatterplot``. Para isso precisamos transformar as bandas da nossa imagem (2 dimensões) em vetores (1 dimensão). Para isso podemos usar a função da NumPy chamada ``flatten``.
+
+.. code-block:: python
+
+	# obter os vetores de 1 dimensão de cada banda
+	vetor_red = red.flatten()
+	vetor_nir = nir.flatten()
+
+	# construir o gráfico com o scatterplot
+	plt.figure(figsize=(10, 10))
+
+	plt.scatter(vetor_red, vetor_nir, marker='.')
+	plt.xlabel("Banda 3 - Red")
+	plt.ylabel("Banda 5 - NIR")
+	plt.title("Scatterplot das bandas Red e NIR")
+	plt.grid();
+
+.. figure:: ../img/imagens/scatterplot-2-bandas.png
+    :alt: Gráfico de dispersão (scatterplot) entre as bandas Red e NIR
+    :width: 100%
+    :figclass: align-center
+    :name: imagens:fig:scatterplot-2-bandas
+
+    Gráfico de dispersão (*scatterplot*) entre as bandas Red e NIR.
+
+
+Composição colorida e Contraste
+-------------------------------
+
+Para visualizar uma composição colorida, precisamos informar quais bandas serão utilizadas nas componentes RGB do gráfico:
+
+- canal R (vermelho)
+- canal G (verde)
+- canal B (azul)
+
+Para isso, podemos criar uma matriz NumPy com 3 dimensões (``linhas``, ``colunas``, ``bandas``).
+
+.. code-block:: python
+
+	# definimos os números de linhas/colunas
+	# a partir de alguma matriz da imagem original
+	linhas = blue.shape[0]
+	colunas = blue.shape[1]
+
+	# para criar uma visualização em cores 
+	# verdadeiras, podemos associar as bandas
+	# do RapidEye 3 - Red, 2 - Green, 1 - Blue
+	# para isso criamos uma matriz com 3 dimensões
+	# (3 x linhas x colunas) 
+	array_rgb = np.zeros((linhas, colunas, 3))
+
+	# veja que, para visualizar corretamente,
+	# precisaremos dividir as matrizes pelo
+	# maior valor, para obtermos uma matriz
+	# com valores normalizados entre 0.0 e 1.0
+	array_rgb[:, :, 0] = red / red.max()
+	array_rgb[:, :, 1] = green / green.max()
+	array_rgb[:, :, 2] = blue / blue.max()
+
+	plt.figure(figsize=(20, 5))
+	plt.imshow(array_rgb)
+	plt.title('Composição colorida verdadeira');
+
+.. figure:: ../img/imagens/rapideye-cores-verdadeiras.png
+    :alt: Visualização de uma composição colorida verdadeira
+    :width: 100%
+    :figclass: align-center
+    :name: imagens:fig:rapideye-cores-verdadeiras
+
+    Visualização de uma composição colorida verdadeira.
+
+
+O contraste é uma técnica que melhora a visualização da imagem. Veja que neste caso, os números digitais da imagem podem ser alterados, e assim as propriedades dos elementos em relação a suas respostas espectrais ficam comprometidas.
+
+.. warning::
+
+	Para realizar análises baseadas no comportamento espectral das imagens, técnicas de contraste devem ser evitadas.
+
+Uma maneira bem conhecida de aplicar o contraste é através das operações de ``gain`` (*ganho*) e ``offset`` (*deslocamento*). O ``gain`` é um valor constante que é multiplicado por todos os pixels das imagens. O ``offset`` é um valor constante que é somado a todos os pixels das imagens.
+
+.. code-block:: python
+
+	# lembrando que os valores em array_rgb
+	# foram normalizados entre 0.0 e 1.0
+	gain = 1.8
+	offset = 0.2
+
+	# como no exemplo anterior criamos um
+	# array_rgb, vamos alterar uma cópia deste
+	# array com as operações de gain/offset
+	# para não comprometer os dados originais
+
+	array_rgb_gain = array_rgb.copy()
+	array_rgb_gain *= gain
+
+	array_rgb_offset = array_rgb.copy()
+	array_rgb_offset += offset
+
+	# apresentação dos resultados
+	plt.figure(figsize=(20, 5))
+	plt.subplot(131)
+	plt.imshow(array_rgb)
+	plt.title(f'Imagem original');
+
+	plt.subplot(132)
+	plt.imshow(array_rgb_gain)
+	plt.title(f'Imagem com aplicação de gain = {gain}');
+
+	plt.subplot(133)
+	plt.imshow(array_rgb_offset)
+	plt.title(f'Imagem com aplicação de offset = {offset}');
+
+
+Métodos simples para classificação
+----------------------------------
+
+Em diversos casos, a aplicação de limiares sobre índices espectrais produz rapidamente resultados de mapeamento de alvos.
+
+.. code-block:: python
+
+	# definição de algumas constantes (empíricas) 
+	delta = 0.0000000001
+	limiar_ndwi = 0.0
+	limiar_ndvi = 0.5
+
+	# vamos alterar o tipo de uma das matrizes
+	# de bandas para float, para que os cálculos
+	# dos índices fiquem adequados
+	nir = nir.astype(float)
+
+	# cálculo das matrizes com os índices
+	ndwi = (green - nir) / (green + nir + delta)
+	ndvi = (nir - red) / (nir + red + delta)
+
+	# criação de classificações simples
+	classificacao = np.zeros_like(ndwi)
+	classificacao = np.where(ndwi > limiar_ndwi, 1, np.where(ndvi > limiar_ndvi, 2, 0))
+
+	plt.figure(figsize=(20, 5))
+	colormap_3classes = plt.get_cmap('Blues', 3)
+	plt.imshow(classificacao, cmap=colormap_3classes)
+	plt.colorbar()
+	plt.title('Exemplo de classificação');
+
+.. figure:: ../img/imagens/rapideye-classificacao-simples.png
+    :alt: Exemplo de classificação simples obtida pela aplicação de 2 limiares empíricos
+    :width: 100%
+    :figclass: align-center
+    :name: imagens:fig:rapideye-classificacao-simples
+
+    Exemplo de classificação simples obtida pela aplicação de 2 limiares empíricos.
+
+
+
+.. note ::
+
+    A combinação das bibliotecas GDAL, NumPy e Matplotlib permite a criação de muitas ferramentas de análise de imagens. Conseguiremos também combinar essas análises com dados vetoriais e tabulares.

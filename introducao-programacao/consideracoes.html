@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="pt-BR" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2.25. Considerações Finais &mdash; SER-347/CAP-419</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/table_styling.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/prog-geo.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://prog-geo.github.io/introducao-programacao/consideracoes.html" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Buscar" href="../search.html" />
+    <link rel="next" title="2.26. Exemplos" href="exemplos.html" />
+    <link rel="prev" title="2.24. Escopo de Variáveis" href="escopo.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SER-347/CAP-419
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Pesquisar documentos" aria-label="Pesquisar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegação">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introdução à Programação com Dados Geoespaciais</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Visão Geral do Curso:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../visao-geral.html">Visão Geral do Curso</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Aulas:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../instalacao.html">1. Instalando e Configurando o Ambiente de Programação</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">2. Introdução à Programação com a Linguagem Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introducao.html">2.1. Introdução</a></li>
+<li class="toctree-l2"><a class="reference internal" href="primeiro-prog.html">2.2. Primeiro Programa em Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tipos-dados.html">2.3. Tipos de Dados</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tipos-numericos.html">2.4. Tipos Numéricos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressoes.html">2.5. Expressões</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chamada-funcoes.html">2.6. Chamada de Funções</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variaveis.html">2.7. Variáveis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comentarios.html">2.8. Comentários</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tipo-logico.html">2.9. Tipo Lógico</a></li>
+<li class="toctree-l2"><a class="reference internal" href="op-relacionais.html">2.10. Operadores Relacionais</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressoes-logicas.html">2.11. Expressões Lógicas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="estruturas-condicionais.html">2.12. Estruturas Condicionais</a></li>
+<li class="toctree-l2"><a class="reference internal" href="estruturas-repeticao.html">2.13. Estruturas de Repetição</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings.html">2.14. O Tipo String</a></li>
+<li class="toctree-l2"><a class="reference internal" href="keywords.html">2.15. Palavras-chave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sequencias.html">2.16. Sequências</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dicionarios.html">2.17. Dicionários</a></li>
+<li class="toctree-l2"><a class="reference internal" href="set.html">2.18. Conjuntos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="formatacao-strings.html">2.19. Formatação de Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lacos-for.html">2.20. Laços do tipo for</a></li>
+<li class="toctree-l2"><a class="reference internal" href="break-continue.html">2.21. Os Comandos <code class="docutils literal notranslate"><span class="pre">break</span></code> e <code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="comandos-compostos.html">2.22. Comandos Compostos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="funcoes.html">2.23. Funções</a></li>
+<li class="toctree-l2"><a class="reference internal" href="escopo.html">2.24. Escopo de Variáveis</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.25. Considerações Finais</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exemplos.html">2.26. Exemplos</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../jupyter.html">3. Jupyter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../imagens.html">4. Imagens - Processamento e Visualização</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vetorial.html">5. Manipulação de Dados Vetoriais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variados.html">6. Tópicos Variados</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Referências Bibliográficas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../referencias.html">Referências Bibliográficas</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Listas de Exercícios</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../projetos/2022/index.html">Turma 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projetos/2021/index.html">Turma 2021</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Informações Gerais:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../licenca.html">Licença</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Agradecimentos:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../agradecimentos.html">Agradecimentos</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Menu de navegação móvel"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SER-347/CAP-419</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Navegação da página">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">2. </span>Introdução à Programação com a Linguagem Python</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">2.25. </span>Considerações Finais</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Navegação sequencial da página">
+        <a href="escopo.html" class="btn btn-neutral float-left" title="2.24. Escopo de Variáveis" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="exemplos.html" class="btn btn-neutral float-right" title="2.26. Exemplos" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="consideracoes-finais">
+<span id="sec-introducao-programacao-consideracoes"></span><h1><span class="section-number">2.25. </span>Considerações Finais<a class="headerlink" href="#consideracoes-finais" title="Link permanente para este cabeçalho"></a></h1>
+<p>Linguagens de programação (Seção <a class="reference internal" href="introducao.html#sec-introducao-programacao-introducao"><span class="std std-numref">2.1</span></a>):</p>
+<ul class="simple">
+<li><p>Aprendemos o que é uma linguagem de programação de alto nível. A <a class="reference internal" href="#introd-prog-fig-lp-high-low"><span class="std std-numref">Figura 2.23</span></a> mostra a diferença entre uma linguagem de alto nível e uma linguagem de baixo nível.</p></li>
+</ul>
+<figure class="align-center align-default" id="introd-prog-fig-lp-high-low">
+<a class="reference internal image-reference" href="../_images/alto-nivel-x-baixo-nivel.png"><img alt="Linguagens de Alto Nível x Linguagens de Baixo Nível" src="../_images/alto-nivel-x-baixo-nivel.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 2.23 - </span><span class="caption-text">Linguagens de Alto Nível x Linguagens de Baixo Nível. <br/> <strong>Fonte:</strong> Schmalz <span id="id1">[<a class="reference internal" href="../referencias.html#id94" title="M. S. Schmalz. Organization of computer systems: 2: isa, machine language, and number systems. 2021. Online; acessado 07 de Março de 2021. URL: https://www.cise.ufl.edu/~mssz/CompOrg/CDA-lang.html.">62</a>]</span>.</span><a class="headerlink" href="#introd-prog-fig-lp-high-low" title="Link Permanente para essa imagem"></a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>Python é uma linguagem de programação de alto nível e de propósito geral</p></li>
+</ul>
+<hr class="docutils" />
+<p>Tipos de dados primitivos (Seção <a class="reference internal" href="tipos-dados.html#sec-introducao-programacao-tipos-dados"><span class="std std-numref">2.3</span></a>):</p>
+<ul class="open">
+<li><p>Um bom tutorial sobre os tipos de dados elementares ou primitivos de Python pode ser encontrado em <span id="id2">[<a class="reference internal" href="../referencias.html#id102" title="John Sturtz. Basic data types in python. 2021. Online; acessado 04 de Abril de 2021. URL: https://realpython.com/python-data-types/.">69</a>]</span>.</p></li>
+</ul>
+<hr class="docutils" />
+<p>Tipo lógico e expressões lógicas (Seções <a class="reference internal" href="tipo-logico.html#sec-introducao-programacao-tipo-logico"><span class="std std-numref">2.9</span></a> e <a class="reference internal" href="expressoes-logicas.html#sec-introducao-programacao-expressoes-logicas"><span class="std std-numref">2.11</span></a>):</p>
+<ul class="open">
+<li><p>O tipo lógico e as expressões lógicas são muito utilizadas na construção de programas.</p></li>
+<li><p>Todos devem dominar a tabela verdade dos operadores <em>and</em>, <em>or</em> e <em>not</em>.</p></li>
+</ul>
+<hr class="docutils" />
+<p>Estruturas condicionais e de repetição (Seções <a class="reference internal" href="estruturas-condicionais.html#sec-introducao-programacao-estruturas-condicionais"><span class="std std-numref">2.12</span></a>, <a class="reference internal" href="estruturas-repeticao.html#sec-introducao-programacao-estruturas-repeticao"><span class="std std-numref">2.13</span></a>, <a class="reference internal" href="lacos-for.html#sec-introducao-lacos-for"><span class="std std-numref">2.20</span></a> e <a class="reference internal" href="break-continue.html#sec-introducao-break-continue"><span class="std std-numref">2.21</span></a>)</p>
+<ul class="open">
+<li><p>As estruturas condicionais e de repetição são importantes para controlar o fluxo de execução de um programa.</p></li>
+<li><p>Laços do tipo <code class="docutils literal notranslate"><span class="pre">for</span></code> são indicados quando temos que iterar (acessar ou atravessar) por uma coleção de objetos (ou itens).</p></li>
+<li><p>Laços do tipo <code class="docutils literal notranslate"><span class="pre">while</span></code> são indicados quando temos uma condição a ser verificada a cada iteração.</p></li>
+<li><p>Podemos modificar o fluxo de um laço através dos comandos <code class="docutils literal notranslate"><span class="pre">break</span></code> e <code class="docutils literal notranslate"><span class="pre">continue</span></code>.</p></li>
+</ul>
+<hr class="docutils" />
+<p>Tipo <code class="docutils literal notranslate"><span class="pre">str</span></code> (Seção <a class="reference internal" href="strings.html#sec-introducao-programacao-strings"><span class="std std-numref">2.14</span></a>):</p>
+<ul class="open">
+<li><p>Em Python usamos o tipo <code class="docutils literal notranslate"><span class="pre">str</span></code> para representação e manipulação de strings.</p></li>
+<li><p>O tipo string é apenas um dos <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range">tipos de sequência</a> disponíveis em Python.</p></li>
+<li><p>Existem diversas operações comuns entre os tipos denominados de sequência, como <em>Tuplas</em>, <em>Listas</em>, e <em>Ranges</em>.</p></li>
+<li><p>Strings em Python são sequências imutáveis. Em linguagens como C++ é possível alterarmos os caracteres da string diretamente.</p></li>
+</ul>
+<hr class="docutils" />
+<p>Listas (Seção <a class="reference internal" href="sequencias.html#sec-introducao-programacao-sequencias-listas"><span class="std std-numref">2.16.3</span></a>):</p>
+<ul class="open">
+<li><p>O tipo de dados lista é uma das estruturas mais utlizadas da linguagem Python.</p></li>
+<li><p>Cada item de uma lista é identificado por um índice.</p></li>
+<li><p>Listas são <strong>sequências mutáveis</strong>, isto é, podemos incluir novos elementos ou remover elementos existentes.</p></li>
+<li><p><strong>List Comprehension</strong> é um idioma muito comum da programação em Python.</p></li>
+</ul>
+<hr class="docutils" />
+<p>Dicionários (Seção <a class="reference internal" href="dicionarios.html#sec-introducao-programacao-dicionarios"><span class="std std-numref">2.17</span></a>):</p>
+<ul class="open">
+<li><p>Dicionários são práticos para agrupar dados.</p></li>
+<li><p>Para mais informações sobre o tipo <code class="docutils literal notranslate"><span class="pre">dict</span></code> (dicionário) em Python, consulte <span id="id3">[<a class="reference internal" href="../referencias.html#id103" title="John Sturtz. Dictionaries in python. 2021. Online; acessado 04 de Abril de 2021. URL: https://realpython.com/python-dicts/.">70</a>]</span> e <span id="id4">[<a class="reference internal" href="../referencias.html#id100" title="Aditya Sharma. Python dictionaries: the definitive guide. March 2020. Online; acessado 04 de Abril de 2021. URL: https://www.datacamp.com/community/tutorials/dictionary-python.">65</a>]</span>.</p></li>
+</ul>
+<hr class="docutils" />
+<p>Conjuntos (Seção <a class="reference internal" href="set.html#sec-introducao-programacao-set"><span class="std std-numref">2.18</span></a>):</p>
+<ul class="open">
+<li><p>Para mais informações sobre o tipo <code class="docutils literal notranslate"><span class="pre">set</span></code> (conjuntos) em Python, consulte <span id="id5">[<a class="reference internal" href="../referencias.html#id101" title="John Sturtz. Sets in python. 2018. Online; acessado 04 de Abril de 2021. URL: https://realpython.com/python-sets/.">68</a>]</span>, <span id="id6">[<a class="reference internal" href="../referencias.html#id107" title="James Uejio. Sets in python. 2020. Online; acessado 04 de Abril de 2021. URL: https://realpython.com/courses/sets-python/.">76</a>]</span>, <span id="id7">[<a class="reference internal" href="../referencias.html#id105" title="Christopher Trudeau. Sets, frozenset, and multisets. 2021. Online; acessado 04 de Abril de 2021. URL: https://realpython.com/lessons/sets-frozenset-multiset/.">75</a>]</span> e <span id="id8">[<a class="reference internal" href="../referencias.html#id106" title="Christopher Trudeau. Records and sets: selecting the ideal data structure. 2021. Online; acessado 04 de Abril de 2021. URL: https://realpython.com/courses/records-sets-ideal-data-structure/.">74</a>]</span>.</p></li>
+</ul>
+<hr class="docutils" />
+<p>Funções (Seção <a class="reference internal" href="funcoes.html#sec-introducao-programacao-funcoes"><span class="std std-numref">2.23</span></a>):</p>
+<ul class="open">
+<li><p>Funções permitem organizar o código de maneira mais efetiva.</p></li>
+<li><p>Os parâmetros <code class="docutils literal notranslate"><span class="pre">*args</span></code> e <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> são usados na definição de funções com número variável de parâmetros. Bibliotecas como a <cite>Matplotlib</cite> utilizam bastante esses tipos de parâmetros para fornecer maior flexibilidade na chamada de funções e métodos das funcionalidades providas por ela. A partir da 3.6, a linguagem Python adotou uma implementação do tipo dicionário onde os pares <em>chave-valor</em> (<em>key-value pairs</em>) são ordenados. Em versões anteriores, não havia a garantia de ordenação.</p></li>
+<li><p>Toda função em Python retorna algum valor. Caso o comando <cite>return</cite> seja usado sem valor, o valor <code class="docutils literal notranslate"><span class="pre">None</span></code> é retornado. Se você não incluir um comando <code class="docutils literal notranslate"><span class="pre">return</span></code> no bloco de comandos da função ou se por acaso algum caminho da sua função fizer com que ela termine sem uma instrução <code class="docutils literal notranslate"><span class="pre">return</span></code>, automaticamente será retornado o valor <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p>Quando definimos um parâmetro com valor <em>default</em>, devemos tomar cuidado ao usar valores <em>mutáveis</em>. Observe o exemplo abaixo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">MinhaFuncao</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[]):</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">data</span>
+
+<span class="n">MinhaFuncao</span><span class="p">()</span>
+<span class="n">MinhaFuncao</span><span class="p">()</span>
+<span class="n">MinhaFuncao</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<blockquote>
+<div><p>Como pode ser observado, a lista continua crescendo à medida que usamos a função <code class="docutils literal notranslate"><span class="pre">MinhaFuncao</span></code>. Isso ocorre porque o valor da expressão com o valor <em>default</em> é realizado apenas uma única vez, quando a função é definida. Por conta dessa “armadilha”, em geral, definimos funções como essas da seguinte forma:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">MinhaFuncao2</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">data</span>
+
+<span class="n">MinhaFuncao2</span><span class="p">()</span>
+<span class="n">MinhaFuncao2</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">MinhaFuncao2</span><span class="p">([</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+</div></blockquote>
+<hr class="docutils" />
+<p>Python:</p>
+<ul class="open">
+<li><p>Por convenção, programas Python possuem nomes com a extensão <code class="docutils literal notranslate"><span class="pre">.py</span></code>.</p></li>
+<li><p>É muito comum escutarmos dizer que <em>Python é uma linguagem de script</em>:</p>
+<blockquote>
+<div><ul class="open">
+<li><p>Muitas pessoas usam o termo <em>script</em> ao invés de programa para se referir ao arquivo contendo código fonte em Python.</p></li>
+<li><p>Python também é muito usada para criação de <em>scripts</em> executados na  linha de comando (<em>shell</em>) para automação de tarefas como processamento de textos e execução de outros programas.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<hr class="docutils" />
+<p>Estruturas de dados:</p>
+<ul class="open">
+<li><p>Para mais detalhes sobre as estruturas de dados de Python, consulte <span id="id9">[<a class="reference internal" href="../referencias.html#id4" title="Dan Bader. Common python data structures (guide). Aug 2020. Online; acessado 04 de Abril de 2021. URL: https://realpython.com/python-data-structures/.">4</a>]</span>.</p></li>
+<li><p>Em geral, as linguagens de programação possuem construtores que permitem criar novos tipos a partir dos tipos básicos ou elementares. Por exemplo, um tipo para manipulação de números complexos, com a parte real e imaginária, ou um tipo tipo para manipulação de pontos no plano cartesiano. Em linguagens como C e C++, existe um construtor chamado <code class="docutils literal notranslate"><span class="pre">struct</span></code> que permite criar um novo tipo estruturado formado por elementos de outros tipos. Este construtor permite criar uma espécie de tipo composto. Wirth <span id="id10">[<a class="reference internal" href="../referencias.html#id115" title="Niklaus Wirth. Algorithms + Data Structures = Programs. Prentice Hall PTR, USA, 1978. ISBN 0130224189.">85</a>]</span> lembra que este tipo composto é chamado de <strong>Produto Cartesiano</strong> na matemática.</p></li>
+</ul>
+<div class="historical-note admonition">
+<p class="admonition-title">Nota Histórica</p>
+<p>Ole-Johan Dahl e Kristen Nygaard (<a class="reference internal" href="#introd-prog-tbl-simula67"><span class="std std-numref">Tabela 2.13</span></a>) são considerados os pais da <strong>Programação Orientada a Objetos</strong> (POO). Nos anos 60, no Centro de Computação da Noruega, eles lideraram o desenvolvimento da família de linguagens de programação conhecida como <strong>SIMULA</strong>. A versão SIMULA 67 (1965-1968) introduziu uma nova abstração, a <strong>classe</strong> (<em>class</em>), como destacado no trecho do manual mostrado na <a class="reference internal" href="#introd-prog-tbl-simula67"><span class="std std-numref">Tabela 2.13</span></a>.</p>
+<table class="styled-table docutils align-center" id="introd-prog-tbl-simula67" style="width: 100%">
+<caption><span class="caption-number">Tabela 2.13 - </span><span class="caption-text">SIMULA 67. <br/> <strong>Fonte:</strong> Dahl et al. (1970) <span id="id11">[<a class="reference internal" href="../referencias.html#id12" title="Ole-Johan Dahl, Bjørn Myhrhaug, and Kristen Nygaard. Simula information: common base language. Technical Report S-22, Norwegian Computing Center, Oslo, Norway, October 1970. URL: https://www.ics.uci.edu/~jajones/INF102-S18/readings/10_Simula.pdf.">12</a>]</span>.</span><a class="headerlink" href="#introd-prog-tbl-simula67" title="Link Permanente para essa tabela"></a></caption>
+<colgroup>
+<col style="width: 60%" />
+<col style="width: 40%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td class="center-align"><p><img alt="dahl-nygaard" src="../_images/dahl-nygaard.png" /></p>
+<p>Ole-Johan Dahl e Kristen Nygaard</p>
+</td>
+<td class="center-align"><p><img alt="simula-1" src="../_images/simula67-1.png" /></p></td>
+</tr>
+</tbody>
+</table>
+<table class="styled-table docutils align-center" style="width: 100%">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td class="center-align"><p><img alt="simula-2" src="../_images/simula67-2.png" /></p></td>
+<td class="center-align"><p><img alt="simula-3" src="../_images/simula67-3.png" /></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Rodapé">
+        <a href="escopo.html" class="btn btn-neutral float-left" title="2.24. Escopo de Variáveis" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="exemplos.html" class="btn btn-neutral float-right" title="2.26. Exemplos" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2022, Gilberto Queiroz and Thales Körting.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+    <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165908761-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-165908761-1', {
+          'anonymize_ip': false,
+      });
+    </script> 
+
+</body>
+</html>

@@ -1,0 +1,232 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../def.rst
+
+
+.. _sec_introducao_programacao_consideracoes:
+
+Considerações Finais
+====================
+
+
+Linguagens de programação (Seção :numref:`%s <sec_introducao_programacao_introducao>`):
+
+- Aprendemos o que é uma linguagem de programação de alto nível. A :numref:`Figura %s <introd-prog:fig:lp-high-low>` mostra a diferença entre uma linguagem de alto nível e uma linguagem de baixo nível.
+
+
+.. figure:: ../img/introducao-programacao/alto-nivel-x-baixo-nivel.png
+    :alt: Linguagens de Alto Nível x Linguagens de Baixo Nível
+    :width: 80%
+    :figclass: align-center
+    :name: introd-prog:fig:lp-high-low
+
+    Linguagens de Alto Nível x Linguagens de Baixo Nível. |br| **Fonte:** Schmalz :cite:`schmalz:2021`.
+
+
+- Python é uma linguagem de programação de alto nível e de propósito geral
+
+
+-----
+
+
+Tipos de dados primitivos (Seção :numref:`%s <sec_introducao_programacao_tipos_dados>`):
+
+.. rst-class:: open
+
+- Um bom tutorial sobre os tipos de dados elementares ou primitivos de Python pode ser encontrado em :cite:`sturtz:2021:a`.
+
+
+-----
+
+
+Tipo lógico e expressões lógicas (Seções :numref:`%s <sec_introducao_programacao_tipo_logico>` e :numref:`%s <sec_introducao_programacao_expressoes_logicas>`):
+
+.. rst-class:: open
+
+- O tipo lógico e as expressões lógicas são muito utilizadas na construção de programas.
+
+- Todos devem dominar a tabela verdade dos operadores *and*, *or* e *not*.
+
+
+-----
+
+Estruturas condicionais e de repetição (Seções :numref:`%s <sec_introducao_programacao_estruturas_condicionais>`, :numref:`%s <sec_introducao_programacao_estruturas_repeticao>`, :numref:`%s <sec_introducao_lacos_for>` e :numref:`%s <sec_introducao_break_continue>`)
+
+.. rst-class:: open
+
+- As estruturas condicionais e de repetição são importantes para controlar o fluxo de execução de um programa.
+
+- Laços do tipo ``for`` são indicados quando temos que iterar (acessar ou atravessar) por uma coleção de objetos (ou itens).
+
+- Laços do tipo ``while`` são indicados quando temos uma condição a ser verificada a cada iteração.
+
+- Podemos modificar o fluxo de um laço através dos comandos ``break`` e ``continue``.
+
+
+-----
+
+
+Tipo ``str`` (Seção :numref:`%s <sec_introducao_programacao_strings>`):
+
+.. rst-class:: open
+
+- Em Python usamos o tipo ``str`` para representação e manipulação de strings.
+
+- O tipo string é apenas um dos `tipos de sequência <https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range>`_ disponíveis em Python.
+
+- Existem diversas operações comuns entre os tipos denominados de sequência, como *Tuplas*, *Listas*, e *Ranges*.
+
+- Strings em Python são sequências imutáveis. Em linguagens como C++ é possível alterarmos os caracteres da string diretamente.
+
+
+-----
+
+
+Listas (Seção :numref:`%s <sec_introducao_programacao_sequencias_listas>`):
+
+.. rst-class:: open
+
+- O tipo de dados lista é uma das estruturas mais utlizadas da linguagem Python.
+
+- Cada item de uma lista é identificado por um índice.
+
+- Listas são **sequências mutáveis**, isto é, podemos incluir novos elementos ou remover elementos existentes.
+
+- **List Comprehension** é um idioma muito comum da programação em Python.
+
+
+-----
+
+
+Dicionários (Seção :numref:`%s <sec_introducao_programacao_dicionarios>`):
+
+.. rst-class:: open
+
+- Dicionários são práticos para agrupar dados.
+
+- Para mais informações sobre o tipo ``dict`` (dicionário) em Python, consulte :cite:`sturtz:2021:b` e :cite:`sharma-aditya:2020`.
+
+
+-----
+
+
+Conjuntos (Seção :numref:`%s <sec_introducao_programacao_set>`):
+
+.. rst-class:: open
+
+- Para mais informações sobre o tipo ``set`` (conjuntos) em Python, consulte :cite:`sturtz:2018`, :cite:`uejio:2020`, :cite:`trudeau:2021:a` e :cite:`trudeau:2021:b`.
+
+
+-----
+
+Funções (Seção :numref:`%s <sec_introducao_programacao_funcoes>`):
+
+.. rst-class:: open
+
+- Funções permitem organizar o código de maneira mais efetiva.
+
+- Os parâmetros ``*args`` e ``**kwargs`` são usados na definição de funções com número variável de parâmetros. Bibliotecas como a `Matplotlib` utilizam bastante esses tipos de parâmetros para fornecer maior flexibilidade na chamada de funções e métodos das funcionalidades providas por ela. A partir da 3.6, a linguagem Python adotou uma implementação do tipo dicionário onde os pares *chave-valor* (*key-value pairs*) são ordenados. Em versões anteriores, não havia a garantia de ordenação.
+
+- Toda função em Python retorna algum valor. Caso o comando `return` seja usado sem valor, o valor ``None`` é retornado. Se você não incluir um comando ``return`` no bloco de comandos da função ou se por acaso algum caminho da sua função fizer com que ela termine sem uma instrução ``return``, automaticamente será retornado o valor ``None``.
+
+- Quando definimos um parâmetro com valor *default*, devemos tomar cuidado ao usar valores *mutáveis*. Observe o exemplo abaixo::
+
+    def MinhaFuncao(data=[]):
+        data.append(9)
+        return data
+
+    MinhaFuncao()
+    MinhaFuncao()
+    MinhaFuncao()
+
+..
+
+    Como pode ser observado, a lista continua crescendo à medida que usamos a função ``MinhaFuncao``. Isso ocorre porque o valor da expressão com o valor *default* é realizado apenas uma única vez, quando a função é definida. Por conta dessa "armadilha", em geral, definimos funções como essas da seguinte forma::
+
+        def MinhaFuncao2(data=None):
+            if data is None:
+                data = []
+            else:
+                data.append(9)
+
+            return data
+
+        MinhaFuncao2()
+        MinhaFuncao2([3])
+        MinhaFuncao2([4])
+
+
+-----
+
+
+Python:
+
+.. rst-class:: open
+
+- Por convenção, programas Python possuem nomes com a extensão ``.py``.
+
+- É muito comum escutarmos dizer que *Python é uma linguagem de script*:
+
+    .. rst-class:: open
+
+    - Muitas pessoas usam o termo *script* ao invés de programa para se referir ao arquivo contendo código fonte em Python.
+
+    - Python também é muito usada para criação de *scripts* executados na  linha de comando (*shell*) para automação de tarefas como processamento de textos e execução de outros programas.
+
+
+-----
+
+
+Estruturas de dados:
+
+.. rst-class:: open
+
+- Para mais detalhes sobre as estruturas de dados de Python, consulte :cite:`bader:2021:a`.
+
+- Em geral, as linguagens de programação possuem construtores que permitem criar novos tipos a partir dos tipos básicos ou elementares. Por exemplo, um tipo para manipulação de números complexos, com a parte real e imaginária, ou um tipo tipo para manipulação de pontos no plano cartesiano. Em linguagens como C e C++, existe um construtor chamado ``struct`` que permite criar um novo tipo estruturado formado por elementos de outros tipos. Este construtor permite criar uma espécie de tipo composto. Wirth :cite:`wirth:1978` lembra que este tipo composto é chamado de **Produto Cartesiano** na matemática.
+
+
+.. admonition:: Nota Histórica
+    :class: historical-note
+
+    .. |simula-1| image:: ../img/introducao-programacao/simula67-1.png
+
+
+    .. |simula-2| image:: ../img/introducao-programacao/simula67-2.png
+
+
+    .. |simula-3| image:: ../img/introducao-programacao/simula67-3.png
+
+
+    .. |dahl-nygaard| image:: ../img/introducao-programacao/dahl-nygaard.png
+
+
+    Ole-Johan Dahl e Kristen Nygaard (:numref:`Tabela %s <introd-prog:tbl:simula67>`) são considerados os pais da **Programação Orientada a Objetos** (POO). Nos anos 60, no Centro de Computação da Noruega, eles lideraram o desenvolvimento da família de linguagens de programação conhecida como **SIMULA**. A versão SIMULA 67 (1965-1968) introduziu uma nova abstração, a **classe** (*class*), como destacado no trecho do manual mostrado na :numref:`Tabela %s <introd-prog:tbl:simula67>`.
+
+
+    .. table:: SIMULA 67. |br| **Fonte:** Dahl et al. (1970) :cite:`dahl:1970`.
+        :width: 100%
+        :widths: 60 40
+        :align: center
+        :column-alignment: center center
+        :name: introd-prog:tbl:simula67
+
+        +----------------------------------+------------+
+        | |dahl-nygaard|                   | |simula-1| |
+        |                                  |            |
+        | Ole-Johan Dahl e Kristen Nygaard |            |
+        +----------------------------------+------------+
+
+
+    .. table::
+        :width: 100%
+        :widths: 50 50
+        :align: center
+        :column-alignment: center center
+
+        +--------------+-------------+
+        | |simula-2|   | |simula-3|  |
+        +--------------+-------------+

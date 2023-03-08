@@ -1,0 +1,21 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _sec_variados_git_github:
+
+git e GitHub
+============
+
+
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+
+    ./git-github/git-definicao
+    ./git-github/github-definicao
+    ./git-github/git-comandos
+
+
+

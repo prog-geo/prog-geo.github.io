@@ -1,0 +1,161 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _sec_introducao_programacao_escopo:
+
+Escopo de Variáveis
+===================
+
+
+Existe uma discussão importante sobre a questão de visibilidade das variáveis e do seu tempo de vida, isto é, onde os nomes dessas variáveis podem ser usados e quando esses nomes deixam de existir. Em toda linguagem de programação **imperativa**, como é o caso de Python, existe o conceito de **escopo**. Algumas vezes usamos os termos **escopo local** e **escopo global** para nos referirmos ao contexto onde as variáveis encontram-se definidas e, consequentemente, visíveis.
+
+
+Quando criamos uma função, a cada invocação dessa função os parâmetros são introduzidos num **escopo local**, isto é, os nomes dos parâmetros são acessíveis (ou visíveis) apenas aos comandos dentro da função. Já os comandos dentro da função podem acessar nomes de variáveis definidos fora da função, isto é, podem acessar variáveis consideradas globais, ou seja, que pertencem a um escopo mais externo que o local, que é chamado de **escopo global**.
+
+
+O programa a seguir demonstra como funciona o conceito de escopo:
+
+
+.. code-block:: python
+    :linenos:
+
+    pi = 3.14
+    e = 2.71
+
+    def f1(v1):
+        print("v1 no escopo local de f1:", v1)
+
+        print("pi no escopo local de f1:", pi)
+
+        e = 3
+
+        print("e no escopo local de f1:", e)
+
+
+    f1(pi)
+    print("e no escopo global:", e)
+
+    # print("v1 no escopo global:", v1)
+
+
+.. tip::
+
+    Se você estiver usando o ambiente do Jupyter, lembre-se de limpar seu *kernel* antes de executar o código acima. De maneira similar se você já tiver carregado tudo no terminal interativo do Python, reinicialize-o.
+
+
+O programa acima é executado da seguinte forma (*explicação bem simplificada!*):
+
+
+**1.** Os nomes ``pi`` e ``e`` são definidos no **escopo global** do programa, nas ``linhas 01`` e ``02``, respectivamente, com os valores ``3.14`` e ``2.71``. A partir desse ponto do programa essas duas variáveis podem ser acessadas em qualquer parte do programa, incluindo funções que sejam chamadas após a definição dessas linhas.
+
+
+**2.** Em seguida, a função ``f1`` na ``linha 05`` é definida. O corpo dessa função (``linhas 05-11``) não é executado. O nome ``f1`` passa a fazer parte do **escopo global** do programa. Dessa forma, o nome ``f1`` já pode ser usado em seu programa.
+
+
+**3.** A ``linha 14`` é executada. O nome ``f1`` é encontrado no escopo global do programa, ativando a função ``f1`` com o valor associado à variável ``pi`` (o valor ``3.14``).
+
+
+**4.** A ativação da função ``f1`` faz com que um novo escopo local seja criado e o parâmetro ``v1`` na ``linha 04`` seja incluído nesse escopo, sendo associado ao valor ``3.14`` passado em sua chamada. Nesse novo escopo local, o nome ``v1`` pode ser utilizado para leitura e escrita. O comando ``print`` da ``linha 05`` faz com que o valor associado a ``v1`` seja escrito na tela (``3.14``). O comando ``print`` da ``linha 7`` acessa a variável ``pi``, que não está definida no escopo local, portanto o interpretador irá buscar esse nome no escopo global. No escopo global o nome ``pi`` está associado ao valor ``3.14`` e, portanto, esse valor é escrito na saída padrão. O comando de atribuição na ``linha 09`` faz com que um novo nome, ``e``, seja introduzido no escopo local da função ``f1``, escondendo o nome ``e`` do escopo global. Assim, o comando ``print`` da ``linha 11`` irá acessar a variável ``e`` definida localmente, que está associada ao valor ``3``. Ao término da execução da função ``f1``, o escopo local dessa função é destruído, e junto com isso, todas as associações de nomes e valores definidas dentro da função são liberadas. Neste caso os nomes ``v1`` e ``e`` locais.
+
+
+**5.** O comando ``print`` da ``linha 15`` irá escrever o valor ``2.71`` pois o nome ``e`` será encontrado no escopo global.
+
+
+**6.** A execução da ``linha 17`` irá produzir o seguinte erro::
+
+    NameError: name 'v1' is not defined
+
+
+Isso indica que o nome ``v1`` não se encontra num escopo acessível naquela linha.
+
+
+O programa abaixo ilustra outro detalhe dessa regra de escopo das variáveis.
+
+
+.. tip::
+
+    Lembre-se de limpar seu *kernel* Jupyter antes de executar a próxima célula pois queremos que apenas esse programa seja executado no momento.
+
+
+.. code-block:: python
+    :linenos:
+
+    pi = 3.14
+    e = 2.71
+
+    def f1(v1):
+        print("v1 no escopo local de f1:", v1)
+
+        print("gamma no escopo local de f1:", gamma)
+
+        print("pi no escopo local de f1:", pi)
+
+        print("e no escopo local de f1:", e)
+
+
+    f1(pi)
+    gamma = 0.5772
+
+
+O programa acima irá produzir o seguinte erro::
+
+    NameError: name 'gamma' is not defined
+
+
+Esse erro ocorre pois a variável ``gamma`` não pertence ao escopo local da função ``f1`` e nem foi definida ainda no escopo global do programa quando a função ``f1`` foi ativada na ``linha 14``.
+
+
+Se você trocar as ``linhas 14`` e ``15`` de lugar, o programa irá executar normalmente.
+
+
+.. tip::
+
+    Lembre-se de limpar seu *kernel* Jupyter antes de executar a próxima célula.
+
+
+.. code-block:: python
+
+    pi = 3.14
+    e = 2.71
+
+    def f1(v1):
+        print("v1 no escopo local de f1:", v1)
+
+        print("gamma no escopo local de f1:", gamma)
+
+        print("pi no escopo local de f1:", pi)
+
+        print("e no escopo local de f1:", e)
+
+
+    gamma = 0.5772
+    f1(pi)
+
+
+O escopo de variáveis é mantido através de tabelas especiais construídas pelos compiladores e interpretadores que são chamadas de **tabela de símbolos**.
+
+
+Em Python, a execução de uma função introduz uma nova tabela de símbolos, que é usada para associar as variáveis locais da função aos seu valores. Os parâmetros de uma função são inseridos nessa tabela local, assim que a função é ativada para execução. Cada comando de atribuição dentro da função fará com que o nome do lado esquerdo da atribuição seja inserido nessa tabela. Por conta disso, não é possível trocar o valor associado a uma variável do escopo mais externo usando uma simples atribuição.
+
+
+Dentro da função quando um identificador é encontrado em alguma expressão, primeiro o interpretador Python procura pelo símbolo nessa tabela de símbolos local. Se o identificador não é encontrado, o interpretador verifica se esse nome existe na tabela de símbolos mais externa (global) e, por último, na tabela de símbolos dos objetos pré-definidos da linguagem.
+
+
+Perceba que dessa forma, em Python, uma variável definida fora da função não pode ser escrita dentro de uma função pois uma atribuição sempre gera um novo símbolo no escopo local dessa função.
+
+
+Nas linguagens de programação temos basicamente dois tipos de mecanismos de passagem de parâmetros:
+
+.. rst-class:: open
+
+- **Passagem por Valor:** onde uma cópia do valor informado na chamada da função é associada ao parâmetro dessa função durante sua ativação.
+
+- **Passagem por Referência:** neste caso o parâmetro da função se torna um *alias* ou uma *referência* para o nome da variável usada na passagem do argumento durante a chamada dessa função.
+
+
+O primeiro tipo de passagem, por valor, evita que a variável usada na chamada possa ser modificada diretamente. Já a segunda forma, possibilita que a variável informada seja alterada dentro da função.
+
+
+Em Python as chamadas de função são realizadas por valor. No entanto, objetos como listas e dicionários possuem o efeito de chamadas por referência pois internamente a cópia das variáveis referenciam o mesmo conteúdo.

@@ -1,0 +1,44 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../../def.rst
+
+
+.. _sec_projetos_2021_p01:
+
+Brazil Data Cube Cloud Coverage (BDC\ :sup:`3`)
+===============================================
+
+
+O trabalho apresentado em :cite:`lucena:2020` introduz uma aplicação para fornecer ao usuário algumas estatísticas sobre a cobertura de nuvens a partir de séries temporais de imagens de sensoriamento remoto ópticas. Esta aplicação utiliza o `serviço STAC do Brazil Data Cube <https://github.com/brazil-data-cube/code-gallery/blob/master/jupyter/Python/stac/stac-introduction.ipynb>`_ para recuperar, nos metadados das coleções de imagens e itens, o percentual de cobertura de nuvens e o *footprint* das imagens (:numref:`Figura % s <fig:projetos:2021:p01:bdc03>`). Assim, vários gráficos podem ser apresentados para o usuário, como porcentagem de cobertura de nuvens mensal ou anual, ou valores absolutos da cobertura de nuvem ao longo do tempo.
+
+
+.. figure:: ../../img/projetos/2021/bdc3.jpg
+    :alt: Arquitetura do BDC3
+    :width: 100%
+    :figclass: align-center
+    :name: fig:projetos:2021:p01:bdc03
+
+    Arquitetura do BDC\ :sup:`3`. |br| **Fonte:** Lucena et al. (2020) :cite:`lucena:2020`.
+
+
+Para este projeto, considere criar um ou mais pacotes Python que implementem um processador de dados matriciais e vetoriais a partir das mácaras de nuvem disponíveis no catálogo do BDC, oferecendo a possibilidade de estatísticas a partir de partições arbitrárias, como limites municipais e estaduais, grade de um dado satélite/sensor, limite de um bioma, entre outros. Considere criar Notebooks que ajudem a apresentar as funcionalidades desse processador.
+
+
+.. note::
+
+    **1.** Os produtos de código desenvolvidos deverão ser licenciados de acordo com os modelos de software livre MIT, e disponibilizados em um ou mais repositórios na organização ``prog-geoespacial``.
+
+
+    **2.** Os pacotes deverão conter documentação de uso.
+
+
+    **3.** Utilize o `template de pacotes Python do Brazil Data Cube <https://github.com/brazil-data-cube/cookiecutter-bdc>`_.
+
+
+    **4.** Os produtos de dados de exemplo deverão ser disponibilizados de acordo com o modelo Creative Commons.
+
+
+    **5.** Produzir um relatório no formato do evento `GEOINFO <http://www.geoinfo.info/>`_.

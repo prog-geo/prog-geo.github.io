@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="pt-BR" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2.19. Formatação de Strings &mdash; SER-347/CAP-419</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/table_styling.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/prog-geo.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://prog-geo.github.io/introducao-programacao/formatacao-strings.html" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Buscar" href="../search.html" />
+    <link rel="next" title="2.20. Laços do tipo for" href="lacos-for.html" />
+    <link rel="prev" title="2.18. Conjuntos" href="set.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SER-347/CAP-419
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Pesquisar documentos" aria-label="Pesquisar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegação">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introdução à Programação com Dados Geoespaciais</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Visão Geral do Curso:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../visao-geral.html">Visão Geral do Curso</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Aulas:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../instalacao.html">1. Instalando e Configurando o Ambiente de Programação</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">2. Introdução à Programação com a Linguagem Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introducao.html">2.1. Introdução</a></li>
+<li class="toctree-l2"><a class="reference internal" href="primeiro-prog.html">2.2. Primeiro Programa em Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tipos-dados.html">2.3. Tipos de Dados</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tipos-numericos.html">2.4. Tipos Numéricos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressoes.html">2.5. Expressões</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chamada-funcoes.html">2.6. Chamada de Funções</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variaveis.html">2.7. Variáveis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comentarios.html">2.8. Comentários</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tipo-logico.html">2.9. Tipo Lógico</a></li>
+<li class="toctree-l2"><a class="reference internal" href="op-relacionais.html">2.10. Operadores Relacionais</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressoes-logicas.html">2.11. Expressões Lógicas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="estruturas-condicionais.html">2.12. Estruturas Condicionais</a></li>
+<li class="toctree-l2"><a class="reference internal" href="estruturas-repeticao.html">2.13. Estruturas de Repetição</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings.html">2.14. O Tipo String</a></li>
+<li class="toctree-l2"><a class="reference internal" href="keywords.html">2.15. Palavras-chave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sequencias.html">2.16. Sequências</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dicionarios.html">2.17. Dicionários</a></li>
+<li class="toctree-l2"><a class="reference internal" href="set.html">2.18. Conjuntos</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.19. Formatação de Strings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#usando-o-operador">2.19.1. Usando o operador <code class="docutils literal notranslate"><span class="pre">%</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#usando-o-metodo-format">2.19.2. Usando o método <code class="docutils literal notranslate"><span class="pre">format</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#f-string">2.19.3. f-string</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#template-strings">2.19.4. Template strings</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="lacos-for.html">2.20. Laços do tipo for</a></li>
+<li class="toctree-l2"><a class="reference internal" href="break-continue.html">2.21. Os Comandos <code class="docutils literal notranslate"><span class="pre">break</span></code> e <code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="comandos-compostos.html">2.22. Comandos Compostos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="funcoes.html">2.23. Funções</a></li>
+<li class="toctree-l2"><a class="reference internal" href="escopo.html">2.24. Escopo de Variáveis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="consideracoes.html">2.25. Considerações Finais</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exemplos.html">2.26. Exemplos</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../jupyter.html">3. Jupyter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../imagens.html">4. Imagens - Processamento e Visualização</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vetorial.html">5. Manipulação de Dados Vetoriais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variados.html">6. Tópicos Variados</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Referências Bibliográficas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../referencias.html">Referências Bibliográficas</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Listas de Exercícios</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../projetos/2022/index.html">Turma 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projetos/2021/index.html">Turma 2021</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Informações Gerais:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../licenca.html">Licença</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Agradecimentos:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../agradecimentos.html">Agradecimentos</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Menu de navegação móvel"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SER-347/CAP-419</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Navegação da página">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">2. </span>Introdução à Programação com a Linguagem Python</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">2.19. </span>Formatação de Strings</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Navegação sequencial da página">
+        <a href="set.html" class="btn btn-neutral float-left" title="2.18. Conjuntos" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="lacos-for.html" class="btn btn-neutral float-right" title="2.20. Laços do tipo for" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="formatacao-de-strings">
+<span id="sec-introducao-programacao-formatacao-strings"></span><h1><span class="section-number">2.19. </span>Formatação de Strings<a class="headerlink" href="#formatacao-de-strings" title="Link permanente para este cabeçalho"></a></h1>
+<section id="usando-o-operador">
+<span id="sec-introducao-programacao-formatacao-strings-operador-antigo"></span><h2><span class="section-number">2.19.1. </span>Usando o operador <code class="docutils literal notranslate"><span class="pre">%</span></code><a class="headerlink" href="#usando-o-operador" title="Link permanente para este cabeçalho"></a></h2>
+<p>Em Python podemos usar o operador <code class="docutils literal notranslate"><span class="pre">%</span></code> para realizar a formatação de strings. Nesse caso, chamamos esse operador de <strong>formatação de string</strong> ou <strong>operador de interpolação</strong>. Para compreender como ele funciona, vamos começar por um exemplo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="gp">&gt;&gt;&gt; </span><span class="n">curso</span> <span class="o">=</span> <span class="s2">&quot;CAP-419/SER-347&quot;</span>
+<span class="linenos">2</span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;Bem vindo a </span><span class="si">%s</span><span class="s2">!&quot;</span> <span class="o">%</span> <span class="n">curso</span>
+<span class="linenos">3</span><span class="go">&#39;Bem vindo a CAP-419/SER-347!&#39;</span>
+</pre></div>
+</div>
+<p>A sequência <code class="docutils literal notranslate"><span class="pre">%s</span></code>, dentro da string na linha 03, possui uma interpretação especial, ela funciona como um marcador de posição (<em>placeholder</em>) que será substituída (ou interpolada ou expandida) pelo valor fornecido à direita do operador <code class="docutils literal notranslate"><span class="pre">%</span></code>. Existe uma regra bem definida de como construir as strings de formatação <span id="id1">[<a class="reference internal" href="../referencias.html#id72" title="Python Software Foundation. Printf-style string formatting. 2021. Online; acessado 07 de Março de 2021. URL: https://docs.python.org/3/library/stdtypes.html#old-string-formatting.">37</a>]</span>. Algumas bem utilizadas são:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">%s</span></code>: substituição de strings.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%d</span></code>: substituição de números inteiros.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%f</span></code>: substituição de números em ponto flutuante.</p></li>
+</ul>
+<p>Exemplos:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">idade</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;Idade: </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">idade</span>
+<span class="go">&#39;Idade: 25&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">salario</span> <span class="o">=</span> <span class="mf">1250.34</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;Salario: R$ </span><span class="si">%f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">salario</span>
+<span class="go">&#39;Salario: R$ 1250.340000&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;Salario: R$ </span><span class="si">%.2f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">salario</span>
+<span class="go">&#39;Salario: R$ 1250.34&#39;</span>
+</pre></div>
+</div>
+<p>O exemplo acima utiliza também uma sequência especial para formatar um número em ponto flutuante, fazendo com que a parte fracionária seja limitada a dois caracteres.</p>
+<p>Por padrão, os valores são formatados tomando o máximo de caracteres necessários para representar o conteúdo. É possível também especificar que o valor deva ser preenchido com um número fixo de caracteres (<em>padding</em>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;</span><span class="si">%20s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="s1">&#39;teste&#39;</span>
+<span class="go">&#39;               teste&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;</span><span class="si">%05d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="mi">38</span>
+<span class="go">&#39;00038&#39;</span>
+</pre></div>
+</div>
+<p>Se mais de um valor precisar ser informado na formatação, devemos usar <strong>tuplas</strong> com exatamente o mesmo número de elementos especificados na string de formatação:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">plataforma</span> <span class="o">=</span> <span class="s2">&quot;Landsat-8&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sensor</span> <span class="o">=</span> <span class="s2">&quot;OLI&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ano</span> <span class="o">=</span> <span class="mi">2013</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> foi lançado em </span><span class="si">%d</span><span class="s2"> e possui o sensor </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">plataforma</span><span class="p">,</span> <span class="n">ano</span><span class="p">,</span> <span class="n">sensor</span><span class="p">)</span>
+<span class="go">&#39;Landsat-8 foi lançado em 2013 e possui o sensor OLI&#39;</span>
+</pre></div>
+</div>
+<p>ou, podemos utilizar um objeto que realize o mapeamento entre nome e valores, como os <strong>dicionários</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">instrumento</span> <span class="o">=</span> <span class="p">{</span>
+<span class="gp">... </span>    <span class="s2">&quot;plataforma&quot;</span><span class="p">:</span> <span class="s2">&quot;Landsat-8&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s2">&quot;sensor&quot;</span><span class="p">:</span> <span class="s2">&quot;OLI&quot;</span>
+<span class="gp">... </span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;Você está utilizando dados </span><span class="si">%(plataforma)s</span><span class="s2"> / </span><span class="si">%(sensor)s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">instrumento</span>
+<span class="go">&#39;Você está utilizando dados Landsat-8 / OLI&#39;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Embora o operador <code class="docutils literal notranslate"><span class="pre">%</span></code>, para formatação de strings, tenha sido depreciado em favor do método <code class="docutils literal notranslate"><span class="pre">format</span></code> (<a class="reference internal" href="#sec-introducao-programacao-formatacao-strings-metodo-format"><span class="std std-numref">Seção 2.19.2</span></a>), é importante saber de sua existência pois muitos <em>scripts</em> e programas legados utilizam esta notação.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>O operador <code class="docutils literal notranslate"><span class="pre">%</span></code> é semelhante ao operador <code class="docutils literal notranslate"><span class="pre">sprintf()</span></code> da linguagem C.</p>
+</div>
+</section>
+<section id="usando-o-metodo-format">
+<span id="sec-introducao-programacao-formatacao-strings-metodo-format"></span><h2><span class="section-number">2.19.2. </span>Usando o método <code class="docutils literal notranslate"><span class="pre">format</span></code><a class="headerlink" href="#usando-o-metodo-format" title="Link permanente para este cabeçalho"></a></h2>
+<p>Sintaxe:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="open">
+<li><p><strong>Descrição:</strong> O método <code class="docutils literal notranslate"><span class="pre">format</span></code> realiza a operação de formatação de uma string <code class="docutils literal notranslate"><span class="pre">s</span></code> contendo elementos de substituição delimitados pelos caracteres <code class="docutils literal notranslate"><span class="pre">{</span></code> e <code class="docutils literal notranslate"><span class="pre">}</span></code>.</p></li>
+<li><p><strong>Parâmetros:</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: Sequência com os valores a serem usados na formatação da string <code class="docutils literal notranslate"><span class="pre">s</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kwargs</span></code>: Pares de chave-valor. As ocorrências em <code class="docutils literal notranslate"><span class="pre">s</span></code> de <em>placeholders</em> nomeados usarão valores desse parâmetro.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Retorno:</strong> Uma cópia da string <code class="docutils literal notranslate"><span class="pre">s</span></code> onde cada elemento de substituição é trocado por um valor string gerado a partir do argumento correspodente.</p></li>
+</ul>
+<p>Exemplos:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">idade</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;Idade: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">idade</span><span class="p">)</span>
+<span class="go">&#39;Idade: 25&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">salario</span> <span class="o">=</span> <span class="mf">1250.34</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;Salario: R$ </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">salario</span><span class="p">)</span>
+<span class="go">&#39;Salario: R$ 1250.340000&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;Salario: R$ </span><span class="si">{:.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">salario</span><span class="p">)</span>
+<span class="go">&#39;Salario: R$ 1250.34&#39;</span>
+</pre></div>
+</div>
+<p>O exemplo acima utiliza também uma sequencia especial para formatar um número em ponto flutuante, fazendo com que a parte fracionária seja limitada a dois caracteres.</p>
+<p>Por padrão, os valores são formatados tomando o máximo de caracteres necessários para representar o conteúdo. É possível também especificar que o valor deva ser preenchido com um certo número fixo de caracteres (<em>padding</em>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;</span><span class="si">{:&gt;20}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;teste&#39;</span><span class="p">)</span>
+<span class="go">&#39;               teste&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;</span><span class="si">{:20}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;teste&#39;</span><span class="p">)</span>
+<span class="go">&#39;teste               &#39;</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;</span><span class="si">{:05}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">38</span><span class="p">)</span>
+<span class="go">&#39;00038&#39;</span>
+</pre></div>
+</div>
+<p>Ou, fazer o truncamento:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;</span><span class="si">{:.10}</span><span class="s1"> ...&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Introdução à Programação com Dados Geoespaciais&#39;</span><span class="p">)</span>
+<span class="go">&#39;Introdução ...&#39;</span>
+</pre></div>
+</div>
+<p>Podemos passar vários valores de uma única vez:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">plataforma</span> <span class="o">=</span> <span class="s2">&quot;Landsat-8&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sensor</span> <span class="o">=</span> <span class="s2">&quot;OLI&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ano</span> <span class="o">=</span> <span class="mi">2013</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;</span><span class="si">{0}</span><span class="s2"> foi lançado em </span><span class="si">{1}</span><span class="s2"> e possui o sensor </span><span class="si">{2}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">plataforma</span><span class="p">,</span> <span class="n">ano</span><span class="p">,</span> <span class="n">sensor</span><span class="p">)</span>
+<span class="go">&#39;Landsat-8 foi lançado em 2013 e possui o sensor OLI&#39;</span>
+</pre></div>
+</div>
+<p>Podemos omitir a numeração dos argumentos, caso ele sejam dados na ordem:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> foi lançado em </span><span class="si">{}</span><span class="s2"> e possui o sensor </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">plataforma</span><span class="p">,</span> <span class="n">ano</span><span class="p">,</span> <span class="n">sensor</span><span class="p">)</span>
+<span class="go">&#39;Landsat-8 foi lançado em 2013 e possui o sensor OLI&#39;</span>
+</pre></div>
+</div>
+<p>Também podemos utilizar argumentos posicionais (<em>positional arguments</em>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;O sensor </span><span class="si">{2}</span><span class="s2"> a bordo do satélite </span><span class="si">{0}</span><span class="s2"> lançado em </span><span class="si">{1}</span><span class="s2">...&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">plataforma</span><span class="p">,</span> <span class="n">ano</span><span class="p">,</span> <span class="n">sensor</span><span class="p">)</span>
+<span class="go">&#39;O sensor OLI a bordo do satélite Landsat-8 lançado em 2013...&#39;</span>
+</pre></div>
+</div>
+<p>Ou, podemos utilizar argumentos nomeados (<em>named keyword argument</em>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;Coordinates: </span><span class="si">{latitude}</span><span class="s1">, </span><span class="si">{longitude}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">longitude</span><span class="o">=</span><span class="s1">&#39;-45.88&#39;</span><span class="p">,</span> <span class="n">latitude</span><span class="o">=</span><span class="s1">&#39;-23.17&#39;</span><span class="p">)</span>
+<span class="go">&#39;Coordinates: -23.17, -45.88&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">instrumento</span> <span class="o">=</span> <span class="p">{</span>
+<span class="gp">... </span>    <span class="s2">&quot;plataforma&quot;</span><span class="p">:</span> <span class="s2">&quot;Landsat-8&quot;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="s2">&quot;sensor&quot;</span><span class="p">:</span> <span class="s2">&quot;OLI&quot;</span>
+<span class="gp">... </span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;Você está utilizando dados </span><span class="si">{plataforma}</span><span class="s2"> / </span><span class="si">{sensor}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">instrumento</span><span class="p">)</span>
+<span class="go">&#39;Você está utilizando dados Landsat-8 / OLI&#39;</span>
+</pre></div>
+</div>
+<div class="box-exemplos admonition">
+<p class="admonition-title">Exemplos</p>
+<p>Vamos examinar os exemplos apresentados no <a class="reference external" href="https://docs.python.org/3/library/string.html#format-examples">manual da biblioteca padrão do Python</a>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Podemos especificar vários detalhes de formatação, tais como: tamanho do campo, alinhamento, <em>padding</em>, precisão decimal, entre outros. Iremos ver mais detalhes sobre formatação de strings à medida que avançarmos no curso.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Se você quiser usar os caracteres <code class="docutils literal notranslate"><span class="pre">{</span></code> ou <code class="docutils literal notranslate"><span class="pre">}</span></code> como uma string do seu texto de saída, deverá utillizar uma sequência de escape especial, dobrando esses caracteres: <code class="docutils literal notranslate"><span class="pre">{{</span></code> ou <code class="docutils literal notranslate"><span class="pre">}}</span></code>. Caso contrário, as marcas serão tratadas como <em>placeholders</em>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>A sintaxe de formatação do método <code class="docutils literal notranslate"><span class="pre">format</span></code> pode ser encontrada em <span id="id2">[<a class="reference internal" href="../referencias.html#id73" title="Python Software Foundation. Format string syntax. 2021. Online; acessado 07 de Março de 2021. URL: https://docs.python.org/3/library/string.html#format-string-syntax.">22</a>]</span>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Um bom guia que demonstra o uso do operador <code class="docutils literal notranslate"><span class="pre">%</span></code> e do método <code class="docutils literal notranslate"><span class="pre">format</span></code> pode ser encontrado em <span id="id3">[<a class="reference internal" href="../referencias.html#id52" title="Ulrich Petri and Horst Gutmann. Pyformat. 2017. Online; acessado 07 de Janeiro de 2021. URL: https://pyformat.info/.">59</a>]</span>.</p>
+</div>
+</section>
+<section id="f-string">
+<h2><span class="section-number">2.19.3. </span>f-string<a class="headerlink" href="#f-string" title="Link permanente para este cabeçalho"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Veja <span id="id4">[<a class="reference internal" href="../referencias.html#id64" title="Python Software Foundation. Formatted string literals. 2021. Online; acessado 07 de Março de 2021. URL: https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals.">23</a>]</span>.</p>
+</div>
+</section>
+<section id="template-strings">
+<h2><span class="section-number">2.19.4. </span>Template strings<a class="headerlink" href="#template-strings" title="Link permanente para este cabeçalho"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Rodapé">
+        <a href="set.html" class="btn btn-neutral float-left" title="2.18. Conjuntos" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="lacos-for.html" class="btn btn-neutral float-right" title="2.20. Laços do tipo for" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2022, Gilberto Queiroz and Thales Körting.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+    <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165908761-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-165908761-1', {
+          'anonymize_ip': false,
+      });
+    </script> 
+
+</body>
+</html>

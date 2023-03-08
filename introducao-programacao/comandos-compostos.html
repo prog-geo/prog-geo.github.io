@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="pt-BR" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2.22. Comandos Compostos &mdash; SER-347/CAP-419</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/table_styling.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/prog-geo.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://prog-geo.github.io/introducao-programacao/comandos-compostos.html" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Buscar" href="../search.html" />
+    <link rel="next" title="2.23. Funções" href="funcoes.html" />
+    <link rel="prev" title="2.21. Os Comandos break e continue" href="break-continue.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SER-347/CAP-419
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Pesquisar documentos" aria-label="Pesquisar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegação">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introdução à Programação com Dados Geoespaciais</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Visão Geral do Curso:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../visao-geral.html">Visão Geral do Curso</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Aulas:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../instalacao.html">1. Instalando e Configurando o Ambiente de Programação</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">2. Introdução à Programação com a Linguagem Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introducao.html">2.1. Introdução</a></li>
+<li class="toctree-l2"><a class="reference internal" href="primeiro-prog.html">2.2. Primeiro Programa em Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tipos-dados.html">2.3. Tipos de Dados</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tipos-numericos.html">2.4. Tipos Numéricos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressoes.html">2.5. Expressões</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chamada-funcoes.html">2.6. Chamada de Funções</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variaveis.html">2.7. Variáveis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comentarios.html">2.8. Comentários</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tipo-logico.html">2.9. Tipo Lógico</a></li>
+<li class="toctree-l2"><a class="reference internal" href="op-relacionais.html">2.10. Operadores Relacionais</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressoes-logicas.html">2.11. Expressões Lógicas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="estruturas-condicionais.html">2.12. Estruturas Condicionais</a></li>
+<li class="toctree-l2"><a class="reference internal" href="estruturas-repeticao.html">2.13. Estruturas de Repetição</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings.html">2.14. O Tipo String</a></li>
+<li class="toctree-l2"><a class="reference internal" href="keywords.html">2.15. Palavras-chave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sequencias.html">2.16. Sequências</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dicionarios.html">2.17. Dicionários</a></li>
+<li class="toctree-l2"><a class="reference internal" href="set.html">2.18. Conjuntos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="formatacao-strings.html">2.19. Formatação de Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lacos-for.html">2.20. Laços do tipo for</a></li>
+<li class="toctree-l2"><a class="reference internal" href="break-continue.html">2.21. Os Comandos <code class="docutils literal notranslate"><span class="pre">break</span></code> e <code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.22. Comandos Compostos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="funcoes.html">2.23. Funções</a></li>
+<li class="toctree-l2"><a class="reference internal" href="escopo.html">2.24. Escopo de Variáveis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="consideracoes.html">2.25. Considerações Finais</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exemplos.html">2.26. Exemplos</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../jupyter.html">3. Jupyter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../imagens.html">4. Imagens - Processamento e Visualização</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vetorial.html">5. Manipulação de Dados Vetoriais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variados.html">6. Tópicos Variados</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Referências Bibliográficas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../referencias.html">Referências Bibliográficas</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Listas de Exercícios</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../listas.html">Listas de Exercícios</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../projetos/2022/index.html">Turma 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projetos/2021/index.html">Turma 2021</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Informações Gerais:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../licenca.html">Licença</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Agradecimentos:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../agradecimentos.html">Agradecimentos</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Menu de navegação móvel"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SER-347/CAP-419</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Navegação da página">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">2. </span>Introdução à Programação com a Linguagem Python</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">2.22. </span>Comandos Compostos</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Navegação sequencial da página">
+        <a href="break-continue.html" class="btn btn-neutral float-left" title="2.21. Os Comandos break e continue" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="funcoes.html" class="btn btn-neutral float-right" title="2.23. Funções" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="comandos-compostos">
+<span id="sec-introducao-programacao-comandos-compostos"></span><h1><span class="section-number">2.22. </span>Comandos Compostos<a class="headerlink" href="#comandos-compostos" title="Link permanente para este cabeçalho"></a></h1>
+<p>Toda linguagem de programação de alto nível possui alguns comandos que são <strong>compostos</strong>, isto é, comandos que contém grupos de outros comandos. Os comandos <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">while</span></code>, e <code class="docutils literal notranslate"><span class="pre">for</span></code>, vistos nas aulas anteriores, são exemplos de comandos compostos que permitem controlar o fluxo de execução de um outro grupo de comandos.</p>
+<p>Como vimos, um laço do tipo <code class="docutils literal notranslate"><span class="pre">while</span></code> pode conter um único comando ou uma sequência de diversos outros comandos, inclusive pode conter outros comandos do tipo <code class="docutils literal notranslate"><span class="pre">while</span></code> (chamamos isso de comandos <code class="docutils literal notranslate"><span class="pre">while</span></code> aninhados).</p>
+<p>Em Python, temos outros quatro tipos de comandos compostos, são eles:</p>
+<ul class="open">
+<li><p><code class="docutils literal notranslate"><span class="pre">try</span></code>: define um bloco de comandos onde é possível realizar <strong>tratamento de exceções</strong> durante a execução de comandos.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">with</span></code>: define um bloco de comandos que deva <strong>inicializar algum recurso</strong> no início da sua execução e ao final da sua execução tenha que <strong>finalizar (ou liberar) esses recursos</strong>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">def</span></code>: permite definir uma <strong>função</strong>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">class</span></code>: permite definir <strong>classes</strong>, isto é, novos tipos de dados.</p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Rodapé">
+        <a href="break-continue.html" class="btn btn-neutral float-left" title="2.21. Os Comandos break e continue" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="funcoes.html" class="btn btn-neutral float-right" title="2.23. Funções" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2022, Gilberto Queiroz and Thales Körting.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+    <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165908761-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-165908761-1', {
+          'anonymize_ip': false,
+      });
+    </script> 
+
+</body>
+</html>

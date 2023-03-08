@@ -1,0 +1,104 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../def.rst
+
+
+.. _sec_introducao_programacao_chamada_funcoes:
+
+Chamada de Funções
+==================
+
+
+Apenas com o conjunto de operações básicas seria muito difícil expressarmos nossos programas. Por isso, várias funcionalidades que iremos incluir na escrita dos nossos programas pressupõem a existência de algumas **funções** e **procedimentos** auxiliares, como as **funções matemáticas**.
+
+
+Estas funcionalidades podem ser incluídas no nosso programa na forma de **chamada de uma função** (**function call**), que é uma forma de desviar o **fluxo de controle** do nosso programa para uma outra parte que irá realizar uma determinada computação e depois irá retornar o **fluxo de controle** ao ponto onde foi **chamada** (ou **invocada**).
+
+
+A **chamada de uma função** é feita colocando-se o **nome da função** e a **lista de argumentos** que será **passada à função**, para que ela realize sua computação. Exemplos:
+
+
+.. code-block:: python
+
+    >>> abs(-22.5)
+
+    >>> print("Computação Aplicada", "Sensoriamento Remoto", sep=";")
+
+    >>> int(22.5)
+
+    >>> float(5)
+
+    >>> type([1, 3, 5, 7])
+
+
+.. tip::
+
+    A lista completa das funções básicas de Python pode ser consultada em `Built-in Functions <https://docs.python.org/3/library/functions.html>`_.
+
+
+Funções Matemáticas
+-------------------
+
+
+Além dos operadores básicos, temos diversas funções matemáticas disponíveis:
+
+
+.. table:: Funções matemáticas.
+    :width: 100%
+    :align: center
+    :header-alignment: center left center center
+    :column-alignment: center left center center
+    :name: introd-prog:tbl:math-func
+
+    +--------------------+-------------------------------------+-----------------------+-------+
+    | Função             | Descrição                           | Expressão             | Valor |
+    +====================+=====================================+=======================+=======+
+    | :python:`abs(x)`   | Valor absoluto de x                 | :python:`abs(-2)`     | 2     |
+    +--------------------+-------------------------------------+-----------------------+-------+
+    | :python:`ceil(x)`  | Teto de x, isto é, o maior          | :python:`ceil(1.2)`   | 2     |
+    |                    | inteiro que não seja menor do que x |                       |       |
+    +--------------------+-------------------------------------+-----------------------+-------+
+    | :python:`floor(x)` | O piso de x, isto é, o maior        | :python:`floor(1.2)`  | 1     |
+    |                    | inteiro que não seja maior do que x |                       |       |
+    +--------------------+-------------------------------------+-----------------------+-------+
+    | :python:`exp(x)`   | Exponencial: e\ :sup:`x`            | :python:`exp(2)`      | 7.38  |
+    +--------------------+-------------------------------------+-----------------------+-------+
+    | :python:`pow(x,y)` | Potenciação: x\ :sup:`y`            | :python:`pow(2, 6)`   | 64    |
+    +--------------------+-------------------------------------+-----------------------+-------+
+    | :python:`log(x)`   | Logaritmo natural: log\ :sub:`e`\ x | :python:`log(10)`     | 2.30  |
+    +--------------------+-------------------------------------+-----------------------+-------+
+    | :python:`log10(x)` | Logaritmo na base 10:               | :python:`log10(10)`   | 1.0   |
+    |                    | log\ :sub:`10`\ x                   |                       |       |
+    +--------------------+-------------------------------------+-----------------------+-------+
+    | ...                | ...                                 | ...                   | ...   |
+    +--------------------+-------------------------------------+-----------------------+-------+
+
+
+Se tentarmos usar algumas das funções matemáticas diretamente, teremos uma surpresa:
+
+
+.. code-block:: python
+
+    >>> log10(10)
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    NameError: name 'log10' is not defined
+
+
+Para utilizar algumas funções matemáticas, precisamos **importar a biblioteca** ``math``:
+
+
+.. code-block:: python
+
+    >>> import math
+
+    >>> math.log10(10)
+    1.0
+
+
+.. tip::
+
+    A lista completa das funções matemáticas de Python pode ser consultada em `Mathematical functions <https://docs.python.org/3/library/math.html>`_.

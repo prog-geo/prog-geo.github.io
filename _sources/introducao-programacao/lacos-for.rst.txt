@@ -1,0 +1,112 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _sec_introducao_lacos_for:
+
+Laços do tipo for
+=================
+
+
+Iterando nos Elementos de um Sequência
+--------------------------------------
+
+
+Iterando pelos caracteres de uma string::
+
+    nome = "Gilberto Ribeiro"
+
+    for letra in nome:
+        print(letra)
+
+
+Iterando pelos itens de uma lista::
+
+    cidades = ["São Paulo", "Rio de Janeiro", "Belo Horizonte"]
+
+    for cidade in cidades:
+        print("Nome:", cidade)
+
+
+Iterando no intervalo de valores :math:`[7, 17)`::
+
+    for num in range(7, 17):
+        print(num)
+
+
+Usando a função ``enumerate``
+-----------------------------
+
+
+.. code-block:: python
+
+    cidades = ["São Paulo", "Rio de Janeiro", "Belo Horizonte"]
+
+    for i, cidade in enumerate(cidades):
+        print("{}: {}".format(i, cidade))
+
+
+Atravessando Listas
+-------------------
+
+
+Atravessando duas Listas::
+
+    print("Conversão de F -> C")
+
+    fahr = [ 0, 20, 40, 60, 80, 100 ]
+
+    celsius = [ 5*(x-32)/9 for x in fahr ]
+
+    for f, c in zip(fahr, celsius):
+        print(f, c)
+
+    print("Fim!")
+
+
+Atravessando três Listas::
+
+    print("Conversão de F -> C -> K")
+
+    fahr = [ 0, 20, 40, 60, 80, 100 ]
+
+    celsius = [ 5*(x-32)/9 for x in fahr ]
+
+    kelvin = [ x+273 for x in celsius ]
+
+    for f, c, k in zip(fahr, celsius, kelvin):
+        print(f, c, k)
+
+    print("Fim!")
+
+
+Iterando em Dicionários
+-----------------------
+
+
+Considere o seguinte dicionário::
+
+    sao_paulo = {
+        "name" : "São Paulo",
+        "woeid" : 12582314,
+        "bounding-box" : ((-46.82, -24.00), (-46.36, -23.68)),
+        "country" : "Brazil"
+    }
+
+
+Podemos iterar pelos pares *chave-valor* do dicionário associado ao identificador ``sao_paulo``, usando o método ``items``::
+
+    for key, value in sao_paulo.items():
+        print(f"key: {key}; value: {value}")
+
+
+.. note::
+
+    Para mais informações em técnicas de como fazer a travessia ou usar laços com dicionários, consulte :cite:`psf:tut:2021:b`.
+
+
+.. admonition:: Exemplos
+    :class: box-exemplos
+
+    Vamos fazer os exemplos :ref:`10 <sec_introducao_programacao_exemplos_ex10>` e :ref:`11 <sec_introducao_programacao_exemplos_ex11>`.

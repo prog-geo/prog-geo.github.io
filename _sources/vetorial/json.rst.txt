@@ -1,0 +1,290 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../def.rst
+
+
+.. _sec_vetorial_json:
+
+Documentos JSON
+===============
+
+
+JSON é a abreviação de **J**\ ava **S**\ cript **O**\ bject **N**\ otation. Trata-se de um formato de dados que ficou muito popular nas aplicações Web, principalmente entre as APIs de serviços, pela facilidade de estruturar dados para intercâmbio entre as aplicações. Conforme veremos nas seções seguintes, um documento JSON é de fácil leitura e escrita, possibilitando as aplicações manipularem dados codificados neste formato.
+
+
+O documento apresentado abaixo, obtido através do serviço ``Google Elevation API``, ilustra a notação empregada em documentos JSON:
+
+
+.. code-block:: json
+
+    {
+        "results": [
+            {
+                "elevation": 18.1,
+
+                "location": {
+                    "lat": 30.0,
+                    "lng": -73.0
+                },
+
+                "resolution": 76.0
+            }
+        ],
+
+        "status": "OK"
+    }
+
+
+Esse documento se parece muito com um dicionário na linguagem de programação Python, onde temos um par de chaves (``{`` e ``}``) delimitando os pares de chave-valor do dicionário. Os pares de chave-valor, por sua vez, correspondem a:
+
+.. rst-class:: open
+
+- strings e arrays; 
+
+- strings e novos objetos (ou dicionarios); 
+
+- string e valores numéricos; 
+
+- string e valores textuais.
+
+
+Sintaxe de Documentos JSON
+--------------------------
+
+
+Um documento JSON contém um valor que pode ser representado por um dos seguintes tipos: ``object``, ``array``, ``number``, ``string``, ``true``, ``false``, ou ``null``. Cada um desses valores possui uma notação específica.
+
+
+O tipo ``number`` representa valores numéricos, não diferenciando entre valores inteiros e números em ponto-flutuante:
+
+
+.. code-block:: json
+
+    1234
+
+
+.. code-block:: json
+
+    8.9
+
+
+O tipo ``string`` é usado para representação de valores textuais, sendo delimitado por aspas duplas (``"``), suportando caracteres `Unicode <https://en.wikipedia.org/wiki/Unicode>`_ e sequências de escape utilizando o caractere ``\``:
+
+
+.. code-block:: json
+
+    "Uma string deve\n aparecer entre aspas duplas"
+
+
+Os valores ``true`` e ``false``, associados ao tipo lógico são escritos da seguinte forma:
+
+
+
+.. code-block:: json
+
+    true
+
+
+.. code-block:: json
+
+    false
+
+
+O tipo ``array`` permite representar uma sequência de valores, inclusive de tipos diferentes. Utiliza-se um par de colchetes (``[`` e ``]``) como delimitador dos elementos pertencentes à sequência, sendo os elementos separados por vírgula (``,``):
+
+
+.. code-block:: json
+
+    ["CAP-419", "SER-347", 2021, true ]
+
+
+O tipo ``object`` é representado por um conjunto de pares ``chave-valor``, delimitados por um par de chaves (``{`` e ``}``):
+
+
+.. code-block:: json
+
+    {
+        "nome": "Gilberto",
+
+        "sobrenome": "Queiroz",
+
+        "idade": 30,
+
+        "pesquisador": true,
+
+        "pais": [ "Gilberto Queiroz", "Telma Queiroz" ],
+
+        "endereco": {
+            "rua": "Av. dos Astronautas",
+            "numero": 1758,
+            "bairro": "Jardim da Granja",
+            "cidade": "São José dos Campos",
+            "uf": "SP",
+            "cep": "12227-010"
+        }
+    }
+
+
+Repare que o tipo ``object`` permite estruturar dados que possuam certa complexidade. No exemplo acima, a chave ``endereco`` corresponde a um valor que também é um objeto, e a chave ``pais`` corresponde a uma sequência de valores do tipo ``string``.
+
+
+.. note::
+
+    Para mais detalhes sobre o formato JSON, consulte :cite:`crockford:2020` e :cite:`ecma:2017`.
+
+
+Validadores de Documentos JSON
+------------------------------
+
+
+Existem na Internet vários aplicativos *online* que possibilitam validar a estrutura de um documento JSON, isto é, permite sabermos se o documento respeita a sintaxe (ou notação) JSON.
+
+
+Um bom aplicativo é o `JSONLint - The JSON Validator <https://jsonlint.com/>`_. Acesse o endereço desse aplicativo e verifique os erros no fragmento abaixo::
+
+    {
+        "nome": Gilberto,
+
+        "sobrenome": 'Queiroz',
+
+        "idade": 30,
+
+        "pesquisador": true,
+
+        "pais": [ "Gilberto Queiroz", "Telma Queiroz" ]
+
+        "endereco": {
+            "rua": "Av. dos Astronautas",
+            "numero": 1758,
+            "bairro": "Jardim da Granja",
+            "cidade": "São José dos Campos",
+            "uf": "SP",
+            "cep": "12227-010"
+        }
+    }
+
+
+**Exercício:** Tente corrigir o fragmento acima para que ele se torne um documento válido JSON.
+
+
+Leitura e Escrita de Arquivos JSON
+----------------------------------
+
+
+A biblioteca padrão do Python possui um módulo denominado `json <https://docs.python.org/3/library/json.html>`_ que pode ser utilizado para manipulação de documentos JSON. A forma mais simples de trabalhar este formato é através da representação de dicionários do Python, que possui uma mapeamento direto com o tipo ``object`` da notação JSON. Para começar nosso exercício com a manipulação de textos no formato JSON, vamos importar a biblioteca JSON e transformar um dicionário em um documento no formato JSON:
+
+
+.. code-block:: python
+    :linenos:
+    :caption: Transformando um dicionário Python em um documento JSON.
+
+    import json
+
+    endereco = {
+        'rua': 'Av. dos Astronautas',
+        'numero': 1758,
+        'bairro': 'Jardim da Granja',
+        'cidade': 'São José dos Campos',
+        'UF': 'SP',
+        'CEP': '12227-010'
+    }
+
+    endereco_json = json.dumps(endereco)
+
+    print(endereco_json)
+
+
+Repare no trecho de programa acima, que o identificador ``endereco_json`` fica associado a uma ``string`` contendo todo o texto do documento JSON equivalente ao dicionário informado na função ``json.dumps``. Esse processo de transformar um objeto Python em um documento texto é conhecido por **serialização**.
+
+
+De maneira similar, podemos ler um texto representando um documento JSON e transformá-lo em um dicionário Python, através da função ``json.loads``:
+
+
+.. code-block:: python
+    :linenos:
+    :caption: Transformando um documento JSON em um dicionário Python.
+
+    import json
+
+    doc = '{"rua": "Av. dos Astronautas", "numero": 1758, \
+          "bairro": "Jardim da Granja", \
+          "cidade": "S\\u00e3o Jos\\u00e9 dos Campos", \
+          "UF": "SP", "CEP": "12227-010"}'
+
+    endereco = json.loads(doc)
+
+    print( endereco['rua'] )
+    print( endereco['numero'] )
+    print( endereco['cidade'] )
+
+
+No trecho de código acima podemos observar que após transformar a string contendo o texto do documento JSON (``doc``) em um dicionário Python através da função ``json.loads``, podemos acessar os valores associados às chaves ``rua``, ``numero`` e ``cidade`` no dicionário (``endereco``). Este processo de transformar um documento texto em um objeto Python é chamado de **deserialização**.
+
+
+Agora vamos ler um documento JSON.
+
+
+.. literalinclude:: ../code/vetorial/artigo.json
+    :emphasize-lines: 31, 34-59
+    :caption: Documento JSON com informações sobre uma publicação científica (:download:`artigo.json <../code/vetorial/artigo.json>`).
+
+
+Podemos ler o arquivo :download:`artigo.json <../code/vetorial/artigo.json>` utilizando a função interna do Python chamada ``open()``, como mostrado abaixo:
+
+
+.. code-block:: python
+    :linenos:
+    :caption: Leitura de um documento JSON.
+
+    import json
+
+    with open( 'artigo.json', 'r' ) as arq_json:
+        artigo = json.load( arq_json )
+
+        print( artigo['title'] )
+
+        for autor in artigo['author']:
+            print( 'Nome: {} {}'.format(autor['given'], autor['family']) )
+
+
+Repare que após a abertura do arquivo na ``linha 03``, realizamos a leitura dos dados deste arquivo na ``linha 04`` através da função ``json.load()``. Após a transformação do arquivo em um dicionário Python, podemos acessar os campos desse dicionário usando o ``operador []``, recuperando assim o título do artigo e sua lista de autores.
+
+
+Para gravar um arquivo JSON podemos usar a função ``json.dump`` como mostrado no trecho de código abaixo:
+
+
+.. code-block:: python
+    :linenos:
+    :caption: Escrita de um documento JSON.
+
+    import json
+
+    endereco = {
+        'rua': 'Av. dos Astronautas',
+        'numero': 1758,
+        'bairro': 'Jardim da Granja',
+        'cidade': 'São José dos Campos',
+        'UF': 'SP',
+        'CEP': '12227-010'
+    }
+
+    with open('endereco.json', 'w') as arq_json:
+        json.dump(endereco, arq_json)
+
+
+Após a execução do trecho de código acima, você deverá ter um arquivo chamado ``endereco.json`` contendo a serialização do dicionário Python ``endereco`` na forma de um arquivo JSON.
+
+
+.. note::
+
+    As funções ``json.dump`` e ``json.dumps`` aceitam um argumento nomeado, ``indent``, que pode ser usado para controlar a indentação do documento JSON. Na ``linha 14`` do trecho de código acima, poderíamos utilizar um nível de indentação com ``4`` espaços::
+
+        json.dump(endereco, arq_json, indent=4)
+
+
+.. note::
+
+    Mais detalhes sobre leitura/escrita de arquivos JSON podem ser encontrados em :cite:`lofaro:2018`, :cite:`psf:stdlib:2021:k` e :cite:`mcneel:2021`.

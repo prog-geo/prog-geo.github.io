@@ -1,0 +1,39 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../def.rst
+
+
+.. _sec_introducao_programacao_expressoes_logicas:
+
+Expressões Lógicas
+==================
+
+
+**Problema:** Escreva um programa que pergunte ao usuário o valor de um ano qualquer e que o informe se o ano é ou não bissexto.
+
+
+.. tip::
+
+    `Anos bissextos <https://pt.wikipedia.org/wiki/Ano_bissexto>`_ ocorrem a cada quatro anos, exceto anos múltiplos de 100 que não são múltiplos de 400.
+
+
+**Solução:**
+
+
+.. code-block:: python
+
+    # a função input permite ao usuário inserir um valor durante a execução
+    ano = int(input("Ano: "))
+
+    # a expressão lógica a seguir verifica se um número é bissexto
+    bissexto = ano % 4 == 0 and (ano % 100 != 0 or ano % 400 == 0)
+
+    print("O ano", ano, "é bissexto?", bissexto)
+
+
+.. note::
+
+    Saber se um ano é bissexto é importante no contexto de Sensoriamento Remoto, pois isso impacta nas datas de aquisição das imagens pelos satélites.

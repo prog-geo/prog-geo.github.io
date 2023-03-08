@@ -1,0 +1,37 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../../def.rst
+
+
+.. _sec_projetos_2021_p07:
+
+Programação para resposta a desastres
+=====================================
+
+
+O INPE participa do `International Charter Space and Major Disasters <https://disasterscharter.org/>`_, fornecendo imagens e produtos de sensoriamento remoto em resposta a desastres.
+
+Um tipo de desastre recorrente está relacionado com inundações em áreas urbanas. As imagens de sensoriamento remoto de antes e depois de eventos de desastres podem ser utilizadas como suporte para verificar áreas alagadas, através da combinação com mapas de ruas (por exemplo, obtidos pelo `Open Street Map <https://www.openstreetmap.org/>`_).
+
+Realize o processamento de 2 imagens de áreas afetadas por cheias (antes e depois do evento) para identificar mudanças na cobertura (verificar índices espectrais como de água, por exemplo) e depois cruzar esta informação com vetores de ruas para estimar e indicar visualmente as áreas urbanas afetadas por cheias.
+
+
+
+.. note::
+
+    **1.** Os produtos de código desenvolvidos deverão ser licenciados de acordo com os modelos de software livre MIT, e disponibilizados em um ou mais repositórios na organização ``prog-geoespacial``.
+
+
+    **2.** Os pacotes deverão conter documentação de uso.
+
+
+    **3.** Utilize o `template de pacotes Python do Brazil Data Cube <https://github.com/brazil-data-cube/cookiecutter-bdc>`_.
+
+
+    **4.** Os produtos de dados de exemplo deverão ser disponibilizados de acordo com o modelo Creative Commons.
+
+
+    **5.** Produzir um relatório no formato do evento `GEOINFO <http://www.geoinfo.info/>`_.

@@ -1,0 +1,77 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _sec_introducao_break_continue:
+
+Os Comandos ``break`` e ``continue``
+====================================
+
+
+Interrompendo um laço - ``break``
+---------------------------------
+
+
+O comando ``break`` é usado para ajudar no controle do fluxo de execução dentro de um laço (``while`` ou ``for``). O comando ``break`` faz com que a execução do laço seja interrompida independentemente do teste condicional do laço ``while`` ou da existência de novos elementos para iteração no laço ``for``. Ou seja, o comando ``break`` irá finalizar a execução do laço redirecionando a execução do programa para o próximo comando após o laço.
+
+
+Para ilustrar o uso desse comando, vamos apresentar um exemplo em que o laço do tipo ``for`` é interrompido antes do final da travessia por todos os elementos do intervalo definido::
+
+    for num in range(10):
+        if num == 5:
+            break    # interrompe o laço
+
+        print(f"Número: {num}")
+
+    print("Primeiro comando fora do laço!")
+
+
+Em um laço do tipo ``while`` podemos usar também o comando ``break``::
+
+    num = 0
+
+    while num < 10:
+        if num == 5:
+            break    # interrompe o laço
+
+        print(f"Número: {num}")
+
+        num = num + 1
+
+    print("Primeiro comando fora do laço!")
+
+
+
+Desviando a sequência de um laço - ``continue``
+-----------------------------------------------
+
+
+O comando ``continue`` funciona de maneira similar ao comando ``break``. Porém, ao invés de finalizar a execução do laço, o comando ``continue`` irá finalizar a iteração corrente. Dessa forma, todo comando após a declaração ``continue`` não será executado. Ou seja, o comando irá redirecionar o fluxo do programa fazendo com que a próxima iteração do laço seja executada.
+
+
+Veja o exemplo abaixo::
+
+    #
+    # Dado um intervalo fornecido pelo usuário,
+    # escreva na tela todos os números pares dentro do intervalo.
+    #
+
+    menor = int(input("Digite o menor valor do intervalo:"))
+    maior = int(input("Digite o maior valor do intervalo:"))
+
+    for x in range(menor, maior + 1):
+        if(x % 2):
+            continue
+
+        print(x)
+
+
+.. note::
+
+    Em geral, essas duas instruções são colocadas dentro de um **teste condicional** no **corpo do laço**.
+
+
+.. note::
+
+    As instruções ``break`` e ``continue`` podem ser utilizadas tanto com laços do tipo ``for`` quanto ``while``.

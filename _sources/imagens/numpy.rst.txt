@@ -1,0 +1,195 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../def.rst
+
+
+.. _sec_imagens_numpy:
+
+NumPy
+=====
+
+
+O principal objeto manipulado pela NumPy é o *homogeneous multidimensional array*:
+
+Uma tabela de elementos de mesmo tipo (em geral números) indexados por uma tupla de inteiros positivos:
+
+- As dimensões são chamadas de ``axes``.
+- O número de ``axes`` é chamado de ``rank``.
+
+Exemplos:
+
+- um array :math:`[1, 2, 1]` tem ``rank = 1``
+- um array :math:`[[ 1.0, 0.0, 0.0], [0.0, 1.0, 2.0]]`` tem ``rank = 2``: a primeira dimensão tem tamanho 2, a segunda dimensão tem tamanho 3
+    
+A classe de array da NumPy é chamada ``ndarray`` (``numpy.array``).
+
+
+Supondo um ``ndarray`` contendo uma matriz de 30 linhas e 40 colunas, as seguintes propriedades estão disponíveis (dentre outras):
+
+- ``ndarray.ndim``: é o número de ``axes`` do array.
+- ``ndarray.shape``: é uma tupla de inteiros indicando o tamanho do array em cada dimensão, no exemplo acima ``shape = (30, 40)``
+- ``ndarray.size``: é o total de elementos no array, no exemplo acima ``size = 1200``
+- ``ndarray.dtype``: é um objeto descrevendo o tipo dos elementos no array (por exemplo, ``numpy.int32``, ``numpy.int16``, ``numpy.float64``)
+- ``ndarray.itemsize``: é o tamanho em bytes de cada elemento no array (por exemplo, em um array de ``float64``, ``itemsize = 8``)
+- ``ndarray.data``: é um buffer contendo os elementos do array, geralmente não é usado dessa forma pois temos facilidades de indexação
+
+Carregando a NumPy
+------------------
+
+Para utilizar a NumPy devemos importar seu módulo, chamado ``numpy``. Em geral, associamos esse módulo ao nome (ou apelido) ``np`` da seguinte forma:
+
+.. code-block:: python
+
+    import numpy as np
+
+E para saber a versão da biblioteca:
+
+.. code-block:: python
+
+    np.__version__
+
+
+Criando matrizes
+----------------
+
+A NumPy fornece várias funções para criação das matrizes. Vamos começar utilizando a função ``arange``, que permite criar um array a partir de um intervalo regular de valores::
+
+    np.arange?
+
+Para criar um array unidimensional, isto é, um vetor com 15 elementos, fazemos:
+
+.. code-block:: python
+
+    >>> a = np.arange(1, 16)
+    >>> a
+    array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15])
+
+.. note ::
+
+    Repare que a sequência é iniciada com o valor 1 e termina com o valor 15, uma vez que o limite final (16) não é incluído no intervalo de valores gerados.
+
+.. code-block:: python
+
+    type(a)
+
+Vamos criar um segundo array denominado ``b``, desta vez com a função array, que permite criar uma matriz a partir de uma sequência do Python::
+
+    np.array?
+
+.. code-block:: python
+
+    b = np.array([6, 7, 8])
+    b
+
+Alterando o formato de uma matriz
+---------------------------------
+
+Um array NumPy pode ser reestrutrado usando a operação ``reshape``::
+
+    np.reshape?
+
+Para alterar o formato do array ``a`` para que ele se torne uma matriz :math:`3 \times 5`:
+
+.. code-block:: python
+    
+    >>> a = a.reshape(3, 5)
+    >>> a
+    array([[ 0,  1,  2,  3,  4],
+           [ 5,  6,  7,  8,  9],
+           [10, 11, 12, 13, 14]])
+
+Informações sobre a Estrutura de uma matriz
+-------------------------------------------
+
+.. code-block:: python
+
+    print('shape', a.shape)
+    print('ndim', a.ndim)
+    print('dtype', a.dtype)
+    print('itemsize', a.itemsize)
+    print('size', a.size)
+    print('type(a)', type(a))
+    print('type(b)', type(b))
+
+Operações com arrays
+--------------------
+
+É possível realizar operações matemáticas com arrays. A NumPy permite que uma operação seja aplicada a todos os elementos, de uma só vez.
+
+.. code-block:: python
+
+    # vamos imprimir o resultado
+    # da soma de todos os elementos
+    # do array com a constante 10
+
+    print('matriz a + constante 10:')
+    print(a + 10)
+
+Veja que a matriz original não foi alterada, pois não fizemos nenhuma **atribuição**.
+
+.. code-block:: python
+
+    print('matriz original:')
+    print(a)
+
+Podemos explorar outras operações aritméticas com constantes, e até com outras matrizes.
+
+.. code-block:: python
+
+    # o comando a seguir cria uma
+    # matriz c com 0's, com o mesmo
+    # tamanho da matriz a
+
+    c = np.zeros_like(a)
+    print(c)
+
+.. note ::
+
+    O comando acima é muito útil em processamento de imagens, quando temos uma banda, e queremos criar uma cópia dessa banda, para realizar algum processamento. A nova matriz tem as mesmas propriedades da matriz da banda, porém todos os valores estão zerados.
+
+.. code-block:: python
+
+    # podemos combinar os arrays no
+    # processamento
+
+    c = a * 10
+    print(c)
+
+.. code-block:: python
+
+    # nesta operação, fazemos a divisão
+    # elemento a elemento das matrizes,
+    # por isso elas precisam ter o mesmo
+    # shape
+
+    array_divisao = a / c
+    print(array_divisao)
+
+.. code-block:: python
+
+    # aqui temos o produto elemento por 
+    # elemento da matriz (e não o produto 
+    # matricial)
+
+    array_produto = a * c
+    print(array_produto)
+
+.. code-block:: python
+
+    # para fazer o produto matricial precisamos
+    # garantir as propriedades matemáticas
+    # (número de colunas da primeira matriz =
+    # número de linhas da segunda matriz), por
+    # isso fizemos o transpose da segunda matriz
+
+    array_produto_matricial = a.dot(c.transpose())
+    print(array_produto_matricial)
+
+.. note ::
+    
+    Uma banda de uma imagem é facilmente processada como um array NumPy. Desta forma, aproveitamos as funcionalidades desta biblioteca para realizar diversos tipos de processamentos com as bandas. 
+
+    Exemplos incluem a geração de índices espectrais, aplicação de contraste, fatiamento de bandas, entre outros.

@@ -1,0 +1,356 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../def.rst
+
+
+.. _sec_introducao_programacao_introducao:
+
+Introdução
+==========
+
+
+.. container:: epigrafe
+
+   "Program construction consists of a sequence of refinement steps." |br| Niklaus Wirth :cite:`wirth:1971`
+
+
+Algoritmos
+----------
+
+
+O termo **algoritmo** é usado na Ciência da Computação para descrever métodos finitos, determinísticos e efetivos, que são adequados à implementação na forma de programas de computador :cite:`sedgewick:2011`. Para entender melhor essa definição, vamos descrever um algoritmo para computar o máximo divisor comum (MDC) entre dois números inteiros positivos quaisquer:
+
+
+.. code-block:: text
+
+    Computar o MDC entre dois números inteiros positivos, p e q:
+
+    - Se q for 0, o resultado será p;
+
+    - Caso contrário, obter o resto da divisão r entre p e q.
+
+    - O MDC entre q e r será o resultado.
+
+
+Observe que o algoritmo acima é formado pelo encadeamento de uma série de **instruções** ou **ações**, que, se seguidas, nos levarão à solucionar nosso problema: *computar o MDC entre dois números inteiros positivos*.
+
+
+Para verificar esse algoritmo, vamos tomar como valores de :math:`p` e :math:`q`, respectivamente, os números :math:`21` e :math:`4`. A :numref:`Tabela %s <introd-prog:tbl:mdc-algol>` mostra o que acontece quando seguimos os passos descritos no algoritmo acima:
+
+
+.. table:: Passos seguidos na execução do algoritmo :math:`MDC(p,q)`.
+    :width: 100%
+    :align: center
+    :column-alignment: left
+    :name: introd-prog:tbl:mdc-algol
+
+    +---------------------------------------------------------------------------------------+
+    | Inicialmente, :math:`p` vale :math:`21` e :math:`q` vale :math:`4`.                   |
+    +---------------------------------------------------------------------------------------+
+    | Verificamos se o valor de :math:`q` é igual a :math:`0`.                              |
+    |                                                                                       |
+    |                                                                                       |
+    | Neste caso, como o valor de :math:`q` é :math:`4`, vamos à próxima instrução.         |
+    +---------------------------------------------------------------------------------------+
+    | Calculamos o resto da divisão entre :math:`21` e :math:`4`, obtendo o valor :math:`1`.|
+    +---------------------------------------------------------------------------------------+
+    | Usando nosso algoritmo novamente, temos agora que computar o :math:`MDC(4,1)`.        |
+    +---------------------------------------------------------------------------------------+
+    | Agora, :math:`p` vale :math:`4` e :math:`q` vale :math:`1`.                           |
+    +---------------------------------------------------------------------------------------+
+    | Verificamos agora se o valor de :math:`q` é igual a :math:`0`.                        |
+    |                                                                                       |
+    |                                                                                       |
+    | Neste caso, como o valor de :math:`q` é :math:`1`, vamos à próxima instrução.         |
+    +---------------------------------------------------------------------------------------+
+    | Calculando o resto da divisão entre :math:`4` e :math:`1` obtemos o valor :math:`0`.  |
+    +---------------------------------------------------------------------------------------+
+    | Usando nosso algoritmo novamente, temos agora que computar o :math:`MDC(1, 0)`.       |
+    +---------------------------------------------------------------------------------------+
+    | Agora, na primeira instrução, o valor de :math:`q` é :math:`0`. Neste caso, o         |
+    | resultado é então o valor :math:`1`.                                                  |
+    +---------------------------------------------------------------------------------------+
+
+
+.. tip::
+
+    Faça os passos acima para os número :math:`6` e :math:`12`.
+
+
+Podemos representar um algoritmo de diversas formas:
+
+.. rst-class:: open
+
+- **Pseudocódigo:** forma utilizada para descrever um algoritmo que utiliza uma linguagem próxima à natural, com algumas convenções especiais, como `estruturas de controle <https://en.wikipedia.org/wiki/Structured_programming#Control_structures>`_ e palavras reservadas para representar comandos e operações. Esta forma é conhecida também como **Português Estruturado**, **Portugol** ou **Pseudocódigo**.
+
+- **Diagrama de Blocos:** `representação gráfica <https://en.wikipedia.org/wiki/Flowchart>`_ dos fluxos de comandos de um algoritmo.
+
+- **Diagrama de Chapin:** o diagrama de Chapin ou `Nassi-Sneider <https://en.wikipedia.org/wiki/Nassi%E2%80%93Shneiderman_diagram>`_ é outra forma de expressão de algoritmos que utiliza quadros para fornecer uma visão hierárquica e mais estruturada de um algoritmo.
+
+
+.. note::
+
+    Atualmente, o aprendizado da programação por meio de pseudocódigo ou diagramas caiu em desuso, em favor do uso direto de linguagens de programação tais como C, C++, Java e Python.
+
+
+Linguagens de Programação
+-------------------------
+
+
+Todo processador ou família de processadores, possui seu próprio conjunto de instruções e operações. Essas instruções e operações são representadas por padrões de **bits** que correspondem a diferentes **comandos de máquina**, como carga de dados nos registradores, adição, subtração, multiplicação ou divisão de valores de dois registradores, ou instruções para transferência do fluxo de execução de um programa. Essas instruções permitem que o computador realize as atividades mais básicas possíveis. A :numref:`Tabela %s <introd-prog:tbl:mips-inst>` apresenta um exemplo do formato das instruções do microprocessador ``MIPS`` (32-bit).
+
+
+.. table:: Exemplo de instrução MIPS. |br| **Fonte:** Wikipedia :cite:`wikipedia:2021:c`.
+    :width: 100%
+    :align: center
+    :header-alignment: center center right
+    :column-alignment: center center center center center center center
+    :name: introd-prog:tbl:mips-inst
+
+    +------+-----------------------------------------------------------------+
+    | Tipo | bit                                                             |
+    |      +---+--------------------------------------------------------+----+
+    |      |31 |                                                        | 0  |
+    +======+===+=============+=======+=======+=======+===========+======+====+
+    | R    | opcode (6-bits) | rs(5) | rt(5) | rd(5) | shamt (5) | funct (6) |
+    +------+-----------------+-------+-------+-------+-----------+-----------+
+    | I    | opcode (6-bits) | rs(5) | rt(5) | immediate (16)                |
+    +------+-----------------+-------+-------+-------------------------------+
+    | J    | opcode (6-bits) | address (26)                                  |
+    +------+-----------------+-----------------------------------------------+
+
+
+A :numref:`Tabela %s <introd-prog:tbl:mips-op>` mostra como seria expressar uma operação que consiste em adicionar o conteúdo dos registradores ``1`` e ``2`` e armazenar o resultado no registrador ``6``.
+
+
+.. table:: Exemplo de operação baseada nas instruções MIPS. |br| **Fonte:** Wikipedia :cite:`wikipedia:2021:c`.
+    :width: 100%
+    :align: center
+    :header-alignment: center center center center center center
+    :column-alignment: center center center center center center
+    :name: introd-prog:tbl:mips-op
+
+    +--------+-------+-------+-------+-------+--------+
+    | op     | rs    | rt    | rd    | shamt | funct  |
+    +========+=======+=======+=======+=======+========+
+    | 000000 | 00001 | 00010 | 00110 | 00000 | 100000 |
+    +--------+-------+-------+-------+-------+--------+
+
+
+Um programa, ou executável, é formado por um conjunto dessas instruções numa determinada ordem para realizar tarefas. Suponha por exemplo que você esteja colocando para rodar sua IDE de programação favorita. O Sistema Operacional irá copiar os *bytes* contendo as instruções do seu programa para a memória RAM do seu computador, e a CPU irá começar a executar seu programa a partir da primeira instrução.
+
+
+Como pode-se perceber, o grande problema com o código de máquina é que ele é bastante inconveniente para a escrita, por seres humanos, até mesmo de pequenos programas. Por conta disso, foram desenvolvidas as **linguagens de montagem** (**assembly**), que usam símbolos chamados **mnemonic** para representar cada instrução ou operação (``load``, ``store``, ``jump``).
+
+
+O :numref:`Trecho de Código %s <introd-prog:code:assembler>` mostra como seria escrever uma expressão para realizar a soma dos valores ``9`` e ``71``.
+
+
+.. code-block:: text
+    :linenos:
+    :caption:  Programa em Assembler: :math:`x = 9 + 71`. |br| **Fonte:** Wikibooks :cite:`wikibooks:2021:a`.
+    :name: introd-prog:code:assembler
+
+    LDA #9  ;loads the number 9 into the accumulator
+
+    ADD #71 ;adds the number 71 to the contents of the accumulator = 80
+
+    STO 34  ;save the accumulator result to the memory address 34
+
+
+.. note::
+
+    O programa responsável por converter o programa escrito na linguagem de montagem para o código de máquina é chamado de **montador** ou **assembler**.
+
+
+.. note::
+
+    Uma linguagem de montagem contém o mesmo número de instruções que a linguagem de máquina associada, sendo porém mais legível.
+
+
+Escrever um programa diretamente em linguagem de montagem não é uma tarefa simples, pelo menos nos dias de hoje, onde temos grandes sistemas para construir. Além de ser de difícil compreensão, os processadores possuem um conjunto de instruções bem reduzidos e nossas necessidades ao criar programas são bem maiores. Por conta dessas dificuldades, nos anos 50, foram criadas as **linguagens de alto nível** para fornecer abstrações de mais alto nível do que as instruções de máquina e mais próximas das **linguagens naturais**. Portanto, uma **linguagem de alto nível** é outra forma que temos para escrever nossos programas, como mostrado no :numref:`Trecho de Código %s <introd-prog:code:mdc-cpp>`.
+
+
+.. code-block:: cpp
+    :linenos:
+    :caption:  Algoritmo MDC expresso em C++. |br| **Fonte:** Sedgewick e Wayne (2011) :cite:`sedgewick:2011`.
+    :name: introd-prog:code:mdc-cpp
+
+    unsigned int MDC(unsigned int p, unsigned int q)
+    {
+        if(q == 0)
+            return p;
+
+        unsigned int r = p % q;
+
+        return MDC(q, r);
+    }
+
+
+Uma das primeiras linguagens de alto nível, chamada Speedcoding :cite:`backus:1954`, foi desenvolvida por John Backus em 1953. Essa linguagem foi concebida para ajudar no desenvolvimento de software para o computador `IBM 701 <https://en.wikipedia.org/wiki/IBM_701>`_. Ao contrário das linguagens de máquina da época, ela introduzia uma linguagem simbólica com expressividade mais próxima à linguagem natural, além do suporte a aritmética em ponto flutuante. Tratava-se de uma linguagem interpretada (:numref:`Figura %s <introd-prog:fig:interpretador>`).
+
+.. figure:: ../img/introducao-programacao/interpretador.png
+    :alt: Fluxo de execução de um programa por um interpretador (Python)
+    :width: 100%
+    :figclass: align-center
+    :name: introd-prog:fig:interpretador
+
+    Fluxo de execução de um programa por um interpretador (Python).
+
+
+.. note::
+
+    O IBM 701 não possuia hardware para aritmética de ponto flutuante e, portanto, esse suporte era implementado em software.
+
+
+.. note::
+
+    As linguagens de alto nível também foram concebidas para evitar que um dado programa tivesse que ser reescrito toda vez que fosse ser executado em um arquitetura diferente.
+
+
+Somente com o desenvolvimento da Linguagem FORTRAN :cite:`backus:1957` para o IBM 704 (:numref:`Figura %s <introd-prog:fig:ibm704>`), é que as linguagens de alto nível passaram a ganhar ampla aceitação. O IBM 704 introduziu um hardware com capacidade de realização de aritmética em ponto flutuante. FORTRAN possibilitou que os programadores especificassem procedimentos numéricos usando uma linguagem próxima à da matemática, e ainda assim capaz de gerar código de máquina eficiente naquele sistema. Essa foi a maneira encontrada por Backus para reduzir o trabalho com a codificação e atividades de *debug*.
+
+
+.. figure:: ../img/introducao-programacao/ibm704.png
+    :alt: Computador IBM 704 (1954)
+    :width: 100%
+    :figclass: align-center
+    :name: introd-prog:fig:ibm704
+
+    Computador IBM 704 (1954). |br| **Fonte:** Wikipedia :cite:`wikipedia:2021:a`.
+
+
+.. admonition:: Nota Histórica
+    :class: historical-note
+
+    O grande problema identificado por Backus na época, e que motivou o desenvolvimento das linguagens de programação de alto nível, era que grande parte dos custos e do tempo para solucionar problemas científicos e de engenharia com a ajuda de grandes computadores, era gasto, respectivamente, com a preparação do problema (2/3 custo) e com a escrita e verificação do programa criado (90% do tempo) :cite:`backus:1957`.
+
+
+FORTRAN foi criada como uma linguagem **compilada**. Nas linguagens compiladas, existe um software chamado **compilador** que é responsável por traduzir o código na linguagem de alto nível em um código em linguagem de máquina que possa então ser executado pelo computador. A :numref:`Figura %s <introd-prog:fig:gcc>` apresenta o fluxo de compilação para um compilador C++ (GNU g++).
+
+
+.. figure:: ../img/introducao-programacao/compilador.png
+    :alt: Fluxo de compilação de um programa C++
+    :width: 100%
+    :figclass: align-center
+    :name: introd-prog:fig:gcc
+
+    Fluxo de compilação de um programa C++.
+
+
+Na sequência, vieram as Linguagens **ALGOL**, acrônimo de **ALGO**\ rithmic Language. A primeira versão, ALGOL 58, que inicialmente seria batizada de IAL (International Algorithmic Language), representa um marco histórico por ter sido desenvolvida em conjunto por cientistas americanos e europeus na tentativa de criar uma linguagem padronizada. ALGOL foi utilizada, principalmente, na comunidade científica para especificar os algoritmos apresentados em revistas e jornais, como a ACM.
+
+
+Essa família de linguagens formalizou diversos recursos disponíveis nas linguagens atuais, entre elas, o uso de estrutura de comandos em blocos, comandos condicionais, laços, procedimentos e funções, formas de passagem de parâmetro (valor, referência, nome), funções aninhadas, `escopo léxico <https://en.wikipedia.org/wiki/Scope_(computer_science)#Lexical_scoping>`_. A :numref:`Figura %s <introd-prog:code:algol>` mostra um exemplo de código em ALGOL 60.
+
+
+.. code-block:: text
+    :linenos:
+    :caption:  Exemplo de código em ALGOL 60. |br| **Fonte:** Wikipedia :cite:`wikipedia:2021:d`.
+    :name: introd-prog:code:algol
+
+    procedure Absmax(a) Size:(n, m) Result:(y) Subscripts:(i, k);
+
+        value n, m; array a; integer n, m, i, k; real y;
+
+    comment The absolute greatest element of the matrix a, of size n by m,
+            is transferred to y, and the subscripts of this element to i and k;
+
+    begin
+        integer p, q;
+
+        y := 0; i := k := 1;
+
+        for p := 1 step 1 until n do
+            for q := 1 step 1 until m do
+                if abs(a[p, q]) > y then
+                    begin
+                        y := abs(a[p, q]);
+                        i := p; k := q
+                    end
+    end Absmax
+
+
+Por conta da especificação da Linguagem ALGOL 58, Backus criou a `notação BNF <https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form>`_, refinada mais tarde por Peter Naur durante a especificação de ALGOL 60. ALGOL influenciou o desenvolvimento de diversas outras linguagens, como mostrado na :numref:`Figura %s <introd-prog:fig:lp>`. Esta figura mostra uma pequena lista das linguagens de programação que já foram criadas.
+
+
+.. figure:: ../img/introducao-programacao/lp.png
+    :alt: Genealogia das linguagens de programação
+    :width: 100%
+    :figclass: align-center
+    :name: introd-prog:fig:lp
+
+    Genealogia das linguagens de programação.
+
+
+.. admonition:: Nota Histórica
+    :class: historical-note
+
+    Muitos pesquisadores contribuiram para o desenvolvimento da área de linguagens formais e linguagens de programação. A :numref:`Figura %s <introd-prog:tbl:pioneiros-prog>` apresenta alguns dos pioneiros dessas duas áreas e que tiveram forte influência em seu estabelecimento.
+
+
+    .. |genios-cs1| image:: ../img/introducao-programacao/genios-computacao-1.png
+
+
+    .. |genios-cs2| image:: ../img/introducao-programacao/genios-computacao-2.png
+
+
+    .. table:: Pioneiros da computação com forte influência no desenvolvimento das linguagens de programação. |br| **Fonte:** Wikipedia.
+        :width: 100%
+        :align: center
+        :column-alignment: center
+        :name: introd-prog:tbl:pioneiros-prog
+
+        +-----------------------+
+        | |genios-cs1|          |
+        +-----------------------+
+        | |genios-cs2|          |
+        +-----------------------+
+
+
+A Linguagem de Programação Python
+---------------------------------
+
+
+A linguagem Python foi criada originalmente por Guido Van Rossum :cite:`rossum:1995`. Atualmente, seu desenvolvimento é coordenado através de uma fundação chamada `Python Software Foundation <https://www.python.org/psf-landing/>`_, sob uma licença de código aberto. Pode ser classificada como uma linguagem de *script*, orientada a objetos e interpretada. A implementação oficial encontra-se disponível para as plataformas computacionais mais comuns no site https://www.python.org/.
+
+
+O **core** desta linguagem, descrito em :cite:`psf:reference:2021:a`, contém a gramática com as regras sintáticas e semânticas da linguagem, além das abstrações básicas tais como tipos de dados numéricos, sequências, dicionários, estruturas de repetição, comandos de decisão, funções, construtor de novos tipos (``class``), blocos para tratamento de exceções, entre outras abstrações.
+
+
+A **biblioteca padrão** (*standard library*), descrita em :cite:`psf:stdlib:2021:a`, fornece inúmeros tipos de dados e funcionalidades, como tipos para manipulação de data e hora, manipulação de arquivos, comunicação em rede, entre outros.
+
+
+Python apresenta as seguintes características:
+
+.. rst-class:: open
+
+- Possui um sistema de tipos dinâmicos, ou seja, realiza checagem de tipos durante a execução dos programas.
+
+- Gerenciamento automático de memória (*garbage collector*).
+
+- A linguagem contém um conjunto básico de abstrações bem poderosas: sequências (listas e tuplas), dicionários (*hashes*), funções e classes.
+
+- Suporta orientação a objetos.
+
+- Possui mecanismo para tratamento de exceções.
+
+- Permite expressar conceitos e computações em poucas linhas de código.
+
+- Oferece uma notação inspirada na linguagem Haskell conhecida como **list comprehensions**, que é bastante poderosa para criação de objetos como listas e dicionários.
+
+- Possui uma grande quantidade de bibliotecas de código aberto que cobrem um grande espectro de funcionalidades.
+
+- É extensível.
+
+- Suporta diversos paradigmas de programação: estruturado, orientado a objetos, funcional.
+
+
+.. note::
+
+    Atualmente, Python é uma das linguagens mais populares. O `TIOBE Index <https://www.tiobe.com/tiobe-index/>`_ fornece um indicador da popularidade das linguagens de programação.
+
+

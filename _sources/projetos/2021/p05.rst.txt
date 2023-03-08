@@ -1,0 +1,32 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../../def.rst
+
+
+.. _sec_projetos_2021_p05:
+
+Extensão da Biblioteca ``stac.py``
+==================================
+
+
+A biblioteca `stac.py <https://github.com/brazil-data-cube/stac.py>`_ fornece uma API cliente para serviços baseados na especificação SpatioTemporal Asset Catalog. A galeria de códigos disponíveis no repositório `Brazil Data Cube Code Gallery <https://github.com/brazil-data-cube/code-gallery>`_ contém diversos exemplos de uso dessa biblioteca. Acrescente funcionalidades de visualização de dados à ``stac.py`` através da biblioteca `HoloViews <https://holoviews.org/index.html>`_. Considere criar um ou mais Notebooks que ajudem a apresentar essas novas funcionalidades. Esses exemplos devem utilizar dados disponíveis no `portal do projeto Brazil Data Cube <http://brazildatacube.dpi.inpe.br/portal/>`_.
+
+
+.. note::
+
+    **1.** Os produtos de código desenvolvidos deverão ser licenciados de acordo com os modelos de software livre MIT, e disponibilizados em um ou mais repositórios na organização ``prog-geoespacial``.
+
+
+    **2.** Os pacotes deverão conter documentação de uso.
+
+
+    **3.** Utilize o `template de pacotes Python do Brazil Data Cube <https://github.com/brazil-data-cube/cookiecutter-bdc>`_.
+
+
+    **4.** Os produtos de dados de exemplo deverão ser disponibilizados de acordo com o modelo Creative Commons.
+
+
+    **5.** Produzir um relatório no formato do evento `GEOINFO <http://www.geoinfo.info/>`_.

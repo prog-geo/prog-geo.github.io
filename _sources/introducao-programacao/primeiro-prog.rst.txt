@@ -1,0 +1,170 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../def.rst
+
+
+.. _sec_introducao_programacao_primeiro_prog:
+
+Primeiro Programa em Python
+===========================
+
+
+Vamos começar por uma tradição na computação que é a criação de um programa que escreve na saída padrão, isto é, na tela do computador, a mensagem ``Olá Mundo!``. Para isso, vamos ao `Google Colab <https://colab.research.google.com/notebooks/intro.ipynb>`_.
+
+
+.. figure:: ../img/introducao-programacao/google-colab.png
+    :alt: Google Colab
+    :width: 100%
+    :figclass: align-center
+    :name: introd-prog:google-colab
+
+    **Google Colab**.
+
+
+Na janela do Colab (:numref:`Figura %s <introd-prog:google-colab>`), crie um novo documento, conhecido como Jupyter Notebook, selecionando o menu :guilabel:`File` e a opção :guilabel:`New notebook`. Isso fará com que uma janela como a mostrada na :numref:`Figura %s <introd-prog:google-colab-new-notebook>` seja apresentada.
+
+
+.. figure:: ../img/introducao-programacao/google-colab-new-notebook.png
+    :alt: Novo Jupyter Notebook no Google Colab
+    :width: 100%
+    :figclass: align-center
+    :name: introd-prog:google-colab-new-notebook
+
+    Novo **Jupyter Notebook** no Google Colab.
+
+
+O novo documento criado possui uma célula de código. Nesse espaço, entre com o seguinte comando (:numref:`Figura %s <introd-prog:google-colab-hello-world>`):
+
+
+.. code-block:: python
+
+    print("Olá Mundo!")
+
+
+.. figure:: ../img/introducao-programacao/google-colab-hello-world.png
+    :alt: Criando o primeiro programa Python no Google Colab
+    :width: 100%
+    :figclass: align-center
+    :name: introd-prog:google-colab-hello-world
+
+    Criando o primeiro programa Python no Google Colab.
+
+
+Agora, podemos executar a célula de código, isto é, solicitar que a instrução contendo código na linguagem Python seja tratada pelo interpretador Python. A saída será apresentada logo abaixo da célula de código, como mostrado na :numref:`Figura %s <introd-prog:google-colab-hello-world-output>`.
+
+
+.. figure:: ../img/introducao-programacao/google-colab-hello-world-output.png
+    :alt: Saída do primeiro programa Python no Google Colab
+    :width: 100%
+    :figclass: align-center
+    :name: introd-prog:google-colab-hello-world-output
+
+    Saída do primeiro programa Python no Google Colab.
+
+
+Nesse primeiro programa, temos muitas coisas para discutir:
+
+.. rst-class:: open
+
+- Programas em Python consistem de um conjunto de instruções, que informam as operações que devem ser realizadas para a execução de uma dada computação. Em geral, essas instruções serão formadas, entre outras coisas, por:
+
+  .. rst-class:: open
+
+  - Chamadas de função.
+
+  - Expressões aritméticas e lógicas.
+
+  - Associações entre nomes a valores.
+
+  - Instruções de controle do fluxo de execução do programa.
+
+- Nosso primeiro programa contém uma única instrução, que é a chamada da função denominada ``print``. Note que o nome dessa função encontra-se destacado em *marrom* no editor de texto do Google Colab. Isso indica que esse símbolo pertence à linguagem Python.
+
+- Os parênteses que seguem após o nome da função delimitam a lista de argumentos ou valores para que a função realize sua computação.
+
+- No caso do nosso programa, estamos passando um texto delimitado por aspas duplas, que é o texto que desejamos escrever na saída padrão do computador. A saída padrão, em geral, será a própria tela ou *display*.
+
+
+Conversão entre Escalas de Temperatura: :math:`^oF \, \rightarrow \, ^oC`
+-------------------------------------------------------------------------
+
+
+**Problema 1:** Escrever um programa para converter a temperatura de :math:`20^oF` no valor equivalente na escala Celsius.
+
+
+.. tip::
+
+    Considere a seguinte fórmula para conversão entre temperaturas em graus Fahrenheit e Celsius:
+
+
+    .. math::
+        :label: Fahrenheit2Celsius
+
+        ^oC = \frac{5 * (^oF - 32)}{9}
+
+
+**Solução:**
+
+
+.. code-block:: python
+    :linenos:
+
+    fahr = 20   # temperatura Fahrenheit
+
+    celsius = 5 * (fahr - 32) / 9
+
+    print(fahr, "\t", celsius)
+
+
+----
+
+
+**Problema 2:** Escrever um programa que pergunte ao usuário o valor de uma temperatura em graus Fahrenheit e que depois apresente o valor convertido no equivalente na escala Celsius.
+
+
+.. tip::
+
+    Para solução desse problema iremos usar a função ``input``. Essa função possui a seguinte **sintaxe**:
+
+
+    .. code-block:: python
+
+        input([prompt])
+
+
+    **Nome da função:** ``input``
+
+
+    **Parâmetros:**
+
+    - ``prompt``: A função ``input`` escreve na saída padrão a mensagem definida pelo parâmetro ``prompt`` e aguarda a leitura de dados da entrada padrão. Neste caso a entrada padrão será o ``teclado`` e a saída padrão, o ``monitor``.
+
+
+    **Retorno:**
+
+    - Retorna o texto lido da entrada padrão na forma de uma ``string``, isto é, de uma sequência de caracteres.
+
+
+**Solução:**
+
+
+.. code-block:: python
+    :linenos:
+
+    # leitura de um valor de temperatura Fahrenheit
+    fahr = int(input("Entre com a temperatura em Fahrenheit: "))
+
+    # conversão entre as escalas de temperatura
+    celsius = 5 * (fahr - 32) / 9
+
+    # escreve na tela o resultado da conversão
+    print(fahr, "\t", celsius)
+
+
+.. note::
+
+    Repare no trecho de código acima que utilizamos a função denominada ``int`` para converter a sequência de caracteres retornada pela função ``input`` numa representação numérica do tipo inteiro.
+

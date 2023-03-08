@@ -1,0 +1,30 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _cap_visao_geral:
+
+Visão Geral do Curso
+====================
+
+
+**Bem vindos ao curso Introdução à Programação com Dados Geoespaciais!**
+
+
+Este capítulo apresenta as motivações, objetivos, escopo e metodologia do curso.
+
+
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+    :caption: Tópicos
+
+    ./visao-geral/docentes
+    ./visao-geral/monitoria
+    ./visao-geral/porque-programar
+    ./visao-geral/organizacao-curso
+    ./visao-geral/ferramentas
+    ./visao-geral/bibliografia
+    ./visao-geral/discentes
+    ./visao-geral/cronograma

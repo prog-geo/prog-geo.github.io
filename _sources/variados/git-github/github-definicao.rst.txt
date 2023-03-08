@@ -1,0 +1,160 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _sec_variados_git_github_github_definicao:
+
+O que é o GitHub?
+=================
+
+
+O `GitHub <https://github.com/>`_ é uma plataforma que oferece aos desenvolvedores a possibilidade de hospedar repositórios de código versionados através do sistema ``git`` e com uma interface web amigável. Além disso, oferece diversas ferramentas para o desenvolvimento colaborativo. Essas ferramentas vão desde o controle de atividades (`issues <https://guides.github.com/features/issues/>`_), áreas de rascunho de código (`gist <https://help.github.com/en/github/writing-on-github/creating-gists>`_), disponibilização de páginas web (`github pages <https://pages.github.com/>`_), `wikis <https://guides.github.com/features/wikis/>`_), até a interface com sistemas de integração contínua. Atualmente, o ``GitHub`` hospeda diversos projetos de software livre. Trata-se de um negócio bilionário, o GitHub foi adquirido pela Microsoft em 2018 por cerca de ``US$7.5 bilhões`` [#f1]_.
+
+
+Esta seção do curso irá explicar como trabalhar com a ferramenta de versionamento de código fonte ``git`` através do ``GitHub``.
+
+
+Criando uma Conta no GitHub
+---------------------------
+
+
+Para seguir as atividades desta seção, você deverá ter uma conta no `GitHub <https://github.com/>`_. Se ainda não possui uma, você poderá criar uma de maneira gratuita acessando `este link <https://github.com/>`_ (:numref:`Figura %s <github:sign-up>`).
+
+
+.. figure:: ../../img/variados/github-sign-up.png
+    :alt: Criando uma conta no GitHub
+    :width: 640
+    :figclass: align-center
+    :name: github:sign-up
+    :target: https://github.com/
+
+    Criando uma conta no GitHub.
+
+
+.. note::
+
+    **Sugestão:** adote um nome curto e significativo para seu usuário. Exemplo: ``gqueiroz``, ``gilberto-queiroz``, ``gribeiro``. Este nome formará a base de seus futuros repositórios e, consequentemente, quanto mais simples e fácil de lembrar, mais fácil será de usar o GitHub.
+
+
+Na janela seguinte (:numref:`Figura %s <github:freeplan>`), selecione a opção ``Join a free plan`` para que sua conta seja criada:
+
+.. figure:: ../../img/variados/github-sign-up-free-plan.png
+    :alt: Opção por um plano gratuito
+    :width: 640
+    :figclass: align-center
+    :name: github:freeplan
+
+    Opção por um plano gratuito.
+
+
+Algumas outras informações sobre o uso pretendido do GitHub podem ser apresentadas ao usuário nas janelas seguintes, bem como a informação de confirmação do e-mail associado à conta. Após o processo de registro da sua conta, você deverá chegar em uma janela semelhante à apresentada na :numref:`Figura %s <github:profile-empty>`:
+
+
+.. figure:: ../../img/variados/github-profile-empty.png
+    :alt: Profile do usuário
+    :width: 640
+    :figclass: align-center
+    :name: github:profile-empty
+
+    Profile do usuário.
+
+
+Como pode ser observado na :numref:`Figura %s <github:profile-empty>`, essa janela permite que você acompanhe os repositórios de código criados por você ou copiados de outros usuários do GitHub (os chamados `forks`) para sua conta, os projetos em que você se encontra associado, pacotes publicados por você [#f2]_, repositórios destacados por você, quem você segue e quem são seus seguidores no GitHub.
+
+
+Criando um Repositório para Hospedar Código
+-------------------------------------------
+
+
+Para criar um novo repositório de código, onde você poderá incluir arquivos do seu projeto e utilizar a ferramenta ``git`` para controlar o versionamento desses arquivos, selecione opção ``New repository`` como indicado na :numref:`Figura %s <github:new-repository>`:
+
+
+.. figure:: ../../img/variados/github-new-repository.png
+    :alt: Menu - Novo repositório
+    :width: 640
+    :figclass: align-center
+    :name: github:new-repository
+
+    Menu - ``New repository``.
+
+
+Um formulário como o apresentado na :numref:`Figura %s <github:create-new-repo>` será apresentado.
+
+
+.. figure:: ../../img/variados/github-create-new-repo.png
+    :alt: Criando um novo repositório
+    :width: 640
+    :figclass: align-center
+    :name: github:create-new-repo
+
+    Criando um novo repositório.
+
+
+Repare na :numref:`Figura %s <github:create-new-repo>` que:
+
+.. rst-class:: open
+
+- Você poderá definir o proprietário desse novo repositório. Neste exemplo, o proprietário foi definido como sendo o próprio usuário ``gilberto-queiroz``.
+
+- O nome do repositório também deve ser breve e significativo (exemplo: ``ser-347``).
+
+- Você poderá informar uma breve descrição sobre o repositório, que será exibida na página principal do novo repositório, logo após sua criação.
+
+- Os repositórios podem ser públicos ou privados. No exemplo, estamos criando o repositório de maneira pública.
+
+- Também estamos indicando que o repositório deverá ser criado com a inclusão de alguns arquivos especiais:
+
+    .. rst-class:: open
+
+    - ``README``: essa opção fará com que um arquivo chamado ``README.md`` seja automaticamente adiconado ao novo repositório criado. Este arquivo recebe um tratamento especial do GitHub, que sempre ao localizar um arquivo com esse nome na estrutura de um repositório, utiliza seu conteúdo para apresentar aos usuários.
+
+    - ``.gitignore``: este arquivo irá dizer ao ``git`` quais arquivos e diretórios deverão ser ignorados na estrutura do seu repositório. Como estamos trabalhando com a linguagem ``Python``, podemos escolher o modelo indicado na caixa de seleção para a linguagem ``Python``. Assim, já teremos os nomes de alguns arquivos e diretórios que apesar de existirem localmente nas nossas máquinas, não deverão ser incluídas no repositório.
+
+    - ``license``: também vamos optar por incluir no nosso repositório um arquivo com o modelo de licença (``MIT``).
+
+
+Após a criação do repositório, uma página como a mostrada na :numref:`Figura %s <github:github-repo-ser-347>` será apresentada:
+
+
+.. figure:: ../../img/variados/github-repo-ser-347.png
+    :alt: Repositório ser-347
+    :width: 640
+    :figclass: align-center
+    :name: github:github-repo-ser-347
+
+    Repositório ``ser-347``.
+
+
+Nessa janela temos:
+
+.. rst-class:: open
+
+- O repositório ``ser-347`` está vinculado ao usuário ``gilberto-queiroz``.
+
+- A página de um repositório possui várias abas que permitem obter informações desse repositório. Por padrão, é exibida a aba de código (``<> Code``).
+
+- Na aba de código, podemos ver:
+
+    .. rst-class:: open
+
+    - A descrição dada ao repositório: ``Projeto da Disciplina SER-347``.
+
+    - Os arquivos que fazem parte do repositório (``.gitignore``, ``LICENSE``, ``README.md``).
+
+    - A exibição na forma de ``HTML`` do conteúdo do arquivo ``README.md``.
+
+
+A seguir, iremos utilizar o ``git`` para realizar algumas tarefas básicas, como criar uma cópia desse repositório na nossa máquina local, adicionar novos arquivos, modificar o conteúdo de um dado arquivo e atualizar o repositório no GitHub a partir da nossa cópia local.
+
+
+.. rubric:: Footnotes
+
+.. [#f1]
+
+    https://en.wikipedia.org/wiki/GitHub
+
+
+.. [#f2]
+
+    https://help.github.com/en/packages
