@@ -12,31 +12,33 @@ Primeiro Programa em Python
 ===========================
 
 
-Vamos começar por uma tradição na computação que é a criação de um programa que escreve na saída padrão, isto é, na tela do computador, a mensagem ``Olá Mundo!``. Para isso, vamos ao `Google Colab <https://colab.research.google.com/notebooks/intro.ipynb>`_.
+Vamos começar por uma tradição na computação que é a criação de um programa que escreve na saída padrão, isto é, na tela do computador, a mensagem ``Olá Mundo!``. Para isso, vamos ao `Google Colab <https://colab.research.google.com/notebooks/intro.ipynb>`__ (:numref:`Figura %s <fig:introducao-programacao:primeiro-prog:google-colab>`).
 
 
 .. figure:: ../img/introducao-programacao/google-colab.png
     :alt: Google Colab
     :width: 100%
     :figclass: align-center
-    :name: introd-prog:google-colab
+    :align: center
+    :name: fig:introducao-programacao:primeiro-prog:google-colab
 
-    **Google Colab**.
+    Google Colab.
 
 
-Na janela do Colab (:numref:`Figura %s <introd-prog:google-colab>`), crie um novo documento, conhecido como Jupyter Notebook, selecionando o menu :guilabel:`File` e a opção :guilabel:`New notebook`. Isso fará com que uma janela como a mostrada na :numref:`Figura %s <introd-prog:google-colab-new-notebook>` seja apresentada.
+Na janela do Colab (:numref:`Figura %s <fig:introducao-programacao:primeiro-prog:google-colab>`), crie um novo documento, conhecido como Jupyter Notebook, selecionando a opção :menuselection:`File --> New notebook`. Isso fará com que uma janela como a mostrada na :numref:`Figura %s <fig:introducao-programacao:primeiro-prog:google-colab-new-notebook>` seja apresentada.
 
 
 .. figure:: ../img/introducao-programacao/google-colab-new-notebook.png
     :alt: Novo Jupyter Notebook no Google Colab
     :width: 100%
     :figclass: align-center
-    :name: introd-prog:google-colab-new-notebook
+    :align: center
+    :name: fig:introducao-programacao:primeiro-prog:google-colab-new-notebook
 
-    Novo **Jupyter Notebook** no Google Colab.
+    Novo Jupyter Notebook no Google Colab.
 
 
-O novo documento criado possui uma célula de código. Nesse espaço, entre com o seguinte comando (:numref:`Figura %s <introd-prog:google-colab-hello-world>`):
+O novo documento criado possui uma célula de código. Nesse espaço, entre com o seguinte comando (:numref:`Figura %s <fig:introducao-programacao:primeiro-prog:google-colab-hello-world>`):
 
 
 .. code-block:: python
@@ -48,24 +50,26 @@ O novo documento criado possui uma célula de código. Nesse espaço, entre com 
     :alt: Criando o primeiro programa Python no Google Colab
     :width: 100%
     :figclass: align-center
-    :name: introd-prog:google-colab-hello-world
+    :align: center
+    :name: fig:introducao-programacao:primeiro-prog:google-colab-hello-world
 
     Criando o primeiro programa Python no Google Colab.
 
 
-Agora, podemos executar a célula de código, isto é, solicitar que a instrução contendo código na linguagem Python seja tratada pelo interpretador Python. A saída será apresentada logo abaixo da célula de código, como mostrado na :numref:`Figura %s <introd-prog:google-colab-hello-world-output>`.
+Agora, podemos executar a célula de código, isto é, solicitar que a instrução contendo código na linguagem Python seja tratada pelo interpretador Python. A saída será apresentada logo abaixo da célula de código, como mostrado na :numref:`Figura %s <fig:introducao-programacao:primeiro-prog:google-colab-hello-world-output>`.
 
 
 .. figure:: ../img/introducao-programacao/google-colab-hello-world-output.png
     :alt: Saída do primeiro programa Python no Google Colab
     :width: 100%
     :figclass: align-center
-    :name: introd-prog:google-colab-hello-world-output
+    :align: center
+    :name: fig:introducao-programacao:primeiro-prog:google-colab-hello-world-output
 
     Saída do primeiro programa Python no Google Colab.
 
 
-Nesse primeiro programa, temos muitas coisas para discutir:
+Nesse primeiro programa, temos muitas coisas a discutir:
 
 .. rst-class:: open
 
@@ -77,7 +81,7 @@ Nesse primeiro programa, temos muitas coisas para discutir:
 
   - Expressões aritméticas e lógicas.
 
-  - Associações entre nomes a valores.
+  - Associações de valores a nomes.
 
   - Instruções de controle do fluxo de execução do programa.
 
@@ -88,41 +92,50 @@ Nesse primeiro programa, temos muitas coisas para discutir:
 - No caso do nosso programa, estamos passando um texto delimitado por aspas duplas, que é o texto que desejamos escrever na saída padrão do computador. A saída padrão, em geral, será a própria tela ou *display*.
 
 
-Conversão entre Escalas de Temperatura: :math:`^oF \, \rightarrow \, ^oC`
--------------------------------------------------------------------------
+Computando NDVI
+---------------
 
 
-**Problema 1:** Escrever um programa para converter a temperatura de :math:`20^oF` no valor equivalente na escala Celsius.
+O índice de vegetação por diferença normalizada conhecido como **Normalized Difference Vegetation Index** (**NDVI**) pode ser computado usando a reflectância das bandas do vermelho (*rde) e infravermelho próximo (*nir*), como mostrado na :eq:`eq:introducao-programacao:primeiro-prog:ndvi`:
+
+.. math::
+    :label: eq:introducao-programacao:primeiro-prog:ndvi
+
+    NDVI = \frac{\rho_{nir} - \rho_{red}}{\rho_{nir} + \rho_{red}}
+
+
+.. note::
+
+    A :eq:`eq:introducao-programacao:primeiro-prog:ndvi` produz valores que variam entre :math:`-1.0` a :math:`1.0`.
 
 
 .. tip::
 
-    Considere a seguinte fórmula para conversão entre temperaturas em graus Fahrenheit e Celsius:
+    Para mais detalhes sobre o NDVI, consulte o Capítulo 11 em :cite:`jensen:2009`.
 
 
-    .. math::
-        :label: Fahrenheit2Celsius
-
-        ^oC = \frac{5 * (^oF - 32)}{9}
+**Problema 1:** Escrever um programa para computar o NDVI a partir dos seguinte valores de reflectância: :math:`\rho_{red}=168` e :math:`\rho_{nir}=2346`.
 
 
-**Solução:**
+.. collapse:: Solução:
 
 
-.. code-block:: python
-    :linenos:
+    .. code-block:: python
+        :linenos:
 
-    fahr = 20   # temperatura Fahrenheit
+        red = 168
 
-    celsius = 5 * (fahr - 32) / 9
+        nir = 2346
 
-    print(fahr, "\t", celsius)
+        ndvi = (nir - red) / (nir + red)
+
+        print(red, nir, ndvi)
 
 
-----
+-----
 
 
-**Problema 2:** Escrever um programa que pergunte ao usuário o valor de uma temperatura em graus Fahrenheit e que depois apresente o valor convertido no equivalente na escala Celsius.
+**Problema 2:** Escrever um programa que pergunte ao usuário o valor de reflectância das bandas do vermelho e infravermelho próximo e que depois apresente o valor do NDVI.
 
 
 .. tip::
@@ -148,23 +161,87 @@ Conversão entre Escalas de Temperatura: :math:`^oF \, \rightarrow \, ^oC`
     - Retorna o texto lido da entrada padrão na forma de uma ``string``, isto é, de uma sequência de caracteres.
 
 
-**Solução:**
+.. collapse:: Solução:
 
 
-.. code-block:: python
-    :linenos:
+    .. code-block:: python
+        :linenos:
 
-    # leitura de um valor de temperatura Fahrenheit
-    fahr = int(input("Entre com a temperatura em Fahrenheit: "))
+        # leitura de um valor de reflectância da banda do vermelho
+        red = int(input("Entre com o valor da reflectância da bando do vermelho: "))
 
-    # conversão entre as escalas de temperatura
-    celsius = 5 * (fahr - 32) / 9
+        # leitura de um valor de reflectância da banda do infravermelho próximo
+        nir = int(input("Entre com o valor da reflectância da bando do infravermelho próximo: "))
 
-    # escreve na tela o resultado da conversão
-    print(fahr, "\t", celsius)
+        # cálculo do NDVI
+        ndvi = (nir - red) / (nir + red)
+
+        # escreve na tela o resultado do NDVI
+        print("NDVI:", ndvi)
 
 
-.. note::
+    .. note::
 
-    Repare no trecho de código acima que utilizamos a função denominada ``int`` para converter a sequência de caracteres retornada pela função ``input`` numa representação numérica do tipo inteiro.
+        Repare no trecho de código acima que utilizamos a função denominada ``int`` para converter a sequência de caracteres retornada pela função ``input`` numa representação numérica do tipo inteiro.
 
+
+-----
+
+
+Conversão entre Escalas de Temperatura: :math:`^oF \, \rightarrow \, ^oC`
+-------------------------------------------------------------------------
+
+
+**Problema 3:** Escrever um programa para converter a temperatura de :math:`20^oF` no valor equivalente na escala Celsius.
+
+
+.. tip::
+
+    Considere a seguinte fórmula para conversão entre temperaturas em graus Fahrenheit e Celsius:
+
+
+    .. math::
+        :label: Fahrenheit2Celsius
+
+        ^oC = \frac{5 * (^oF - 32)}{9}
+
+
+.. collapse:: Solução:
+
+
+    .. code-block:: python
+        :linenos:
+
+        fahr = 20   # temperatura Fahrenheit
+
+        celsius = 5 * (fahr - 32) / 9
+
+        print(fahr, "\t", celsius)
+
+
+----
+
+
+**Problema 4:** Escrever um programa que pergunte ao usuário o valor de uma temperatura em graus Fahrenheit e que depois apresente o valor convertido no equivalente na escala Celsius.
+
+
+.. collapse:: Solução:
+
+
+    .. code-block:: python
+        :linenos:
+
+        # leitura de um valor de temperatura Fahrenheit
+        fahr = int(input("Entre com a temperatura em Fahrenheit: "))
+
+        # conversão entre as escalas de temperatura
+        celsius = 5 * (fahr - 32) / 9
+
+        # escreve na tela o resultado da conversão
+        print(fahr, "\t", celsius)
+
+
+-----
+
+
+Na próxima seção iremo introduzir um conceito fundamental nas liguagens de programação: **tipos de dados**.

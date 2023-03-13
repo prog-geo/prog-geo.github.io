@@ -65,7 +65,8 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">2. Introdução à Programação com a Linguagem Python</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="introducao.html">2.1. Introdução</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">2.2. Primeiro Programa em Python</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#conversao-entre-escalas-de-temperatura-of-rightarrow-oc">2.2.1. Conversão entre Escalas de Temperatura: <span class="math notranslate nohighlight">\(^oF \, \rightarrow \, ^oC\)</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#computando-ndvi">2.2.1. Computando NDVI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#conversao-entre-escalas-de-temperatura-of-rightarrow-oc">2.2.2. Conversão entre Escalas de Temperatura: <span class="math notranslate nohighlight">\(^oF \, \rightarrow \, ^oC\)</span></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="tipos-dados.html">2.3. Tipos de Dados</a></li>
@@ -150,44 +151,44 @@
              
   <section id="primeiro-programa-em-python">
 <span id="sec-introducao-programacao-primeiro-prog"></span><h1><span class="section-number">2.2. </span>Primeiro Programa em Python<a class="headerlink" href="#primeiro-programa-em-python" title="Link permanente para este cabeçalho"></a></h1>
-<p>Vamos começar por uma tradição na computação que é a criação de um programa que escreve na saída padrão, isto é, na tela do computador, a mensagem <code class="docutils literal notranslate"><span class="pre">Olá</span> <span class="pre">Mundo!</span></code>. Para isso, vamos ao <a class="reference external" href="https://colab.research.google.com/notebooks/intro.ipynb">Google Colab</a>.</p>
-<figure class="align-center align-default" id="introd-prog-google-colab">
+<p>Vamos começar por uma tradição na computação que é a criação de um programa que escreve na saída padrão, isto é, na tela do computador, a mensagem <code class="docutils literal notranslate"><span class="pre">Olá</span> <span class="pre">Mundo!</span></code>. Para isso, vamos ao <a class="reference external" href="https://colab.research.google.com/notebooks/intro.ipynb">Google Colab</a> (<a class="reference internal" href="#fig-introducao-programacao-primeiro-prog-google-colab"><span class="std std-numref">Figura 2.6</span></a>).</p>
+<figure class="align-center" id="fig-introducao-programacao-primeiro-prog-google-colab">
 <a class="reference internal image-reference" href="../_images/google-colab.png"><img alt="Google Colab" src="../_images/google-colab.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Figura 2.6 - </span><span class="caption-text"><strong>Google Colab</strong>.</span><a class="headerlink" href="#introd-prog-google-colab" title="Link Permanente para essa imagem"></a></p>
+<p><span class="caption-number">Figura 2.6 - </span><span class="caption-text">Google Colab.</span><a class="headerlink" href="#fig-introducao-programacao-primeiro-prog-google-colab" title="Link Permanente para essa imagem"></a></p>
 </figcaption>
 </figure>
-<p>Na janela do Colab (<a class="reference internal" href="#introd-prog-google-colab"><span class="std std-numref">Figura 2.6</span></a>), crie um novo documento, conhecido como Jupyter Notebook, selecionando o menu <span class="guilabel">File</span> e a opção <span class="guilabel">New notebook</span>. Isso fará com que uma janela como a mostrada na <a class="reference internal" href="#introd-prog-google-colab-new-notebook"><span class="std std-numref">Figura 2.7</span></a> seja apresentada.</p>
-<figure class="align-center align-default" id="introd-prog-google-colab-new-notebook">
+<p>Na janela do Colab (<a class="reference internal" href="#fig-introducao-programacao-primeiro-prog-google-colab"><span class="std std-numref">Figura 2.6</span></a>), crie um novo documento, conhecido como Jupyter Notebook, selecionando a opção <span class="menuselection">File ‣ New notebook</span>. Isso fará com que uma janela como a mostrada na <a class="reference internal" href="#fig-introducao-programacao-primeiro-prog-google-colab-new-notebook"><span class="std std-numref">Figura 2.7</span></a> seja apresentada.</p>
+<figure class="align-center" id="fig-introducao-programacao-primeiro-prog-google-colab-new-notebook">
 <a class="reference internal image-reference" href="../_images/google-colab-new-notebook.png"><img alt="Novo Jupyter Notebook no Google Colab" src="../_images/google-colab-new-notebook.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Figura 2.7 - </span><span class="caption-text">Novo <strong>Jupyter Notebook</strong> no Google Colab.</span><a class="headerlink" href="#introd-prog-google-colab-new-notebook" title="Link Permanente para essa imagem"></a></p>
+<p><span class="caption-number">Figura 2.7 - </span><span class="caption-text">Novo Jupyter Notebook no Google Colab.</span><a class="headerlink" href="#fig-introducao-programacao-primeiro-prog-google-colab-new-notebook" title="Link Permanente para essa imagem"></a></p>
 </figcaption>
 </figure>
-<p>O novo documento criado possui uma célula de código. Nesse espaço, entre com o seguinte comando (<a class="reference internal" href="#introd-prog-google-colab-hello-world"><span class="std std-numref">Figura 2.8</span></a>):</p>
+<p>O novo documento criado possui uma célula de código. Nesse espaço, entre com o seguinte comando (<a class="reference internal" href="#fig-introducao-programacao-primeiro-prog-google-colab-hello-world"><span class="std std-numref">Figura 2.8</span></a>):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Olá Mundo!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<figure class="align-center align-default" id="introd-prog-google-colab-hello-world">
+<figure class="align-center" id="fig-introducao-programacao-primeiro-prog-google-colab-hello-world">
 <a class="reference internal image-reference" href="../_images/google-colab-hello-world.png"><img alt="Criando o primeiro programa Python no Google Colab" src="../_images/google-colab-hello-world.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Figura 2.8 - </span><span class="caption-text">Criando o primeiro programa Python no Google Colab.</span><a class="headerlink" href="#introd-prog-google-colab-hello-world" title="Link Permanente para essa imagem"></a></p>
+<p><span class="caption-number">Figura 2.8 - </span><span class="caption-text">Criando o primeiro programa Python no Google Colab.</span><a class="headerlink" href="#fig-introducao-programacao-primeiro-prog-google-colab-hello-world" title="Link Permanente para essa imagem"></a></p>
 </figcaption>
 </figure>
-<p>Agora, podemos executar a célula de código, isto é, solicitar que a instrução contendo código na linguagem Python seja tratada pelo interpretador Python. A saída será apresentada logo abaixo da célula de código, como mostrado na <a class="reference internal" href="#introd-prog-google-colab-hello-world-output"><span class="std std-numref">Figura 2.9</span></a>.</p>
-<figure class="align-center align-default" id="introd-prog-google-colab-hello-world-output">
+<p>Agora, podemos executar a célula de código, isto é, solicitar que a instrução contendo código na linguagem Python seja tratada pelo interpretador Python. A saída será apresentada logo abaixo da célula de código, como mostrado na <a class="reference internal" href="#fig-introducao-programacao-primeiro-prog-google-colab-hello-world-output"><span class="std std-numref">Figura 2.9</span></a>.</p>
+<figure class="align-center" id="fig-introducao-programacao-primeiro-prog-google-colab-hello-world-output">
 <a class="reference internal image-reference" href="../_images/google-colab-hello-world-output.png"><img alt="Saída do primeiro programa Python no Google Colab" src="../_images/google-colab-hello-world-output.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Figura 2.9 - </span><span class="caption-text">Saída do primeiro programa Python no Google Colab.</span><a class="headerlink" href="#introd-prog-google-colab-hello-world-output" title="Link Permanente para essa imagem"></a></p>
+<p><span class="caption-number">Figura 2.9 - </span><span class="caption-text">Saída do primeiro programa Python no Google Colab.</span><a class="headerlink" href="#fig-introducao-programacao-primeiro-prog-google-colab-hello-world-output" title="Link Permanente para essa imagem"></a></p>
 </figcaption>
 </figure>
-<p>Nesse primeiro programa, temos muitas coisas para discutir:</p>
+<p>Nesse primeiro programa, temos muitas coisas a discutir:</p>
 <ul class="open">
 <li><p>Programas em Python consistem de um conjunto de instruções, que informam as operações que devem ser realizadas para a execução de uma dada computação. Em geral, essas instruções serão formadas, entre outras coisas, por:</p>
 <ul class="open">
 <li><p>Chamadas de função.</p></li>
 <li><p>Expressões aritméticas e lógicas.</p></li>
-<li><p>Associações entre nomes a valores.</p></li>
+<li><p>Associações de valores a nomes.</p></li>
 <li><p>Instruções de controle do fluxo de execução do programa.</p></li>
 </ul>
 </li>
@@ -195,25 +196,32 @@
 <li><p>Os parênteses que seguem após o nome da função delimitam a lista de argumentos ou valores para que a função realize sua computação.</p></li>
 <li><p>No caso do nosso programa, estamos passando um texto delimitado por aspas duplas, que é o texto que desejamos escrever na saída padrão do computador. A saída padrão, em geral, será a própria tela ou <em>display</em>.</p></li>
 </ul>
-<section id="conversao-entre-escalas-de-temperatura-of-rightarrow-oc">
-<h2><span class="section-number">2.2.1. </span>Conversão entre Escalas de Temperatura: <span class="math notranslate nohighlight">\(^oF \, \rightarrow \, ^oC\)</span><a class="headerlink" href="#conversao-entre-escalas-de-temperatura-of-rightarrow-oc" title="Link permanente para este cabeçalho"></a></h2>
-<p><strong>Problema 1:</strong> Escrever um programa para converter a temperatura de <span class="math notranslate nohighlight">\(20^oF\)</span> no valor equivalente na escala Celsius.</p>
+<section id="computando-ndvi">
+<h2><span class="section-number">2.2.1. </span>Computando NDVI<a class="headerlink" href="#computando-ndvi" title="Link permanente para este cabeçalho"></a></h2>
+<p>O índice de vegetação por diferença normalizada conhecido como <strong>Normalized Difference Vegetation Index</strong> (<strong>NDVI</strong>) pode ser computado usando a reflectância das bandas do vermelho (<em>rde) e infravermelho próximo (*nir</em>), como mostrado na <a class="reference internal" href="#equation-eq-introducao-programacao-primeiro-prog-ndvi">Equação 2.1</a>:</p>
+<div class="math notranslate nohighlight" id="equation-eq-introducao-programacao-primeiro-prog-ndvi">
+<span class="eqno">(2.1)<a class="headerlink" href="#equation-eq-introducao-programacao-primeiro-prog-ndvi" title="Link permanente para essa equação"></a></span>\[NDVI = \frac{\rho_{nir} - \rho_{red}}{\rho_{nir} + \rho_{red}}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>A <a class="reference internal" href="#equation-eq-introducao-programacao-primeiro-prog-ndvi">Equação 2.1</a> produz valores que variam entre <span class="math notranslate nohighlight">\(-1.0\)</span> a <span class="math notranslate nohighlight">\(1.0\)</span>.</p>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">Dica</p>
-<p>Considere a seguinte fórmula para conversão entre temperaturas em graus Fahrenheit e Celsius:</p>
-<div class="math notranslate nohighlight" id="equation-fahrenheit2celsius">
-<span class="eqno">(2.1)<a class="headerlink" href="#equation-fahrenheit2celsius" title="Link permanente para essa equação"></a></span>\[^oC = \frac{5 * (^oF - 32)}{9}\]</div>
+<p>Para mais detalhes sobre o NDVI, consulte o Capítulo 11 em <span id="id1">[<a class="reference internal" href="../referencias.html#id23" title="John R. Jensen. Sensoriamento remoto da vegetação. In Keith C. Clarke, editor, Sensoriamento Remoto do Ambiente, chapter 11, pages 357–410. Parêntese Editora, São José dos Campos, São Paulo, Brasil, 2009.">42</a>]</span>.</p>
 </div>
-<p><strong>Solução:</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">fahr</span> <span class="o">=</span> <span class="mi">20</span>   <span class="c1"># temperatura Fahrenheit</span>
+<p><strong>Problema 1:</strong> Escrever um programa para computar o NDVI a partir dos seguinte valores de reflectância: <span class="math notranslate nohighlight">\(\rho_{red}=168\)</span> e <span class="math notranslate nohighlight">\(\rho_{nir}=2346\)</span>.</p>
+<details class="summary-solucao">
+<summary>Solução:</summary><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">red</span> <span class="o">=</span> <span class="mi">168</span>
 <span class="linenos">2</span>
-<span class="linenos">3</span><span class="n">celsius</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">*</span> <span class="p">(</span><span class="n">fahr</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">/</span> <span class="mi">9</span>
+<span class="linenos">3</span><span class="n">nir</span> <span class="o">=</span> <span class="mi">2346</span>
 <span class="linenos">4</span>
-<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="n">fahr</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">celsius</span><span class="p">)</span>
+<span class="linenos">5</span><span class="n">ndvi</span> <span class="o">=</span> <span class="p">(</span><span class="n">nir</span> <span class="o">-</span> <span class="n">red</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">nir</span> <span class="o">+</span> <span class="n">red</span><span class="p">)</span>
+<span class="linenos">6</span>
+<span class="linenos">7</span><span class="nb">print</span><span class="p">(</span><span class="n">red</span><span class="p">,</span> <span class="n">nir</span><span class="p">,</span> <span class="n">ndvi</span><span class="p">)</span>
 </pre></div>
 </div>
-<hr class="docutils" />
-<p><strong>Problema 2:</strong> Escrever um programa que pergunte ao usuário o valor de uma temperatura em graus Fahrenheit e que depois apresente o valor convertido no equivalente na escala Celsius.</p>
+</details><hr class="docutils" />
+<p><strong>Problema 2:</strong> Escrever um programa que pergunte ao usuário o valor de reflectância das bandas do vermelho e infravermelho próximo e que depois apresente o valor do NDVI.</p>
 <div class="admonition tip">
 <p class="admonition-title">Dica</p>
 <p>Para solução desse problema iremos usar a função <code class="docutils literal notranslate"><span class="pre">input</span></code>. Essa função possui a seguinte <strong>sintaxe</strong>:</p>
@@ -230,8 +238,47 @@
 <li><p>Retorna o texto lido da entrada padrão na forma de uma <code class="docutils literal notranslate"><span class="pre">string</span></code>, isto é, de uma sequência de caracteres.</p></li>
 </ul>
 </div>
-<p><strong>Solução:</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># leitura de um valor de temperatura Fahrenheit</span>
+<details class="summary-solucao">
+<summary>Solução:</summary><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1"># leitura de um valor de reflectância da banda do vermelho</span>
+<span class="linenos"> 2</span><span class="n">red</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Entre com o valor da reflectância da bando do vermelho: &quot;</span><span class="p">))</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="c1"># leitura de um valor de reflectância da banda do infravermelho próximo</span>
+<span class="linenos"> 5</span><span class="n">nir</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Entre com o valor da reflectância da bando do infravermelho próximo: &quot;</span><span class="p">))</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="c1"># cálculo do NDVI</span>
+<span class="linenos"> 8</span><span class="n">ndvi</span> <span class="o">=</span> <span class="p">(</span><span class="n">nir</span> <span class="o">-</span> <span class="n">red</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">nir</span> <span class="o">+</span> <span class="n">red</span><span class="p">)</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="c1"># escreve na tela o resultado do NDVI</span>
+<span class="linenos">11</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NDVI:&quot;</span><span class="p">,</span> <span class="n">ndvi</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Repare no trecho de código acima que utilizamos a função denominada <code class="docutils literal notranslate"><span class="pre">int</span></code> para converter a sequência de caracteres retornada pela função <code class="docutils literal notranslate"><span class="pre">input</span></code> numa representação numérica do tipo inteiro.</p>
+</div>
+</details></section>
+<hr class="docutils" />
+<section id="conversao-entre-escalas-de-temperatura-of-rightarrow-oc">
+<h2><span class="section-number">2.2.2. </span>Conversão entre Escalas de Temperatura: <span class="math notranslate nohighlight">\(^oF \, \rightarrow \, ^oC\)</span><a class="headerlink" href="#conversao-entre-escalas-de-temperatura-of-rightarrow-oc" title="Link permanente para este cabeçalho"></a></h2>
+<p><strong>Problema 3:</strong> Escrever um programa para converter a temperatura de <span class="math notranslate nohighlight">\(20^oF\)</span> no valor equivalente na escala Celsius.</p>
+<div class="admonition tip">
+<p class="admonition-title">Dica</p>
+<p>Considere a seguinte fórmula para conversão entre temperaturas em graus Fahrenheit e Celsius:</p>
+<div class="math notranslate nohighlight" id="equation-fahrenheit2celsius">
+<span class="eqno">(2.2)<a class="headerlink" href="#equation-fahrenheit2celsius" title="Link permanente para essa equação"></a></span>\[^oC = \frac{5 * (^oF - 32)}{9}\]</div>
+</div>
+<details class="summary-solucao">
+<summary>Solução:</summary><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">fahr</span> <span class="o">=</span> <span class="mi">20</span>   <span class="c1"># temperatura Fahrenheit</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">celsius</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">*</span> <span class="p">(</span><span class="n">fahr</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">/</span> <span class="mi">9</span>
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="n">fahr</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">celsius</span><span class="p">)</span>
+</pre></div>
+</div>
+</details><hr class="docutils" />
+<p><strong>Problema 4:</strong> Escrever um programa que pergunte ao usuário o valor de uma temperatura em graus Fahrenheit e que depois apresente o valor convertido no equivalente na escala Celsius.</p>
+<details class="summary-solucao">
+<summary>Solução:</summary><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># leitura de um valor de temperatura Fahrenheit</span>
 <span class="linenos">2</span><span class="n">fahr</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Entre com a temperatura em Fahrenheit: &quot;</span><span class="p">))</span>
 <span class="linenos">3</span>
 <span class="linenos">4</span><span class="c1"># conversão entre as escalas de temperatura</span>
@@ -241,10 +288,8 @@
 <span class="linenos">8</span><span class="nb">print</span><span class="p">(</span><span class="n">fahr</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">celsius</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Nota</p>
-<p>Repare no trecho de código acima que utilizamos a função denominada <code class="docutils literal notranslate"><span class="pre">int</span></code> para converter a sequência de caracteres retornada pela função <code class="docutils literal notranslate"><span class="pre">input</span></code> numa representação numérica do tipo inteiro.</p>
-</div>
+</details><hr class="docutils" />
+<p>Na próxima seção iremo introduzir um conceito fundamental nas liguagens de programação: <strong>tipos de dados</strong>.</p>
 </section>
 </section>
 

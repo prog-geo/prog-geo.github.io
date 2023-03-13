@@ -268,7 +268,7 @@
 <p>Como pode ser visto na função <code class="docutils literal notranslate"><span class="pre">DistanciaEuclidiana</span></code> (<a class="reference internal" href="#introd-prog-code-func-distancia-euclidiana"><span class="std std-numref">Trecho de Código 2.18</span></a>), uma função pode chamar outras funções, como foi o caso da função <code class="docutils literal notranslate"><span class="pre">math.sqrt</span></code> da biblioteca padrão de Python, chamada na <code class="docutils literal notranslate"><span class="pre">linha</span> <span class="pre">08</span></code>. Isso possbilita a construção de programas bem organizados, agrupando a lógica em várias funções menores, cada uma com um papel bem definido.</p>
 <p>Outro recurso das linguagens de programação é a criação de <strong>funções recursivas</strong>, isto é, funções que são definidas através de <strong>chamadas à própria função</strong>. Esse recurso é muito importante pois vários problemas são inerentemente recursivos por natureza. Por exemplo, o fatorial de um número <span class="math notranslate nohighlight">\(n\)</span>, com <span class="math notranslate nohighlight">\(n \in Z^+\)</span>, pode ser definido através da seguinte equação de recorrência:</p>
 <div class="math notranslate nohighlight" id="equation-introd-prog-eq-func-fat-rel-recorrencia">
-<span class="eqno">(2.3)<a class="headerlink" href="#equation-introd-prog-eq-func-fat-rel-recorrencia" title="Link permanente para essa equação"></a></span>\[\begin{split}\begin{cases}
+<span class="eqno">(2.4)<a class="headerlink" href="#equation-introd-prog-eq-func-fat-rel-recorrencia" title="Link permanente para essa equação"></a></span>\[\begin{split}\begin{cases}
 fat(1) = 1, &amp; \text{se $n = 1$}\\
 fat(n) = n \times fat(n - 1), &amp; \text{se $n &gt; 1$}
 \end{cases}\end{split}\]</div>
@@ -307,7 +307,7 @@ fat(n) = n \times fat(n - 1), &amp; \text{se $n &gt; 1$}
 </div>
 <p>Um exemplo de mau emprego da recursividade ocorre no cálculo de um termo da sequência de <cite>Fibonacci</cite>. Lembrando que essa sequência é definida através da seguinte fórmula de recorrência:</p>
 <div class="math notranslate nohighlight" id="equation-introd-prog-eq-func-fib-rel-recorrencia">
-<span class="eqno">(2.4)<a class="headerlink" href="#equation-introd-prog-eq-func-fib-rel-recorrencia" title="Link permanente para essa equação"></a></span>\[\begin{split}\begin{cases}
+<span class="eqno">(2.5)<a class="headerlink" href="#equation-introd-prog-eq-func-fib-rel-recorrencia" title="Link permanente para essa equação"></a></span>\[\begin{split}\begin{cases}
     F_1 = 1 \\
     F_2 = 1 \\
     F_n = F_{n-1} + F_{n-2}

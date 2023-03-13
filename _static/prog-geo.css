@@ -30,6 +30,16 @@ div.figure > p.caption {
     text-align: center;
 }
 
+/* Caption das imagens centralizados. */
+figcaption {
+    padding-top: 1rem;
+}
+
+/* Caption das imagens centralizados. */
+figcaption > p {
+    text-align: center;
+}
+
 /* Lista com itens alinhados à esquerda e espaçamento de 10px. */
 div.li-left-align > ul > li p {
     text-align: left;
