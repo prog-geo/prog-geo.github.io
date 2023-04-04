@@ -1,0 +1,400 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _cap_listas_l01:
+
+Lista de Exercícios 01
+======================
+
+
+**Atenção:**
+
+.. rst-class:: open
+
+- Os exercícios práticos devem ser desenvolvidos em Python. Escreva a documentação que achar pertinente dentro do próprio código fonte, que deverá utilizar a codificação de caracteres ``UTF-8``.
+
+- A solução de cada exercício deverá ser entregue em um único arquivo de código fonte na linguagem Python. Use arquivos com a extensão ``.py`` com a seguinte nomenclatura:
+
+    | exercicio-**numero**.py.
+    |
+    | Exemplo: ``exercicio-01.py``.
+    |
+    | Não use acentos ou caracteres especiais nos nomes dos arquivos.
+
+
+- Envie por e-mail **um único** arquivo no **formato zip**, chamado ``lista-01.zip``, contendo todos os arquivos de código fonte dos exercícios. **Destinatário:** três professores da disciplina.
+
+- O título (assunto) do e-mail deve seguir o seguinte padrão: ``[prog-geo-2023][lista-01] grupo-numero``. Exemplo: ``[prog-geo-2023][lista-01] grupo-01``.
+	
+
+.. warning::
+
+    Não use acentos ou caracteres especiais nos nomes dos arquivos ou no título do e-mail.
+
+
+- **Prazo para entrega:** 14/04/2022 - 20:00
+
+
+-----
+
+
+**Exercício 01.** Usando o terminal interativo do Python, use o comando ``type(objeto)`` e descubra o tipo de dados dos seguintes objetos::
+
+    1
+
+    True
+
+    5 / 2
+
+    2.5
+
+    False
+
+    5 + 3j
+
+
+.. note::
+
+    Você deverá entregar um arquivo chamado ``exercicio-01.py`` com a sequência de comandos digitada no terminal interativo. Para cada comando, inclua na linha seguinte o seu resultado, como um texto comentado.
+
+
+-----
+
+
+**Exercício 02.** Apresente o resultado das seguintes expressões::
+
+    5 / 2
+
+    7 * 4 + 2
+
+    (7 * 4) + 2
+
+    7 * (4 + 2)
+
+    2 ** 3
+
+    2 ** 3 ** 4
+
+    2 ** -3 ** 4
+
+    5 % 2
+
+    6 % 2
+
+    7 % 2
+
+    8 % 2
+
+    5 + 1
+
+    5.0 + 1
+
+    5 * math.log10(100) - 8 ** 2
+
+    math.pi
+
+    math.sin(math.pi / 2 )
+
+    math.cos(math.pi / 4 )
+
+
+.. note::
+
+    Você deverá entregar um arquivo chamado ``exercicio-02.py`` com a sequência de comandos digitada no terminal interativo. Para cada comando, inclua na linha seguinte o seu resultado como um texto comentado.
+
+
+-----
+
+
+**Exercício 03.** Considere as equações dos seguintes índices espectrais:
+
+- NDWI:
+
+    .. math::
+        :label: :listas:l02:ndwi
+
+        NDWI = \frac{(X_{green} - X_{nir})}{(X_{green} + X_{nir})}
+
+
+    onde: :math:`X_{green}` refere-se à banda espectral da faixa do verde e :math:`X_{nir}` refere-se à banda do infravermelho próximo.
+
+    .. note::
+
+        A equação acima pode ser encontrada em :cite:`mcfeeters:1996`.
+
+
+- NDVI:
+
+    .. math::
+        :label: :listas:l02:ndvi
+
+        NDVI = \frac{(X_{nir} - X_{red})}{(X_{nir} + X_{red})}
+
+
+    onde: :math:`X_{red}` refere-se à banda espectral da faixa do vermelho e :math:`X_{nir}` refere-se à banda do infravermelho próximo.
+
+
+De acordo com as equações acima, crie um programa que leia os valores de :math:`X_{green}`, :math:`X_{nir}` e :math:`X_{red}`, e imprima como resultados os valores de ``NDWI`` e ``NDVI``.
+
+
+-----
+
+
+**Exercício 04.** Escreva um programa que pergunte ao usuário as coordenadas de latitude e longitude, em grau-decimal, de dois pontos quaisquer na esfera terrestre, e que apresente a distância entre eles. Essa distância deverá ser calculada de acordo com a `fórmula de Haversine <https://en.wikipedia.org/wiki/Haversine\_formula>`_:
+
+
+.. math::
+    :label: :listas:l02:haversine
+
+    d(p, q) = 2r \arcsin{\sqrt{\sin^2({\frac{\phi_2 - \phi_1}{2}}) + \cos{\phi_1} \cos{\phi_2} \sin^2({\frac{\lambda_2 - \lambda_1}{2}})}}
+
+
+onde:
+
+- :math:`r`: é o raio da esfera (:math:`\sim6371 km`).
+
+- :math:`\phi_1` e :math:`\phi_2`: latitude dos pontos em radianos.
+
+- :math:`\lambda_1` e :math:`\lambda_2`: longitude dos pontos em radianos.
+
+
+.. note::
+
+    Lembre-se que todas as funções trigonométricas e suas inversas, bem como funções para conversão entre graus e radianos encontram-se na `biblioteca matemática do Python <https://docs.python.org/3/library/math.html>`_.
+
+
+.. note::
+
+    Mais adiante no curso iremos mostrar como estruturar o código acima em uma função, para que a seção de código que realiza a computação da distância possa ser reutilizada e melhor encapsulada em um programa.
+
+
+-----
+
+
+**Exercício 05.** Faça um programa em Python que leia três números reais e escreva o valor do maior e do menor deles. Para resolver este exercício, não utilizar as funções ``min/max``.
+
+
+
+-----
+
+
+**Exercício 06.** Escreva um programa em Python que leia o tamanho dos lados de um triângulo, avalie se esses valores realmente formam um triângulo e, em caso positivo, classifique o triângulo em isósceles, escaleno ou equilátero.
+
+
+
+-----
+
+
+**Exercício 07.** Escreva um programa em Python que pergunte ao usuário um número entre 0 e 10, e diga se ele é ímpar ou par.
+
+
+
+-----
+
+
+**Exercício 08.** Escreva um programa em Python que pergunte ao usuário um número qualquer (> 0), e diga se ele é divisível apenas por 2, apenas por 3, por 2 e por 3, ou se não é divisível nem por 2 nem por 3.
+
+
+-----
+
+
+**Exercício 09.** Escreva um programa que calcule a menor distância entre um ponto e uma reta, possibilitando que o usuário entre com as informações de dois pontos pertencentes à reta, bem como o ponto para o qual deva ser avaliada a distância.
+
+
+.. note::
+
+    A menor distância entre um ponto :math:`P` e uma reta :math:`r` corresponde ao segmento de reta perpendicular à :math:`r` que parte de :math:`P` e chega a :math:`r` (:numref:`Figura %s <listas:fig:distancia-minima-ponto-reta>`).
+
+    .. figure:: ../img/listas/distancia-minima-ponto-reta.png
+        :alt:  Distância mínima entre um ponto e uma reta.
+        :width: 90%
+        :figclass: align-center
+        :name: listas:fig:distancia-minima-ponto-reta
+
+        Distância mínima entre um ponto e uma reta.
+
+
+    Uma forma de computar essa distância consiste na utilização da forma normal de Hessean para retas. Para uma reta :math:`r` que passa pelos pontos :math:`P_1=(x_1, y_1)` e :math:`P_2=(x_2, y_2)`, temos a seguinte fórmula:
+
+    .. math::
+        :label: eq:listas:l03:hessean
+
+        h(x, y) = \frac{(y_2 - y_1) \times (x - x_1) - (x_2 - x_1) \times (y - y_1)}{\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}} = 0
+
+
+    com: :math:`\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2} > 0`.
+
+
+    A distância de :math:`P=(x, y)` a :math:`r` é dada por :math:`|h(x, y)|`.
+
+
+    .. rst-class:: centered-paragraph
+
+    **Fonte:** Nievergelt and Hinrichs (1993) :cite:`nievergelt:1993`.
+
+
+.. tip::
+
+    Compare seus resultados com os da calculadora online: `Distance from a point to a line - 2-Dimensional <https://onlinemschool.com/math/assistance/cartesian_coordinate/p_line1/>`_.
+
+
+-----
+
+
+**Exercício 10.** Faça um programa para computar e apresentar a sequência de cada uma das seguintes séries numéricas, depois de ler um número inteiro :math:`n \geq 0`:
+
+* `Lucas <https://en.wikipedia.org/wiki/Lucas_number}>`_: ``2, 1, 3, 4, 7, 11, 18, 29, 47, ...``.
+
+    .. math::
+        :label: l04:eq:lucas
+
+        L(n) =
+        \begin{cases}
+            2 & \quad \text{se } n = 0\\
+            1 & \quad \text{se } n = 1\\
+            L(n-1) + L(n-2) & \quad \text{se } n > 1
+        \end{cases}
+
+* `Pell <https://en.wikipedia.org/wiki/Pell_number>`_: ``0, 1, 2, 5, 12, 29, 70, 169, 408, ...``.
+
+    .. math::
+        :label: l04:eq:pell
+
+        P(n) =
+        \begin{cases}
+		    0 & \quad \text{se } n = 0\\
+		    1 & \quad \text{se } n = 1\\
+		    2P(n-1) + P(n-2) & \quad \text{se } n > 1
+		\end{cases}
+
+
+-----
+
+
+**Exercício 11.** Escreva um programa em Python que simule uma calculadora com as funções básicas (:math:`+`, :math:`−`, :math:`\div`, :math:`\times`). O programa deve pedir ao usuário para entrar com os operandos (números reais) e o tipo de operação, e a seguir escrever o resultado. Assim como uma calculadora, que ao final de uma operação pode ser utilizada novamente, você deve simular este comportamento perguntando ao usuário se ele quer realizar uma nova operação.
+
+
+-----
+
+
+**Exercício 12.** A USGS define uma `convenção para nomenclatura dos arquivos com produtos do sensor MODIS <https://lpdaac.usgs.gov/data/get-started-data/collection-overview/missions/modis-overview/>`_. Por exemplo, um arquivo com nome ``MOD09A1.A2006001.h08v05.005.2006012234657.hdf`` pode ser interpretado da seguinte forma::
+
+    MOD09A1 - Product Short Name
+    MOD: Terra Satellite
+    A2006001 - Julian Date of Acquisition (A-YYYYDDD)
+    h08v05 - Tile Identifier (horizontalXXverticalYY)
+    005 - Collection Version
+    2006012234567 - Julian Date of Production (YYYYDDDHHMMSS)
+    hdf - Data Format (HDF-EOS)
+
+
+Faça um programa em Python que leia o nome de um arquivo, e escreva na saída padrão o seguinte resultado::
+
+    Satellite...............: Terra
+    Product.................: MOD09A1
+    Year of Acquisition.....: 2006
+    Julian Day..............: 001
+    Horizontal Tile.........: 08
+    Vertical Tile...........: 05
+    Collection..............: 005
+    Year of Production......: 2006
+    Julian Day of Production: 012
+    Production Hour.........: 23
+    Production Minute.......: 46
+    Production Second.......: 57
+    Data Format.............: hdf
+
+
+-----
+
+
+**Exercício 13.** Tomando como base os operadores disponíveis em `Python documentation - String Methods <https://docs.python.org/3/library/stdtypes.html#string-methods>`_, apresente as operações para converter os elementos da coluna *string de entrada* nos resultados apresentados na coluna *string de saída*.
+
+
+.. list-table::
+   :widths: 50 50
+   :header-rows: 1
+
+   * - string de entrada
+     - string de saída
+
+   * - "Gilberto"
+     - "++Gilberto++"
+   * - "sensoriamento remoto"
+     - "Sensoriamento remoto"        
+   * - "sensoriamento remoto"
+     - "Sensoriamento Remoto"
+   * - "GilberTo"
+     - "gilberto"
+   * - "Gilberto"
+     - "Gilberto**"
+   * - "Gilberto"
+     - "\*\*Gilberto"
+   * - " Gilberto"
+     - "Gilberto"
+   * - "ser347@dpi.inpe.br"
+     - ("ser347", "@", "dpi.inpe.br") 
+   * - "CBERS\_4\_PAN5M\_20180308"
+     - ['CBERS', '4', 'PAN5M', '20180308']
+   * - "Gilberto@@@"
+     - "Gilberto"
+   * - "@@Gilberto@@@"
+     - "Gilberto"
+
+
+-----
+
+
+**Exercício 14.** A biblioteca `Requests <https://requests.readthedocs.io/en/latest/>`__ possibilita construir programas para realizar *download* de arquivos através dos protocolos HTTP e HTTPS. O Programa Queimadas do INPE disponibiliza um site de dados abertos no endereço https://queimadas.dgi.inpe.br/queimadas/dados-abertos onde é possível obter arquivos com os focos de incêndio detectados. Os dados diários podem ser obtidos a partir de uma URL semelhante a:
+
+- https://queimadas.dgi.inpe.br/home/downloadfile?path=/app/api/data/dados_abertos/focos/Diario/focos_abertos_24h_20230402.csv
+
+Faça um programa para realizar o *download* de dados diários de focos de queimada disponibilizados nesse site, entre os dias 25 e 31 de março de 2023.
+
+
+-----
+
+
+**Exercício 15.** O módulo `os <https://docs.python.org/3/library/os.html>`__ da biblioteca padrão do Python possui funções que permitem caminhar pela estrutura de diretórios e arquivos de um sistema operacional (Linux, Windows ou macOS). Leia a documentação da função `os.walk <https://docs.python.org/3/library/os.html#os.walk>`__ para construir um programa que navegue pela estrutura de arquivos e diretórios contidos no arquivo zip :download:`./data/terraclass.zip <terraclass.zip>` e escreva o nome do diretório ou arquivo. Esse arquivo possui a seguinte estrutura:
+
+
+.. code-block:: text
+
+    terraclass
+    ├── descricao.txt
+    ├── MT
+    │   ├── arq1-mt.shp
+    │   └── arq2-mt.shp
+    └── PA
+        ├── arq1-pa.shp
+        ├── arq2-pa.shp
+        └── arq3-pa.shp
+
+
+O programa deverá escrever uma saída paracida com:
+
+
+.. code-block:: text
+
+    diretório: terraclass
+        arquivo: descricao.txt
+        
+        diretório: MT
+            arquivo: arq1-mt.shp
+            arquivo: arq2-mt.shp
+        
+        diretório: PA
+            arquivo: arq1-pa.shp
+            arquivo: arq2-pa.shp
+            arquivo: arq3-pa.shp
+
+
+Repare na identação usada com 04 espaços a cada nível de diretório e o espaço entre os grupos de elementos.
+
+
+.. note::
+
+    Baixe o arquivo zip e descompate-o em algum diretório (ou pasta) do seu sistema. Use o caminho onde o arquivo foi descompactado para iniciar a navegação de diretórios e arquivos. 
+

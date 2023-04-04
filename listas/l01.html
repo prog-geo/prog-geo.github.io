@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="pt-BR" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lista de Exercícios 01 &mdash; SER-347/CAP-419</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/table_styling.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/prog-geo.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://prog-geo.github.io/listas/l01.html" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/translations.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Buscar" href="../search.html" />
+    <link rel="next" title="Turma 2022" href="../projetos/2022/index.html" />
+    <link rel="prev" title="Listas de Exercícios" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SER-347/CAP-419
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Pesquisar documentos" aria-label="Pesquisar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegação">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introdução à Programação com Dados Geoespaciais</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Visão Geral do Curso:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../visao-geral.html">Visão Geral do Curso</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Aulas:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../instalacao.html">1. Instalando e Configurando o Ambiente de Programação</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introducao-programacao/index.html">2. Introdução à Programação com a Linguagem Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jupyter.html">3. Jupyter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../imagens.html">4. Imagens - Processamento e Visualização</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vetorial.html">5. Manipulação de Dados Vetoriais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variados.html">6. Tópicos Variados</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Referências Bibliográficas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../referencias.html">Referências Bibliográficas</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Listas de Exercícios</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Listas de Exercícios</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lista de Exercícios 01</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../projetos/2022/index.html">Turma 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projetos/2021/index.html">Turma 2021</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Informações Gerais:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../licenca.html">Licença</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Agradecimentos:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../agradecimentos.html">Agradecimentos</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Menu de navegação móvel"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SER-347/CAP-419</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Navegação da página">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Listas de Exercícios</a></li>
+      <li class="breadcrumb-item active">Lista de Exercícios 01</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Navegação sequencial da página">
+        <a href="index.html" class="btn btn-neutral float-left" title="Listas de Exercícios" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="../projetos/2022/index.html" class="btn btn-neutral float-right" title="Turma 2022" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="lista-de-exercicios-01">
+<span id="cap-listas-l01"></span><h1>Lista de Exercícios 01<a class="headerlink" href="#lista-de-exercicios-01" title="Link permanente para este cabeçalho"></a></h1>
+<p><strong>Atenção:</strong></p>
+<ul class="open">
+<li><p>Os exercícios práticos devem ser desenvolvidos em Python. Escreva a documentação que achar pertinente dentro do próprio código fonte, que deverá utilizar a codificação de caracteres <code class="docutils literal notranslate"><span class="pre">UTF-8</span></code>.</p></li>
+<li><p>A solução de cada exercício deverá ser entregue em um único arquivo de código fonte na linguagem Python. Use arquivos com a extensão <code class="docutils literal notranslate"><span class="pre">.py</span></code> com a seguinte nomenclatura:</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">exercicio-<strong>numero</strong>.py.</div>
+<div class="line"><br /></div>
+<div class="line">Exemplo: <code class="docutils literal notranslate"><span class="pre">exercicio-01.py</span></code>.</div>
+<div class="line"><br /></div>
+<div class="line">Não use acentos ou caracteres especiais nos nomes dos arquivos.</div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Envie por e-mail <strong>um único</strong> arquivo no <strong>formato zip</strong>, chamado <code class="docutils literal notranslate"><span class="pre">lista-01.zip</span></code>, contendo todos os arquivos de código fonte dos exercícios. <strong>Destinatário:</strong> três professores da disciplina.</p></li>
+<li><p>O título (assunto) do e-mail deve seguir o seguinte padrão: <code class="docutils literal notranslate"><span class="pre">[prog-geo-2023][lista-01]</span> <span class="pre">grupo-numero</span></code>. Exemplo: <code class="docutils literal notranslate"><span class="pre">[prog-geo-2023][lista-01]</span> <span class="pre">grupo-01</span></code>.</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Aviso</p>
+<p>Não use acentos ou caracteres especiais nos nomes dos arquivos ou no título do e-mail.</p>
+</div>
+<ul class="simple">
+<li><p><strong>Prazo para entrega:</strong> 14/04/2022 - 20:00</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>Exercício 01.</strong> Usando o terminal interativo do Python, use o comando <code class="docutils literal notranslate"><span class="pre">type(objeto)</span></code> e descubra o tipo de dados dos seguintes objetos:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span>
+
+<span class="kc">True</span>
+
+<span class="mi">5</span> <span class="o">/</span> <span class="mi">2</span>
+
+<span class="mf">2.5</span>
+
+<span class="kc">False</span>
+
+<span class="mi">5</span> <span class="o">+</span> <span class="mi">3</span><span class="n">j</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Você deverá entregar um arquivo chamado <code class="docutils literal notranslate"><span class="pre">exercicio-01.py</span></code> com a sequência de comandos digitada no terminal interativo. Para cada comando, inclua na linha seguinte o seu resultado, como um texto comentado.</p>
+</div>
+<hr class="docutils" />
+<p><strong>Exercício 02.</strong> Apresente o resultado das seguintes expressões:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">/</span> <span class="mi">2</span>
+
+<span class="mi">7</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">2</span>
+
+<span class="p">(</span><span class="mi">7</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span>
+
+<span class="mi">7</span> <span class="o">*</span> <span class="p">(</span><span class="mi">4</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span>
+
+<span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">**</span> <span class="mi">4</span>
+
+<span class="mi">2</span> <span class="o">**</span> <span class="o">-</span><span class="mi">3</span> <span class="o">**</span> <span class="mi">4</span>
+
+<span class="mi">5</span> <span class="o">%</span> <span class="mi">2</span>
+
+<span class="mi">6</span> <span class="o">%</span> <span class="mi">2</span>
+
+<span class="mi">7</span> <span class="o">%</span> <span class="mi">2</span>
+
+<span class="mi">8</span> <span class="o">%</span> <span class="mi">2</span>
+
+<span class="mi">5</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="mf">5.0</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="mi">5</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="o">-</span> <span class="mi">8</span> <span class="o">**</span> <span class="mi">2</span>
+
+<span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+
+<span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span> <span class="p">)</span>
+
+<span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">4</span> <span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Você deverá entregar um arquivo chamado <code class="docutils literal notranslate"><span class="pre">exercicio-02.py</span></code> com a sequência de comandos digitada no terminal interativo. Para cada comando, inclua na linha seguinte o seu resultado como um texto comentado.</p>
+</div>
+<hr class="docutils" />
+<p><strong>Exercício 03.</strong> Considere as equações dos seguintes índices espectrais:</p>
+<ul>
+<li><p>NDWI:</p>
+<blockquote>
+<div><div class="math notranslate nohighlight" id="equation-listas-l02-ndwi">
+<span class="eqno">(1)<a class="headerlink" href="#equation-listas-l02-ndwi" title="Link permanente para essa equação"></a></span>\[NDWI = \frac{(X_{green} - X_{nir})}{(X_{green} + X_{nir})}\]</div>
+<p>onde: <span class="math notranslate nohighlight">\(X_{green}\)</span> refere-se à banda espectral da faixa do verde e <span class="math notranslate nohighlight">\(X_{nir}\)</span> refere-se à banda do infravermelho próximo.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>A equação acima pode ser encontrada em <span id="id1">[<a class="reference internal" href="../referencias.html#id37" title="S. K. McFeeters. The use of the normalized difference water index (ndwi) in the delineation of open water features. International Journal of Remote Sensing, 17(7):1425-1432, 1996. doi:10.1080/01431169608948714.">51</a>]</span>.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p>NDVI:</p>
+<blockquote>
+<div><div class="math notranslate nohighlight" id="equation-listas-l02-ndvi">
+<span class="eqno">(2)<a class="headerlink" href="#equation-listas-l02-ndvi" title="Link permanente para essa equação"></a></span>\[NDVI = \frac{(X_{nir} - X_{red})}{(X_{nir} + X_{red})}\]</div>
+<p>onde: <span class="math notranslate nohighlight">\(X_{red}\)</span> refere-se à banda espectral da faixa do vermelho e <span class="math notranslate nohighlight">\(X_{nir}\)</span> refere-se à banda do infravermelho próximo.</p>
+</div></blockquote>
+</li>
+</ul>
+<p>De acordo com as equações acima, crie um programa que leia os valores de <span class="math notranslate nohighlight">\(X_{green}\)</span>, <span class="math notranslate nohighlight">\(X_{nir}\)</span> e <span class="math notranslate nohighlight">\(X_{red}\)</span>, e imprima como resultados os valores de <code class="docutils literal notranslate"><span class="pre">NDWI</span></code> e <code class="docutils literal notranslate"><span class="pre">NDVI</span></code>.</p>
+<hr class="docutils" />
+<p><strong>Exercício 04.</strong> Escreva um programa que pergunte ao usuário as coordenadas de latitude e longitude, em grau-decimal, de dois pontos quaisquer na esfera terrestre, e que apresente a distância entre eles. Essa distância deverá ser calculada de acordo com a <a class="reference external" href="https://en.wikipedia.org/wiki/Haversine_formula">fórmula de Haversine</a>:</p>
+<div class="math notranslate nohighlight" id="equation-listas-l02-haversine">
+<span class="eqno">(3)<a class="headerlink" href="#equation-listas-l02-haversine" title="Link permanente para essa equação"></a></span>\[d(p, q) = 2r \arcsin{\sqrt{\sin^2({\frac{\phi_2 - \phi_1}{2}}) + \cos{\phi_1} \cos{\phi_2} \sin^2({\frac{\lambda_2 - \lambda_1}{2}})}}\]</div>
+<p>onde:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(r\)</span>: é o raio da esfera (<span class="math notranslate nohighlight">\(\sim6371 km\)</span>).</p></li>
+<li><p><span class="math notranslate nohighlight">\(\phi_1\)</span> e <span class="math notranslate nohighlight">\(\phi_2\)</span>: latitude dos pontos em radianos.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda_1\)</span> e <span class="math notranslate nohighlight">\(\lambda_2\)</span>: longitude dos pontos em radianos.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Lembre-se que todas as funções trigonométricas e suas inversas, bem como funções para conversão entre graus e radianos encontram-se na <a class="reference external" href="https://docs.python.org/3/library/math.html">biblioteca matemática do Python</a>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Mais adiante no curso iremos mostrar como estruturar o código acima em uma função, para que a seção de código que realiza a computação da distância possa ser reutilizada e melhor encapsulada em um programa.</p>
+</div>
+<hr class="docutils" />
+<p><strong>Exercício 05.</strong> Faça um programa em Python que leia três números reais e escreva o valor do maior e do menor deles. Para resolver este exercício, não utilizar as funções <code class="docutils literal notranslate"><span class="pre">min/max</span></code>.</p>
+<hr class="docutils" />
+<p><strong>Exercício 06.</strong> Escreva um programa em Python que leia o tamanho dos lados de um triângulo, avalie se esses valores realmente formam um triângulo e, em caso positivo, classifique o triângulo em isósceles, escaleno ou equilátero.</p>
+<hr class="docutils" />
+<p><strong>Exercício 07.</strong> Escreva um programa em Python que pergunte ao usuário um número entre 0 e 10, e diga se ele é ímpar ou par.</p>
+<hr class="docutils" />
+<p><strong>Exercício 08.</strong> Escreva um programa em Python que pergunte ao usuário um número qualquer (&gt; 0), e diga se ele é divisível apenas por 2, apenas por 3, por 2 e por 3, ou se não é divisível nem por 2 nem por 3.</p>
+<hr class="docutils" />
+<p><strong>Exercício 09.</strong> Escreva um programa que calcule a menor distância entre um ponto e uma reta, possibilitando que o usuário entre com as informações de dois pontos pertencentes à reta, bem como o ponto para o qual deva ser avaliada a distância.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>A menor distância entre um ponto <span class="math notranslate nohighlight">\(P\)</span> e uma reta <span class="math notranslate nohighlight">\(r\)</span> corresponde ao segmento de reta perpendicular à <span class="math notranslate nohighlight">\(r\)</span> que parte de <span class="math notranslate nohighlight">\(P\)</span> e chega a <span class="math notranslate nohighlight">\(r\)</span> (<a class="reference internal" href="#listas-fig-distancia-minima-ponto-reta"><span class="std std-numref">Figura 16</span></a>).</p>
+<figure class="align-center align-default" id="listas-fig-distancia-minima-ponto-reta">
+<a class="reference internal image-reference" href="../_images/distancia-minima-ponto-reta.png"><img alt="Distância mínima entre um ponto e uma reta." src="../_images/distancia-minima-ponto-reta.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 16 - </span><span class="caption-text">Distância mínima entre um ponto e uma reta.</span><a class="headerlink" href="#listas-fig-distancia-minima-ponto-reta" title="Link Permanente para essa imagem"></a></p>
+</figcaption>
+</figure>
+<p>Uma forma de computar essa distância consiste na utilização da forma normal de Hessean para retas. Para uma reta <span class="math notranslate nohighlight">\(r\)</span> que passa pelos pontos <span class="math notranslate nohighlight">\(P_1=(x_1, y_1)\)</span> e <span class="math notranslate nohighlight">\(P_2=(x_2, y_2)\)</span>, temos a seguinte fórmula:</p>
+<div class="math notranslate nohighlight" id="equation-eq-listas-l03-hessean">
+<span class="eqno">(4)<a class="headerlink" href="#equation-eq-listas-l03-hessean" title="Link permanente para essa equação"></a></span>\[h(x, y) = \frac{(y_2 - y_1) \times (x - x_1) - (x_2 - x_1) \times (y - y_1)}{\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}} = 0\]</div>
+<p>com: <span class="math notranslate nohighlight">\(\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2} &gt; 0\)</span>.</p>
+<p>A distância de <span class="math notranslate nohighlight">\(P=(x, y)\)</span> a <span class="math notranslate nohighlight">\(r\)</span> é dada por <span class="math notranslate nohighlight">\(|h(x, y)|\)</span>.</p>
+<p class="centered-paragraph"><strong>Fonte:</strong> Nievergelt and Hinrichs (1993) <span id="id2">[<a class="reference internal" href="../referencias.html#id42" title="Jurg Nievergelt and Klaus H. Hinrichs. Algorithms &amp; Data Structures with Applications to Graphics and Geometry. Prentice Hall, 1993.">55</a>]</span>.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Dica</p>
+<p>Compare seus resultados com os da calculadora online: <a class="reference external" href="https://onlinemschool.com/math/assistance/cartesian_coordinate/p_line1/">Distance from a point to a line - 2-Dimensional</a>.</p>
+</div>
+<hr class="docutils" />
+<p><strong>Exercício 10.</strong> Faça um programa para computar e apresentar a sequência de cada uma das seguintes séries numéricas, depois de ler um número inteiro <span class="math notranslate nohighlight">\(n \geq 0\)</span>:</p>
+<ul>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Lucas_number}">Lucas</a>: <code class="docutils literal notranslate"><span class="pre">2,</span> <span class="pre">1,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">7,</span> <span class="pre">11,</span> <span class="pre">18,</span> <span class="pre">29,</span> <span class="pre">47,</span> <span class="pre">...</span></code>.</p>
+<blockquote>
+<div><div class="math notranslate nohighlight" id="equation-l04-eq-lucas">
+<span class="eqno">(5)<a class="headerlink" href="#equation-l04-eq-lucas" title="Link permanente para essa equação"></a></span>\[\begin{split}L(n) =
+\begin{cases}
+    2 &amp; \quad \text{se } n = 0\\
+    1 &amp; \quad \text{se } n = 1\\
+    L(n-1) + L(n-2) &amp; \quad \text{se } n &gt; 1
+\end{cases}\end{split}\]</div>
+</div></blockquote>
+</li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Pell_number">Pell</a>: <code class="docutils literal notranslate"><span class="pre">0,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">5,</span> <span class="pre">12,</span> <span class="pre">29,</span> <span class="pre">70,</span> <span class="pre">169,</span> <span class="pre">408,</span> <span class="pre">...</span></code>.</p>
+<blockquote>
+<div><div class="math notranslate nohighlight" id="equation-l04-eq-pell">
+<span class="eqno">(6)<a class="headerlink" href="#equation-l04-eq-pell" title="Link permanente para essa equação"></a></span>\[\begin{split}P(n) =
+\begin{cases}
+            0 &amp; \quad \text{se } n = 0\\
+            1 &amp; \quad \text{se } n = 1\\
+            2P(n-1) + P(n-2) &amp; \quad \text{se } n &gt; 1
+        \end{cases}\end{split}\]</div>
+</div></blockquote>
+</li>
+</ul>
+<hr class="docutils" />
+<p><strong>Exercício 11.</strong> Escreva um programa em Python que simule uma calculadora com as funções básicas (<span class="math notranslate nohighlight">\(+\)</span>, <span class="math notranslate nohighlight">\(−\)</span>, <span class="math notranslate nohighlight">\(\div\)</span>, <span class="math notranslate nohighlight">\(\times\)</span>). O programa deve pedir ao usuário para entrar com os operandos (números reais) e o tipo de operação, e a seguir escrever o resultado. Assim como uma calculadora, que ao final de uma operação pode ser utilizada novamente, você deve simular este comportamento perguntando ao usuário se ele quer realizar uma nova operação.</p>
+<hr class="docutils" />
+<p><strong>Exercício 12.</strong> A USGS define uma <a class="reference external" href="https://lpdaac.usgs.gov/data/get-started-data/collection-overview/missions/modis-overview/">convenção para nomenclatura dos arquivos com produtos do sensor MODIS</a>. Por exemplo, um arquivo com nome <code class="docutils literal notranslate"><span class="pre">MOD09A1.A2006001.h08v05.005.2006012234657.hdf</span></code> pode ser interpretado da seguinte forma:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MOD09A1</span> <span class="o">-</span> <span class="n">Product</span> <span class="n">Short</span> <span class="n">Name</span>
+<span class="n">MOD</span><span class="p">:</span> <span class="n">Terra</span> <span class="n">Satellite</span>
+<span class="n">A2006001</span> <span class="o">-</span> <span class="n">Julian</span> <span class="n">Date</span> <span class="n">of</span> <span class="n">Acquisition</span> <span class="p">(</span><span class="n">A</span><span class="o">-</span><span class="n">YYYYDDD</span><span class="p">)</span>
+<span class="n">h08v05</span> <span class="o">-</span> <span class="n">Tile</span> <span class="n">Identifier</span> <span class="p">(</span><span class="n">horizontalXXverticalYY</span><span class="p">)</span>
+<span class="mi">005</span> <span class="o">-</span> <span class="n">Collection</span> <span class="n">Version</span>
+<span class="mi">2006012234567</span> <span class="o">-</span> <span class="n">Julian</span> <span class="n">Date</span> <span class="n">of</span> <span class="n">Production</span> <span class="p">(</span><span class="n">YYYYDDDHHMMSS</span><span class="p">)</span>
+<span class="n">hdf</span> <span class="o">-</span> <span class="n">Data</span> <span class="n">Format</span> <span class="p">(</span><span class="n">HDF</span><span class="o">-</span><span class="n">EOS</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Faça um programa em Python que leia o nome de um arquivo, e escreva na saída padrão o seguinte resultado:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Satellite</span><span class="o">...............</span><span class="p">:</span> <span class="n">Terra</span>
+<span class="n">Product</span><span class="o">.................</span><span class="p">:</span> <span class="n">MOD09A1</span>
+<span class="n">Year</span> <span class="n">of</span> <span class="n">Acquisition</span><span class="o">.....</span><span class="p">:</span> <span class="mi">2006</span>
+<span class="n">Julian</span> <span class="n">Day</span><span class="o">..............</span><span class="p">:</span> <span class="mi">001</span>
+<span class="n">Horizontal</span> <span class="n">Tile</span><span class="o">.........</span><span class="p">:</span> <span class="mi">08</span>
+<span class="n">Vertical</span> <span class="n">Tile</span><span class="o">...........</span><span class="p">:</span> <span class="mi">05</span>
+<span class="n">Collection</span><span class="o">..............</span><span class="p">:</span> <span class="mi">005</span>
+<span class="n">Year</span> <span class="n">of</span> <span class="n">Production</span><span class="o">......</span><span class="p">:</span> <span class="mi">2006</span>
+<span class="n">Julian</span> <span class="n">Day</span> <span class="n">of</span> <span class="n">Production</span><span class="p">:</span> <span class="mi">012</span>
+<span class="n">Production</span> <span class="n">Hour</span><span class="o">.........</span><span class="p">:</span> <span class="mi">23</span>
+<span class="n">Production</span> <span class="n">Minute</span><span class="o">.......</span><span class="p">:</span> <span class="mi">46</span>
+<span class="n">Production</span> <span class="n">Second</span><span class="o">.......</span><span class="p">:</span> <span class="mi">57</span>
+<span class="n">Data</span> <span class="n">Format</span><span class="o">.............</span><span class="p">:</span> <span class="n">hdf</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><strong>Exercício 13.</strong> Tomando como base os operadores disponíveis em <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#string-methods">Python documentation - String Methods</a>, apresente as operações para converter os elementos da coluna <em>string de entrada</em> nos resultados apresentados na coluna <em>string de saída</em>.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>string de entrada</p></th>
+<th class="head"><p>string de saída</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>“Gilberto”</p></td>
+<td><p>“++Gilberto++”</p></td>
+</tr>
+<tr class="row-odd"><td><p>“sensoriamento remoto”</p></td>
+<td><p>“Sensoriamento remoto”</p></td>
+</tr>
+<tr class="row-even"><td><p>“sensoriamento remoto”</p></td>
+<td><p>“Sensoriamento Remoto”</p></td>
+</tr>
+<tr class="row-odd"><td><p>“GilberTo”</p></td>
+<td><p>“gilberto”</p></td>
+</tr>
+<tr class="row-even"><td><p>“Gilberto”</p></td>
+<td><p>“Gilberto**”</p></td>
+</tr>
+<tr class="row-odd"><td><p>“Gilberto”</p></td>
+<td><p>“**Gilberto”</p></td>
+</tr>
+<tr class="row-even"><td><p>” Gilberto”</p></td>
+<td><p>“Gilberto”</p></td>
+</tr>
+<tr class="row-odd"><td><p>“<a class="reference external" href="mailto:ser347&#37;&#52;&#48;dpi&#46;inpe&#46;br">ser347<span>&#64;</span>dpi<span>&#46;</span>inpe<span>&#46;</span>br</a>”</p></td>
+<td><p>(“ser347”, “&#64;”, “dpi.inpe.br”)</p></td>
+</tr>
+<tr class="row-even"><td><p>“CBERS_4_PAN5M_20180308”</p></td>
+<td><p>[‘CBERS’, ‘4’, ‘PAN5M’, ‘20180308’]</p></td>
+</tr>
+<tr class="row-odd"><td><p>“Gilberto&#64;&#64;&#64;”</p></td>
+<td><p>“Gilberto”</p></td>
+</tr>
+<tr class="row-even"><td><p>“&#64;&#64;Gilberto&#64;&#64;&#64;”</p></td>
+<td><p>“Gilberto”</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+<p><strong>Exercício 14.</strong> A biblioteca <a class="reference external" href="https://requests.readthedocs.io/en/latest/">Requests</a> possibilita construir programas para realizar <em>download</em> de arquivos através dos protocolos HTTP e HTTPS. O Programa Queimadas do INPE disponibiliza um site de dados abertos no endereço <a class="reference external" href="https://queimadas.dgi.inpe.br/queimadas/dados-abertos">https://queimadas.dgi.inpe.br/queimadas/dados-abertos</a> onde é possível obter arquivos com os focos de incêndio detectados. Os dados diários podem ser obtidos a partir de uma URL semelhante a:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://queimadas.dgi.inpe.br/home/downloadfile?path=/app/api/data/dados_abertos/focos/Diario/focos_abertos_24h_20230402.csv">https://queimadas.dgi.inpe.br/home/downloadfile?path=/app/api/data/dados_abertos/focos/Diario/focos_abertos_24h_20230402.csv</a></p></li>
+</ul>
+<p>Faça um programa para realizar o <em>download</em> de dados diários de focos de queimada disponibilizados nesse site, entre os dias 25 e 31 de março de 2023.</p>
+<hr class="docutils" />
+<p><strong>Exercício 15.</strong> O módulo <a class="reference external" href="https://docs.python.org/3/library/os.html">os</a> da biblioteca padrão do Python possui funções que permitem caminhar pela estrutura de diretórios e arquivos de um sistema operacional (Linux, Windows ou macOS). Leia a documentação da função <a class="reference external" href="https://docs.python.org/3/library/os.html#os.walk">os.walk</a> para construir um programa que navegue pela estrutura de arquivos e diretórios contidos no arquivo zip <a class="reference download internal" download="" href="../_downloads/e375663858340d66b074e09732349cec/terraclass.zip"><code class="xref download docutils literal notranslate"><span class="pre">./data/terraclass.zip</span></code></a> e escreva o nome do diretório ou arquivo. Esse arquivo possui a seguinte estrutura:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>terraclass
+├── descricao.txt
+├── MT
+│   ├── arq1-mt.shp
+│   └── arq2-mt.shp
+└── PA
+    ├── arq1-pa.shp
+    ├── arq2-pa.shp
+    └── arq3-pa.shp
+</pre></div>
+</div>
+<p>O programa deverá escrever uma saída paracida com:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>diretório: terraclass
+    arquivo: descricao.txt
+
+    diretório: MT
+        arquivo: arq1-mt.shp
+        arquivo: arq2-mt.shp
+
+    diretório: PA
+        arquivo: arq1-pa.shp
+        arquivo: arq2-pa.shp
+        arquivo: arq3-pa.shp
+</pre></div>
+</div>
+<p>Repare na identação usada com 04 espaços a cada nível de diretório e o espaço entre os grupos de elementos.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Baixe o arquivo zip e descompate-o em algum diretório (ou pasta) do seu sistema. Use o caminho onde o arquivo foi descompactado para iniciar a navegação de diretórios e arquivos.</p>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Rodapé">
+        <a href="index.html" class="btn btn-neutral float-left" title="Listas de Exercícios" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="../projetos/2022/index.html" class="btn btn-neutral float-right" title="Turma 2022" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2022, Gilberto Queiroz and Thales Körting.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+    <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165908761-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-165908761-1', {
+          'anonymize_ip': false,
+      });
+    </script> 
+
+</body>
+</html>
