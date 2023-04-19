@@ -1,0 +1,26 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2023, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../../def.rst
+
+
+.. _sec_projetos_2023_p02:
+
+Combinação de dados sobre desastres
+===================================
+
+
+Dadas 2 imagens (obtidas antes e depois de um desastre), combinar informações vetoriais da camada *buildings* encontrada nos dados do *Open Street Map*, e analisar a mudança na resposta espectral das 2 imagens, dentro de cada elemento encontrado em *buildings*. É possível calcular medidas de textura dos pixels, média, desvio padrão, etc. das 2 imagens, de forma a identificar se uma construção foi danificada depois da ocorrêcia de um desastre.
+
+Para esse trabalho, podem ser utilizadas imagens do Terremoto da Turquia (ocorrido em fevereiro/2023), `obtidas pelo satélite CBERS-4A <http://www.dpi.inpe.br/charter/Call_919_Turkey/>`_ (arquivos Diyarbakir*).
+
+
+Observações
+-----------
+
+
+**1.** Os scripts deverão conter documentação de uso.
+
+**2.** O relatório produzido deverá estar no formato do evento `GEOINFO <http://www.geoinfo.info/>`_.

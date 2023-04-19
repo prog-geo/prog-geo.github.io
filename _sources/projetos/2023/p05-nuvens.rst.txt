@@ -1,0 +1,32 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2023, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../../def.rst
+
+
+.. _sec_projetos_2023_p05:
+
+Máscara de nuvens para imagens AMAZONIA e CBERS
+===============================================
+
+
+O objetivo desse projeto é construir um script que receba uma imagem (testar no sensor WFI a bordo dos 3 satélites brasileiros AMAZONIA-1, CBERS-4 e CBERS-4A) e gere uma *máscara de nuvens*, que pode ser representada como uma banda, com valores *zero* para pixels livres, e valores *um* para pixels com nuvens detectadas.
+
+Alguns métodos conhecidos de identificação de nuvens (*FMask, sen2cor*) precisam de bandas não disponíveis nos sensores dos satélites brasileiros. Desta forma, é parte do objetivo do trabalho identificar um conjunto de regras simples capaz de identificar nuvens nas imagens. 
+
+Referências
+-----------
+
+**1.** MORAES, D. R. V.; DIAS, E. R. S.; FEITOSA, J. V. P.; QUADROS, C. B.; DIAS, M. C.; SOUZA, J. J.; SANTOS, L. F. M.; MIRANDA, M. V. C.; LUZ, N. C.; RONISE. Detecção semiautomática de nuvens e sombras nas imagens WFI/CBERS-4 utilizando a ferramenta cloud detection do sistema TerraAmazon. In: SIMPÓSIO BRASILEIRO DE SENSORIAMENTO REMOTO, 18. (SBSR), 2017, Santos. Anais... São José dos Campos: INPE, 2017. p. 5009-5016. Internet.   ISBN 978-85-17-00088-1.  IBI: <8JMKD3MGP6W34M/3PSM45Q>.  Disponível em: <ibi:8JMKD3MGP6W34M/3PSM45Q>.   
+
+**2.** MARUJO, R. F. B.; FONSECA, L. M. G.; KORTING, T. S.; SANTOS, R. D. C.; BENDINI, H. N. CBERS-4/MUX automatic detection of clouds and cloud shadows using decision trees. In: SIMPÓSIO BRASILEIRO DE SENSORIAMENTO REMOTO, 18. (SBSR), 2017, Santos. Anais... São José dos Campos: INPE, 2017. p. 6328-6335. Internet.   ISBN 978-85-17-00088-1.  IBI: <8JMKD3MGP6W34M/3PSMCMH>.  Available from: <ibi:8JMKD3MGP6W34M/3PSMCMH>.   
+
+Observações
+-----------
+
+
+**1.** Os scripts deverão conter documentação de uso.
+
+**2.** O relatório produzido deverá estar no formato do evento `GEOINFO <http://www.geoinfo.info/>`_.

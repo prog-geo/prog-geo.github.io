@@ -1,0 +1,28 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2023, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../../def.rst
+
+
+.. _sec_projetos_2023_p01:
+
+Registro automático para CBERS-4
+================================
+
+
+O objetivo desse projeto é construir um script em Python para estimar o deslocamento existente entre imagens PAN10 e PAN5 (nível L2). Além de estimar, o script deve alterar as informações de box das imagens PAN10 para a mesma posição da PAN5. 
+
+O resultado da aplicação desse script será um conjunto de imagens em que seja possível realizar uma fusão. Existem `imagens de exemplo <https://github.com/tkorting/remote-sensing-images/tree/master/register-cbers-4-pan>`_ que podem ser utilizadas para teste. O satélite CBERS-4 possui o sensor PAN, com 3 bandas PAN10 (green B2, red B3, nir B4) e 1 banda pancromática (PAN5 B1).
+
+Para atingir o objetivo do trabalho, pode-se assumir que as bandas B2, B3 e B4 estão co-registradas, mas estão deslocadas em relação à B1 (que será a referência). O script pode espalhar pontos aleatórios na imagem, e observar janelas (3x3 pixels, 5x5 pixels, etc), comparando janelas móveis de B2/B3/B4 com janelas fixas de B1. Por meio de deslocamentos sistemáticos das janelas móveis, nos eixos x e/ou y, a posição que obtiver a maior semelhança pode ser indicada como o deslocamento necessário para alinhar B2/B3/B4 com a referência B1.
+
+
+Observações
+-----------
+
+
+**1.** Os scripts deverão conter documentação de uso.
+
+**2.** O relatório produzido deverá estar no formato do evento `GEOINFO <http://www.geoinfo.info/>`_.
