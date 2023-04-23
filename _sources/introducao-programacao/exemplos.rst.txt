@@ -35,6 +35,26 @@ Considere a reta com os seguintes coeficientes: :math:`a = 3`, :math:`b = -2` e 
     Ilustração de uma reta com coeficientes: :math:`a = 3`, :math:`b = -2` e :math:`c = -6`.
 
 
+.. collapse:: Solução:
+
+
+    .. code-block:: python
+
+        # coeficientes da equação geral da reta:
+        # Ax + By + C = 0
+        A = 3.0
+        B = -2.0
+        C = -6.0
+
+        # realiza a leitura das coordenadas de um ponto (x, y)
+        x = float(input('x: '))   # lê x
+        y = float(input('y: '))   # lê y
+
+        # se a equação resultar em 0.0,
+        # significa que o ponto encontra-se sobre a reta
+        r = A*x + B*y + C
+
+        print("Resultado da equação para o ponto ({0}, {1}): {2}".format(x, y, r))
 
 
 -----
@@ -43,6 +63,31 @@ Considere a reta com os seguintes coeficientes: :math:`a = 3`, :math:`b = -2` e 
 .. _sec_introducao_programacao_exemplos_ex02:
 
 **Exemplo 02.** Altere o programa da equação geral de uma reta para incluir um teste condicional que escreva na tela a mensagem "Sobre a Reta", caso o ponto informado esteja sobre a reta; caso o ponto encontre-se acima da reta, deverá ser escrita a mensagem "Acima da Reta"; e, caso o ponto encontra-se abaixo da reta, deverá ser escrita a mensagem "Abaixo da Reta".
+
+
+.. collapse:: Solução:
+
+
+    .. code-block:: python
+
+        # coeficientes da equação geral da reta:
+        # Ax + By + C = 0
+        A = 3.0
+        B = -2.0
+        C = -6.0
+         
+        # realiza a leitura das coordenadas de um ponto (x, y)
+        x = float(input('x: '))   # lê x
+        y = float(input('y: '))   # lê y
+         
+        y0 = (-A*x - C) / B
+         
+        if y > y0:
+            print("Acima!")
+        elif y < y0:
+            print("Abaixo!")
+        else:
+            print("Sobre a reta!")
 
 
 -----
@@ -67,6 +112,29 @@ ou,
     fat(1) = 1, & \text{se $n = 1$}\\
     fat(n) = n \times fat(n - 1), & \text{se $n > 1$}
     \end{cases}
+
+
+.. collapse:: Solução:
+
+
+    .. code-block:: python
+
+        n = int(input("Digite um número no intervalo [1, 10]: "))
+
+        if (n >= 1) and (n <= 10):
+
+            fat = 1
+            while n > 1:
+                fat = fat * n
+                n = n - 1
+                print('variavel fat', fat)
+                print('variavel n', n)
+
+            print("fatorial:", fat)
+
+        else:
+            print("Número fora do intervalo [1, 10].")
+            print("Rode o programa novamente!")
 
 
 -----
@@ -95,12 +163,58 @@ A seguinte fórmula recursiva define esta sequência:
 Faça um programa em Python que compute a sequência para um número :math:`n` qualquer.
 
 
+.. collapse:: Solução:
+
+    .. code-block:: python
+
+        n = int(input("Digite um número > 1: "))
+
+        if n <= 1:
+            exit("Entre com um número > 1.")
+
+        a = 0
+        print(a)
+
+        b = 1
+        print(b)
+
+        i = 2
+
+        while i <= n:
+            proximo = b + a
+
+            print(proximo)
+
+            a = b
+            b = proximo
+
+            i = i + 1
+
+
 -----
 
 
 .. _sec_introducao_programacao_exemplos_ex05:
 
 **Exemplo 05.** Escreva um programa em Python que leia dois números, :math:`x` e :math:`y`, e calcule a função potência :math:`x^y`, sem utilizar o operador ``**`` de Python ou alguma função da biblioteca padrão.
+
+
+.. collapse:: Solução:
+
+    .. code-block:: python
+
+        x = int(input("Digite um número (X): "))
+        y = int(input("Digite um número (Y): "))
+        print(x**y)
+
+        pot = 1
+
+        while y >= 1:
+            pot = pot * x
+
+            y = y - 1
+
+        print("X^Y:", pot)
 
 
 -----
@@ -111,12 +225,59 @@ Faça um programa em Python que compute a sequência para um número :math:`n` q
 **Exemplo 06.** Escreva um programa em Python que verifique se um número é primo ou não.
 
 
+.. collapse:: Solução:
+
+    .. code-block:: python
+
+        n = int(input("Digite um número: "))
+
+        primo = True
+
+        i = 2
+
+        while i < n:
+
+            if (n % i) == 0:
+                print(i)
+                primo = False
+                break
+
+            i = i + 1
+
+        if primo:
+            print(n, "é primo!")
+        else:
+            print(n, "não é primo!")
+
+
 -----
 
 
 .. _sec_introducao_programacao_exemplos_ex07:
 
 **Exemplo 07.** Escreva um programa em Python que gere a tabela de multiplicação dos números de :math:`1` a :math:`10`.
+
+
+.. collapse:: Solução:
+
+
+    .. code-block:: python
+
+        i = 1
+
+        while i <= 10:
+            print("Tabuada:", i)
+
+            j = 1
+
+            while j <= 10:
+                print(i, "x", j, "=", i * j)
+
+                j = j + 1
+
+            i = i + 1
+
+            print("")
 
 
 -----
@@ -138,17 +299,57 @@ Apresente as seguintes informações:
 - Quantidade de valores válidos.
 
 
+.. collapse:: Solução:
+
+    |br|
+
+    Vamos utilizar um **laço do tipo for** para atravessar os elementos da lista e um **comando condicional** para contarmos a quantidade de valores válidos e inválidos:
+    
+    
+    .. code-block:: python    
+    
+        serie_ndvi = [0.3, -0.3, 0.2, None, 0.9, 0.8, 0.8, None, 0.2, 0.2]
+
+        validos = 0
+
+        invalidos = 0
+
+        for v in serie_ndvi:
+            if v is None:
+                invalidos = invalidos + 1
+            else:
+                validos = validos + 1
+
+        print('Quantidade de valores válidos..:', validos)
+        print('Quantidade de valores inválidos:', invalidos)
+
+
 -----
 
 
 .. _sec_introducao_programacao_exemplos_ex09:
 
-**Exemplo 09.** Uma imagem MODIS, em geral, armazena seus valores multiplicados por 10.000. Desta forma um valor 5.000 (inteiro) representa o valor real 0.5 (ponto flutuante) e ocupa menos espaço na memória. Dada uma lista de valores MODIS::
+**Exemplo 09.** Os produto MOD13Q1, em geral, armazena os valores dos pixels multiplicados por 10.000. Desta forma um valor 5.000 (inteiro) representa o valor real 0.5 (ponto flutuante) e ocupa menos espaço na memória. Dada uma lista de valores de uma das bandas no produto MOD13Q1::
 
-    serie_modis = [7000, 6000, 3000, 3000, 10000, 2000, 5000, 500, 7500, 3000]
+    serie_mod13q1 = [7000, 6000, 3000, 3000, 10000, 2000, 5000, 500, 7500, 3000]
 
 
 Calcule e apresente a lista de valores reais (divididos por 10.000).
+
+
+.. collapse:: Solução:
+
+
+    .. code-block:: python
+
+        serie_mod13q1 = [7000, 6000, 3000, 3000, 10000, 2000, 5000, 500, 7500, 3000]
+
+        serie_mod13q1_float = []
+
+        for v in serie_mod13q1:
+            serie_mod13q1_float.append(v / 10000.0)
+
+        print(serie_mod13q1_float)
 
 
 -----
@@ -164,12 +365,26 @@ Calcule e apresente a lista de valores reais (divididos por 10.000).
 Faça um programa em Python que realize a soma dos valores nessa lista e escreva o valor da soma.
 
 
+.. collapse:: Solução:
+
+    .. code-block:: python
+    
+        l = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+
+        soma = 0
+
+        for v in l:
+            soma = soma + v
+
+        print("Soma:", soma)
+
+
 -----
 
 
 .. _sec_introducao_programacao_exemplos_ex11:
 
-**Exemplo 11.** Considere a série temporal mostrada abaixo, extraída de dados do sensor `MOD13Q1 <https://lpdaac.usgs.gov/dataset_discovery/modis/modis_products_table/mod13q1>`_, produto ``MOD13Q1``, para a localização ``(-54,-12)`` para o período de ``01/01/2015`` a ``19/12/2015``::
+**Exemplo 11.** Considere a série temporal mostrada abaixo, extraída de dados do produto `MOD13Q1 <https://lpdaac.usgs.gov/dataset_discovery/modis/modis_products_table/mod13q1>`__ gerado a partir do sensor `MODIS <https://modis.gsfc.nasa.gov>`__, para a localização ``(-54,-12)`` no período de ``01/01/2015`` a ``19/12/2015``::
 
     red_values = (
         168, 398, 451, 337, 186, 232, 262, 349,
@@ -204,6 +419,171 @@ Faça um programa que:
 - Obtenha o maior e menor valores de NDVI e escreva a data em que eles ocorrem.
 
 
+.. collapse:: Solução:
+
+    |br|
+
+    A computação do NDVI pode se realizada usando-se um **laço do tipo for** para atravessar cada um dos elementos das duas listas ou usando-se uma **expressão geradora** ou **list comprehension**. A solução abaixo utiliza uma **laço do tipo for**, criando uma nova lista denominada ``ndvi_values``, inicialmente vazia, e, em seguida, dentro do laço, o valor de NDVI é computado a partir dos valores correspondentes nas listas ``red_values`` e ``nir_values``, sendo esse novo valor adicionado à nova lista:
+
+
+    .. code-block:: python
+        :emphasize-lines: 13-18
+        :linenos:
+
+        red_values = (
+            168, 398, 451, 337, 186, 232, 262, 349,
+            189, 204, 220, 220, 207, 239, 259, 258,
+            242, 331, 251, 323, 106, 1055, 170
+        )
+
+        nir_values = (
+            2346, 4431, 4638, 4286, 2752, 3521, 2928, 3087,
+            2702, 2685, 2702, 2865, 2835, 2955, 3019, 3391,
+            2986, 4042, 3050, 3617, 2478, 3361, 2613
+        )
+
+        ndvi_values = []
+
+        for red, nir in zip(red_values, nir_values):
+            ndvi = (nir - red) / (nir + red)
+
+            ndvi_values.append(ndvi)
+
+
+    A média do NDVI pode ser calculada de maneira simples pela seguinte expressão:
+
+
+    .. code-block:: python
+
+        media_ndvi = sum(ndvi_values) / len(ndvi_values)
+        
+        print('Média NDVI:', media_ndvi)
+
+
+    Para a última parte da questão, podemos obter o maior e menor valores de NDVI da seguinte forma:
+
+
+    .. code-block:: python
+    
+        ndvi_min = min(ndvi_values)
+        ndvi_max = max(ndvi_values)
+
+
+    O operador ``index`` das sequencias permite identificar a localização da primeira ocorrência do valor, de maneira que podemos fazer:
+
+
+    .. code-block:: python
+
+        pos_ndvi_min = ndvi_values.index(ndvi_min)
+        pos_ndvi_max = ndvi_values.index(ndvi_max)
+
+        print('Mínimo do NDVI:', ndvi_min, 'Data:', timeline[pos_ndvi_min])
+        print('Máximo do NDVI:', ndvi_max, 'Data:', timeline[pos_ndvi_max])
+
+
+|br|
+
+
 .. note::
 
-    Multiplique os valores das bandas ``red`` e ``nir`` por ``0.0001``.
+    Tente refazer o exercício acima usando apenas laços, sem usar as funções ``len``, ``sum`` e ``index``.
+
+
+
+-----
+
+
+**Exemplo 12.** Leitura e Escrita de Arquivos.
+
+
+**12.1** Abrindo o arquivo :download:`focos24h_brasil.txt <../data/txt/focos24h_brasil.txt>` e lendo todo o seu conteúdo para a memória:
+
+
+.. code-block:: python
+
+    arq = open('focos24h_brasil.txt', 'r')
+
+    try:
+        conteudo = arq.read()
+
+        print(conteudo)
+
+    finally:
+        arq.close()
+
+
+**12.2** Abrindo o arquivo :download:`focos24h_brasil.txt <../data/txt/focos24h_brasil.txt>` usando o comando ``with``:
+
+
+.. code-block:: python
+
+    with open('focos24h_brasil.txt', 'r') as arq:
+        conteudo = arq.read()
+
+        print(conteudo)
+
+
+**12.3.** Abrindo o arquivo :download:`focos24h_brasil.txt <../data/txt/focos24h_brasil.txt>` e lendo as duas primeiras linhas:
+
+
+.. code-block:: python
+
+    with open('focos24h_brasil.txt', 'r') as arq:
+        linha1 = arq.readline()
+        print(linha1, end='')
+        
+        linha2 = arq.readline()
+        print(linha2, end='')
+
+
+**12.4.** Abrindo o arquivo :download:`focos24h_brasil.txt <../data/txt/focos24h_brasil.txt>` e iterando pelas linhas do arquivo:
+
+
+.. code-block:: python
+
+    with open('focos24h_brasil.txt', 'r') as arq:
+        for linha in arq:
+            print(linha, end='')
+
+
+**12.5.** Abrindo o arquivo :download:`focos24h_brasil.txt <../data/txt/focos24h_brasil.txt>` e criando uma lista com todas as linhas do arquivo:
+
+
+.. code-block:: python
+
+    with open('termos.json', 'r') as arq:
+        linhas = arq.readlines()
+        print(linhas)
+
+
+**12.6.** Adicionando uma nova linha ao final do arquivo :download:`focos24h_brasil.txt <../data/txt/focos24h_brasil.txt>`:
+
+
+.. code-block:: python
+
+    with open('focos24h_brasil.txt', 'a') as arq:
+        arq.write('Nova linha...\n')
+
+
+**12.7.** Escreva um programa para imprimir apenas as linhas com focos do Estado de *Minas Gerais*.
+
+
+.. collapse:: Solução:
+
+
+
+    .. code-block:: python
+
+        with open('focos24h_brasil.txt', 'r') as arq:
+            for linha in arq:
+
+                if linha.find('"estado":"MINAS GERAIS"') != -1:
+                    print(linha, end='')
+
+
+|br|
+
+
+.. tip::
+
+    Para mais detalhes sobre as operações com arquivos texto, consulte a seção `7.2. Reading and Writing Files <https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files>`__ do manual do Python.

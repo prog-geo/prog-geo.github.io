@@ -34,7 +34,7 @@ Lista de Exercícios 01
     Não use acentos ou caracteres especiais nos nomes dos arquivos ou no título do e-mail.
 
 
-- **Prazo para entrega:** 14/04/2022 - 20:00
+- **Prazo para entrega:** 14/04/2023 - 20:00
 
 
 -----
@@ -357,7 +357,7 @@ Faça um programa para realizar o *download* de dados diários de focos de queim
 -----
 
 
-**Exercício 15.** O módulo `os <https://docs.python.org/3/library/os.html>`__ da biblioteca padrão do Python possui funções que permitem caminhar pela estrutura de diretórios e arquivos de um sistema operacional (Linux, Windows ou macOS). Leia a documentação da função `os.walk <https://docs.python.org/3/library/os.html#os.walk>`__ para construir um programa que navegue pela estrutura de arquivos e diretórios contidos no arquivo zip :download:`./data/terraclass.zip <terraclass.zip>` e escreva o nome do diretório ou arquivo. Esse arquivo possui a seguinte estrutura:
+**Exercício 15.** O módulo `os <https://docs.python.org/3/library/os.html>`__ da biblioteca padrão do Python possui funções que permitem caminhar pela estrutura de diretórios e arquivos de um sistema operacional (Linux, Windows ou macOS). Leia a documentação da função `os.walk <https://docs.python.org/3/library/os.html#os.walk>`__ para construir um programa que navegue pela estrutura de arquivos e diretórios contidos no arquivo zip :download:`terraclass.zip <../data/zip/terraclass.zip>` e escreva o nome do diretório ou arquivo. Esse arquivo possui a seguinte estrutura:
 
 
 .. code-block:: text

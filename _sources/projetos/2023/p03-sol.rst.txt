@@ -1,0 +1,34 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2023, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../../def.rst
+
+
+.. _sec_projetos_2023_p03:
+
+Imagem de incidência solar
+==========================
+
+Na imagem a seguir (região do Paraguai + *buffer*), construída a partir de um mosaico de cenas WFI do satélite CBERS-4, pode-se notar a falta de correção da incidência solar sobre as cenas.
+
+.. figure:: ../../img/imagens/paraguai-p03-sol.png
+    :alt: região do Paraguai + *buffer* (WFI/CBERS-4), cenas de 15/nov/2022 e 17/nov/2022 (170/123, 170/129, 162/123, 162/129)
+    :width: 50%
+    :figclass: align-center
+    :name: imagens:exemplo-p03-sol
+
+    Região do Paraguai + *buffer* (WFI/CBERS-4), cenas de 15/nov/2022 e 17/nov/2022 (170/123, 170/129, 162/123, 162/129).
+
+O objetivo deste trabalho é construir uma imagem de incidência solar para um retângulo envolvente de qualquer cena WFI/CBERS-4. Com base na data da obtenção da imagem, construir uma imagem em formato de grade (testar grades de 1km, 5km, 10km) contendo valores proporcionais à incidência solar (informações obtidas em `NOAA Solar Calculator <https://gml.noaa.gov/grad/solcalc/>`_). A partir desta grade, realizar operações aritméticas (por exemplo subtração) das bandas originais, de forma a minimizar os efeitos da incidência solar sobre as imagens.
+
+
+Observações
+-----------
+
+
+**1.** Os scripts deverão conter documentação de uso.
+
+**2.** O relatório produzido deverá estar no formato do evento `GEOINFO <http://www.geoinfo.info/>`_.
+

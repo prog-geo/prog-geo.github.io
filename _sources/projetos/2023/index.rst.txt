@@ -1,0 +1,13 @@
+Turma 2023
+==========
+
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+
+    ./p01-registro
+    ./p02-desastres
+    ./p03-sol
+    ./p04-segmentacao
+    ./p05-nuvens
+    

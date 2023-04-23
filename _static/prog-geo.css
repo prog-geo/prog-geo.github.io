@@ -106,3 +106,12 @@ div.box-exemplos.admonition > p.admonition-title {
 p.centered-paragraph {
     text-align: center;
 }
+
+details.summary-solucao > summary {
+    font-weight: bold;
+}
+
+details.summary-solucao {
+    background-color: #f3f6f6;
+    padding: 1rem;
+}

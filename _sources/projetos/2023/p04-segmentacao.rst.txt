@@ -1,0 +1,32 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2023, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../../def.rst
+
+
+.. _sec_projetos_2023_p04:
+
+Parâmetros ótimos para segmentação
+==================================
+
+
+A segmentação é uma importante ferramenta para análise de imagens. Seu objetivo é encontrar regiões com um comportamento homogêneo, dividindo a imagem em partes. O objetivo deste trabalho é encontrar o melhor conjunto de parâmetros possível (ótimo) para segmentar uma imagem. Para isso, o script deve receber uma imagem de entrada em formato GeoTIFF, e um conjunto de regiões (chamados segmentos de referência) que podem estar armazenados em Shapefile, ou KML.
+
+Após a validação dos dados de entrada, o script deve realizar várias segmentações da imagem (método de segmentação a escolher, exemplos *rsgislib*, *felzenszwalb*, *openCV*) variando sistematicamente os parâmetros, e comparando os resultados com os segmentos de referência, até minimizar uma medida de diferença (por exemplo IoU - *Intersection over Union*). Essa variação de parâmetros, bem como as medidas de diferenças podem ser apresentadas em formato de gráfico.
+
+Ao final, espera-se a indicação do conjunto de parâmetros ótimo para segmentar a imagem.
+
+
+
+Observações
+-----------
+
+
+**1.** Os scripts deverão conter documentação de uso.
+
+**2.** O relatório produzido deverá estar no formato do evento `GEOINFO <http://www.geoinfo.info/>`_.
+
+**3.** Para testar, utilize recortes pequenos de cenas, e um conjunto reduzido de segmentos de referência.
+
