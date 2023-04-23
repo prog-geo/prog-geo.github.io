@@ -12,7 +12,11 @@ Combinação de dados sobre desastres
 ===================================
 
 
+<<<<<<< HEAD
 Dadas 2 imagens (obtidas antes e depois de um desastre), combinar informações vetoriais da camada *buildings* encontrada nos dados do *Open Street Map*, e analisar a mudança na resposta espectral das 2 imagens, dentro de cada elemento encontrado em *buildings*. É possível calcular medidas de textura dos pixels, média, desvio padrão, etc. das 2 imagens, de forma a identificar se uma construção foi danificada depois da ocorrência de um desastre.
+=======
+Dadas 2 imagens (obtidas antes e depois de um desastre), combinar informações vetoriais da camada *buildings* encontrada nos dados do *Open Street Map*, e analisar a mudança na resposta espectral das 2 imagens, dentro de cada elemento encontrado em *buildings*. É possível calcular medidas de textura dos pixels, média, desvio padrão, etc. das 2 imagens, de forma a identificar se uma construção foi danificada depois da ocorrêcia de um desastre.
+>>>>>>> 8a4fcb159420e6144ee04889e2b9533b5eb2f183
 
 Para esse trabalho, podem ser utilizadas imagens do Terremoto da Turquia (ocorrido em fevereiro/2023), `obtidas pelo satélite CBERS-4A <http://www.dpi.inpe.br/charter/Call_919_Turkey/>`_ (arquivos Diyarbakir*).
 

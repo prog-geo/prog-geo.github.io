@@ -63,7 +63,7 @@ Na era do big data, os profissionais necessitam cada vez mais de conhecimentos e
     :maxdepth: 1
     :caption: Listas de Exercícios
 
-    listas/index
+    listas
 
 
 .. toctree::
