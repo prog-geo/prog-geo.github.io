@@ -307,6 +307,61 @@ Faça um programa em Python que leia o nome de um arquivo, e escreva na saída p
     Data Format.............: hdf
 
 
+.. collapse:: Solução:
+
+    nome_do_arquivo = input('Digite o nome do arquivo MODIS: ')
+
+    product = nome_do_arquivo[0:7]
+    
+    if product[0:3] == "MOD":
+      satellite = "Terra"
+    else:
+      satellite = "unknown"
+
+    year_of_acquisition = nome_do_arquivo[9:13]
+
+    julian_day = nome_do_arquivo[13:16]
+
+    horizontal_tile = nome_do_arquivo[18:20]
+
+    vertical_tile = nome_do_arquivo[21:23]
+
+    collection = nome_do_arquivo[24:27]
+
+    year_of_production = nome_do_arquivo[28:32]
+
+    julian_day_of_production = nome_do_arquivo[32:35]
+
+    production_hour = nome_do_arquivo[35:37]
+
+    production_minute = nome_do_arquivo[37:39]
+
+    production_second = nome_do_arquivo[39:41]
+
+    data_format = nome_do_arquivo[42:45]
+
+    print ('Satellite...............:', satellite)
+     
+    print ('Product.................:', product) 
+    
+    print ('Year of Acquisition.....:', year_of_acquisition) 
+    print ('Julian Day..............:', julian_day) 
+    
+    print ('Horizontal Tile.........:', horizontal_tile) 
+    print ('Vertical Tile...........:', vertical_tile) 
+    
+    print ('Collection..............:', collection) 
+    
+    print ('Year of Production......:', year_of_production) 
+    print ('Julian Day of Production:', julian_day_of_production) 
+    
+    print ('Production Hour.........:', production_hour) 
+    print ('Production Minute.......:', production_minute) 
+    print ('Production Second.......:', production_second) 
+    
+    print ('Data Format.............:', data_format) 
+
+
 -----
 
 

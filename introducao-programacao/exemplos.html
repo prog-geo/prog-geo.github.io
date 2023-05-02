@@ -23,6 +23,7 @@
         <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
+        <script src="../_static/tabs.js"></script>
         <script src="../_static/translations.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -528,6 +529,287 @@ fat(n) = n \times fat(n - 1), &amp; \text{se $n &gt; 1$}
 <p class="admonition-title">Dica</p>
 <p>Para mais detalhes sobre as operações com arquivos texto, consulte a seção <a class="reference external" href="https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files">7.2. Reading and Writing Files</a> do manual do Python.</p>
 </div>
+<hr class="docutils" />
+<p><strong>13.</strong> O módulo <a class="reference external" href="https://docs.python.org/3/library/os.html">os</a> da Biblioteca Padrão do Python fornece funcionalidades para interagir com o sistema de arquivos do sistema operacional. Por exempplo, a função <code class="docutils literal notranslate"><span class="pre">getcwd</span></code> fornece o diretório corrente da aplicação em execução:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Saída:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/home/gribeiro/Temp/Aula
+</pre></div>
+</div>
+<p>A função <code class="docutils literal notranslate"><span class="pre">listdir</span></code> retorna uma lista contendo nomes de entradas em um dado diretório. Por exemplo, supondo que queremos obter a lista de arquivos e diretórios na raiz do sistema de arquivos, podemos fazer:</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Linux</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Microsoft Windows</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">listagem</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">listagem</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Saída:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>run
+lib
+etc
+media
+var
+lib32
+snap
+lost+found
+tmp
+libx32
+...
+mnt
+sbin
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">listagem</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;C:</span><span class="se">\\</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">listagem</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></div>
+<p>O módulo <a class="reference external" href="https://docs.python.org/3/library/os.path.html">os.path</a> fornece funcionalidades para manipulação de caminhos ou nomes de arquivos e diretórios. Por exemplo, o trecho de código abaixo recupera a lista de arquivos e sub-diretórios do diretório <code class="docutils literal notranslate"><span class="pre">/home/gribeiro/CAP-349/PG-Shared-Data</span></code> e imprime se o objeto setrata de um arquivo ou diretório:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">listagem</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;/home/gribeiro/CAP-349/PG-Shared-Data&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">objeto</span> <span class="ow">in</span> <span class="n">listagem</span><span class="p">:</span>
+
+    <span class="n">path_objeto</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;/home/gribeiro/CAP-349/PG-Shared-Data&#39;</span><span class="p">,</span> <span class="n">objeto</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Objeto:&#39;</span><span class="p">,</span> <span class="n">path_objeto</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">path_objeto</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">Diretório:&#39;</span><span class="p">,</span> <span class="n">objeto</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">path_objeto</span><span class="p">):</span>
+        <span class="n">basename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">path_objeto</span><span class="p">)</span>
+
+        <span class="n">par</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">path_objeto</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">Nome do arquivo: </span><span class="si">{}</span><span class="s1">, Extensão Arquivo:</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">basename</span><span class="p">,</span> <span class="n">par</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><strong>14.1</strong> Faça um programa que pergunte ao jogador uma palavra secreta e depois escreva essa palavra na saída padrão.</p>
+<details class="summary-solucao">
+<summary>Solução:</summary><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">palavra_secreta</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Entre com a palavra secreta: &#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">palavra_secreta</span><span class="p">)</span>
+</pre></div>
+</div>
+</details><p><br/></p>
+<p><strong>14.2.</strong> Considerando o módulo Python <a class="reference external" href="https://docs.python.org/3/library/getpass.html">getpass</a>, refaça o exercício 14.1, só que sem “ecoar” o texto digitado pelo jogador ao entrar com a palavra secreta.</p>
+<details class="summary-solucao">
+<summary>Solução:</summary><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">getpass</span>
+
+<span class="n">palavra_secreta</span> <span class="o">=</span> <span class="n">getpass</span><span class="o">.</span><span class="n">getpass</span><span class="p">(</span><span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;Entre com a palavra secreta: &#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">palavra_secreta</span><span class="p">)</span>
+</pre></div>
+</div>
+</details><p><br/></p>
+<p><strong>14.3.</strong> Faça um programa que peça ao jogador 1 para fornecer uma palavra secreta e peça ao jogador 2 para fornecer uma letra que possa estar presente na palavra secreta fornecida pelo jogador 1. Para isso, faça uma função que verifique a ocorrência da letra na palavra secreta. Exemplo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">palavra_secreta</span> <span class="o">=</span> <span class="s1">&#39;sensoriamento&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span> <span class="n">ocorre</span><span class="p">(</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">palavra_secreta</span><span class="p">)</span> <span class="p">)</span>
+<span class="go">True</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span> <span class="n">ocorre</span><span class="p">(</span><span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="n">palavra_secreta</span><span class="p">)</span> <span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<details class="summary-solucao">
+<summary>Solução:</summary><p>Uma possível solução seria:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">getpass</span>
+
+
+<span class="k">def</span> <span class="nf">ocorre</span><span class="p">(</span><span class="n">letra</span><span class="p">,</span> <span class="n">segredo</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">letra</span> <span class="ow">in</span> <span class="n">segredo</span>
+
+
+<span class="n">palavra_secreta</span> <span class="o">=</span> <span class="n">getpass</span><span class="o">.</span><span class="n">getpass</span><span class="p">(</span><span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;Jogador 1, por favor, entre com a palavra secreta: &#39;</span><span class="p">)</span>
+
+<span class="n">letra</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Jogador 2, por favor, adivinhe uma letra da palavra secreta do Jogador 1: &#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span> <span class="n">ocorre</span><span class="p">(</span><span class="n">letra</span><span class="p">,</span> <span class="n">palavra_secreta</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>Outra solução possivel, sem utilizar o operador <code class="docutils literal notranslate"><span class="pre">in</span></code> de sequências, consiste no uso de um laço para percorrer cada caracter da palavra com o segredo até que a letra seja encontrada ou o laço termine sem encontrar a ocorrência dessa letra:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ocorre</span><span class="p">(</span><span class="n">letra</span><span class="p">,</span> <span class="n">segredo</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">segredo</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">l</span> <span class="o">==</span> <span class="n">letra</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="k">return</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</details><p><br/></p>
+<p><strong>14.4.</strong> Suponha a existência de uma lista de letras, por exemplo, <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">'o',</span> <span class="pre">'t,',</span> <span class="pre">'z',</span> <span class="pre">'e',</span> <span class="pre">'a'</span> <span class="pre">]</span></code>. Faça uma função que escreva uma palavra omitindo as letras que não pertençam a essa lista, usando um símbolo de <code class="docutils literal notranslate"><span class="pre">_</span></code> (sublinhado). Veja o exemplo de uso:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">palavra_secreta</span> <span class="o">=</span> <span class="s1">&#39;sensoriamento&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">letras</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span> <span class="p">]</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">palavra_oculta</span> <span class="o">=</span> <span class="n">ocultar</span><span class="p">(</span><span class="n">letras</span><span class="p">,</span> <span class="n">palavra_secreta</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">palavra_oculta</span><span class="p">)</span>
+<span class="go">_ e _ _ o _ _ a _ e _ t o</span>
+</pre></div>
+</div>
+<details class="summary-solucao">
+<summary>Solução:</summary><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">getpass</span>
+
+<span class="k">def</span> <span class="nf">ocorre</span><span class="p">(</span><span class="n">letra</span><span class="p">,</span> <span class="n">segredo</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">letra</span> <span class="ow">in</span> <span class="n">segredo</span>
+
+
+<span class="k">def</span> <span class="nf">ocultar</span><span class="p">(</span><span class="n">letras</span><span class="p">,</span> <span class="n">palavra_secreta</span><span class="p">):</span>
+    <span class="n">palavra_oculta</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">palavra_secreta</span><span class="p">:</span>
+
+        <span class="k">if</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">letras</span><span class="p">:</span>
+            <span class="n">palavra_oculta</span> <span class="o">=</span> <span class="n">palavra_oculta</span> <span class="o">+</span> <span class="n">c</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">palavra_oculta</span> <span class="o">=</span> <span class="n">palavra_oculta</span> <span class="o">+</span> <span class="s1">&#39;_&#39;</span>
+
+    <span class="k">return</span> <span class="n">palavra_oculta</span>
+
+
+<span class="n">palavra_secreta</span> <span class="o">=</span> <span class="n">getpass</span><span class="o">.</span><span class="n">getpass</span><span class="p">(</span><span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;Jogador 1, por favor, entre com a palavra secreta: &#39;</span><span class="p">)</span>
+
+<span class="n">letras</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span> <span class="p">]</span>
+
+<span class="n">palavra_oculta</span> <span class="o">=</span> <span class="n">ocultar</span><span class="p">(</span><span class="n">letras</span><span class="p">,</span> <span class="n">palavra_secreta</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">palavra_oculta</span><span class="p">)</span>
+</pre></div>
+</div>
+</details><p><br/></p>
+<p><strong>14.5.</strong> Faça um programa que peça ao usuário uma letra e inclua essa letra em uma lista. Caso a letra já tenha sido digitada, o programa deve avisar o usuário e pedir uma nova letra. A cada iteração desse programa, escreva o conteúdo da lista. O programa deve parar após 06 iterações.</p>
+<details class="summary-solucao">
+<summary>Solução:</summary><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">contador</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">letras</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">while</span> <span class="n">contador</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">:</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Entre com uma letra: &#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">l</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">letras</span><span class="p">:</span>
+        <span class="n">letras</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A letra &quot;</span><span class="si">{}</span><span class="s1">&quot; já foi digitada!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">l</span><span class="p">))</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Letras digitadas: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">letras</span><span class="p">))</span>
+
+    <span class="n">contador</span> <span class="o">=</span> <span class="n">contador</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</details><p><br/></p>
+<p><strong>14.6.</strong> Agora podemos escrever o programa completo do jogo:</p>
+<ul class="open">
+<li><p>O programa inicialmente pede ao jogador 1 a palavra secreta.</p></li>
+<li><p>O jogador 2 terá no máximo 06 chances para propor letras que ocorram na palavra secreta fornecida pelo jogador 1.</p></li>
+<li><p>Portanto, a cada rodada, o jogador 2 irá propor uma nova letra.</p></li>
+<li><p>O programa deverá testar se a nova letra já foi sugerida. Caso tenha sido, o programa deverá avisar ao jogador 2 e este perderá uma chance. Se o jogador ainda tiver chances, uma nova letra deverá ser solicitada.</p></li>
+<li><p>Se a nova letra ocorrer na palavra secreta, o programa deverá escrever todas as letras já descobertas da palavra secreta.</p></li>
+<li><p>Se a nova letra não ocorrer na palavra secreta, o jogador perderá uma chance.</p></li>
+</ul>
+<p>Veja um exemplo de interação do programa esperado:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Jogador 1, por favor, entre com uma palavra secreta:
+(vamos supor que a palavra seja &#39;sensoriameto&#39;)
+
+Número de chances: 6
+Jogador 2, por favor, entre com uma letra da palavra secreta: s
+A letra &#39;s&#39; ocorre na palavra secreta: s _ _ s _ _ _ _ _ _ _ _ _
+---------
+
+Número de chances: 6
+Jogador 2, por favor, entre com uma letra da palavra secreta: u
+A letra &#39;u&#39; não ocorre na palavra secreta: s _ _ s _ _ _ _ _ _ _ _ _
+---------
+
+Número de chances: 5
+Jogador 2, por favor, entre com uma letra da palavra secreta: e
+A letra &#39;e&#39; não ocorre na palavra secreta: s e _ s _ _ _ _ _ e _ _ _
+---------
+
+...
+</pre></div>
+</div>
+<p>Ao final, caso o número de tentativas tenha se esgotado, o programa deverá avisar:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Fim do jogo! Você não descobriu a palavra secreta: sensoriamento
+</pre></div>
+</div>
+<p>Se o jogador 2 tiver acertado todas as letras, o programa deverá terminar com a seguinte saudação:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Parabéns! Você descobriu a palavra secreta: sensoriamento
+</pre></div>
+</div>
+<details class="summary-solucao">
+<summary>Solução:</summary><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">getpass</span>
+
+<span class="k">def</span> <span class="nf">ocorre</span><span class="p">(</span><span class="n">letra</span><span class="p">,</span> <span class="n">segredo</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">letra</span> <span class="ow">in</span> <span class="n">segredo</span>
+
+
+<span class="k">def</span> <span class="nf">ocultar</span><span class="p">(</span><span class="n">letras</span><span class="p">,</span> <span class="n">palavra_secreta</span><span class="p">):</span>
+    <span class="n">palavra_oculta</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">palavra_secreta</span><span class="p">:</span>
+
+        <span class="k">if</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">letras</span><span class="p">:</span>
+            <span class="n">palavra_oculta</span> <span class="o">=</span> <span class="n">palavra_oculta</span> <span class="o">+</span> <span class="n">c</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">palavra_oculta</span> <span class="o">=</span> <span class="n">palavra_oculta</span> <span class="o">+</span> <span class="s1">&#39;_&#39;</span>
+
+    <span class="k">return</span> <span class="n">palavra_oculta</span>
+
+
+<span class="n">palavra_secreta</span> <span class="o">=</span> <span class="n">getpass</span><span class="o">.</span><span class="n">getpass</span><span class="p">(</span><span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;Jogador 1, por favor, entre com uma palavra secreta: &#39;</span><span class="p">)</span>
+
+<span class="n">chances</span> <span class="o">=</span> <span class="mi">6</span>
+
+<span class="n">letras_ja_digitadas</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">texto_oculto</span> <span class="o">=</span> <span class="n">ocultar</span><span class="p">(</span><span class="n">letras_ja_digitadas</span><span class="p">,</span> <span class="n">palavra_secreta</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="p">(</span><span class="n">chances</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">texto_oculto</span> <span class="o">!=</span> <span class="n">palavra_secreta</span><span class="p">):</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Número de chances:&#39;</span><span class="p">,</span> <span class="n">chances</span><span class="p">)</span>
+
+    <span class="n">l</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Jogador 2, adivinhe uma letra da palavra secreta: &#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">letras_ja_digitadas</span><span class="p">:</span>
+        <span class="n">texto_oculto</span> <span class="o">=</span> <span class="n">ocultar</span><span class="p">(</span><span class="n">letras_ja_digitadas</span><span class="p">,</span> <span class="n">palavra_secreta</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A letra &quot;</span><span class="si">{}</span><span class="s1">&quot; já foi digitada! </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">texto_oculto</span><span class="p">))</span>
+        <span class="n">chances</span> <span class="o">=</span> <span class="n">chances</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="ow">not</span> <span class="n">ocorre</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">palavra_secreta</span><span class="p">):</span>
+        <span class="n">letras_ja_digitadas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+        <span class="n">texto_oculto</span> <span class="o">=</span> <span class="n">ocultar</span><span class="p">(</span><span class="n">letras_ja_digitadas</span><span class="p">,</span> <span class="n">palavra_secreta</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A letra &quot;</span><span class="si">{}</span><span class="s1">&quot; não ocorre na palavra secreta! </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">texto_oculto</span><span class="p">))</span>
+        <span class="n">chances</span> <span class="o">=</span> <span class="n">chances</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span> <span class="c1"># Caso a letra não tenha sido digitada previamente e faça parte da palavra secreta</span>
+        <span class="n">letras_ja_digitadas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+        <span class="n">texto_oculto</span> <span class="o">=</span> <span class="n">ocultar</span><span class="p">(</span><span class="n">letras_ja_digitadas</span><span class="p">,</span> <span class="n">palavra_secreta</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A letra &quot;</span><span class="si">{}</span><span class="s1">&quot; ocorre na palavra secreta! </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">texto_oculto</span><span class="p">))</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;---------&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+
+
+<span class="k">if</span> <span class="n">chances</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Parabéns! Você descobriu a palavra secreta:&#39;</span><span class="p">,</span> <span class="n">palavra_secreta</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Fim do jogo! Você não descobriu a palavra secreta:&#39;</span><span class="p">,</span> <span class="n">palavra_secreta</span><span class="p">)</span>
+</pre></div>
+</div>
+</details><p><br/></p>
 </section>
 
 

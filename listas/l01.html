@@ -333,7 +333,40 @@
 <span class="n">Data</span> <span class="n">Format</span><span class="o">.............</span><span class="p">:</span> <span class="n">hdf</span>
 </pre></div>
 </div>
-<hr class="docutils" />
+<details class="summary-solucao">
+<summary>Solução:</summary><p>nome_do_arquivo = input(‘Digite o nome do arquivo MODIS: ‘)</p>
+<p>product = nome_do_arquivo[0:7]</p>
+<dl class="simple">
+<dt>if product[0:3] == “MOD”:</dt><dd><p>satellite = “Terra”</p>
+</dd>
+<dt>else:</dt><dd><p>satellite = “unknown”</p>
+</dd>
+</dl>
+<p>year_of_acquisition = nome_do_arquivo[9:13]</p>
+<p>julian_day = nome_do_arquivo[13:16]</p>
+<p>horizontal_tile = nome_do_arquivo[18:20]</p>
+<p>vertical_tile = nome_do_arquivo[21:23]</p>
+<p>collection = nome_do_arquivo[24:27]</p>
+<p>year_of_production = nome_do_arquivo[28:32]</p>
+<p>julian_day_of_production = nome_do_arquivo[32:35]</p>
+<p>production_hour = nome_do_arquivo[35:37]</p>
+<p>production_minute = nome_do_arquivo[37:39]</p>
+<p>production_second = nome_do_arquivo[39:41]</p>
+<p>data_format = nome_do_arquivo[42:45]</p>
+<p>print (‘Satellite……………:’, satellite)</p>
+<p>print (‘Product……………..:’, product)</p>
+<p>print (‘Year of Acquisition…..:’, year_of_acquisition)
+print (‘Julian Day…………..:’, julian_day)</p>
+<p>print (‘Horizontal Tile………:’, horizontal_tile)
+print (‘Vertical Tile………..:’, vertical_tile)</p>
+<p>print (‘Collection…………..:’, collection)</p>
+<p>print (‘Year of Production……:’, year_of_production)
+print (‘Julian Day of Production:’, julian_day_of_production)</p>
+<p>print (‘Production Hour………:’, production_hour)
+print (‘Production Minute…….:’, production_minute)
+print (‘Production Second…….:’, production_second)</p>
+<p>print (‘Data Format………….:’, data_format)</p>
+</details><hr class="docutils" />
 <p><strong>Exercício 13.</strong> Tomando como base os operadores disponíveis em <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#string-methods">Python documentation - String Methods</a>, apresente as operações para converter os elementos da coluna <em>string de entrada</em> nos resultados apresentados na coluna <em>string de saída</em>.</p>
 <table class="docutils align-default">
 <colgroup>

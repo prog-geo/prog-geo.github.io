@@ -587,3 +587,391 @@ Faça um programa que:
 .. tip::
 
     Para mais detalhes sobre as operações com arquivos texto, consulte a seção `7.2. Reading and Writing Files <https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files>`__ do manual do Python.
+
+
+-----
+
+
+**13.** O módulo `os <https://docs.python.org/3/library/os.html>`__ da Biblioteca Padrão do Python fornece funcionalidades para interagir com o sistema de arquivos do sistema operacional. Por exempplo, a função ``getcwd`` fornece o diretório corrente da aplicação em execução:
+
+
+.. code-block:: python
+
+    import os
+
+    print(os.getcwd())
+
+
+Saída:
+
+
+.. code-block:: text
+
+    /home/gribeiro/Temp/Aula
+
+
+A função ``listdir`` retorna uma lista contendo nomes de entradas em um dado diretório. Por exemplo, supondo que queremos obter a lista de arquivos e diretórios na raiz do sistema de arquivos, podemos fazer:
+
+
+.. tabs::
+
+    .. tab:: Linux
+    
+    
+        .. code-block:: python
+        
+            import os
+            
+            listagem = os.listdir('/')
+            
+            for f in listagem:
+                print(f)
+
+
+        Saída:
+
+
+        .. code-block:: text
+        
+            run
+            lib
+            etc
+            media
+            var
+            lib32
+            snap
+            lost+found
+            tmp
+            libx32
+            ...
+            mnt
+            sbin
+            
+
+    .. tab:: Microsoft Windows
+
+        .. code-block:: python
+        
+            import os
+            
+            listagem = os.listdir('C:\\')
+            
+            for f in listagem:
+                print(f)
+
+
+O módulo `os.path <https://docs.python.org/3/library/os.path.html>`__ fornece funcionalidades para manipulação de caminhos ou nomes de arquivos e diretórios. Por exemplo, o trecho de código abaixo recupera a lista de arquivos e sub-diretórios do diretório ``/home/gribeiro/CAP-349/PG-Shared-Data`` e imprime se o objeto setrata de um arquivo ou diretório:
+
+
+.. code-block:: python
+
+    import os
+    
+    listagem = os.listdir('/home/gribeiro/CAP-349/PG-Shared-Data')
+
+    for objeto in listagem:
+    
+        path_objeto = os.path.join('/home/gribeiro/CAP-349/PG-Shared-Data', objeto)
+        
+        print('Objeto:', path_objeto)
+        
+        if os.path.isdir(path_objeto):
+            print('\tDiretório:', objeto)
+        elif os.path.isfile(path_objeto):
+            basename = os.path.basename(path_objeto)
+            
+            par = os.path.splitext(path_objeto)
+            
+            print('\tNome do arquivo: {}, Extensão Arquivo:{}'.format(basename, par[1]))
+
+
+-----
+
+
+**14.1** Faça um programa que pergunte ao jogador uma palavra secreta e depois escreva essa palavra na saída padrão.
+
+
+.. collapse:: Solução:
+
+
+    .. code-block:: python
+    
+        palavra_secreta = input('Entre com a palavra secreta: ')
+        
+        print(palavra_secreta)
+
+
+|br|
+
+
+**14.2.** Considerando o módulo Python `getpass <https://docs.python.org/3/library/getpass.html>`_, refaça o exercício 14.1, só que sem "ecoar" o texto digitado pelo jogador ao entrar com a palavra secreta.
+
+
+.. collapse:: Solução:
+
+
+    .. code-block:: python
+
+        import getpass
+
+        palavra_secreta = getpass.getpass(prompt='Entre com a palavra secreta: ')
+
+        print(palavra_secreta)
+
+
+|br|
+
+
+**14.3.** Faça um programa que peça ao jogador 1 para fornecer uma palavra secreta e peça ao jogador 2 para fornecer uma letra que possa estar presente na palavra secreta fornecida pelo jogador 1. Para isso, faça uma função que verifique a ocorrência da letra na palavra secreta. Exemplo:
+
+
+.. code-block:: python
+
+    >>> palavra_secreta = 'sensoriamento'
+
+    >>> print( ocorre('o', palavra_secreta) )
+    True
+
+    >>> print( ocorre('u', palavra_secreta) )
+    False
+
+
+.. collapse:: Solução:
+
+
+    Uma possível solução seria:
+
+    .. code-block:: python
+    
+        import getpass
+
+        
+        def ocorre(letra, segredo):
+            return letra in segredo
+            
+        
+        palavra_secreta = getpass.getpass(prompt='Jogador 1, por favor, entre com a palavra secreta: ')
+        
+        letra = input('Jogador 2, por favor, adivinhe uma letra da palavra secreta do Jogador 1: ')
+        
+        print( ocorre(letra, palavra_secreta) )
+        
+
+    Outra solução possivel, sem utilizar o operador ``in`` de sequências, consiste no uso de um laço para percorrer cada caracter da palavra com o segredo até que a letra seja encontrada ou o laço termine sem encontrar a ocorrência dessa letra:
+
+
+    .. code-block:: python
+
+        def ocorre(letra, segredo):
+            for l in segredo:
+                if l == letra:
+                    return True
+
+            return False
+
+
+|br|
+
+
+**14.4.** Suponha a existência de uma lista de letras, por exemplo, ``[ 'o', 't,', 'z', 'e', 'a' ]``. Faça uma função que escreva uma palavra omitindo as letras que não pertençam a essa lista, usando um símbolo de ``_`` (sublinhado). Veja o exemplo de uso:
+
+
+.. code-block:: python
+
+    >>> palavra_secreta = 'sensoriamento'
+
+    >>> letras = [ 'o', 't', 'z', 'e', 'a' ]
+
+    >>> palavra_oculta = ocultar(letras, palavra_secreta)
+
+    >>> print(palavra_oculta)
+    _ e _ _ o _ _ a _ e _ t o
+
+
+.. collapse:: Solução:
+
+
+    .. code-block:: python
+
+        import getpass
+
+        def ocorre(letra, segredo):
+            return letra in segredo
+
+
+        def ocultar(letras, palavra_secreta):
+            palavra_oculta = ''
+
+            for c in palavra_secreta:
+
+                if c in letras:
+                    palavra_oculta = palavra_oculta + c
+                else:
+                    palavra_oculta = palavra_oculta + '_'
+
+            return palavra_oculta
+
+
+        palavra_secreta = getpass.getpass(prompt='Jogador 1, por favor, entre com a palavra secreta: ')
+
+        letras = [ 'o', 't', 'z', 'e', 'a' ]
+
+        palavra_oculta = ocultar(letras, palavra_secreta)
+
+        print(palavra_oculta)
+
+
+|br|
+
+
+**14.5.** Faça um programa que peça ao usuário uma letra e inclua essa letra em uma lista. Caso a letra já tenha sido digitada, o programa deve avisar o usuário e pedir uma nova letra. A cada iteração desse programa, escreva o conteúdo da lista. O programa deve parar após 06 iterações.
+
+
+.. collapse:: Solução:
+
+
+    .. code-block:: python
+
+        contador = 0
+
+        letras = []
+
+        while contador < 6:
+            l = input('Entre com uma letra: ')
+
+            if l not in letras:
+                letras.append(l)
+            else:
+                print('A letra "{}" já foi digitada!'.format(l))
+
+            print('Letras digitadas: {}'.format(letras))
+
+            contador = contador + 1
+
+
+|br|
+
+
+**14.6.** Agora podemos escrever o programa completo do jogo:
+
+.. rst-class:: open
+
+- O programa inicialmente pede ao jogador 1 a palavra secreta.
+
+- O jogador 2 terá no máximo 06 chances para propor letras que ocorram na palavra secreta fornecida pelo jogador 1.
+
+- Portanto, a cada rodada, o jogador 2 irá propor uma nova letra.
+
+- O programa deverá testar se a nova letra já foi sugerida. Caso tenha sido, o programa deverá avisar ao jogador 2 e este perderá uma chance. Se o jogador ainda tiver chances, uma nova letra deverá ser solicitada.
+
+- Se a nova letra ocorrer na palavra secreta, o programa deverá escrever todas as letras já descobertas da palavra secreta.
+
+- Se a nova letra não ocorrer na palavra secreta, o jogador perderá uma chance.
+
+
+Veja um exemplo de interação do programa esperado:
+
+
+.. code-block:: text
+
+    Jogador 1, por favor, entre com uma palavra secreta: 
+    (vamos supor que a palavra seja 'sensoriameto')
+
+    Número de chances: 6
+    Jogador 2, por favor, entre com uma letra da palavra secreta: s
+    A letra 's' ocorre na palavra secreta: s _ _ s _ _ _ _ _ _ _ _ _
+    ---------
+
+    Número de chances: 6
+    Jogador 2, por favor, entre com uma letra da palavra secreta: u
+    A letra 'u' não ocorre na palavra secreta: s _ _ s _ _ _ _ _ _ _ _ _
+    ---------
+
+    Número de chances: 5
+    Jogador 2, por favor, entre com uma letra da palavra secreta: e
+    A letra 'e' não ocorre na palavra secreta: s e _ s _ _ _ _ _ e _ _ _
+    ---------
+    
+    ...
+    
+
+Ao final, caso o número de tentativas tenha se esgotado, o programa deverá avisar:
+
+
+.. code-block:: text
+
+    Fim do jogo! Você não descobriu a palavra secreta: sensoriamento    
+
+
+Se o jogador 2 tiver acertado todas as letras, o programa deverá terminar com a seguinte saudação:
+
+
+.. code-block:: text
+
+    Parabéns! Você descobriu a palavra secreta: sensoriamento
+    
+
+.. collapse:: Solução:
+
+
+    .. code-block:: python
+
+        import getpass
+
+        def ocorre(letra, segredo):
+            return letra in segredo
+
+
+        def ocultar(letras, palavra_secreta):
+            palavra_oculta = ''
+
+            for c in palavra_secreta:
+
+                if c in letras:
+                    palavra_oculta = palavra_oculta + c
+                else:
+                    palavra_oculta = palavra_oculta + '_'
+
+            return palavra_oculta
+
+
+        palavra_secreta = getpass.getpass(prompt='Jogador 1, por favor, entre com uma palavra secreta: ')
+
+        chances = 6
+
+        letras_ja_digitadas = []
+
+        texto_oculto = ocultar(letras_ja_digitadas, palavra_secreta)
+
+        while (chances > 0) and (texto_oculto != palavra_secreta):
+
+            print('Número de chances:', chances)
+
+            l = input('Jogador 2, adivinhe uma letra da palavra secreta: ')
+
+            if l in letras_ja_digitadas:
+                texto_oculto = ocultar(letras_ja_digitadas, palavra_secreta)
+                print('A letra "{}" já foi digitada! {}'.format(l, texto_oculto))
+                chances = chances - 1
+            elif not ocorre(l, palavra_secreta):
+                letras_ja_digitadas.append(l)
+                texto_oculto = ocultar(letras_ja_digitadas, palavra_secreta)
+                print('A letra "{}" não ocorre na palavra secreta! {}'.format(l, texto_oculto))
+                chances = chances - 1
+            else: # Caso a letra não tenha sido digitada previamente e faça parte da palavra secreta
+                letras_ja_digitadas.append(l)
+                texto_oculto = ocultar(letras_ja_digitadas, palavra_secreta)
+                print('A letra "{}" ocorre na palavra secreta! {}'.format(l, texto_oculto))
+
+            print('---------')
+            print()
+
+
+        if chances > 0:
+            print('Parabéns! Você descobriu a palavra secreta:', palavra_secreta)
+        else:
+            print('Fim do jogo! Você não descobriu a palavra secreta:', palavra_secreta)    
+
+
+|br|
+
