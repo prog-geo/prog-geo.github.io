@@ -77,6 +77,13 @@ Na era do big data, os profissionais necessitam cada vez mais de conhecimentos e
 
 .. toctree::
     :maxdepth: 1
+    :caption: Provas
+
+    provas/2023
+
+
+.. toctree::
+    :maxdepth: 1
     :caption: Informações Gerais:
 
     licenca

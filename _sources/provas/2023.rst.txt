@@ -1,0 +1,117 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _cap_prova_2023:
+
+Avaliação 2023
+==============
+
+
+**Questão 1.** O índice espectral conhecido por **Vegetation Condition Index** ou **VCI** pode ser calculado pela expressão apresentada na :eq:`eq:prova:2023:vci`:
+
+
+.. math::
+    :label: eq:prova:2023:vci
+
+    VCI_i = 100 \times \frac{NDVI_i - NDVI_{min}}{NDVI_{max} - NDVI_{min}} 
+
+
+Considere a seguinte série temporal do NDVI para uma dada localização da superfície terrestre:
+
+
+.. code-block:: python
+
+    serie_ndvi = (
+        0.1208, 0.1323, 0.1635, 0.1792, 0.1674, 0.1727, 0.2587, 0.4313, 0.6086, 0.6791,
+        0.5961, 0.4149, 0.2411, 0.1455, 0.1258, 0.1369, 0.1428, 0.1390, 0.1360, 0.1377,
+        0.1387, 0.1358, 0.1325, 0.1328, 0.1362, 0.1433, 0.1637, 0.2139, 0.3041, 0.4231,
+        0.5361, 0.5982, 0.5784, 0.4812, 0.3492, 0.2403, 0.1903, 0.1908, 0.2025, 0.1926,
+        0.1601, 0.1279, 0.1165, 0.1326, 0.1821, 0.2797, 0.4303, 0.6003, 0.7243, 0.7582,
+        0.7267, 0.7031, 0.7277, 0.7537, 0.6880, 0.4997, 0.2766, 0.1590, 0.2075, 0.3424,
+        0.4198, 0.3667, 0.2364, 0.1362, 0.1156, 0.1359, 0.1381, 0.1154, 0.1056, 0.1268,
+        0.1494, 0.1463, 0.1541, 0.2529, 0.4697, 0.7123, 0.8261, 0.7324, 0.5110, 0.3354,
+        0.3195, 0.4254, 0.5172, 0.4972, 0.3863, 0.2800, 0.2425, 0.2541, 0.2554, 0.2237,
+        0.1945, 0.2123, 0.2761, 0.3443, 0.3887, 0.4290, 0.5063, 0.6248, 0.7326, 0.7653
+    )
+
+
+Pede-se:
+
+
+**a)** Crie uma função para computar o VCI.
+
+
+**b)** Crie uma função para calcular os valores máximo e mínimo do NDVI dada uma série como a mostrada acima.
+
+
+**c)** Calcule o NDVI médio utilizando um laço do tipo ``for``.
+
+
+**d)** Calcule o valor do VCI para :math:`20 \le i \le 25`, chamando a função criada no item (a) e escreva para cada valor calculado se ele encontra-se acima ou abaixo da média calculada no item (c).
+
+
+.. tip::
+
+    Detalhes sobre o índice VCI pode ser consultado em :cite:`kogan:1995` e :cite:`kogan:1997`.
+
+
+-----
+
+
+**Questão 2.** Um recorte de uma imagem, de 01 banda, 10 linhas e 10 colunas, está armazenado como uma tupla de tuplas:
+
+
+.. code-block:: python
+
+    raster = (
+        (0.58, 0.29, 0.08, 0.58, 0.42, 0.30, 0.00, 0.06, 0.36, 0.39), 
+        (0.62, 0.64, 0.12, 0.67, 0.23, 0.57, 0.23, 0.21, 0.19, 0.27), 
+        (0.54, 0.57, 0.51, 0.22, 0.32, 0.31, 0.19, 0.35, 0.85, 0.78),
+        (0.51, 0.22, 0.63, 0.52, 0.45, 0.57, 0.01, 0.29, 0.70, 0.96),
+        (0.56, 0.48, 0.80, 0.77, 0.29, 0.55, 0.85, 0.62, 0.20, 0.41),
+        (0.52, 0.50, 0.87, 0.83, 0.64, 0.20, 0.93, 0.69, 0.48, 0.55),
+        (0.16, 0.02, 0.48, 0.40, 0.86, 0.75, 0.16, 0.29, 0.00, 0.50),
+        (0.26, 0.03, 0.35, 0.67, 0.92, 0.77, 0.63, 0.12, 0.40, 0.51),
+        (0.63, 0.65, 0.31, 0.32, 0.10, 0.16, 0.22, 0.33, 0.10, 0.42),
+        (0.30, 0.05, 0.41, 0.49, 0.03, 0.06, 0.67, 0.12, 0.10, 0.41)
+    )
+
+
+Neste exercício você deve percorrer a imagem, reamostrando para 05 linhas e 05 colunas, e imprimindo os pixels de acordo com a seguinte regra:
+
+.. rst-class:: open
+
+- :math:`pixel > 0.7`, imprimir ``'x'``.
+
+- :math:`pixel \le 0.7`, imprimir ``'o'``.
+
+
+.. note::
+
+    Para o resultado da impressão ficar de acordo com as linhas e colunas, você pode utilizar um parâmetro na função `print`:
+    
+    
+    .. code-block:: python
+
+        print('x', end = ' ') # para imprimir 'x' sem pular a linha
+        
+        print('o', end = ' ') # para imprimir 'o' sem pular a linha
+
+
+-----
+
+
+**Questão 3.** O formato *ESRI Shapefile* é composto de pelo menos 03 arquivos, todos com o mesmo nome, e diferentes extensões (``.shp``, ``.dbf``, ``.shx``). Crie uma função ``get_shapefile(filename)``, que receba como entrada um nome de arquivo em formato string, verifique se o mesmo possui a extensão ``.shp``, e retorne uma lista de 03 arquivos, mantendo o nome, mas alterando a extensão para as 03 indicadas (``.shp``, ``.dbf``, ``.shx``).
+
+
+Exemplos:
+
+.. rst-class:: open
+
+- ``get_shapefile('teste.shp') -> ('teste.shp', 'teste.dbf', 'teste.shx')``
+
+- ``get_shapefile('teste.tif') -> ()``
+
+

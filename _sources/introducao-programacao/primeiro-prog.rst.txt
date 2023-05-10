@@ -96,7 +96,7 @@ Computando NDVI
 ---------------
 
 
-O índice de vegetação por diferença normalizada conhecido como **Normalized Difference Vegetation Index** (**NDVI**) pode ser computado usando a reflectância das bandas do vermelho (*rde) e infravermelho próximo (*nir*), como mostrado na :eq:`eq:introducao-programacao:primeiro-prog:ndvi`:
+O índice de vegetação por diferença normalizada conhecido como **Normalized Difference Vegetation Index** (**NDVI**) pode ser computado usando a reflectância das bandas do vermelho (*red*) e infravermelho próximo (*nir*), como mostrado na :eq:`eq:introducao-programacao:primeiro-prog:ndvi`:
 
 .. math::
     :label: eq:introducao-programacao:primeiro-prog:ndvi
