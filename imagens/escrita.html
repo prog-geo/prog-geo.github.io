@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="pt-BR" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4.4. Escrita em arquivos de Imagens &mdash; SER-347/CAP-419</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/table_styling.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/prog-geo.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://prog-geo.github.io/imagens/escrita.html" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Buscar" href="../search.html" />
+    <link rel="next" title="5. Manipulação de Dados Vetoriais" href="../vetorial.html" />
+    <link rel="prev" title="4.3. Visualização de Imagens" href="visualizacao.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SER-347/CAP-419
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Pesquisar documentos" aria-label="Pesquisar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegação">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introdução à Programação com Dados Geoespaciais</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Visão Geral do Curso:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../visao-geral.html">Visão Geral do Curso</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Aulas:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../instalacao.html">1. Instalando e Configurando o Ambiente de Programação</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introducao-programacao/index.html">2. Introdução à Programação com a Linguagem Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jupyter.html">3. Jupyter</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../imagens.html">4. Imagens - Processamento e Visualização</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gdal.html">4.1. GDAL - <strong>G</strong>eospatial <strong>D</strong>ata <strong>A</strong>bstraction <strong>L</strong>ibrary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html">4.2. NumPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualizacao.html">4.3. Visualização de Imagens</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.4. Escrita em arquivos de Imagens</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#visualizacao-do-resultado">4.4.1. Visualização do resultado</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../vetorial.html">5. Manipulação de Dados Vetoriais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variados.html">6. Tópicos Variados</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Referências Bibliográficas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../referencias.html">Referências Bibliográficas</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Listas de Exercícios</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../listas/index.html">Listas de Exercícios</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../projetos/2023/index.html">Turma 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projetos/2022/index.html">Turma 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projetos/2021/index.html">Turma 2021</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Informações Gerais:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../licenca.html">Licença</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Agradecimentos:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../agradecimentos.html">Agradecimentos</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Menu de navegação móvel"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SER-347/CAP-419</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Navegação da página">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../imagens.html"><span class="section-number">4. </span>Imagens - Processamento e Visualização</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">4.4. </span>Escrita em arquivos de Imagens</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Navegação sequencial da página">
+        <a href="visualizacao.html" class="btn btn-neutral float-left" title="4.3. Visualização de Imagens" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="../vetorial.html" class="btn btn-neutral float-right" title="5. Manipulação de Dados Vetoriais" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="escrita-em-arquivos-de-imagens">
+<span id="sec-imagens-escrita"></span><h1><span class="section-number">4.4. </span>Escrita em arquivos de Imagens<a class="headerlink" href="#escrita-em-arquivos-de-imagens" title="Link permanente para este cabeçalho"></a></h1>
+<p>Uma forma de escrever em arquivos de imagens é por meio da abertura de um arquivo de referência, geração de matrizes das bandas com alterações nos dados originais, e salvamento em um novo arquivo. Veja a sequência de passos:
+- abrir dataset
+- obter bandas individuais
+- acessar array de pixels (formato NumPy)
+- alterar os array de pixels
+- enviar para os objetos GDAL
+- atualizar metadados das imagens
+- salvar as alterações no arquivo</p>
+<p>O exemplo a seguir abre a imagem de referência (com 5 bandas), aplica o contraste nas 3 bandas visíveis, e salva um novo arquivo contendo somente 3 bandas, em ordem diferente (RGB).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># importar a biblioteca gdal e a matplotlib</span>
+<span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">gdal</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># informar o uso de exceções</span>
+<span class="n">gdal</span><span class="o">.</span><span class="n">UseExceptions</span><span class="p">()</span>
+
+      <span class="c1"># abrir o dataset da imagem RapidEye, com 5 bandas</span>
+      <span class="c1"># (ao usar o colab, lembre-se de fazer o upload na aba de arquivos)</span>
+      <span class="n">dataset</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="s2">&quot;crop_rapideye.tif&quot;</span><span class="p">,</span> <span class="n">gdal</span><span class="o">.</span><span class="n">GA_ReadOnly</span><span class="p">)</span>
+
+      <span class="c1"># obter os objetos com as informações das bandas</span>
+      <span class="n">band_blue</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+      <span class="n">band_green</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+      <span class="n">band_red</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+      <span class="n">band_rededge</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+      <span class="n">band_nir</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+      <span class="c1"># obter as matrizes de pixels de cada banda</span>
+      <span class="n">array_blue</span> <span class="o">=</span> <span class="n">band_blue</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()</span>
+      <span class="n">array_green</span> <span class="o">=</span> <span class="n">band_green</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()</span>
+      <span class="n">array_red</span> <span class="o">=</span> <span class="n">band_red</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()</span>
+      <span class="n">array_rededge</span> <span class="o">=</span> <span class="n">band_rededge</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()</span>
+      <span class="n">array_nir</span> <span class="o">=</span> <span class="n">band_nir</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()</span>
+
+<span class="c1"># aqui já se pode fechar a imagem original</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="c1"># realizar alterações nas matrizes, lembrando de observar o</span>
+<span class="c1"># tipo de dados original, de modo a manter os dados nos limites adequados</span>
+<span class="c1"># definir um valor de ganho e aplicar nas bandas do visível</span>
+<span class="n">gain</span> <span class="o">=</span> <span class="mf">2.5</span>
+<span class="n">array_blue_gain</span> <span class="o">=</span> <span class="n">array_blue</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="o">*</span> <span class="n">gain</span>
+<span class="n">array_green_gain</span> <span class="o">=</span> <span class="n">array_green</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="o">*</span> <span class="n">gain</span>
+<span class="n">array_red_gain</span> <span class="o">=</span> <span class="n">array_red</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="o">*</span> <span class="n">gain</span>
+
+<span class="c1"># verificar valores fora do limite</span>
+<span class="n">limit</span> <span class="o">=</span> <span class="mi">255</span>
+<span class="n">array_blue_gain</span><span class="p">[</span><span class="n">array_blue_gain</span> <span class="o">&gt;</span> <span class="n">limit</span><span class="p">]</span> <span class="o">=</span> <span class="n">limit</span>
+<span class="n">array_green_gain</span><span class="p">[</span><span class="n">array_green_gain</span> <span class="o">&gt;</span> <span class="n">limit</span><span class="p">]</span> <span class="o">=</span> <span class="n">limit</span>
+<span class="n">array_red_gain</span><span class="p">[</span><span class="n">array_red_gain</span> <span class="o">&gt;</span> <span class="n">limit</span><span class="p">]</span> <span class="o">=</span> <span class="n">limit</span>
+
+<span class="c1"># definir driver, neste caso GeoTIFF</span>
+<span class="n">driver</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">GetDriverByName</span><span class="p">(</span><span class="s1">&#39;GTiff&#39;</span><span class="p">)</span>
+
+<span class="c1"># obter metadados da imagem original, e alterar o número de bandas</span>
+<span class="n">number_of_lines</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">RasterYSize</span>
+<span class="n">number_of_columns</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">RasterXSize</span>
+<span class="n">number_of_bands</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1"># dataset.RasterCount</span>
+<span class="n">data_type</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">DataType</span>
+
+<span class="c1"># criar novo dataset</span>
+<span class="n">dataset_new</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">Create</span><span class="p">(</span><span class="s2">&quot;crop_rapideye_contrastRGB.tif&quot;</span><span class="p">,</span>
+                            <span class="n">number_of_columns</span><span class="p">,</span>
+                            <span class="n">number_of_lines</span><span class="p">,</span>
+                            <span class="n">number_of_bands</span><span class="p">,</span>
+                            <span class="n">data_type</span><span class="p">)</span>
+
+<span class="c1"># copiar informações espaciais da banda já existente</span>
+<span class="n">dataset_new</span><span class="o">.</span><span class="n">SetGeoTransform</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">GetGeoTransform</span><span class="p">())</span>
+<span class="c1"># copiar informações de projeção</span>
+<span class="n">dataset_new</span><span class="o">.</span><span class="n">SetProjection</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">GetProjectionRef</span><span class="p">())</span>
+<span class="c1"># escrever dados da matriz_contraste na banda</span>
+<span class="n">dataset_new</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">WriteArray</span><span class="p">(</span><span class="n">array_red_gain</span><span class="p">)</span>
+<span class="n">dataset_new</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">WriteArray</span><span class="p">(</span><span class="n">array_green_gain</span><span class="p">)</span>
+<span class="n">dataset_new</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">WriteArray</span><span class="p">(</span><span class="n">array_blue_gain</span><span class="p">)</span>
+<span class="c1"># salvar valores</span>
+<span class="n">dataset_new</span><span class="o">.</span><span class="n">FlushCache</span><span class="p">()</span>
+<span class="c1"># fechar o novo dataset</span>
+<span class="n">dataset_new</span> <span class="o">=</span> <span class="kc">None</span>
+</pre></div>
+</div>
+<section id="visualizacao-do-resultado">
+<h2><span class="section-number">4.4.1. </span>Visualização do resultado<a class="headerlink" href="#visualizacao-do-resultado" title="Link permanente para este cabeçalho"></a></h2>
+<p>Para visualizar a composição colorida, podemos reabrir o arquivo (nesse caso já organizado em RGB nas bandas 1, 2 e 3).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="s2">&quot;crop_rapideye_contrastRGB.tif&quot;</span><span class="p">,</span> <span class="n">gdal</span><span class="o">.</span><span class="n">GA_ReadOnly</span><span class="p">)</span>
+
+      <span class="c1"># obter os objetos com as informações das bandas</span>
+      <span class="n">band_red</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+      <span class="n">band_green</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+      <span class="n">band_blue</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+      <span class="c1"># obter as matrizes de pixels de cada banda</span>
+      <span class="n">array_red</span> <span class="o">=</span> <span class="n">band_red</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()</span>
+      <span class="n">array_green</span> <span class="o">=</span> <span class="n">band_green</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()</span>
+      <span class="n">array_blue</span> <span class="o">=</span> <span class="n">band_blue</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()</span>
+
+      <span class="c1"># definimos os números de linhas/colunas/bandas</span>
+<span class="n">number_of_lines</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">RasterYSize</span>
+<span class="n">number_of_columns</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">RasterXSize</span>
+
+      <span class="c1"># isso criamos uma matriz com 3 dimensões</span>
+      <span class="c1"># (3 bandas x linhas x colunas)</span>
+      <span class="n">array_rgb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">number_of_lines</span><span class="p">,</span> <span class="n">number_of_columns</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+
+      <span class="c1"># veja que, para visualizar corretamente,</span>
+      <span class="c1"># precisaremos dividir as matrizes pelo</span>
+      <span class="c1"># maior valor, para obtermos uma matriz</span>
+      <span class="c1"># com valores normalizados entre 0.0 e 1.0</span>
+      <span class="n">array_rgb</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">array_red</span> <span class="o">/</span> <span class="n">array_red</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+      <span class="n">array_rgb</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">array_green</span> <span class="o">/</span> <span class="n">array_green</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+      <span class="n">array_rgb</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">array_blue</span> <span class="o">/</span> <span class="n">array_blue</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+      <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+      <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">array_rgb</span><span class="p">)</span>
+      <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Composição colorida gerada em novo arquivo&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Rodapé">
+        <a href="visualizacao.html" class="btn btn-neutral float-left" title="4.3. Visualização de Imagens" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="../vetorial.html" class="btn btn-neutral float-right" title="5. Manipulação de Dados Vetoriais" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2022, Gilberto Queiroz and Thales Körting.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+    <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165908761-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-165908761-1', {
+          'anonymize_ip': false,
+      });
+    </script> 
+
+</body>
+</html>

@@ -97,9 +97,9 @@ Para alterar o formato do array ``a`` para que ele se torne uma matriz :math:`3 
     
     >>> a = a.reshape(3, 5)
     >>> a
-    array([[ 0,  1,  2,  3,  4],
-           [ 5,  6,  7,  8,  9],
-           [10, 11, 12, 13, 14]])
+    array([[1,  2,  3,  4,  5,],
+           [6,  7,  8,  9, 10,],
+           [11, 12, 13, 14, 15]])
 
 Informações sobre a Estrutura de uma matriz
 -------------------------------------------

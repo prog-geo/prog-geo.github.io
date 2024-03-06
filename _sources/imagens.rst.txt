@@ -65,3 +65,4 @@ Outra maneira consiste em armazenar diversas bandas no mesmo arquivo. Neste caso
     ./imagens/gdal
     ./imagens/numpy
     ./imagens/visualizacao
+    ./imagens/escrita

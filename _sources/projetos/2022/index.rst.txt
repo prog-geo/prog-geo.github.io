@@ -6,3 +6,10 @@ Turma 2022
     :titlesonly:
 
     ./p01-spectral
+    
+    - Comparação de resultados com diferentes resoluções
+    - Amostras de classificação por meio de crescimento de regiões
+    - Componente jupyter para visualização de séries temporais combinadas com recortes (plotly)
+    - Contraste com base em regras dos índices espectrais
+    - Cálculo de métricas espaciais, espectrais e temporais a partir de polígonos
+    - Criação de patches de imagens para treinamento de classificadores

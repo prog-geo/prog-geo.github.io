@@ -36,7 +36,7 @@ O comando acima deve produzir algo como::
     bash ~/Downloads/Anaconda3-2020.11-Linux-x86_64.sh
 
 
-O comando acima irá fazer algumas perguntas. Colocamos abaixo algumas sugestôes, que você deverá substituir como desejado::
+O comando acima irá fazer algumas perguntas. Colocamos abaixo algumas sugestões, que você deverá substituir como desejado::
 
     Do you accept the license terms? [yes|no]
     [no] >>> yes

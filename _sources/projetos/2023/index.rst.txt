@@ -11,3 +11,12 @@ Turma 2023
     ./p04-segmentacao
     ./p05-nuvens
     
+    
+Observações
+-----------
+
+
+**1.** Os scripts deverão conter documentação de uso.
+
+**2.** O relatório produzido deverá estar no formato do evento `GEOINFO <http://www.geoinfo.info/>`_.
+
