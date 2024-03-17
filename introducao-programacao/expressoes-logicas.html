@@ -147,13 +147,13 @@
              
   <section id="expressoes-logicas">
 <span id="sec-introducao-programacao-expressoes-logicas"></span><h1><span class="section-number">2.11. </span>Expressões Lógicas<a class="headerlink" href="#expressoes-logicas" title="Link permanente para este cabeçalho"></a></h1>
-<p><strong>Problema:</strong> Escreva um programa que pergunte ao usuário o valor de um ano qualquer e que o informe se o ano é ou não bissexto.</p>
+<p><strong>Problema 1:</strong> Escreva um programa que pergunte ao usuário o valor de um ano qualquer e que o informe se o ano é ou não bissexto.</p>
 <div class="admonition tip">
 <p class="admonition-title">Dica</p>
 <p><a class="reference external" href="https://pt.wikipedia.org/wiki/Ano_bissexto">Anos bissextos</a> ocorrem a cada quatro anos, exceto anos múltiplos de 100 que não são múltiplos de 400.</p>
 </div>
-<p><strong>Solução:</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># a função input permite ao usuário inserir um valor durante a execução</span>
+<details class="summary-solucao">
+<summary>Solução:</summary><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># a função input permite ao usuário inserir um valor durante a execução</span>
 <span class="n">ano</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ano: &quot;</span><span class="p">))</span>
 
 <span class="c1"># a expressão lógica a seguir verifica se um número é bissexto</span>
@@ -162,9 +162,105 @@
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;O ano&quot;</span><span class="p">,</span> <span class="n">ano</span><span class="p">,</span> <span class="s2">&quot;é bissexto?&quot;</span><span class="p">,</span> <span class="n">bissexto</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="admonition note">
+</details><div class="admonition note">
 <p class="admonition-title">Nota</p>
 <p>Saber se um ano é bissexto é importante no contexto de Sensoriamento Remoto, pois isso impacta nas datas de aquisição das imagens pelos satélites.</p>
+</div>
+<hr class="docutils" />
+<p><strong>Problema 2:</strong> Considerando os elementos geométricos e os casos numerados de 1 a 6 na <a class="reference internal" href="#fig-introducao-programacao-op-st-touches"><span class="std std-numref">Figura 2.11</span></a>, construa expressões lógicas que ajudem a responder às seguintes perguntas:</p>
+<ul class="open">
+<li><p>Os elementos geométricos dos casos 4 e 5 satisfazem o relacionamento espacial <code class="docutils literal notranslate"><span class="pre">Touches</span></code>?</p></li>
+<li><p>Todos os casos apresentados envolvendo elementos geométricos lineares (casos 1, 2 e 3) representam de fato exeplos de relacionamento espacial <code class="docutils literal notranslate"><span class="pre">Touches</span></code>?</p></li>
+</ul>
+<figure class="align-center" id="fig-introducao-programacao-op-st-touches">
+<a class="reference internal image-reference" href="../_images/op-st-touches.png"><img alt="A geometria A toca a geometria B?" src="../_images/op-st-touches.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 2.11 - </span><span class="caption-text">A geometria <code class="docutils literal notranslate"><span class="pre">A</span></code> toca a geometria <code class="docutils literal notranslate"><span class="pre">B</span></code>?</span><a class="headerlink" href="#fig-introducao-programacao-op-st-touches" title="Link Permanente para essa imagem"></a></p>
+</figcaption>
+</figure>
+<details class="summary-solucao">
+<summary>Solução:</summary><div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Para solução desse exercício, usaremos a biblioteca Python denominada <a class="reference external" href="https://shapely.readthedocs.io/en/latest/manual.html">Shapely</a>. Veremos mais detalhes sobre os tipos geométricos e essa biblioteca na <a class="reference internal" href="../vetorial/shapely.html#sec-vetorial-shapely"><span class="std std-numref">Seção 5.3</span></a>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Também iremos utilizar uma representação textual para os elementos geométricos conhecida por <strong>WKT</strong> ou <strong>Well-known text</strong> (<a class="reference internal" href="../vetorial/shapely.html#sec-vetorial-shapely"><span class="std std-numref">Seção 5.3</span></a>).</p>
+</div>
+<p>Vamos considerar a seguinte representação WKT para as geometrias:</p>
+<ul>
+<li><p>Caso 4:</p>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>POLYGON( ( 9 6, 9 8, 12 8, 12 6, 9 6 ) )
+POLYGON( ( 12 7, 15 9, 15 5, 12 7 ) )
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Caso 5:</p>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>POLYGON( ( 1 1, 1 3, 4 3, 4 1, 1 1 ) )
+POLYGON( ( 4 2, 4 4, 6 4, 6 2, 4 2 ) )
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<p>Para responder à primeira pergunta, podemos construir o seguinte trecho de código:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">shapely</span> <span class="kn">import</span> <span class="n">from_wkt</span>
+
+<span class="n">pol1</span> <span class="o">=</span> <span class="n">from_wkt</span><span class="p">(</span><span class="s1">&#39;POLYGON( ( 9 6, 9 8, 12 8, 12 6, 9 6 ) )&#39;</span><span class="p">)</span>
+
+<span class="n">pol2</span> <span class="o">=</span> <span class="n">from_wkt</span><span class="p">(</span><span class="s1">&#39;POLYGON( ( 12 7, 15 9, 15 5, 12 7 ) )&#39;</span><span class="p">)</span>
+
+<span class="n">pol3</span> <span class="o">=</span> <span class="n">from_wkt</span><span class="p">(</span><span class="s1">&#39;POLYGON( ( 1 1, 1 3, 4 3, 4 1, 1 1 ) )&#39;</span><span class="p">)</span>
+
+<span class="n">pol4</span> <span class="o">=</span> <span class="n">from_wkt</span><span class="p">(</span><span class="s1">&#39;POLYGON( ( 4 2, 4 4, 6 4, 6 2, 4 2 ) )&#39;</span><span class="p">)</span>
+
+<span class="n">caso4</span> <span class="o">=</span> <span class="n">pol1</span><span class="o">.</span><span class="n">touches</span><span class="p">(</span><span class="n">pol2</span><span class="p">)</span>
+
+<span class="n">caso5</span> <span class="o">=</span> <span class="n">pol3</span><span class="o">.</span><span class="n">touches</span><span class="p">(</span><span class="n">pol4</span><span class="p">)</span>
+
+<span class="n">resultado</span> <span class="o">=</span> <span class="n">caso4</span> <span class="ow">and</span> <span class="n">caso5</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">resultado</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Para responder a segunda pergunta, considere a seguinte representação WKT para as geometrias:</p>
+<ul>
+<li><p>Caso 1:</p>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>LINESTRING( 1 7, 1 9, 3 9 )
+LINESTRING( 1 9, 3 7 )
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Caso 2:</p>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>LINESTRING( 1 4, 2 6 )
+LINESTRING( 2 6, 3 4 )
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Caso 3:</p>
+<blockquote>
+<div><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>LINESTRING( 5 6, 5 8, 7 8 )
+LINESTRING( 6 6, 6 9 )
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</details><div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Suponha que o exercício anterior solicitasse a escrita de uma mensagem diferente na tela dependendo do resultado verdadeiro ou falso dos testes. Exemplo:</p>
+<ul class="simple">
+<li><p>Os casos 4 e 5 são exemplos do relacionamento espacial Touches</p></li>
+<li><p>Pelo menos um dos casos (4 ou 5) não representa o relacionamento espacial Touches</p></li>
+</ul>
+<p>Nesse caso, precisamos estruturar o programa dependendo de uma condição lógica. A próxima seção irá discutir uso das estruturas condicionais.</p>
 </div>
 </section>
 

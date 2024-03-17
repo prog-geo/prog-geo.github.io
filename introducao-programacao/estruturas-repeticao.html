@@ -153,11 +153,11 @@
              
   <section id="estruturas-de-repeticao">
 <span id="sec-introducao-programacao-estruturas-repeticao"></span><h1><span class="section-number">2.13. </span>Estruturas de Repetição<a class="headerlink" href="#estruturas-de-repeticao" title="Link permanente para este cabeçalho"></a></h1>
-<p id="sec-introducao-programacao-estruturas-repeticao-problema-1"><strong>Problema 1:</strong> Escreva um programa para converter temperaturas da escala Fahrenheit para a escala Celsius. A coluna <code class="docutils literal notranslate"><span class="pre">°F</span></code> na <a class="reference internal" href="#introd-prog-fig-tabela-temperaturas"><span class="std std-numref">Figura 2.14 -</span></a> contém a lista de valores a serem convertidos para a escala Celsius.</p>
+<p id="sec-introducao-programacao-estruturas-repeticao-problema-1"><strong>Problema 1:</strong> Escreva um programa para converter temperaturas da escala Fahrenheit para a escala Celsius. A coluna <code class="docutils literal notranslate"><span class="pre">°F</span></code> na <a class="reference internal" href="#introd-prog-fig-tabela-temperaturas"><span class="std std-numref">Figura 2.15 -</span></a> contém a lista de valores a serem convertidos para a escala Celsius.</p>
 <figure class="align-center align-default" id="introd-prog-fig-tabela-temperaturas">
 <a class="reference internal image-reference" href="../_images/tabela-temperaturas.png"><img alt="Tabela de equivalência de temperaturas entre as escalas Fahrenheit e Celsius" src="../_images/tabela-temperaturas.png" style="width: 60%;" /></a>
 <figcaption>
-<p><span class="caption-number">Figura 2.14 - </span><span class="caption-text">Tabela de equivalência de temperaturas entre as escalas Fahrenheit e Celsius.</span><a class="headerlink" href="#introd-prog-fig-tabela-temperaturas" title="Link Permanente para essa imagem"></a></p>
+<p><span class="caption-number">Figura 2.15 - </span><span class="caption-text">Tabela de equivalência de temperaturas entre as escalas Fahrenheit e Celsius.</span><a class="headerlink" href="#introd-prog-fig-tabela-temperaturas" title="Link Permanente para essa imagem"></a></p>
 </figcaption>
 </figure>
 <p><strong>Desafio:</strong> Como implementar esse programa?</p>
@@ -218,11 +218,11 @@
 </section>
 <section id="lacos-do-tipo-for">
 <h2><span class="section-number">2.13.2. </span>Laços do tipo <code class="docutils literal notranslate"><span class="pre">for</span></code><a class="headerlink" href="#lacos-do-tipo-for" title="Link permanente para este cabeçalho"></a></h2>
-<p>Esse tipo de laço é muito útil quando estamos lidando com <strong>sequências</strong> (como strings, tuplas e listas) ou <strong>iteráveis</strong>. A <a class="reference internal" href="#introd-prog-fig-laco-for"><span class="std std-numref">Figura 2.15</span></a> mostra como funciona esse tipo de laço. Repare que temos uma variável de controle, <span class="math notranslate nohighlight">\(v\)</span>, que é associada aos elementos de uma sequência/iterável. Toda vez que é possível associar a variável <span class="math notranslate nohighlight">\(v\)</span> a um novo elemento da sequência/iterável, o fluxo de controle do programa é desviado para as instruções do bloco de comandos destacado em verde. Quando não há mais possibilidade de associar a variável <span class="math notranslate nohighlight">\(v\)</span> a um novo elemento da sequência/iterável, o controle é desviado para o conjunto de instruções do bloco destacado em amarelo.</p>
+<p>Esse tipo de laço é muito útil quando estamos lidando com <strong>sequências</strong> (como strings, tuplas e listas) ou <strong>iteráveis</strong>. A <a class="reference internal" href="#introd-prog-fig-laco-for"><span class="std std-numref">Figura 2.16</span></a> mostra como funciona esse tipo de laço. Repare que temos uma variável de controle, <span class="math notranslate nohighlight">\(v\)</span>, que é associada aos elementos de uma sequência/iterável. Toda vez que é possível associar a variável <span class="math notranslate nohighlight">\(v\)</span> a um novo elemento da sequência/iterável, o fluxo de controle do programa é desviado para as instruções do bloco de comandos destacado em verde. Quando não há mais possibilidade de associar a variável <span class="math notranslate nohighlight">\(v\)</span> a um novo elemento da sequência/iterável, o controle é desviado para o conjunto de instruções do bloco destacado em amarelo.</p>
 <figure class="align-center align-default" id="introd-prog-fig-laco-for">
 <a class="reference internal image-reference" href="../_images/laco-for.png"><img alt="Fluxograma dos laços do tipo for" src="../_images/laco-for.png" style="width: 50%;" /></a>
 <figcaption>
-<p><span class="caption-number">Figura 2.15 - </span><span class="caption-text">Fluxograma dos laços do tipo <code class="docutils literal notranslate"><span class="pre">for</span></code>.</span><a class="headerlink" href="#introd-prog-fig-laco-for" title="Link Permanente para essa imagem"></a></p>
+<p><span class="caption-number">Figura 2.16 - </span><span class="caption-text">Fluxograma dos laços do tipo <code class="docutils literal notranslate"><span class="pre">for</span></code>.</span><a class="headerlink" href="#introd-prog-fig-laco-for" title="Link Permanente para essa imagem"></a></p>
 </figcaption>
 </figure>
 <p>A sintaxe básica deste comando é a seguinte:</p>
@@ -270,11 +270,11 @@
 </section>
 <section id="lacos-do-tipo-while">
 <h2><span class="section-number">2.13.3. </span>Laços do tipo <code class="docutils literal notranslate"><span class="pre">while</span></code><a class="headerlink" href="#lacos-do-tipo-while" title="Link permanente para este cabeçalho"></a></h2>
-<p>Nesse tipo de laço, se a expressão lógica ou condição de repetição no início do laço for verdadeira, os comandos (ou instruções) dentro da estrutura de repetição são executados. Ao final da execução dos comandos, internos ao laço, o fluxo de controle do programa volta ao início do laço, para nova avaliação da expressão lógica. Se a expressão for satisfeita novamente (verdadeira), o corpo do laço é novamente executado, até que a repetição seja interrompida quando a expressão resultar em um valor falso. Esse funcionamento pode ser visto na <a class="reference internal" href="#introd-prog-fig-laco-while"><span class="std std-numref">Figura 2.16</span></a>.</p>
+<p>Nesse tipo de laço, se a expressão lógica ou condição de repetição no início do laço for verdadeira, os comandos (ou instruções) dentro da estrutura de repetição são executados. Ao final da execução dos comandos, internos ao laço, o fluxo de controle do programa volta ao início do laço, para nova avaliação da expressão lógica. Se a expressão for satisfeita novamente (verdadeira), o corpo do laço é novamente executado, até que a repetição seja interrompida quando a expressão resultar em um valor falso. Esse funcionamento pode ser visto na <a class="reference internal" href="#introd-prog-fig-laco-while"><span class="std std-numref">Figura 2.17</span></a>.</p>
 <figure class="align-center align-default" id="introd-prog-fig-laco-while">
 <a class="reference internal image-reference" href="../_images/laco-while.png"><img alt="Fluxograma dos laços do tipo while" src="../_images/laco-while.png" style="width: 50%;" /></a>
 <figcaption>
-<p><span class="caption-number">Figura 2.16 - </span><span class="caption-text">Fluxograma dos laços do tipo <code class="docutils literal notranslate"><span class="pre">while</span></code>.</span><a class="headerlink" href="#introd-prog-fig-laco-while" title="Link Permanente para essa imagem"></a></p>
+<p><span class="caption-number">Figura 2.17 - </span><span class="caption-text">Fluxograma dos laços do tipo <code class="docutils literal notranslate"><span class="pre">while</span></code>.</span><a class="headerlink" href="#introd-prog-fig-laco-while" title="Link Permanente para essa imagem"></a></p>
 </figcaption>
 </figure>
 <p>A sintaxe básica deste comando é a seguine:</p>

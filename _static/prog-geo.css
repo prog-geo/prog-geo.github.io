@@ -107,11 +107,18 @@ p.centered-paragraph {
     text-align: center;
 }
 
+details.summary-solucao[open] > summary {
+    font-weight: bold;
+    padding-bottom: 1rem;
+}
+
 details.summary-solucao > summary {
     font-weight: bold;
+    padding-bottom: 0rem;
 }
 
 details.summary-solucao {
     background-color: #f3f6f6;
     padding: 1rem;
+    margin-bottom: 1rem;
 }
