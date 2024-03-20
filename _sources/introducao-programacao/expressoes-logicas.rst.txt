@@ -46,9 +46,9 @@ Expressões Lógicas
 
 .. rst-class:: open
 
-- Os elementos geométricos dos casos 4 e 5 satisfazem o relacionamento espacial ``Touches``?
+#. Os elementos geométricos dos casos 4 e 5 satisfazem o relacionamento espacial ``Touches``?
 
-- Todos os casos apresentados envolvendo elementos geométricos lineares (casos 1, 2 e 3) representam de fato exeplos de relacionamento espacial ``Touches``?
+#. Todos os casos apresentados envolvendo elementos geométricos lineares (casos 1, 2 e 3) representam de fato exemplos de relacionamento espacial ``Touches``?
 
 
 .. figure:: ../img/introducao-programacao/op-st-touches.png
@@ -61,12 +61,91 @@ Expressões Lógicas
     A geometria ``A`` toca a geometria ``B``?
 
 
+.. tip::
+
+    Para solução desse problema, será utiliza o pacote Python denominado `Shapely <https://shapely.readthedocs.io/en/latest/manual.html>`__. Esse pacote não faz parte da biblioteca padrão do Python, sendo uma contribuição de terceiros. Mais detalhes sobre os tipos geométricos e a *Shapely* serão vistos mais adiante no curso, nas Seções :numref:`%s <sec_vetorial_tipos_geometricos>` e :numref:`%s <sec_vetorial_shapely>`.
+
+
+    Abaixo é apresentado como instalar a *Shapely* de acordo com os instaladores de pacotes Python conhecicos como ``pip`` e ``conda``.
+
+
+    .. tabs::
+
+        .. tab:: pip
+
+            O `pip <https://pip.pypa.io/en/stable/>`__ é um dos principais instaladores de pacotes do Python. A comunidade de software livre costuma hospedar os pacotes em um repositório central denominado `PyPI <https://pypi.org/>`__ (*Python Package Index*). O ``pip`` por padrão, consegue instalar pacotes disponíveis nesse repositório.
+
+
+            Supondo que você esteja usando a distribuição padrão do Python, disponível em https://www.python.org (*Python Software Foundation*), vamos criar um ambiente virtual para isolar as bibliotecas que serão utilizadas ao longo do curso. O módulo `venv <https://docs.python.org/3/library/venv.html>`__, da biblioteca padrão do Python, permite criar esse tipo de ambiente virtual para isolar os pacotes (ou bibliotecs) que serão instalados. Para criar um ambiente virtual denominado ``venv``, faça::
+
+                python3 -m venv venv
+
+
+            Após a criação do ambiente, é necessário ativá-lo::
+
+                source venv/bin/activate
+
+
+            Aproveite para atualizar alguns pacotes básicos desse ambiente::
+
+                pip install --upgrade pip setuptools wheel
+
+
+            Por último, instale a biblioteca *Shapely*::
+
+                pip install shapely
+
+
+            Assegure-se que esse pacote tenha sido instalado e verifique sua versão::
+
+                python -c 'import shapely; print(shapely.__version__)'
+
+
+            Uma saída como a mostrada abaixo deve ser apresentada:
+
+
+            .. code-block:: text
+
+                2.0.3
+
+
+        .. tab:: conda
+
+
+            A distribuição Python da `Anaconda <https://www.anaconda.com/>`__  acompanha um instalador e gerenciador de ambientes chamado `conda <https://docs.conda.io/en/latest/>`__. Vamos começar criando um ambiente denominado ``prog-geo`` com a versão 3.11 do Python::
+
+                conda create --name prog-geo python=3.11
+
+
+            O novo ambiente deve aparecer na lista de ambientes disponíveis::
+
+                conda env list
+
+
+            Em seguida, ative esse ambiente::
+
+                conda activate prog-geo
+
+
+            Instale o pacote *Shapely* a partir do canal *conda-forge*::
+
+                conda install --channel conda-forge shapely
+
+
+            Assegure-se que esse pacote tenha sido instalado e verifique sua versão::
+
+                python -c 'import shapely; print(shapely.__version__)'
+
+
+            Uma saída como a mostrada abaixo deve ser apresentada:
+
+
+            .. code-block:: text
+
+                2.0.1
+
+
 .. collapse:: Solução:
-
-
-    .. note::
-
-        Para solução desse exercício, usaremos a biblioteca Python denominada `Shapely <https://shapely.readthedocs.io/en/latest/manual.html>`__. Veremos mais detalhes sobre os tipos geométricos e essa biblioteca na :numref:`Seção %s <sec_vetorial_shapely>`.
 
 
     .. note::
@@ -93,6 +172,7 @@ Expressões Lógicas
 
 
     Para responder à primeira pergunta, podemos construir o seguinte trecho de código:
+
 
     .. code-block:: python
 
@@ -141,12 +221,38 @@ Expressões Lógicas
             LINESTRING( 6 6, 6 9 )
 
 
+    O trecho de código abaixo mostra como construir as geometrias lineares e realizar os testes topológicos:
+
+
+     .. code-block:: python
+
+        from shapely import from_wkt
+
+        l1 = from_wkt('LINESTRING( 1 7, 1 9, 3 9 )')
+        l2 = from_wkt('LINESTRING( 1 9, 3 7 )')
+
+        caso1 = l1.touches(l2)
+
+        l3 = from_wkt('LINESTRING( 1 4, 2 6 )')
+        l4 = from_wkt('LINESTRING( 2 6, 3 4 )')
+
+        caso2 = l3.touches(l4)
+
+        l5 = from_wkt('LINESTRING( 5 6, 5 8, 7 8 )')
+        l6 = from_wkt('LINESTRING( 6 6, 6 9 )')
+
+        caso3 = l5.touches(l6)
+
+        print(caso1 and caso2 and caso3)
+
+
+
 .. note::
 
     Suponha que o exercício anterior solicitasse a escrita de uma mensagem diferente na tela dependendo do resultado verdadeiro ou falso dos testes. Exemplo:
 
-    - Os casos 4 e 5 são exemplos do relacionamento espacial Touches
-    - Pelo menos um dos casos (4 ou 5) não representa o relacionamento espacial Touches
+    - Os casos 1, 2 e 3 são exemplos do relacionamento espacial Touches
+    - Pelo menos um dos casos (1 ou 2 ou 3) não representa o relacionamento espacial Touches
 
 
-    Nesse caso, precisamos estruturar o programa dependendo de uma condição lógica. A próxima seção irá discutir uso das estruturas condicionais.
+    Nesse caso, precisamos estruturar o programa dependendo de uma condição lógica. A próxima seção irá discutir o uso das estruturas condicionais para possibilitar controlar o fluxo de execução de programas.

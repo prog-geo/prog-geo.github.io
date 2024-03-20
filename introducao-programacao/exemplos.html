@@ -201,7 +201,53 @@
 </pre></div>
 </div>
 </details><hr class="docutils" />
-<p id="sec-introducao-programacao-exemplos-ex03"><strong>Exemplo 03.</strong> Escreva um programa em Python que leia um número inteiro <span class="math notranslate nohighlight">\(n\)</span> entre <span class="math notranslate nohighlight">\(1\)</span> e <span class="math notranslate nohighlight">\(10\)</span> e compute o fatorial desse número. Lembre-se que o fatorial de um número <span class="math notranslate nohighlight">\(n\)</span> é definindo como:</p>
+<p id="sec-introducao-programacao-exemplos-op-touches"><strong>Exemplo 03.</strong> Dada a <a class="reference internal" href="#fig-introducao-programacao-exemplos-op-st-touches"><span class="std std-numref">Figura 2.26</span></a> abaixo, faça um programa que avalie se as geometrias dos casos 1, 2 e 3 satisfazem o relacionamento espacial <code class="docutils literal notranslate"><span class="pre">TOUCHES</span></code>. Se os três casos satisfazerem esse relacionamento espacial, então, escreva a mensagem <code class="docutils literal notranslate"><span class="pre">Três</span> <span class="pre">casos</span> <span class="pre">do</span> <span class="pre">relacionamentos</span> <span class="pre">touches!</span></code>, caso contrário, escreva o resultado de cada um deles com mensagens como: <code class="docutils literal notranslate"><span class="pre">Caso</span> <span class="pre">1</span> <span class="pre">satisfaz!</span></code> ou <code class="docutils literal notranslate"><span class="pre">Caso</span> <span class="pre">1</span> <span class="pre">não</span> <span class="pre">satisfaz!</span></code>.</p>
+<figure class="align-center" id="fig-introducao-programacao-exemplos-op-st-touches">
+<a class="reference internal image-reference" href="../_images/op-st-touches.png"><img alt="A geometria A toca a geometria B?" src="../_images/op-st-touches.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 2.26 - </span><span class="caption-text">A geometria <code class="docutils literal notranslate"><span class="pre">A</span></code> toca a geometria <code class="docutils literal notranslate"><span class="pre">B</span></code>?</span><a class="headerlink" href="#fig-introducao-programacao-exemplos-op-st-touches" title="Link Permanente para essa imagem"></a></p>
+</figcaption>
+</figure>
+<details class="summary-solucao">
+<summary>Solução:</summary><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">shapely</span> <span class="kn">import</span> <span class="n">from_wkt</span>
+
+<span class="n">l1</span> <span class="o">=</span> <span class="n">from_wkt</span><span class="p">(</span><span class="s1">&#39;LINESTRING( 1 7, 1 9, 3 9 )&#39;</span><span class="p">)</span>
+<span class="n">l2</span> <span class="o">=</span> <span class="n">from_wkt</span><span class="p">(</span><span class="s1">&#39;LINESTRING( 1 9, 3 7 )&#39;</span><span class="p">)</span>
+
+<span class="n">caso1</span> <span class="o">=</span> <span class="n">l1</span><span class="o">.</span><span class="n">touches</span><span class="p">(</span><span class="n">l2</span><span class="p">)</span>
+
+<span class="n">l3</span> <span class="o">=</span> <span class="n">from_wkt</span><span class="p">(</span><span class="s1">&#39;LINESTRING( 1 4, 2 6 )&#39;</span><span class="p">)</span>
+<span class="n">l4</span> <span class="o">=</span> <span class="n">from_wkt</span><span class="p">(</span><span class="s1">&#39;LINESTRING( 2 6, 3 4 )&#39;</span><span class="p">)</span>
+
+<span class="n">caso2</span> <span class="o">=</span> <span class="n">l3</span><span class="o">.</span><span class="n">touches</span><span class="p">(</span><span class="n">l4</span><span class="p">)</span>
+
+<span class="n">l5</span> <span class="o">=</span> <span class="n">from_wkt</span><span class="p">(</span><span class="s1">&#39;LINESTRING( 5 6, 5 8, 7 8 )&#39;</span><span class="p">)</span>
+<span class="n">l6</span> <span class="o">=</span> <span class="n">from_wkt</span><span class="p">(</span><span class="s1">&#39;LINESTRING( 6 6, 6 9 )&#39;</span><span class="p">)</span>
+
+<span class="n">caso3</span> <span class="o">=</span> <span class="n">l5</span><span class="o">.</span><span class="n">touches</span><span class="p">(</span><span class="n">l6</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="n">caso1</span> <span class="ow">and</span> <span class="n">caso2</span> <span class="ow">and</span> <span class="n">caso3</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Três casos do relacionamentos touches!&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">caso1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Caso 1 satisfaz!&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Caso 1 não satisfaz!&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">caso2</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Caso 2 satisfaz!&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Caso 2 não satisfaz!&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">caso3</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Caso 3 satisfaz!&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Caso 3 não satisfaz!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</details><hr class="docutils" />
+<p id="sec-introducao-programacao-exemplos-ex03"><strong>Exemplo 04.</strong> Escreva um programa em Python que leia um número inteiro <span class="math notranslate nohighlight">\(n\)</span> entre <span class="math notranslate nohighlight">\(1\)</span> e <span class="math notranslate nohighlight">\(10\)</span> e compute o fatorial desse número. Lembre-se que o fatorial de um número <span class="math notranslate nohighlight">\(n\)</span> é definindo como:</p>
 <div class="math notranslate nohighlight" id="equation-introd-prog-math-fat-produtorio">
 <span class="eqno">(2.7)<a class="headerlink" href="#equation-introd-prog-math-fat-produtorio" title="Link permanente para essa equação"></a></span>\[n! = \prod_{i=1}^{n} i\]</div>
 <p>ou,</p>
@@ -230,7 +276,7 @@ fat(n) = n \times fat(n - 1), &amp; \text{se $n &gt; 1$}
 </pre></div>
 </div>
 </details><hr class="docutils" />
-<p id="sec-introducao-programacao-exemplos-ex04"><strong>Exemplo 04.</strong> A sequência de Fibonacci é uma sequência de números inteiros, começando por <span class="math notranslate nohighlight">\(0\)</span> e <span class="math notranslate nohighlight">\(1\)</span>, onde cada termo subsequente corresponde a soma dos dois anteriores:</p>
+<p id="sec-introducao-programacao-exemplos-ex04"><strong>Exemplo 05.</strong> A sequência de Fibonacci é uma sequência de números inteiros, começando por <span class="math notranslate nohighlight">\(0\)</span> e <span class="math notranslate nohighlight">\(1\)</span>, onde cada termo subsequente corresponde a soma dos dois anteriores:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="o">...</span>
 </pre></div>
 </div>
@@ -268,7 +314,7 @@ fat(n) = n \times fat(n - 1), &amp; \text{se $n &gt; 1$}
 </pre></div>
 </div>
 </details><hr class="docutils" />
-<p id="sec-introducao-programacao-exemplos-ex05"><strong>Exemplo 05.</strong> Escreva um programa em Python que leia dois números, <span class="math notranslate nohighlight">\(x\)</span> e <span class="math notranslate nohighlight">\(y\)</span>, e calcule a função potência <span class="math notranslate nohighlight">\(x^y\)</span>, sem utilizar o operador <code class="docutils literal notranslate"><span class="pre">**</span></code> de Python ou alguma função da biblioteca padrão.</p>
+<p id="sec-introducao-programacao-exemplos-ex05"><strong>Exemplo 06.</strong> Escreva um programa em Python que leia dois números, <span class="math notranslate nohighlight">\(x\)</span> e <span class="math notranslate nohighlight">\(y\)</span>, e calcule a função potência <span class="math notranslate nohighlight">\(x^y\)</span>, sem utilizar o operador <code class="docutils literal notranslate"><span class="pre">**</span></code> de Python ou alguma função da biblioteca padrão.</p>
 <details class="summary-solucao">
 <summary>Solução:</summary><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite um número (X): &quot;</span><span class="p">))</span>
 <span class="n">y</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite um número (Y): &quot;</span><span class="p">))</span>
@@ -285,7 +331,7 @@ fat(n) = n \times fat(n - 1), &amp; \text{se $n &gt; 1$}
 </pre></div>
 </div>
 </details><hr class="docutils" />
-<p id="sec-introducao-programacao-exemplos-ex06"><strong>Exemplo 06.</strong> Escreva um programa em Python que verifique se um número é primo ou não.</p>
+<p id="sec-introducao-programacao-exemplos-ex06"><strong>Exemplo 07.</strong> Escreva um programa em Python que verifique se um número é primo ou não.</p>
 <details class="summary-solucao">
 <summary>Solução:</summary><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite um número: &quot;</span><span class="p">))</span>
 
@@ -309,7 +355,7 @@ fat(n) = n \times fat(n - 1), &amp; \text{se $n &gt; 1$}
 </pre></div>
 </div>
 </details><hr class="docutils" />
-<p id="sec-introducao-programacao-exemplos-ex07"><strong>Exemplo 07.</strong> Escreva um programa em Python que gere a tabela de multiplicação dos números de <span class="math notranslate nohighlight">\(1\)</span> a <span class="math notranslate nohighlight">\(10\)</span>.</p>
+<p id="sec-introducao-programacao-exemplos-ex07"><strong>Exemplo 08.</strong> Escreva um programa em Python que gere a tabela de multiplicação dos números de <span class="math notranslate nohighlight">\(1\)</span> a <span class="math notranslate nohighlight">\(10\)</span>.</p>
 <details class="summary-solucao">
 <summary>Solução:</summary><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
 
@@ -329,7 +375,7 @@ fat(n) = n \times fat(n - 1), &amp; \text{se $n &gt; 1$}
 </pre></div>
 </div>
 </details><hr class="docutils" />
-<p id="sec-introducao-programacao-exemplos-ex08"><strong>Exemplo 08.</strong> Dada a lista de valores de NDVI:</p>
+<p id="sec-introducao-programacao-exemplos-ex08"><strong>Exemplo 09.</strong> Dada a lista de valores de NDVI:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">serie_ndvi</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.3</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -358,7 +404,7 @@ fat(n) = n \times fat(n - 1), &amp; \text{se $n &gt; 1$}
 </pre></div>
 </div>
 </details><hr class="docutils" />
-<p id="sec-introducao-programacao-exemplos-ex09"><strong>Exemplo 09.</strong> Os produto MOD13Q1, em geral, armazena os valores dos pixels multiplicados por 10.000. Desta forma um valor 5.000 (inteiro) representa o valor real 0.5 (ponto flutuante) e ocupa menos espaço na memória. Dada uma lista de valores de uma das bandas no produto MOD13Q1:</p>
+<p id="sec-introducao-programacao-exemplos-ex09"><strong>Exemplo 10.</strong> Os produto MOD13Q1, em geral, armazena os valores dos pixels multiplicados por 10.000. Desta forma um valor 5.000 (inteiro) representa o valor real 0.5 (ponto flutuante) e ocupa menos espaço na memória. Dada uma lista de valores de uma das bandas no produto MOD13Q1:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">serie_mod13q1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7000</span><span class="p">,</span> <span class="mi">6000</span><span class="p">,</span> <span class="mi">3000</span><span class="p">,</span> <span class="mi">3000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">5000</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">7500</span><span class="p">,</span> <span class="mi">3000</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -375,7 +421,7 @@ fat(n) = n \times fat(n - 1), &amp; \text{se $n &gt; 1$}
 </pre></div>
 </div>
 </details><hr class="docutils" />
-<p id="sec-introducao-programacao-exemplos-ex10"><strong>Exemplo 10.</strong> Considere a seguinte lista:</p>
+<p id="sec-introducao-programacao-exemplos-ex10"><strong>Exemplo 11.</strong> Considere a seguinte lista:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">89</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -392,7 +438,7 @@ fat(n) = n \times fat(n - 1), &amp; \text{se $n &gt; 1$}
 </pre></div>
 </div>
 </details><hr class="docutils" />
-<p id="sec-introducao-programacao-exemplos-ex11"><strong>Exemplo 11.</strong> Considere a série temporal mostrada abaixo, extraída de dados do produto <a class="reference external" href="https://lpdaac.usgs.gov/dataset_discovery/modis/modis_products_table/mod13q1">MOD13Q1</a> gerado a partir do sensor <a class="reference external" href="https://modis.gsfc.nasa.gov">MODIS</a>, para a localização <code class="docutils literal notranslate"><span class="pre">(-54,-12)</span></code> no período de <code class="docutils literal notranslate"><span class="pre">01/01/2015</span></code> a <code class="docutils literal notranslate"><span class="pre">19/12/2015</span></code>:</p>
+<p id="sec-introducao-programacao-exemplos-ex11"><strong>Exemplo 12.</strong> Considere a série temporal mostrada abaixo, extraída de dados do produto <a class="reference external" href="https://lpdaac.usgs.gov/dataset_discovery/modis/modis_products_table/mod13q1">MOD13Q1</a> gerado a partir do sensor <a class="reference external" href="https://modis.gsfc.nasa.gov">MODIS</a>, para a localização <code class="docutils literal notranslate"><span class="pre">(-54,-12)</span></code> no período de <code class="docutils literal notranslate"><span class="pre">01/01/2015</span></code> a <code class="docutils literal notranslate"><span class="pre">19/12/2015</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">red_values</span> <span class="o">=</span> <span class="p">(</span>
     <span class="mi">168</span><span class="p">,</span> <span class="mi">398</span><span class="p">,</span> <span class="mi">451</span><span class="p">,</span> <span class="mi">337</span><span class="p">,</span> <span class="mi">186</span><span class="p">,</span> <span class="mi">232</span><span class="p">,</span> <span class="mi">262</span><span class="p">,</span> <span class="mi">349</span><span class="p">,</span>
     <span class="mi">189</span><span class="p">,</span> <span class="mi">204</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">207</span><span class="p">,</span> <span class="mi">239</span><span class="p">,</span> <span class="mi">259</span><span class="p">,</span> <span class="mi">258</span><span class="p">,</span>
@@ -469,8 +515,8 @@ fat(n) = n \times fat(n - 1), &amp; \text{se $n &gt; 1$}
 <p>Tente refazer o exercício acima usando apenas laços, sem usar as funções <code class="docutils literal notranslate"><span class="pre">len</span></code>, <code class="docutils literal notranslate"><span class="pre">sum</span></code> e <code class="docutils literal notranslate"><span class="pre">index</span></code>.</p>
 </div>
 <hr class="docutils" />
-<p><strong>Exemplo 12.</strong> Leitura e Escrita de Arquivos.</p>
-<p><strong>12.1</strong> Abrindo o arquivo <a class="reference download internal" download="" href="../_downloads/e93bc9a5b928c4f6c73babe5427826c5/focos24h_brasil.txt"><code class="xref download docutils literal notranslate"><span class="pre">focos24h_brasil.txt</span></code></a> e lendo todo o seu conteúdo para a memória:</p>
+<p><strong>Exemplo 13.</strong> Leitura e Escrita de Arquivos.</p>
+<p><strong>13.1</strong> Abrindo o arquivo <a class="reference download internal" download="" href="../_downloads/e93bc9a5b928c4f6c73babe5427826c5/focos24h_brasil.txt"><code class="xref download docutils literal notranslate"><span class="pre">focos24h_brasil.txt</span></code></a> e lendo todo o seu conteúdo para a memória:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">arq</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;focos24h_brasil.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
 
 <span class="k">try</span><span class="p">:</span>
@@ -482,14 +528,14 @@ fat(n) = n \times fat(n - 1), &amp; \text{se $n &gt; 1$}
     <span class="n">arq</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>12.2</strong> Abrindo o arquivo <a class="reference download internal" download="" href="../_downloads/e93bc9a5b928c4f6c73babe5427826c5/focos24h_brasil.txt"><code class="xref download docutils literal notranslate"><span class="pre">focos24h_brasil.txt</span></code></a> usando o comando <code class="docutils literal notranslate"><span class="pre">with</span></code>:</p>
+<p><strong>13.2</strong> Abrindo o arquivo <a class="reference download internal" download="" href="../_downloads/e93bc9a5b928c4f6c73babe5427826c5/focos24h_brasil.txt"><code class="xref download docutils literal notranslate"><span class="pre">focos24h_brasil.txt</span></code></a> usando o comando <code class="docutils literal notranslate"><span class="pre">with</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;focos24h_brasil.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">arq</span><span class="p">:</span>
     <span class="n">conteudo</span> <span class="o">=</span> <span class="n">arq</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
     <span class="nb">print</span><span class="p">(</span><span class="n">conteudo</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>12.3.</strong> Abrindo o arquivo <a class="reference download internal" download="" href="../_downloads/e93bc9a5b928c4f6c73babe5427826c5/focos24h_brasil.txt"><code class="xref download docutils literal notranslate"><span class="pre">focos24h_brasil.txt</span></code></a> e lendo as duas primeiras linhas:</p>
+<p><strong>13.3.</strong> Abrindo o arquivo <a class="reference download internal" download="" href="../_downloads/e93bc9a5b928c4f6c73babe5427826c5/focos24h_brasil.txt"><code class="xref download docutils literal notranslate"><span class="pre">focos24h_brasil.txt</span></code></a> e lendo as duas primeiras linhas:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;focos24h_brasil.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">arq</span><span class="p">:</span>
     <span class="n">linha1</span> <span class="o">=</span> <span class="n">arq</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">linha1</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
@@ -498,24 +544,24 @@ fat(n) = n \times fat(n - 1), &amp; \text{se $n &gt; 1$}
     <span class="nb">print</span><span class="p">(</span><span class="n">linha2</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>12.4.</strong> Abrindo o arquivo <a class="reference download internal" download="" href="../_downloads/e93bc9a5b928c4f6c73babe5427826c5/focos24h_brasil.txt"><code class="xref download docutils literal notranslate"><span class="pre">focos24h_brasil.txt</span></code></a> e iterando pelas linhas do arquivo:</p>
+<p><strong>13.4.</strong> Abrindo o arquivo <a class="reference download internal" download="" href="../_downloads/e93bc9a5b928c4f6c73babe5427826c5/focos24h_brasil.txt"><code class="xref download docutils literal notranslate"><span class="pre">focos24h_brasil.txt</span></code></a> e iterando pelas linhas do arquivo:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;focos24h_brasil.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">arq</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">linha</span> <span class="ow">in</span> <span class="n">arq</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">linha</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>12.5.</strong> Abrindo o arquivo <a class="reference download internal" download="" href="../_downloads/e93bc9a5b928c4f6c73babe5427826c5/focos24h_brasil.txt"><code class="xref download docutils literal notranslate"><span class="pre">focos24h_brasil.txt</span></code></a> e criando uma lista com todas as linhas do arquivo:</p>
+<p><strong>13.5.</strong> Abrindo o arquivo <a class="reference download internal" download="" href="../_downloads/e93bc9a5b928c4f6c73babe5427826c5/focos24h_brasil.txt"><code class="xref download docutils literal notranslate"><span class="pre">focos24h_brasil.txt</span></code></a> e criando uma lista com todas as linhas do arquivo:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;termos.json&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">arq</span><span class="p">:</span>
     <span class="n">linhas</span> <span class="o">=</span> <span class="n">arq</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">linhas</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>12.6.</strong> Adicionando uma nova linha ao final do arquivo <a class="reference download internal" download="" href="../_downloads/e93bc9a5b928c4f6c73babe5427826c5/focos24h_brasil.txt"><code class="xref download docutils literal notranslate"><span class="pre">focos24h_brasil.txt</span></code></a>:</p>
+<p><strong>13.6.</strong> Adicionando uma nova linha ao final do arquivo <a class="reference download internal" download="" href="../_downloads/e93bc9a5b928c4f6c73babe5427826c5/focos24h_brasil.txt"><code class="xref download docutils literal notranslate"><span class="pre">focos24h_brasil.txt</span></code></a>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;focos24h_brasil.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">arq</span><span class="p">:</span>
     <span class="n">arq</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Nova linha...</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>12.7.</strong> Escreva um programa para imprimir apenas as linhas com focos do Estado de <em>Minas Gerais</em>.</p>
+<p><strong>13.7.</strong> Escreva um programa para imprimir apenas as linhas com focos do Estado de <em>Minas Gerais</em>.</p>
 <details class="summary-solucao">
 <summary>Solução:</summary><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;focos24h_brasil.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">arq</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">linha</span> <span class="ow">in</span> <span class="n">arq</span><span class="p">:</span>
@@ -530,7 +576,7 @@ fat(n) = n \times fat(n - 1), &amp; \text{se $n &gt; 1$}
 <p>Para mais detalhes sobre as operações com arquivos texto, consulte a seção <a class="reference external" href="https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files">7.2. Reading and Writing Files</a> do manual do Python.</p>
 </div>
 <hr class="docutils" />
-<p><strong>13.</strong> O módulo <a class="reference external" href="https://docs.python.org/3/library/os.html">os</a> da Biblioteca Padrão do Python fornece funcionalidades para interagir com o sistema de arquivos do sistema operacional. Por exempplo, a função <code class="docutils literal notranslate"><span class="pre">getcwd</span></code> fornece o diretório corrente da aplicação em execução:</p>
+<p><strong>14.</strong> O módulo <a class="reference external" href="https://docs.python.org/3/library/os.html">os</a> da Biblioteca Padrão do Python fornece funcionalidades para interagir com o sistema de arquivos do sistema operacional. Por exempplo, a função <code class="docutils literal notranslate"><span class="pre">getcwd</span></code> fornece o diretório corrente da aplicação em execução:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
@@ -597,7 +643,7 @@ sbin
 </pre></div>
 </div>
 <hr class="docutils" />
-<p><strong>14.1</strong> Faça um programa que pergunte ao jogador uma palavra secreta e depois escreva essa palavra na saída padrão.</p>
+<p><strong>15.1</strong> Faça um programa que pergunte ao jogador uma palavra secreta e depois escreva essa palavra na saída padrão.</p>
 <details class="summary-solucao">
 <summary>Solução:</summary><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">palavra_secreta</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Entre com a palavra secreta: &#39;</span><span class="p">)</span>
 
@@ -605,7 +651,7 @@ sbin
 </pre></div>
 </div>
 </details><p><br/></p>
-<p><strong>14.2.</strong> Considerando o módulo Python <a class="reference external" href="https://docs.python.org/3/library/getpass.html">getpass</a>, refaça o exercício 14.1, só que sem “ecoar” o texto digitado pelo jogador ao entrar com a palavra secreta.</p>
+<p><strong>15.2.</strong> Considerando o módulo Python <a class="reference external" href="https://docs.python.org/3/library/getpass.html">getpass</a>, refaça o exercício 14.1, só que sem “ecoar” o texto digitado pelo jogador ao entrar com a palavra secreta.</p>
 <details class="summary-solucao">
 <summary>Solução:</summary><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">getpass</span>
 
@@ -615,7 +661,7 @@ sbin
 </pre></div>
 </div>
 </details><p><br/></p>
-<p><strong>14.3.</strong> Faça um programa que peça ao jogador 1 para fornecer uma palavra secreta e peça ao jogador 2 para fornecer uma letra que possa estar presente na palavra secreta fornecida pelo jogador 1. Para isso, faça uma função que verifique a ocorrência da letra na palavra secreta. Exemplo:</p>
+<p><strong>15.3.</strong> Faça um programa que peça ao jogador 1 para fornecer uma palavra secreta e peça ao jogador 2 para fornecer uma letra que possa estar presente na palavra secreta fornecida pelo jogador 1. Para isso, faça uma função que verifique a ocorrência da letra na palavra secreta. Exemplo:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">palavra_secreta</span> <span class="o">=</span> <span class="s1">&#39;sensoriamento&#39;</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span> <span class="n">ocorre</span><span class="p">(</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">palavra_secreta</span><span class="p">)</span> <span class="p">)</span>
@@ -651,7 +697,7 @@ sbin
 </pre></div>
 </div>
 </details><p><br/></p>
-<p><strong>14.4.</strong> Suponha a existência de uma lista de letras, por exemplo, <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">'o',</span> <span class="pre">'t,',</span> <span class="pre">'z',</span> <span class="pre">'e',</span> <span class="pre">'a'</span> <span class="pre">]</span></code>. Faça uma função que escreva uma palavra omitindo as letras que não pertençam a essa lista, usando um símbolo de <code class="docutils literal notranslate"><span class="pre">_</span></code> (sublinhado). Veja o exemplo de uso:</p>
+<p><strong>15.4.</strong> Suponha a existência de uma lista de letras, por exemplo, <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">'o',</span> <span class="pre">'t,',</span> <span class="pre">'z',</span> <span class="pre">'e',</span> <span class="pre">'a'</span> <span class="pre">]</span></code>. Faça uma função que escreva uma palavra omitindo as letras que não pertençam a essa lista, usando um símbolo de <code class="docutils literal notranslate"><span class="pre">_</span></code> (sublinhado). Veja o exemplo de uso:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">palavra_secreta</span> <span class="o">=</span> <span class="s1">&#39;sensoriamento&#39;</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">letras</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span> <span class="p">]</span>
@@ -692,7 +738,7 @@ sbin
 </pre></div>
 </div>
 </details><p><br/></p>
-<p><strong>14.5.</strong> Faça um programa que peça ao usuário uma letra e inclua essa letra em uma lista. Caso a letra já tenha sido digitada, o programa deve avisar o usuário e pedir uma nova letra. A cada iteração desse programa, escreva o conteúdo da lista. O programa deve parar após 06 iterações.</p>
+<p><strong>15.5.</strong> Faça um programa que peça ao usuário uma letra e inclua essa letra em uma lista. Caso a letra já tenha sido digitada, o programa deve avisar o usuário e pedir uma nova letra. A cada iteração desse programa, escreva o conteúdo da lista. O programa deve parar após 06 iterações.</p>
 <details class="summary-solucao">
 <summary>Solução:</summary><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">contador</span> <span class="o">=</span> <span class="mi">0</span>
 
@@ -712,7 +758,7 @@ sbin
 </pre></div>
 </div>
 </details><p><br/></p>
-<p><strong>14.6.</strong> Agora podemos escrever o programa completo do jogo:</p>
+<p><strong>15.6.</strong> Agora podemos escrever o programa completo do jogo:</p>
 <ul class="open">
 <li><p>O programa inicialmente pede ao jogador 1 a palavra secreta.</p></li>
 <li><p>O jogador 2 terá no máximo 06 chances para propor letras que ocorram na palavra secreta fornecida pelo jogador 1.</p></li>

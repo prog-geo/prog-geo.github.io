@@ -191,6 +191,84 @@ A sintaxe básica deste comando é a seguinte::
         print(fahr, celsius)
 
 
+
+.. |uf-2018| image:: ../img/vetorial/geo-io/uf-2018.png
+
+
+**Problema 5:** Considere o conjunto de dados no formato ESRI Shapefile mostrado na :numref:`Tabela %s <tbl:introducao-programacao:estruturas-repeticao:uf-2018>`, que contem os limites estaduais brasileiros referentes ao ano de 2018. Faça um programa em Python que leia as feições desse conjunto de dados e escreva na tela o nome da unidade e sua área em km\ :sup:`2`.
+
+
+.. table:: Unidades Federativas do Brasil - 2018 |br| **Fonte Original:** :download:`IBGE <https://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2018/Brasil/BR/br_unidades_da_federacao.zip>`.
+    :widths: 100
+    :width: 100%
+    :align: center
+    :column-alignment: left
+    :name: tbl:introducao-programacao:estruturas-repeticao:uf-2018
+
+    +-------------------------------------------+
+    | |uf-2018|                                 |
+    +-------------------------------------------+
+    | **Unidades Federativas do Brasil - 2018** |
+    |                                           |
+    | - uf_2018.cpg                             |
+    | - uf_2018.dbf                             |
+    | - uf_2018.prj                             |
+    | - uf_2018.shp                             |
+    | - uf_2018.shx                             |
+    |                                           |
+    | **Tipo Geométrico:** MultiPolygon         |
+    | |br|  |br|                                |
+    | **Número de Feições:** 27                 |
+    | |br|  |br|                                |
+    | **CRS:** Lat/Long SIRGAS 2000             |
+    | |br|  |br|                                |
+    | **SRID:** 4674                            |
+    | |br|  |br|                                |
+    | **Codificação Caracteres:** UTF-8         |
+    +-------------------------------------------+
+
+
+.. tip::
+
+    Para solução desse problema, serão utilizados dois pacotes para linguagem Python denominados `Fiona <https://fiona.readthedocs.io/en/stable/index.html>`__ e `pyproj <https://pyproj4.github.io/pyproj/stable/#>`__.  Esses pacotes não fazem parte da biblioteca padrão do Python, sendo contribuições de terceiros. Mais detalhes sobre a leitura e escrita de dados geoespaciais serão vistos na Seção :numref:`%s <_sec_vetorial_geo_io>`.
+
+
+.. tip::
+
+    Veja os possíveis sistemas de referêncial espacial em https://spatialreference.org.
+
+
+.. collapse:: Solução:
+
+
+    .. code-block:: python
+
+        import fiona
+        import pyproj
+
+        from shapely.geometry import shape
+        from shapely.ops import transform
+
+        epsg_4674 = pyproj.CRS('EPSG:4674')  # SIRGAS 2000
+        epsg_5880 = pyproj.CRS('EPSG:5880')  # SIRGAS 2000 / Brazil Polyconic
+
+        project = pyproj.Transformer.from_crs(epsg_4674, epsg_5880, always_xy=True).transform
+
+        with fiona.open(
+            "zip+https://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2018/Brasil/BR/br_unidades_da_federacao.zip"
+        ) as ufs:
+            for uf in ufs:
+                nome = uf["properties"]["NM_ESTADO"]
+                geom = shape(uf["geometry"])
+
+                geom_policonica = transform(project, geom)
+                area = geom_policonica.area / 1e6
+
+                nome_fmt = nome.ljust(20, '.')
+
+                print("{}: {}".format(nome_fmt, area))
+
+
 .. tip::
 
     Para mais exemplos do uso do laço ``for``, consulte :cite:`python:wiki:2021:a`.

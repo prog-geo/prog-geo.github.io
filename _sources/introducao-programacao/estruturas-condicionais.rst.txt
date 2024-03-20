@@ -171,4 +171,5 @@ Exemplo
 .. admonition:: Exemplos
     :class: box-exemplos
 
-    Vamos fazer o exemplo :ref:`02 <sec_introducao_programacao_exemplos_ex02>`.
+    Vamos fazer os exemplos :ref:`02 <sec_introducao_programacao_exemplos_ex02>` e :ref:`03 <sec_introducao_programacao_exemplos_op_touches>`.
+

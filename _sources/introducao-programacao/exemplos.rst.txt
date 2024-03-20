@@ -92,10 +92,67 @@ Considere a reta com os seguintes coeficientes: :math:`a = 3`, :math:`b = -2` e 
 
 -----
 
+.. _sec_introducao_programacao_exemplos_op_touches:
+
+**Exemplo 03.** Dada a :numref:`Figura %s <fig:introducao-programacao:exemplos:op-st-touches>` abaixo, faça um programa que avalie se as geometrias dos casos 1, 2 e 3 satisfazem o relacionamento espacial ``TOUCHES``. Se os três casos satisfazerem esse relacionamento espacial, então, escreva a mensagem ``Três casos do relacionamentos touches!``, caso contrário, escreva o resultado de cada um deles com mensagens como: ``Caso 1 satisfaz!`` ou ``Caso 1 não satisfaz!``.
+
+
+.. figure:: ../img/introducao-programacao/op-st-touches.png
+    :alt: A geometria A toca a geometria B?
+    :width: 100%
+    :figclass: align-center
+    :align: center
+    :name: fig:introducao-programacao:exemplos:op-st-touches
+
+    A geometria ``A`` toca a geometria ``B``?
+
+
+.. collapse:: Solução:
+
+        .. code-block:: python
+
+                from shapely import from_wkt
+
+                l1 = from_wkt('LINESTRING( 1 7, 1 9, 3 9 )')
+                l2 = from_wkt('LINESTRING( 1 9, 3 7 )')
+
+                caso1 = l1.touches(l2)
+
+                l3 = from_wkt('LINESTRING( 1 4, 2 6 )')
+                l4 = from_wkt('LINESTRING( 2 6, 3 4 )')
+
+                caso2 = l3.touches(l4)
+
+                l5 = from_wkt('LINESTRING( 5 6, 5 8, 7 8 )')
+                l6 = from_wkt('LINESTRING( 6 6, 6 9 )')
+
+                caso3 = l5.touches(l6)
+
+
+                if caso1 and caso2 and caso3:
+                    print('Três casos do relacionamentos touches!')
+                else:
+                    if caso1:
+                        print('Caso 1 satisfaz!')
+                    else:
+                        print('Caso 1 não satisfaz!')
+
+                    if caso2:
+                        print('Caso 2 satisfaz!')
+                    else:
+                        print('Caso 2 não satisfaz!')
+
+                    if caso3:
+                        print('Caso 3 satisfaz!')
+                    else:
+                        print('Caso 3 não satisfaz!')
+
+-----
+
 
 .. _sec_introducao_programacao_exemplos_ex03:
 
-**Exemplo 03.** Escreva um programa em Python que leia um número inteiro :math:`n` entre :math:`1` e :math:`10` e compute o fatorial desse número. Lembre-se que o fatorial de um número :math:`n` é definindo como:
+**Exemplo 04.** Escreva um programa em Python que leia um número inteiro :math:`n` entre :math:`1` e :math:`10` e compute o fatorial desse número. Lembre-se que o fatorial de um número :math:`n` é definindo como:
 
 
 .. math::
@@ -142,7 +199,7 @@ ou,
 
 .. _sec_introducao_programacao_exemplos_ex04:
 
-**Exemplo 04.** A sequência de Fibonacci é uma sequência de números inteiros, começando por :math:`0` e :math:`1`, onde cada termo subsequente corresponde a soma dos dois anteriores::
+**Exemplo 05.** A sequência de Fibonacci é uma sequência de números inteiros, começando por :math:`0` e :math:`1`, onde cada termo subsequente corresponde a soma dos dois anteriores::
 
     0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
 
@@ -196,7 +253,7 @@ Faça um programa em Python que compute a sequência para um número :math:`n` q
 
 .. _sec_introducao_programacao_exemplos_ex05:
 
-**Exemplo 05.** Escreva um programa em Python que leia dois números, :math:`x` e :math:`y`, e calcule a função potência :math:`x^y`, sem utilizar o operador ``**`` de Python ou alguma função da biblioteca padrão.
+**Exemplo 06.** Escreva um programa em Python que leia dois números, :math:`x` e :math:`y`, e calcule a função potência :math:`x^y`, sem utilizar o operador ``**`` de Python ou alguma função da biblioteca padrão.
 
 
 .. collapse:: Solução:
@@ -222,7 +279,7 @@ Faça um programa em Python que compute a sequência para um número :math:`n` q
 
 .. _sec_introducao_programacao_exemplos_ex06:
 
-**Exemplo 06.** Escreva um programa em Python que verifique se um número é primo ou não.
+**Exemplo 07.** Escreva um programa em Python que verifique se um número é primo ou não.
 
 
 .. collapse:: Solução:
@@ -255,7 +312,7 @@ Faça um programa em Python que compute a sequência para um número :math:`n` q
 
 .. _sec_introducao_programacao_exemplos_ex07:
 
-**Exemplo 07.** Escreva um programa em Python que gere a tabela de multiplicação dos números de :math:`1` a :math:`10`.
+**Exemplo 08.** Escreva um programa em Python que gere a tabela de multiplicação dos números de :math:`1` a :math:`10`.
 
 
 .. collapse:: Solução:
@@ -285,7 +342,7 @@ Faça um programa em Python que compute a sequência para um número :math:`n` q
 
 .. _sec_introducao_programacao_exemplos_ex08:
 
-**Exemplo 08.** Dada a lista de valores de NDVI::
+**Exemplo 09.** Dada a lista de valores de NDVI::
 
     serie_ndvi = [0.3, -0.3, 0.2, None, 0.9, 0.8, 0.8, None, 0.2, 0.2]
 
@@ -329,7 +386,7 @@ Apresente as seguintes informações:
 
 .. _sec_introducao_programacao_exemplos_ex09:
 
-**Exemplo 09.** Os produto MOD13Q1, em geral, armazena os valores dos pixels multiplicados por 10.000. Desta forma um valor 5.000 (inteiro) representa o valor real 0.5 (ponto flutuante) e ocupa menos espaço na memória. Dada uma lista de valores de uma das bandas no produto MOD13Q1::
+**Exemplo 10.** Os produto MOD13Q1, em geral, armazena os valores dos pixels multiplicados por 10.000. Desta forma um valor 5.000 (inteiro) representa o valor real 0.5 (ponto flutuante) e ocupa menos espaço na memória. Dada uma lista de valores de uma das bandas no produto MOD13Q1::
 
     serie_mod13q1 = [7000, 6000, 3000, 3000, 10000, 2000, 5000, 500, 7500, 3000]
 
@@ -357,7 +414,7 @@ Calcule e apresente a lista de valores reais (divididos por 10.000).
 
 .. _sec_introducao_programacao_exemplos_ex10:
 
-**Exemplo 10.** Considere a seguinte lista::
+**Exemplo 11.** Considere a seguinte lista::
 
     [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
 
@@ -384,7 +441,7 @@ Faça um programa em Python que realize a soma dos valores nessa lista e escreva
 
 .. _sec_introducao_programacao_exemplos_ex11:
 
-**Exemplo 11.** Considere a série temporal mostrada abaixo, extraída de dados do produto `MOD13Q1 <https://lpdaac.usgs.gov/dataset_discovery/modis/modis_products_table/mod13q1>`__ gerado a partir do sensor `MODIS <https://modis.gsfc.nasa.gov>`__, para a localização ``(-54,-12)`` no período de ``01/01/2015`` a ``19/12/2015``::
+**Exemplo 12.** Considere a série temporal mostrada abaixo, extraída de dados do produto `MOD13Q1 <https://lpdaac.usgs.gov/dataset_discovery/modis/modis_products_table/mod13q1>`__ gerado a partir do sensor `MODIS <https://modis.gsfc.nasa.gov>`__, para a localização ``(-54,-12)`` no período de ``01/01/2015`` a ``19/12/2015``::
 
     red_values = (
         168, 398, 451, 337, 186, 232, 262, 349,
@@ -493,10 +550,10 @@ Faça um programa que:
 -----
 
 
-**Exemplo 12.** Leitura e Escrita de Arquivos.
+**Exemplo 13.** Leitura e Escrita de Arquivos.
 
 
-**12.1** Abrindo o arquivo :download:`focos24h_brasil.txt <../data/txt/focos24h_brasil.txt>` e lendo todo o seu conteúdo para a memória:
+**13.1** Abrindo o arquivo :download:`focos24h_brasil.txt <../data/txt/focos24h_brasil.txt>` e lendo todo o seu conteúdo para a memória:
 
 
 .. code-block:: python
@@ -512,7 +569,7 @@ Faça um programa que:
         arq.close()
 
 
-**12.2** Abrindo o arquivo :download:`focos24h_brasil.txt <../data/txt/focos24h_brasil.txt>` usando o comando ``with``:
+**13.2** Abrindo o arquivo :download:`focos24h_brasil.txt <../data/txt/focos24h_brasil.txt>` usando o comando ``with``:
 
 
 .. code-block:: python
@@ -523,7 +580,7 @@ Faça um programa que:
         print(conteudo)
 
 
-**12.3.** Abrindo o arquivo :download:`focos24h_brasil.txt <../data/txt/focos24h_brasil.txt>` e lendo as duas primeiras linhas:
+**13.3.** Abrindo o arquivo :download:`focos24h_brasil.txt <../data/txt/focos24h_brasil.txt>` e lendo as duas primeiras linhas:
 
 
 .. code-block:: python
@@ -536,7 +593,7 @@ Faça um programa que:
         print(linha2, end='')
 
 
-**12.4.** Abrindo o arquivo :download:`focos24h_brasil.txt <../data/txt/focos24h_brasil.txt>` e iterando pelas linhas do arquivo:
+**13.4.** Abrindo o arquivo :download:`focos24h_brasil.txt <../data/txt/focos24h_brasil.txt>` e iterando pelas linhas do arquivo:
 
 
 .. code-block:: python
@@ -546,7 +603,7 @@ Faça um programa que:
             print(linha, end='')
 
 
-**12.5.** Abrindo o arquivo :download:`focos24h_brasil.txt <../data/txt/focos24h_brasil.txt>` e criando uma lista com todas as linhas do arquivo:
+**13.5.** Abrindo o arquivo :download:`focos24h_brasil.txt <../data/txt/focos24h_brasil.txt>` e criando uma lista com todas as linhas do arquivo:
 
 
 .. code-block:: python
@@ -556,7 +613,7 @@ Faça um programa que:
         print(linhas)
 
 
-**12.6.** Adicionando uma nova linha ao final do arquivo :download:`focos24h_brasil.txt <../data/txt/focos24h_brasil.txt>`:
+**13.6.** Adicionando uma nova linha ao final do arquivo :download:`focos24h_brasil.txt <../data/txt/focos24h_brasil.txt>`:
 
 
 .. code-block:: python
@@ -565,7 +622,7 @@ Faça um programa que:
         arq.write('Nova linha...\n')
 
 
-**12.7.** Escreva um programa para imprimir apenas as linhas com focos do Estado de *Minas Gerais*.
+**13.7.** Escreva um programa para imprimir apenas as linhas com focos do Estado de *Minas Gerais*.
 
 
 .. collapse:: Solução:
@@ -592,7 +649,7 @@ Faça um programa que:
 -----
 
 
-**13.** O módulo `os <https://docs.python.org/3/library/os.html>`__ da Biblioteca Padrão do Python fornece funcionalidades para interagir com o sistema de arquivos do sistema operacional. Por exempplo, a função ``getcwd`` fornece o diretório corrente da aplicação em execução:
+**14.** O módulo `os <https://docs.python.org/3/library/os.html>`__ da Biblioteca Padrão do Python fornece funcionalidades para interagir com o sistema de arquivos do sistema operacional. Por exempplo, a função ``getcwd`` fornece o diretório corrente da aplicação em execução:
 
 
 .. code-block:: python
@@ -688,7 +745,7 @@ O módulo `os.path <https://docs.python.org/3/library/os.path.html>`__ fornece f
 -----
 
 
-**14.1** Faça um programa que pergunte ao jogador uma palavra secreta e depois escreva essa palavra na saída padrão.
+**15.1** Faça um programa que pergunte ao jogador uma palavra secreta e depois escreva essa palavra na saída padrão.
 
 
 .. collapse:: Solução:
@@ -704,7 +761,7 @@ O módulo `os.path <https://docs.python.org/3/library/os.path.html>`__ fornece f
 |br|
 
 
-**14.2.** Considerando o módulo Python `getpass <https://docs.python.org/3/library/getpass.html>`_, refaça o exercício 14.1, só que sem "ecoar" o texto digitado pelo jogador ao entrar com a palavra secreta.
+**15.2.** Considerando o módulo Python `getpass <https://docs.python.org/3/library/getpass.html>`_, refaça o exercício 14.1, só que sem "ecoar" o texto digitado pelo jogador ao entrar com a palavra secreta.
 
 
 .. collapse:: Solução:
@@ -722,7 +779,7 @@ O módulo `os.path <https://docs.python.org/3/library/os.path.html>`__ fornece f
 |br|
 
 
-**14.3.** Faça um programa que peça ao jogador 1 para fornecer uma palavra secreta e peça ao jogador 2 para fornecer uma letra que possa estar presente na palavra secreta fornecida pelo jogador 1. Para isso, faça uma função que verifique a ocorrência da letra na palavra secreta. Exemplo:
+**15.3.** Faça um programa que peça ao jogador 1 para fornecer uma palavra secreta e peça ao jogador 2 para fornecer uma letra que possa estar presente na palavra secreta fornecida pelo jogador 1. Para isso, faça uma função que verifique a ocorrência da letra na palavra secreta. Exemplo:
 
 
 .. code-block:: python
@@ -773,7 +830,7 @@ O módulo `os.path <https://docs.python.org/3/library/os.path.html>`__ fornece f
 |br|
 
 
-**14.4.** Suponha a existência de uma lista de letras, por exemplo, ``[ 'o', 't,', 'z', 'e', 'a' ]``. Faça uma função que escreva uma palavra omitindo as letras que não pertençam a essa lista, usando um símbolo de ``_`` (sublinhado). Veja o exemplo de uso:
+**15.4.** Suponha a existência de uma lista de letras, por exemplo, ``[ 'o', 't,', 'z', 'e', 'a' ]``. Faça uma função que escreva uma palavra omitindo as letras que não pertençam a essa lista, usando um símbolo de ``_`` (sublinhado). Veja o exemplo de uso:
 
 
 .. code-block:: python
@@ -824,7 +881,7 @@ O módulo `os.path <https://docs.python.org/3/library/os.path.html>`__ fornece f
 |br|
 
 
-**14.5.** Faça um programa que peça ao usuário uma letra e inclua essa letra em uma lista. Caso a letra já tenha sido digitada, o programa deve avisar o usuário e pedir uma nova letra. A cada iteração desse programa, escreva o conteúdo da lista. O programa deve parar após 06 iterações.
+**15.5.** Faça um programa que peça ao usuário uma letra e inclua essa letra em uma lista. Caso a letra já tenha sido digitada, o programa deve avisar o usuário e pedir uma nova letra. A cada iteração desse programa, escreva o conteúdo da lista. O programa deve parar após 06 iterações.
 
 
 .. collapse:: Solução:
@@ -852,7 +909,7 @@ O módulo `os.path <https://docs.python.org/3/library/os.path.html>`__ fornece f
 |br|
 
 
-**14.6.** Agora podemos escrever o programa completo do jogo:
+**15.6.** Agora podemos escrever o programa completo do jogo:
 
 .. rst-class:: open
 

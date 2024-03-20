@@ -263,7 +263,72 @@
 </span></pre></div>
 </div>
 </div>
+<p><strong>Problema 5:</strong> Considere o conjunto de dados no formato ESRI Shapefile mostrado na <a class="reference internal" href="#tbl-introducao-programacao-estruturas-repeticao-uf-2018"><span class="std std-numref">Tabela 2.11</span></a>, que contem os limites estaduais brasileiros referentes ao ano de 2018. Faça um programa em Python que leia as feições desse conjunto de dados e escreva na tela o nome da unidade e sua área em km<sup>2</sup>.</p>
+<table class="styled-table docutils align-center" id="tbl-introducao-programacao-estruturas-repeticao-uf-2018" style="width: 100%">
+<caption><span class="caption-number">Tabela 2.11 - </span><span class="caption-text">Unidades Federativas do Brasil - 2018 <br/> <strong>Fonte Original:</strong> <a class="reference download external" download="" href="https://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2018/Brasil/BR/br_unidades_da_federacao.zip"><code class="xref download docutils literal notranslate"><span class="pre">IBGE</span></code></a>.</span><a class="headerlink" href="#tbl-introducao-programacao-estruturas-repeticao-uf-2018" title="Link Permanente para essa tabela"></a></caption>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td class="left-align"><p><img alt="uf-2018" src="../_images/uf-2018.png" /></p></td>
+</tr>
+<tr class="row-even"><td class="left-align"><p><strong>Unidades Federativas do Brasil - 2018</strong></p>
+<ul class="simple">
+<li><p>uf_2018.cpg</p></li>
+<li><p>uf_2018.dbf</p></li>
+<li><p>uf_2018.prj</p></li>
+<li><p>uf_2018.shp</p></li>
+<li><p>uf_2018.shx</p></li>
+</ul>
+<p><strong>Tipo Geométrico:</strong> MultiPolygon
+<br/>  <br/>
+<strong>Número de Feições:</strong> 27
+<br/>  <br/>
+<strong>CRS:</strong> Lat/Long SIRGAS 2000
+<br/>  <br/>
+<strong>SRID:</strong> 4674
+<br/>  <br/>
+<strong>Codificação Caracteres:</strong> UTF-8</p>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="admonition tip">
+<p class="admonition-title">Dica</p>
+<p>Para solução desse problema, serão utilizados dois pacotes para linguagem Python denominados <a class="reference external" href="https://fiona.readthedocs.io/en/stable/index.html">Fiona</a> e <a class="reference external" href="https://pyproj4.github.io/pyproj/stable/#">pyproj</a>.  Esses pacotes não fazem parte da biblioteca padrão do Python, sendo contribuições de terceiros. Mais detalhes sobre a leitura e escrita de dados geoespaciais serão vistos na Seção <code class="xref std std-numref docutils literal notranslate"><span class="pre">%s</span></code>.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Dica</p>
+<p>Veja os possíveis sistemas de referêncial espacial em <a class="reference external" href="https://spatialreference.org">https://spatialreference.org</a>.</p>
+</div>
+<details class="summary-solucao">
+<summary>Solução:</summary><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fiona</span>
+<span class="kn">import</span> <span class="nn">pyproj</span>
+
+<span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">shape</span>
+<span class="kn">from</span> <span class="nn">shapely.ops</span> <span class="kn">import</span> <span class="n">transform</span>
+
+<span class="n">epsg_4674</span> <span class="o">=</span> <span class="n">pyproj</span><span class="o">.</span><span class="n">CRS</span><span class="p">(</span><span class="s1">&#39;EPSG:4674&#39;</span><span class="p">)</span>  <span class="c1"># SIRGAS 2000</span>
+<span class="n">epsg_5880</span> <span class="o">=</span> <span class="n">pyproj</span><span class="o">.</span><span class="n">CRS</span><span class="p">(</span><span class="s1">&#39;EPSG:5880&#39;</span><span class="p">)</span>  <span class="c1"># SIRGAS 2000 / Brazil Polyconic</span>
+
+<span class="n">project</span> <span class="o">=</span> <span class="n">pyproj</span><span class="o">.</span><span class="n">Transformer</span><span class="o">.</span><span class="n">from_crs</span><span class="p">(</span><span class="n">epsg_4674</span><span class="p">,</span> <span class="n">epsg_5880</span><span class="p">,</span> <span class="n">always_xy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">transform</span>
+
+<span class="k">with</span> <span class="n">fiona</span><span class="o">.</span><span class="n">open</span><span class="p">(</span>
+    <span class="s2">&quot;zip+https://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2018/Brasil/BR/br_unidades_da_federacao.zip&quot;</span>
+<span class="p">)</span> <span class="k">as</span> <span class="n">ufs</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">uf</span> <span class="ow">in</span> <span class="n">ufs</span><span class="p">:</span>
+        <span class="n">nome</span> <span class="o">=</span> <span class="n">uf</span><span class="p">[</span><span class="s2">&quot;properties&quot;</span><span class="p">][</span><span class="s2">&quot;NM_ESTADO&quot;</span><span class="p">]</span>
+        <span class="n">geom</span> <span class="o">=</span> <span class="n">shape</span><span class="p">(</span><span class="n">uf</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">])</span>
+
+        <span class="n">geom_policonica</span> <span class="o">=</span> <span class="n">transform</span><span class="p">(</span><span class="n">project</span><span class="p">,</span> <span class="n">geom</span><span class="p">)</span>
+        <span class="n">area</span> <span class="o">=</span> <span class="n">geom_policonica</span><span class="o">.</span><span class="n">area</span> <span class="o">/</span> <span class="mf">1e6</span>
+
+        <span class="n">nome_fmt</span> <span class="o">=</span> <span class="n">nome</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nome_fmt</span><span class="p">,</span> <span class="n">area</span><span class="p">))</span>
+</pre></div>
+</div>
+</details><div class="admonition tip">
 <p class="admonition-title">Dica</p>
 <p>Para mais exemplos do uso do laço <code class="docutils literal notranslate"><span class="pre">for</span></code>, consulte <span id="id2">[<a class="reference internal" href="../referencias.html#id87" title="The Python Wiki. For loops. 2019. Online; acessado 27 de Fevereiro de 2021. URL: https://wiki.python.org/moin/ForLoop.">82</a>]</span>.</p>
 </div>
