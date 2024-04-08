@@ -1,0 +1,28 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2024, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../../def.rst
+
+
+.. _sec_projetos_2024_p02:
+
+Segmentação parcial de imagens
+==============================
+
+A segmentação é uma atividade importante no processamento de imagens de sensoriamento remoto. Uma segmentação completa divide uma imagem em diversas regiões, no caso ideal cada região contém um alvo específico. A união de todas as regiões resulta na própria imagem. Entretanto, em alguns sistemas o analista precisa segmentar toda a imagem para ter acesso às regiões de interesse. Por exemplo, numa imagem que possua um rio, o especialista pode querer apenas os segmentos com alvos de água. Mas ao utilizar um algoritmo de segmentação, ele precisará segmentar todos os alvos, incluindo floresta, áreas urbanas, etc., para depois selecionar somente o que for de interesse.
+
+O objetivo deste trabalho é criar um script que consiga abrir uma imagem, e partindo de um ponto indicado pelo usuário do script (uma coordenada, ou linha/coluna), identificar uma região de interesse, baseando-se no algoritmo de crescimento de regiões (Bins, 1996). Sugestões de bibliotecas incluem GDAL, rasterio, numpy, matplotlib. O produto final do algoritmo será um polígono em algum formato conhecido (KML, ShapeFile GeoJSON, etc).
+
+
+(Bins, 1996) Bins, L.S.; Fonseca, L.M.G.; Erthal, G.J.; Mitsuo II, F. *Satellite Imagery Segmentation: Region Growing Approach*, Anais do VIII SBSR, 1996.
+
+Observações
+-----------
+
+
+**1.** Os scripts deverão conter documentação de uso.
+
+**2.** O relatório produzido deverá estar no formato do evento `GEOINFO <http://www.geoinfo.info/>`_.
+

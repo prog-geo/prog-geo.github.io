@@ -1,0 +1,39 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2024, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../../def.rst
+
+
+.. _sec_projetos_2024_p01:
+
+Registro automático para séries temporais WFI L4
+================================================
+
+O INPE possui o sensor WFI em 3 satélites (CBERS-4, CBERS-4A, AMAZONIA-1). Isso permite a geração de séries temporais com alta frequência de revisita. No entanto, mesmo quando as imagens 
+possuem um nível de processamento L4, certas regiões não parecem estar perfeitamente alinhadas (registradas).
+
+Na imagem a seguir (região do Paraguai + *buffer*), construída a partir de um mosaico de cenas WFI do satélite CBERS-4, pode-se notar a falta de correção da incidência solar sobre as cenas.
+
+.. figure:: ../../img/projetos/serie-temporal-wfi-exemplo.png
+    :alt: imagens AMAZONIA-1 07/janeiro/2024, CBERS-4 24/janeiro/2024, CBERS-4A 30/janeiro/2024
+    :width: 50%
+    :figclass: align-center
+    :name: imagens:serie-temporal-wfi-exemplo
+
+    Série temporal com imagens 3 imagens WFI e pequenas diferenças de registro (AMAZONIA-1 07/janeiro/2024, CBERS-4 24/janeiro/2024, CBERS-4A 30/janeiro/2024). 
+
+O objetivo deste trabalho é criar um script que consiga ler várias imagens de uma mesma região, e utilizando uma delas como referência, aplicar um método de registro automático nas demais
+imagens. Sugestões de bibliotecas incluem GDAL, rasterio, Arosics. Gerar composições de imagens (exemplo: cada tempo em uma banda) para ressaltar o antes Vs depois da aplicação do método, 
+ou ressaltar as diferenças de registro.
+
+
+Observações
+-----------
+
+
+**1.** Os scripts deverão conter documentação de uso.
+
+**2.** O relatório produzido deverá estar no formato do evento `GEOINFO <http://www.geoinfo.info/>`_.
+

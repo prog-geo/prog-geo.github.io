@@ -1,0 +1,22 @@
+Turma 2024
+==========
+
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+
+    ./p01-registro
+    ./p02-segmentacao-parcial
+    ./p03-contraste
+    ./p04-mosaico-visual
+    ./p05-nuvens
+    
+    
+Observações
+-----------
+
+
+**1.** Os scripts deverão conter documentação de uso.
+
+**2.** O relatório produzido deverá estar no formato do evento `GEOINFO <http://www.geoinfo.info/>`_.
+

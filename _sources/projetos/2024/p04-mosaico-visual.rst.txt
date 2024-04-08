@@ -1,0 +1,26 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2024, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../../def.rst
+
+
+.. _sec_projetos_2024_p04:
+
+Processamento de imagens para mosaico visual
+============================================
+
+Ao gerar um mosaico de imagens, muitas vezes as diferentes características (ambiente, horário, posição do satélite, etc.) no momento da aquisição da imagem fazem com que áreas vizinhas e semelhantes pareçam muito diferentes, mesmo com ajustes de contraste e correções aplicadas.
+
+O objetivo deste trabalho é criar um script que consiga ler pelo menos duas imagens vizinhas, e aplique técnicas de suavização nas bordas das imagens, de forma a atenuar as diferenças visuais descritas. Sugestões de bibliotecas incluem GDAL, rasterio, matplotlib.
+
+
+Observações
+-----------
+
+
+**1.** Os scripts deverão conter documentação de uso.
+
+**2.** O relatório produzido deverá estar no formato do evento `GEOINFO <http://www.geoinfo.info/>`_.
+

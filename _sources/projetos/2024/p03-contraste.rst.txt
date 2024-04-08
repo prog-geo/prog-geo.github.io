@@ -1,0 +1,29 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2024, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../../def.rst
+
+
+.. _sec_projetos_2024_p03:
+
+Contraste de Imagens baseado na Cobertura da Terra
+==================================================
+
+
+O contraste de imagens é uma ferramenta muito útil para a realização de análises visuais em sensoriamento remoto. Ao realizar operações matemáticas sobre os valores dos pixels (como multiplicação por uma constante, aplicação funções como logaritmo, raiz quadrada, etc.) a visualização é transformada.
+
+Em muitos casos, a imagem de sensoriamento remoto possui uma diversidade de alvos. Eventualmente, uma técnica única de contraste pode ressaltar um alvo, e mascarar outros presentes na mesma imagem. Conhecer informações de cobertura da terra ao aplicar um contraste pode ser uma saída para ressaltar adequadamente os diferentes alvos da imagem.
+
+O objetivo deste trabalho é criar um script que obtenha alguns índices espectrais consolidados na literatura (como NDVI, NDWI, NDBI, BAI, etc.) e com base em regiões com alta resposta em algum desses índices, gerar máscaras de aplicação de contraste. Assim, uma imagem que contenha muita vegetação, mas também alvos de água e áreas urbanas, teria 3 contrastes diferentes, aplicados em regiões distintas. O melhor tipo de contraste, bem como limiares para sua aplicação, poderão ser calculados com base nas máscaras previamente obtidas. Sugestões de bibliotecas incluem GDAL, rasterio, numpy, openCV.
+
+
+Observações
+-----------
+
+
+**1.** Os scripts deverão conter documentação de uso.
+
+**2.** O relatório produzido deverá estar no formato do evento `GEOINFO <http://www.geoinfo.info/>`_.
+

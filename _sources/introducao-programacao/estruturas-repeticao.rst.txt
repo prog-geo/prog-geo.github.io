@@ -230,7 +230,7 @@ A sintaxe básica deste comando é a seguinte::
 
 .. tip::
 
-    Para solução desse problema, serão utilizados dois pacotes para linguagem Python denominados `Fiona <https://fiona.readthedocs.io/en/stable/index.html>`__ e `pyproj <https://pyproj4.github.io/pyproj/stable/#>`__.  Esses pacotes não fazem parte da biblioteca padrão do Python, sendo contribuições de terceiros. Mais detalhes sobre a leitura e escrita de dados geoespaciais serão vistos na Seção :numref:`%s <_sec_vetorial_geo_io>`.
+    Para solução desse problema, serão utilizados dois pacotes para linguagem Python denominados `Fiona <https://fiona.readthedocs.io/en/stable/index.html>`__ e `pyproj <https://pyproj4.github.io/pyproj/stable/#>`__.  Esses pacotes não fazem parte da biblioteca padrão do Python, sendo contribuições de terceiros. Mais detalhes sobre a leitura e escrita de dados geoespaciais serão vistos na Seção :numref:`%s <sec_vetorial_geo_io>`.
 
 
 .. tip::
