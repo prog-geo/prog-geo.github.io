@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Segmentação parcial de imagens &mdash; SER-347/CAP-419</title>
+  <title>Brazil Data Cube Cloud Coverage (BDC3) &mdash; SER-347/CAP-419</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -12,7 +12,7 @@
       <link rel="stylesheet" href="../../_static/table_styling.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/prog-geo.css" type="text/css" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
-    <link rel="canonical" href="https://prog-geo.github.io/projetos/2024/p02-segmentacao-parcial.html" />
+    <link rel="canonical" href="https://prog-geo.github.io/projetos/2024/p06-bdc3.html" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -27,8 +27,8 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Buscar" href="../../search.html" />
-    <link rel="next" title="Contraste de Imagens baseado na Cobertura da Terra" href="p03-contraste.html" />
-    <link rel="prev" title="Registro automático para séries temporais WFI L4" href="p01-registro.html" /> 
+    <link rel="next" title="Turma 2023" href="../2023/index.html" />
+    <link rel="prev" title="Registro automático para séries temporais WFI L4" href="p05-nuvens.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -79,14 +79,11 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Turma 2024</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="p01-registro.html">Registro automático para séries temporais WFI L4</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Segmentação parcial de imagens</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#observacoes">Observações</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="p02-segmentacao-parcial.html">Segmentação parcial de imagens</a></li>
 <li class="toctree-l2"><a class="reference internal" href="p03-contraste.html">Contraste de Imagens baseado na Cobertura da Terra</a></li>
 <li class="toctree-l2"><a class="reference internal" href="p04-mosaico-visual.html">Processamento de imagens para mosaico visual</a></li>
 <li class="toctree-l2"><a class="reference internal" href="p05-nuvens.html">Registro automático para séries temporais WFI L4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="p06-bdc3.html">Brazil Data Cube Cloud Coverage (BDC<sup>3</sup>)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Brazil Data Cube Cloud Coverage (BDC<sup>3</sup>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#observacoes">Observações</a></li>
 </ul>
 </li>
@@ -118,36 +115,44 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="index.html">Turma 2024</a></li>
-      <li class="breadcrumb-item active">Segmentação parcial de imagens</li>
+      <li class="breadcrumb-item active">Brazil Data Cube Cloud Coverage (BDC<sup>3</sup>)</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Navegação sequencial da página">
-        <a href="p01-registro.html" class="btn btn-neutral float-left" title="Registro automático para séries temporais WFI L4" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
-        <a href="p03-contraste.html" class="btn btn-neutral float-right" title="Contraste de Imagens baseado na Cobertura da Terra" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="p05-nuvens.html" class="btn btn-neutral float-left" title="Registro automático para séries temporais WFI L4" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="../2023/index.html" class="btn btn-neutral float-right" title="Turma 2023" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
   </div>
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="segmentacao-parcial-de-imagens">
-<span id="sec-projetos-2024-p02"></span><h1>Segmentação parcial de imagens<a class="headerlink" href="#segmentacao-parcial-de-imagens" title="Link permanente para este cabeçalho"></a></h1>
-<p>A segmentação é uma atividade importante no processamento de imagens de sensoriamento remoto. Uma segmentação completa divide uma imagem em diversas regiões, no caso ideal cada região contém um alvo específico. A união de todas as regiões resulta na própria imagem. Entretanto, em alguns sistemas o analista precisa segmentar toda a imagem para ter acesso às regiões de interesse. Por exemplo, numa imagem que possua um rio, o especialista pode querer apenas os segmentos com alvos de água. Mas ao utilizar um algoritmo de segmentação, ele precisará segmentar todos os alvos, incluindo floresta, áreas urbanas, etc., para depois selecionar somente o que for de interesse.</p>
-<p>O objetivo deste trabalho é criar um script que consiga abrir uma imagem, e partindo de um ponto indicado pelo usuário do script (uma coordenada, ou linha/coluna), identificar uma região de interesse, baseando-se no algoritmo de crescimento de regiões (Bins, 1996). Sugestões de bibliotecas incluem GDAL, rasterio, numpy, matplotlib. O produto final do algoritmo será um polígono em algum formato conhecido (KML, ShapeFile GeoJSON, etc).</p>
-<p>(Bins, 1996) Bins, L.S.; Fonseca, L.M.G.; Erthal, G.J.; Mitsuo II, F. <em>Satellite Imagery Segmentation: Region Growing Approach</em>, Anais do VIII SBSR, 1996.</p>
-<section id="observacoes">
-<h2>Observações<a class="headerlink" href="#observacoes" title="Link permanente para este cabeçalho"></a></h2>
-<p><strong>1.</strong> Os scripts deverão conter documentação de uso.</p>
-<p><strong>2.</strong> O relatório produzido deverá estar no formato do evento <a class="reference external" href="http://www.geoinfo.info/">GEOINFO</a>.</p>
-</section>
+  <section id="brazil-data-cube-cloud-coverage-bdc3">
+<span id="sec-projetos-2024-p06"></span><h1>Brazil Data Cube Cloud Coverage (BDC<sup>3</sup>)<a class="headerlink" href="#brazil-data-cube-cloud-coverage-bdc3" title="Link permanente para este cabeçalho"></a></h1>
+<p>O trabalho apresentado em <span id="id1">[<a class="reference internal" href="../../referencias.html#id38" title="Felipe Rafael de Sá Menezes Lucena, Elton Vicente Escobar-Silva, Rennan de Freitas Bezerra Marujo, Matheus Cavassan Zaglia, Lubia Vinhas, Karine Reis Ferreira, and Gilberto Ribeiro de Queiroz. Brazil data cube cloud coverage (bdc3) viewer. In Tiago Garcia de Senna Carneiro and Carlos Alberto Felgueiras, editors, Proceedings XXI GEOINFO, November 30 - December 03, 2020, São José dos Campos, SP, Brazil., 222–227. INPE, 2020. URL: http://urlib.net/rep/8JMKD3MGPDW34P/43PR3A2.">15</a>]</span> introduz uma aplicação para fornecer ao usuário algumas estatísticas sobre a cobertura de nuvens a partir de séries temporais de imagens de sensoriamento remoto ópticas. Esta aplicação utiliza o <a class="reference external" href="https://github.com/brazil-data-cube/code-gallery/blob/master/jupyter/Python/stac/stac-introduction.ipynb">serviço STAC do Brazil Data Cube</a> para recuperar, nos metadados das coleções de imagens e itens, o percentual de cobertura de nuvens e o <em>footprint</em> das imagens (<a class="reference internal" href="#fig-projetos-2024-p01-bdc03"><span class="std std-numref">Figura 19</span></a>). Assim, vários gráficos podem ser apresentados para o usuário, como porcentagem de cobertura de nuvens mensal ou anual, ou valores absolutos da cobertura de nuvem ao longo do tempo.</p>
+<figure class="align-center align-default" id="fig-projetos-2024-p01-bdc03">
+<a class="reference internal image-reference" href="../../_images/bdc3.jpg"><img alt="Arquitetura do BDC3" src="../../_images/bdc3.jpg" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 19 - </span><span class="caption-text">Arquitetura do BDC<sup>3</sup>. <br/> <strong>Fonte:</strong> Lucena et al. (2020) <span id="id2">[<a class="reference internal" href="../../referencias.html#id38" title="Felipe Rafael de Sá Menezes Lucena, Elton Vicente Escobar-Silva, Rennan de Freitas Bezerra Marujo, Matheus Cavassan Zaglia, Lubia Vinhas, Karine Reis Ferreira, and Gilberto Ribeiro de Queiroz. Brazil data cube cloud coverage (bdc3) viewer. In Tiago Garcia de Senna Carneiro and Carlos Alberto Felgueiras, editors, Proceedings XXI GEOINFO, November 30 - December 03, 2020, São José dos Campos, SP, Brazil., 222–227. INPE, 2020. URL: http://urlib.net/rep/8JMKD3MGPDW34P/43PR3A2.">15</a>]</span>.</span><a class="headerlink" href="#fig-projetos-2024-p01-bdc03" title="Link Permanente para essa imagem"></a></p>
+</figcaption>
+</figure>
+<p>Para este projeto, considere criar um ou mais pacotes Python que implementem um processador de dados matriciais e vetoriais a partir das máscaras de nuvem disponíveis no catálogo do BDC, oferecendo a possibilidade de estatísticas a partir de partições arbitrárias, como limites municipais e estaduais, grade de um dado satélite/sensor, limite de um bioma, entre outros. Considere criar Notebooks que ajudem a apresentar as funcionalidades desse processador.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p><strong>1.</strong> Os produtos de código desenvolvidos deverão ser licenciados de acordo com os modelos de software livre MIT, e disponibilizados em um ou mais repositórios na organização <code class="docutils literal notranslate"><span class="pre">prog-geoespacial</span></code>.</p>
+<p><strong>2.</strong> Os pacotes deverão conter documentação de uso.</p>
+<p><strong>3.</strong> Utilize o <a class="reference external" href="https://github.com/brazil-data-cube/cookiecutter-bdc">template de pacotes Python do Brazil Data Cube</a>.</p>
+<p><strong>4.</strong> Os produtos de dados de exemplo deverão ser disponibilizados de acordo com o modelo Creative Commons.</p>
+<p><strong>5.</strong> Produzir um relatório no formato do evento <a class="reference external" href="http://www.geoinfo.info/">GEOINFO</a>.</p>
+</div>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Rodapé">
-        <a href="p01-registro.html" class="btn btn-neutral float-left" title="Registro automático para séries temporais WFI L4" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
-        <a href="p03-contraste.html" class="btn btn-neutral float-right" title="Contraste de Imagens baseado na Cobertura da Terra" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="p05-nuvens.html" class="btn btn-neutral float-left" title="Registro automático para séries temporais WFI L4" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="../2023/index.html" class="btn btn-neutral float-right" title="Turma 2023" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

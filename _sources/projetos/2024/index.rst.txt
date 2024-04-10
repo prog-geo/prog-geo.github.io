@@ -10,6 +10,7 @@ Turma 2024
     ./p03-contraste
     ./p04-mosaico-visual
     ./p05-nuvens
+    ./p06-bdc3
     
     
 Observações
