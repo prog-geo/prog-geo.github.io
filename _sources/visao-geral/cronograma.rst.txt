@@ -61,40 +61,17 @@ Aulas Regulares
     |      |            |                                                                                                                                  |
     |      |            |   - Exercícios :ref:`03 <sec_introducao_programacao_exemplos_ex03>` a :ref:`07 <sec_introducao_programacao_exemplos_ex07>`.      |
     +------+------------+----------------------------------------------------------------------------------------------------------------------------------+
-    | 08   | 27/03/2024 | :ref:`Introdução à Programação com a Linguagem Python <cap_introducao_programacao>`:                                             |
-    |      |            |                                                                                                                                  |
-    |      |            |   - :ref:`Sequências <sec_introducao_programacao_sequencias>`                                                                    |
-    |      |            |   - :ref:`Dicionários <sec_introducao_programacao_dicionarios>`                                                                  |
+    | 08   | 27/03/2024 | ...                                                                                                                              |
     +------+------------+----------------------------------------------------------------------------------------------------------------------------------+
-    | 09   | 01/04/2024 | :ref:`Introdução à Programação com a Linguagem Python <cap_introducao_programacao>`:                                             |
-    |      |            |                                                                                                                                  |
-    |      |            |   - :ref:`Conjuntos <sec_introducao_programacao_set>`                                                                            |
-    |      |            |   - :ref:`Formatação de Strings <sec_introducao_programacao_formatacao_strings>`                                                 |
-    |      |            |   - :ref:`Laços do tipo for <sec_introducao_lacos_for>`                                                                          |
-    |      |            |   - :ref:`Os Comandos break e continue <sec_introducao_break_continue>`                                                          |
-    |      |            |   - :ref:`Comandos Compostos <sec_introducao_programacao_comandos_compostos>`                                                    |
-    |      |            |   - :ref:`Funções <sec_introducao_programacao_funcoes>`                                                                          |
-    |      |            |   - :ref:`Escopo de Variáveis <sec_introducao_programacao_escopo>`                                                               |
-    |      |            |   - :ref:`Considerações Finais <sec_introducao_programacao_consideracoes>`                                                       |
+    | 09   | 01/04/2024 | ...                                                                                                                              |
     +------+------------+----------------------------------------------------------------------------------------------------------------------------------+
     | 10   | 03/04/2024 | :ref:`Jupyter <cap_jupyter>`                                                                                                     |
-    |      |            |                                                                                                                                  |
-    |      |            |   - :ref:`Introdução <sec_jupyter_introducao>`                                                                                   |
-    |      |            |   - :ref:`IPython <sec_jupyter_ipython>`                                                                                         |
-    |      |            |   - :ref:`Notebooks <sec_jupyter_notebooks>`                                                                                     |
-    |      |            |   - :ref:`Funções Mágicas <sec_jupyter_comandos_magicos>`                                                                        |
-    |      |            |   - :ref:`Comandos do Sistema <sec_jupyter_comandos_sistema>`                                                                    |
-    |      |            |   - :ref:`Histórico dos Comandos e Resultados <sec_jupyter_numeracao_in_out>`                                                    |
     |      |            |                                                                                                                                  |
     |      |            | :ref:`Imagens - Processamento e Visualização <cap_imagens>`                                                                      |
     +------+------------+----------------------------------------------------------------------------------------------------------------------------------+
     | 11   | 08/04/2024 | :ref:`Imagens - Processamento e Visualização <cap_imagens>`                                                                      |
-    |      |            |                                                                                                                                  |
-    |      |            |   - :ref:`GDAL - Geospatial Data Abstraction Library <sec_imagens_gdal>`                                                         |
     +------+------------+----------------------------------------------------------------------------------------------------------------------------------+
-    | 12   | 10/04/2024 |  Discussão sobre Projetos                                                                                                        |
-    +------+------------+----------------------------------------------------------------------------------------------------------------------------------+
-    | ...  | 24/04/2024 |  Prova                                                                                                                           |
+    | ...  | 17/04/2024 |  Prova                                                                                                                           |
     +------+------------+----------------------------------------------------------------------------------------------------------------------------------+
     | ...  | ...        | ...                                                                                                                              |
     +------+------------+----------------------------------------------------------------------------------------------------------------------------------+

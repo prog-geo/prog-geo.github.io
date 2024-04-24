@@ -386,7 +386,7 @@ Apresente as seguintes informações:
 
 .. _sec_introducao_programacao_exemplos_ex09:
 
-**Exemplo 10.** Os produto MOD13Q1, em geral, armazena os valores dos pixels multiplicados por 10.000. Desta forma um valor 5.000 (inteiro) representa o valor real 0.5 (ponto flutuante) e ocupa menos espaço na memória. Dada uma lista de valores de uma das bandas no produto MOD13Q1::
+**Exemplo 10.** O produto MOD13Q1, em geral, armazena os valores dos pixels multiplicados por 10.000. Desta forma um valor 5.000 (inteiro) representa o valor real 0.5 (ponto flutuante) e ocupa menos espaço na memória. Dada uma lista de valores de uma das bandas no produto MOD13Q1::
 
     serie_mod13q1 = [7000, 6000, 3000, 3000, 10000, 2000, 5000, 500, 7500, 3000]
 

@@ -1,0 +1,113 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _prog-geo_lista_2024:
+
+Lista de Exercícios 2024
+========================
+
+
+**Atenção:**
+
+  .. rst-class:: open
+
+- As soluções dos exercícios devem ser colocadas em um Jupyter Notebook, incluindo o nome dos integrantes do grupo.
+
+- Envie por e-mail **um único** arquivo contendo o Jupyter Notebook com as soluções, chamado ``lista-2024-grupo-X.ipynb``, contendo a resolução dos exercícios. **Destinatários:** os professores da disciplina.
+
+- O título (assunto) do e-mail deve seguir o seguinte padrão: ``[prog-geo-2024][lista-2024] grupo-X``.
+    
+
+  .. warning::
+
+    Não use acentos ou caracteres especiais nos nomes dos arquivos ou no título do e-mail.
+
+
+- **Prazo para entrega:** 22/04/2024 - 20:00
+
+
+-----
+
+**Exercício 01.** Faça um programa em Python que leia três números reais e escreva o valor do maior e do menor deles. Para resolver este exercício, não utilizar as funções ``min/max``.
+
+-----
+
+**Exercício 02.** Escreva um programa em Python que leia o tamanho dos lados de um triângulo, avalie se esses valores realmente formam um triângulo e, em caso positivo, classifique o triângulo em isósceles, escaleno ou equilátero.
+
+-----
+
+**Exercício 03.** Escreva um programa em Python que pergunte ao usuário um número entre 0 e 10, e diga se ele é ímpar ou par.
+
+-----
+
+**Exercício 04.** Um recorte de uma imagem, de 01 banda com 10 linhas e 10 colunas, está armazenado como uma tupla de tuplas:
+
+
+.. code-block:: python
+
+    raster = (
+        (0.58, 0.29, 0.08, 0.58, 0.42, 0.30, 0.00, 0.06, 0.36, 0.39), 
+        (0.62, 0.64, 0.12, 0.67, 0.23, 0.57, 0.23, 0.21, 0.19, 0.27), 
+        (0.54, 0.57, 0.51, 0.22, 0.32, 0.31, 0.19, 0.35, 0.85, 0.78),
+        (0.51, 0.22, 0.63, 0.52, 0.45, 0.57, 0.01, 0.29, 0.70, 0.96),
+        (0.56, 0.48, 0.80, 0.77, 0.29, 0.55, 0.85, 0.62, 0.20, 0.41),
+        (0.52, 0.50, 0.87, 0.83, 0.64, 0.20, 0.93, 0.69, 0.48, 0.55),
+        (0.16, 0.02, 0.48, 0.40, 0.86, 0.75, 0.16, 0.29, 0.00, 0.50),
+        (0.26, 0.03, 0.35, 0.67, 0.92, 0.77, 0.63, 0.12, 0.40, 0.51),
+        (0.63, 0.65, 0.31, 0.32, 0.10, 0.16, 0.22, 0.33, 0.10, 0.42),
+        (0.30, 0.05, 0.41, 0.49, 0.03, 0.06, 0.67, 0.12, 0.10, 0.41)
+    )
+
+
+Neste exercício você deve percorrer a imagem, reamostrando para 05 linhas e 05 colunas, e imprimindo os pixels de acordo com a seguinte regra:
+
+.. rst-class:: open
+
+- :math:`pixel > 0.7`, imprimir ``'x'``.
+
+- :math:`pixel \le 0.7`, imprimir ``'o'``.
+
+
+.. note::
+
+    Para o resultado da impressão ficar de acordo com as linhas e colunas, você pode utilizar um parâmetro na função `print`:
+    
+    
+    .. code-block:: python
+
+        print('x', end = ' ') # para imprimir 'x' sem pular a linha
+        
+        print('o', end = ' ') # para imprimir 'o' sem pular a linha
+
+-----
+
+**Exercício 05.** A USGS define uma `convenção para nomenclatura dos arquivos com produtos do sensor MODIS <https://lpdaac.usgs.gov/data/get-started-data/collection-overview/missions/modis-overview/>`_. Por exemplo, um arquivo com nome ``MOD09A1.A2006001.h08v05.005.2006012234657.hdf`` pode ser interpretado da seguinte forma::
+
+    MOD09A1 - Product Short Name
+    MOD: Terra Satellite
+    A2006001 - Julian Date of Acquisition (A-YYYYDDD)
+    h08v05 - Tile Identifier (horizontalXXverticalYY)
+    005 - Collection Version
+    2006012234567 - Julian Date of Production (YYYYDDDHHMMSS)
+    hdf - Data Format (HDF-EOS)
+
+
+Faça um programa em Python que leia o nome de um arquivo, e escreva na saída padrão o seguinte resultado::
+
+    Satellite...............: Terra
+    Product.................: MOD09A1
+    Year of Acquisition.....: 2006
+    Julian Day..............: 001
+    Horizontal Tile.........: 08
+    Vertical Tile...........: 05
+    Collection..............: 005
+    Year of Production......: 2006
+    Julian Day of Production: 012
+    Production Hour.........: 23
+    Production Minute.......: 46
+    Production Second.......: 57
+    Data Format.............: hdf
+
+-----

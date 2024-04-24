@@ -6,7 +6,7 @@
 .. include:: ../../def.rst
 
 
-.. _sec_projetos_2024_p05:
+.. _sec_projetos_2024_p01:
 
 Registro automático para séries temporais WFI L4
 ================================================
@@ -20,7 +20,7 @@ Na imagem a seguir (região do Paraguai + *buffer*), construída a partir de um 
     :alt: imagens AMAZONIA-1 07/janeiro/2024, CBERS-4 24/janeiro/2024, CBERS-4A 30/janeiro/2024
     :width: 50%
     :figclass: align-center
-    :name: imagens:2024:serie-temporal-wfi-exemplo
+    :name: imagens:serie-temporal-wfi-exemplo
 
     Série temporal com imagens 3 imagens WFI e pequenas diferenças de registro (AMAZONIA-1 07/janeiro/2024, CBERS-4 24/janeiro/2024, CBERS-4A 30/janeiro/2024). 
 

@@ -1,0 +1,103 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2024, Gilberto Queiroz and Thales Körting.
+
+
+.. _prog-geo_prova_2024:
+
+Avaliação 2024
+==============
+
+
+
+
+**Questão 01.** Escrever um programa em Python que simule uma calculadora com as funções básicas (:math:`+`, :math:`−`, :math:`\div`, :math:`\times`). O programa deve pedir ao usuário para entrar com os operandos (números reais) e o tipo de operação, e a seguir escrever o resultado. Assim como uma calculadora, que ao final de uma operação pode ser utilizada novamente, o programa deve simular este comportamento perguntando ao usuário se ele quer realizar uma nova operação.
+
+**Questão 02.** O módulo `os <https://docs.python.org/3/library/os.html>`__ da biblioteca padrão do Python possui funções que permitem caminhar pela estrutura de diretórios e arquivos de um sistema operacional (Linux, Windows ou macOS). Leia a documentação da função `os.walk <https://docs.python.org/3/library/os.html#os.walk>`__ para construir um programa que navegue pela estrutura de arquivos e diretórios contidos no arquivo zip :download:`terraclass.zip <../data/zip/terraclass.zip>` e escreva o nome do diretório ou arquivo. Esse arquivo possui a seguinte estrutura:
+
+
+.. code-block:: text
+
+    terraclass
+    ├── descricao.txt
+    ├── MT
+    │   ├── arq1-mt.shp
+    │   └── arq2-mt.shp
+    └── PA
+        ├── arq1-pa.shp
+        ├── arq2-pa.shp
+        └── arq3-pa.shp
+
+
+O programa deverá escrever uma saída paracida com:
+
+
+.. code-block:: text
+
+    diretório: terraclass
+        arquivo: descricao.txt
+        
+        diretório: MT
+            arquivo: arq1-mt.shp
+            arquivo: arq2-mt.shp
+        
+        diretório: PA
+            arquivo: arq1-pa.shp
+            arquivo: arq2-pa.shp
+            arquivo: arq3-pa.shp
+
+
+Repare na identação usada com 04 espaços a cada nível de diretório e o espaço entre os grupos de elementos.
+
+
+.. note::
+
+    Baixe o arquivo zip e descompate-o em algum diretório (ou pasta) do seu sistema. Use o caminho onde o arquivo foi descompactado para iniciar a navegação de diretórios e arquivos. 
+
+**Questão 03.** O índice espectral conhecido por **Vegetation Condition Index** ou **VCI** pode ser calculado pela expressão apresentada na :eq:`eq:prova:2024:vci`:
+
+
+.. math::
+    :label: eq:prova:2024:vci
+
+    VCI_i = 100 \times \frac{NDVI_i - NDVI_{min}}{NDVI_{max} - NDVI_{min}} 
+
+
+Considere a seguinte série temporal do NDVI para uma dada localização da superfície terrestre:
+
+
+.. code-block:: python
+
+    serie_ndvi = (
+        0.1208, 0.1323, 0.1635, 0.1792, 0.1674, 0.1727, 0.2587, 0.4313, 0.6086, 0.6791,
+        0.5961, 0.4149, 0.2411, 0.1455, 0.1258, 0.1369, 0.1428, 0.1390, 0.1360, 0.1377,
+        0.1387, 0.1358, 0.1325, 0.1328, 0.1362, 0.1433, 0.1637, 0.2139, 0.3041, 0.4231,
+        0.5361, 0.5982, 0.5784, 0.4812, 0.3492, 0.2403, 0.1903, 0.1908, 0.2025, 0.1926,
+        0.1601, 0.1279, 0.1165, 0.1326, 0.1821, 0.2797, 0.4303, 0.6003, 0.7243, 0.7582,
+        0.7267, 0.7031, 0.7277, 0.7537, 0.6880, 0.4997, 0.2766, 0.1590, 0.2075, 0.3424,
+        0.4198, 0.3667, 0.2364, 0.1362, 0.1156, 0.1359, 0.1381, 0.1154, 0.1056, 0.1268,
+        0.1494, 0.1463, 0.1541, 0.2529, 0.4697, 0.7123, 0.8261, 0.7324, 0.5110, 0.3354,
+        0.3195, 0.4254, 0.5172, 0.4972, 0.3863, 0.2800, 0.2425, 0.2541, 0.2554, 0.2237,
+        0.1945, 0.2123, 0.2761, 0.3443, 0.3887, 0.4290, 0.5063, 0.6248, 0.7326, 0.7653
+    )
+
+
+Pede-se:
+
+
+**a)** Crie uma função para computar o VCI.
+
+
+**b)** Crie uma função para calcular os valores máximo e mínimo do NDVI, dada uma série como a mostrada acima.
+
+
+**c)** Calcule o NDVI médio, utilizando um laço do tipo ``for``.
+
+
+**d)** Calcule o valor do VCI para :math:`20 \le i \le 25`, chamando a função criada no item (a) e escreva para cada valor calculado se ele encontra-se acima ou abaixo da média calculada no item (c).
+
+
+.. tip::
+
+    Detalhes sobre o índice VCI pode ser consultado em :cite:`kogan:1995` e :cite:`kogan:1997`.
+
