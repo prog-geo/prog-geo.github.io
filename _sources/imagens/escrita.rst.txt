@@ -13,6 +13,7 @@ Escrita em arquivos de Imagens
 
 
 Uma forma de escrever em arquivos de imagens é por meio da abertura de um arquivo de referência, geração de matrizes das bandas com alterações nos dados originais, e salvamento em um novo arquivo. Veja a sequência de passos:
+
 - abrir dataset
 - obter bandas individuais
 - acessar array de pixels (formato NumPy)
@@ -25,14 +26,14 @@ O exemplo a seguir abre a imagem de referência (com 5 bandas), aplica o contras
 
 .. code-block:: python
   
-  # importar a biblioteca gdal e a matplotlib
-  from osgeo import gdal
-  import matplotlib.pyplot as plt
+	# importar a biblioteca gdal e a matplotlib
+	from osgeo import gdal
+	import matplotlib.pyplot as plt
 
-  # informar o uso de exceções
-  gdal.UseExceptions()
+	# informar o uso de exceções
+	gdal.UseExceptions()
 
- 	# abrir o dataset da imagem RapidEye, com 5 bandas
+	# abrir o dataset da imagem RapidEye, com 5 bandas
 	# (ao usar o colab, lembre-se de fazer o upload na aba de arquivos)
 	dataset = gdal.Open("crop_rapideye.tif", gdal.GA_ReadOnly)
 
@@ -49,52 +50,53 @@ O exemplo a seguir abre a imagem de referência (com 5 bandas), aplica o contras
 	array_red = band_red.ReadAsArray()
 	array_rededge = band_rededge.ReadAsArray()
 	array_nir = band_nir.ReadAsArray()
-  
-  # aqui já se pode fechar a imagem original
-  dataset = None
-  
-  # realizar alterações nas matrizes, lembrando de observar o
-  # tipo de dados original, de modo a manter os dados nos limites adequados
-  # definir um valor de ganho e aplicar nas bandas do visível
-  gain = 2.5
-  array_blue_gain = array_blue.copy() * gain
-  array_green_gain = array_green.copy() * gain
-  array_red_gain = array_red.copy() * gain
+	  
+	# aqui já se pode fechar a imagem original
+	dataset = None
+	  
+	# realizar alterações nas matrizes, lembrando de observar o
+	# tipo de dados original, de modo a manter os dados nos limites adequados
+	# definir um valor de ganho e aplicar nas bandas do visível
+	gain = 2.5
+	array_blue_gain = array_blue.copy() * gain
+	array_green_gain = array_green.copy() * gain
+	array_red_gain = array_red.copy() * gain
 
-  # verificar valores fora do limite
-  limit = 255
-  array_blue_gain[array_blue_gain > limit] = limit
-  array_green_gain[array_green_gain > limit] = limit
-  array_red_gain[array_red_gain > limit] = limit
+	# verificar valores fora do limite
+	limit = 255
+	array_blue_gain[array_blue_gain > limit] = limit
+	array_green_gain[array_green_gain > limit] = limit
+	array_red_gain[array_red_gain > limit] = limit
 
-  # definir driver, neste caso GeoTIFF
-  driver = gdal.GetDriverByName('GTiff')
+	# definir driver, neste caso GeoTIFF
+	driver = gdal.GetDriverByName('GTiff')
 
-  # obter metadados da imagem original, e alterar o número de bandas
-  number_of_lines = dataset.RasterYSize
-  number_of_columns = dataset.RasterXSize
-  number_of_bands = 3 # dataset.RasterCount
-  data_type = dataset.GetRasterBand(1).DataType
+	# obter metadados da imagem original, e alterar o número de bandas
+	number_of_lines = dataset.RasterYSize
+	number_of_columns = dataset.RasterXSize
+	number_of_bands = 3 # dataset.RasterCount
+	data_type = dataset.GetRasterBand(1).DataType
 
-  # criar novo dataset
-  dataset_new = driver.Create("crop_rapideye_contrastRGB.tif",
-                              number_of_columns,
-                              number_of_lines,
-                              number_of_bands,
-                              data_type)
+	# criar novo dataset
+	dataset_new = driver.Create("crop_rapideye_contrastRGB.tif",
+		                    number_of_columns,
+		                    number_of_lines,
+		                    number_of_bands,
+		                    data_type)
 
-  # copiar informações espaciais da banda já existente
-  dataset_new.SetGeoTransform(dataset.GetGeoTransform())
-  # copiar informações de projeção
-  dataset_new.SetProjection(dataset.GetProjectionRef())
-  # escrever dados da matriz_contraste na banda
-  dataset_new.GetRasterBand(1).WriteArray(array_red_gain)
-  dataset_new.GetRasterBand(2).WriteArray(array_green_gain)
-  dataset_new.GetRasterBand(3).WriteArray(array_blue_gain)
-  # salvar valores
-  dataset_new.FlushCache()
-  # fechar o novo dataset
-  dataset_new = None
+	# copiar informações espaciais da banda já existente
+	dataset_new.SetGeoTransform(dataset.GetGeoTransform())
+	# copiar informações de projeção
+	dataset_new.SetProjection(dataset.GetProjectionRef())
+	# escrever dados da matriz_contraste na banda
+	dataset_new.GetRasterBand(1).WriteArray(array_red_gain)
+	dataset_new.GetRasterBand(2).WriteArray(array_green_gain)
+	dataset_new.GetRasterBand(3).WriteArray(array_blue_gain)
+	# salvar valores
+	dataset_new.FlushCache()
+	# fechar o novo dataset
+	dataset_new = None
+
 
 Visualização do resultado
 -------------------------
@@ -103,22 +105,22 @@ Para visualizar a composição colorida, podemos reabrir o arquivo (nesse caso j
 
 .. code-block:: python
 
-  dataset = gdal.Open("crop_rapideye_contrastRGB.tif", gdal.GA_ReadOnly)
+	dataset = gdal.Open("crop_rapideye_contrastRGB.tif", gdal.GA_ReadOnly)
 
 	# obter os objetos com as informações das bandas
 	band_red = dataset.GetRasterBand(1)
 	band_green = dataset.GetRasterBand(2)
 	band_blue = dataset.GetRasterBand(3)
-	
+		
 	# obter as matrizes de pixels de cada banda
 	array_red = band_red.ReadAsArray()
 	array_green = band_green.ReadAsArray()
 	array_blue = band_blue.ReadAsArray()
-  
+	  
 	# definimos os números de linhas/colunas/bandas
-  number_of_lines = dataset.RasterYSize
-  number_of_columns = dataset.RasterXSize
-  
+	number_of_lines = dataset.RasterYSize
+	number_of_columns = dataset.RasterXSize
+	  
 	# isso criamos uma matriz com 3 dimensões
 	# (3 bandas x linhas x colunas) 
 	array_rgb = np.zeros((number_of_lines, number_of_columns, 3))

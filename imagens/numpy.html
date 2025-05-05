@@ -1,35 +1,36 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="pt-BR" >
+<html class="writer-html5" lang="pt-BR">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>4.2. NumPy &mdash; SER-347/CAP-419</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/table_styling.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/prog-geo.css" type="text/css" />
+  <title>4.3. NumPy &mdash; SER-347/CAP-419</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/table_styling.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/prog-geo.css" />
+
+  
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="canonical" href="https://prog-geo.github.io/imagens/numpy.html" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/clipboard.min.js"></script>
-        <script src="../_static/copybutton.js"></script>
-        <script src="../_static/translations.js"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../_static/jquery.js"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+      <script src="../_static/doctools.js"></script>
+      <script src="../_static/sphinx_highlight.js"></script>
+      <script src="../_static/clipboard.min.js"></script>
+      <script src="../_static/copybutton.js"></script>
+      <script src="../_static/translations.js"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Buscar" href="../search.html" />
-    <link rel="next" title="4.3. Visualização de Imagens" href="visualizacao.html" />
-    <link rel="prev" title="4.1. GDAL - Geospatial Data Abstraction Library" href="gdal.html" /> 
+    <link rel="next" title="4.4. Visualização de Imagens" href="visualizacao.html" />
+    <link rel="prev" title="4.2. Rasterio - Raster Input/Output" href="rasterio.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -66,16 +67,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../jupyter.html">3. Jupyter</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../imagens.html">4. Imagens - Processamento e Visualização</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="gdal.html">4.1. GDAL - <strong>G</strong>eospatial <strong>D</strong>ata <strong>A</strong>bstraction <strong>L</strong>ibrary</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">4.2. NumPy</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#carregando-a-numpy">4.2.1. Carregando a NumPy</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#criando-matrizes">4.2.2. Criando matrizes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#alterando-o-formato-de-uma-matriz">4.2.3. Alterando o formato de uma matriz</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#informacoes-sobre-a-estrutura-de-uma-matriz">4.2.4. Informações sobre a Estrutura de uma matriz</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#operacoes-com-arrays">4.2.5. Operações com arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rasterio.html">4.2. Rasterio - Raster Input/Output</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.3. NumPy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#carregando-a-numpy">4.3.1. Carregando a NumPy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#criando-matrizes">4.3.2. Criando matrizes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#alterando-o-formato-de-uma-matriz">4.3.3. Alterando o formato de uma matriz</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#informacoes-sobre-a-estrutura-de-uma-matriz">4.3.4. Informações sobre a Estrutura de uma matriz</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#operacoes-com-arrays">4.3.5. Operações com arrays</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="visualizacao.html">4.3. Visualização de Imagens</a></li>
-<li class="toctree-l2"><a class="reference internal" href="escrita.html">4.4. Escrita em arquivos de Imagens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualizacao.html">4.4. Visualização de Imagens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="escrita.html">4.5. Escrita em arquivos de Imagens</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../vetorial.html">5. Manipulação de Dados Vetoriais</a></li>
@@ -91,14 +93,11 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../projetos/2025/index.html">Turma 2025</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2024/index.html">Turma 2024</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2023/index.html">Turma 2023</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2022/index.html">Turma 2022</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2021/index.html">Turma 2021</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Provas</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../provas/2024.html">Avaliação 2024</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Informações Gerais:</span></p>
 <ul>
@@ -124,12 +123,12 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../imagens.html"><span class="section-number">4. </span>Imagens - Processamento e Visualização</a></li>
-      <li class="breadcrumb-item active"><span class="section-number">4.2. </span>NumPy</li>
+      <li class="breadcrumb-item active"><span class="section-number">4.3. </span>NumPy</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Navegação sequencial da página">
-        <a href="gdal.html" class="btn btn-neutral float-left" title="4.1. GDAL - Geospatial Data Abstraction Library" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
-        <a href="visualizacao.html" class="btn btn-neutral float-right" title="4.3. Visualização de Imagens" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="rasterio.html" class="btn btn-neutral float-left" title="4.2. Rasterio - Raster Input/Output" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="visualizacao.html" class="btn btn-neutral float-right" title="4.4. Visualização de Imagens" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
   </div>
   <hr/>
 </div>
@@ -137,7 +136,7 @@
            <div itemprop="articleBody">
              
   <section id="numpy">
-<span id="sec-imagens-numpy"></span><h1><span class="section-number">4.2. </span>NumPy<a class="headerlink" href="#numpy" title="Link permanente para este cabeçalho"></a></h1>
+<span id="sec-imagens-numpy"></span><h1><span class="section-number">4.3. </span>NumPy<a class="headerlink" href="#numpy" title="Link permanente para este cabeçalho"></a></h1>
 <p>O principal objeto manipulado pela NumPy é o <em>homogeneous multidimensional array</em>:</p>
 <p>Uma tabela de elementos de mesmo tipo (em geral números) indexados por uma tupla de inteiros positivos:</p>
 <ul class="simple">
@@ -160,9 +159,9 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">ndarray.data</span></code>: é um buffer contendo os elementos do array, geralmente não é usado dessa forma pois temos facilidades de indexação</p></li>
 </ul>
 <section id="carregando-a-numpy">
-<h2><span class="section-number">4.2.1. </span>Carregando a NumPy<a class="headerlink" href="#carregando-a-numpy" title="Link permanente para este cabeçalho"></a></h2>
+<h2><span class="section-number">4.3.1. </span>Carregando a NumPy<a class="headerlink" href="#carregando-a-numpy" title="Link permanente para este cabeçalho"></a></h2>
 <p>Para utilizar a NumPy devemos importar seu módulo, chamado <code class="docutils literal notranslate"><span class="pre">numpy</span></code>. Em geral, associamos esse módulo ao nome (ou apelido) <code class="docutils literal notranslate"><span class="pre">np</span></code> da seguinte forma:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 </pre></div>
 </div>
 <p>E para saber a versão da biblioteca:</p>
@@ -171,7 +170,7 @@
 </div>
 </section>
 <section id="criando-matrizes">
-<h2><span class="section-number">4.2.2. </span>Criando matrizes<a class="headerlink" href="#criando-matrizes" title="Link permanente para este cabeçalho"></a></h2>
+<h2><span class="section-number">4.3.2. </span>Criando matrizes<a class="headerlink" href="#criando-matrizes" title="Link permanente para este cabeçalho"></a></h2>
 <p>A NumPy fornece várias funções para criação das matrizes. Vamos começar utilizando a função <code class="docutils literal notranslate"><span class="pre">arange</span></code>, que permite criar um array a partir de um intervalo regular de valores:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>np.arange?
 </pre></div>
@@ -199,7 +198,7 @@
 </div>
 </section>
 <section id="alterando-o-formato-de-uma-matriz">
-<h2><span class="section-number">4.2.3. </span>Alterando o formato de uma matriz<a class="headerlink" href="#alterando-o-formato-de-uma-matriz" title="Link permanente para este cabeçalho"></a></h2>
+<h2><span class="section-number">4.3.3. </span>Alterando o formato de uma matriz<a class="headerlink" href="#alterando-o-formato-de-uma-matriz" title="Link permanente para este cabeçalho"></a></h2>
 <p>Um array NumPy pode ser reestrutrado usando a operação <code class="docutils literal notranslate"><span class="pre">reshape</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>np.reshape?
 </pre></div>
@@ -214,7 +213,7 @@
 </div>
 </section>
 <section id="informacoes-sobre-a-estrutura-de-uma-matriz">
-<h2><span class="section-number">4.2.4. </span>Informações sobre a Estrutura de uma matriz<a class="headerlink" href="#informacoes-sobre-a-estrutura-de-uma-matriz" title="Link permanente para este cabeçalho"></a></h2>
+<h2><span class="section-number">4.3.4. </span>Informações sobre a Estrutura de uma matriz<a class="headerlink" href="#informacoes-sobre-a-estrutura-de-uma-matriz" title="Link permanente para este cabeçalho"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;shape&#39;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ndim&#39;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;dtype&#39;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
@@ -226,7 +225,7 @@
 </div>
 </section>
 <section id="operacoes-com-arrays">
-<h2><span class="section-number">4.2.5. </span>Operações com arrays<a class="headerlink" href="#operacoes-com-arrays" title="Link permanente para este cabeçalho"></a></h2>
+<h2><span class="section-number">4.3.5. </span>Operações com arrays<a class="headerlink" href="#operacoes-com-arrays" title="Link permanente para este cabeçalho"></a></h2>
 <p>É possível realizar operações matemáticas com arrays. A NumPy permite que uma operação seja aplicada a todos os elementos, de uma só vez.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># vamos imprimir o resultado</span>
 <span class="c1"># da soma de todos os elementos</span>
@@ -300,8 +299,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Rodapé">
-        <a href="gdal.html" class="btn btn-neutral float-left" title="4.1. GDAL - Geospatial Data Abstraction Library" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
-        <a href="visualizacao.html" class="btn btn-neutral float-right" title="4.3. Visualização de Imagens" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="rasterio.html" class="btn btn-neutral float-left" title="4.2. Rasterio - Raster Input/Output" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="visualizacao.html" class="btn btn-neutral float-right" title="4.4. Visualização de Imagens" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

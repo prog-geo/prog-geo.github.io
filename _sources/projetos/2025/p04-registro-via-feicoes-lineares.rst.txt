@@ -1,0 +1,16 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2025, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../../def.rst
+
+
+.. _sec_projetos_2025_p04:
+
+Registro simples via feições lineares
+=====================================
+
+As imagens dos satélites brasileiros CBERS-4 e CBERS-4A, sensores PAN e WPM, respectivamente, quando disponibilizadas em `nível de processamento L2 <http://www.obt.inpe.br/OBT/assuntos/catalogo-cbers-amz-1/NiveisProcessamento_CBERS_AMZ_Catalogo_LGI072024alt.pdf>`_, possuem pequenos deslocamentos sistemáticos, que poderiam ser corrigidas com um *shift* nas 2 direções (x e y). 
+
+Se tivermos uma imagem de referência na posição correta, podemos aplicar métodos simples de detecção de bordas nessa imagem e comparar as feições lineares obtidas com as da imagem L2 a ser corrigida. Comparando as feiçoes lineares, como matrizes binárias e portanto conjuntos de dados simplificados, mesmo em imagens muito grandes, é possível tentar deslocar a imagem L2 em uma zona de busca até que as feições lineares estejam mais bem alinhadas com a imagem de referência, e assim podemos estimar  um deslocamento mais adequado (em x e y) para melhorar o posicionamento inicial das nossas imagens L2.

@@ -1,34 +1,35 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="pt-BR" >
+<html class="writer-html5" lang="pt-BR">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>4.1. GDAL - Geospatial Data Abstraction Library &mdash; SER-347/CAP-419</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/table_styling.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/prog-geo.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/table_styling.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/prog-geo.css" />
+
+  
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="canonical" href="https://prog-geo.github.io/imagens/gdal.html" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/clipboard.min.js"></script>
-        <script src="../_static/copybutton.js"></script>
-        <script src="../_static/translations.js"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../_static/jquery.js"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+      <script src="../_static/doctools.js"></script>
+      <script src="../_static/sphinx_highlight.js"></script>
+      <script src="../_static/clipboard.min.js"></script>
+      <script src="../_static/copybutton.js"></script>
+      <script src="../_static/translations.js"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Buscar" href="../search.html" />
-    <link rel="next" title="4.2. NumPy" href="numpy.html" />
+    <link rel="next" title="4.2. Rasterio - Raster Input/Output" href="rasterio.html" />
     <link rel="prev" title="4. Imagens - Processamento e Visualização" href="../imagens.html" /> 
 </head>
 
@@ -74,9 +75,10 @@
 <li class="toctree-l3"><a class="reference internal" href="#liberando-um-conjunto-de-dados">4.1.6. Liberando um conjunto de dados</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="numpy.html">4.2. NumPy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="visualizacao.html">4.3. Visualização de Imagens</a></li>
-<li class="toctree-l2"><a class="reference internal" href="escrita.html">4.4. Escrita em arquivos de Imagens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rasterio.html">4.2. Rasterio - Raster Input/Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html">4.3. NumPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualizacao.html">4.4. Visualização de Imagens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="escrita.html">4.5. Escrita em arquivos de Imagens</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../vetorial.html">5. Manipulação de Dados Vetoriais</a></li>
@@ -92,14 +94,11 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../projetos/2025/index.html">Turma 2025</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2024/index.html">Turma 2024</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2023/index.html">Turma 2023</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2022/index.html">Turma 2022</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2021/index.html">Turma 2021</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Provas</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../provas/2024.html">Avaliação 2024</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Informações Gerais:</span></p>
 <ul>
@@ -130,7 +129,7 @@
       </li>
   </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Navegação sequencial da página">
         <a href="../imagens.html" class="btn btn-neutral float-left" title="4. Imagens - Processamento e Visualização" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
-        <a href="numpy.html" class="btn btn-neutral float-right" title="4.2. NumPy" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="rasterio.html" class="btn btn-neutral float-right" title="4.2. Rasterio - Raster Input/Output" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
   </div>
   <hr/>
 </div>
@@ -153,7 +152,7 @@
 <section id="importando-a-biblioteca-gdal">
 <h2><span class="section-number">4.1.1. </span>Importando a Biblioteca GDAL<a class="headerlink" href="#importando-a-biblioteca-gdal" title="Link permanente para este cabeçalho"></a></h2>
 <p>Para acessar a API <code class="docutils literal notranslate"><span class="pre">gdal</span></code>, que permitirá manipular as imagens, devemos importar a biblioteca <code class="docutils literal notranslate"><span class="pre">osgeo</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">gdal</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">osgeo</span><span class="w"> </span><span class="kn">import</span> <span class="n">gdal</span>
 </pre></div>
 </div>
 <p>Uma boa prática consiste em ativar o uso de exceções nas operações da biblioteca GDAL:</p>
@@ -241,9 +240,9 @@ print(&#39;* Jupyter Notebook&#39;)
 <p>Na tupla acima, temos o seguinte:</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 15%" />
-<col style="width: 15%" />
-<col style="width: 70%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 70.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Índice</p></th>
@@ -384,12 +383,8 @@ Y_{geo} = GT[3] + Linha * GT[5]
 </li>
 </ul>
 <p>Para computar um índice de vegetação, o NDVI, a partir das matrizes com os valores das bandas RED e NIR, aplicamos uma operação matricial, envolvendo as 2 matrizes obtidas a partir das bandas da imagem:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">matriz_red</span> <span class="o">=</span> <span class="n">matriz_red</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
-<span class="n">matriz_nir</span> <span class="o">=</span> <span class="n">matriz_nir</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
-
-<span class="c1"># geracao de array derivado das bandas</span>
-<span class="n">matriz_ndvi</span> <span class="o">=</span> <span class="p">(</span><span class="n">matriz_nir</span> <span class="o">-</span> <span class="n">matriz_red</span><span class="p">)</span> <span class="o">/</span> \
-              <span class="p">(</span><span class="n">matriz_nir</span> <span class="o">+</span> <span class="n">matriz_red</span> <span class="o">+</span> <span class="mf">0.000000001</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># geracao de array derivado das bandas</span>
+<span class="n">matriz_ndvi</span> <span class="o">=</span> <span class="p">(</span><span class="n">matriz_nir</span> <span class="o">-</span> <span class="n">matriz_red</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">matriz_nir</span> <span class="o">+</span> <span class="n">matriz_red</span> <span class="o">+</span> <span class="mf">0.000000001</span><span class="p">)</span>
 
 <span class="c1"># mostrar as dimensoes e tipo de dado da matriz de saida</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">matriz_ndvi</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
@@ -404,7 +399,7 @@ Y_{geo} = GT[3] + Linha * GT[5]
 <p>No cálculo da <code class="docutils literal notranslate"><span class="pre">matriz_ndvi</span></code> foi colocado um termo adicional no denominador, 0.000000001. Embora não faça parte da equação original, este termo evita que aconteçam divisões por zero, gerando valores nulos, ou inconsistentes, na matriz final. Por ser um valor muito pequeno, não impacta no resultado dos demais cálculos.</p>
 </div>
 <p>Podemos combinar as bibliotecas NumPy e Matplotlib para visualizar as matrizes como imagens:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
 
@@ -440,7 +435,7 @@ Y_{geo} = GT[3] + Linha * GT[5]
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Rodapé">
         <a href="../imagens.html" class="btn btn-neutral float-left" title="4. Imagens - Processamento e Visualização" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
-        <a href="numpy.html" class="btn btn-neutral float-right" title="4.2. NumPy" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="rasterio.html" class="btn btn-neutral float-right" title="4.2. Rasterio - Raster Input/Output" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

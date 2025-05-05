@@ -1,0 +1,18 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2025, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../../def.rst
+
+
+.. _sec_projetos_2025_p01:
+
+Datasets de imagens com diferentes resoluções espaciais
+=======================================================
+
+O INPE possui `satélites com diferentes sensores a bordo <https://geo-credito-rural.github.io/acesso-imagens/introducao-ser.html#tbl-acesso-imagens-introducao-ser-cbers-4-pan-mux-wfi>`_, e eles observam as mesmas áreas, ao mesmo tempo, porém com características de resolução espacial diferentes. Essa característica permite o estudo da observação dos alvos com resoluções diferentes, e a preparaçãode um conjunto de dados (amostras) para testes de modelos de classificação.
+
+Com base em 4 ou 5 cenas WFI, MUX e WPM obtidas na mesma data, criar vários recortes (patches) contendo a mesma área visualizada em todas as resoluções (4 bandas para cada sensor). Esse conjunto de dados servirá para compor um banco de amostras multiresolução, os quais podem treinar métodos de Deep Learning. 
+
+O grupo deverá escolher um conjunto de cenas, e processar as imagens para gerar os patches, cuidando das diferentes resoluções espaciais, e ao final criar gráficos para explorar as semelhanças e diferenças entre as cenas obtidas nas diferentes resoluções.

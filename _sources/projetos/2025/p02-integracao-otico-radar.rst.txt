@@ -1,0 +1,14 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2025, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../../def.rst
+
+
+.. _sec_projetos_2025_p02:
+
+Análise integrada de imagens ópticas e radar - RS
+=================================================
+
+Com base em uma série temporal das chuvas ocorridas no estado do Rio Grande do Sul (RS) em 2017, Sentinel-1 e Sentinel-2 (S1 e S2), ao menos 1 cena de cada satélite por mês para uma área de referência, realizar o processamento dos arquivos para homogeneizar as imagens S1 e S2 destes recortes, gerando gráficos com análises simples entre as imagens, explorando por exemplo ocorrência de nuvens (aproveitar máscaras de nuvens disponíveis no S2) e disponibilidade de dados de radar.

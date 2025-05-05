@@ -11,6 +11,7 @@
 Contraste de Imagens baseado na Cobertura da Terra
 ==================================================
 
+`Link para os scripts gerados pelo grupo <https://github.com/LuisMaurano/Ser347_2024/>`_.
 
 O contraste de imagens é uma ferramenta muito útil para a realização de análises visuais em sensoriamento remoto. Ao realizar operações matemáticas sobre os valores dos pixels (como multiplicação por uma constante, aplicação funções como logaritmo, raiz quadrada, etc.) a visualização é transformada.
 

@@ -1,0 +1,22 @@
+Turma 2025
+==========
+
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+
+    ./p01-datasets-multiresolucao
+    ./p02-integracao-otico-radar
+    ./p03-deteccao-diferencas-slic
+    ./p04-registro-via-feicoes-lineares
+    ./p05-acompanhamento-de-obras
+    
+    
+Observações
+-----------
+
+
+**1.** Os scripts deverão conter documentação de uso.
+
+**2.** O relatório produzido deverá estar no formato do evento `GEOINFO <http://www.geoinfo.info/>`_.
+

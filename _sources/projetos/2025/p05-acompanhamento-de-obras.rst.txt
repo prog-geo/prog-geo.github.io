@@ -1,0 +1,16 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2025, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../../def.rst
+
+
+.. _sec_projetos_2025_p05:
+
+Acompanhamento de mudanças na cobertura da terra
+================================================
+
+Com base em polígonos de referência, que podem indicar obras públicas em andamento (como por exemplo pontes ou grandes prédios) ou obras particulares (como prédios em construção), consultar o catálogo de imagens do INPE, seja na base do `Brazil Data Cube (BDC) <http://brazildatacube.dpi.inpe.br/portal/explore>`_ ou no `Catálogo de imagens do INPE <http://www.dgi.inpe.br/catalogo/explore>`_ nas imagens CBERS-4A/WPM para obter recortes de todas as imagens de mais alta resolução espacial disponíveis.
+
+As imagens deverão ser ordenadas no tempo, para que um analista humano possa acompanhar visualmente o andamento da área de interesse. Os recortes podem ter um contraste melhorado, uma visualização combinada com tempos anteriores para mostrar diferenças, ou ainda a combinação com `dados complementares vetoriais <https://www.openstreetmap.org/>`_ como quadras, ruas, rios, etc.

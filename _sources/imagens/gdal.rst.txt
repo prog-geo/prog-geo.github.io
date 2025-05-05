@@ -328,12 +328,8 @@ Agora, podemos utilizar todas as operações disponíveis na `NumPy <https://num
 
 Para computar um índice de vegetação, o NDVI, a partir das matrizes com os valores das bandas RED e NIR, aplicamos uma operação matricial, envolvendo as 2 matrizes obtidas a partir das bandas da imagem::
 
-    matriz_red = matriz_red.astype(float)
-    matriz_nir = matriz_nir.astype(float)
-
     # geracao de array derivado das bandas
-    matriz_ndvi = (matriz_nir - matriz_red) / \
-                  (matriz_nir + matriz_red + 0.000000001)
+    matriz_ndvi = (matriz_nir - matriz_red) / (matriz_nir + matriz_red + 0.000000001)
 
     # mostrar as dimensoes e tipo de dado da matriz de saida
     print(matriz_ndvi.shape)

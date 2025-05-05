@@ -1,0 +1,176 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="pt-BR">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro simples via feições lineares &mdash; SER-347/CAP-419</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/table_styling.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/prog-geo.css" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="canonical" href="https://prog-geo.github.io/projetos/2025/p04-registro-via-feicoes-lineares.html" />
+      <script src="../../_static/jquery.js"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+      <script src="../../_static/doctools.js"></script>
+      <script src="../../_static/sphinx_highlight.js"></script>
+      <script src="../../_static/clipboard.min.js"></script>
+      <script src="../../_static/copybutton.js"></script>
+      <script src="../../_static/translations.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Buscar" href="../../search.html" />
+    <link rel="next" title="Acompanhamento de mudanças na cobertura da terra" href="p05-acompanhamento-de-obras.html" />
+    <link rel="prev" title="Diferenças de imagens pré/pós eventos de desastre" href="p03-deteccao-diferencas-slic.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            SER-347/CAP-419
+              <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Pesquisar documentos" aria-label="Pesquisar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegação">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Introdução à Programação com Dados Geoespaciais</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Visão Geral do Curso:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../visao-geral.html">Visão Geral do Curso</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Aulas:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../instalacao.html">1. Instalando e Configurando o Ambiente de Programação</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../introducao-programacao/index.html">2. Introdução à Programação com a Linguagem Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../jupyter.html">3. Jupyter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../imagens.html">4. Imagens - Processamento e Visualização</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vetorial.html">5. Manipulação de Dados Vetoriais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../variados.html">6. Tópicos Variados</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Referências Bibliográficas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../referencias.html">Referências Bibliográficas</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Listas de Exercícios</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../listas/index.html">Listas de Exercícios</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Turma 2025</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="p01-datasets-multiresolucao.html">Datasets de imagens com diferentes resoluções espaciais</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p02-integracao-otico-radar.html">Análise integrada de imagens ópticas e radar - RS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p03-deteccao-diferencas-slic.html">Diferenças de imagens pré/pós eventos de desastre</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Registro simples via feições lineares</a></li>
+<li class="toctree-l2"><a class="reference internal" href="p05-acompanhamento-de-obras.html">Acompanhamento de mudanças na cobertura da terra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#observacoes">Observações</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../2024/index.html">Turma 2024</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2023/index.html">Turma 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2022/index.html">Turma 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2021/index.html">Turma 2021</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Informações Gerais:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../licenca.html">Licença</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Agradecimentos:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../agradecimentos.html">Agradecimentos</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Menu de navegação móvel"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">SER-347/CAP-419</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Navegação da página">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Turma 2025</a></li>
+      <li class="breadcrumb-item active">Registro simples via feições lineares</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Navegação sequencial da página">
+        <a href="p03-deteccao-diferencas-slic.html" class="btn btn-neutral float-left" title="Diferenças de imagens pré/pós eventos de desastre" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="p05-acompanhamento-de-obras.html" class="btn btn-neutral float-right" title="Acompanhamento de mudanças na cobertura da terra" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="registro-simples-via-feicoes-lineares">
+<span id="sec-projetos-2025-p04"></span><h1>Registro simples via feições lineares<a class="headerlink" href="#registro-simples-via-feicoes-lineares" title="Link permanente para este cabeçalho"></a></h1>
+<p>As imagens dos satélites brasileiros CBERS-4 e CBERS-4A, sensores PAN e WPM, respectivamente, quando disponibilizadas em <a class="reference external" href="http://www.obt.inpe.br/OBT/assuntos/catalogo-cbers-amz-1/NiveisProcessamento_CBERS_AMZ_Catalogo_LGI072024alt.pdf">nível de processamento L2</a>, possuem pequenos deslocamentos sistemáticos, que poderiam ser corrigidas com um <em>shift</em> nas 2 direções (x e y).</p>
+<p>Se tivermos uma imagem de referência na posição correta, podemos aplicar métodos simples de detecção de bordas nessa imagem e comparar as feições lineares obtidas com as da imagem L2 a ser corrigida. Comparando as feiçoes lineares, como matrizes binárias e portanto conjuntos de dados simplificados, mesmo em imagens muito grandes, é possível tentar deslocar a imagem L2 em uma zona de busca até que as feições lineares estejam mais bem alinhadas com a imagem de referência, e assim podemos estimar  um deslocamento mais adequado (em x e y) para melhorar o posicionamento inicial das nossas imagens L2.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Rodapé">
+        <a href="p03-deteccao-diferencas-slic.html" class="btn btn-neutral float-left" title="Diferenças de imagens pré/pós eventos de desastre" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="p05-acompanhamento-de-obras.html" class="btn btn-neutral float-right" title="Acompanhamento de mudanças na cobertura da terra" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2022, Gilberto Queiroz and Thales Körting.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+    <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165908761-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-165908761-1', {
+          'anonymize_ip': false,
+      });
+    </script> 
+
+</body>
+</html>

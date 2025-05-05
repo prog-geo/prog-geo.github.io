@@ -11,6 +11,8 @@
 Registro automático para séries temporais WFI L4
 ================================================
 
+`Link para os scripts gerados pelo grupo <https://zenodo.org/records/11218098>`_.
+
 O INPE possui o sensor WFI em 3 satélites (CBERS-4, CBERS-4A, AMAZONIA-1). Isso permite a geração de séries temporais com alta frequência de revisita. No entanto, mesmo quando as imagens 
 possuem um nível de processamento L4, certas regiões não parecem estar perfeitamente alinhadas (registradas).
 

@@ -1,29 +1,30 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="pt-BR" >
+<html class="writer-html5" lang="pt-BR">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>2. Introdução à Programação com a Linguagem Python &mdash; SER-347/CAP-419</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/table_styling.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/prog-geo.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/table_styling.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/prog-geo.css" />
+
+  
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="canonical" href="https://prog-geo.github.io/introducao-programacao/index.html" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/clipboard.min.js"></script>
-        <script src="../_static/copybutton.js"></script>
-        <script src="../_static/translations.js"></script>
+      <script src="../_static/jquery.js"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+      <script src="../_static/doctools.js"></script>
+      <script src="../_static/sphinx_highlight.js"></script>
+      <script src="../_static/clipboard.min.js"></script>
+      <script src="../_static/copybutton.js"></script>
+      <script src="../_static/translations.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Buscar" href="../search.html" />
@@ -105,14 +106,11 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../projetos/2025/index.html">Turma 2025</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2024/index.html">Turma 2024</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2023/index.html">Turma 2023</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2022/index.html">Turma 2022</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2021/index.html">Turma 2021</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Provas</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../provas/2024.html">Avaliação 2024</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Informações Gerais:</span></p>
 <ul>
@@ -155,8 +153,8 @@
 <p>A <strong>atividade de programar</strong> consiste na habilidade de expressar as computações que dizem ao computador como resolver um determinado problema. Uma das ferramentas que permitem expressar essas computações são as <strong>Linguagens de Programação</strong>. O <a class="reference internal" href="#introd-prog-code-timeseries"><span class="std std-numref">Trecho de Código 2.1</span></a> exemplifica um programa escrito na linguagem Python, composto por uma sequência de instruções encadeadas de forma a produzir o gráfico com a série temporal mostrado na <a class="reference internal" href="#introd-prog-fig-timeseries"><span class="std std-numref">Figura 2.1</span></a>.</p>
 <div class="literal-block-wrapper docutils container" id="introd-prog-code-timeseries">
 <div class="code-block-caption"><span class="caption-number">Trecho de Código 2.1 - </span><span class="caption-text">Recuperando uma série temporal.</span><a class="headerlink" href="#introd-prog-code-timeseries" title="Link Permanente para esse código"></a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="linenos"> 2</span><span class="kn">from</span> <span class="nn">wtss</span> <span class="kn">import</span> <span class="n">wtss</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="linenos"> 2</span><span class="kn">from</span><span class="w"> </span><span class="nn">wtss</span><span class="w"> </span><span class="kn">import</span> <span class="n">wtss</span>
 <span class="linenos"> 3</span>
 <span class="linenos"> 4</span><span class="n">w</span> <span class="o">=</span> <span class="n">wtss</span><span class="p">(</span><span class="s1">&#39;http://www.esensing.dpi.inpe.br/&#39;</span><span class="p">)</span>
 <span class="linenos"> 5</span>

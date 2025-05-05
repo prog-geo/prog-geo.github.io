@@ -1,0 +1,146 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _sec_imagens_rasterio:
+
+Rasterio - Raster Input/Output
+==============================
+
+Muitos sistemas de informação geográfica utilizam o formato GeoTIFF para organizar as imagens. A biblioteca Rasterio (geralmente utilizada com ``rio`` nos scripts) fornece métodos para ler e escrever imagens de satélite em formatos conhecidos.
+
+De acordo com os autores, o `propósito da Rasterio <https://rasterio.readthedocs.io/en/stable/intro.html>`_ é ser uma biblioteca de acesso a dados Raster, baseada nos modelos de dados disponíveis na `biblioteca GDAL <https://gdal.org/en/stable/>`_, porém com comandos mais próximos da linguagem Python do que os oferecidos pela GDAL (em geral baseados no código original da linguagem, para C++).
+
+  
+
+Importando a Biblioteca Rasterio
+--------------------------------
+
+Para acessar a API ``rasterio``, que permitirá manipular as imagens, devemos importar a biblioteca::
+
+    import rasterio as rio
+
+Desta forma teremos sempre os métodos disponíveis a partir do nome ``rio``.
+
+.. note::
+
+    No Google Colab, por exemplo, a biblioteca precisa ser instalada a cada vez, por meio do comando::
+
+    !pip install rasterio
+
+Abertura de um arquivo *raster*
+-------------------------------
+
+A função ``open`` é utilizada para abrir um conjunto de dados (ou ``dataset``). Para abrir o mesmo arquivo GeoTIFF anterior, com a imagem (`faça o download da imagem de teste <https://drive.google.com/u/0/uc?id=1WbQ3aYWjYPpHxA3Z03_qVVTAncgr7PV_&export=download>`_), podemos fazer::
+
+    dataset = rio.open('crop_rapideye.tif')
+                                                                                                                                           
+Repare o tipo de objeto retornado pela operação ``rio.open``::
+
+    type(dataset)
+
+Saída::
+
+    rasterio.io.DatasetReader
+
+
+Estrutura do *Dataset*
+----------------------
+
+
+Sistema de Referência Espacial
+++++++++++++++++++++++++++++++
+
+
+Para conhecer o sistema de coordenadas de referência (CRS) de um ``dataset``, deve ser utilizada a propriedade ``dataset.crs``::
+
+    dataset.crs
+
+
+Transformação Afim
+------------------
+
+                                                                                                                                           
+Para saber os metadados da imagem sobre extensão espacial e transformação afim, podemos conferir outras propriedades de um ``dataset``::
+                                                                                                                                        
+    dataset.bounds
+
+
+para obter as coordenadas dos 4 cantos da imagem::
+
+
+    dataset.transform
+                                                                                                                                           
+para obter os 6 coeficientes da transformação afim (conferir o significado de cada termo `no material sobre GDAL <https://prog-geo.github.io/imagens/gdal.html#transformacao-afim>`_).
+
+
+Dimensões (Número de linhas e colunas)
+++++++++++++++++++++++++++++++++++++++
+
+
+Para saber o número de linhas e colunas do ``dataset`` que está sendo utilizado, devemos utilizar as propriedades ``height`` e ``width``::
+
+    linhas = dataset.height
+    colunas = dataset.width
+
+    print ("Número de linhas:", linhas)
+    print ("Número de colunas:", colunas)
+
+
+Bandas
+++++++
+
+
+Para saber o número de bandas de um ``dataset``, podemos utilizar a propriedade ``indexes``::
+
+    >>> dataset.indexes
+    (1, 2, 3, 4, 5)
+
+Veja que é uma tupla com os índices das 5 bandas disponíveis. Como cada banda pode ter um tipo de dados diferente, é possível consultar a propridade ``dtypes`` para receber uma tupla com o tipo de dado de cada banda::
+
+    >>> dataset.dtypes
+    ('uint16', 'uint16', 'uint16', 'uint16', 'uint16')
+
+.. note::
+
+    A GDAL e a Rasterio numeram as bandas de 1 até :math:`n`, onde :math:`n` é o número total de bandas contidas no ``dataset``.
+
+Leitura dos dados de uma banda
+------------------------------
+
+
+Para gerar uma matriz NumPy para cada banda, pode-se usar diretamente o método ``read``::
+
+    matriz_nir = dataset.read(5)
+    matriz_red = dataset.read(3)
+
+Essa operação retornará uma matriz do NumPy::
+
+    >>> type(matriz_red)
+    numpy.ndarray
+
+
+Para computar um índice de vegetação, o NDVI, a partir das matrizes com os valores das bandas RED e NIR, aplicamos uma operação matricial, envolvendo as 2 matrizes obtidas a partir das bandas da imagem::
+
+    # geracao de array derivado das bandas
+    matriz_ndvi = (matriz_nir - matriz_red) / (matriz_nir + matriz_red + 0.000000001)
+
+
+Podemos combinar as bibliotecas NumPy e Matplotlib para visualizar as matrizes como imagens::
+
+    import matplotlib.pyplot as plt
+
+    plt.figure(figsize=(16, 8))
+
+    plt.subplot(131)
+    plt.title("Banda RED")
+    plt.imshow(matriz_red, cmap='gray')
+
+    plt.subplot(132)
+    plt.title("Banda NIR")
+    plt.imshow(matriz_nir, cmap='gray')
+
+    plt.subplot(133)
+    plt.title("NDVI")
+    plt.imshow(matriz_ndvi, cmap='gray', vmin=-1.0, vmax=1.0)

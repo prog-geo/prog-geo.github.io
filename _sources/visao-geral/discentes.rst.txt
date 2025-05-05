@@ -9,6 +9,14 @@ Discentes
 =========
 
 
+Turma 2024
+----------
+
+
+.. image:: ../img/visao-geral/turma-2024.png
+        :width: 100%
+        :alt: Turma 2024
+        
 Turma 2023
 ----------
 

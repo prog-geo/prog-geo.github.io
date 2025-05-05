@@ -1,29 +1,30 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="pt-BR" >
+<html class="writer-html5" lang="pt-BR">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Imagem de incidência solar &mdash; SER-347/CAP-419</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/table_styling.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/prog-geo.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/table_styling.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/prog-geo.css" />
+
+  
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="canonical" href="https://prog-geo.github.io/projetos/2023/p03-sol.html" />
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/sphinx_highlight.js"></script>
-        <script src="../../_static/clipboard.min.js"></script>
-        <script src="../../_static/copybutton.js"></script>
-        <script src="../../_static/translations.js"></script>
+      <script src="../../_static/jquery.js"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+      <script src="../../_static/doctools.js"></script>
+      <script src="../../_static/sphinx_highlight.js"></script>
+      <script src="../../_static/clipboard.min.js"></script>
+      <script src="../../_static/copybutton.js"></script>
+      <script src="../../_static/translations.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Buscar" href="../../search.html" />
@@ -77,6 +78,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../2025/index.html">Turma 2025</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../2024/index.html">Turma 2024</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Turma 2023</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="p01-registro.html">Registro automático para CBERS-4</a></li>
@@ -92,10 +94,6 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../2022/index.html">Turma 2022</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../2021/index.html">Turma 2021</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Provas</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../provas/2024.html">Avaliação 2024</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Informações Gerais:</span></p>
 <ul>
@@ -139,7 +137,7 @@
 <figure class="align-center align-default" id="imagens-exemplo-p03-sol">
 <a class="reference internal image-reference" href="../../_images/paraguai-p03-sol.png"><img alt="região do Paraguai + *buffer* (WFI/CBERS-4), cenas de 15/nov/2022 e 17/nov/2022 (170/123, 170/129, 162/123, 162/129)" src="../../_images/paraguai-p03-sol.png" style="width: 50%;" /></a>
 <figcaption>
-<p><span class="caption-number">Figura 19 - </span><span class="caption-text">Região do Paraguai + <em>buffer</em> (WFI/CBERS-4), cenas de 15/nov/2022 e 17/nov/2022 (170/123, 170/129, 162/123, 162/129).</span><a class="headerlink" href="#imagens-exemplo-p03-sol" title="Link Permanente para essa imagem"></a></p>
+<p><span class="caption-number">Figura 18 - </span><span class="caption-text">Região do Paraguai + <em>buffer</em> (WFI/CBERS-4), cenas de 15/nov/2022 e 17/nov/2022 (170/123, 170/129, 162/123, 162/129).</span><a class="headerlink" href="#imagens-exemplo-p03-sol" title="Link Permanente para essa imagem"></a></p>
 </figcaption>
 </figure>
 <p>O objetivo deste trabalho é construir uma imagem de incidência solar para um retângulo envolvente de qualquer cena WFI/CBERS-4. Com base na data da obtenção da imagem, construir uma imagem em formato de grade (testar grades de 1km, 5km, 10km) contendo valores proporcionais à incidência solar (informações obtidas em <a class="reference external" href="https://gml.noaa.gov/grad/solcalc/">NOAA Solar Calculator</a>). A partir desta grade, realizar operações aritméticas (por exemplo subtração) das bandas originais, de forma a minimizar os efeitos da incidência solar sobre as imagens.</p>

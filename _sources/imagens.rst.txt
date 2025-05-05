@@ -63,6 +63,7 @@ Outra maneira consiste em armazenar diversas bandas no mesmo arquivo. Neste caso
     :caption: Tópicos
 
     ./imagens/gdal
+    ./imagens/rasterio
     ./imagens/numpy
     ./imagens/visualizacao
     ./imagens/escrita

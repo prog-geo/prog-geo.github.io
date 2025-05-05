@@ -1,0 +1,17 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2025, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../../def.rst
+
+
+.. _sec_projetos_2025_p03:
+
+Diferenças de imagens pré/pós eventos de desastre
+=================================================
+
+Com base em 2 imagens (antes e depois de um desastre, já elaboradas pelo INPE no contexto da `Carta Internacional Espaço e Grandes Desastres <https://data.inpe.br/charter/data/>`_ - `Disasters Charter <https://disasterscharter.org/>`_), realizar o recorte das 2 imagens para uma área comum, gerando 2 imagens com matrizes equivalentes para análise.
+
+Posteriormente, pode-se aplicar uma segmentação grosseira (métodos de células regulares, ou super pixel, `SLIC <https://www.youtube.com/watch?v=-hmUbB-Y8R0>`_) e obter índices para ressaltar a diferença entre as imagens em cada segmento. Por exemplo, um segmento com mudanças sutis pode não ser uma evidência de desastre. Entretanto, outro segmento com mudanças muito grandes pode ser uma ocorrência de nuvens. O caso de interesse deve apresentar mudanças cujas diferenças entre os pixels das 2 imagens esteja num intervalo a ser descoberto, e pode indicar uma área afetada por um desastre.
+

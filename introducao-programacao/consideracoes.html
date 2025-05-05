@@ -1,29 +1,30 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="pt-BR" >
+<html class="writer-html5" lang="pt-BR">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>2.25. Considerações Finais &mdash; SER-347/CAP-419</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/table_styling.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/prog-geo.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/table_styling.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/prog-geo.css" />
+
+  
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="canonical" href="https://prog-geo.github.io/introducao-programacao/consideracoes.html" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/clipboard.min.js"></script>
-        <script src="../_static/copybutton.js"></script>
-        <script src="../_static/translations.js"></script>
+      <script src="../_static/jquery.js"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+      <script src="../_static/doctools.js"></script>
+      <script src="../_static/sphinx_highlight.js"></script>
+      <script src="../_static/clipboard.min.js"></script>
+      <script src="../_static/copybutton.js"></script>
+      <script src="../_static/translations.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Buscar" href="../search.html" />
@@ -105,14 +106,11 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../projetos/2025/index.html">Turma 2025</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2024/index.html">Turma 2024</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2023/index.html">Turma 2023</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2022/index.html">Turma 2022</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2021/index.html">Turma 2021</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Provas</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../provas/2024.html">Avaliação 2024</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Informações Gerais:</span></p>
 <ul>
@@ -218,7 +216,7 @@
 <li><p>Os parâmetros <code class="docutils literal notranslate"><span class="pre">*args</span></code> e <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> são usados na definição de funções com número variável de parâmetros. Bibliotecas como a <cite>Matplotlib</cite> utilizam bastante esses tipos de parâmetros para fornecer maior flexibilidade na chamada de funções e métodos das funcionalidades providas por ela. A partir da 3.6, a linguagem Python adotou uma implementação do tipo dicionário onde os pares <em>chave-valor</em> (<em>key-value pairs</em>) são ordenados. Em versões anteriores, não havia a garantia de ordenação.</p></li>
 <li><p>Toda função em Python retorna algum valor. Caso o comando <cite>return</cite> seja usado sem valor, o valor <code class="docutils literal notranslate"><span class="pre">None</span></code> é retornado. Se você não incluir um comando <code class="docutils literal notranslate"><span class="pre">return</span></code> no bloco de comandos da função ou se por acaso algum caminho da sua função fizer com que ela termine sem uma instrução <code class="docutils literal notranslate"><span class="pre">return</span></code>, automaticamente será retornado o valor <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
 <li><p>Quando definimos um parâmetro com valor <em>default</em>, devemos tomar cuidado ao usar valores <em>mutáveis</em>. Observe o exemplo abaixo:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">MinhaFuncao</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[]):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">MinhaFuncao</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[]):</span>
     <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">data</span>
 
@@ -231,7 +229,7 @@
 </ul>
 <blockquote>
 <div><p>Como pode ser observado, a lista continua crescendo à medida que usamos a função <code class="docutils literal notranslate"><span class="pre">MinhaFuncao</span></code>. Isso ocorre porque o valor da expressão com o valor <em>default</em> é realizado apenas uma única vez, quando a função é definida. Por conta dessa “armadilha”, em geral, definimos funções como essas da seguinte forma:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">MinhaFuncao2</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">MinhaFuncao2</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">else</span><span class="p">:</span>
@@ -270,8 +268,8 @@
 <table class="styled-table docutils align-center" id="introd-prog-tbl-simula67" style="width: 100%">
 <caption><span class="caption-number">Tabela 2.14 - </span><span class="caption-text">SIMULA 67. <br/> <strong>Fonte:</strong> Dahl et al. (1970) <span id="id11">[<a class="reference internal" href="../referencias.html#id12" title="Ole-Johan Dahl, Bjørn Myhrhaug, and Kristen Nygaard. Simula information: common base language. Technical Report S-22, Norwegian Computing Center, Oslo, Norway, October 1970. URL: https://www.ics.uci.edu/~jajones/INF102-S18/readings/10_Simula.pdf.">12</a>]</span>.</span><a class="headerlink" href="#introd-prog-tbl-simula67" title="Link Permanente para essa tabela"></a></caption>
 <colgroup>
-<col style="width: 60%" />
-<col style="width: 40%" />
+<col style="width: 60.0%" />
+<col style="width: 40.0%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td class="center-align"><p><img alt="dahl-nygaard" src="../_images/dahl-nygaard.png" /></p>
@@ -283,8 +281,8 @@
 </table>
 <table class="styled-table docutils align-center" style="width: 100%">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col style="width: 50.0%" />
+<col style="width: 50.0%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td class="center-align"><p><img alt="simula-2" src="../_images/simula67-2.png" /></p></td>

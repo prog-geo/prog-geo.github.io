@@ -1,29 +1,30 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="pt-BR" >
+<html class="writer-html5" lang="pt-BR">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>5.6. Leitura/Escrita de Dados Vetoriais &mdash; SER-347/CAP-419</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/table_styling.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/prog-geo.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/table_styling.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/prog-geo.css" />
+
+  
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="canonical" href="https://prog-geo.github.io/vetorial/geo-io.html" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/clipboard.min.js"></script>
-        <script src="../_static/copybutton.js"></script>
-        <script src="../_static/translations.js"></script>
+      <script src="../_static/jquery.js"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+      <script src="../_static/doctools.js"></script>
+      <script src="../_static/sphinx_highlight.js"></script>
+      <script src="../_static/clipboard.min.js"></script>
+      <script src="../_static/copybutton.js"></script>
+      <script src="../_static/translations.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Buscar" href="../search.html" />
@@ -90,14 +91,11 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../projetos/2025/index.html">Turma 2025</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2024/index.html">Turma 2024</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2023/index.html">Turma 2023</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2022/index.html">Turma 2022</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2021/index.html">Turma 2021</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Provas</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../provas/2024.html">Avaliação 2024</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Informações Gerais:</span></p>
 <ul>
@@ -167,7 +165,7 @@
 </pre></div>
 </div>
 <p>Para verificar se sua instalação foi realizada com sucesso, importe essa biblioteca através do seguinte comando:</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="kn">import</span> <span class="nn">fiona</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="kn">import</span><span class="w"> </span><span class="nn">fiona</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -227,7 +225,7 @@
 <p>Vamos escrever um programa que compute o centróide para cada uma das geometrias das Unidades Federativas e, em seguida, escreva na saída padrão a localização do centróide e o nome da unidade. Como será necessária a realização de uma operação espacial para geração do centróide, devemos carregar a biblioteca Shapely, como indicado no <a class="reference internal" href="#code-vetorial-geo-io-fiona-compute-centroid"><span class="std std-numref">Trecho de Código 5.8</span></a>.</p>
 <div class="literal-block-wrapper docutils container" id="code-vetorial-geo-io-fiona-compute-centroid">
 <div class="code-block-caption"><span class="caption-number">Trecho de Código 5.8 - </span><span class="caption-text">Computando o centróide para os polígonos das Unidades Federativas.</span><a class="headerlink" href="#code-vetorial-geo-io-fiona-compute-centroid" title="Link Permanente para esse código"></a></div>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="gp">In [1]: </span><span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">shape</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="gp">In [1]: </span><span class="kn">from</span><span class="w"> </span><span class="nn">shapely.geometry</span><span class="w"> </span><span class="kn">import</span> <span class="n">shape</span>
 <span class="linenos"> 2</span>
 <span class="linenos"> 3</span><span class="gp">In [2]: </span><span class="k">with</span> <span class="n">fiona</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;data/uf/uf_2018.shp&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">ufs</span><span class="p">:</span>
 <span class="linenos"> 4</span><span class="gp">   ...: </span>    <span class="k">for</span> <span class="n">uf</span> <span class="ow">in</span> <span class="n">ufs</span><span class="p">:</span>
@@ -246,10 +244,10 @@
 <p>Para finalizar, vamos discutir o código apresentado no <a class="reference internal" href="#code-vetorial-geo-io-fiona-read"><span class="std std-numref">Trecho de Código 5.9</span></a>.</p>
 <div class="literal-block-wrapper docutils container" id="code-vetorial-geo-io-fiona-read">
 <div class="code-block-caption"><span class="caption-number">Trecho de Código 5.9 - </span><span class="caption-text">Leitura do esquema e dados de um arquivo ESRI Shapefile.</span><a class="headerlink" href="#code-vetorial-geo-io-fiona-read" title="Link Permanente para esse código"></a></div>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="gp">In [1]: </span><span class="kn">import</span> <span class="nn">fiona</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="gp">In [1]: </span><span class="kn">import</span><span class="w"> </span><span class="nn">fiona</span>
 <span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="gp">In [2]: </span><span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">shape</span>
-<span class="linenos"> 4</span><span class="gp">In [3]: </span><span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">mapping</span>
+<span class="linenos"> 3</span><span class="gp">In [2]: </span><span class="kn">from</span><span class="w"> </span><span class="nn">shapely.geometry</span><span class="w"> </span><span class="kn">import</span> <span class="n">shape</span>
+<span class="linenos"> 4</span><span class="gp">In [3]: </span><span class="kn">from</span><span class="w"> </span><span class="nn">shapely.geometry</span><span class="w"> </span><span class="kn">import</span> <span class="n">mapping</span>
 <span class="linenos"> 5</span>
 <span class="linenos"> 6</span><span class="gp">In [4]: </span><span class="k">with</span> <span class="n">fiona</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;data/uf/uf_2018.shp&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">ufs</span><span class="p">:</span>
 <span class="linenos"> 7</span><span class="gp">   ...:</span>
@@ -342,10 +340,10 @@
 <p>A chave <code class="docutils literal notranslate"><span class="pre">properties</span></code> pode ser uma lista ou um <code class="docutils literal notranslate"><span class="pre">OrderedDict</span></code>. O importante é utilizar uma estrutura que garanta a ordem dos elementos. Lembre-se que o <code class="docutils literal notranslate"><span class="pre">dict</span></code> pode não garantir isso dependendo das versões da linguagem Python.</p>
 </div>
 <p>Em seguida, vamos utilizar o comando <code class="docutils literal notranslate"><span class="pre">fiona.open</span></code> duas vezes. A primeira, para criar o novo arquivo, chamado <code class="docutils literal notranslate"><span class="pre">uf_centroides.shp</span></code> no diretório <code class="docutils literal notranslate"><span class="pre">data/uf</span></code>, com o esquema definido acima (<code class="docutils literal notranslate"><span class="pre">schema_centroides</span></code>), o <em>driver</em> <code class="docutils literal notranslate"><span class="pre">ESRI</span> <span class="pre">Shapefile</span></code>, e o <em>CRS</em> <code class="docutils literal notranslate"><span class="pre">EPSG:4674</span></code>. E o segundo uso do comando <code class="docutils literal notranslate"><span class="pre">fiona.open</span></code> irá abrir o arquivo <code class="docutils literal notranslate"><span class="pre">uf_2018.shp</span></code> para leitura.</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
-<span class="gp">In [1]: </span><span class="kn">import</span> <span class="nn">fiona</span>
-<span class="gp">In [2]: </span><span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">shape</span>
-<span class="gp">In [3]: </span><span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">mapping</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">OrderedDict</span>
+<span class="gp">In [1]: </span><span class="kn">import</span><span class="w"> </span><span class="nn">fiona</span>
+<span class="gp">In [2]: </span><span class="kn">from</span><span class="w"> </span><span class="nn">shapely.geometry</span><span class="w"> </span><span class="kn">import</span> <span class="n">shape</span>
+<span class="gp">In [3]: </span><span class="kn">from</span><span class="w"> </span><span class="nn">shapely.geometry</span><span class="w"> </span><span class="kn">import</span> <span class="n">mapping</span>
 
 <span class="gp">In [4]: </span><span class="k">with</span> <span class="n">fiona</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;data/uf/uf_centroides.shp&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span>
 <span class="gp">   ...: </span>                <span class="n">driver</span><span class="o">=</span><span class="s2">&quot;ESRI Shapefile&quot;</span><span class="p">,</span>
@@ -419,10 +417,10 @@
 <section id="carregando-a-biblioteca-gdal-ogr">
 <h3><span class="section-number">5.6.2.2. </span>Carregando a Biblioteca GDAL/OGR<a class="headerlink" href="#carregando-a-biblioteca-gdal-ogr" title="Link permanente para este cabeçalho"></a></h3>
 <p>Uma boa prática ao trabalhar com bibliotecas que não fazem parte da distribuição padrão do Python consiste na verificação de sua carga logo após as instruções <code class="docutils literal notranslate"><span class="pre">import</span></code>. O trecho de código abaixo mostra como realizar essa verificação logo no início do seu <em>script</em>, para certificar que a biblioteca <code class="docutils literal notranslate"><span class="pre">GDAL</span></code> tenha sido devidamente carregada antes de prosseguir com as próximas instruções do programa. Neste <em>script</em>, utilizamos um bloco <code class="docutils literal notranslate"><span class="pre">try-except</span></code> para verificar se o módulo <code class="docutils literal notranslate"><span class="pre">osgeo</span></code> e as APIs <code class="docutils literal notranslate"><span class="pre">ogr</span></code> e <code class="docutils literal notranslate"><span class="pre">gdal</span></code> foram devidamente carregados (<code class="docutils literal notranslate"><span class="pre">linhas</span> <span class="pre">3-6</span></code>). Na <code class="docutils literal notranslate"><span class="pre">linha</span> <span class="pre">9</span></code> utilizamos a função <code class="docutils literal notranslate"><span class="pre">VersionInfo</span></code> da API <code class="docutils literal notranslate"><span class="pre">GDAL</span></code> para obter uma string com a versão e data de build da <code class="docutils literal notranslate"><span class="pre">GDAL</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">sys</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
 <span class="linenos">2</span>
 <span class="linenos">3</span><span class="k">try</span><span class="p">:</span>
-<span class="linenos">4</span>    <span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">gdal</span><span class="p">,</span> <span class="n">ogr</span>
+<span class="linenos">4</span>    <span class="kn">from</span><span class="w"> </span><span class="nn">osgeo</span><span class="w"> </span><span class="kn">import</span> <span class="n">gdal</span><span class="p">,</span> <span class="n">ogr</span>
 <span class="linenos">5</span><span class="k">except</span><span class="p">:</span>
 <span class="linenos">6</span>    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="s1">&#39;ERRO: módulo GDAL/OGR não encontrado!&#39;</span><span class="p">)</span>
 <span class="linenos">7</span>

@@ -1,34 +1,35 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="pt-BR" >
+<html class="writer-html5" lang="pt-BR">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>4.3. Visualização de Imagens &mdash; SER-347/CAP-419</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/table_styling.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/prog-geo.css" type="text/css" />
+  <title>4.4. Visualização de Imagens &mdash; SER-347/CAP-419</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/table_styling.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/prog-geo.css" />
+
+  
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="canonical" href="https://prog-geo.github.io/imagens/visualizacao.html" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/clipboard.min.js"></script>
-        <script src="../_static/copybutton.js"></script>
-        <script src="../_static/translations.js"></script>
+      <script src="../_static/jquery.js"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+      <script src="../_static/doctools.js"></script>
+      <script src="../_static/sphinx_highlight.js"></script>
+      <script src="../_static/clipboard.min.js"></script>
+      <script src="../_static/copybutton.js"></script>
+      <script src="../_static/translations.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Buscar" href="../search.html" />
-    <link rel="next" title="4.4. Escrita em arquivos de Imagens" href="escrita.html" />
-    <link rel="prev" title="4.2. NumPy" href="numpy.html" /> 
+    <link rel="next" title="4.5. Escrita em arquivos de Imagens" href="escrita.html" />
+    <link rel="prev" title="4.3. NumPy" href="numpy.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -65,13 +66,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../jupyter.html">3. Jupyter</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../imagens.html">4. Imagens - Processamento e Visualização</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="gdal.html">4.1. GDAL - <strong>G</strong>eospatial <strong>D</strong>ata <strong>A</strong>bstraction <strong>L</strong>ibrary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="numpy.html">4.2. NumPy</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">4.3. Visualização de Imagens</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#composicao-colorida-e-contraste">4.3.1. Composição colorida e Contraste</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#metodos-simples-para-classificacao">4.3.2. Métodos simples para classificação</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rasterio.html">4.2. Rasterio - Raster Input/Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html">4.3. NumPy</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.4. Visualização de Imagens</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#composicao-colorida-e-contraste">4.4.1. Composição colorida e Contraste</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#metodos-simples-para-classificacao">4.4.2. Métodos simples para classificação</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="escrita.html">4.4. Escrita em arquivos de Imagens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="escrita.html">4.5. Escrita em arquivos de Imagens</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../vetorial.html">5. Manipulação de Dados Vetoriais</a></li>
@@ -87,14 +89,11 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../projetos/2025/index.html">Turma 2025</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2024/index.html">Turma 2024</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2023/index.html">Turma 2023</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2022/index.html">Turma 2022</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2021/index.html">Turma 2021</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Provas</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../provas/2024.html">Avaliação 2024</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Informações Gerais:</span></p>
 <ul>
@@ -120,12 +119,12 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../imagens.html"><span class="section-number">4. </span>Imagens - Processamento e Visualização</a></li>
-      <li class="breadcrumb-item active"><span class="section-number">4.3. </span>Visualização de Imagens</li>
+      <li class="breadcrumb-item active"><span class="section-number">4.4. </span>Visualização de Imagens</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Navegação sequencial da página">
-        <a href="numpy.html" class="btn btn-neutral float-left" title="4.2. NumPy" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
-        <a href="escrita.html" class="btn btn-neutral float-right" title="4.4. Escrita em arquivos de Imagens" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="numpy.html" class="btn btn-neutral float-left" title="4.3. NumPy" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="escrita.html" class="btn btn-neutral float-right" title="4.5. Escrita em arquivos de Imagens" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
   </div>
   <hr/>
 </div>
@@ -133,7 +132,7 @@
            <div itemprop="articleBody">
              
   <section id="visualizacao-de-imagens">
-<span id="sec-imagens-visualizacao"></span><h1><span class="section-number">4.3. </span>Visualização de Imagens<a class="headerlink" href="#visualizacao-de-imagens" title="Link permanente para este cabeçalho"></a></h1>
+<span id="sec-imagens-visualizacao"></span><h1><span class="section-number">4.4. </span>Visualização de Imagens<a class="headerlink" href="#visualizacao-de-imagens" title="Link permanente para este cabeçalho"></a></h1>
 <p>Primeiramente, vamos criar os objetos que nos darão acesso aos elementos da imagem:</p>
 <ul class="simple">
 <li><p>dataset</p></li>
@@ -141,9 +140,9 @@
 <li><p>array de pixels (formato NumPy)</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># importar bibliotecas</span>
-<span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">gdal</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">osgeo</span><span class="w"> </span><span class="kn">import</span> <span class="n">gdal</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="c1"># informar o uso de exceções</span>
 <span class="n">gdal</span><span class="o">.</span><span class="n">UseExceptions</span><span class="p">()</span>
@@ -242,7 +241,7 @@
 </figcaption>
 </figure>
 <section id="composicao-colorida-e-contraste">
-<h2><span class="section-number">4.3.1. </span>Composição colorida e Contraste<a class="headerlink" href="#composicao-colorida-e-contraste" title="Link permanente para este cabeçalho"></a></h2>
+<h2><span class="section-number">4.4.1. </span>Composição colorida e Contraste<a class="headerlink" href="#composicao-colorida-e-contraste" title="Link permanente para este cabeçalho"></a></h2>
 <p>Para visualizar uma composição colorida, precisamos informar quais bandas serão utilizadas nas componentes RGB do gráfico:</p>
 <ul class="simple">
 <li><p>canal R (vermelho)</p></li>
@@ -320,7 +319,7 @@
 </div>
 </section>
 <section id="metodos-simples-para-classificacao">
-<h2><span class="section-number">4.3.2. </span>Métodos simples para classificação<a class="headerlink" href="#metodos-simples-para-classificacao" title="Link permanente para este cabeçalho"></a></h2>
+<h2><span class="section-number">4.4.2. </span>Métodos simples para classificação<a class="headerlink" href="#metodos-simples-para-classificacao" title="Link permanente para este cabeçalho"></a></h2>
 <p>Em diversos casos, a aplicação de limiares sobre índices espectrais produz rapidamente resultados de mapeamento de alvos.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># definição de algumas constantes (empíricas)</span>
 <span class="n">delta</span> <span class="o">=</span> <span class="mf">0.0000000001</span>
@@ -364,8 +363,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Rodapé">
-        <a href="numpy.html" class="btn btn-neutral float-left" title="4.2. NumPy" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
-        <a href="escrita.html" class="btn btn-neutral float-right" title="4.4. Escrita em arquivos de Imagens" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="numpy.html" class="btn btn-neutral float-left" title="4.3. NumPy" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="escrita.html" class="btn btn-neutral float-right" title="4.5. Escrita em arquivos de Imagens" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

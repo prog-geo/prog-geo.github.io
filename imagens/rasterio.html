@@ -1,0 +1,299 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="pt-BR">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4.2. Rasterio - Raster Input/Output &mdash; SER-347/CAP-419</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/table_styling.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/prog-geo.css" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="canonical" href="https://prog-geo.github.io/imagens/rasterio.html" />
+      <script src="../_static/jquery.js"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+      <script src="../_static/doctools.js"></script>
+      <script src="../_static/sphinx_highlight.js"></script>
+      <script src="../_static/clipboard.min.js"></script>
+      <script src="../_static/copybutton.js"></script>
+      <script src="../_static/translations.js"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Buscar" href="../search.html" />
+    <link rel="next" title="4.3. NumPy" href="numpy.html" />
+    <link rel="prev" title="4.1. GDAL - Geospatial Data Abstraction Library" href="gdal.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SER-347/CAP-419
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Pesquisar documentos" aria-label="Pesquisar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegação">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introdução à Programação com Dados Geoespaciais</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Visão Geral do Curso:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../visao-geral.html">Visão Geral do Curso</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Aulas:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../instalacao.html">1. Instalando e Configurando o Ambiente de Programação</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introducao-programacao/index.html">2. Introdução à Programação com a Linguagem Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jupyter.html">3. Jupyter</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../imagens.html">4. Imagens - Processamento e Visualização</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gdal.html">4.1. GDAL - <strong>G</strong>eospatial <strong>D</strong>ata <strong>A</strong>bstraction <strong>L</strong>ibrary</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.2. Rasterio - Raster Input/Output</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#importando-a-biblioteca-rasterio">4.2.1. Importando a Biblioteca Rasterio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#abertura-de-um-arquivo-raster">4.2.2. Abertura de um arquivo <em>raster</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#estrutura-do-dataset">4.2.3. Estrutura do <em>Dataset</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#transformacao-afim">4.2.4. Transformação Afim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#leitura-dos-dados-de-uma-banda">4.2.5. Leitura dos dados de uma banda</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html">4.3. NumPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualizacao.html">4.4. Visualização de Imagens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="escrita.html">4.5. Escrita em arquivos de Imagens</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../vetorial.html">5. Manipulação de Dados Vetoriais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variados.html">6. Tópicos Variados</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Referências Bibliográficas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../referencias.html">Referências Bibliográficas</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Listas de Exercícios</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../listas/index.html">Listas de Exercícios</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../projetos/2025/index.html">Turma 2025</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projetos/2024/index.html">Turma 2024</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projetos/2023/index.html">Turma 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projetos/2022/index.html">Turma 2022</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projetos/2021/index.html">Turma 2021</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Informações Gerais:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../licenca.html">Licença</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Agradecimentos:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../agradecimentos.html">Agradecimentos</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Menu de navegação móvel"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SER-347/CAP-419</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Navegação da página">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../imagens.html"><span class="section-number">4. </span>Imagens - Processamento e Visualização</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">4.2. </span>Rasterio - Raster Input/Output</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Navegação sequencial da página">
+        <a href="gdal.html" class="btn btn-neutral float-left" title="4.1. GDAL - Geospatial Data Abstraction Library" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="numpy.html" class="btn btn-neutral float-right" title="4.3. NumPy" accesskey="n">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="rasterio-raster-input-output">
+<span id="sec-imagens-rasterio"></span><h1><span class="section-number">4.2. </span>Rasterio - Raster Input/Output<a class="headerlink" href="#rasterio-raster-input-output" title="Link permanente para este cabeçalho"></a></h1>
+<p>Muitos sistemas de informação geográfica utilizam o formato GeoTIFF para organizar as imagens. A biblioteca Rasterio (geralmente utilizada com <code class="docutils literal notranslate"><span class="pre">rio</span></code> nos scripts) fornece métodos para ler e escrever imagens de satélite em formatos conhecidos.</p>
+<p>De acordo com os autores, o <a class="reference external" href="https://rasterio.readthedocs.io/en/stable/intro.html">propósito da Rasterio</a> é ser uma biblioteca de acesso a dados Raster, baseada nos modelos de dados disponíveis na <a class="reference external" href="https://gdal.org/en/stable/">biblioteca GDAL</a>, porém com comandos mais próximos da linguagem Python do que os oferecidos pela GDAL (em geral baseados no código original da linguagem, para C++).</p>
+<section id="importando-a-biblioteca-rasterio">
+<h2><span class="section-number">4.2.1. </span>Importando a Biblioteca Rasterio<a class="headerlink" href="#importando-a-biblioteca-rasterio" title="Link permanente para este cabeçalho"></a></h2>
+<p>Para acessar a API <code class="docutils literal notranslate"><span class="pre">rasterio</span></code>, que permitirá manipular as imagens, devemos importar a biblioteca:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">rasterio</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">rio</span>
+</pre></div>
+</div>
+<p>Desta forma teremos sempre os métodos disponíveis a partir do nome <code class="docutils literal notranslate"><span class="pre">rio</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>No Google Colab, por exemplo, a biblioteca precisa ser instalada a cada vez, por meio do comando:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!pip install rasterio
+</pre></div>
+</div>
+</div>
+</section>
+<section id="abertura-de-um-arquivo-raster">
+<h2><span class="section-number">4.2.2. </span>Abertura de um arquivo <em>raster</em><a class="headerlink" href="#abertura-de-um-arquivo-raster" title="Link permanente para este cabeçalho"></a></h2>
+<p>A função <code class="docutils literal notranslate"><span class="pre">open</span></code> é utilizada para abrir um conjunto de dados (ou <code class="docutils literal notranslate"><span class="pre">dataset</span></code>). Para abrir o mesmo arquivo GeoTIFF anterior, com a imagem (<a class="reference external" href="https://drive.google.com/u/0/uc?id=1WbQ3aYWjYPpHxA3Z03_qVVTAncgr7PV_&amp;export=download">faça o download da imagem de teste</a>), podemos fazer:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="n">rio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;crop_rapideye.tif&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Repare o tipo de objeto retornado pela operação <code class="docutils literal notranslate"><span class="pre">rio.open</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Saída:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rasterio</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">DatasetReader</span>
+</pre></div>
+</div>
+</section>
+<section id="estrutura-do-dataset">
+<h2><span class="section-number">4.2.3. </span>Estrutura do <em>Dataset</em><a class="headerlink" href="#estrutura-do-dataset" title="Link permanente para este cabeçalho"></a></h2>
+<section id="sistema-de-referencia-espacial">
+<h3><span class="section-number">4.2.3.1. </span>Sistema de Referência Espacial<a class="headerlink" href="#sistema-de-referencia-espacial" title="Link permanente para este cabeçalho"></a></h3>
+<p>Para conhecer o sistema de coordenadas de referência (CRS) de um <code class="docutils literal notranslate"><span class="pre">dataset</span></code>, deve ser utilizada a propriedade <code class="docutils literal notranslate"><span class="pre">dataset.crs</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span><span class="o">.</span><span class="n">crs</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="transformacao-afim">
+<h2><span class="section-number">4.2.4. </span>Transformação Afim<a class="headerlink" href="#transformacao-afim" title="Link permanente para este cabeçalho"></a></h2>
+<p>Para saber os metadados da imagem sobre extensão espacial e transformação afim, podemos conferir outras propriedades de um <code class="docutils literal notranslate"><span class="pre">dataset</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span><span class="o">.</span><span class="n">bounds</span>
+</pre></div>
+</div>
+<p>para obter as coordenadas dos 4 cantos da imagem:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span><span class="o">.</span><span class="n">transform</span>
+</pre></div>
+</div>
+<p>para obter os 6 coeficientes da transformação afim (conferir o significado de cada termo <a class="reference external" href="https://prog-geo.github.io/imagens/gdal.html#transformacao-afim">no material sobre GDAL</a>).</p>
+<section id="dimensoes-numero-de-linhas-e-colunas">
+<h3><span class="section-number">4.2.4.1. </span>Dimensões (Número de linhas e colunas)<a class="headerlink" href="#dimensoes-numero-de-linhas-e-colunas" title="Link permanente para este cabeçalho"></a></h3>
+<p>Para saber o número de linhas e colunas do <code class="docutils literal notranslate"><span class="pre">dataset</span></code> que está sendo utilizado, devemos utilizar as propriedades <code class="docutils literal notranslate"><span class="pre">height</span></code> e <code class="docutils literal notranslate"><span class="pre">width</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">linhas</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">height</span>
+<span class="n">colunas</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">width</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Número de linhas:&quot;</span><span class="p">,</span> <span class="n">linhas</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Número de colunas:&quot;</span><span class="p">,</span> <span class="n">colunas</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="bandas">
+<h3><span class="section-number">4.2.4.2. </span>Bandas<a class="headerlink" href="#bandas" title="Link permanente para este cabeçalho"></a></h3>
+<p>Para saber o número de bandas de um <code class="docutils literal notranslate"><span class="pre">dataset</span></code>, podemos utilizar a propriedade <code class="docutils literal notranslate"><span class="pre">indexes</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dataset</span><span class="o">.</span><span class="n">indexes</span>
+<span class="go">(1, 2, 3, 4, 5)</span>
+</pre></div>
+</div>
+<p>Veja que é uma tupla com os índices das 5 bandas disponíveis. Como cada banda pode ter um tipo de dados diferente, é possível consultar a propridade <code class="docutils literal notranslate"><span class="pre">dtypes</span></code> para receber uma tupla com o tipo de dado de cada banda:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dataset</span><span class="o">.</span><span class="n">dtypes</span>
+<span class="go">(&#39;uint16&#39;, &#39;uint16&#39;, &#39;uint16&#39;, &#39;uint16&#39;, &#39;uint16&#39;)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>A GDAL e a Rasterio numeram as bandas de 1 até <span class="math notranslate nohighlight">\(n\)</span>, onde <span class="math notranslate nohighlight">\(n\)</span> é o número total de bandas contidas no <code class="docutils literal notranslate"><span class="pre">dataset</span></code>.</p>
+</div>
+</section>
+</section>
+<section id="leitura-dos-dados-de-uma-banda">
+<h2><span class="section-number">4.2.5. </span>Leitura dos dados de uma banda<a class="headerlink" href="#leitura-dos-dados-de-uma-banda" title="Link permanente para este cabeçalho"></a></h2>
+<p>Para gerar uma matriz NumPy para cada banda, pode-se usar diretamente o método <code class="docutils literal notranslate"><span class="pre">read</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">matriz_nir</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">matriz_red</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Essa operação retornará uma matriz do NumPy:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">matriz_red</span><span class="p">)</span>
+<span class="go">numpy.ndarray</span>
+</pre></div>
+</div>
+<p>Para computar um índice de vegetação, o NDVI, a partir das matrizes com os valores das bandas RED e NIR, aplicamos uma operação matricial, envolvendo as 2 matrizes obtidas a partir das bandas da imagem:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># geracao de array derivado das bandas</span>
+<span class="n">matriz_ndvi</span> <span class="o">=</span> <span class="p">(</span><span class="n">matriz_nir</span> <span class="o">-</span> <span class="n">matriz_red</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">matriz_nir</span> <span class="o">+</span> <span class="n">matriz_red</span> <span class="o">+</span> <span class="mf">0.000000001</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Podemos combinar as bibliotecas NumPy e Matplotlib para visualizar as matrizes como imagens:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">131</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Banda RED&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">matriz_red</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">132</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Banda NIR&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">matriz_nir</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">133</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;NDVI&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">matriz_ndvi</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Rodapé">
+        <a href="gdal.html" class="btn btn-neutral float-left" title="4.1. GDAL - Geospatial Data Abstraction Library" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="numpy.html" class="btn btn-neutral float-right" title="4.3. NumPy" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020-2022, Gilberto Queiroz and Thales Körting.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+    <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165908761-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-165908761-1', {
+          'anonymize_ip': false,
+      });
+    </script> 
+
+</body>
+</html>
