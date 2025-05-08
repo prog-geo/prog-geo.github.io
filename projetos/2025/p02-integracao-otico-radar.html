@@ -132,7 +132,15 @@
              
   <section id="analise-integrada-de-imagens-opticas-e-radar-rs">
 <span id="sec-projetos-2025-p02"></span><h1>Análise integrada de imagens ópticas e radar - RS<a class="headerlink" href="#analise-integrada-de-imagens-opticas-e-radar-rs" title="Link permanente para este cabeçalho"></a></h1>
-<p>Com base em uma série temporal das chuvas ocorridas no estado do Rio Grande do Sul (RS) em 2017, Sentinel-1 e Sentinel-2 (S1 e S2), ao menos 1 cena de cada satélite por mês para uma área de referência, realizar o processamento dos arquivos para homogeneizar as imagens S1 e S2 destes recortes, gerando gráficos com análises simples entre as imagens, explorando por exemplo ocorrência de nuvens (aproveitar máscaras de nuvens disponíveis no S2) e disponibilidade de dados de radar.</p>
+<p>Com base em uma série temporal das imagens das chuvas ocorridas no estado do Rio Grande do Sul (RS) em 2017, realizar o processamento dos arquivos para homogeneizar as imagens dos satélites Sentinel-1 e Sentinel-2 (S1 e S2), utilizando ao menos uma cena de cada satélite por mês, para uma área de referência. Buscar uma fonte de dados que permita o acesso direto às imagens via Python.</p>
+<p>Em relação aos dados S2, utilizar as bandas B02, B03, B04, B08A e B11, com resolução espacial de 20 metros. Para os dados S1, trabalhar com o produto do tipo <em>IW_GRD</em> e realizar as seguintes etapas de pré-processamento:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">calibração</span>
+<span class="o">*</span> <span class="n">filtragem</span> <span class="n">speckle</span>
+<span class="o">*</span> <span class="n">correção</span> <span class="n">de</span> <span class="n">terreno</span>
+<span class="o">*</span> <span class="n">conversão</span> <span class="n">para</span> <span class="n">dB</span>
+</pre></div>
+</div>
+<p>Como produto final teremos o conjunto de imagens S1 e S2 com 20 metros de resolução espacial. Gerar gráficos com análises simples entre as imagens, explorando, por exemplo, a ocorrência de nuvens (aproveitando as máscaras de nuvens disponíveis no S2) e a disponibilidade de dados de radar.</p>
 </section>
 
 
