@@ -1,0 +1,17 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2025, Gilberto Queiroz, Fabiano Morelli and Thales Körting.
+
+
+.. include:: ../../def.rst
+
+
+.. _sec_projetos_2025_p07:
+
+Área de interesse com dados válidos
+===================================
+
+
+Neste projeto, deve-se calcular a porcentagem de uma área de interesse (representada por uma geometria de interesse, por exemplo no formato SHP, KML ou WKT) que contém valores NODATA, e criar uma visualização do recorte com alguns metadados. 
+
+Pode-se consultar os dados disponíveis no catálogo do BDC por meio do STAC, com um Polígono, verificar quantas imagens resultantes possuem valores NODATA, extrair estatísticas sobre isso, para que a informação possa ser utilizada como critério para buscas (por exemplo, encontrar imagens com até 50% de NODATA, ou imagens que cubram 100% da área de interesse).

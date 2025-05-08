@@ -1,0 +1,17 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2025, Gilberto Queiroz, Fabiano Morelli and Thales Körting.
+
+
+.. include:: ../../def.rst
+
+
+.. _sec_projetos_2025_p06:
+
+Área de interesse livre de nuvens
+=================================
+
+
+Neste projeto, deve-se calcular a porcentagem de uma área de interesse (representada por uma geometria de interesse, por exemplo no formato SHP, KML ou WKT) que está livre de nuvens, e criar uma visualização do recorte com alguns metadados. 
+
+Pode-se consultar os dados disponíveis no catálogo do BDC por meio do STAC, com um Polígono, utilizar a banda de qualidade ou máscara de nuvem para fazer o processamento da estatística e outras bandas para criar as visualizações.

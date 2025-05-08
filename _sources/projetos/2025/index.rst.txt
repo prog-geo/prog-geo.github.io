@@ -10,6 +10,8 @@ Turma 2025
     ./p03-deteccao-diferencas-slic
     ./p04-registro-via-feicoes-lineares
     ./p05-acompanhamento-de-obras
+    ./p06-area-livre-de-nuvens
+    ./p07-porcentagem-nodata
     
     
 Observações
