@@ -1,30 +1,30 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="pt-BR">
+<html class="writer-html5" lang="pt-BR" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>5.1. Introdução &mdash; SER-347/CAP-419</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/table_styling.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/prog-geo.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../_static/table_styling.css?v=a1a2a898" />
+      <link rel="stylesheet" type="text/css" href="../_static/prog-geo.css?v=bac0c41d" />
 
   
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="canonical" href="https://prog-geo.github.io/vetorial/introducao.html" />
-      <script src="../_static/jquery.js"></script>
-      <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-      <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-      <script src="../_static/doctools.js"></script>
-      <script src="../_static/sphinx_highlight.js"></script>
-      <script src="../_static/clipboard.min.js"></script>
-      <script src="../_static/copybutton.js"></script>
-      <script src="../_static/translations.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=8dd0446f"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=30646c52"></script>
+      <script src="../_static/translations.js?v=000972dd"></script>
       <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Índice" href="../genindex.html" />
@@ -88,6 +88,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../projetos/2026/index.html">Turma 2026</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2025/index.html">Turma 2025</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2024/index.html">Turma 2024</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2023/index.html">Turma 2023</a></li>
@@ -131,7 +132,7 @@
            <div itemprop="articleBody">
              
   <section id="introducao">
-<span id="sec-vetorial-introducao"></span><h1><span class="section-number">5.1. </span>Introdução<a class="headerlink" href="#introducao" title="Link permanente para este cabeçalho"></a></h1>
+<span id="sec-vetorial-introducao"></span><h1><span class="section-number">5.1. </span>Introdução<a class="headerlink" href="#introducao" title="Link para este cabeçalho"></a></h1>
 <p>A forma de modelar e representar os fenômenos geográficos no computador depende de sua percepção na forma de <strong>entidades discretas</strong> (objetos) ou <strong>campos contínuos</strong>.</p>
 <p>Quando lidamos com fenômenos onde temos um valor definido para uma ou mais variáveis de observação em toda localização possível do espaço, estamos compreendendo tal fenômeno como um <em>campo contínuo</em>. Elevação, temperatura de superfície, risco de incêndio na vegetação, e radiância da superfície são exemplos de campos contínuos.</p>
 <p>Quando percebemos o fenômeno em questão por objetos com fronteiras bem definidas e pertencentes a uma certa categoria, estamos compreendendo esse fenômeno como <em>entidades discretas</em>. Unidades de conservação estadual e federal, organização territorial, arruamento, trechos rodoviários, escolas, hospitais, linhas de transmissão de energia elétrica, são alguns exemplos de entidades discretas.</p>
@@ -140,7 +141,7 @@
 <p>Além dos atributos alfanuméricos, uma feição é descrita por um ou mais <strong>atributos geométricos</strong>, associados a um tipo de dado geométrico. Um <strong>tipo de dado geométrico</strong> é capaz de representar elementos geométricos primitivos tais como pontos, linhas e polígonos ou coleções desses elementos.</p>
 <p>A <a class="reference internal" href="#tbl-vetorial-introducao-tipos-objetos-geograficos"><span class="std std-numref">Tabela 5.1</span></a> apresenta alguns tipos de objetos geográficos representados por feições com representações geométricas de pontos (hidrelétricas e termoelétricas), linhas (logradouros) e polígonos (municípios brasileiros).</p>
 <table class="styled-table docutils align-center" id="tbl-vetorial-introducao-tipos-objetos-geograficos" style="width: 100%">
-<caption><span class="caption-number">Tabela 5.1 - </span><span class="caption-text">Representação de feições geográficas através de objetos geométricos.</span><a class="headerlink" href="#tbl-vetorial-introducao-tipos-objetos-geograficos" title="Link Permanente para essa tabela"></a></caption>
+<caption><span class="caption-number">Tabela 5.1 - </span><span class="caption-text">Representação de feições geográficas através de objetos geométricos.</span><a class="headerlink" href="#tbl-vetorial-introducao-tipos-objetos-geograficos" title="Link para esta tabela"></a></caption>
 <colgroup>
 <col style="width: 33.3%" />
 <col style="width: 33.3%" />
@@ -161,9 +162,10 @@
 </table>
 <p>A <a class="reference internal" href="#fig-vetorial-introducao-feature-collection"><span class="std std-numref">Figura 5.1</span></a> ilustra o esquema de uma coleção de feições, onde podemos observar os atributos alfanuméricos e geométricos.</p>
 <figure class="align-center align-default" id="fig-vetorial-introducao-feature-collection">
-<a class="reference internal image-reference" href="../_images/feature-collection-uf.png"><img alt="Coleção de Feições (Feature Collection)" src="../_images/feature-collection-uf.png" style="width: 480px;" /></a>
+<a class="reference internal image-reference" href="../_images/feature-collection-uf.png"><img alt="Coleção de Feições (Feature Collection)" src="../_images/feature-collection-uf.png" style="width: 480px;" />
+</a>
 <figcaption>
-<p><span class="caption-number">Figura 5.1 - </span><span class="caption-text">Coleção de Feições (<em>Feature Collection</em>).</span><a class="headerlink" href="#fig-vetorial-introducao-feature-collection" title="Link Permanente para essa imagem"></a></p>
+<p><span class="caption-number">Figura 5.1 - </span><span class="caption-text">Coleção de Feições (<em>Feature Collection</em>).</span><a class="headerlink" href="#fig-vetorial-introducao-feature-collection" title="Link para esta imagem"></a></p>
 </figcaption>
 </figure>
 <p>Repare que essa forma de representação, em geral, assume que todos os objetos da coleção possuem uma estrutura comum, a qual denominamos de <strong>esquema das feições</strong>. O esquema das feições é formado pelo conjunto de atributos usados para caracterizar as feições do conjunto. Além disso, cada atributo é associado a um tipo de dado. No caso da coleção mostrada na <a class="reference internal" href="#fig-vetorial-introducao-feature-collection"><span class="std std-numref">Figura 5.1</span></a> o esquema denominado <code class="docutils literal notranslate"><span class="pre">unidades_federativas</span></code> possui o seguinte conjunto de atributos:</p>
@@ -181,9 +183,10 @@
 <p>As entidades codificados como dados matriciais, também chamadas de <strong>raster</strong> ou <strong>imagens</strong>, formam um plano subdividido em células de tamanho fixo, frequentemente chamadas de <strong>pixels</strong>. Para cada par de coordenada <span class="math notranslate nohighlight">\((x, y)\)</span> nesse plano há um valor de intensidade, por vezes chamado <strong>nível de cinza</strong>, que indica o valor de alguma medida para aquele ponto.</p>
 <p>A <a class="reference internal" href="#fig-vetorial-introducao-img-cbers4"><span class="std std-numref">Figura 5.2</span></a> apresenta uma imagem do satélite CBERS-4 sensor AWFI. Trata-se de um dado matricial em que cada célula, representa uma área de 64 metros <span class="math notranslate nohighlight">\(\times\)</span> 64 metros da superfície terrestre e o valor de intensidade indica uma aproximação da resposta espectral dessa superfície.</p>
 <figure class="align-center align-default" id="fig-vetorial-introducao-img-cbers4">
-<a class="reference internal image-reference" href="../_images/imagem-cbers4.png"><img alt="Imagem do satélite CBERS-4 sensor AWFI" src="../_images/imagem-cbers4.png" style="width: 480px;" /></a>
+<a class="reference internal image-reference" href="../_images/imagem-cbers4.png"><img alt="Imagem do satélite CBERS-4 sensor AWFI" src="../_images/imagem-cbers4.png" style="width: 480px;" />
+</a>
 <figcaption>
-<p><span class="caption-number">Figura 5.2 - </span><span class="caption-text">Imagem do satélite CBERS-4 sensor AWFI com 64 metros de resolução espacial, em composição colorida.</span><a class="headerlink" href="#fig-vetorial-introducao-img-cbers4" title="Link Permanente para essa imagem"></a></p>
+<p><span class="caption-number">Figura 5.2 - </span><span class="caption-text">Imagem do satélite CBERS-4 sensor AWFI com 64 metros de resolução espacial, em composição colorida.</span><a class="headerlink" href="#fig-vetorial-introducao-img-cbers4" title="Link para esta imagem"></a></p>
 </figcaption>
 </figure>
 </div>
@@ -200,7 +203,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2022, Gilberto Queiroz and Thales Körting.</p>
+    <p>&#169; Direitos autorais 2020-2022, Gilberto Queiroz and Thales Körting.</p>
   </div>
 
    
@@ -214,18 +217,7 @@
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(false);
       });
-  </script>
-    <!-- Theme Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165908761-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-165908761-1', {
-          'anonymize_ip': false,
-      });
-    </script> 
+  </script> 
 
 </body>
 </html>

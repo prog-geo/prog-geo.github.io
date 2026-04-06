@@ -1,0 +1,21 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2026, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../../def.rst
+
+
+.. _sec_projetos_2026_p05:
+
+Mudanças em municípios brasileiros, com imagens MUX
+===================================================
+
+
+O catálogo de imagens do INPE oferece um conjunto de imagens atualizado diariamente. O sensor MUX está disponível em 2 satélites brasileiros (CBERS-4 e CBERS-4A). Algumas imagens cobrem diversos municípios brasileiros, e é possível comparar a visualização de um município em datas semelhantes para anos diferentes.
+
+
+Então o propósito desse projeto é, dada uma área de interesse (a referência poderá ser um dos municípios brasileiros, dado do IBGE), verificar a disponibilidade de pares de imagens em anos diferentes, livres de nuvens e dados inválidos (nodata). Com isso, será possível gerar uma série temporal dos recortes dessa área de interesse, e apresentar composição colorida, índices espectrais possíveis com sensor MUX ao longo do tempo, e o resultado da aplicação de detecção de mudanças bruscas, quando houver imagens de datas próximas em anos diferentes.
+
+
+As mudanças poderão ser de diversos tipos, incluindo evolução de áreas agrícolas, desmatamento, deslizamento de terra, entre outros. A verificação de imagens livre de nuvens (mesmo usando métodos simples como limiares), é fundamental para evitar a detecção de falsos positivos (tinha nuvem numa imagem, não tinha nuvem, e o sistema identificou como mudança).

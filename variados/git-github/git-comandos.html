@@ -1,31 +1,31 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="pt-BR">
+<html class="writer-html5" lang="pt-BR" data-content_root="../../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>6.1.3. Trabalhando com o git e o GitHub &mdash; SER-347/CAP-419</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
-      <link rel="stylesheet" type="text/css" href="../../_static/table_styling.css" />
-      <link rel="stylesheet" type="text/css" href="../../_static/prog-geo.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/table_styling.css?v=a1a2a898" />
+      <link rel="stylesheet" type="text/css" href="../../_static/prog-geo.css?v=bac0c41d" />
 
   
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="canonical" href="https://prog-geo.github.io/variados/git-github/git-comandos.html" />
-      <script src="../../_static/jquery.js"></script>
-      <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-      <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-      <script src="../../_static/doctools.js"></script>
-      <script src="../../_static/sphinx_highlight.js"></script>
-      <script src="../../_static/clipboard.min.js"></script>
-      <script src="../../_static/copybutton.js"></script>
-      <script src="../../_static/tabs.js"></script>
-      <script src="../../_static/translations.js"></script>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=8dd0446f"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=30646c52"></script>
+      <script src="../../_static/tabs.js?v=3030b3cb"></script>
+      <script src="../../_static/translations.js?v=000972dd"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Buscar" href="../../search.html" />
@@ -88,6 +88,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../projetos/2026/index.html">Turma 2026</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../projetos/2025/index.html">Turma 2025</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../projetos/2024/index.html">Turma 2024</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../projetos/2023/index.html">Turma 2023</a></li>
@@ -132,9 +133,9 @@
            <div itemprop="articleBody">
              
   <section id="trabalhando-com-o-git-e-o-github">
-<span id="sec-variados-git-github-git-comandos"></span><h1><span class="section-number">6.1.3. </span>Trabalhando com o git e o GitHub<a class="headerlink" href="#trabalhando-com-o-git-e-o-github" title="Link permanente para este cabeçalho"></a></h1>
+<span id="sec-variados-git-github-git-comandos"></span><h1><span class="section-number">6.1.3. </span>Trabalhando com o git e o GitHub<a class="headerlink" href="#trabalhando-com-o-git-e-o-github" title="Link para este cabeçalho"></a></h1>
 <section id="instalando-o-git">
-<h2><span class="section-number">6.1.3.1. </span>Instalando o git<a class="headerlink" href="#instalando-o-git" title="Link permanente para este cabeçalho"></a></h2>
+<h2><span class="section-number">6.1.3.1. </span>Instalando o git<a class="headerlink" href="#instalando-o-git" title="Link para este cabeçalho"></a></h2>
 <p>Para seguir os passos desta seção, você precisará ter o <code class="docutils literal notranslate"><span class="pre">git</span></code> instalado. Consulte <a class="reference external" href="https://git-scm.com/downloads">esta página</a> para baixar o instalador para sua plataforma. Se você quiser se apronfundar no uso do <code class="docutils literal notranslate"><span class="pre">git</span></code>, veja <span id="id1">[<a class="reference internal" href="../../referencias.html#id9" title="Scott Chacon and Ben Strub. Pro Git. Apress, 2021. URL: https://git-scm.com/book/en/v2.">9</a>]</span>.</p>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">macOS</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Linux</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><p>O macOS já vem com o <code class="docutils literal notranslate"><span class="pre">git</span></code> instalado.</p>
@@ -145,7 +146,7 @@
 </div></div>
 </section>
 <section id="clonando-o-repositorio-ser-347">
-<h2><span class="section-number">6.1.3.2. </span>Clonando o repositório ser-347<a class="headerlink" href="#clonando-o-repositorio-ser-347" title="Link permanente para este cabeçalho"></a></h2>
+<h2><span class="section-number">6.1.3.2. </span>Clonando o repositório ser-347<a class="headerlink" href="#clonando-o-repositorio-ser-347" title="Link para este cabeçalho"></a></h2>
 <p>Para trabalharmos com o nosso código, precisamos de uma cópia do repositório remoto, localizado no endereço <code class="docutils literal notranslate"><span class="pre">https://github.com/gilberto-queiroz/ser-347</span></code>, em nosso sistema local. Para isso, podemos utilizar o comando <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code> para realizar essa cópia. Abra um terminal de comandos e vá para uma pasta onde você possa copiar o repositório. Em seguida, utilize o comando <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code> como indicado abaixo:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/gilberto-queiroz/ser-347
 </pre></div>
@@ -230,14 +231,15 @@ Projeto da Disciplina SER-347
 </div>
 <p>A <a class="reference internal" href="#git-clone-ser-347"><span class="std std-numref">Figura 6.7</span></a> mostra um resumo dos comandos utilizados até aqui.</p>
 <figure class="align-center align-default" id="git-clone-ser-347">
-<a class="reference internal image-reference" href="../../_images/git-clone-ser-347.png"><img alt="Clonando o repositório ser-347" src="../../_images/git-clone-ser-347.png" style="width: 640px;" /></a>
+<a class="reference internal image-reference" href="../../_images/git-clone-ser-347.png"><img alt="Clonando o repositório ser-347" src="../../_images/git-clone-ser-347.png" style="width: 640px;" />
+</a>
 <figcaption>
-<p><span class="caption-number">Figura 6.7 - </span><span class="caption-text">Clonando o repositório <code class="docutils literal notranslate"><span class="pre">ser-347</span></code>.</span><a class="headerlink" href="#git-clone-ser-347" title="Link Permanente para essa imagem"></a></p>
+<p><span class="caption-number">Figura 6.7 - </span><span class="caption-text">Clonando o repositório <code class="docutils literal notranslate"><span class="pre">ser-347</span></code>.</span><a class="headerlink" href="#git-clone-ser-347" title="Link para esta imagem"></a></p>
 </figcaption>
 </figure>
 </section>
 <section id="verificando-o-status-do-repositorio">
-<h2><span class="section-number">6.1.3.3. </span>Verificando o <code class="docutils literal notranslate"><span class="pre">status</span></code> do repositório<a class="headerlink" href="#verificando-o-status-do-repositorio" title="Link permanente para este cabeçalho"></a></h2>
+<h2><span class="section-number">6.1.3.3. </span>Verificando o <code class="docutils literal notranslate"><span class="pre">status</span></code> do repositório<a class="headerlink" href="#verificando-o-status-do-repositorio" title="Link para este cabeçalho"></a></h2>
 <p>O comando <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> apresenta como se encontra nosso repositório em relação à possíveis modificações:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
 </pre></div>
@@ -251,7 +253,7 @@ Projeto da Disciplina SER-347
 </div>
 </section>
 <section id="modificando-um-arquivo-no-repositorio-ser-347">
-<h2><span class="section-number">6.1.3.4. </span>Modificando um arquivo no repositório <code class="docutils literal notranslate"><span class="pre">ser-347</span></code><a class="headerlink" href="#modificando-um-arquivo-no-repositorio-ser-347" title="Link permanente para este cabeçalho"></a></h2>
+<h2><span class="section-number">6.1.3.4. </span>Modificando um arquivo no repositório <code class="docutils literal notranslate"><span class="pre">ser-347</span></code><a class="headerlink" href="#modificando-um-arquivo-no-repositorio-ser-347" title="Link para este cabeçalho"></a></h2>
 <p>Se modificarmos o conteúdo do arquivo <code class="docutils literal notranslate"><span class="pre">README.md</span></code>, conforme mostrado na listagem abaixo:</p>
 <div class="highlight-md notranslate"><div class="highlight"><pre><span></span><span class="gh"># SER-347 - Projeto Final</span>
 
@@ -394,7 +396,7 @@ nothing to commit, working tree clean
 </div>
 </section>
 <section id="sincronizando-sua-copia-local-com-o-repositorio-remoto">
-<h2><span class="section-number">6.1.3.5. </span>Sincronizando sua cópia local com o repositório remoto<a class="headerlink" href="#sincronizando-sua-copia-local-com-o-repositorio-remoto" title="Link permanente para este cabeçalho"></a></h2>
+<h2><span class="section-number">6.1.3.5. </span>Sincronizando sua cópia local com o repositório remoto<a class="headerlink" href="#sincronizando-sua-copia-local-com-o-repositorio-remoto" title="Link para este cabeçalho"></a></h2>
 <p>Agora que nosso repositório local contém uma modificação que ainda não se encontra no repositório remoto do <code class="docutils literal notranslate"><span class="pre">GitHub</span></code>, vamos sincronizar nossa cópia com a do GitHub.</p>
 <p>Primeiro devemos garantir que nossa cópia local esteja realmente atualizada com a remota. Podemos fazer isso com o comando <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>pull
@@ -426,14 +428,15 @@ nothing to commit, working tree clean
 </div>
 <p>Ao final, você poderá ir ao GitHub e ver as modificações no seu repositório remoto, conforme mostrado na <a class="reference internal" href="#github-push"><span class="std std-numref">Figura 6.8</span></a>:</p>
 <figure class="align-center align-default" id="github-push">
-<a class="reference internal image-reference" href="../../_images/github-push.png"><img alt="Repositório ser-347 com o arquivo README.md atualizado" src="../../_images/github-push.png" style="width: 640px;" /></a>
+<a class="reference internal image-reference" href="../../_images/github-push.png"><img alt="Repositório ser-347 com o arquivo README.md atualizado" src="../../_images/github-push.png" style="width: 640px;" />
+</a>
 <figcaption>
-<p><span class="caption-number">Figura 6.8 - </span><span class="caption-text">Repositório <code class="docutils literal notranslate"><span class="pre">ser-347</span></code> com o arquivo <code class="docutils literal notranslate"><span class="pre">README.md</span></code> atualizado.</span><a class="headerlink" href="#github-push" title="Link Permanente para essa imagem"></a></p>
+<p><span class="caption-number">Figura 6.8 - </span><span class="caption-text">Repositório <code class="docutils literal notranslate"><span class="pre">ser-347</span></code> com o arquivo <code class="docutils literal notranslate"><span class="pre">README.md</span></code> atualizado.</span><a class="headerlink" href="#github-push" title="Link para esta imagem"></a></p>
 </figcaption>
 </figure>
 </section>
 <section id="adicionando-um-novo-arquivo-ao-repositorio-ser-347">
-<h2><span class="section-number">6.1.3.6. </span>Adicionando um novo arquivo ao repositório <code class="docutils literal notranslate"><span class="pre">ser-347</span></code><a class="headerlink" href="#adicionando-um-novo-arquivo-ao-repositorio-ser-347" title="Link permanente para este cabeçalho"></a></h2>
+<h2><span class="section-number">6.1.3.6. </span>Adicionando um novo arquivo ao repositório <code class="docutils literal notranslate"><span class="pre">ser-347</span></code><a class="headerlink" href="#adicionando-um-novo-arquivo-ao-repositorio-ser-347" title="Link para este cabeçalho"></a></h2>
 <p>Vamos criar um novo arquivo, chamado <code class="docutils literal notranslate"><span class="pre">fatorial.py</span></code>, com o seguinte conteúdo:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">Fatorial</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
     <span class="n">produto</span> <span class="o">=</span> <span class="mi">1</span>
@@ -522,22 +525,22 @@ To https://github.com/gilberto-queiroz/ser-347
 </div>
 </section>
 <section id="visualizando-o-historico-de-modificacoes-de-um-arquivo">
-<h2><span class="section-number">6.1.3.7. </span>Visualizando o histórico de modificações de um arquivo<a class="headerlink" href="#visualizando-o-historico-de-modificacoes-de-um-arquivo" title="Link permanente para este cabeçalho"></a></h2>
+<h2><span class="section-number">6.1.3.7. </span>Visualizando o histórico de modificações de um arquivo<a class="headerlink" href="#visualizando-o-historico-de-modificacoes-de-um-arquivo" title="Link para este cabeçalho"></a></h2>
 <p>TO BE DONE!</p>
 </section>
 <section id="trabalhando-com-forks-de-um-repositorio">
-<h2><span class="section-number">6.1.3.8. </span>Trabalhando com <code class="docutils literal notranslate"><span class="pre">forks</span></code> de um repositório<a class="headerlink" href="#trabalhando-com-forks-de-um-repositorio" title="Link permanente para este cabeçalho"></a></h2>
+<h2><span class="section-number">6.1.3.8. </span>Trabalhando com <code class="docutils literal notranslate"><span class="pre">forks</span></code> de um repositório<a class="headerlink" href="#trabalhando-com-forks-de-um-repositorio" title="Link para este cabeçalho"></a></h2>
 <p>TO BE DONE!</p>
 <section id="fazendo-o-fork-de-um-repositorio">
-<h3><span class="section-number">6.1.3.8.1. </span>Fazendo o <code class="docutils literal notranslate"><span class="pre">fork</span></code> de um repositório<a class="headerlink" href="#fazendo-o-fork-de-um-repositorio" title="Link permanente para este cabeçalho"></a></h3>
+<h3><span class="section-number">6.1.3.8.1. </span>Fazendo o <code class="docutils literal notranslate"><span class="pre">fork</span></code> de um repositório<a class="headerlink" href="#fazendo-o-fork-de-um-repositorio" title="Link para este cabeçalho"></a></h3>
 <p>TO BE DONE!</p>
 </section>
 <section id="sincronizando-seu-fork">
-<h3><span class="section-number">6.1.3.8.2. </span>Sincronizando seu <code class="docutils literal notranslate"><span class="pre">fork</span></code><a class="headerlink" href="#sincronizando-seu-fork" title="Link permanente para este cabeçalho"></a></h3>
+<h3><span class="section-number">6.1.3.8.2. </span>Sincronizando seu <code class="docutils literal notranslate"><span class="pre">fork</span></code><a class="headerlink" href="#sincronizando-seu-fork" title="Link para este cabeçalho"></a></h3>
 <p>TO BE DONE!</p>
 </section>
 <section id="fazendo-um-pull-request">
-<h3><span class="section-number">6.1.3.8.3. </span>Fazendo um pull-request<a class="headerlink" href="#fazendo-um-pull-request" title="Link permanente para este cabeçalho"></a></h3>
+<h3><span class="section-number">6.1.3.8.3. </span>Fazendo um pull-request<a class="headerlink" href="#fazendo-um-pull-request" title="Link para este cabeçalho"></a></h3>
 <p>TO BE DONE!</p>
 </section>
 </section>
@@ -554,7 +557,7 @@ To https://github.com/gilberto-queiroz/ser-347
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2022, Gilberto Queiroz and Thales Körting.</p>
+    <p>&#169; Direitos autorais 2020-2022, Gilberto Queiroz and Thales Körting.</p>
   </div>
 
    
@@ -568,18 +571,7 @@ To https://github.com/gilberto-queiroz/ser-347
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(false);
       });
-  </script>
-    <!-- Theme Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165908761-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-165908761-1', {
-          'anonymize_ip': false,
-      });
-    </script> 
+  </script> 
 
 </body>
 </html>

@@ -1,31 +1,31 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="pt-BR">
+<html class="writer-html5" lang="pt-BR" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>6.2. Terminal Interativo Python &mdash; SER-347/CAP-419</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/table_styling.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/prog-geo.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../_static/table_styling.css?v=a1a2a898" />
+      <link rel="stylesheet" type="text/css" href="../_static/prog-geo.css?v=bac0c41d" />
 
   
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="canonical" href="https://prog-geo.github.io/variados/terminal-python.html" />
-      <script src="../_static/jquery.js"></script>
-      <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-      <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-      <script src="../_static/doctools.js"></script>
-      <script src="../_static/sphinx_highlight.js"></script>
-      <script src="../_static/clipboard.min.js"></script>
-      <script src="../_static/copybutton.js"></script>
-      <script src="../_static/tabs.js"></script>
-      <script src="../_static/translations.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=8dd0446f"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=30646c52"></script>
+      <script src="../_static/tabs.js?v=3030b3cb"></script>
+      <script src="../_static/translations.js?v=000972dd"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Buscar" href="../search.html" />
@@ -83,6 +83,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../projetos/2026/index.html">Turma 2026</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2025/index.html">Turma 2025</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2024/index.html">Turma 2024</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2023/index.html">Turma 2023</a></li>
@@ -126,41 +127,46 @@
            <div itemprop="articleBody">
              
   <section id="terminal-interativo-python">
-<span id="sec-variados-terminal-python"></span><h1><span class="section-number">6.2. </span>Terminal Interativo Python<a class="headerlink" href="#terminal-interativo-python" title="Link permanente para este cabeçalho"></a></h1>
+<span id="sec-variados-terminal-python"></span><h1><span class="section-number">6.2. </span>Terminal Interativo Python<a class="headerlink" href="#terminal-interativo-python" title="Link para este cabeçalho"></a></h1>
 <p>Um <strong>interpretador</strong> é um programa capaz de executar outros programas. A forma mais simples de rodar programas escritos em Python é através do seu <strong>terminal interativo</strong> (<a class="reference internal" href="#variados-fig-python-terminal"><span class="std std-numref">Figura 6.13</span></a>).</p>
 <figure class="align-center align-default" id="introd-prog-fig-python-terminal">
-<a class="reference internal image-reference" href="../_images/python-terminal.png"><img alt="Terminal interativo do Python" src="../_images/python-terminal.png" style="width: 90%;" /></a>
+<a class="reference internal image-reference" href="../_images/python-terminal.png"><img alt="Terminal interativo do Python" src="../_images/python-terminal.png" style="width: 90%;" />
+</a>
 <figcaption>
-<p><span class="caption-number">Figura 6.9 - </span><span class="caption-text">Terminal interativo do Python.</span><a class="headerlink" href="#introd-prog-fig-python-terminal" title="Link Permanente para essa imagem"></a></p>
+<p><span class="caption-number">Figura 6.9 - </span><span class="caption-text">Terminal interativo do Python.</span><a class="headerlink" href="#introd-prog-fig-python-terminal" title="Link para esta imagem"></a></p>
 </figcaption>
 </figure>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Microsoft Windows</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">macOS</button><button aria-controls="panel-0-0-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-2" name="0-2" role="tab" tabindex="-1">Linux</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><p>Para acessar o interpretador de comandos do Python na distribuição Anaconda, na barra de atalhos de programas do Windows, localize o grupo <code class="docutils literal notranslate"><span class="pre">Anaconda</span></code> e, em seguida, escolha a opção <code class="docutils literal notranslate"><span class="pre">Anaconda</span> <span class="pre">Prompt</span></code>, conforme <a class="reference internal" href="#variados-fig-win-atalho-prompt-anaconda"><span class="std std-numref">Figura 6.10</span></a>.</p>
 <figure class="align-center align-default" id="variados-fig-win-atalho-prompt-anaconda">
-<a class="reference internal image-reference" href="../_images/win-atalho-prompt-anaconda.png"><img alt="Atalho para o prompt de comandos da Anaconda" src="../_images/win-atalho-prompt-anaconda.png" style="width: 50%;" /></a>
+<a class="reference internal image-reference" href="../_images/win-atalho-prompt-anaconda.png"><img alt="Atalho para o prompt de comandos da Anaconda" src="../_images/win-atalho-prompt-anaconda.png" style="width: 50%;" />
+</a>
 <figcaption>
-<p><span class="caption-number">Figura 6.10 - </span><span class="caption-text">Atalho para o prompt de comandos da Anaconda.</span><a class="headerlink" href="#variados-fig-win-atalho-prompt-anaconda" title="Link Permanente para essa imagem"></a></p>
+<p><span class="caption-number">Figura 6.10 - </span><span class="caption-text">Atalho para o prompt de comandos da Anaconda.</span><a class="headerlink" href="#variados-fig-win-atalho-prompt-anaconda" title="Link para esta imagem"></a></p>
 </figcaption>
 </figure>
 <p>Na janela aberta, digite o comando <code class="docutils literal notranslate"><span class="pre">python</span></code>, conforme mostrado na <a class="reference internal" href="#variados-fig-win-prompt-anaconda"><span class="std std-numref">Figura 6.11</span></a>.</p>
 <figure class="align-center align-default" id="variados-fig-win-prompt-anaconda">
-<a class="reference internal image-reference" href="../_images/win-prompt-anaconda.png"><img alt="Terminal interativo do Python" src="../_images/win-prompt-anaconda.png" style="width: 90%;" /></a>
+<a class="reference internal image-reference" href="../_images/win-prompt-anaconda.png"><img alt="Terminal interativo do Python" src="../_images/win-prompt-anaconda.png" style="width: 90%;" />
+</a>
 <figcaption>
-<p><span class="caption-number">Figura 6.11 - </span><span class="caption-text">Terminal interativo do Python.</span><a class="headerlink" href="#variados-fig-win-prompt-anaconda" title="Link Permanente para essa imagem"></a></p>
+<p><span class="caption-number">Figura 6.11 - </span><span class="caption-text">Terminal interativo do Python.</span><a class="headerlink" href="#variados-fig-win-prompt-anaconda" title="Link para esta imagem"></a></p>
 </figcaption>
 </figure>
 </div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><p>No macOS, abra um terminal de comandos e digite o comando <code class="docutils literal notranslate"><span class="pre">python</span></code>, isto deverá abrir o terminal de comandos como mostrado na <a class="reference internal" href="#variados-fig-mac-terminal-python"><span class="std std-numref">Figura 6.12</span></a>.</p>
 <figure class="align-center align-default" id="variados-fig-mac-terminal-python">
-<a class="reference internal image-reference" href="../_images/python-terminal-mac.png"><img alt="Terminal interativo do Python" src="../_images/python-terminal-mac.png" style="width: 90%;" /></a>
+<a class="reference internal image-reference" href="../_images/python-terminal-mac.png"><img alt="Terminal interativo do Python" src="../_images/python-terminal-mac.png" style="width: 90%;" />
+</a>
 <figcaption>
-<p><span class="caption-number">Figura 6.12 - </span><span class="caption-text">Terminal interativo do Python.</span><a class="headerlink" href="#variados-fig-mac-terminal-python" title="Link Permanente para essa imagem"></a></p>
+<p><span class="caption-number">Figura 6.12 - </span><span class="caption-text">Terminal interativo do Python.</span><a class="headerlink" href="#variados-fig-mac-terminal-python" title="Link para esta imagem"></a></p>
 </figcaption>
 </figure>
 </div><div aria-labelledby="tab-0-0-2" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-2" name="0-2" role="tabpanel" tabindex="0"><p>No Linux, abra um terminal de comandos e digite o comando <code class="docutils literal notranslate"><span class="pre">python</span></code> (ou <code class="docutils literal notranslate"><span class="pre">python3</span></code>), isto deverá abrir o terminal de comandos como mostrado na <a class="reference internal" href="#variados-fig-python-terminal"><span class="std std-numref">Figura 6.13</span></a></p>
 <figure class="align-center align-default" id="variados-fig-python-terminal">
-<a class="reference internal image-reference" href="../_images/python-terminal.png"><img alt="Terminal interativo do Python" src="../_images/python-terminal.png" style="width: 90%;" /></a>
+<a class="reference internal image-reference" href="../_images/python-terminal.png"><img alt="Terminal interativo do Python" src="../_images/python-terminal.png" style="width: 90%;" />
+</a>
 <figcaption>
-<p><span class="caption-number">Figura 6.13 - </span><span class="caption-text">Terminal interativo do Python.</span><a class="headerlink" href="#variados-fig-python-terminal" title="Link Permanente para essa imagem"></a></p>
+<p><span class="caption-number">Figura 6.13 - </span><span class="caption-text">Terminal interativo do Python.</span><a class="headerlink" href="#variados-fig-python-terminal" title="Link para esta imagem"></a></p>
 </figcaption>
 </figure>
 </div></div>
@@ -177,7 +183,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2022, Gilberto Queiroz and Thales Körting.</p>
+    <p>&#169; Direitos autorais 2020-2022, Gilberto Queiroz and Thales Körting.</p>
   </div>
 
    
@@ -191,18 +197,7 @@
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(false);
       });
-  </script>
-    <!-- Theme Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165908761-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-165908761-1', {
-          'anonymize_ip': false,
-      });
-    </script> 
+  </script> 
 
 </body>
 </html>

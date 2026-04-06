@@ -1,30 +1,30 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="pt-BR">
+<html class="writer-html5" lang="pt-BR" data-content_root="../../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contraste de Imagens baseado na Cobertura da Terra &mdash; SER-347/CAP-419</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
-      <link rel="stylesheet" type="text/css" href="../../_static/table_styling.css" />
-      <link rel="stylesheet" type="text/css" href="../../_static/prog-geo.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/table_styling.css?v=a1a2a898" />
+      <link rel="stylesheet" type="text/css" href="../../_static/prog-geo.css?v=bac0c41d" />
 
   
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="canonical" href="https://prog-geo.github.io/projetos/2024/p03-contraste.html" />
-      <script src="../../_static/jquery.js"></script>
-      <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-      <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-      <script src="../../_static/doctools.js"></script>
-      <script src="../../_static/sphinx_highlight.js"></script>
-      <script src="../../_static/clipboard.min.js"></script>
-      <script src="../../_static/copybutton.js"></script>
-      <script src="../../_static/translations.js"></script>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=8dd0446f"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=30646c52"></script>
+      <script src="../../_static/translations.js?v=000972dd"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Buscar" href="../../search.html" />
@@ -78,6 +78,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../2026/index.html">Turma 2026</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../2025/index.html">Turma 2025</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Turma 2024</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="p01-registro.html">Registro automático para séries temporais WFI L4</a></li>
@@ -132,13 +133,13 @@
            <div itemprop="articleBody">
              
   <section id="contraste-de-imagens-baseado-na-cobertura-da-terra">
-<span id="sec-projetos-2024-p03"></span><h1>Contraste de Imagens baseado na Cobertura da Terra<a class="headerlink" href="#contraste-de-imagens-baseado-na-cobertura-da-terra" title="Link permanente para este cabeçalho"></a></h1>
+<span id="sec-projetos-2024-p03"></span><h1>Contraste de Imagens baseado na Cobertura da Terra<a class="headerlink" href="#contraste-de-imagens-baseado-na-cobertura-da-terra" title="Link para este cabeçalho"></a></h1>
 <p><a class="reference external" href="https://github.com/LuisMaurano/Ser347_2024/">Link para os scripts gerados pelo grupo</a>.</p>
 <p>O contraste de imagens é uma ferramenta muito útil para a realização de análises visuais em sensoriamento remoto. Ao realizar operações matemáticas sobre os valores dos pixels (como multiplicação por uma constante, aplicação funções como logaritmo, raiz quadrada, etc.) a visualização é transformada.</p>
 <p>Em muitos casos, a imagem de sensoriamento remoto possui uma diversidade de alvos. Eventualmente, uma técnica única de contraste pode ressaltar um alvo, e mascarar outros presentes na mesma imagem. Conhecer informações de cobertura da terra ao aplicar um contraste pode ser uma saída para ressaltar adequadamente os diferentes alvos da imagem.</p>
 <p>O objetivo deste trabalho é criar um script que obtenha alguns índices espectrais consolidados na literatura (como NDVI, NDWI, NDBI, BAI, etc.) e com base em regiões com alta resposta em algum desses índices, gerar máscaras de aplicação de contraste. Assim, uma imagem que contenha muita vegetação, mas também alvos de água e áreas urbanas, teria 3 contrastes diferentes, aplicados em regiões distintas. O melhor tipo de contraste, bem como limiares para sua aplicação, poderão ser calculados com base nas máscaras previamente obtidas. Sugestões de bibliotecas incluem GDAL, rasterio, numpy, openCV.</p>
 <section id="observacoes">
-<h2>Observações<a class="headerlink" href="#observacoes" title="Link permanente para este cabeçalho"></a></h2>
+<h2>Observações<a class="headerlink" href="#observacoes" title="Link para este cabeçalho"></a></h2>
 <p><strong>1.</strong> Os scripts deverão conter documentação de uso.</p>
 <p><strong>2.</strong> O relatório produzido deverá estar no formato do evento <a class="reference external" href="http://www.geoinfo.info/">GEOINFO</a>.</p>
 </section>
@@ -155,7 +156,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2022, Gilberto Queiroz and Thales Körting.</p>
+    <p>&#169; Direitos autorais 2020-2022, Gilberto Queiroz and Thales Körting.</p>
   </div>
 
    
@@ -169,18 +170,7 @@
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(false);
       });
-  </script>
-    <!-- Theme Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165908761-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-165908761-1', {
-          'anonymize_ip': false,
-      });
-    </script> 
+  </script> 
 
 </body>
 </html>

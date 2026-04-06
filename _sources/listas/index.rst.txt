@@ -13,7 +13,7 @@ Listas de Exercícios
     :maxdepth: 1
     :titlesonly:
 
-    ./l01
+    ./lista-2026
 
 
 

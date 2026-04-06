@@ -1,30 +1,30 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="pt-BR">
+<html class="writer-html5" lang="pt-BR" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>4.1. GDAL - Geospatial Data Abstraction Library &mdash; SER-347/CAP-419</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/table_styling.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/prog-geo.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../_static/table_styling.css?v=a1a2a898" />
+      <link rel="stylesheet" type="text/css" href="../_static/prog-geo.css?v=bac0c41d" />
 
   
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="canonical" href="https://prog-geo.github.io/imagens/gdal.html" />
-      <script src="../_static/jquery.js"></script>
-      <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-      <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-      <script src="../_static/doctools.js"></script>
-      <script src="../_static/sphinx_highlight.js"></script>
-      <script src="../_static/clipboard.min.js"></script>
-      <script src="../_static/copybutton.js"></script>
-      <script src="../_static/translations.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=8dd0446f"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=30646c52"></script>
+      <script src="../_static/translations.js?v=000972dd"></script>
       <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Índice" href="../genindex.html" />
@@ -94,6 +94,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../projetos/2026/index.html">Turma 2026</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2025/index.html">Turma 2025</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2024/index.html">Turma 2024</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2023/index.html">Turma 2023</a></li>
@@ -137,7 +138,7 @@
            <div itemprop="articleBody">
              
   <section id="gdal-geospatial-data-abstraction-library">
-<span id="sec-imagens-gdal"></span><h1><span class="section-number">4.1. </span>GDAL - <strong>G</strong>eospatial <strong>D</strong>ata <strong>A</strong>bstraction <strong>L</strong>ibrary<a class="headerlink" href="#gdal-geospatial-data-abstraction-library" title="Link permanente para este cabeçalho"></a></h1>
+<span id="sec-imagens-gdal"></span><h1><span class="section-number">4.1. </span>GDAL - <strong>G</strong>eospatial <strong>D</strong>ata <strong>A</strong>bstraction <strong>L</strong>ibrary<a class="headerlink" href="#gdal-geospatial-data-abstraction-library" title="Link para este cabeçalho"></a></h1>
 <a class="reference internal image-reference" href="../_images/gdal.svg"><img alt="GDAL" class="align-right" src="../_images/gdal.svg" width="96" /></a>
 <p>A <a class="reference external" href="https://gdal.org">GDAL</a> é uma biblioteca de software livre que fornece uma camada de abstração de dados geoespaciais, possibilitando o desenvolvimento de aplicações que manipulam dados nos mais diferentes formatos e sistemas. A <code class="docutils literal notranslate"><span class="pre">API</span></code> (<em>Application Programming Interface</em> ou Interface de Programação de Aplicações) desta biblioteca encontra-se disponível para uso em Python através de um <em>binding</em> (ou <em>wrapper</em>), que fornece acesso às funcionalidades implementadas em C++.</p>
 <p>A GDAL é basicamente composta de quatro APIs:</p>
@@ -150,7 +151,7 @@
 <p>As aplicações que utilizam a GDAL acessam todos os formatos suportados por ela através de um único modelo de dados abstrato. Além disso, a GDAL também conta com uma variedade de programas utilitários de linha de comando para a tradução de formatos e alguns tipos básicos de processamento.</p>
 <p>Utilizaremos a GDAL para manipular imagens de sensoriamento remoto, através do acesso aos valores dos pixels das bandas, por meio de matrizes no formato da biblioteca <a class="reference external" href="https://numpy.org/">NumPy</a>.</p>
 <section id="importando-a-biblioteca-gdal">
-<h2><span class="section-number">4.1.1. </span>Importando a Biblioteca GDAL<a class="headerlink" href="#importando-a-biblioteca-gdal" title="Link permanente para este cabeçalho"></a></h2>
+<h2><span class="section-number">4.1.1. </span>Importando a Biblioteca GDAL<a class="headerlink" href="#importando-a-biblioteca-gdal" title="Link para este cabeçalho"></a></h2>
 <p>Para acessar a API <code class="docutils literal notranslate"><span class="pre">gdal</span></code>, que permitirá manipular as imagens, devemos importar a biblioteca <code class="docutils literal notranslate"><span class="pre">osgeo</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">osgeo</span><span class="w"> </span><span class="kn">import</span> <span class="n">gdal</span>
 </pre></div>
@@ -190,7 +191,7 @@ print(&#39;* Jupyter Notebook&#39;)
 </div>
 </section>
 <section id="abertura-de-um-arquivo-raster">
-<h2><span class="section-number">4.1.2. </span>Abertura de um arquivo <em>raster</em><a class="headerlink" href="#abertura-de-um-arquivo-raster" title="Link permanente para este cabeçalho"></a></h2>
+<h2><span class="section-number">4.1.2. </span>Abertura de um arquivo <em>raster</em><a class="headerlink" href="#abertura-de-um-arquivo-raster" title="Link para este cabeçalho"></a></h2>
 <p>A função <code class="docutils literal notranslate"><span class="pre">Open</span></code> é utilizada para abrir um conjunto de dados (ou <code class="docutils literal notranslate"><span class="pre">dataset</span></code>), que exige dois parâmetros:</p>
 <ul class="open">
 <li><p><strong>Nome do Arquivo</strong>: caminho e nome completo</p></li>
@@ -211,9 +212,9 @@ print(&#39;* Jupyter Notebook&#39;)
 </div>
 </section>
 <section id="estrutura-do-dataset">
-<h2><span class="section-number">4.1.3. </span>Estrutura do <em>Dataset</em><a class="headerlink" href="#estrutura-do-dataset" title="Link permanente para este cabeçalho"></a></h2>
+<h2><span class="section-number">4.1.3. </span>Estrutura do <em>Dataset</em><a class="headerlink" href="#estrutura-do-dataset" title="Link para este cabeçalho"></a></h2>
 <section id="sistema-de-referencia-espacial">
-<h3><span class="section-number">4.1.3.1. </span>Sistema de Referência Espacial<a class="headerlink" href="#sistema-de-referencia-espacial" title="Link permanente para este cabeçalho"></a></h3>
+<h3><span class="section-number">4.1.3.1. </span>Sistema de Referência Espacial<a class="headerlink" href="#sistema-de-referencia-espacial" title="Link para este cabeçalho"></a></h3>
 <p>Para conhecer o sistema de coordenadas de referência (CRS) de um <code class="docutils literal notranslate"><span class="pre">dataset</span></code>, deve ser utilizado o método <code class="docutils literal notranslate"><span class="pre">GetProjectionRef</span></code>, que retorna uma descrição no formato WKT (<em>Well-Known Text</em>). O WKT é um formato textual, padronizado pela OGC (<em>Open Geospatial Consortium</em>), para representação de sistemas de referência espacial dos objetos geográficos.</p>
 <p>Para recuperar a informação sobre a Referência Espacial de uma imagem, usa-se o método <code class="docutils literal notranslate"><span class="pre">GetProjectionRef</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span><span class="o">.</span><span class="n">GetProjectionRef</span><span class="p">()</span>
@@ -229,7 +230,7 @@ print(&#39;* Jupyter Notebook&#39;)
 </section>
 </section>
 <section id="transformacao-afim">
-<h2><span class="section-number">4.1.4. </span>Transformação Afim<a class="headerlink" href="#transformacao-afim" title="Link permanente para este cabeçalho"></a></h2>
+<h2><span class="section-number">4.1.4. </span>Transformação Afim<a class="headerlink" href="#transformacao-afim" title="Link para este cabeçalho"></a></h2>
 <p>O método <code class="docutils literal notranslate"><span class="pre">GetGeoTransform</span></code> retorna uma tupla com os 06 coeficientes referentes à transformação afim do <code class="docutils literal notranslate"><span class="pre">dataset</span></code>, isto é, os parâmetros para transformação do espaço de coordenadas da imagem (linha e coluna) para coordendas georreferenciadas (coordenadas projetadas ou geográficas).</p>
 <p>Vamos obter o valor desses coeficientes:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="o">&gt;&gt;&gt;</span> <span class="n">GT</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">GetGeoTransform</span><span class="p">()</span>
@@ -304,7 +305,7 @@ Y_{geo} = GT[3] + Linha * GT[5]
 <p>Para mais informaçõs sobre essa operação, consulte <a class="reference external" href="https://gdal.org/tutorials/geotransforms_tut.html">Geotransform Tutorial</a>.</p>
 </div>
 <section id="dimensoes-numero-de-linhas-e-colunas">
-<h3><span class="section-number">4.1.4.1. </span>Dimensões (Número de linhas e colunas)<a class="headerlink" href="#dimensoes-numero-de-linhas-e-colunas" title="Link permanente para este cabeçalho"></a></h3>
+<h3><span class="section-number">4.1.4.1. </span>Dimensões (Número de linhas e colunas)<a class="headerlink" href="#dimensoes-numero-de-linhas-e-colunas" title="Link para este cabeçalho"></a></h3>
 <p>Para saber o número de linhas e colunas do <code class="docutils literal notranslate"><span class="pre">dataset</span></code> que está sendo utilizado, devemos utilizar as propriedades <code class="docutils literal notranslate"><span class="pre">RasterYSize</span></code> e <code class="docutils literal notranslate"><span class="pre">RasterXSize</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">linhas</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">RasterYSize</span>
 <span class="n">colunas</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">RasterXSize</span>
@@ -315,7 +316,7 @@ Y_{geo} = GT[3] + Linha * GT[5]
 </div>
 </section>
 <section id="bandas">
-<h3><span class="section-number">4.1.4.2. </span>Bandas<a class="headerlink" href="#bandas" title="Link permanente para este cabeçalho"></a></h3>
+<h3><span class="section-number">4.1.4.2. </span>Bandas<a class="headerlink" href="#bandas" title="Link para este cabeçalho"></a></h3>
 <p>Para saber o número de bandas de um <code class="docutils literal notranslate"><span class="pre">dataset</span></code>, podemos utilizar a propriedade <code class="docutils literal notranslate"><span class="pre">RasterCount</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dataset</span><span class="o">.</span><span class="n">RasterCount</span>
 <span class="go">5</span>
@@ -356,7 +357,7 @@ Y_{geo} = GT[3] + Linha * GT[5]
 </section>
 </section>
 <section id="leitura-dos-dados-de-uma-banda">
-<h2><span class="section-number">4.1.5. </span>Leitura dos dados de uma banda<a class="headerlink" href="#leitura-dos-dados-de-uma-banda" title="Link permanente para este cabeçalho"></a></h2>
+<h2><span class="section-number">4.1.5. </span>Leitura dos dados de uma banda<a class="headerlink" href="#leitura-dos-dados-de-uma-banda" title="Link para este cabeçalho"></a></h2>
 <p>Depois de criados os objetos das bandas (banda_nir e banda_red), podemos ler os dados de cada banda para iniciar qualquer processamento com estes valores. Para isso, utilizaremos o método <code class="docutils literal notranslate"><span class="pre">ReadAsArray</span></code>, que permitirá obter os dados de cada banda em uma matriz NumPy:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">matriz_red</span> <span class="o">=</span> <span class="n">banda_red</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()</span>
 <span class="n">matriz_nir</span> <span class="o">=</span> <span class="n">banda_nir</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()</span>
@@ -418,7 +419,7 @@ Y_{geo} = GT[3] + Linha * GT[5]
 </div>
 </section>
 <section id="liberando-um-conjunto-de-dados">
-<h2><span class="section-number">4.1.6. </span>Liberando um conjunto de dados<a class="headerlink" href="#liberando-um-conjunto-de-dados" title="Link permanente para este cabeçalho"></a></h2>
+<h2><span class="section-number">4.1.6. </span>Liberando um conjunto de dados<a class="headerlink" href="#liberando-um-conjunto-de-dados" title="Link para este cabeçalho"></a></h2>
 <p>Para liberar a memória e fechar o arquivo aberto, associamos o valor <code class="docutils literal notranslate"><span class="pre">None</span></code> ao identificador do <code class="docutils literal notranslate"><span class="pre">dataset</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="kc">None</span>
 </pre></div>
@@ -441,7 +442,7 @@ Y_{geo} = GT[3] + Linha * GT[5]
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2022, Gilberto Queiroz and Thales Körting.</p>
+    <p>&#169; Direitos autorais 2020-2022, Gilberto Queiroz and Thales Körting.</p>
   </div>
 
    
@@ -455,18 +456,7 @@ Y_{geo} = GT[3] + Linha * GT[5]
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(false);
       });
-  </script>
-    <!-- Theme Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165908761-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-165908761-1', {
-          'anonymize_ip': false,
-      });
-    </script> 
+  </script> 
 
 </body>
 </html>

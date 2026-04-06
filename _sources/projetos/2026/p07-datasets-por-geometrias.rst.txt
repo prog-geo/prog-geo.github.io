@@ -1,0 +1,15 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2026, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../../def.rst
+
+
+.. _sec_projetos_2026_p07:
+
+Preparação de datasets de imagens, em geometria de interesse
+============================================================
+
+
+Dado uma geometria, um conjunto de coleções e um periodo de tempo, recorta os conjuntos de imagens na area da geometria, reprojeta caso tenham diferentes projeções e prepara como um dataset local. Esse pacote deve tratar casos como multiplos valores em uma mesma data (caso do S2_L2A), mosaico de tiles adjacentes, caso o geom esteja em mais de um tile. Pode inclusive ter uma parte de leitura do dataset como xarray e numpy arrays.

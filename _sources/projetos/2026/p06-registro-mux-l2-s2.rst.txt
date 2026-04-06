@@ -1,0 +1,18 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2026, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../../def.rst
+
+
+.. _sec_projetos_2026_p06:
+
+Registro de imagens MUX L2 com base no Sentinel-2
+=================================================
+
+
+O catálogo de imagens do INPE oferece um conjunto de imagens atualizado diariamente. O sensor MUX está disponível em 2 satélites brasileiros (CBERS-4 e CBERS-4A). Algumas imagens possuem nível de processamento L2, o que indica que não passaram por todas as etapas de registro geométrico. Entretanto, é possível efetuar o registro utilizando como base uma outra imagem, de resolução espacial semelhante, obita em uma época parecida. 
+
+
+Dentre os produtos de imagens oferecidos pelo Dataspace Copernicus, há o dado SENTINEL_2_L1C em um composto com baixa quantidade de nuvens, chamado LEAST_CC. Esse produto pode ser uma referência para melhorar o registro das imagens L2. Dada uma cena do sensor MUX disponível no catálogo do INPE, em nível de processamento L2, encontrar no Dataspace Copernicus uma cena correspondente, com as mesmas bandas disponíveis no MUX, e aplicar uma técnica de co-registro entre as imagens (usando o pacote `arosics <https://pypi.org/project/arosics/>`_).

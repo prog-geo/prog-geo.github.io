@@ -1,0 +1,18 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2026, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../../def.rst
+
+
+.. _sec_projetos_2026_p04:
+
+Relatório de dados a partir do projeto Queimadas do INPE
+========================================================
+
+
+Dado um arquivo em formato CSV (*comma-separated values*) com informações obtidas no site do `Programa Queimadas do INPE <https://terrabrasilis.dpi.inpe.br/queimadas/portal/>`_, gerar um relatório das principais conclusões, incluindo gráficos de quantidade de focos por estado, *top-N* cidades com maior número de focos, espacialização de focos, etc. 
+
+
+Para simplificar, utilizar sempre os dados publicados no mês anterior, `sendo um exemplo <https://dataserver-coids.inpe.br/queimadas/queimadas/focos/csv/mensal/Brasil/focos_mensal_br_202602.csv>`_, e o relatório poderá utilizar uma biblioteca, como a Jinja, para auxiliar no template. Como aplicação prática, pensar na demanda de uma secretaria estadual de meio ambiente que precisa monitorar o que aconteceu no último mês. 

@@ -1,30 +1,30 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="pt-BR">
+<html class="writer-html5" lang="pt-BR" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>3.3. Notebooks &mdash; SER-347/CAP-419</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/table_styling.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/prog-geo.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../_static/table_styling.css?v=a1a2a898" />
+      <link rel="stylesheet" type="text/css" href="../_static/prog-geo.css?v=bac0c41d" />
 
   
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="canonical" href="https://prog-geo.github.io/jupyter/notebooks.html" />
-      <script src="../_static/jquery.js"></script>
-      <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-      <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-      <script src="../_static/doctools.js"></script>
-      <script src="../_static/sphinx_highlight.js"></script>
-      <script src="../_static/clipboard.min.js"></script>
-      <script src="../_static/copybutton.js"></script>
-      <script src="../_static/translations.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=8dd0446f"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=30646c52"></script>
+      <script src="../_static/translations.js?v=000972dd"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Índice" href="../genindex.html" />
     <link rel="search" title="Buscar" href="../search.html" />
@@ -86,6 +86,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../projetos/2026/index.html">Turma 2026</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2025/index.html">Turma 2025</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2024/index.html">Turma 2024</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2023/index.html">Turma 2023</a></li>
@@ -129,74 +130,84 @@
            <div itemprop="articleBody">
              
   <section id="notebooks">
-<span id="sec-jupyter-notebooks"></span><h1><span class="section-number">3.3. </span>Notebooks<a class="headerlink" href="#notebooks" title="Link permanente para este cabeçalho"></a></h1>
+<span id="sec-jupyter-notebooks"></span><h1><span class="section-number">3.3. </span>Notebooks<a class="headerlink" href="#notebooks" title="Link para este cabeçalho"></a></h1>
 <p>Vamos utilizar o ambiente do JupyterLab para criar um documento Notebook. Para isso, na janela principal do JupyterLab (<a class="reference internal" href="#fig-jupyter-notebooks-jupyterlab-frontend"><span class="std std-numref">Figura 3.17</span></a>), no navegador, selecione a opção <span class="menuselection">Python 3</span>.</p>
 <figure class="align-center align-default" id="fig-jupyter-notebooks-jupyterlab-frontend">
-<a class="reference internal image-reference" href="../_images/jupyterlab-frontend.png"><img alt="Janela inicial do JupyterLab" src="../_images/jupyterlab-frontend.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../_images/jupyterlab-frontend.png"><img alt="Janela inicial do JupyterLab" src="../_images/jupyterlab-frontend.png" style="width: 100%;" />
+</a>
 <figcaption>
-<p><span class="caption-number">Figura 3.17 - </span><span class="caption-text">Janela inicial do JupyterLab.</span><a class="headerlink" href="#fig-jupyter-notebooks-jupyterlab-frontend" title="Link Permanente para essa imagem"></a></p>
+<p><span class="caption-number">Figura 3.17 - </span><span class="caption-text">Janela inicial do JupyterLab.</span><a class="headerlink" href="#fig-jupyter-notebooks-jupyterlab-frontend" title="Link para esta imagem"></a></p>
 </figcaption>
 </figure>
 <p>Uma nova aba com o título <code class="docutils literal notranslate"><span class="pre">Untitled.ipynb</span></code> será apresentada (<a class="reference internal" href="#fig-jupyter-notebooks-notebook-01"><span class="std std-numref">Figura 3.18</span></a>).</p>
 <figure class="align-center align-default" id="fig-jupyter-notebooks-notebook-01">
-<a class="reference internal image-reference" href="../_images/notebook-01.png"><img alt="Criando um novo Notebook" src="../_images/notebook-01.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../_images/notebook-01.png"><img alt="Criando um novo Notebook" src="../_images/notebook-01.png" style="width: 100%;" />
+</a>
 <figcaption>
-<p><span class="caption-number">Figura 3.18 - </span><span class="caption-text">Criando um novo Notebook.</span><a class="headerlink" href="#fig-jupyter-notebooks-notebook-01" title="Link Permanente para essa imagem"></a></p>
+<p><span class="caption-number">Figura 3.18 - </span><span class="caption-text">Criando um novo Notebook.</span><a class="headerlink" href="#fig-jupyter-notebooks-notebook-01" title="Link para esta imagem"></a></p>
 </figcaption>
 </figure>
 <p>Salve esse novo notebook, que por padrão possui o nome <code class="docutils literal notranslate"><span class="pre">Untitled.ipynb</span></code>, com o nome <code class="docutils literal notranslate"><span class="pre">meu-primeiro-notebook.ipynb</span></code>. Para isso, selecione a opção de menu <span class="menuselection">File ‣ Save Notebook As…</span>. Por padrão, esse novo documento é criado contendo uma única célula, onde podemos escrever um código Python, como mostrado na <a class="reference internal" href="#fig-jupyter-notebooks-notebook-02"><span class="std std-numref">Figura 3.19</span></a>.</p>
 <figure class="align-center align-default" id="fig-jupyter-notebooks-notebook-02">
-<a class="reference internal image-reference" href="../_images/notebook-02.png"><img alt="Célula de código Python" src="../_images/notebook-02.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../_images/notebook-02.png"><img alt="Célula de código Python" src="../_images/notebook-02.png" style="width: 100%;" />
+</a>
 <figcaption>
-<p><span class="caption-number">Figura 3.19 - </span><span class="caption-text">Célula de código Python.</span><a class="headerlink" href="#fig-jupyter-notebooks-notebook-02" title="Link Permanente para essa imagem"></a></p>
+<p><span class="caption-number">Figura 3.19 - </span><span class="caption-text">Célula de código Python.</span><a class="headerlink" href="#fig-jupyter-notebooks-notebook-02" title="Link para esta imagem"></a></p>
 </figcaption>
 </figure>
 <p>Uma <strong>célula</strong> é uma <strong>caixa de texto multilinha</strong>, cujo conteúdo pode ser executado pressionando-se <code class="docutils literal notranslate"><span class="pre">Shift-Enter</span></code> ou clicando no botão <code class="docutils literal notranslate"><span class="pre">Run</span></code> na barra de botões, ou através do menu <span class="menuselection">Run ‣ Run Selected Cells</span> na barra de menus. A <a class="reference internal" href="#fig-jupyter-notebooks-notebook-02"><span class="std std-numref">Figura 3.19</span></a> mostra o resultado da execução dessa célula.</p>
 <figure class="align-center align-default" id="fig-jupyter-notebooks-notebook-03">
-<a class="reference internal image-reference" href="../_images/notebook-03.png"><img alt="Resultado da execução da célula com código Python" src="../_images/notebook-03.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../_images/notebook-03.png"><img alt="Resultado da execução da célula com código Python" src="../_images/notebook-03.png" style="width: 100%;" />
+</a>
 <figcaption>
-<p><span class="caption-number">Figura 3.20 - </span><span class="caption-text">Resultado da execução da célula com código Python.</span><a class="headerlink" href="#fig-jupyter-notebooks-notebook-03" title="Link Permanente para essa imagem"></a></p>
+<p><span class="caption-number">Figura 3.20 - </span><span class="caption-text">Resultado da execução da célula com código Python.</span><a class="headerlink" href="#fig-jupyter-notebooks-notebook-03" title="Link para esta imagem"></a></p>
 </figcaption>
 </figure>
 <p>O <strong>tipo da célula</strong> irá determinar o comportamento de sua interpretação. Essencialmente, temos três tipos de células: células de código, células com textos formatados em Markdown, e células <em>raw</em>. Toda nova célula é definida, por padrão, como sendo do tipo código, podendo esse tipo ser alterado através da <code class="docutils literal notranslate"><span class="pre">drop-down</span> <span class="pre">list</span></code> na barra de botões ou através de teclas de atalho.</p>
 <p>Vamos adicionar uma nova célula, desta vez como uma célula contendo textos na notação Markdown, como mostrado na <a class="reference internal" href="#fig-jupyter-notebooks-notebook-04"><span class="std std-numref">Figura 3.21</span></a>.</p>
 <figure class="align-center align-default" id="fig-jupyter-notebooks-notebook-04">
-<a class="reference internal image-reference" href="../_images/notebook-04.png"><img alt="Célula do tipo Markdown" src="../_images/notebook-04.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../_images/notebook-04.png"><img alt="Célula do tipo Markdown" src="../_images/notebook-04.png" style="width: 100%;" />
+</a>
 <figcaption>
-<p><span class="caption-number">Figura 3.21 - </span><span class="caption-text">Célula do tipo Markdown.</span><a class="headerlink" href="#fig-jupyter-notebooks-notebook-04" title="Link Permanente para essa imagem"></a></p>
+<p><span class="caption-number">Figura 3.21 - </span><span class="caption-text">Célula do tipo Markdown.</span><a class="headerlink" href="#fig-jupyter-notebooks-notebook-04" title="Link para esta imagem"></a></p>
 </figcaption>
 </figure>
 <p>Uma célula do tipo Markdown, quando executada produz apenas uma renderização, como mostrada na <a class="reference internal" href="#fig-jupyter-notebooks-notebook-05"><span class="std std-numref">Figura 3.22</span></a>.</p>
 <figure class="align-center align-default" id="fig-jupyter-notebooks-notebook-05">
-<a class="reference internal image-reference" href="../_images/notebook-05.png"><img alt="Resultado da execução de uma célula do tipo Markdown" src="../_images/notebook-05.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../_images/notebook-05.png"><img alt="Resultado da execução de uma célula do tipo Markdown" src="../_images/notebook-05.png" style="width: 100%;" />
+</a>
 <figcaption>
-<p><span class="caption-number">Figura 3.22 - </span><span class="caption-text">Resultado da execução de uma célula do tipo Markdown.</span><a class="headerlink" href="#fig-jupyter-notebooks-notebook-05" title="Link Permanente para essa imagem"></a></p>
+<p><span class="caption-number">Figura 3.22 - </span><span class="caption-text">Resultado da execução de uma célula do tipo Markdown.</span><a class="headerlink" href="#fig-jupyter-notebooks-notebook-05" title="Link para esta imagem"></a></p>
 </figcaption>
 </figure>
 <p>As células do tipo Markdown aceitam também trechos em LaTeX. Na <a class="reference internal" href="#fig-jupyter-notebooks-notebook-06"><span class="std std-numref">Figura 3.23</span></a> a equação de Haversine encontra-se entre as marcações <code class="docutils literal notranslate"><span class="pre">$$...$$</span></code>, e o resultado da execução dessa célula pode ser visto na <a class="reference internal" href="#fig-jupyter-notebooks-notebook-07"><span class="std std-numref">Figura 3.24</span></a>.</p>
 <figure class="align-center align-default" id="fig-jupyter-notebooks-notebook-06">
-<a class="reference internal image-reference" href="../_images/notebook-06.png"><img alt="Célula do tipo Markdown com trecho LaTeX" src="../_images/notebook-06.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../_images/notebook-06.png"><img alt="Célula do tipo Markdown com trecho LaTeX" src="../_images/notebook-06.png" style="width: 100%;" />
+</a>
 <figcaption>
-<p><span class="caption-number">Figura 3.23 - </span><span class="caption-text">Célula do tipo Markdown com trecho LaTeX.</span><a class="headerlink" href="#fig-jupyter-notebooks-notebook-06" title="Link Permanente para essa imagem"></a></p>
+<p><span class="caption-number">Figura 3.23 - </span><span class="caption-text">Célula do tipo Markdown com trecho LaTeX.</span><a class="headerlink" href="#fig-jupyter-notebooks-notebook-06" title="Link para esta imagem"></a></p>
 </figcaption>
 </figure>
 <figure class="align-center align-default" id="fig-jupyter-notebooks-notebook-07">
-<a class="reference internal image-reference" href="../_images/notebook-07.png"><img alt="Resultado da execução de uma célula do tipo Markdown com trecho em LaTeX" src="../_images/notebook-07.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../_images/notebook-07.png"><img alt="Resultado da execução de uma célula do tipo Markdown com trecho em LaTeX" src="../_images/notebook-07.png" style="width: 100%;" />
+</a>
 <figcaption>
-<p><span class="caption-number">Figura 3.24 - </span><span class="caption-text">Resultado da execução de uma célula do tipo Markdown com trecho em LaTeX.</span><a class="headerlink" href="#fig-jupyter-notebooks-notebook-07" title="Link Permanente para essa imagem"></a></p>
+<p><span class="caption-number">Figura 3.24 - </span><span class="caption-text">Resultado da execução de uma célula do tipo Markdown com trecho em LaTeX.</span><a class="headerlink" href="#fig-jupyter-notebooks-notebook-07" title="Link para esta imagem"></a></p>
 </figcaption>
 </figure>
 <p>De maneira similar, podemos usar trechos em HTML, como por exemplo para escrever uma tabela formatada. As Figuras <a class="reference internal" href="#fig-jupyter-notebooks-notebook-08"><span class="std std-numref">3.25</span></a> e <a class="reference internal" href="#fig-jupyter-notebooks-notebook-09"><span class="std std-numref">3.26</span></a> mostram, respectivamente, como escrever um texto HTML e como será o resultado produzido pela execução da célula.</p>
 <figure class="align-center align-default" id="fig-jupyter-notebooks-notebook-08">
-<a class="reference internal image-reference" href="../_images/notebook-08.png"><img alt="Célula do tipo Markdown com trecho HTML" src="../_images/notebook-08.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../_images/notebook-08.png"><img alt="Célula do tipo Markdown com trecho HTML" src="../_images/notebook-08.png" style="width: 100%;" />
+</a>
 <figcaption>
-<p><span class="caption-number">Figura 3.25 - </span><span class="caption-text">Célula do tipo Markdown com trecho HTML.</span><a class="headerlink" href="#fig-jupyter-notebooks-notebook-08" title="Link Permanente para essa imagem"></a></p>
+<p><span class="caption-number">Figura 3.25 - </span><span class="caption-text">Célula do tipo Markdown com trecho HTML.</span><a class="headerlink" href="#fig-jupyter-notebooks-notebook-08" title="Link para esta imagem"></a></p>
 </figcaption>
 </figure>
 <figure class="align-center align-default" id="fig-jupyter-notebooks-notebook-09">
-<a class="reference internal image-reference" href="../_images/notebook-09.png"><img alt="Resultado da execução de uma célula do tipo Markdown com trecho em HTML" src="../_images/notebook-09.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../_images/notebook-09.png"><img alt="Resultado da execução de uma célula do tipo Markdown com trecho em HTML" src="../_images/notebook-09.png" style="width: 100%;" />
+</a>
 <figcaption>
-<p><span class="caption-number">Figura 3.26 - </span><span class="caption-text">Resultado da execução de uma célula do tipo Markdown com trecho em HTML.</span><a class="headerlink" href="#fig-jupyter-notebooks-notebook-09" title="Link Permanente para essa imagem"></a></p>
+<p><span class="caption-number">Figura 3.26 - </span><span class="caption-text">Resultado da execução de uma célula do tipo Markdown com trecho em HTML.</span><a class="headerlink" href="#fig-jupyter-notebooks-notebook-09" title="Link para esta imagem"></a></p>
 </figcaption>
 </figure>
 </section>
@@ -212,7 +223,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2022, Gilberto Queiroz and Thales Körting.</p>
+    <p>&#169; Direitos autorais 2020-2022, Gilberto Queiroz and Thales Körting.</p>
   </div>
 
    
@@ -226,18 +237,7 @@
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(false);
       });
-  </script>
-    <!-- Theme Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165908761-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-165908761-1', {
-          'anonymize_ip': false,
-      });
-    </script> 
+  </script> 
 
 </body>
 </html>

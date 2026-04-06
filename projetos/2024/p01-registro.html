@@ -1,30 +1,30 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="pt-BR">
+<html class="writer-html5" lang="pt-BR" data-content_root="../../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Registro automático para séries temporais WFI L4 &mdash; SER-347/CAP-419</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
-      <link rel="stylesheet" type="text/css" href="../../_static/table_styling.css" />
-      <link rel="stylesheet" type="text/css" href="../../_static/prog-geo.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/table_styling.css?v=a1a2a898" />
+      <link rel="stylesheet" type="text/css" href="../../_static/prog-geo.css?v=bac0c41d" />
 
   
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="canonical" href="https://prog-geo.github.io/projetos/2024/p01-registro.html" />
-      <script src="../../_static/jquery.js"></script>
-      <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-      <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-      <script src="../../_static/doctools.js"></script>
-      <script src="../../_static/sphinx_highlight.js"></script>
-      <script src="../../_static/clipboard.min.js"></script>
-      <script src="../../_static/copybutton.js"></script>
-      <script src="../../_static/translations.js"></script>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=8dd0446f"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=30646c52"></script>
+      <script src="../../_static/translations.js?v=000972dd"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Buscar" href="../../search.html" />
@@ -78,6 +78,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../2026/index.html">Turma 2026</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../2025/index.html">Turma 2025</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Turma 2024</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Registro automático para séries temporais WFI L4</a><ul>
@@ -132,22 +133,23 @@
            <div itemprop="articleBody">
              
   <section id="registro-automatico-para-series-temporais-wfi-l4">
-<span id="sec-projetos-2024-p01"></span><h1>Registro automático para séries temporais WFI L4<a class="headerlink" href="#registro-automatico-para-series-temporais-wfi-l4" title="Link permanente para este cabeçalho"></a></h1>
+<span id="sec-projetos-2024-p01"></span><h1>Registro automático para séries temporais WFI L4<a class="headerlink" href="#registro-automatico-para-series-temporais-wfi-l4" title="Link para este cabeçalho"></a></h1>
 <p><a class="reference external" href="https://zenodo.org/records/11218098">Link para os scripts gerados pelo grupo</a>.</p>
 <p>O INPE possui o sensor WFI em 3 satélites (CBERS-4, CBERS-4A, AMAZONIA-1). Isso permite a geração de séries temporais com alta frequência de revisita. No entanto, mesmo quando as imagens
 possuem um nível de processamento L4, certas regiões não parecem estar perfeitamente alinhadas (registradas).</p>
 <p>Na imagem a seguir (região do Paraguai + <em>buffer</em>), construída a partir de um mosaico de cenas WFI do satélite CBERS-4, pode-se notar a falta de correção da incidência solar sobre as cenas.</p>
 <figure class="align-center align-default" id="imagens-serie-temporal-wfi-exemplo">
-<a class="reference internal image-reference" href="../../_images/serie-temporal-wfi-exemplo.png"><img alt="imagens AMAZONIA-1 07/janeiro/2024, CBERS-4 24/janeiro/2024, CBERS-4A 30/janeiro/2024" src="../../_images/serie-temporal-wfi-exemplo.png" style="width: 50%;" /></a>
+<a class="reference internal image-reference" href="../../_images/serie-temporal-wfi-exemplo.png"><img alt="imagens AMAZONIA-1 07/janeiro/2024, CBERS-4 24/janeiro/2024, CBERS-4A 30/janeiro/2024" src="../../_images/serie-temporal-wfi-exemplo.png" style="width: 50%;" />
+</a>
 <figcaption>
-<p><span class="caption-number">Figura 17 - </span><span class="caption-text">Série temporal com imagens 3 imagens WFI e pequenas diferenças de registro (AMAZONIA-1 07/janeiro/2024, CBERS-4 24/janeiro/2024, CBERS-4A 30/janeiro/2024).</span><a class="headerlink" href="#imagens-serie-temporal-wfi-exemplo" title="Link Permanente para essa imagem"></a></p>
+<p><span class="caption-number">Figura 16 - </span><span class="caption-text">Série temporal com imagens 3 imagens WFI e pequenas diferenças de registro (AMAZONIA-1 07/janeiro/2024, CBERS-4 24/janeiro/2024, CBERS-4A 30/janeiro/2024).</span><a class="headerlink" href="#imagens-serie-temporal-wfi-exemplo" title="Link para esta imagem"></a></p>
 </figcaption>
 </figure>
 <p>O objetivo deste trabalho é criar um script que consiga ler várias imagens de uma mesma região, e utilizando uma delas como referência, aplicar um método de registro automático nas demais
 imagens. Sugestões de bibliotecas incluem GDAL, rasterio, Arosics. Gerar composições de imagens (exemplo: cada tempo em uma banda) para ressaltar o antes Vs depois da aplicação do método,
 ou ressaltar as diferenças de registro.</p>
 <section id="observacoes">
-<h2>Observações<a class="headerlink" href="#observacoes" title="Link permanente para este cabeçalho"></a></h2>
+<h2>Observações<a class="headerlink" href="#observacoes" title="Link para este cabeçalho"></a></h2>
 <p><strong>1.</strong> Os scripts deverão conter documentação de uso.</p>
 <p><strong>2.</strong> O relatório produzido deverá estar no formato do evento <a class="reference external" href="http://www.geoinfo.info/">GEOINFO</a>.</p>
 </section>
@@ -164,7 +166,7 @@ ou ressaltar as diferenças de registro.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2022, Gilberto Queiroz and Thales Körting.</p>
+    <p>&#169; Direitos autorais 2020-2022, Gilberto Queiroz and Thales Körting.</p>
   </div>
 
    
@@ -178,18 +180,7 @@ ou ressaltar as diferenças de registro.</p>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(false);
       });
-  </script>
-    <!-- Theme Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165908761-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-165908761-1', {
-          'anonymize_ip': false,
-      });
-    </script> 
+  </script> 
 
 </body>
 </html>

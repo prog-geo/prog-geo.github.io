@@ -1,30 +1,30 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="pt-BR">
+<html class="writer-html5" lang="pt-BR" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>3.4. Funções Mágicas &mdash; SER-347/CAP-419</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/table_styling.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/prog-geo.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../_static/table_styling.css?v=a1a2a898" />
+      <link rel="stylesheet" type="text/css" href="../_static/prog-geo.css?v=bac0c41d" />
 
   
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="canonical" href="https://prog-geo.github.io/jupyter/funcoes-magicas.html" />
-      <script src="../_static/jquery.js"></script>
-      <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-      <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-      <script src="../_static/doctools.js"></script>
-      <script src="../_static/sphinx_highlight.js"></script>
-      <script src="../_static/clipboard.min.js"></script>
-      <script src="../_static/copybutton.js"></script>
-      <script src="../_static/translations.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=8dd0446f"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=30646c52"></script>
+      <script src="../_static/translations.js?v=000972dd"></script>
       <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Índice" href="../genindex.html" />
@@ -90,6 +90,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../projetos/2026/index.html">Turma 2026</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2025/index.html">Turma 2025</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2024/index.html">Turma 2024</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2023/index.html">Turma 2023</a></li>
@@ -133,10 +134,10 @@
            <div itemprop="articleBody">
              
   <section id="funcoes-magicas">
-<span id="sec-jupyter-comandos-magicos"></span><h1><span class="section-number">3.4. </span>Funções Mágicas<a class="headerlink" href="#funcoes-magicas" title="Link permanente para este cabeçalho"></a></h1>
+<span id="sec-jupyter-comandos-magicos"></span><h1><span class="section-number">3.4. </span>Funções Mágicas<a class="headerlink" href="#funcoes-magicas" title="Link para este cabeçalho"></a></h1>
 <p>O IPython possui um conjunto pré-definido de funções chamadas de <strong>funções mágicas</strong> (<em>magic functions</em>), que podem ser usadas com um estilo de chamada de comandos em linha. Existem dois tipos de <strong>mágicas</strong> (<em>magics</em>): <strong>por linha</strong> (<em>line magics</em>) e <strong>por célula</strong> (<em>cell magics</em>). As <strong>mágicas por linha</strong> são prefixadas pelo caractere <code class="docutils literal notranslate"><span class="pre">%</span></code> e, tratam todos os valores após o comando até o final da linha como argumentos. A função mágica de linha <code class="docutils literal notranslate"><span class="pre">%timeit</span></code>, mostrada no <a class="reference internal" href="#code-jupyter-funcoes-magicas-timeit-line-magic"><span class="std std-numref">Trecho de Código 3.1</span></a>, computa o tempo médio para execução de um comando ou expressão Python.</p>
 <div class="literal-block-wrapper docutils container" id="code-jupyter-funcoes-magicas-timeit-line-magic">
-<div class="code-block-caption"><span class="caption-number">Trecho de Código 3.1 - </span><span class="caption-text">Função mágica de linha <code class="docutils literal notranslate"><span class="pre">%timeit</span></code>.</span><a class="headerlink" href="#code-jupyter-funcoes-magicas-timeit-line-magic" title="Link Permanente para esse código"></a></div>
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 3.1 - </span><span class="caption-text">Função mágica de linha <code class="docutils literal notranslate"><span class="pre">%timeit</span></code>.</span><a class="headerlink" href="#code-jupyter-funcoes-magicas-timeit-line-magic" title="Link para este código"></a></div>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="o">%</span><span class="k">timeit</span> range(1000)
 <span class="go">161 ns ± 2.55 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)</span>
 </pre></div>
@@ -148,15 +149,16 @@
 </div>
 <p>Se você quiser obter mais informações sobre uma função mágica, utilize o caractere <code class="docutils literal notranslate"><span class="pre">?</span></code> após o nome da mágica (<a class="reference internal" href="#code-jupyter-funcoes-magicas-help-line-magic"><span class="std std-numref">Trecho de Código 3.2</span></a>). Uma descrição da função será apresentada, como mostrado na <a class="reference internal" href="#fig-jupyter-funcoes-magicas-terminal-ipython-magic-help"><span class="std std-numref">Figura 3.27</span></a>.</p>
 <div class="literal-block-wrapper docutils container" id="code-jupyter-funcoes-magicas-help-line-magic">
-<div class="code-block-caption"><span class="caption-number">Trecho de Código 3.2 - </span><span class="caption-text">Obtendo informações sobre a função mágica de linha <code class="docutils literal notranslate"><span class="pre">%timeit</span></code>.</span><a class="headerlink" href="#code-jupyter-funcoes-magicas-help-line-magic" title="Link Permanente para esse código"></a></div>
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 3.2 - </span><span class="caption-text">Obtendo informações sobre a função mágica de linha <code class="docutils literal notranslate"><span class="pre">%timeit</span></code>.</span><a class="headerlink" href="#code-jupyter-funcoes-magicas-help-line-magic" title="Link para este código"></a></div>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="o">%</span><span class="k">timeit</span><span class="o">?</span>
 </pre></div>
 </div>
 </div>
 <figure class="align-center align-default" id="fig-jupyter-funcoes-magicas-terminal-ipython-magic-help">
-<a class="reference internal image-reference" href="../_images/terminal-ipython-magic-help.png"><img alt="Ajuda sobre a função mágica %timeit no terminal IPython" src="../_images/terminal-ipython-magic-help.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../_images/terminal-ipython-magic-help.png"><img alt="Ajuda sobre a função mágica %timeit no terminal IPython" src="../_images/terminal-ipython-magic-help.png" style="width: 100%;" />
+</a>
 <figcaption>
-<p><span class="caption-number">Figura 3.27 - </span><span class="caption-text">Ajuda sobre a função mágica <code class="docutils literal notranslate"><span class="pre">%timeit</span></code> no terminal IPython.</span><a class="headerlink" href="#fig-jupyter-funcoes-magicas-terminal-ipython-magic-help" title="Link Permanente para essa imagem"></a></p>
+<p><span class="caption-number">Figura 3.27 - </span><span class="caption-text">Ajuda sobre a função mágica <code class="docutils literal notranslate"><span class="pre">%timeit</span></code> no terminal IPython.</span><a class="headerlink" href="#fig-jupyter-funcoes-magicas-terminal-ipython-magic-help" title="Link para esta imagem"></a></p>
 </figcaption>
 </figure>
 <p>Para obter informações sobre o sistema de funções mágicas, podemos usar <code class="docutils literal notranslate"><span class="pre">%magic</span></code>:</p>
@@ -165,9 +167,10 @@
 </div>
 <p>Esse comando fará com que a ajuda sobre o sistema de funções mágicas seja apresentada, como mostrado na <a class="reference internal" href="#fig-jupyter-funcoes-magicas-terminal-ipython-magic"><span class="std std-numref">Figura 3.28</span></a>.</p>
 <figure class="align-center align-default" id="fig-jupyter-funcoes-magicas-terminal-ipython-magic">
-<a class="reference internal image-reference" href="../_images/terminal-ipython-magic.png"><img alt="Ajuda sobre o sistema de funções mágicas do IPython" src="../_images/terminal-ipython-magic.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../_images/terminal-ipython-magic.png"><img alt="Ajuda sobre o sistema de funções mágicas do IPython" src="../_images/terminal-ipython-magic.png" style="width: 100%;" />
+</a>
 <figcaption>
-<p><span class="caption-number">Figura 3.28 - </span><span class="caption-text">Ajuda sobre o sistema de funções mágicas do IPython.</span><a class="headerlink" href="#fig-jupyter-funcoes-magicas-terminal-ipython-magic" title="Link Permanente para essa imagem"></a></p>
+<p><span class="caption-number">Figura 3.28 - </span><span class="caption-text">Ajuda sobre o sistema de funções mágicas do IPython.</span><a class="headerlink" href="#fig-jupyter-funcoes-magicas-terminal-ipython-magic" title="Link para esta imagem"></a></p>
 </figcaption>
 </figure>
 <p>A lista completa de funções mágicas pode ser obtida através da mágica <code class="docutils literal notranslate"><span class="pre">%lsmagic</span></code>:</p>
@@ -183,7 +186,7 @@
 </pre></div>
 </div>
 <p>As <strong>mágicas por célula</strong> são prefixadas pela sequência de caracteres <code class="docutils literal notranslate"><span class="pre">%%</span></code> e, funcionam como comandos que tomam como argumentos todos os valores seguintes na sua linha bem como das demais linhas de sua célula. Para ilustrar esse tipo de comando, vamos utilizar o comando <code class="docutils literal notranslate"><span class="pre">%%timeit</span></code>, que permitirá tomar o tempo de um bloco de comandos Python:</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="o">%%timeit</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="o">%%time</span>it
 <span class="gp">   ...: </span><span class="n">fahr</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">101</span><span class="p">))</span>
 <span class="gp">   ...: </span><span class="n">celsius</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">5</span> <span class="o">*</span> <span class="p">(</span><span class="n">f</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">/</span> <span class="mi">9</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">fahr</span><span class="p">]</span>
 <span class="gp">   ...:</span>
@@ -191,10 +194,10 @@
 </pre></div>
 </div>
 <section id="comandos-uteis">
-<h2><span class="section-number">3.4.1. </span>Comandos Úteis<a class="headerlink" href="#comandos-uteis" title="Link permanente para este cabeçalho"></a></h2>
+<h2><span class="section-number">3.4.1. </span>Comandos Úteis<a class="headerlink" href="#comandos-uteis" title="Link para este cabeçalho"></a></h2>
 <p>A mágica <code class="docutils literal notranslate"><span class="pre">%run</span></code> permite executar um <em>script</em> Python e carregar todas as suas definições no ambiente interativo. Faça o <em>download</em> do <em>script</em> <a class="reference download internal" download="" href="../_downloads/1af1c20a1aae5a31485be244148284fa/haversine.py"><code class="xref download docutils literal notranslate"><span class="pre">haversine.py</span></code></a> e coloque-o na pasta onde você está executando seu ambiente IPython ou <cite>Jupyter</cite>. Este <em>script</em> computa a distância na esfera para duas localizações, segundo a fórmula de Haversine. O <a class="reference internal" href="#code-jupyter-funcoes-magicas-run-line-magic"><span class="std std-numref">Trecho de Código 3.3</span></a> mostra como executar este <em>script</em> e computar a distância entre os pontos <span class="math notranslate nohighlight">\((0, 0)\)</span> e <span class="math notranslate nohighlight">\((0, 1)\)</span>.</p>
 <div class="literal-block-wrapper docutils container" id="code-jupyter-funcoes-magicas-run-line-magic">
-<div class="code-block-caption"><span class="caption-number">Trecho de Código 3.3 - </span><span class="caption-text">Usando a mágica <code class="docutils literal notranslate"><span class="pre">%run</span></code> para executar um <em>script</em>.</span><a class="headerlink" href="#code-jupyter-funcoes-magicas-run-line-magic" title="Link Permanente para esse código"></a></div>
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 3.3 - </span><span class="caption-text">Usando a mágica <code class="docutils literal notranslate"><span class="pre">%run</span></code> para executar um <em>script</em>.</span><a class="headerlink" href="#code-jupyter-funcoes-magicas-run-line-magic" title="Link para este código"></a></div>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="o">%</span><span class="k">run</span> haversine.py 0 0 0 1
 <span class="go">111.19492664455873</span>
 </pre></div>
@@ -202,7 +205,7 @@
 </div>
 <p>A mágica <code class="docutils literal notranslate"><span class="pre">%load</span></code> permite carregar o código fonte em uma célula (<a class="reference internal" href="#code-jupyter-funcoes-magicas-load-line-magic"><span class="std std-numref">Trecho de Código 3.4</span></a>):</p>
 <div class="literal-block-wrapper docutils container" id="code-jupyter-funcoes-magicas-load-line-magic">
-<div class="code-block-caption"><span class="caption-number">Trecho de Código 3.4 - </span><span class="caption-text">Usando a mágica <code class="docutils literal notranslate"><span class="pre">%load</span></code> para carregar o código no ambiente <cite>IPython</cite> ou <cite>Jupyter</cite>.</span><a class="headerlink" href="#code-jupyter-funcoes-magicas-load-line-magic" title="Link Permanente para esse código"></a></div>
+<div class="code-block-caption"><span class="caption-number">Trecho de Código 3.4 - </span><span class="caption-text">Usando a mágica <code class="docutils literal notranslate"><span class="pre">%load</span></code> para carregar o código no ambiente <cite>IPython</cite> ou <cite>Jupyter</cite>.</span><a class="headerlink" href="#code-jupyter-funcoes-magicas-load-line-magic" title="Link para este código"></a></div>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="o">%</span><span class="k">load</span> haversine.py
 </pre></div>
 </div>
@@ -280,9 +283,10 @@
 </div>
 <p>No ambiente JupyterLab ou Jupyter Notebook, a mágica de célula <code class="docutils literal notranslate"><span class="pre">%%HTML</span></code> permite incluir vídeos do Youtube, como mostrado na <a class="reference internal" href="#fig-jupyter-funcoes-magicas-magic-html"><span class="std std-numref">Figura 3.29</span></a>.</p>
 <figure class="align-center align-default" id="fig-jupyter-funcoes-magicas-magic-html">
-<a class="reference internal image-reference" href="../_images/magic-html.png"><img alt="Embutindo um vídeo através da mágica %%HTML" src="../_images/magic-html.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../_images/magic-html.png"><img alt="Embutindo um vídeo através da mágica %%HTML" src="../_images/magic-html.png" style="width: 100%;" />
+</a>
 <figcaption>
-<p><span class="caption-number">Figura 3.29 - </span><span class="caption-text">Embutindo um vídeo através da mágica <code class="docutils literal notranslate"><span class="pre">%%HTML</span></code>.</span><a class="headerlink" href="#fig-jupyter-funcoes-magicas-magic-html" title="Link Permanente para essa imagem"></a></p>
+<p><span class="caption-number">Figura 3.29 - </span><span class="caption-text">Embutindo um vídeo através da mágica <code class="docutils literal notranslate"><span class="pre">%%HTML</span></code>.</span><a class="headerlink" href="#fig-jupyter-funcoes-magicas-magic-html" title="Link para esta imagem"></a></p>
 </figcaption>
 </figure>
 <div class="admonition note">
@@ -315,7 +319,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2022, Gilberto Queiroz and Thales Körting.</p>
+    <p>&#169; Direitos autorais 2020-2022, Gilberto Queiroz and Thales Körting.</p>
   </div>
 
    
@@ -329,18 +333,7 @@
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(false);
       });
-  </script>
-    <!-- Theme Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165908761-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-165908761-1', {
-          'anonymize_ip': false,
-      });
-    </script> 
+  </script> 
 
 </body>
 </html>

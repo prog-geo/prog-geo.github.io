@@ -1,0 +1,18 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2026, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../../def.rst
+
+
+.. _sec_projetos_2026_p01:
+
+Catálogo STAC Estático para a BIG
+=================================
+
+
+Atualmente, a BIG conta com um catálogo STAC dinâmico, formado por um serviço Python integrado a um sistema de bancos de dados PostgreSQL com a extensão PostGIS. Este trabalho tem como objetivo construir uma versão estática do catálogo que possa ser consumido por aplicações web que necessitam atravessar todo o conteúdo do catálogo sem o overhead de consultas ao banco de dados. Além disso, essa versão estática poderá propor uso de extensões do STAC e uma nova estruturação dos metadados das coleções existentes.  
+
+
+Por exemplo, o acervo landsat poderá ser modelado como um catálogo "landsat" e as imagens de cada satélite/sendor poderá dar origem a uma coleção ou mesmo ser particionada em sub-coleções por path/row. Os produtos meteorológicos poderão exercitar os conceitos do STAC de variáveis. Este projeto poderá ser desenvolvido sob orientação da equipe da BIG/BDC.

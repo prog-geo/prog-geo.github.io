@@ -1,30 +1,30 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="pt-BR">
+<html class="writer-html5" lang="pt-BR" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>2.9. Tipo Lógico &mdash; SER-347/CAP-419</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/table_styling.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/prog-geo.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../_static/table_styling.css?v=a1a2a898" />
+      <link rel="stylesheet" type="text/css" href="../_static/prog-geo.css?v=bac0c41d" />
 
   
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="canonical" href="https://prog-geo.github.io/introducao-programacao/tipo-logico.html" />
-      <script src="../_static/jquery.js"></script>
-      <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-      <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-      <script src="../_static/doctools.js"></script>
-      <script src="../_static/sphinx_highlight.js"></script>
-      <script src="../_static/clipboard.min.js"></script>
-      <script src="../_static/copybutton.js"></script>
-      <script src="../_static/translations.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=8dd0446f"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=30646c52"></script>
+      <script src="../_static/translations.js?v=000972dd"></script>
       <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Índice" href="../genindex.html" />
@@ -111,6 +111,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../projetos/2026/index.html">Turma 2026</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2025/index.html">Turma 2025</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2024/index.html">Turma 2024</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../projetos/2023/index.html">Turma 2023</a></li>
@@ -154,9 +155,9 @@
            <div itemprop="articleBody">
              
   <section id="tipo-logico">
-<span id="sec-introducao-programacao-tipo-logico"></span><h1><span class="section-number">2.9. </span>Tipo Lógico<a class="headerlink" href="#tipo-logico" title="Link permanente para este cabeçalho"></a></h1>
+<span id="sec-introducao-programacao-tipo-logico"></span><h1><span class="section-number">2.9. </span>Tipo Lógico<a class="headerlink" href="#tipo-logico" title="Link para este cabeçalho"></a></h1>
 <section id="bool">
-<h2><span class="section-number">2.9.1. </span><code class="docutils literal notranslate"><span class="pre">bool</span></code><a class="headerlink" href="#bool" title="Link permanente para este cabeçalho"></a></h2>
+<h2><span class="section-number">2.9.1. </span><code class="docutils literal notranslate"><span class="pre">bool</span></code><a class="headerlink" href="#bool" title="Link para este cabeçalho"></a></h2>
 <p>O tipo <code class="docutils literal notranslate"><span class="pre">bool</span></code> é usado para representar valores <strong>booleanos</strong> ou <strong>lógicos</strong>. Este tipo possui apenas dois valores possíveis: <code class="docutils literal notranslate"><span class="pre">True</span></code> (verdadeiro) ou <code class="docutils literal notranslate"><span class="pre">False</span></code> (falso).</p>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
@@ -172,7 +173,7 @@
 </div>
 </section>
 <section id="operadores-logicos">
-<h2><span class="section-number">2.9.2. </span>Operadores Lógicos<a class="headerlink" href="#operadores-logicos" title="Link permanente para este cabeçalho"></a></h2>
+<h2><span class="section-number">2.9.2. </span>Operadores Lógicos<a class="headerlink" href="#operadores-logicos" title="Link para este cabeçalho"></a></h2>
 <p>As operações usuais sobre os tipos booleanos são conhecidas como <strong>operações lógicas</strong>. Os principais operadores lógicos são:</p>
 <ul class="open">
 <li><p><code class="docutils literal notranslate"><span class="pre">and</span></code>: o <strong>e lógico</strong> (conjunção) opera em dois valores (lógicos), também chamados de <strong>proposições</strong>, e produz o valor verdadeiro somente se os dois operandos são verdadeiros (<a class="reference internal" href="#introd-prog-tbl-op-logico-and"><span class="std std-numref">Tabela 2.7</span></a>).</p></li>
@@ -180,7 +181,7 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">not</span></code>: a negação opera em um único valor (lógico), também chamado de <strong>proposição</strong>, e produz o valor verdadeiro se o operando for falso, ou falso caso o operando seja verdadeiro (<a class="reference internal" href="#introd-prog-tbl-op-logico-not"><span class="std std-numref">Tabela 2.9</span></a>).</p></li>
 </ul>
 <table class="styled-table docutils align-center" id="introd-prog-tbl-op-logico-and" style="width: 50%">
-<caption><span class="caption-number">Tabela 2.7 - </span><span class="caption-text">Tabela verdade do operador <code class="docutils literal notranslate"><span class="pre">and</span></code>.</span><a class="headerlink" href="#introd-prog-tbl-op-logico-and" title="Link Permanente para essa tabela"></a></caption>
+<caption><span class="caption-number">Tabela 2.7 - </span><span class="caption-text">Tabela verdade do operador <code class="docutils literal notranslate"><span class="pre">and</span></code>.</span><a class="headerlink" href="#introd-prog-tbl-op-logico-and" title="Link para esta tabela"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head center-align"><p><span class="math notranslate nohighlight">\(p\)</span></p></th>
 <th class="head center-align"><p><span class="math notranslate nohighlight">\(q\)</span></p></th>
@@ -207,7 +208,7 @@
 </tbody>
 </table>
 <table class="styled-table docutils align-center" id="introd-prog-tbl-op-logico-or" style="width: 50%">
-<caption><span class="caption-number">Tabela 2.8 - </span><span class="caption-text">Tabela verdade do operador <code class="docutils literal notranslate"><span class="pre">or</span></code>.</span><a class="headerlink" href="#introd-prog-tbl-op-logico-or" title="Link Permanente para essa tabela"></a></caption>
+<caption><span class="caption-number">Tabela 2.8 - </span><span class="caption-text">Tabela verdade do operador <code class="docutils literal notranslate"><span class="pre">or</span></code>.</span><a class="headerlink" href="#introd-prog-tbl-op-logico-or" title="Link para esta tabela"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head center-align"><p><span class="math notranslate nohighlight">\(p\)</span></p></th>
 <th class="head center-align"><p><span class="math notranslate nohighlight">\(q\)</span></p></th>
@@ -234,7 +235,7 @@
 </tbody>
 </table>
 <table class="styled-table docutils align-center" id="introd-prog-tbl-op-logico-not" style="width: 50%">
-<caption><span class="caption-number">Tabela 2.9 - </span><span class="caption-text">Tabela verdade do operador <code class="docutils literal notranslate"><span class="pre">not</span></code>.</span><a class="headerlink" href="#introd-prog-tbl-op-logico-not" title="Link Permanente para essa tabela"></a></caption>
+<caption><span class="caption-number">Tabela 2.9 - </span><span class="caption-text">Tabela verdade do operador <code class="docutils literal notranslate"><span class="pre">not</span></code>.</span><a class="headerlink" href="#introd-prog-tbl-op-logico-not" title="Link para esta tabela"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head center-align"><p><span class="math notranslate nohighlight">\(p\)</span></p></th>
 <th class="head center-align"><p><span class="math notranslate nohighlight">\(\neg p\)</span></p></th>
@@ -280,7 +281,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2022, Gilberto Queiroz and Thales Körting.</p>
+    <p>&#169; Direitos autorais 2020-2022, Gilberto Queiroz and Thales Körting.</p>
   </div>
 
    
@@ -294,18 +295,7 @@
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(false);
       });
-  </script>
-    <!-- Theme Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165908761-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-165908761-1', {
-          'anonymize_ip': false,
-      });
-    </script> 
+  </script> 
 
 </body>
 </html>

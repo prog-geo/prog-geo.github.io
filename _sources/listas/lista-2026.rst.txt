@@ -1,0 +1,305 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _prog-geo_lista_2026:
+
+Lista de Exercícios 2026
+========================
+
+Exercício 01: Tipos de Dados no Terminal Interativo
+---------------------------------------------------
+
+Usando o terminal interativo do Python, utilize o comando ``type(objeto)`` e descubra o tipo de dados dos seguintes objetos:
+
+.. code-block:: python
+
+   10
+   3.14159
+   5 / 2
+   "B1"
+   "Coordenada: "
+   (10, 20)
+   ["A1", "B2", "C3"]
+   {"A1": "navio", "B2": "agua"}
+   True
+   False
+   None
+   5 + 2j
+
+Exercício 02: Expressões Numéricas
+----------------------------------
+
+Apresente o resultado das seguintes expressões:
+
+.. code-block:: python
+
+   5 + 3
+   10 - 4
+   3 * 4
+   12 / 3
+   12 // 5
+   12 % 5
+   2 ** 3
+   (5 + 3) * 2
+   5 + 3 * 2
+   abs(-15)
+   max(10, 20, 5)
+   min(10, 20, 5)
+   round(3.14159, 2)
+   import math
+   math.sqrt(25)
+   math.pow(2, 3)
+   math.sin(math.pi / 2)
+   math.cos(0)
+
+Exercício 03: Cálculo de Índices Espectrais
+-------------------------------------------
+
+Considere as seguintes equações dos índices espectrais:
+
+- **NDVI** (Normalized Difference Vegetation Index):
+
+  .. math::
+     NDVI = \frac{NIR - RED}{NIR + RED}
+
+- **EVI** (Enhanced Vegetation Index):
+
+  .. math::
+     EVI = 2.5 \times \frac{NIR - RED}{NIR + 6 \times RED - 7.5 \times BLUE + 1.0}
+
+De acordo com as equações acima, crie um programa que leia os valores de ``BLUE``, ``RED`` e ``NIR`` e imprima como resultados os valores de NDVI e EVI.
+
+Exercício 04: Análise de Valores em Lista
+-----------------------------------------
+
+Faça um programa em Python que:
+
+1. Leia três números reais
+2. Armazene-os em uma lista
+3. Escreva o valor do maior e do menor deles
+4. Escreva o índice (posição) de cada um na lista
+
+**Restrição:** Não utilizar as funções embutidas ``min()`` e ``max()``.
+
+Exercício 05: Parsing de Nomes de Arquivos
+------------------------------------------
+
+Tendo como exemplo os nomes abaixo e sabendo que seguem a seguinte estrutura:
+
+::
+
+   {missao}_{sensor}_{data_aquisicao}_{orbita_h}_{orbita_v}_{nivel}
+
+Lista de arquivos:
+
+.. code-block:: text
+
+   CBERS_4A_WPM_20260323_212_139_L4
+   CBERS_4A_WPM_20260325_193_141_L2
+   CBERS_4A_WFI_20260228_228_132_L4
+   CBERS_4A_WFI_20260323_243_132_L4
+   CBERS_4A_WFI_20260326_199_132_L2
+   CBERS_4A_MUX_20260326_230_121_L4
+   CBERS_4A_MUX_20260326_230_136_L2
+   CBERS_4_AWFI_20260131_161_099_L4
+   CBERS_4_AWFI_20260325_178_129_L4
+   CBERS_4_AWFI_20260326_143_117_L2
+   CBERS_4_PAN5M_20260323_170_117_L4
+   CBERS_4_PAN5M_20260326_169_132_L2
+   CBERS_4_PAN10M_20260326_169_128_L4
+   CBERS_4_PAN10M_20260326_169_137_L2
+   CBERS_4_MUX_20260228_169_119_L4
+   CBERS_4_MUX_20260326_169_127_L4
+   CBERS_4_MUX_20260326_169_132_L2
+   CBERS_2B_WFI_20100310_167_108_L2
+   CBERS_2B_CCD_20100310_167_118_L2
+   CBERS_2_CCD_20090107_162_098_L2
+   AMAZONIA_1_WFI_20260326_035_021_L2
+   AMAZONIA_1_WFI_20260325_037_016_L4
+   AMAZONIA_1_WFI_20260318_036_017_L4
+
+Faça um programa em Python que leia o nome de um arquivo (utilize um dos nomes acima) e escreva na saída padrão o seguinte resultado:
+
+.. code-block:: text
+
+   Item name...............: AMAZONIA_1_WFI_20260318_036_017_L4
+   Satellite...............: AMAZONIA-1
+   Sensor..................: WFI
+   Year of Acquisition.....: 2026
+   Month of Acquisition....: 03
+   Day of Acquisition......: 18
+   Horizontal Orbit........: 036
+   Vertical Orbit..........: 017
+   Processing Level........: L4
+
+Exercício 06: Combinação de Listas em Tuplas
+--------------------------------------------
+
+Considere as listas abaixo:
+
+.. code-block:: python
+
+    BLUE: [953, 323, 434, 1602, 937, 516, 1019, 285, 315, 290, 239, 221, 0, 672, 987, 927, 973, 1023, 682, 339, 6958, 391, 507]
+    RED: [781, 274, 876, 1794, 1238, 491, 963, 240, 257, 264, 247, 276, 0, 959, 1333, 1616, 1682, 1606, 936, 337, 5152, 366, 739]
+    NIR: [3886, 6629, 2897, 2881, 2050, 1553, 3359, 5861, 5836, 5941, 0, 4186, 3410, 2792, 2218, 2423, 2520, 2353, 3154, 5068, 6247, 5016, 3706] 
+    SCL: [4, 4, 4, 5, 5, 3, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 4, 4, 9, 4, 4] 
+    timeline = ['2025-01-01', '2025-01-17', '2025-02-02', '2025-02-18', '2025-03-06', '2025-03-22', '2025-04-07', '2025-04-23', '2025-05-09', '2025-05-25', '2025-06-10', '2025-06-26', '2025-07-12', '2025-07-28', '2025-08-13', '2025-08-29', '2025-09-14', '2025-09-30', '2025-10-16', '2025-11-01', '2025-11-17', '2025-12-03', '2025-12-19']
+
+Gere uma lista de tuplas, de modo que cada tupla contenha os valores de um único ponto. O índice 0 dessa lista de tuplas deve retornar a tupla:
+
+.. code-block:: python
+
+   (953, 781, 3886, 4, "2025-01-01")
+
+Exercício 07: Cálculo de NDVI com Repetição
+-------------------------------------------
+
+Utilizando a lista de tuplas gerada no Exercício 06, calcule o NDVI para cada ponto utilizando os valores de ``RED`` (posição 1 da tupla) e ``NIR`` (posição 2 da tupla). Para calcular o valor de NDVI divida-os por Imprima o resultado no formato:
+
+.. code-block:: text
+
+   2025-01-01 ... NDVI = 0.665309621
+   2025-01-17 ... NDVI = 0.920614226
+
+**Fórmula do NDVI:**
+
+.. math::
+   NDVI = \frac{NIR - RED}{NIR + RED}
+
+**Observação:** Trate os valores com divisão por zero (quando ``NIR + RED = 0``) exibindo "NDVI indefinido".
+
+Exercício 08: Filtro com Condicionais
+-------------------------------------
+
+Repita o exercício anterior, mas armazene os dados de entrada em uma estrutura de dicionario. Aproveite e adicione uma condicional para **não calcular/printar** os casos em que ``RED`` ou ``NIR`` tenham o valor **0** (zero), ou quando a máscara apresentar valores diferentes de 4, 5 ou 6. Para esses casos, exiba uma mensagem indicando que o valor foi ignorado.
+
+Exercício 09: Funções para Índices Espectrais
+---------------------------------------------
+
+Crie um programa com as seguintes funções:
+
+1. ``calcular_ndvi(red, nir)``: retorna o valor do NDVI
+2. ``calcular_evi(blue, red, nir)``: retorna o valor do EVI
+3. ``calcular_savi(red, nir, L=0.5)``: retorna o SAVI (Soil Adjusted Vegetation Index):
+
+   .. math::
+      SAVI = \frac{NIR - RED}{NIR + RED + L} \times (1 + L)
+
+4. ``classificar_vegetacao(ndvi)``: retorna uma string classificando o NDVI:
+
+   - NDVI < 0.05: "Água"
+   - 0.05 <= NDVI < 0.2: "Solo exposto"
+   - 0.2 <= NDVI < 0.4: "Vegetação rasteira"
+   - 0.4 <= NDVI < 0.6: "Vegetação moderada"
+   - NDVI >= 0.6 → "Vegetação densa"
+
+O programa principal deve:
+
+- Solicitar os valores de BLUE, RED, NIR
+- Chamar as funções e exibir os resultados formatados
+
+
+Exercício 10: Dicionários para Metadados
+----------------------------------------
+
+Utilizando os nomes de arquivos do Exercício 05, crie um programa que:
+
+1. Leia uma lista com os nomes dos arquivos (fornecida no código)
+2. Para cada arquivo, extraia os metadados e armazene em um **dicionário** com as chaves:
+
+   - ``nome_completo``: nome original do arquivo
+   - ``satelite``: satélite (CBERS-4A, CBERS-4, AMAZONIA-1, etc.)
+   - ``sensor``: sensor (WPM, WFI, MUX, etc.)
+   - ``ano``: ano de aquisição (inteiro)
+   - ``mes``: mês de aquisição (inteiro)
+   - ``dia``: dia de aquisição (inteiro)
+   - ``orbita_h``: órbita horizontal (string)
+   - ``orbita_v``: órbita vertical (string)
+   - ``nivel``: nível de processamento (L2, L4)
+
+3. Armazene todos os dicionários em uma lista chamada ``catalogo_imagens``
+4. Exiba:
+
+   - Quantidade total de imagens no catálogo
+   - Lista de sensores distintos presentes (usando conjunto)
+   - Para cada satélite, quantas imagens estão disponíveis
+
+**Exemplo de saída:**
+
+.. code-block:: text
+
+   Catálogo carregado: 22 imagens
+
+   Sensores encontrados: {'WPM', 'WFI', 'MUX', 'AWFI', 'PAN5M', 'PAN10M', 'HRC', 'CCD'}
+
+   Imagens por satélite:
+   - CBERS-4A: 12 imagens
+   - CBERS-4: 8 imagens
+   - CBERS-2B: 3 imagens
+   - CBERS-2: 1 imagem
+   - AMAZONIA-1: 3 imagens
+
+Exercício 11: Conjuntos para Análise de Cobertura
+-------------------------------------------------
+
+Com base no catálogo criado no Exercício 10, utilize **conjuntos** para responder:
+
+1. Quais meses do ano possuem imagens disponíveis?
+2. Quais sensores estão disponíveis para o mês de março?
+3. Existe alguma data (mesmo dia) com mais de uma imagem de sensores diferentes? Se sim, quais?
+4. Crie um conjunto com todas as combinações ``(ano, mes)`` que possuem pelo menos 3 imagens
+
+**Requisitos:**
+
+- Utilize conjuntos para garantir unicidade
+- Utilize operações de conjunto (``union``, ``intersection``, ``difference``) quando apropriado
+
+
+Exercício 12: Sistema de Busca com Operadores Lógicos
+-----------------------------------------------------
+
+Crie um sistema de busca de imagens que permita ao usuário aplicar filtros combinados.
+
+O programa deve:
+
+1. Manter uma lista de imagens (dicionários) com metadados (do Exercício 10)
+2. Perguntar ao usuário quais filtros deseja aplicar (pode combinar vários):
+
+   - Sensor (WPM, WFI, MUX, etc.)
+   - Ano (>, <, =, >=, <=)
+   - Mês (>, <, =, >=, <=)
+   - Nível (L2, L4)
+   - Órbita horizontal (entre valores mínimo e máximo)
+
+3. Utilizar **operadores relacionais** e **expressões lógicas** para combinar os filtros
+4. Exibir as imagens que atendem a **todos** os critérios selecionados
+
+**Exemplo interativo:**
+
+.. code-block:: text
+
+   === SISTEMA DE BUSCA DE IMAGENS ===
+
+   Deseja filtrar por sensor? (s/n): s
+   Sensores disponíveis: WPM, WFI, MUX, AWFI, PAN5M, PAN10M, HRC, CCD
+   Digite o sensor: WFI
+
+   Deseja filtrar por ano? (s/n): s
+   Operador (>, <, =, >=, <=): >=
+   Valor: 2025
+
+   Deseja filtrar por mês? (s/n): s
+   Operador (>, <, =, >=, <=): =
+   Valor: 3
+
+   Deseja filtrar por nível? (s/n): s
+   Nível (L2, L4): L4
+
+   Deseja filtrar por órbita? (s/n): n
+
+   Resultados encontrados: 3 imagens
+   - CBERS_4A_WFI_20260323_243_132_L4
+   - CBERS_4A_WFI_20260228_228_132_L4
+   - AMAZONIA_1_WFI_20260325_037_016_L4

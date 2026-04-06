@@ -1,30 +1,30 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="pt-BR">
+<html class="writer-html5" lang="pt-BR" data-content_root="../../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>6.1.1. O que é o git? &mdash; SER-347/CAP-419</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
-      <link rel="stylesheet" type="text/css" href="../../_static/table_styling.css" />
-      <link rel="stylesheet" type="text/css" href="../../_static/prog-geo.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/table_styling.css?v=a1a2a898" />
+      <link rel="stylesheet" type="text/css" href="../../_static/prog-geo.css?v=bac0c41d" />
 
   
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="canonical" href="https://prog-geo.github.io/variados/git-github/git-definicao.html" />
-      <script src="../../_static/jquery.js"></script>
-      <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-      <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-      <script src="../../_static/doctools.js"></script>
-      <script src="../../_static/sphinx_highlight.js"></script>
-      <script src="../../_static/clipboard.min.js"></script>
-      <script src="../../_static/copybutton.js"></script>
-      <script src="../../_static/translations.js"></script>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=8dd0446f"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=30646c52"></script>
+      <script src="../../_static/translations.js?v=000972dd"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Buscar" href="../../search.html" />
@@ -87,6 +87,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lista de Projetos:</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../projetos/2026/index.html">Turma 2026</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../projetos/2025/index.html">Turma 2025</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../projetos/2024/index.html">Turma 2024</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../projetos/2023/index.html">Turma 2023</a></li>
@@ -131,7 +132,7 @@
            <div itemprop="articleBody">
              
   <section id="o-que-e-o-git">
-<span id="sec-variados-git-github-git-definicao"></span><h1><span class="section-number">6.1.1. </span>O que é o <code class="docutils literal notranslate"><span class="pre">git</span></code>?<a class="headerlink" href="#o-que-e-o-git" title="Link permanente para este cabeçalho"></a></h1>
+<span id="sec-variados-git-github-git-definicao"></span><h1><span class="section-number">6.1.1. </span>O que é o <code class="docutils literal notranslate"><span class="pre">git</span></code>?<a class="headerlink" href="#o-que-e-o-git" title="Link para este cabeçalho"></a></h1>
 <p>Uma das dificuldades que pode surgir ao longo do desenvolvimento de um programa ou <em>script</em> está relacionada ao controle das modificações ou versões do código que estamos escrevendo. No caso de termos mais pessoas modificando o mesmo código, mais uma dificuldade é inserida: controlar as alterações realizadas de maneira independente e às vezes, simultânea. Por conta desses problemas, a indústria de software desenvolveu programas conhecidos como <strong>sistemas de controle de versão</strong> (<em>version control systems</em>), que são capazes de registrar as modificações de um ou mais arquivos de código fonte, possibilitando verificar e recuperar esse histórico de modificações em um ambiente multiusuário. Essa ideia de versionamento aplica-se não só ao código fonte na forma textual, mas também a arquivos como PDFs, imagens, e outros tipos e formatos.</p>
 <p>A abreviação <code class="docutils literal notranslate"><span class="pre">VCS</span></code> é muito comum de ser empregada para a classe de sistemas com esse propósito. Os sistemas pioneiros, <a class="reference external" href="https://en.wikipedia.org/wiki/Concurrent_Versions_System">CVS</a> e seu sucessor, o <a class="reference external" href="https://en.wikipedia.org/wiki/Apache_Subversion">Apache Subversion</a>, utilizam uma arquitetura cliente-servidor, onde o servidor armazena o histórico do projeto e os clientes se conectam a esse servidor para obter uma cópia completa do projeto para então realizarem modificações e então aplicá-las de volta ao servidor. Mais recentemente, um sistema chamado <a class="reference external" href="https://en.wikipedia.org/wiki/Git">git</a>, desenvolvido pelo criador do Linux, Linus Torvalds, tem sido uma das ferramentas de controle de versão mais utilizadas. O <code class="docutils literal notranslate"><span class="pre">git</span></code> utiliza uma arquitetura distribuída, bem diferente de seus antecesssores (<code class="docutils literal notranslate"><span class="pre">CVS</span></code> e <code class="docutils literal notranslate"><span class="pre">SVN</span></code>), sendo integrado em diversos serviços de cloud, entre eles o <a class="reference external" href="https://en.wikipedia.org/wiki/GitHub">GitHub</a>.</p>
 </section>
@@ -147,7 +148,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020-2022, Gilberto Queiroz and Thales Körting.</p>
+    <p>&#169; Direitos autorais 2020-2022, Gilberto Queiroz and Thales Körting.</p>
   </div>
 
    
@@ -161,18 +162,7 @@
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(false);
       });
-  </script>
-    <!-- Theme Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165908761-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-165908761-1', {
-          'anonymize_ip': false,
-      });
-    </script> 
+  </script> 
 
 </body>
 </html>

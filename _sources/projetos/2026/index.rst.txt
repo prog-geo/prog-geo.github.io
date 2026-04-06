@@ -1,0 +1,26 @@
+Turma 2026
+==========
+
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+
+    ./p01-stac-estatico
+    ./p02-indices-espectrais-por-doy
+    ./p03-recorte-de-imagens-litoral
+    ./p04-relatorio-queimadas
+    ./p05-mudancas-em-municipios
+    ./p06-registro-mux-l2-s2
+    ./p07-datasets-por-geometrias
+    ./p08-composicao-temporal-cubos
+    ./p09-disponibilidade-por-sensor
+    ./p10-servico-web-novas-colecoes
+
+    
+Observações
+-----------
+
+
+**1.** Os scripts deverão conter documentação de uso.
+
+**2.** O relatório produzido deverá estar no formato do evento `GEOINFO <http://www.geoinfo.info/>`_.
