@@ -173,7 +173,7 @@ Utilizando a lista de tuplas gerada no Exercício 06, calcule o NDVI para cada p
 Exercício 08: Filtro com Condicionais
 -------------------------------------
 
-Repita o exercício anterior, mas armazene os dados de entrada em uma estrutura de dicionario. Aproveite e adicione uma condicional para **não calcular/printar** os casos em que ``RED`` ou ``NIR`` tenham o valor **0** (zero), ou quando a máscara apresentar valores diferentes de 4, 5 ou 6. Para esses casos, exiba uma mensagem indicando que o valor foi ignorado.
+Repita o exercício anterior, mas armazene os dados de entrada em uma estrutura de dicionário. Aproveite e adicione uma condicional para apresentar na tela os casos em que ``RED`` ou ``NIR`` tenham o valor **0** (zero), ou quando a máscara apresentar valores diferentes de 4, 5 ou 6. Para esses casos, exiba uma mensagem indicando que o valor foi ignorado.
 
 Exercício 09: Funções para Índices Espectrais
 ---------------------------------------------
