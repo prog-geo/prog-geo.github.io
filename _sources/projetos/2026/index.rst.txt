@@ -5,7 +5,6 @@ Turma 2026
     :maxdepth: 1
     :titlesonly:
 
-    ./p01-stac-estatico
     ./p02-indices-espectrais-por-doy
     ./p03-recorte-de-imagens-litoral
     ./p04-relatorio-queimadas

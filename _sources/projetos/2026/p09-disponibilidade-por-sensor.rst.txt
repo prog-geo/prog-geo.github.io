@@ -12,7 +12,7 @@ Disponibilidade de imagens para cada satélite/sensor
 =====================================================
 
 
-Fazer um mapa de calor usando footprint das cenas do STAC para diferentes coleções para vermos a localização espacial dos dados. Saber onde temos mais revisitas etc. Construir um Jupyter Notebook com controles interativos (tipos ipywidgets) que permita ao usuário definir uma data em calendário, escoçher um satélite/sensor e apresentar sobre o mapa do Brasil os footprints/box das cenas imageadas/existentes considerando a revista do satélite. Por exemplo, será que a coleção WPM quando mostrada entre as datas de 01 de março e 31 de março cobrem de fato todo território?
+Fazer um mapa de calor usando footprint das cenas do STAC para diferentes coleções para vermos a localização espacial dos dados. Saber onde temos mais revisitas etc. Construir um Jupyter Notebook com controles interativos (tipos ipywidgets) que permita ao usuário definir uma data em calendário, escolher um satélite/sensor e apresentar sobre o mapa do Brasil os footprints/box das cenas imageadas/existentes considerando a revista do satélite. Por exemplo, será que a coleção WPM quando mostrada entre as datas de 01 de março e 31 de março cobrem de fato todo território?
 
 
-e a WFI no mesmo período? Landsat-8/OLI? Landsat-8 + Landsat-9 ? Talvez opção de marcar vários e os footprints serem desenhados em cores diferentes por satélite/sensor?
+.. e a WFI no mesmo período? Landsat-8/OLI? Landsat-8 + Landsat-9 ? Talvez opção de marcar vários e os footprints serem desenhados em cores diferentes por satélite/sensor?

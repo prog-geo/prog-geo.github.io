@@ -1,0 +1,27 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2020-2021, Gilberto Queiroz and Thales Körting.
+
+
+.. _sec_seminarios_2026:
+
+Seminários Turma 2026
+=====================
+
+**Grupo 1** - Criação de Pacotes em Python
+
+**Grupo 2** - Visualização de Dados com seaborn
+
+**Grupo 3** - Visualização de Dados com Plotly
+
+**Grupo 4** - Visualização de Dados com Bokeh
+
+**Grupo 5** - Orientação a Objetos em Python
+
+**Grupo 6** - Uso de controles e widgets interativos em Python com o ipywidgets
+
+**Grupo 7** - Uso de Python no QGIs
+
+**Grupo 8** - Uso de serviços OGC em Python
+
+**Grupo 9** - Construção de Web Services em Python com o Ecossistema Flask

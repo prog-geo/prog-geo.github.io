@@ -1,0 +1,21 @@
+..
+    This file is part of "Notas de Aula do Curso Introdução à Programação com Dados Geoespaciais".
+    Copyright 2026, Gilberto Queiroz and Thales Körting.
+
+
+.. include:: ../../def.rst
+
+
+.. _sec_projetos_2026_p03:
+
+Recorte de imagens ao longo da linha de costa brasileira
+========================================================
+
+
+A partir das geometrias oficiais (IBGE), é possível ter a linha de costa brasileira. Entretanto a linha pode estar desatualizada, e é possível utilizar imagens de sensoriamento remoto para atualizar essa informação.
+
+
+Nesse trabalho, dada uma linha em formato vetorial, representando o litoral brasileiro, gerar uma série de vetores de quadrados de área pre-definida, sempre alinhados na direção da linha de costa naquele trecho, e consultar a disponibilidade de imagens no servidor `SpatioTemporal Asset Catalogs (STAC) do INPE <https://data.inpe.br/stac/browser/>`_, verificando se há sobreposição 100% de dados válidos da imagem com os retângulos, e se a imagem dentro de cada retângulo é livre de nuvens (pode-se usar um limiar simples sobre as bandas para começar).
+
+
+O sistema precisa estar configurado para gerar um grau de sobreposição entre os retângulos, e evitar buracos ao longo da linha de costa de referência.
